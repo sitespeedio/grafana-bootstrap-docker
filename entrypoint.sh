@@ -4,7 +4,7 @@ GF_API=${GF_API:-http://grafana:3000/api}
 
 echo "Waiting for Grafana API..."
 
-curl -u sitespeedio:172ga59Kuab51mL ${GF_API}/datasources -f &> /dev/null
+curl -u $GF_USER:$GF_PASSWORD ${GF_API}/datasources -f &> /dev/null
 while [ $? -ne 0 ]; do
   sleep 2
   curl -u $GF_USER:$GF_PASSWORD ${GF_API}/datasources -f &> /dev/null
