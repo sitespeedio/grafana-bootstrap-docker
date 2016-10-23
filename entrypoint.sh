@@ -1,31 +1,66 @@
 #!/bin/sh
 
 GF_API=${GF_API:-http://grafana:3000/api}
+GF_USER=${GF_USER:-admin}
+GF_PASSWORD=${GF_PASSWORD:-admin}
 
-echo "Waiting for Grafana API..."
+print_header() {
+  echo " "
+  echo "------------------"
+  echo $1
+  echo "------------------"
+}
 
-curl -u $GF_USER:$GF_PASSWORD ${GF_API}/datasources -f &> /dev/null
-while [ $? -ne 0 ]; do
-  sleep 2
-  curl -u $GF_USER:$GF_PASSWORD ${GF_API}/datasources -f &> /dev/null
-done
+wait_for_api() {
+  echo -n "Waiting for Grafana API "
 
-echo "Up!"
+  curl -s -f -u $GF_USER:$GF_PASSWORD ${GF_API}/datasources &> /dev/null
+  while [ $? -ne 0 ]; do
+    echo -n "."
+    sleep 2
+    curl -s -f -u $GF_USER:$GF_PASSWORD ${GF_API}/datasources &> /dev/null
+  done
+  echo " "
+}
 
-echo "Adding datasources..."
+# $1 = file-path, $2 = json, $3 = api-path
+import_data() {
+  set -e
+  echo " "
+  echo $1
+  curl -s -S -H 'Content-Type:application/json' -u $GF_USER:$GF_PASSWORD --data-raw "$2" ${GF_API}$3
+  echo " "
+  set +e
+}
+
+# $1 = filename
+wrap_dashboard_json() {
+  cat $1 | jq '.id = null | { dashboard:., inputs:[.__inputs[] | .value = .label | del(.label)], overwrite: true }'
+}
+
+# -----------
+
+wait_for_api
+
+print_header "Adding datasources"
 
 for datasource in `ls -1 /datasources/*.json`; do
-  echo "Adding ${datasource}"
-  curl -s -H 'Content-Type:application/json' -u $GF_USER:$GF_PASSWORD --data @"${datasource}" ${GF_API}/datasources
-  echo ""
+  datasource_json=$( cat $datasource )
+  ds_name=$( echo $datasource_json | jq -r '.name' )
+  api_path="${GF_API}/datasources/id/${ds_name}"
+  curl -f -s -u $GF_USER:$GF_PASSWORD "$api_path" &> /dev/null
+  if [ $? -eq 0 ]; then
+    echo "Datasource already exists: ${datasource}"
+  else
+    import_data "$datasource" "$datasource_json" "/datasources"
+  fi
 done
 
-echo "Adding dashboards..."
+print_header "Adding dashboards"
 
 for dashboard in `ls -1 /dashboards/*.json`; do
-  echo "Adding ${dashboard}"
-  curl -s -H 'Content-Type:application/json' -u $GF_USER:$GF_PASSWORD --data @"${dashboard}" ${GF_API}/dashboards/db
-  echo ""
+  dashboard_json=$( wrap_dashboard_json $dashboard )
+  import_data "$dashboard" "$dashboard_json" "/dashboards/import"
 done
 
-echo "Done!"
+print_header "Done!"
