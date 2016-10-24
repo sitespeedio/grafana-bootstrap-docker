@@ -1,7 +1,7 @@
-{ "dashboard":{
+{
   "__inputs": [
     {
-      "name": "graphite",
+      "name": "DS_GRAPHITE",
       "label": "graphite",
       "description": "",
       "type": "datasource",
@@ -53,7 +53,7 @@
             "thirdParty": "#890F02"
           },
           "bars": false,
-          "datasource": "graphite",
+          "datasource": "${DS_GRAPHITE}",
           "decimals": 0,
           "editable": true,
           "error": false,
@@ -154,7 +154,7 @@
             "thirdParty": "#890F02"
           },
           "bars": false,
-          "datasource": "graphite",
+          "datasource": "${DS_GRAPHITE}",
           "decimals": 0,
           "editable": true,
           "error": false,
@@ -278,7 +278,7 @@
             "thirdParty": "#890F02"
           },
           "bars": false,
-          "datasource": "graphite",
+          "datasource": "${DS_GRAPHITE}",
           "decimals": 0,
           "editable": true,
           "error": false,
@@ -402,7 +402,7 @@
             "thirdParty": "#890F02"
           },
           "bars": false,
-          "datasource": "graphite",
+          "datasource": "${DS_GRAPHITE}",
           "decimals": 0,
           "editable": true,
           "error": false,
@@ -523,7 +523,7 @@
             "thirdParty": "#890F02"
           },
           "bars": false,
-          "datasource": "graphite",
+          "datasource": "${DS_GRAPHITE}",
           "decimals": 0,
           "editable": true,
           "error": false,
@@ -631,7 +631,7 @@
             "thirdParty": "#890F02"
           },
           "bars": false,
-          "datasource": "graphite",
+          "datasource": "${DS_GRAPHITE}",
           "decimals": 0,
           "editable": true,
           "error": false,
@@ -732,7 +732,7 @@
             "thirdParty": "#890F02"
           },
           "bars": false,
-          "datasource": "graphite",
+          "datasource": "${DS_GRAPHITE}",
           "decimals": 2,
           "editable": true,
           "error": false,
@@ -855,7 +855,7 @@
     "list": [
       {
         "current": {},
-        "datasource": "graphite",
+        "datasource": "${DS_GRAPHITE}",
         "hide": 0,
         "includeAll": false,
         "multi": false,
@@ -868,7 +868,7 @@
       },
       {
         "current": {},
-        "datasource": "graphite",
+        "datasource": "${DS_GRAPHITE}",
         "hide": 0,
         "includeAll": false,
         "multi": false,
@@ -881,7 +881,7 @@
       },
       {
         "current": {},
-        "datasource": "graphite",
+        "datasource": "${DS_GRAPHITE}",
         "hide": 0,
         "includeAll": false,
         "multi": false,
@@ -894,7 +894,7 @@
       },
       {
         "current": {},
-        "datasource": "graphite",
+        "datasource": "${DS_GRAPHITE}",
         "hide": 0,
         "includeAll": false,
         "multi": false,
@@ -907,7 +907,7 @@
       },
       {
         "current": {},
-        "datasource": "graphite",
+        "datasource": "${DS_GRAPHITE}",
         "hide": 0,
         "includeAll": false,
         "multi": false,
@@ -928,4 +928,4 @@
   "version": 4,
   "links": [],
   "gnetId": null
-} }
+}
