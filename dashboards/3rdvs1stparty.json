@@ -200,7 +200,7 @@
             }
           ],
           "span": 12,
-          "stack": false,
+          "stack": true,
           "steppedLine": false,
           "targets": [
             {
@@ -257,8 +257,8 @@
               "format": "percent",
               "label": "Percentage of Requests",
               "logBase": 1,
-              "max": null,
-              "min": null,
+              "max": 100,
+              "min": 0,
               "show": true
             },
             {
@@ -324,7 +324,7 @@
             }
           ],
           "span": 4,
-          "stack": false,
+          "stack": true,
           "steppedLine": false,
           "targets": [
             {
@@ -381,8 +381,8 @@
               "format": "percent",
               "label": "Percentage of Content Size",
               "logBase": 1,
-              "max": null,
-              "min": null,
+              "max": 100,
+              "min": 0,
               "show": true
             },
             {
@@ -445,7 +445,7 @@
             }
           ],
           "span": 4,
-          "stack": false,
+          "stack": true,
           "steppedLine": false,
           "targets": [
             {
@@ -502,8 +502,8 @@
               "format": "percent",
               "label": "Percentage of Transfer Size",
               "logBase": 1,
-              "max": null,
-              "min": null,
+              "max": 100,
+              "min": 0,
               "show": true
             },
             {
@@ -610,8 +610,8 @@
               "format": "bytes",
               "label": "Percentage of Header Size",
               "logBase": 1,
-              "max": null,
-              "min": null,
+              "max": 100,
+              "min": 0,
               "show": true
             },
             {
@@ -925,7 +925,7 @@
   },
   "refresh": "5s",
   "schemaVersion": 12,
-  "version": 4,
+  "version": 2,
   "links": [],
   "gnetId": null
 }
