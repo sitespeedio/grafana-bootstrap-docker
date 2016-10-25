@@ -110,7 +110,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "sitespeed_io.$path.summary.$group.webpagetest.$location.$connectivity.$view.TTFB.max"
+              "target": "sitespeed_io.$path.summary.$group.webpagetest.$location.$connectivity.timing.$view.TTFB.max"
             }
           ],
           "thresholds": "",
@@ -185,7 +185,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "sitespeed_io.$path.summary.$group.webpagetest.$location.$connectivity.$view.render.max"
+              "target": "sitespeed_io.$path.summary.$group.webpagetest.$location.$connectivity.timing.$view.render.max"
             }
           ],
           "thresholds": "",
@@ -260,7 +260,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "sitespeed_io.$path.summary.$group.webpagetest.$location.$connectivity.$view.SpeedIndex.max"
+              "target": "sitespeed_io.$path.summary.$group.webpagetest.$location.$connectivity.timing.$view.SpeedIndex.max"
             }
           ],
           "thresholds": "",
@@ -335,7 +335,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "sitespeed_io.$path.summary.$group.webpagetest.$location.$connectivity.$view.fullyLoaded.max"
+              "target": "sitespeed_io.$path.summary.$group.webpagetest.$location.$connectivity.timing.$view.fullyLoaded.max"
             }
           ],
           "thresholds": "",
@@ -410,7 +410,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "sumSeries(sitespeed_io.$path.summary.$group.webpagetest.$location.$connectivity.$view.breakdown.*.requests.max)"
+              "target": "sumSeries(sitespeed_io.$path.summary.$group.webpagetest.$location.$connectivity.asset.$view.breakdown.*.requests.max)"
             }
           ],
           "thresholds": "",
@@ -485,7 +485,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "sumSeries(sitespeed_io.$path.summary.$group.webpagetest.$location.$connectivity.$view.breakdown.*.bytes.max)"
+              "target": "sumSeries(sitespeed_io.$path.summary.$group.webpagetest.$location.$connectivity.asset.$view.breakdown.*.bytes.max)"
             }
           ],
           "thresholds": "",
@@ -564,15 +564,16 @@
           "targets": [
             {
               "refId": "B",
-              "target": "aliasByNode(sitespeed_io.$path.summary.$group.webpagetest.$location.$connectivity.$view.SpeedIndex.max, 9)"
-            },
-            {
-              "refId": "C",
-              "target": "aliasByNode(sitespeed_io.$path.summary.$group.webpagetest.$location.$connectivity.$view.SpeedIndex.min, 9)"
+              "target": "aliasByNode(sitespeed_io.$path.summary.$group.webpagetest.$location.$connectivity.timing.$view.SpeedIndex.max, 10)"
             },
             {
               "refId": "A",
-              "target": "aliasByNode(sitespeed_io.$path.summary.$group.webpagetest.$location.$connectivity.$view.SpeedIndex.median, 9)"
+              "target": "aliasByNode(sitespeed_io.$path.summary.$group.webpagetest.$location.$connectivity.timing.$view.SpeedIndex.median, 10)",
+              "hide": false
+            },
+            {
+              "refId": "C",
+              "target": "aliasByNode(sitespeed_io.$path.summary.$group.webpagetest.$location.$connectivity.timing.$view.SpeedIndex.min, 10)"
             }
           ],
           "timeFrom": "7d",
@@ -624,7 +625,7 @@
             "threshold2": null,
             "threshold2Color": "rgba(234, 112, 112, 0.22)"
           },
-          "id": 11,
+          "id": 12,
           "isNew": true,
           "legend": {
             "alignAsTable": true,
@@ -661,15 +662,16 @@
           "targets": [
             {
               "refId": "B",
-              "target": "aliasByNode(sitespeed_io.$path.summary.$group.webpagetest.$location.$connectivity.$view.render.max, 9)"
-            },
-            {
-              "refId": "C",
-              "target": "aliasByNode(sitespeed_io.$path.summary.$group.webpagetest.$location.$connectivity.$view.render.min, 9)"
+              "target": "aliasByNode(sitespeed_io.$path.summary.$group.webpagetest.$location.$connectivity.timing.$view.render.max, 10)"
             },
             {
               "refId": "A",
-              "target": "aliasByNode(sitespeed_io.$path.summary.$group.webpagetest.$location.$connectivity.$view.render.median, 9)"
+              "target": "aliasByNode(sitespeed_io.$path.summary.$group.webpagetest.$location.$connectivity.timing.$view.render.median, 10)",
+              "hide": false
+            },
+            {
+              "refId": "C",
+              "target": "aliasByNode(sitespeed_io.$path.summary.$group.webpagetest.$location.$connectivity.timing.$view.render.min, 10)"
             }
           ],
           "timeFrom": "7d",
@@ -687,7 +689,7 @@
           },
           "yaxes": [
             {
-              "format": "ms",
+              "format": "none",
               "label": null,
               "logBase": 1,
               "max": null,
@@ -709,7 +711,7 @@
     }
   ],
   "time": {
-    "from": "now-7d",
+    "from": "now-6h",
     "to": "now"
   },
   "timepicker": {
@@ -799,7 +801,7 @@
         "multi": false,
         "name": "view",
         "options": [],
-        "query": "sitespeed_io.$path.summary.$group.webpagetest.$location.$connectivity.*",
+        "query": "sitespeed_io.$path.summary.$group.webpagetest.$location.$connectivity.*.*",
         "refresh": 1,
         "regex": "",
         "type": "query"
@@ -809,8 +811,9 @@
   "annotations": {
     "list": []
   },
+  "refresh": false,
   "schemaVersion": 12,
-  "version": 7,
+  "version": 8,
   "links": [
     {
       "asDropdown": true,
