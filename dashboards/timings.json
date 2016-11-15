@@ -12,12 +12,6 @@
   "__requires": [
     {
       "type": "panel",
-      "id": "singlestat",
-      "name": "Singlestat",
-      "version": ""
-    },
-    {
-      "type": "panel",
       "id": "graph",
       "name": "Graph",
       "version": ""
@@ -26,7 +20,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "3.1.1"
+      "version": "4.0.0-beta1"
     },
     {
       "type": "datasource",
@@ -43,8 +37,194 @@
   "style": "dark",
   "timezone": "browser",
   "editable": true,
-  "hideControls": false,
   "sharedCrosshair": false,
+  "hideControls": false,
+  "time": {
+    "from": "now-7d",
+    "to": "now"
+  },
+  "timepicker": {
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ],
+    "time_options": [
+      "5m",
+      "15m",
+      "1h",
+      "6h",
+      "12h",
+      "24h",
+      "2d",
+      "7d",
+      "30d"
+    ]
+  },
+  "templating": {
+    "list": [
+      {
+        "type": "query",
+        "label": null,
+        "query": "sitespeed_io.*",
+        "regex": "",
+        "sort": 0,
+        "datasource": "${DS_GRAPHITE}",
+        "refresh": 1,
+        "hide": 0,
+        "name": "path",
+        "multi": false,
+        "includeAll": false,
+        "allValue": null,
+        "options": [],
+        "current": {},
+        "tagsQuery": null,
+        "tagValuesQuery": null
+      },
+      {
+        "current": {},
+        "datasource": "${DS_GRAPHITE}",
+        "hide": 0,
+        "includeAll": false,
+        "multi": false,
+        "name": "domain",
+        "options": [],
+        "query": "sitespeed_io.$path.pageSummary.*",
+        "refresh": 1,
+        "regex": "",
+        "type": "query",
+        "label": null,
+        "sort": 0,
+        "allValue": null,
+        "tagsQuery": null,
+        "tagValuesQuery": null
+      },
+      {
+        "current": {},
+        "datasource": "${DS_GRAPHITE}",
+        "hide": 0,
+        "includeAll": false,
+        "multi": false,
+        "name": "page",
+        "options": [],
+        "query": "sitespeed_io.$path.pageSummary.$domain.*",
+        "refresh": 1,
+        "regex": "",
+        "type": "query",
+        "label": null,
+        "sort": 0,
+        "allValue": null,
+        "tagsQuery": null,
+        "tagValuesQuery": null
+      },
+      {
+        "current": {},
+        "datasource": "${DS_GRAPHITE}",
+        "hide": 0,
+        "includeAll": false,
+        "multi": false,
+        "name": "browser",
+        "options": [],
+        "query": "sitespeed_io.$path.pageSummary.$domain.$page.*",
+        "refresh": 1,
+        "regex": "",
+        "type": "query",
+        "label": null,
+        "sort": 0,
+        "allValue": null,
+        "tagsQuery": null,
+        "tagValuesQuery": null
+      },
+      {
+        "current": {},
+        "datasource": "${DS_GRAPHITE}",
+        "hide": 0,
+        "includeAll": false,
+        "multi": false,
+        "name": "connectivity",
+        "options": [],
+        "query": "sitespeed_io.$path.pageSummary.$domain.$page.$browser.*",
+        "refresh": 1,
+        "type": "query",
+        "label": null,
+        "regex": "",
+        "sort": 0,
+        "allValue": null,
+        "tagsQuery": null,
+        "tagValuesQuery": null
+      },
+      {
+        "current": {},
+        "datasource": "${DS_GRAPHITE}",
+        "hide": 0,
+        "includeAll": false,
+        "multi": false,
+        "name": "timing",
+        "options": [],
+        "query": "sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.*",
+        "refresh": 1,
+        "regex": "",
+        "type": "query",
+        "label": null,
+        "sort": 0,
+        "allValue": null,
+        "tagsQuery": null,
+        "tagValuesQuery": null
+      },
+      {
+        "current": {},
+        "datasource": "${DS_GRAPHITE}",
+        "hide": 0,
+        "includeAll": false,
+        "multi": false,
+        "name": "percentile",
+        "options": [],
+        "query": "sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.$timing.*",
+        "refresh": 1,
+        "regex": "",
+        "type": "query",
+        "label": null,
+        "sort": 0,
+        "allValue": null,
+        "tagsQuery": null,
+        "tagValuesQuery": null
+      }
+    ]
+  },
+  "annotations": {
+    "list": []
+  },
+  "refresh": false,
+  "schemaVersion": 13,
+  "version": 3,
+  "links": [
+    {
+      "asDropdown": true,
+      "icon": "external link",
+      "tags": [
+        "site"
+      ],
+      "title": "site",
+      "type": "dashboards"
+    },
+    {
+      "asDropdown": true,
+      "icon": "external link",
+      "tags": [
+        "page"
+      ],
+      "title": "page",
+      "type": "dashboards"
+    }
+  ],
+  "gnetId": null,
   "rows": [
     {
       "collapse": false,
@@ -58,12 +238,7 @@
           "editable": true,
           "error": false,
           "fill": 0,
-          "grid": {
-            "threshold1": null,
-            "threshold1Color": "rgba(216, 200, 27, 0.27)",
-            "threshold2": null,
-            "threshold2Color": "rgba(234, 112, 112, 0.22)"
-          },
+          "grid": {},
           "id": 1,
           "isNew": true,
           "legend": {
@@ -104,7 +279,10 @@
           },
           "type": "graph",
           "xaxis": {
-            "show": true
+            "show": true,
+            "mode": "time",
+            "name": null,
+            "values": []
           },
           "yaxes": [
             {
@@ -123,10 +301,17 @@
               "min": null,
               "show": true
             }
-          ]
+          ],
+          "thresholds": []
         }
       ],
-      "title": "Row"
+      "title": "Row",
+      "showTitle": false,
+      "titleSize": "h6",
+      "isNew": false,
+      "repeat": null,
+      "repeatRowId": null,
+      "repeatIteration": null
     },
     {
       "collapse": false,
@@ -140,12 +325,7 @@
           "editable": true,
           "error": false,
           "fill": 1,
-          "grid": {
-            "threshold1": null,
-            "threshold1Color": "rgba(216, 200, 27, 0.27)",
-            "threshold2": null,
-            "threshold2Color": "rgba(234, 112, 112, 0.22)"
-          },
+          "grid": {},
           "id": 2,
           "isNew": true,
           "legend": {
@@ -186,7 +366,10 @@
           },
           "type": "graph",
           "xaxis": {
-            "show": true
+            "show": true,
+            "mode": "time",
+            "name": null,
+            "values": []
           },
           "yaxes": [
             {
@@ -205,10 +388,17 @@
               "min": null,
               "show": true
             }
-          ]
+          ],
+          "thresholds": []
         }
       ],
-      "title": "New row"
+      "title": "New row",
+      "showTitle": false,
+      "titleSize": "h6",
+      "isNew": false,
+      "repeat": null,
+      "repeatRowId": null,
+      "repeatIteration": null
     },
     {
       "collapse": false,
@@ -222,12 +412,7 @@
           "editable": true,
           "error": false,
           "fill": 1,
-          "grid": {
-            "threshold1": null,
-            "threshold1Color": "rgba(216, 200, 27, 0.27)",
-            "threshold2": null,
-            "threshold2Color": "rgba(234, 112, 112, 0.22)"
-          },
+          "grid": {},
           "id": 3,
           "isNew": true,
           "legend": {
@@ -268,7 +453,10 @@
           },
           "type": "graph",
           "xaxis": {
-            "show": true
+            "show": true,
+            "mode": "time",
+            "name": null,
+            "values": []
           },
           "yaxes": [
             {
@@ -287,147 +475,17 @@
               "min": null,
               "show": true
             }
-          ]
+          ],
+          "thresholds": []
         }
       ],
-      "title": "New row"
+      "title": "New row",
+      "showTitle": false,
+      "titleSize": "h6",
+      "isNew": false,
+      "repeat": null,
+      "repeatRowId": null,
+      "repeatIteration": null
     }
-  ],
-  "time": {
-    "from": "now/d",
-    "to": "now/d"
-  },
-  "timepicker": {
-    "refresh_intervals": [
-      "5s",
-      "10s",
-      "30s",
-      "1m",
-      "5m",
-      "15m",
-      "30m",
-      "1h",
-      "2h",
-      "1d"
-    ],
-    "time_options": [
-      "5m",
-      "15m",
-      "1h",
-      "6h",
-      "12h",
-      "24h",
-      "2d",
-      "7d",
-      "30d"
-    ]
-  },
-  "templating": {
-    "list": [
-      {
-        "current": {},
-        "datasource": "${DS_GRAPHITE}",
-        "hide": 0,
-        "includeAll": false,
-        "multi": false,
-        "name": "domain",
-        "options": [],
-        "query": "sitespeed_io.default.pageSummary.*",
-        "refresh": 1,
-        "regex": "",
-        "type": "query"
-      },
-      {
-        "current": {},
-        "datasource": "${DS_GRAPHITE}",
-        "hide": 0,
-        "includeAll": false,
-        "multi": false,
-        "name": "page",
-        "options": [],
-        "query": "sitespeed_io.default.pageSummary.$domain.*",
-        "refresh": 1,
-        "regex": "",
-        "type": "query"
-      },
-      {
-        "current": {},
-        "datasource": "${DS_GRAPHITE}",
-        "hide": 0,
-        "includeAll": false,
-        "multi": false,
-        "name": "browser",
-        "options": [],
-        "query": "sitespeed_io.default.pageSummary.$domain.$page.*",
-        "refresh": 1,
-        "regex": "",
-        "type": "query"
-      },
-      {
-        "current": {},
-        "datasource": "${DS_GRAPHITE}",
-        "hide": 0,
-        "includeAll": false,
-        "multi": false,
-        "name": "connectivity",
-        "options": [],
-        "query": "sitespeed_io.default.pageSummary.$domain.$page.$browser.*",
-        "refresh": 1,
-        "type": "query"
-      },
-      {
-        "current": {},
-        "datasource": "${DS_GRAPHITE}",
-        "hide": 0,
-        "includeAll": false,
-        "multi": false,
-        "name": "timing",
-        "options": [],
-        "query": "sitespeed_io.default.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.*",
-        "refresh": 1,
-        "regex": "",
-        "type": "query"
-      },
-      {
-        "current": {},
-        "datasource": "${DS_GRAPHITE}",
-        "hide": 0,
-        "includeAll": false,
-        "multi": false,
-        "name": "percentile",
-        "options": [],
-        "query": "sitespeed_io.default.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.$timing.*",
-        "refresh": 1,
-        "regex": "",
-        "type": "query"
-      }
-    ]
-  },
-  "annotations": {
-    "list": []
-  },
-  "refresh": false,
-  "schemaVersion": 12,
-  "version": 17,
-  "links": [
-    {
-      "asDropdown": true,
-      "icon": "external link",
-      "tags": [
-        "site"
-      ],
-      "title": "site",
-      "type": "dashboards"
-    },
-    {
-      "asDropdown": true,
-      "icon": "external link",
-      "tags": [
-        "page"
-      ],
-      "title": "page",
-      "type": "dashboards"
-    }
-  ],
-  "gnetId": null
+  ]
 }
