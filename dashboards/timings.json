@@ -265,7 +265,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "aliasByNode(sitespeed_io.default.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.$timing.$percentile, 12)"
+              "target": "aliasByNode(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.$timing.$percentile, 12)"
             }
           ],
           "timeFrom": null,
@@ -352,7 +352,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "aliasByNode(sitespeed_io.default.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.$timing.$percentile, 12)"
+              "target": "aliasByNode(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.$timing.$percentile, 12)"
             }
           ],
           "timeFrom": "3M",
@@ -439,7 +439,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "aliasByNode(sitespeed_io.default.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.$timing.$percentile, 12)"
+              "target": "aliasByNode(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.$timing.$percentile, 12)"
             }
           ],
           "timeFrom": "6M",
