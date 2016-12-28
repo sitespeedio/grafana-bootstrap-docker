@@ -9,6 +9,13 @@
       "pluginName": "Graphite"
     },
     {
+      "name": "VAR_BASE",
+      "type": "constant",
+      "label": "sitespeed_io",
+      "value": "sitespeed_io",
+      "description": ""
+    },
+    {
       "name": "VAR_COST",
       "type": "constant",
       "label": "cost",
@@ -33,7 +40,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "4.0.0-beta1"
+      "version": "4.1.0-beta1"
     },
     {
       "type": "datasource",
@@ -52,7 +59,7 @@
   "style": "dark",
   "timezone": "browser",
   "editable": true,
-  "sharedCrosshair": true,
+  "graphTooltip": 1,
   "hideControls": true,
   "time": {
     "from": "now-24h",
@@ -86,6 +93,23 @@
   "templating": {
     "list": [
       {
+        "current": {
+          "value": "${VAR_BASE}",
+          "text": "${VAR_BASE}"
+        },
+        "hide": 2,
+        "label": "sitespeed_io",
+        "name": "base",
+        "options": [
+          {
+            "value": "${VAR_BASE}",
+            "text": "${VAR_BASE}"
+          }
+        ],
+        "query": "${VAR_BASE}",
+        "type": "constant"
+      },
+      {
         "allValue": null,
         "current": {},
         "datasource": "${DS_GRAPHITE}",
@@ -95,7 +119,7 @@
         "multi": false,
         "name": "path",
         "options": [],
-        "query": "sitespeed_io.*",
+        "query": "$base.*",
         "refresh": 1,
         "regex": "",
         "sort": 0,
@@ -113,7 +137,7 @@
         "multi": false,
         "name": "domain",
         "options": [],
-        "query": "sitespeed_io.default.pageSummary.*",
+        "query": "$base.default.pageSummary.*",
         "refresh": 1,
         "regex": "",
         "sort": 0,
@@ -131,7 +155,7 @@
         "multi": true,
         "name": "page",
         "options": [],
-        "query": "sitespeed_io.default.pageSummary.$domain.*",
+        "query": "$base.default.pageSummary.$domain.*",
         "refresh": 1,
         "regex": "",
         "sort": 0,
@@ -149,7 +173,7 @@
         "multi": false,
         "name": "browser",
         "options": [],
-        "query": "sitespeed_io.default.pageSummary.$domain.$page.*",
+        "query": "$base.default.pageSummary.$domain.$page.*",
         "refresh": 1,
         "regex": "",
         "sort": 0,
@@ -167,7 +191,7 @@
         "multi": false,
         "name": "Connection",
         "options": [],
-        "query": "sitespeed_io.default.pageSummary.$domain.$page.*.*",
+        "query": "$base.default.pageSummary.$domain.$page.*.*",
         "refresh": 1,
         "regex": "",
         "sort": 0,
@@ -197,16 +221,13 @@
   "annotations": {
     "list": []
   },
-  "schemaVersion": 13,
-  "version": 19,
+  "schemaVersion": 14,
+  "version": 22,
   "links": [],
   "gnetId": null,
   "rows": [
     {
-      "collapse": false,
-      "editable": true,
-      "height": "250px",
-      "isNew": false,
+      "title": "New row",
       "panels": [
         {
           "content": "<center>\n<h2>Summary</h2>\n\n<p>This dashboard attempts to calculate the cost of loading pages on mobile/desktop versions of a site on mobile devices that have limited bandwidth per month as well as attempts to show the average cost across all tested pages using a predefined bandwidth cost. </p>\n\n<p>Equation to calculate cost in US $: \n<br /> 2GB / 25($25) = 80 MB / 100($1) = 800 KB per $0.01\n<br /> 0.01 / 800 = 0.0000125 </p>\n\nUsing \"0.0000125\" we can use the scale feature to adjust the cost of total bytes and then scale that to cents using \"0.01\"\n</center>",
@@ -214,7 +235,6 @@
           "error": false,
           "height": "50px",
           "id": 24,
-          "isNew": true,
           "links": [],
           "minSpan": 12,
           "mode": "html",
@@ -229,7 +249,6 @@
           "error": false,
           "height": "50px",
           "id": 9,
-          "isNew": true,
           "links": [],
           "minSpan": 12,
           "mode": "html",
@@ -261,7 +280,6 @@
           },
           "id": 1,
           "interval": null,
-          "isNew": true,
           "links": [],
           "mappingType": 1,
           "mappingTypes": [
@@ -298,7 +316,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "scale(scale(sitespeed_io.$path.summary.$domain.$browser.$Connection.pagexray.contentSize.median, $cost), 0.01)",
+              "target": "scale(scale($base.$path.summary.$domain.$browser.$Connection.pagexray.contentSize.median, $cost), 0.01)",
               "textEditor": false
             }
           ],
@@ -338,7 +356,6 @@
           },
           "id": 15,
           "interval": null,
-          "isNew": true,
           "links": [],
           "mappingType": 1,
           "mappingTypes": [
@@ -376,27 +393,27 @@
             {
               "hide": false,
               "refId": "A",
-              "target": "divideSeries(scale(divideSeries(sitespeed_io.$path.summary.$domain.$browser.$Connection.pagexray.contentSize.median, #B), 25), #C)",
-              "targetFull": "divideSeries(scale(divideSeries(sitespeed_io.$path.summary.$domain.$browser.$Connection.pagexray.contentSize.median, sitespeed_io.$path.summary.$domain.$browser.$Connection.pagexray.contentSize.median), 25), scale(scale(sitespeed_io.$path.summary.$domain.$browser.$Connection.pagexray.contentSize.median, $cost), 0.01))",
+              "target": "divideSeries(scale(divideSeries($base.$path.summary.$domain.$browser.$Connection.pagexray.contentSize.median, #B), 25), #C)",
+              "targetFull": "divideSeries(scale(divideSeries($base.$path.summary.$domain.$browser.$Connection.pagexray.contentSize.median, sitespeed_io.$path.summary.$domain.$browser.$Connection.pagexray.contentSize.median), 25), scale(scale(sitespeed_io.$path.summary.$domain.$browser.$Connection.pagexray.contentSize.median, $cost), 0.01))",
               "textEditor": false
             },
             {
               "hide": true,
               "refId": "B",
-              "target": "sitespeed_io.$path.summary.$domain.$browser.$Connection.pagexray.contentSize.median",
+              "target": "$base.$path.summary.$domain.$browser.$Connection.pagexray.contentSize.median",
               "textEditor": false
             },
             {
               "hide": true,
               "refId": "C",
-              "target": "scale(scale(sitespeed_io.$path.summary.$domain.$browser.$Connection.pagexray.contentSize.median, $cost), 0.01)",
+              "target": "scale(scale($base.$path.summary.$domain.$browser.$Connection.pagexray.contentSize.median, $cost), 0.01)",
               "textEditor": false
             },
             {
               "hide": true,
               "refId": "D",
-              "target": "scale(divideSeries(sitespeed_io.$path.summary.$domain.$browser.$Connection.pagexray.contentSize.median, #B), 30)",
-              "targetFull": "scale(divideSeries(sitespeed_io.$path.summary.$domain.$browser.$Connection.pagexray.contentSize.median, sitespeed_io.$path.summary.$domain.$browser.$Connection.pagexray.contentSize.median), 30)",
+              "target": "scale(divideSeries($base.$path.summary.$domain.$browser.$Connection.pagexray.contentSize.median, #B), 30)",
+              "targetFull": "scale(divideSeries($base.$path.summary.$domain.$browser.$Connection.pagexray.contentSize.median, $base.$path.summary.$domain.$browser.$Connection.pagexray.contentSize.median), 30)",
               "textEditor": false
             }
           ],
@@ -436,7 +453,6 @@
           },
           "id": 21,
           "interval": null,
-          "isNew": true,
           "links": [],
           "mappingType": 1,
           "mappingTypes": [
@@ -474,27 +490,27 @@
             {
               "hide": false,
               "refId": "A",
-              "target": "scale(divideSeries(scale(divideSeries(sitespeed_io.$path.summary.$domain.$browser.$Connection.pagexray.contentSize.median, #B), 25), #C), 0.03)",
-              "targetFull": "scale(divideSeries(scale(divideSeries(sitespeed_io.$path.summary.$domain.$browser.$Connection.pagexray.contentSize.median, sitespeed_io.$path.summary.$domain.chrome.$Connection.pagexray.contentSize.median), 25), scale(scale(sitespeed_io.$path.summary.$domain.chrome.$Connection.pagexray.contentSize.median, $cost), 0.01)), 0.03)",
+              "target": "scale(divideSeries(scale(divideSeries($base.$path.summary.$domain.$browser.$Connection.pagexray.contentSize.median, #B), 25), #C), 0.03)",
+              "targetFull": "scale(divideSeries(scale(divideSeries($base.$path.summary.$domain.$browser.$Connection.pagexray.contentSize.median, sitespeed_io.$path.summary.$domain.$browser.$Connection.pagexray.contentSize.median), 25), scale(scale(sitespeed_io.$path.summary.$domain.$browser.$Connection.pagexray.contentSize.median, $cost), 0.01)), 0.03)",
               "textEditor": false
             },
             {
               "hide": true,
               "refId": "B",
-              "target": "sitespeed_io.$path.summary.$domain.$browser.$Connection.pagexray.contentSize.median",
+              "target": "$base.$path.summary.$domain.$browser.$Connection.pagexray.contentSize.median",
               "textEditor": false
             },
             {
               "hide": true,
               "refId": "C",
-              "target": "scale(scale(sitespeed_io.$path.summary.$domain.$browser.$Connection.pagexray.contentSize.median, $cost), 0.01)",
+              "target": "scale(scale($base.$path.summary.$domain.$browser.$Connection.pagexray.contentSize.median, $cost), 0.01)",
               "textEditor": false
             },
             {
               "hide": true,
               "refId": "D",
-              "target": "scale(divideSeries(sitespeed_io.$path.summary.$domain.$browser.$Connection.pagexray.contentSize.median, #B), 30)",
-              "targetFull": "scale(divideSeries(sitespeed_io.$path.summary.$domain.$browser.$Connection.pagexray.contentSize.median, sitespeed_io.$path.summary.$domain.$browser.$Connection.pagexray.contentSize.median), 30)",
+              "target": "scale(divideSeries($base.$path.summary.$domain.$browser.$Connection.pagexray.contentSize.median, #B), 30)",
+              "targetFull": "scale(divideSeries($base.$path.summary.$domain.$browser.$Connection.pagexray.contentSize.median, $base.$path.summary.$domain.$browser.$Connection.pagexray.contentSize.median), 30)",
               "textEditor": false
             }
           ],
@@ -512,18 +528,16 @@
           "valueName": "avg"
         }
       ],
-      "repeat": null,
-      "repeatIteration": null,
-      "repeatRowId": null,
       "showTitle": false,
-      "title": "New row",
-      "titleSize": "h6"
+      "titleSize": "h6",
+      "height": "250px",
+      "repeat": null,
+      "repeatRowId": null,
+      "repeatIteration": null,
+      "collapse": false
     },
     {
-      "collapse": false,
-      "editable": true,
-      "height": "250px",
-      "isNew": false,
+      "title": "New row",
       "panels": [
         {
           "content": "<center><h2>Individual Median Cost Per Page</h2></center>",
@@ -531,7 +545,6 @@
           "error": false,
           "height": "50px",
           "id": 8,
-          "isNew": true,
           "links": [],
           "minSpan": 12,
           "mode": "html",
@@ -563,7 +576,6 @@
           },
           "id": 2,
           "interval": null,
-          "isNew": true,
           "links": [],
           "mappingType": 1,
           "mappingTypes": [
@@ -592,7 +604,7 @@
             }
           ],
           "repeat": "page",
-          "span": 6,
+          "span": 12,
           "sparkline": {
             "fillColor": "rgba(31, 118, 189, 0.18)",
             "full": false,
@@ -602,7 +614,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "scale(scale(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$Connection.pagexray.contentSize, $cost), 0.01)",
+              "target": "scale(scale($base.$path.pageSummary.$domain.$page.$browser.$Connection.pagexray.contentSize, $cost), 0.01)",
               "textEditor": false
             }
           ],
@@ -620,12 +632,13 @@
           "valueName": "avg"
         }
       ],
-      "repeat": null,
-      "repeatIteration": null,
-      "repeatRowId": null,
       "showTitle": false,
-      "title": "New row",
-      "titleSize": "h6"
+      "titleSize": "h6",
+      "height": "250px",
+      "repeat": null,
+      "repeatRowId": null,
+      "repeatIteration": null,
+      "collapse": false
     }
   ]
 }

@@ -7,6 +7,13 @@
       "type": "datasource",
       "pluginId": "graphite",
       "pluginName": "Graphite"
+    },
+    {
+      "name": "VAR_BASE",
+      "type": "constant",
+      "label": "base",
+      "value": "sitespeed_io",
+      "description": ""
     }
   ],
   "__requires": [
@@ -20,7 +27,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "4.0.0-beta1"
+      "version": "4.1.0-beta1"
     },
     {
       "type": "datasource",
@@ -37,7 +44,7 @@
   "style": "dark",
   "timezone": "browser",
   "editable": true,
-  "sharedCrosshair": false,
+  "graphTooltip": 0,
   "hideControls": false,
   "time": {
     "from": "now-7d",
@@ -71,130 +78,147 @@
   "templating": {
     "list": [
       {
-        "type": "query",
+        "current": {
+          "value": "${VAR_BASE}",
+          "text": "${VAR_BASE}"
+        },
+        "hide": 2,
         "label": null,
-        "query": "sitespeed_io.*",
-        "regex": "",
-        "sort": 0,
-        "datasource": "${DS_GRAPHITE}",
-        "refresh": 1,
-        "hide": 0,
-        "name": "path",
-        "multi": false,
-        "includeAll": false,
-        "allValue": null,
-        "options": [],
-        "current": {},
-        "tagsQuery": null,
-        "tagValuesQuery": null
+        "name": "base",
+        "options": [
+          {
+            "value": "${VAR_BASE}",
+            "text": "${VAR_BASE}"
+          }
+        ],
+        "query": "${VAR_BASE}",
+        "type": "constant"
       },
       {
+        "allValue": null,
         "current": {},
         "datasource": "${DS_GRAPHITE}",
         "hide": 0,
         "includeAll": false,
+        "label": null,
+        "multi": false,
+        "name": "path",
+        "options": [],
+        "query": "$base.*",
+        "refresh": 1,
+        "regex": "",
+        "sort": 0,
+        "tagValuesQuery": null,
+        "tagsQuery": null,
+        "type": "query"
+      },
+      {
+        "allValue": null,
+        "current": {},
+        "datasource": "${DS_GRAPHITE}",
+        "hide": 0,
+        "includeAll": false,
+        "label": null,
         "multi": false,
         "name": "domain",
         "options": [],
-        "query": "sitespeed_io.$path.pageSummary.*",
+        "query": "$base.$path.pageSummary.*",
         "refresh": 1,
         "regex": "",
-        "type": "query",
-        "label": null,
         "sort": 0,
-        "allValue": null,
+        "tagValuesQuery": null,
         "tagsQuery": null,
-        "tagValuesQuery": null
+        "type": "query"
       },
       {
+        "allValue": null,
         "current": {},
         "datasource": "${DS_GRAPHITE}",
         "hide": 0,
         "includeAll": false,
+        "label": null,
         "multi": false,
         "name": "page",
         "options": [],
-        "query": "sitespeed_io.$path.pageSummary.$domain.*",
+        "query": "$base.$path.pageSummary.$domain.*",
         "refresh": 1,
         "regex": "",
-        "type": "query",
-        "label": null,
         "sort": 0,
-        "allValue": null,
+        "tagValuesQuery": null,
         "tagsQuery": null,
-        "tagValuesQuery": null
+        "type": "query"
       },
       {
+        "allValue": null,
         "current": {},
         "datasource": "${DS_GRAPHITE}",
         "hide": 0,
         "includeAll": false,
+        "label": null,
         "multi": false,
         "name": "browser",
         "options": [],
-        "query": "sitespeed_io.$path.pageSummary.$domain.$page.*",
+        "query": "$base.$path.pageSummary.$domain.$page.*",
         "refresh": 1,
         "regex": "",
-        "type": "query",
-        "label": null,
         "sort": 0,
-        "allValue": null,
+        "tagValuesQuery": null,
         "tagsQuery": null,
-        "tagValuesQuery": null
+        "type": "query"
       },
       {
+        "allValue": null,
         "current": {},
         "datasource": "${DS_GRAPHITE}",
         "hide": 0,
         "includeAll": false,
+        "label": null,
         "multi": false,
         "name": "connectivity",
         "options": [],
-        "query": "sitespeed_io.$path.pageSummary.$domain.$page.$browser.*",
+        "query": "$base.$path.pageSummary.$domain.$page.$browser.*",
         "refresh": 1,
-        "type": "query",
-        "label": null,
         "regex": "",
         "sort": 0,
-        "allValue": null,
+        "tagValuesQuery": null,
         "tagsQuery": null,
-        "tagValuesQuery": null
+        "type": "query"
       },
       {
+        "allValue": null,
         "current": {},
         "datasource": "${DS_GRAPHITE}",
         "hide": 0,
         "includeAll": false,
+        "label": null,
         "multi": false,
         "name": "timing",
         "options": [],
-        "query": "sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.*",
+        "query": "$base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.*",
         "refresh": 1,
         "regex": "",
-        "type": "query",
-        "label": null,
         "sort": 0,
-        "allValue": null,
+        "tagValuesQuery": null,
         "tagsQuery": null,
-        "tagValuesQuery": null
+        "type": "query"
       },
       {
+        "allValue": null,
         "current": {},
         "datasource": "${DS_GRAPHITE}",
         "hide": 0,
         "includeAll": false,
+        "label": null,
         "multi": false,
         "name": "percentile",
         "options": [],
-        "query": "sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.$timing.*",
+        "query": "$base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.$timing.*",
         "refresh": 1,
         "regex": "",
-        "type": "query",
-        "label": null,
         "sort": 0,
-        "allValue": null,
+        "tagValuesQuery": null,
         "tagsQuery": null,
-        "tagValuesQuery": null
+        "type": "query"
       }
     ]
   },
@@ -202,8 +226,8 @@
     "list": []
   },
   "refresh": false,
-  "schemaVersion": 13,
-  "version": 3,
+  "schemaVersion": 14,
+  "version": 10,
   "links": [
     {
       "asDropdown": true,
@@ -227,9 +251,7 @@
   "gnetId": null,
   "rows": [
     {
-      "collapse": false,
-      "editable": true,
-      "height": "250px",
+      "title": "Row",
       "panels": [
         {
           "aliasColors": {},
@@ -240,7 +262,6 @@
           "fill": 0,
           "grid": {},
           "id": 1,
-          "isNew": true,
           "legend": {
             "avg": false,
             "current": false,
@@ -265,9 +286,10 @@
           "targets": [
             {
               "refId": "A",
-              "target": "aliasByNode(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.$timing.$percentile, 12)"
+              "target": "aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.$timing.$percentile, 12)"
             }
           ],
+          "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
           "title": "$timing",
@@ -279,9 +301,9 @@
           },
           "type": "graph",
           "xaxis": {
-            "show": true,
             "mode": "time",
             "name": null,
+            "show": true,
             "values": []
           },
           "yaxes": [
@@ -301,22 +323,19 @@
               "min": null,
               "show": true
             }
-          ],
-          "thresholds": []
+          ]
         }
       ],
-      "title": "Row",
       "showTitle": false,
       "titleSize": "h6",
-      "isNew": false,
+      "height": "250px",
       "repeat": null,
       "repeatRowId": null,
-      "repeatIteration": null
+      "repeatIteration": null,
+      "collapse": false
     },
     {
-      "collapse": false,
-      "editable": true,
-      "height": "200px",
+      "title": "New row",
       "panels": [
         {
           "aliasColors": {},
@@ -327,7 +346,6 @@
           "fill": 1,
           "grid": {},
           "id": 2,
-          "isNew": true,
           "legend": {
             "avg": false,
             "current": false,
@@ -352,9 +370,10 @@
           "targets": [
             {
               "refId": "A",
-              "target": "aliasByNode(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.$timing.$percentile, 12)"
+              "target": "aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.$timing.$percentile, 12)"
             }
           ],
+          "thresholds": [],
           "timeFrom": "3M",
           "timeShift": null,
           "title": "History of $timing",
@@ -366,9 +385,9 @@
           },
           "type": "graph",
           "xaxis": {
-            "show": true,
             "mode": "time",
             "name": null,
+            "show": true,
             "values": []
           },
           "yaxes": [
@@ -388,22 +407,19 @@
               "min": null,
               "show": true
             }
-          ],
-          "thresholds": []
+          ]
         }
       ],
-      "title": "New row",
       "showTitle": false,
       "titleSize": "h6",
-      "isNew": false,
+      "height": "200px",
       "repeat": null,
       "repeatRowId": null,
-      "repeatIteration": null
+      "repeatIteration": null,
+      "collapse": false
     },
     {
-      "collapse": false,
-      "editable": true,
-      "height": "200px",
+      "title": "New row",
       "panels": [
         {
           "aliasColors": {},
@@ -414,7 +430,6 @@
           "fill": 1,
           "grid": {},
           "id": 3,
-          "isNew": true,
           "legend": {
             "avg": false,
             "current": false,
@@ -439,9 +454,10 @@
           "targets": [
             {
               "refId": "A",
-              "target": "aliasByNode(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.$timing.$percentile, 12)"
+              "target": "aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.$timing.$percentile, 12)"
             }
           ],
+          "thresholds": [],
           "timeFrom": "6M",
           "timeShift": null,
           "title": "History of $timing",
@@ -453,9 +469,9 @@
           },
           "type": "graph",
           "xaxis": {
-            "show": true,
             "mode": "time",
             "name": null,
+            "show": true,
             "values": []
           },
           "yaxes": [
@@ -475,17 +491,16 @@
               "min": null,
               "show": true
             }
-          ],
-          "thresholds": []
+          ]
         }
       ],
-      "title": "New row",
       "showTitle": false,
       "titleSize": "h6",
-      "isNew": false,
+      "height": "200px",
       "repeat": null,
       "repeatRowId": null,
-      "repeatIteration": null
+      "repeatIteration": null,
+      "collapse": false
     }
   ]
 }

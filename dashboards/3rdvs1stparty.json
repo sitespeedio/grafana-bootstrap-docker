@@ -7,6 +7,13 @@
       "type": "datasource",
       "pluginId": "graphite",
       "pluginName": "Graphite"
+    },
+    {
+      "name": "VAR_BASE",
+      "type": "constant",
+      "label": "base",
+      "value": "sitespeed_io",
+      "description": ""
     }
   ],
   "__requires": [
@@ -20,7 +27,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "3.1.1"
+      "version": "4.1.0-beta1"
     },
     {
       "type": "datasource",
@@ -37,13 +44,159 @@
   "style": "dark",
   "timezone": "browser",
   "editable": true,
+  "graphTooltip": 1,
   "hideControls": true,
-  "sharedCrosshair": true,
+  "time": {
+    "from": "now-7d",
+    "to": "now"
+  },
+  "timepicker": {
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ],
+    "time_options": [
+      "5m",
+      "15m",
+      "1h",
+      "6h",
+      "12h",
+      "24h",
+      "2d",
+      "7d",
+      "30d"
+    ]
+  },
+  "templating": {
+    "list": [
+      {
+        "current": {
+          "value": "${VAR_BASE}",
+          "text": "${VAR_BASE}"
+        },
+        "hide": 2,
+        "label": null,
+        "name": "base",
+        "options": [
+          {
+            "value": "${VAR_BASE}",
+            "text": "${VAR_BASE}"
+          }
+        ],
+        "query": "${VAR_BASE}",
+        "type": "constant"
+      },
+      {
+        "allValue": null,
+        "current": {},
+        "datasource": "${DS_GRAPHITE}",
+        "hide": 0,
+        "includeAll": false,
+        "label": null,
+        "multi": false,
+        "name": "path",
+        "options": [],
+        "query": "$base.*",
+        "refresh": 1,
+        "regex": "",
+        "sort": 0,
+        "tagValuesQuery": null,
+        "tagsQuery": null,
+        "type": "query"
+      },
+      {
+        "allValue": null,
+        "current": {},
+        "datasource": "${DS_GRAPHITE}",
+        "hide": 0,
+        "includeAll": false,
+        "label": null,
+        "multi": false,
+        "name": "domain",
+        "options": [],
+        "query": "$base.$path.pageSummary.*",
+        "refresh": 1,
+        "regex": "",
+        "sort": 0,
+        "tagValuesQuery": null,
+        "tagsQuery": null,
+        "type": "query"
+      },
+      {
+        "allValue": null,
+        "current": {},
+        "datasource": "${DS_GRAPHITE}",
+        "hide": 0,
+        "includeAll": false,
+        "label": null,
+        "multi": false,
+        "name": "page",
+        "options": [],
+        "query": "$base.$path.pageSummary.$domain.*",
+        "refresh": 1,
+        "regex": "",
+        "sort": 0,
+        "tagValuesQuery": null,
+        "tagsQuery": null,
+        "type": "query"
+      },
+      {
+        "allValue": null,
+        "current": {},
+        "datasource": "${DS_GRAPHITE}",
+        "hide": 0,
+        "includeAll": false,
+        "label": null,
+        "multi": false,
+        "name": "browser",
+        "options": [],
+        "query": "$base.$path.pageSummary.$domain.$page.*",
+        "refresh": 1,
+        "regex": "",
+        "sort": 0,
+        "tagValuesQuery": null,
+        "tagsQuery": null,
+        "type": "query"
+      },
+      {
+        "allValue": null,
+        "current": {},
+        "datasource": "${DS_GRAPHITE}",
+        "hide": 0,
+        "includeAll": false,
+        "label": null,
+        "multi": false,
+        "name": "connectivity",
+        "options": [],
+        "query": "$base.$path.pageSummary.$domain.$page.$browser.*",
+        "refresh": 1,
+        "regex": "",
+        "sort": 0,
+        "tagValuesQuery": null,
+        "tagsQuery": null,
+        "type": "query"
+      }
+    ]
+  },
+  "annotations": {
+    "list": []
+  },
+  "refresh": "15m",
+  "schemaVersion": 14,
+  "version": 9,
+  "links": [],
+  "gnetId": null,
   "rows": [
     {
-      "collapse": false,
-      "editable": true,
-      "height": "250px",
+      "title": "Row",
       "panels": [
         {
           "aliasColors": {
@@ -58,14 +211,8 @@
           "editable": true,
           "error": false,
           "fill": 4,
-          "grid": {
-            "threshold1": null,
-            "threshold1Color": "rgba(216, 200, 27, 0.27)",
-            "threshold2": null,
-            "threshold2Color": "rgba(234, 112, 112, 0.22)"
-          },
+          "grid": {},
           "id": 2,
-          "isNew": true,
           "legend": {
             "alignAsTable": true,
             "avg": true,
@@ -107,14 +254,15 @@
               "legendFormat": "Total",
               "refId": "C",
               "step": 30,
-              "target": "aliasByNode(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.requests, 8)",
+              "target": "aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.requests, 8)",
               "textEditor": false
             },
             {
               "refId": "B",
-              "target": "aliasByNode(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.timings.fullyLoaded.median, 10)"
+              "target": "aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.timings.fullyLoaded.median, 10)"
             }
           ],
+          "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
           "title": "# of Requests vs fullyLoaded",
@@ -126,7 +274,10 @@
           },
           "type": "graph",
           "xaxis": {
-            "show": true
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
           },
           "yaxes": [
             {
@@ -159,14 +310,8 @@
           "editable": true,
           "error": false,
           "fill": 4,
-          "grid": {
-            "threshold1": null,
-            "threshold1Color": "rgba(216, 200, 27, 0.27)",
-            "threshold2": null,
-            "threshold2Color": "rgba(234, 112, 112, 0.22)"
-          },
+          "grid": {},
           "id": 1,
-          "isNew": true,
           "legend": {
             "alignAsTable": true,
             "avg": true,
@@ -211,7 +356,7 @@
               "legendFormat": "Total",
               "refId": "C",
               "step": 30,
-              "target": "aliasByNode(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.requests, 8)",
+              "target": "aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.requests, 8)",
               "textEditor": true
             },
             {
@@ -223,7 +368,8 @@
               "metric": "sitespeed_firstparty",
               "refId": "A",
               "step": 120,
-              "target": "aliasByNode(asPercent(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.thirdParty.requests, #C), 8)",
+              "target": "aliasByNode(asPercent($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.thirdParty.requests, #C), 8)",
+              "targetFull": "aliasByNode(asPercent($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.thirdParty.requests, aliasByNode(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.requests, 8)), 8)",
               "textEditor": false
             },
             {
@@ -235,10 +381,12 @@
               "metric": "sitespeed_thirdparty",
               "refId": "B",
               "step": 120,
-              "target": "aliasByNode(asPercent(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.firstParty.requests, #C), 8)",
+              "target": "aliasByNode(asPercent($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.firstParty.requests, #C), 8)",
+              "targetFull": "aliasByNode(asPercent($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.firstParty.requests, aliasByNode(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.requests, 8)), 8)",
               "textEditor": false
             }
           ],
+          "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
           "title": "1st vs 3rd party requests",
@@ -250,7 +398,10 @@
           },
           "type": "graph",
           "xaxis": {
-            "show": true
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
           },
           "yaxes": [
             {
@@ -283,14 +434,8 @@
           "editable": true,
           "error": false,
           "fill": 4,
-          "grid": {
-            "threshold1": null,
-            "threshold1Color": "rgba(216, 200, 27, 0.27)",
-            "threshold2": null,
-            "threshold2Color": "rgba(234, 112, 112, 0.22)"
-          },
+          "grid": {},
           "id": 3,
-          "isNew": true,
           "legend": {
             "alignAsTable": true,
             "avg": true,
@@ -335,8 +480,8 @@
               "legendFormat": "Total",
               "refId": "C",
               "step": 30,
-              "target": "aliasByNode(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.contentSize, 8)",
-              "textEditor": true
+              "target": "aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.contentSize, 8)",
+              "textEditor": false
             },
             {
               "expr": "sitespeed_firstparty{value=\"requests\", metric=\"median\"}",
@@ -347,8 +492,9 @@
               "metric": "sitespeed_firstparty",
               "refId": "A",
               "step": 120,
-              "target": "aliasByNode(asPercent(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.thirdParty.contentSize, #C), 8)",
-              "textEditor": true
+              "target": "aliasByNode(asPercent($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.thirdParty.contentSize, #C), 8)",
+              "targetFull": "aliasByNode(asPercent($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.thirdParty.contentSize, aliasByNode(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.contentSize, 8)), 8)",
+              "textEditor": false
             },
             {
               "expr": "sitespeed_thirdparty{value=\"requests\", metric=\"median\"}",
@@ -359,10 +505,12 @@
               "metric": "sitespeed_thirdparty",
               "refId": "B",
               "step": 120,
-              "target": "aliasByNode(asPercent(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.firstParty.contentSize, #C), 8)",
-              "textEditor": true
+              "target": "aliasByNode(asPercent($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.firstParty.contentSize, #C), 8)",
+              "targetFull": "aliasByNode(asPercent($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.firstParty.contentSize, aliasByNode(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.contentSize, 8)), 8)",
+              "textEditor": false
             }
           ],
+          "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
           "title": "1st vs 3rd party content size",
@@ -374,7 +522,10 @@
           },
           "type": "graph",
           "xaxis": {
-            "show": true
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
           },
           "yaxes": [
             {
@@ -407,14 +558,8 @@
           "editable": true,
           "error": false,
           "fill": 4,
-          "grid": {
-            "threshold1": null,
-            "threshold1Color": "rgba(216, 200, 27, 0.27)",
-            "threshold2": null,
-            "threshold2Color": "rgba(234, 112, 112, 0.22)"
-          },
+          "grid": {},
           "id": 4,
-          "isNew": true,
           "legend": {
             "alignAsTable": true,
             "avg": true,
@@ -456,8 +601,8 @@
               "legendFormat": "Total",
               "refId": "C",
               "step": 30,
-              "target": "aliasByNode(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.transferSize, 8)",
-              "textEditor": true
+              "target": "aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.transferSize, 8)",
+              "textEditor": false
             },
             {
               "expr": "sitespeed_firstparty{value=\"requests\", metric=\"median\"}",
@@ -468,8 +613,9 @@
               "metric": "sitespeed_firstparty",
               "refId": "A",
               "step": 120,
-              "target": "aliasByNode(asPercent(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.thirdParty.transferSize, #C), 8)",
-              "textEditor": true
+              "target": "aliasByNode(asPercent($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.thirdParty.transferSize, #C), 8)",
+              "targetFull": "aliasByNode(asPercent($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.thirdParty.transferSize, aliasByNode(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.transferSize, 8)), 8)",
+              "textEditor": false
             },
             {
               "expr": "sitespeed_thirdparty{value=\"requests\", metric=\"median\"}",
@@ -480,10 +626,12 @@
               "metric": "sitespeed_thirdparty",
               "refId": "B",
               "step": 120,
-              "target": "aliasByNode(asPercent(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.firstParty.transferSize, #C), 8)",
-              "textEditor": true
+              "target": "aliasByNode(asPercent($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.firstParty.transferSize, #C), 8)",
+              "targetFull": "aliasByNode(asPercent($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.firstParty.transferSize, aliasByNode(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.transferSize, 8)), 8)",
+              "textEditor": false
             }
           ],
+          "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
           "title": "1st vs 3rd party transfer size",
@@ -495,7 +643,10 @@
           },
           "type": "graph",
           "xaxis": {
-            "show": true
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
           },
           "yaxes": [
             {
@@ -528,14 +679,8 @@
           "editable": true,
           "error": false,
           "fill": 4,
-          "grid": {
-            "threshold1": null,
-            "threshold1Color": "rgba(216, 200, 27, 0.27)",
-            "threshold2": null,
-            "threshold2Color": "rgba(234, 112, 112, 0.22)"
-          },
+          "grid": {},
           "id": 7,
-          "isNew": true,
           "legend": {
             "alignAsTable": true,
             "avg": true,
@@ -576,7 +721,7 @@
               "metric": "sitespeed_firstparty",
               "refId": "A",
               "step": 120,
-              "target": "aliasByNode(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.thirdParty.headerSize, 8)",
+              "target": "aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.thirdParty.headerSize, 8)",
               "textEditor": false
             },
             {
@@ -588,10 +733,11 @@
               "metric": "sitespeed_thirdparty",
               "refId": "B",
               "step": 120,
-              "target": "aliasByNode(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.firstParty.headerSize, 8)",
+              "target": "aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.firstParty.headerSize, 8)",
               "textEditor": false
             }
           ],
+          "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
           "title": "1st vs 3rd party header size",
@@ -603,7 +749,10 @@
           },
           "type": "graph",
           "xaxis": {
-            "show": true
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
           },
           "yaxes": [
             {
@@ -636,14 +785,196 @@
           "editable": true,
           "error": false,
           "fill": 4,
-          "grid": {
-            "threshold1": null,
-            "threshold1Color": "rgba(216, 200, 27, 0.27)",
-            "threshold2": null,
-            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          "grid": {},
+          "height": "",
+          "id": 8,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "hideEmpty": true,
+            "hideZero": true,
+            "max": true,
+            "min": true,
+            "rightSide": false,
+            "show": true,
+            "total": false,
+            "values": true
           },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": true,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [
+            {
+              "alias": "firstParty"
+            }
+          ],
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "sitespeed_firstparty{value=\"requests\", metric=\"median\"}",
+              "hide": false,
+              "interval": "",
+              "intervalFactor": 2,
+              "legendFormat": "First Party",
+              "metric": "sitespeed_firstparty",
+              "refId": "A",
+              "step": 120,
+              "target": "aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.firstParty.contentTypes.*.requests, 10)",
+              "textEditor": false
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "1st Party Content Breakdown Request Count",
+          "tooltip": {
+            "msResolution": false,
+            "shared": true,
+            "sort": 2,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": "",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": "",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ]
+        },
+        {
+          "aliasColors": {
+            "firstParty": "#7EB26D",
+            "requests": "#EAB839",
+            "thirdParty": "#890F02"
+          },
+          "bars": false,
+          "datasource": "${DS_GRAPHITE}",
+          "decimals": 0,
+          "editable": true,
+          "error": false,
+          "fill": 4,
+          "grid": {},
+          "height": "",
+          "id": 9,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "hideEmpty": true,
+            "hideZero": true,
+            "max": true,
+            "min": true,
+            "rightSide": false,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": true,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [
+            {
+              "alias": "firstParty"
+            }
+          ],
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "sitespeed_firstparty{value=\"requests\", metric=\"median\"}",
+              "hide": false,
+              "interval": "",
+              "intervalFactor": 2,
+              "legendFormat": "First Party",
+              "metric": "sitespeed_firstparty",
+              "refId": "A",
+              "step": 120,
+              "target": "aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.thirdParty.contentTypes.*.requests, 10)",
+              "textEditor": false
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "3rd Party Content Breakdown Request Count",
+          "tooltip": {
+            "msResolution": false,
+            "shared": true,
+            "sort": 2,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": "",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": "",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ]
+        },
+        {
+          "aliasColors": {
+            "firstParty": "#7EB26D",
+            "requests": "#EAB839",
+            "thirdParty": "#890F02"
+          },
+          "bars": false,
+          "datasource": "${DS_GRAPHITE}",
+          "decimals": 0,
+          "editable": true,
+          "error": false,
+          "fill": 4,
+          "grid": {},
           "id": 6,
-          "isNew": true,
           "legend": {
             "alignAsTable": true,
             "avg": true,
@@ -689,10 +1020,11 @@
               "metric": "sitespeed_firstparty",
               "refId": "A",
               "step": 120,
-              "target": "aliasByNode(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.*.median, 11)",
-              "textEditor": true
+              "target": "aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.*.median, 11)",
+              "textEditor": false
             }
           ],
+          "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
           "title": "Page Timings",
@@ -704,7 +1036,10 @@
           },
           "type": "graph",
           "xaxis": {
-            "show": true
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
           },
           "yaxes": [
             {
@@ -737,14 +1072,8 @@
           "editable": true,
           "error": false,
           "fill": 4,
-          "grid": {
-            "threshold1": null,
-            "threshold1Color": "rgba(216, 200, 27, 0.27)",
-            "threshold2": null,
-            "threshold2Color": "rgba(234, 112, 112, 0.22)"
-          },
+          "grid": {},
           "id": 5,
-          "isNew": true,
           "legend": {
             "alignAsTable": true,
             "avg": true,
@@ -782,10 +1111,11 @@
               "metric": "sitespeed_firstparty",
               "refId": "A",
               "step": 120,
-              "target": "aliasByNode(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.timings.userTimings.marks.*.median, 12)",
+              "target": "aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.timings.select metric, 12)",
               "textEditor": false
             }
           ],
+          "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
           "title": "User Timings",
@@ -797,7 +1127,10 @@
           },
           "type": "graph",
           "xaxis": {
-            "show": true
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
           },
           "yaxes": [
             {
@@ -819,113 +1152,13 @@
           ]
         }
       ],
-      "title": "Row"
+      "showTitle": false,
+      "titleSize": "h6",
+      "height": "250px",
+      "repeat": null,
+      "repeatRowId": null,
+      "repeatIteration": null,
+      "collapse": false
     }
-  ],
-  "time": {
-    "from": "now-24h",
-    "to": "now"
-  },
-  "timepicker": {
-    "refresh_intervals": [
-      "5s",
-      "10s",
-      "30s",
-      "1m",
-      "5m",
-      "15m",
-      "30m",
-      "1h",
-      "2h",
-      "1d"
-    ],
-    "time_options": [
-      "5m",
-      "15m",
-      "1h",
-      "6h",
-      "12h",
-      "24h",
-      "2d",
-      "7d",
-      "30d"
-    ]
-  },
-  "templating": {
-    "list": [
-      {
-        "current": {},
-        "datasource": "${DS_GRAPHITE}",
-        "hide": 0,
-        "includeAll": false,
-        "multi": false,
-        "name": "path",
-        "options": [],
-        "query": "sitespeed_io.*",
-        "refresh": 1,
-        "regex": "",
-        "type": "query"
-      },
-      {
-        "current": {},
-        "datasource": "${DS_GRAPHITE}",
-        "hide": 0,
-        "includeAll": false,
-        "multi": false,
-        "name": "domain",
-        "options": [],
-        "query": "sitespeed_io.$path.pageSummary.*",
-        "refresh": 1,
-        "regex": "",
-        "type": "query"
-      },
-      {
-        "current": {},
-        "datasource": "${DS_GRAPHITE}",
-        "hide": 0,
-        "includeAll": false,
-        "multi": false,
-        "name": "page",
-        "options": [],
-        "query": "sitespeed_io.$path.pageSummary.$domain.*",
-        "refresh": 1,
-        "regex": "",
-        "type": "query"
-      },
-      {
-        "current": {},
-        "datasource": "${DS_GRAPHITE}",
-        "hide": 0,
-        "includeAll": false,
-        "multi": false,
-        "name": "browser",
-        "options": [],
-        "query": "sitespeed_io.$path.pageSummary.$domain.$page.*",
-        "refresh": 1,
-        "regex": "",
-        "type": "query"
-      },
-      {
-        "current": {},
-        "datasource": "${DS_GRAPHITE}",
-        "hide": 0,
-        "includeAll": false,
-        "multi": false,
-        "name": "connectivity",
-        "options": [],
-        "query": "sitespeed_io.$path.pageSummary.$domain.$page.$browser.*",
-        "refresh": 1,
-        "regex": "",
-        "type": "query"
-      }
-    ]
-  },
-  "annotations": {
-    "list": []
-  },
-  "refresh": "5s",
-  "schemaVersion": 12,
-  "version": 2,
-  "links": [],
-  "gnetId": null
+  ]
 }

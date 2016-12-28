@@ -7,6 +7,13 @@
       "type": "datasource",
       "pluginId": "graphite",
       "pluginName": "Graphite"
+    },
+    {
+      "name": "VAR_BASE",
+      "type": "constant",
+      "label": "base",
+      "value": "sitespeed_io",
+      "description": ""
     }
   ],
   "__requires": [
@@ -20,7 +27,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "4.0.0-beta1"
+      "version": "4.1.0-beta1"
     },
     {
       "type": "datasource",
@@ -37,7 +44,7 @@
   "style": "dark",
   "timezone": "browser",
   "editable": true,
-  "sharedCrosshair": false,
+  "graphTooltip": 0,
   "hideControls": false,
   "time": {
     "from": "now-7d",
@@ -71,102 +78,119 @@
   "templating": {
     "list": [
       {
+        "current": {
+          "value": "${VAR_BASE}",
+          "text": "${VAR_BASE}"
+        },
+        "hide": 2,
+        "label": null,
+        "name": "base",
+        "options": [
+          {
+            "value": "${VAR_BASE}",
+            "text": "${VAR_BASE}"
+          }
+        ],
+        "query": "${VAR_BASE}",
+        "type": "constant"
+      },
+      {
+        "allValue": null,
         "current": {},
         "datasource": "${DS_GRAPHITE}",
         "hide": 0,
         "includeAll": false,
+        "label": null,
         "multi": false,
         "name": "path",
         "options": [],
-        "query": "sitespeed_io.*",
+        "query": "$base.*",
         "refresh": 1,
         "regex": "",
-        "type": "query",
-        "label": null,
         "sort": 0,
-        "allValue": null,
+        "tagValuesQuery": null,
         "tagsQuery": null,
-        "tagValuesQuery": null
+        "type": "query"
       },
       {
+        "allValue": null,
         "current": {},
         "datasource": "${DS_GRAPHITE}",
         "hide": 0,
         "includeAll": false,
+        "label": null,
         "multi": false,
         "name": "domain",
         "options": [],
-        "query": "sitespeed_io.$path.pageSummary.*",
+        "query": "$base.$path.pageSummary.*",
         "refresh": 1,
         "regex": "",
-        "type": "query",
-        "label": null,
         "sort": 0,
-        "allValue": null,
+        "tagValuesQuery": null,
         "tagsQuery": null,
-        "tagValuesQuery": null
+        "type": "query"
       },
       {
+        "allValue": null,
         "current": {},
         "datasource": "${DS_GRAPHITE}",
         "hide": 0,
         "includeAll": false,
+        "label": null,
         "multi": false,
         "name": "page",
         "options": [],
-        "query": "sitespeed_io.$path.pageSummary.$domain.*",
+        "query": "$base.$path.pageSummary.$domain.*",
         "refresh": 1,
-        "type": "query",
-        "label": null,
         "regex": "",
         "sort": 0,
-        "allValue": null,
+        "tagValuesQuery": null,
         "tagsQuery": null,
-        "tagValuesQuery": null
+        "type": "query"
       },
       {
+        "allValue": null,
         "current": {},
         "datasource": "${DS_GRAPHITE}",
         "hide": 0,
         "includeAll": false,
+        "label": null,
         "multi": false,
         "name": "browser",
         "options": [],
-        "query": "sitespeed_io.$path.pageSummary.$domain.$page.*",
+        "query": "$base.$path.pageSummary.$domain.$page.*",
         "refresh": 1,
-        "type": "query",
-        "label": null,
         "regex": "",
         "sort": 0,
-        "allValue": null,
+        "tagValuesQuery": null,
         "tagsQuery": null,
-        "tagValuesQuery": null
+        "type": "query"
       },
       {
+        "allValue": null,
         "current": {},
         "datasource": "${DS_GRAPHITE}",
         "hide": 0,
         "includeAll": false,
+        "label": null,
         "multi": false,
         "name": "connectivity",
         "options": [],
-        "query": "sitespeed_io.$path.pageSummary.$domain.$page.$browser.*",
+        "query": "$base.$path.pageSummary.$domain.$page.$browser.*",
         "refresh": 1,
         "regex": "",
-        "type": "query",
-        "label": null,
         "sort": 0,
-        "allValue": null,
+        "tagValuesQuery": null,
         "tagsQuery": null,
-        "tagValuesQuery": null
+        "type": "query"
       }
     ]
   },
   "annotations": {
     "list": []
   },
-  "schemaVersion": 13,
-  "version": 3,
+  "schemaVersion": 14,
+  "version": 8,
   "links": [
     {
       "asDropdown": true,
@@ -190,9 +214,7 @@
   "gnetId": null,
   "rows": [
     {
-      "collapse": false,
-      "editable": true,
-      "height": "250px",
+      "title": "Row",
       "panels": [
         {
           "aliasColors": {},
@@ -204,13 +226,12 @@
           "fill": 1,
           "grid": {},
           "id": 1,
-          "isNew": true,
           "legend": {
             "alignAsTable": true,
             "avg": false,
             "current": true,
             "max": true,
-            "min": false,
+            "min": true,
             "show": true,
             "total": false,
             "values": true
@@ -230,19 +251,20 @@
           "targets": [
             {
               "refId": "A",
-              "target": "alias(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.median, 'Today')"
+              "target": "alias($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.median, 'Today')"
             },
             {
               "refId": "B",
-              "target": "alias(timeShift(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.median, '1d'), 'Yesterday')"
+              "target": "alias(timeShift($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.median, '1d'), 'Yesterday')"
             },
             {
-              "target": "alias(summarize(#A, '1day', 'avg', true), \"Daily avg\")",
               "refId": "C",
+              "target": "alias(summarize(#A, '1day', 'avg', true), \"Daily avg\")",
               "textEditor": true
             }
           ],
-          "timeFrom": "7d",
+          "thresholds": [],
+          "timeFrom": null,
           "timeShift": null,
           "title": "SpeedIndex",
           "tooltip": {
@@ -253,9 +275,9 @@
           },
           "type": "graph",
           "xaxis": {
-            "show": true,
             "mode": "time",
             "name": null,
+            "show": true,
             "values": []
           },
           "yaxes": [
@@ -275,40 +297,36 @@
               "min": null,
               "show": true
             }
-          ],
-          "thresholds": []
+          ]
         }
       ],
-      "title": "Row",
       "showTitle": false,
       "titleSize": "h6",
-      "isNew": false,
+      "height": "250px",
       "repeat": null,
       "repeatRowId": null,
-      "repeatIteration": null
+      "repeatIteration": null,
+      "collapse": false
     },
     {
-      "collapse": false,
-      "editable": true,
-      "height": "250px",
+      "title": "New row",
       "panels": [
         {
           "aliasColors": {},
           "bars": false,
           "datasource": "${DS_GRAPHITE}",
-          "decimals": 2,
+          "decimals": 0,
           "editable": true,
           "error": false,
           "fill": 1,
           "grid": {},
           "id": 2,
-          "isNew": true,
           "legend": {
             "alignAsTable": true,
             "avg": false,
             "current": true,
             "max": true,
-            "min": false,
+            "min": true,
             "show": true,
             "total": false,
             "values": true
@@ -328,18 +346,19 @@
           "targets": [
             {
               "refId": "A",
-              "target": "alias(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.median, 'Today')"
+              "target": "alias($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.median, 'Today')"
             },
             {
               "refId": "C",
-              "target": "alias(timeShift(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.median, '1d'), 'Yesterday')"
+              "target": "alias(timeShift($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.median, '1d'), 'Yesterday')"
             },
             {
-              "target": "alias(summarize(#A, '1day', 'avg', true), \"Daily avg\")",
               "refId": "B",
+              "target": "alias(summarize(#A, '1day', 'avg', true), \"Daily avg\")",
               "textEditor": true
             }
           ],
+          "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
           "title": "First visual change",
@@ -351,9 +370,9 @@
           },
           "type": "graph",
           "xaxis": {
-            "show": true,
             "mode": "time",
             "name": null,
+            "show": true,
             "values": []
           },
           "yaxes": [
@@ -373,22 +392,19 @@
               "min": null,
               "show": true
             }
-          ],
-          "thresholds": []
+          ]
         }
       ],
-      "title": "New row",
       "showTitle": false,
       "titleSize": "h6",
-      "isNew": false,
+      "height": "250px",
       "repeat": null,
       "repeatRowId": null,
-      "repeatIteration": null
+      "repeatIteration": null,
+      "collapse": false
     },
     {
-      "collapse": false,
-      "editable": true,
-      "height": "250px",
+      "title": "New row",
       "panels": [
         {
           "aliasColors": {},
@@ -400,13 +416,12 @@
           "fill": 1,
           "grid": {},
           "id": 3,
-          "isNew": true,
           "legend": {
             "alignAsTable": true,
             "avg": false,
             "current": true,
             "max": true,
-            "min": false,
+            "min": true,
             "show": true,
             "total": false,
             "values": true
@@ -426,9 +441,19 @@
           "targets": [
             {
               "refId": "A",
-              "target": "aliasByNode(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.LastVisualChange.median, 10)"
+              "target": "alias($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.LastVisualChange.median, 'Today')"
+            },
+            {
+              "refId": "B",
+              "target": "alias(timeShift($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.LastVisualChange.median, '1d'), 'Yesterday')"
+            },
+            {
+              "refId": "C",
+              "target": "alias(summarize(#A, '1day', 'avg', true), \"Daily avg\")",
+              "textEditor": true
             }
           ],
+          "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
           "title": "Last visual change",
@@ -440,9 +465,9 @@
           },
           "type": "graph",
           "xaxis": {
-            "show": true,
             "mode": "time",
             "name": null,
+            "show": true,
             "values": []
           },
           "yaxes": [
@@ -462,18 +487,16 @@
               "min": null,
               "show": true
             }
-          ],
-          "thresholds": []
+          ]
         }
       ],
-      "title": "New row",
       "showTitle": false,
       "titleSize": "h6",
-      "isNew": false,
+      "height": "250px",
       "repeat": null,
       "repeatRowId": null,
-      "repeatIteration": null
+      "repeatIteration": null,
+      "collapse": false
     }
-  ],
-  "editMode": false
+  ]
 }

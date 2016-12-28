@@ -7,6 +7,13 @@
       "type": "datasource",
       "pluginId": "graphite",
       "pluginName": "Graphite"
+    },
+    {
+      "name": "VAR_BASE",
+      "type": "constant",
+      "label": "base",
+      "value": "sitespeed_io",
+      "description": ""
     }
   ],
   "__requires": [
@@ -14,6 +21,12 @@
       "type": "panel",
       "id": "singlestat",
       "name": "Singlestat",
+      "version": ""
+    },
+    {
+      "type": "panel",
+      "id": "table",
+      "name": "Table",
       "version": ""
     },
     {
@@ -26,7 +39,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "3.1.1"
+      "version": "4.1.0-beta1"
     },
     {
       "type": "datasource",
@@ -43,13 +56,178 @@
   "style": "dark",
   "timezone": "browser",
   "editable": true,
+  "graphTooltip": 0,
   "hideControls": false,
-  "sharedCrosshair": false,
+  "time": {
+    "from": "now-7d",
+    "to": "now"
+  },
+  "timepicker": {
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ],
+    "time_options": [
+      "5m",
+      "15m",
+      "1h",
+      "6h",
+      "12h",
+      "24h",
+      "2d",
+      "7d",
+      "30d"
+    ]
+  },
+  "templating": {
+    "list": [
+      {
+        "current": {
+          "value": "${VAR_BASE}",
+          "text": "${VAR_BASE}"
+        },
+        "hide": 2,
+        "label": null,
+        "name": "base",
+        "options": [
+          {
+            "value": "${VAR_BASE}",
+            "text": "${VAR_BASE}"
+          }
+        ],
+        "query": "${VAR_BASE}",
+        "type": "constant"
+      },
+      {
+        "allValue": null,
+        "current": {},
+        "datasource": "${DS_GRAPHITE}",
+        "hide": 0,
+        "includeAll": false,
+        "label": null,
+        "multi": false,
+        "name": "path",
+        "options": [],
+        "query": "$base.*",
+        "refresh": 1,
+        "regex": "",
+        "sort": 0,
+        "tagValuesQuery": null,
+        "tagsQuery": null,
+        "type": "query"
+      },
+      {
+        "allValue": null,
+        "current": {},
+        "datasource": "${DS_GRAPHITE}",
+        "hide": 0,
+        "includeAll": false,
+        "label": null,
+        "multi": false,
+        "name": "domain",
+        "options": [],
+        "query": "$base.$path.pageSummary.*",
+        "refresh": 1,
+        "regex": "",
+        "sort": 0,
+        "tagValuesQuery": null,
+        "tagsQuery": null,
+        "type": "query"
+      },
+      {
+        "allValue": null,
+        "current": {},
+        "datasource": "${DS_GRAPHITE}",
+        "hide": 0,
+        "includeAll": false,
+        "label": null,
+        "multi": false,
+        "name": "page",
+        "options": [],
+        "query": "$base.$path.pageSummary.$domain.*",
+        "refresh": 1,
+        "regex": "",
+        "sort": 0,
+        "tagValuesQuery": null,
+        "tagsQuery": null,
+        "type": "query"
+      },
+      {
+        "allValue": null,
+        "current": {},
+        "datasource": "${DS_GRAPHITE}",
+        "hide": 0,
+        "includeAll": false,
+        "label": null,
+        "multi": false,
+        "name": "browser",
+        "options": [],
+        "query": "$base.$path.pageSummary.$domain.$page.*",
+        "refresh": 1,
+        "regex": "",
+        "sort": 0,
+        "tagValuesQuery": null,
+        "tagsQuery": null,
+        "type": "query"
+      },
+      {
+        "allValue": null,
+        "current": {},
+        "datasource": "${DS_GRAPHITE}",
+        "hide": 0,
+        "includeAll": false,
+        "label": null,
+        "multi": false,
+        "name": "connectivity",
+        "options": [],
+        "query": "$base.$path.pageSummary.$domain.$page.$browser.*",
+        "refresh": 1,
+        "regex": "",
+        "sort": 0,
+        "tagValuesQuery": null,
+        "tagsQuery": null,
+        "type": "query"
+      }
+    ]
+  },
+  "annotations": {
+    "list": []
+  },
+  "refresh": false,
+  "schemaVersion": 14,
+  "version": 30,
+  "links": [
+    {
+      "asDropdown": true,
+      "icon": "external link",
+      "tags": [
+        "site"
+      ],
+      "title": "Site",
+      "type": "dashboards"
+    },
+    {
+      "asDropdown": true,
+      "icon": "external link",
+      "tags": [
+        "page"
+      ],
+      "title": "Pages",
+      "type": "dashboards"
+    }
+  ],
+  "gnetId": null,
   "rows": [
     {
-      "collapse": false,
-      "editable": true,
-      "height": "100px",
+      "title": "New row",
       "panels": [
         {
           "cacheTimeout": null,
@@ -73,7 +251,6 @@
           },
           "id": 18,
           "interval": null,
-          "isNew": true,
           "links": [],
           "mappingType": 1,
           "mappingTypes": [
@@ -110,11 +287,11 @@
           "targets": [
             {
               "refId": "A",
-              "target": "sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.timings.firstPaint.median"
+              "target": "$base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.median"
             }
           ],
           "thresholds": "",
-          "title": "First paint",
+          "title": "First visual change",
           "type": "singlestat",
           "valueFontSize": "80%",
           "valueMaps": [
@@ -148,7 +325,6 @@
           },
           "id": 9,
           "interval": null,
-          "isNew": true,
           "links": [],
           "mappingType": 1,
           "mappingTypes": [
@@ -185,11 +361,11 @@
           "targets": [
             {
               "refId": "A",
-              "target": "sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.timings.rumSpeedIndex.median"
+              "target": "$base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.median"
             }
           ],
           "thresholds": "",
-          "title": "RUMSpeedIndex",
+          "title": "SpeedIndex",
           "type": "singlestat",
           "valueFontSize": "80%",
           "valueMaps": [
@@ -223,7 +399,6 @@
           },
           "id": 17,
           "interval": null,
-          "isNew": true,
           "links": [],
           "mappingType": 1,
           "mappingTypes": [
@@ -260,11 +435,11 @@
           "targets": [
             {
               "refId": "A",
-              "target": "sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.timings.fullyLoaded.median"
+              "target": "$base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.LastVisualChange.median"
             }
           ],
           "thresholds": "",
-          "title": "FullyLoaded",
+          "title": "Last visual change",
           "type": "singlestat",
           "valueFontSize": "80%",
           "valueMaps": [
@@ -298,7 +473,6 @@
           },
           "id": 12,
           "interval": null,
-          "isNew": true,
           "links": [],
           "mappingType": 1,
           "mappingTypes": [
@@ -335,7 +509,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.requests"
+              "target": "$base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.requests"
             }
           ],
           "thresholds": "",
@@ -373,7 +547,6 @@
           },
           "id": 14,
           "interval": null,
-          "isNew": true,
           "links": [],
           "mappingType": 1,
           "mappingTypes": [
@@ -410,7 +583,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.transferSize"
+              "target": "$base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.transferSize"
             }
           ],
           "thresholds": "",
@@ -448,7 +621,6 @@
           },
           "id": 15,
           "interval": null,
-          "isNew": true,
           "links": [],
           "mappingType": 1,
           "mappingTypes": [
@@ -485,7 +657,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.totalDomains"
+              "target": "$base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.totalDomains"
             }
           ],
           "thresholds": "",
@@ -523,7 +695,6 @@
           },
           "id": 11,
           "interval": null,
-          "isNew": true,
           "links": [],
           "mappingType": 1,
           "mappingTypes": [
@@ -560,7 +731,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.coach.advice.performance.score"
+              "target": "$base.$path.pageSummary.$domain.$page.$browser.$connectivity.coach.advice.performance.score"
             }
           ],
           "thresholds": "",
@@ -577,12 +748,385 @@
           "valueName": "avg"
         }
       ],
-      "title": "New row"
+      "showTitle": false,
+      "titleSize": "h6",
+      "height": "100px",
+      "repeat": null,
+      "repeatRowId": null,
+      "repeatIteration": null,
+      "collapse": false
     },
     {
-      "collapse": false,
-      "editable": true,
-      "height": "300px",
+      "title": "Dashboard Row",
+      "panels": [
+        {
+          "columns": [
+            {
+              "text": "Current",
+              "value": "current"
+            }
+          ],
+          "editable": true,
+          "error": false,
+          "fontSize": "100%",
+          "id": 36,
+          "links": [],
+          "pageSize": null,
+          "scroll": true,
+          "showHeader": true,
+          "sort": {
+            "col": 0,
+            "desc": true
+          },
+          "span": 3,
+          "styles": [
+            {
+              "dateFormat": "YYYY-MM-DD HH:mm:ss",
+              "pattern": "Time",
+              "type": "date"
+            },
+            {
+              "colorMode": null,
+              "colors": [
+                "rgba(245, 54, 54, 0.9)",
+                "rgba(237, 129, 40, 0.89)",
+                "rgba(50, 172, 45, 0.97)"
+              ],
+              "decimals": 0,
+              "pattern": "/.*/",
+              "thresholds": [],
+              "type": "number",
+              "unit": "none"
+            }
+          ],
+          "targets": [
+            {
+              "refId": "A",
+              "target": "aliasByNode(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.median, '24h'), 10)",
+              "textEditor": false
+            },
+            {
+              "refId": "B",
+              "target": "aliasByNode(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.median, '24h'), 10)",
+              "textEditor": false
+            },
+            {
+              "refId": "C",
+              "target": "aliasByNode(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.PerceptualSpeedIndex.median, '24h'), 10)",
+              "textEditor": false
+            },
+            {
+              "refId": "D",
+              "target": "aliasByNode(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.LastVisualChange.median, '24h'), 10)",
+              "textEditor": false
+            }
+          ],
+          "title": "Avg last 24 hours",
+          "transform": "timeseries_aggregations",
+          "type": "table"
+        },
+        {
+          "columns": [
+            {
+              "text": "Current",
+              "value": "current"
+            }
+          ],
+          "editable": true,
+          "error": false,
+          "fontSize": "100%",
+          "id": 37,
+          "links": [],
+          "pageSize": null,
+          "scroll": true,
+          "showHeader": true,
+          "sort": {
+            "col": 0,
+            "desc": true
+          },
+          "span": 3,
+          "styles": [
+            {
+              "dateFormat": "YYYY-MM-DD HH:mm:ss",
+              "pattern": "Time",
+              "type": "date"
+            },
+            {
+              "colorMode": "cell",
+              "colors": [
+                "rgba(50, 172, 45, 0.97)",
+                "rgba(237, 129, 40, 0.89)",
+                "rgba(245, 54, 54, 0.9)"
+              ],
+              "decimals": 0,
+              "pattern": "/.*/",
+              "thresholds": [
+                "-50",
+                "50"
+              ],
+              "type": "number",
+              "unit": "none"
+            }
+          ],
+          "targets": [
+            {
+              "hide": true,
+              "refId": "A",
+              "target": "timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.median, '24h'), '1d')",
+              "textEditor": false
+            },
+            {
+              "hide": true,
+              "refId": "B",
+              "target": "timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.median, '24h'), '1d')",
+              "textEditor": false
+            },
+            {
+              "refId": "C",
+              "target": "aliasByNode(diffSeries(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.median, '24h'), #A), 10)",
+              "targetFull": "aliasByNode(diffSeries(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.median, '24h'), timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.median, '24h'), '1d')), 10)",
+              "textEditor": false
+            },
+            {
+              "refId": "D",
+              "target": "aliasByNode(diffSeries(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.median, '24h'), #B), 10)",
+              "targetFull": "aliasByNode(diffSeries(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.median, '24h'), timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.median, '24h'), '1d')), 10)",
+              "textEditor": false
+            },
+            {
+              "hide": true,
+              "refId": "E",
+              "target": "timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.PerceptualSpeedIndex.median, '24h'), '1d')",
+              "textEditor": false
+            },
+            {
+              "refId": "F",
+              "target": "aliasByNode(diffSeries(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.PerceptualSpeedIndex.median, '24h'), #E), 10)",
+              "targetFull": "aliasByNode(diffSeries(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.PerceptualSpeedIndex.median, '24h'), timeShift(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.PerceptualSpeedIndex.median, '24h'), '1d')), 10)",
+              "textEditor": false
+            },
+            {
+              "hide": true,
+              "refId": "G",
+              "target": "timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.LastVisualChange.median, '24h'), '1d')",
+              "textEditor": false
+            },
+            {
+              "refId": "H",
+              "target": "aliasByNode(diffSeries(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.LastVisualChange.median, '24h'), #G), 10)",
+              "targetFull": "aliasByNode(diffSeries(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.LastVisualChange.median, '24h'), timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.LastVisualChange.median, '24h'), '1d')), 10)",
+              "textEditor": false
+            }
+          ],
+          "title": "Relative to yesterday",
+          "transform": "timeseries_aggregations",
+          "type": "table"
+        },
+        {
+          "columns": [
+            {
+              "text": "Current",
+              "value": "current"
+            }
+          ],
+          "editable": true,
+          "error": false,
+          "fontSize": "100%",
+          "id": 38,
+          "links": [],
+          "pageSize": null,
+          "scroll": true,
+          "showHeader": true,
+          "sort": {
+            "col": 0,
+            "desc": true
+          },
+          "span": 3,
+          "styles": [
+            {
+              "dateFormat": "YYYY-MM-DD HH:mm:ss",
+              "pattern": "Time",
+              "type": "date"
+            },
+            {
+              "colorMode": "cell",
+              "colors": [
+                "rgba(50, 172, 45, 0.97)",
+                "rgba(237, 129, 40, 0.89)",
+                "rgba(245, 54, 54, 0.9)"
+              ],
+              "decimals": 0,
+              "pattern": "/.*/",
+              "thresholds": [
+                "-50",
+                "50"
+              ],
+              "type": "number",
+              "unit": "none"
+            }
+          ],
+          "targets": [
+            {
+              "hide": true,
+              "refId": "A",
+              "target": "timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.median, '24h'), '7d')",
+              "textEditor": false
+            },
+            {
+              "hide": true,
+              "refId": "B",
+              "target": "timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.median, '24h'), '7d')",
+              "textEditor": false
+            },
+            {
+              "refId": "C",
+              "target": "aliasByNode(diffSeries(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.median, '24h'), #A), 10)",
+              "targetFull": "aliasByNode(diffSeries(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.median, '24h'), timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.median, '24h'), '7d')), 10)",
+              "textEditor": false
+            },
+            {
+              "refId": "D",
+              "target": "aliasByNode(diffSeries(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.median, '24h'), #B), 10)",
+              "targetFull": "aliasByNode(diffSeries(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.median, '24h'), timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.median, '24h'), '7d')), 10)",
+              "textEditor": false
+            },
+            {
+              "hide": true,
+              "refId": "E",
+              "target": "timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.LastVisualChange.median, '24h'), '7d')",
+              "textEditor": false
+            },
+            {
+              "refId": "F",
+              "target": "aliasByNode(diffSeries(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.LastVisualChange.median, '24h'), #E), 10)",
+              "targetFull": "aliasByNode(diffSeries(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.LastVisualChange.median, '24h'), timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.LastVisualChange.median, '24h'), '7d')), 10)",
+              "textEditor": false
+            },
+            {
+              "hide": true,
+              "refId": "G",
+              "target": "timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.PerceptualSpeedIndex.median, '24h'), '7d')",
+              "textEditor": false
+            },
+            {
+              "refId": "H",
+              "target": "aliasByNode(diffSeries(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.PerceptualSpeedIndex.median, '24h'), #G), 10)",
+              "targetFull": "aliasByNode(diffSeries(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.PerceptualSpeedIndex.median, '24h'), timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.PerceptualSpeedIndex.median, '24h'), '7d')), 10)",
+              "textEditor": false
+            }
+          ],
+          "title": "Relative to last week",
+          "transform": "timeseries_aggregations",
+          "type": "table"
+        },
+        {
+          "columns": [
+            {
+              "text": "Current",
+              "value": "current"
+            }
+          ],
+          "editable": true,
+          "error": false,
+          "fontSize": "100%",
+          "id": 39,
+          "links": [],
+          "pageSize": null,
+          "scroll": true,
+          "showHeader": true,
+          "sort": {
+            "col": 0,
+            "desc": true
+          },
+          "span": 3,
+          "styles": [
+            {
+              "dateFormat": "YYYY-MM-DD HH:mm:ss",
+              "pattern": "Time",
+              "type": "date"
+            },
+            {
+              "colorMode": "cell",
+              "colors": [
+                "rgba(50, 172, 45, 0.97)",
+                "rgba(237, 129, 40, 0.89)",
+                "rgba(245, 54, 54, 0.9)"
+              ],
+              "decimals": 0,
+              "pattern": "/.*/",
+              "thresholds": [
+                "-50",
+                "50"
+              ],
+              "type": "number",
+              "unit": "none"
+            }
+          ],
+          "targets": [
+            {
+              "hide": true,
+              "refId": "A",
+              "target": "timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.median, '24h'), '30d')",
+              "textEditor": false
+            },
+            {
+              "hide": true,
+              "refId": "B",
+              "target": "timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.median, '24h'), '30d')",
+              "textEditor": false
+            },
+            {
+              "refId": "C",
+              "target": "aliasByNode(diffSeries(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.median, '24h'), #A), 10)",
+              "targetFull": "aliasByNode(diffSeries(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.median, '24h'), timeShift(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.median, '24h'), '30d')), 10)",
+              "textEditor": false
+            },
+            {
+              "refId": "D",
+              "target": "aliasByNode(diffSeries(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.median, '24h'), #B), 10)",
+              "targetFull": "aliasByNode(diffSeries(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.median, '24h'), timeShift(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.median, '24h'), '30d')), 10)",
+              "textEditor": false
+            },
+            {
+              "hide": true,
+              "refId": "E",
+              "target": "timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.LastVisualChange.median, '24h'), '30d')",
+              "textEditor": false
+            },
+            {
+              "refId": "F",
+              "target": "aliasByNode(diffSeries(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.LastVisualChange.median, '24h'), #E), 10)",
+              "targetFull": "aliasByNode(diffSeries(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.LastVisualChange.median, '24h'), timeShift(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.LastVisualChange.median, '24h'), '30d')), 10)",
+              "textEditor": false
+            },
+            {
+              "hide": true,
+              "refId": "G",
+              "target": "timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.PerceptualSpeedIndex.median, '24h'), '30d')",
+              "textEditor": false
+            },
+            {
+              "refId": "H",
+              "target": "aliasByNode(diffSeries(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.PerceptualSpeedIndex.median, '24h'), #G), 10)",
+              "targetFull": "aliasByNode(diffSeries(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.PerceptualSpeedIndex.median, '24h'), timeShift(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.PerceptualSpeedIndex.median, '24h'), '30d')), 10)",
+              "textEditor": false
+            }
+          ],
+          "title": "Relative to last month",
+          "transform": "timeseries_aggregations",
+          "type": "table"
+        }
+      ],
+      "showTitle": false,
+      "titleSize": "h6",
+      "height": "220",
+      "repeat": null,
+      "repeatRowId": null,
+      "repeatIteration": null,
+      "collapse": false
+    },
+    {
+      "title": "VisualMetrics",
       "panels": [
         {
           "aliasColors": {},
@@ -591,14 +1135,94 @@
           "editable": true,
           "error": false,
           "fill": 0,
-          "grid": {
-            "threshold1": null,
-            "threshold1Color": "rgba(216, 200, 27, 0.27)",
-            "threshold2": null,
-            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          "grid": {},
+          "id": 41,
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": true,
+            "max": true,
+            "min": true,
+            "show": true,
+            "total": false,
+            "values": true
           },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 12,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.*.median, 10)",
+              "textEditor": false
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": "30d",
+          "timeShift": null,
+          "title": "History Visual Metrics",
+          "tooltip": {
+            "msResolution": false,
+            "shared": true,
+            "sort": 0,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "none",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        }
+      ],
+      "showTitle": false,
+      "titleSize": "h6",
+      "height": "350",
+      "repeat": null,
+      "repeatRowId": null,
+      "repeatIteration": null,
+      "collapse": false
+    },
+    {
+      "title": "Row",
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "${DS_GRAPHITE}",
+          "editable": true,
+          "error": false,
+          "fill": 0,
+          "grid": {},
           "id": 1,
-          "isNew": true,
           "legend": {
             "alignAsTable": true,
             "avg": false,
@@ -624,13 +1248,14 @@
           "targets": [
             {
               "refId": "A",
-              "target": "aliasByNode(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.*.median, 11)",
-              "textEditor": true
+              "target": "aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.*.median, 11)",
+              "textEditor": false
             }
           ],
+          "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
-          "title": "Timings",
+          "title": "Navigation Timings",
           "tooltip": {
             "msResolution": false,
             "shared": true,
@@ -639,7 +1264,10 @@
           },
           "type": "graph",
           "xaxis": {
-            "show": true
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
           },
           "yaxes": [
             {
@@ -661,12 +1289,16 @@
           ]
         }
       ],
-      "title": "Row"
+      "showTitle": false,
+      "titleSize": "h6",
+      "height": "300px",
+      "repeat": null,
+      "repeatRowId": null,
+      "repeatIteration": null,
+      "collapse": false
     },
     {
-      "collapse": false,
-      "editable": true,
-      "height": "350px",
+      "title": "New row",
       "panels": [
         {
           "aliasColors": {},
@@ -675,14 +1307,8 @@
           "editable": true,
           "error": false,
           "fill": 10,
-          "grid": {
-            "threshold1": null,
-            "threshold1Color": "rgba(216, 200, 27, 0.27)",
-            "threshold2": null,
-            "threshold2Color": "rgba(234, 112, 112, 0.22)"
-          },
+          "grid": {},
           "id": 2,
-          "isNew": true,
           "legend": {
             "alignAsTable": true,
             "avg": false,
@@ -708,10 +1334,11 @@
           "targets": [
             {
               "refId": "A",
-              "target": "aliasByNode(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.contentTypes.*.transferSize, 9)",
-              "textEditor": true
+              "target": "aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.contentTypes.*.transferSize, 9)",
+              "textEditor": false
             }
           ],
+          "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
           "title": "Size",
@@ -723,7 +1350,10 @@
           },
           "type": "graph",
           "xaxis": {
-            "show": true
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
           },
           "yaxes": [
             {
@@ -751,14 +1381,8 @@
           "editable": true,
           "error": false,
           "fill": 10,
-          "grid": {
-            "threshold1": null,
-            "threshold1Color": "rgba(216, 200, 27, 0.27)",
-            "threshold2": null,
-            "threshold2Color": "rgba(234, 112, 112, 0.22)"
-          },
+          "grid": {},
           "id": 3,
-          "isNew": true,
           "legend": {
             "alignAsTable": true,
             "avg": false,
@@ -784,10 +1408,11 @@
           "targets": [
             {
               "refId": "A",
-              "target": "aliasByNode(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.contentTypes.*.requests, 9)",
-              "textEditor": true
+              "target": "aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.contentTypes.*.requests, 9)",
+              "textEditor": false
             }
           ],
+          "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
           "title": "Requests",
@@ -799,7 +1424,10 @@
           },
           "type": "graph",
           "xaxis": {
-            "show": true
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
           },
           "yaxes": [
             {
@@ -821,12 +1449,16 @@
           ]
         }
       ],
-      "title": "New row"
+      "showTitle": false,
+      "titleSize": "h6",
+      "height": "350px",
+      "repeat": null,
+      "repeatRowId": null,
+      "repeatIteration": null,
+      "collapse": false
     },
     {
-      "collapse": false,
-      "editable": true,
-      "height": "250px",
+      "title": "New row",
       "panels": [
         {
           "aliasColors": {},
@@ -836,14 +1468,8 @@
           "editable": true,
           "error": false,
           "fill": 5,
-          "grid": {
-            "threshold1": null,
-            "threshold1Color": "rgba(216, 200, 27, 0.27)",
-            "threshold2": null,
-            "threshold2Color": "rgba(234, 112, 112, 0.22)"
-          },
+          "grid": {},
           "id": 4,
-          "isNew": true,
           "legend": {
             "alignAsTable": false,
             "avg": false,
@@ -870,10 +1496,11 @@
           "targets": [
             {
               "refId": "A",
-              "target": "aliasByNode(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.responseCodes.*, 9)",
-              "textEditor": true
+              "target": "aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.responseCodes.*, 9)",
+              "textEditor": false
             }
           ],
+          "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
           "title": "Response codes",
@@ -885,7 +1512,10 @@
           },
           "type": "graph",
           "xaxis": {
-            "show": true
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
           },
           "yaxes": [
             {
@@ -907,12 +1537,16 @@
           ]
         }
       ],
-      "title": "New row"
+      "showTitle": false,
+      "titleSize": "h6",
+      "height": "250px",
+      "repeat": null,
+      "repeatRowId": null,
+      "repeatIteration": null,
+      "collapse": false
     },
     {
-      "collapse": false,
-      "editable": true,
-      "height": "250px",
+      "title": "New row",
       "panels": [
         {
           "aliasColors": {},
@@ -921,14 +1555,8 @@
           "editable": true,
           "error": false,
           "fill": 5,
-          "grid": {
-            "threshold1": null,
-            "threshold1Color": "rgba(216, 200, 27, 0.27)",
-            "threshold2": null,
-            "threshold2Color": "rgba(234, 112, 112, 0.22)"
-          },
+          "grid": {},
           "id": 5,
-          "isNew": true,
           "legend": {
             "avg": false,
             "current": true,
@@ -953,21 +1581,24 @@
           "targets": [
             {
               "refId": "B",
-              "target": "alias(asPercent(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.backEndTime.max, #C), 'Backend')",
-              "textEditor": true
+              "target": "alias(asPercent($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.backEndTime.max, #C), 'Backend')",
+              "targetFull": "alias(asPercent($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.backEndTime.max, sumSeries(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.frontEndTime.max,sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.backEndTime.max)), 'Backend')",
+              "textEditor": false
             },
             {
               "refId": "A",
-              "target": "alias(asPercent(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.frontEndTime.max, #C), 'Frontend')",
-              "textEditor": true
+              "target": "alias(asPercent($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.frontEndTime.max, #C), 'Frontend')",
+              "targetFull": "alias(asPercent($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.frontEndTime.max, sumSeries(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.frontEndTime.max,sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.backEndTime.max)), 'Frontend')",
+              "textEditor": false
             },
             {
               "hide": true,
               "refId": "C",
-              "target": "sumSeries(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.frontEndTime.max,sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.backEndTime.max)",
+              "target": "sumSeries($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.frontEndTime.max,$base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.backEndTime.max)",
               "textEditor": true
             }
           ],
+          "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
           "title": "Max time spent in backend vs frontend %",
@@ -979,7 +1610,10 @@
           },
           "type": "graph",
           "xaxis": {
-            "show": true
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
           },
           "yaxes": [
             {
@@ -1001,12 +1635,16 @@
           ]
         }
       ],
-      "title": "New row"
+      "showTitle": false,
+      "titleSize": "h6",
+      "height": "250px",
+      "repeat": null,
+      "repeatRowId": null,
+      "repeatIteration": null,
+      "collapse": false
     },
     {
-      "collapse": false,
-      "editable": true,
-      "height": "250px",
+      "title": "New row",
       "panels": [
         {
           "aliasColors": {},
@@ -1015,14 +1653,8 @@
           "editable": true,
           "error": false,
           "fill": 0,
-          "grid": {
-            "threshold1": null,
-            "threshold1Color": "rgba(216, 200, 27, 0.27)",
-            "threshold2": null,
-            "threshold2Color": "rgba(234, 112, 112, 0.22)"
-          },
+          "grid": {},
           "id": 6,
-          "isNew": true,
           "legend": {
             "avg": false,
             "current": true,
@@ -1047,12 +1679,12 @@
           "targets": [
             {
               "refId": "A",
-              "target": "alias(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.domContentLoadedTime.max, 'Now')",
+              "target": "alias($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.domContentLoadedTime.max, 'Now')",
               "textEditor": false
             },
             {
               "refId": "B",
-              "target": "alias(timeShift(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.domContentLoadedTime.max, '7d'), 'One week back')",
+              "target": "alias(timeShift($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.domContentLoadedTime.max, '7d'), 'One week back')",
               "textEditor": false
             },
             {
@@ -1062,6 +1694,7 @@
               "textEditor": false
             }
           ],
+          "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
           "title": "DOMContentLoaded Time",
@@ -1073,7 +1706,10 @@
           },
           "type": "graph",
           "xaxis": {
-            "show": true
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
           },
           "yaxes": [
             {
@@ -1105,14 +1741,8 @@
           "editable": true,
           "error": false,
           "fill": 0,
-          "grid": {
-            "threshold1": null,
-            "threshold1Color": "rgba(216, 200, 27, 0.27)",
-            "threshold2": null,
-            "threshold2Color": "rgba(234, 112, 112, 0.22)"
-          },
+          "grid": {},
           "id": 7,
-          "isNew": true,
           "legend": {
             "avg": false,
             "current": true,
@@ -1147,20 +1777,21 @@
           "targets": [
             {
               "refId": "A",
-              "target": "aliasByMetric(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.frontEndTime.max)",
-              "textEditor": true
+              "target": "aliasByMetric($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.frontEndTime.max)",
+              "textEditor": false
             },
             {
               "refId": "B",
-              "target": "aliasByMetric(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.frontEndTime.min)",
-              "textEditor": true
+              "target": "aliasByMetric($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.frontEndTime.min)",
+              "textEditor": false
             },
             {
               "refId": "C",
-              "target": "aliasByMetric(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.frontEndTime.median)",
-              "textEditor": true
+              "target": "aliasByMetric($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.frontEndTime.median)",
+              "textEditor": false
             }
           ],
+          "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
           "title": "Frontend Time",
@@ -1172,7 +1803,10 @@
           },
           "type": "graph",
           "xaxis": {
-            "show": true
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
           },
           "yaxes": [
             {
@@ -1194,12 +1828,16 @@
           ]
         }
       ],
-      "title": "New row"
+      "showTitle": false,
+      "titleSize": "h6",
+      "height": "250px",
+      "repeat": null,
+      "repeatRowId": null,
+      "repeatIteration": null,
+      "collapse": false
     },
     {
-      "collapse": false,
-      "editable": true,
-      "height": "250px",
+      "title": "New row",
       "panels": [
         {
           "aliasColors": {},
@@ -1208,14 +1846,8 @@
           "editable": true,
           "error": false,
           "fill": 0,
-          "grid": {
-            "threshold1": null,
-            "threshold1Color": "rgba(216, 200, 27, 0.27)",
-            "threshold2": null,
-            "threshold2Color": "rgba(234, 112, 112, 0.22)"
-          },
+          "grid": {},
           "id": 16,
-          "isNew": true,
           "legend": {
             "avg": false,
             "current": true,
@@ -1240,9 +1872,10 @@
           "targets": [
             {
               "refId": "A",
-              "target": "aliasByNode(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.timings.userTimings.marks.*.median, 12)"
+              "target": "aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.timings.userTimings.marks.*.median, 12)"
             }
           ],
+          "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
           "title": "User timings",
@@ -1254,7 +1887,10 @@
           },
           "type": "graph",
           "xaxis": {
-            "show": true
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
           },
           "yaxes": [
             {
@@ -1276,12 +1912,16 @@
           ]
         }
       ],
-      "title": "New row"
+      "showTitle": false,
+      "titleSize": "h6",
+      "height": "250px",
+      "repeat": null,
+      "repeatRowId": null,
+      "repeatIteration": null,
+      "collapse": false
     },
     {
-      "collapse": false,
-      "editable": true,
-      "height": "25px",
+      "title": "New row",
       "panels": [
         {
           "cacheTimeout": null,
@@ -1305,7 +1945,6 @@
           },
           "id": 19,
           "interval": null,
-          "isNew": true,
           "links": [],
           "mappingType": 1,
           "mappingTypes": [
@@ -1342,7 +1981,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.coach.advice.info.domDepth.avg"
+              "target": "$base.$path.pageSummary.$domain.$page.$browser.$connectivity.coach.advice.info.domDepth.avg"
             }
           ],
           "thresholds": "",
@@ -1380,7 +2019,6 @@
           },
           "id": 20,
           "interval": null,
-          "isNew": true,
           "links": [],
           "mappingType": 1,
           "mappingTypes": [
@@ -1417,7 +2055,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.coach.advice.info.domDepth.max"
+              "target": "$base.$path.pageSummary.$domain.$page.$browser.$connectivity.coach.advice.info.domDepth.max"
             }
           ],
           "thresholds": "",
@@ -1455,7 +2093,6 @@
           },
           "id": 21,
           "interval": null,
-          "isNew": true,
           "links": [],
           "mappingType": 1,
           "mappingTypes": [
@@ -1492,7 +2129,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.coach.advice.info.domElements"
+              "target": "$base.$path.pageSummary.$domain.$page.$browser.$connectivity.coach.advice.info.domElements"
             }
           ],
           "thresholds": "",
@@ -1530,7 +2167,6 @@
           },
           "id": 22,
           "interval": null,
-          "isNew": true,
           "links": [],
           "mappingType": 1,
           "mappingTypes": [
@@ -1567,7 +2203,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.coach.advice.info.documentHeight"
+              "target": "$base.$path.pageSummary.$domain.$page.$browser.$connectivity.coach.advice.info.documentHeight"
             }
           ],
           "thresholds": "",
@@ -1605,7 +2241,6 @@
           },
           "id": 23,
           "interval": null,
-          "isNew": true,
           "links": [],
           "mappingType": 1,
           "mappingTypes": [
@@ -1659,12 +2294,16 @@
           "valueName": "avg"
         }
       ],
-      "title": "New row"
+      "showTitle": false,
+      "titleSize": "h6",
+      "height": "25px",
+      "repeat": null,
+      "repeatRowId": null,
+      "repeatIteration": null,
+      "collapse": false
     },
     {
-      "collapse": false,
-      "editable": true,
-      "height": "100px",
+      "title": "1st vs 3rd party (--firstParty)",
       "panels": [
         {
           "cacheTimeout": null,
@@ -1688,7 +2327,6 @@
           },
           "id": 32,
           "interval": null,
-          "isNew": true,
           "links": [],
           "mappingType": 1,
           "mappingTypes": [
@@ -1725,7 +2363,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.thirdParty.transferSize"
+              "target": "$base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.select metric"
             }
           ],
           "thresholds": "",
@@ -1763,7 +2401,6 @@
           },
           "id": 33,
           "interval": null,
-          "isNew": true,
           "links": [],
           "mappingType": 1,
           "mappingTypes": [
@@ -1800,7 +2437,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.firstParty.transferSize"
+              "target": "$base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.select metric"
             }
           ],
           "thresholds": "",
@@ -1838,7 +2475,6 @@
           },
           "id": 34,
           "interval": null,
-          "isNew": true,
           "links": [],
           "mappingType": 1,
           "mappingTypes": [
@@ -1875,7 +2511,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.thirdParty.requests"
+              "target": "$base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.select metric"
             }
           ],
           "thresholds": "",
@@ -1913,7 +2549,6 @@
           },
           "id": 35,
           "interval": null,
-          "isNew": true,
           "links": [],
           "mappingType": 1,
           "mappingTypes": [
@@ -1950,7 +2585,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.firstParty.requests"
+              "target": "$base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.select metric"
             }
           ],
           "thresholds": "",
@@ -1968,12 +2603,15 @@
         }
       ],
       "showTitle": true,
-      "title": "1st vs 3rd party (--firstParty)"
+      "titleSize": "h6",
+      "height": "100px",
+      "repeat": null,
+      "repeatRowId": null,
+      "repeatIteration": null,
+      "collapse": false
     },
     {
-      "collapse": false,
-      "editable": true,
-      "height": "100px",
+      "title": "Chrome only",
       "panels": [
         {
           "cacheTimeout": null,
@@ -1997,7 +2635,6 @@
           },
           "id": 25,
           "interval": null,
-          "isNew": true,
           "links": [],
           "mappingType": 1,
           "mappingTypes": [
@@ -2034,7 +2671,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.transferSize"
+              "target": "$base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.transferSize"
             }
           ],
           "thresholds": "",
@@ -2072,7 +2709,6 @@
           },
           "id": 26,
           "interval": null,
-          "isNew": true,
           "links": [],
           "mappingType": 1,
           "mappingTypes": [
@@ -2109,7 +2745,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.contentSize"
+              "target": "$base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.contentSize"
             }
           ],
           "thresholds": "",
@@ -2147,7 +2783,6 @@
           },
           "id": 27,
           "interval": null,
-          "isNew": true,
           "links": [],
           "mappingType": 1,
           "mappingTypes": [
@@ -2184,7 +2819,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.contentTypes.css.transferSize"
+              "target": "$base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.contentTypes.css.transferSize"
             }
           ],
           "thresholds": "",
@@ -2222,7 +2857,6 @@
           },
           "id": 28,
           "interval": null,
-          "isNew": true,
           "links": [],
           "mappingType": 1,
           "mappingTypes": [
@@ -2259,7 +2893,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.contentTypes.css.contentSize"
+              "target": "$base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.contentTypes.css.contentSize"
             }
           ],
           "thresholds": "",
@@ -2297,7 +2931,6 @@
           },
           "id": 29,
           "interval": null,
-          "isNew": true,
           "links": [],
           "mappingType": 1,
           "mappingTypes": [
@@ -2334,7 +2967,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.contentTypes.javascript.transferSize"
+              "target": "$base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.contentTypes.javascript.transferSize"
             }
           ],
           "thresholds": "",
@@ -2372,7 +3005,6 @@
           },
           "id": 30,
           "interval": null,
-          "isNew": true,
           "links": [],
           "mappingType": 1,
           "mappingTypes": [
@@ -2409,7 +3041,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.contentTypes.javascript.contentSize"
+              "target": "$base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.contentTypes.javascript.contentSize"
             }
           ],
           "thresholds": "",
@@ -2427,131 +3059,12 @@
         }
       ],
       "showTitle": true,
-      "title": "Chrome only"
+      "titleSize": "h6",
+      "height": "100px",
+      "repeat": null,
+      "repeatRowId": null,
+      "repeatIteration": null,
+      "collapse": false
     }
-  ],
-  "time": {
-    "from": "now-7d",
-    "to": "now"
-  },
-  "timepicker": {
-    "refresh_intervals": [
-      "5s",
-      "10s",
-      "30s",
-      "1m",
-      "5m",
-      "15m",
-      "30m",
-      "1h",
-      "2h",
-      "1d"
-    ],
-    "time_options": [
-      "5m",
-      "15m",
-      "1h",
-      "6h",
-      "12h",
-      "24h",
-      "2d",
-      "7d",
-      "30d"
-    ]
-  },
-  "templating": {
-    "list": [
-      {
-        "current": {},
-        "datasource": "${DS_GRAPHITE}",
-        "hide": 0,
-        "includeAll": false,
-        "multi": false,
-        "name": "path",
-        "options": [],
-        "query": "sitespeed_io.*",
-        "refresh": 1,
-        "regex": "",
-        "type": "query"
-      },
-      {
-        "current": {},
-        "datasource": "${DS_GRAPHITE}",
-        "hide": 0,
-        "includeAll": false,
-        "multi": false,
-        "name": "domain",
-        "options": [],
-        "query": "sitespeed_io.$path.pageSummary.*",
-        "refresh": 1,
-        "regex": "",
-        "type": "query"
-      },
-      {
-        "current": {},
-        "datasource": "${DS_GRAPHITE}",
-        "hide": 0,
-        "includeAll": false,
-        "multi": false,
-        "name": "page",
-        "options": [],
-        "query": "sitespeed_io.$path.pageSummary.$domain.*",
-        "refresh": 1,
-        "regex": "",
-        "type": "query"
-      },
-      {
-        "current": {},
-        "datasource": "${DS_GRAPHITE}",
-        "hide": 0,
-        "includeAll": false,
-        "multi": false,
-        "name": "browser",
-        "options": [],
-        "query": "sitespeed_io.$path.pageSummary.$domain.$page.*",
-        "refresh": 1,
-        "regex": "",
-        "type": "query"
-      },
-      {
-        "current": {},
-        "datasource": "${DS_GRAPHITE}",
-        "hide": 0,
-        "includeAll": false,
-        "multi": false,
-        "name": "connectivity",
-        "options": [],
-        "query": "sitespeed_io.$path.pageSummary.$domain.$page.$browser.*",
-        "refresh": 1,
-        "regex": "",
-        "type": "query"
-      }
-    ]
-  },
-  "annotations": {
-    "list": []
-  },
-  "schemaVersion": 12,
-  "version": 57,
-  "links": [
-    {
-      "asDropdown": true,
-      "icon": "external link",
-      "tags": [
-        "site"
-      ],
-      "title": "Site",
-      "type": "dashboards"
-    },
-    {
-      "asDropdown": true,
-      "icon": "external link",
-      "tags": [
-        "page"
-      ],
-      "title": "Pages",
-      "type": "dashboards"
-    }
-  ],
-  "gnetId": null
+  ]
 }

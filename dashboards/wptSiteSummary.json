@@ -7,6 +7,13 @@
       "type": "datasource",
       "pluginId": "graphite",
       "pluginName": "Graphite"
+    },
+    {
+      "name": "VAR_BASE",
+      "type": "constant",
+      "label": "base",
+      "value": "sitespeed_io",
+      "description": ""
     }
   ],
   "__requires": [
@@ -26,7 +33,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "3.1.1"
+      "version": "4.1.0-beta1"
     },
     {
       "type": "datasource",
@@ -43,13 +50,178 @@
   "style": "dark",
   "timezone": "browser",
   "editable": true,
+  "graphTooltip": 0,
   "hideControls": false,
-  "sharedCrosshair": false,
+  "time": {
+    "from": "now-7d",
+    "to": "now"
+  },
+  "timepicker": {
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ],
+    "time_options": [
+      "5m",
+      "15m",
+      "1h",
+      "6h",
+      "12h",
+      "24h",
+      "2d",
+      "7d",
+      "30d"
+    ]
+  },
+  "templating": {
+    "list": [
+      {
+        "current": {
+          "value": "${VAR_BASE}",
+          "text": "${VAR_BASE}"
+        },
+        "hide": 2,
+        "label": null,
+        "name": "base",
+        "options": [
+          {
+            "value": "${VAR_BASE}",
+            "text": "${VAR_BASE}"
+          }
+        ],
+        "query": "${VAR_BASE}",
+        "type": "constant"
+      },
+      {
+        "allValue": null,
+        "current": {},
+        "datasource": "${DS_GRAPHITE}",
+        "hide": 0,
+        "includeAll": false,
+        "label": null,
+        "multi": false,
+        "name": "path",
+        "options": [],
+        "query": "$base.*",
+        "refresh": 1,
+        "regex": "",
+        "sort": 0,
+        "tagValuesQuery": null,
+        "tagsQuery": null,
+        "type": "query"
+      },
+      {
+        "allValue": null,
+        "current": {},
+        "datasource": "${DS_GRAPHITE}",
+        "hide": 0,
+        "includeAll": false,
+        "label": null,
+        "multi": false,
+        "name": "group",
+        "options": [],
+        "query": "$base.$path.summary.*",
+        "refresh": 1,
+        "regex": "",
+        "sort": 0,
+        "tagValuesQuery": null,
+        "tagsQuery": null,
+        "type": "query"
+      },
+      {
+        "allValue": null,
+        "current": {},
+        "datasource": "${DS_GRAPHITE}",
+        "hide": 0,
+        "includeAll": false,
+        "label": null,
+        "multi": false,
+        "name": "location",
+        "options": [],
+        "query": "$base.$path.summary.$group.webpagetest.*",
+        "refresh": 1,
+        "regex": "",
+        "sort": 0,
+        "tagValuesQuery": null,
+        "tagsQuery": null,
+        "type": "query"
+      },
+      {
+        "allValue": null,
+        "current": {},
+        "datasource": "${DS_GRAPHITE}",
+        "hide": 0,
+        "includeAll": false,
+        "label": null,
+        "multi": false,
+        "name": "connectivity",
+        "options": [],
+        "query": "$base.$path.summary.$group.webpagetest.$location.*",
+        "refresh": 1,
+        "regex": "",
+        "sort": 0,
+        "tagValuesQuery": null,
+        "tagsQuery": null,
+        "type": "query"
+      },
+      {
+        "allValue": null,
+        "current": {},
+        "datasource": "${DS_GRAPHITE}",
+        "hide": 0,
+        "includeAll": false,
+        "label": null,
+        "multi": false,
+        "name": "view",
+        "options": [],
+        "query": "$base.$path.summary.$group.webpagetest.$location.$connectivity.*.*",
+        "refresh": 1,
+        "regex": "",
+        "sort": 0,
+        "tagValuesQuery": null,
+        "tagsQuery": null,
+        "type": "query"
+      }
+    ]
+  },
+  "annotations": {
+    "list": []
+  },
+  "refresh": false,
+  "schemaVersion": 14,
+  "version": 14,
+  "links": [
+    {
+      "asDropdown": true,
+      "icon": "external link",
+      "tags": [
+        "page"
+      ],
+      "title": "Pages",
+      "type": "dashboards"
+    },
+    {
+      "asDropdown": true,
+      "icon": "external link",
+      "tags": [
+        "site"
+      ],
+      "title": "Site",
+      "type": "dashboards"
+    }
+  ],
+  "gnetId": null,
   "rows": [
     {
-      "collapse": false,
-      "editable": true,
-      "height": "100px",
+      "title": "Max",
       "panels": [
         {
           "cacheTimeout": null,
@@ -73,7 +245,6 @@
           },
           "id": 3,
           "interval": null,
-          "isNew": true,
           "links": [],
           "mappingType": 1,
           "mappingTypes": [
@@ -110,7 +281,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "sitespeed_io.$path.summary.$group.webpagetest.$location.$connectivity.timing.$view.TTFB.max"
+              "target": "$base.$path.summary.$group.webpagetest.$location.$connectivity.timing.$view.TTFB.max"
             }
           ],
           "thresholds": "",
@@ -148,7 +319,6 @@
           },
           "id": 5,
           "interval": null,
-          "isNew": true,
           "links": [],
           "mappingType": 1,
           "mappingTypes": [
@@ -185,7 +355,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "sitespeed_io.$path.summary.$group.webpagetest.$location.$connectivity.timing.$view.render.max"
+              "target": "$base.$path.summary.$group.webpagetest.$location.$connectivity.timing.$view.render.max"
             }
           ],
           "thresholds": "",
@@ -223,7 +393,6 @@
           },
           "id": 4,
           "interval": null,
-          "isNew": true,
           "links": [],
           "mappingType": 1,
           "mappingTypes": [
@@ -260,7 +429,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "sitespeed_io.$path.summary.$group.webpagetest.$location.$connectivity.timing.$view.SpeedIndex.max"
+              "target": "$base.$path.summary.$group.webpagetest.$location.$connectivity.timing.$view.SpeedIndex.max"
             }
           ],
           "thresholds": "",
@@ -298,7 +467,6 @@
           },
           "id": 6,
           "interval": null,
-          "isNew": true,
           "links": [],
           "mappingType": 1,
           "mappingTypes": [
@@ -335,7 +503,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "sitespeed_io.$path.summary.$group.webpagetest.$location.$connectivity.timing.$view.fullyLoaded.max"
+              "target": "$base.$path.summary.$group.webpagetest.$location.$connectivity.timing.$view.fullyLoaded.max"
             }
           ],
           "thresholds": "",
@@ -373,7 +541,6 @@
           },
           "id": 8,
           "interval": null,
-          "isNew": true,
           "links": [],
           "mappingType": 1,
           "mappingTypes": [
@@ -410,7 +577,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "sumSeries(sitespeed_io.$path.summary.$group.webpagetest.$location.$connectivity.asset.$view.breakdown.*.requests.max)"
+              "target": "sumSeries($base.$path.summary.$group.webpagetest.$location.$connectivity.asset.$view.breakdown.*.requests.max)"
             }
           ],
           "thresholds": "",
@@ -448,7 +615,6 @@
           },
           "id": 10,
           "interval": null,
-          "isNew": true,
           "links": [],
           "mappingType": 1,
           "mappingTypes": [
@@ -485,7 +651,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "sumSeries(sitespeed_io.$path.summary.$group.webpagetest.$location.$connectivity.asset.$view.breakdown.*.bytes.max)"
+              "target": "sumSeries($base.$path.summary.$group.webpagetest.$location.$connectivity.asset.$view.breakdown.*.bytes.max)"
             }
           ],
           "thresholds": "",
@@ -503,12 +669,15 @@
         }
       ],
       "showTitle": true,
-      "title": "Max"
+      "titleSize": "h6",
+      "height": "100px",
+      "repeat": null,
+      "repeatRowId": null,
+      "repeatIteration": null,
+      "collapse": false
     },
     {
-      "collapse": false,
-      "editable": true,
-      "height": "250px",
+      "title": "New row",
       "panels": [
         {
           "aliasColors": {
@@ -521,14 +690,8 @@
           "editable": true,
           "error": false,
           "fill": 0,
-          "grid": {
-            "threshold1": null,
-            "threshold1Color": "rgba(216, 200, 27, 0.27)",
-            "threshold2": null,
-            "threshold2Color": "rgba(234, 112, 112, 0.22)"
-          },
+          "grid": {},
           "id": 7,
-          "isNew": true,
           "legend": {
             "alignAsTable": true,
             "avg": false,
@@ -564,18 +727,19 @@
           "targets": [
             {
               "refId": "B",
-              "target": "aliasByNode(sitespeed_io.$path.summary.$group.webpagetest.$location.$connectivity.timing.$view.SpeedIndex.max, 10)"
+              "target": "aliasByNode($base.$path.summary.$group.webpagetest.$location.$connectivity.timing.$view.SpeedIndex.max, 10)"
             },
             {
+              "hide": false,
               "refId": "A",
-              "target": "aliasByNode(sitespeed_io.$path.summary.$group.webpagetest.$location.$connectivity.timing.$view.SpeedIndex.median, 10)",
-              "hide": false
+              "target": "aliasByNode($base.$path.summary.$group.webpagetest.$location.$connectivity.timing.$view.SpeedIndex.median, 10)"
             },
             {
               "refId": "C",
-              "target": "aliasByNode(sitespeed_io.$path.summary.$group.webpagetest.$location.$connectivity.timing.$view.SpeedIndex.min, 10)"
+              "target": "aliasByNode($base.$path.summary.$group.webpagetest.$location.$connectivity.timing.$view.SpeedIndex.min, 10)"
             }
           ],
+          "thresholds": [],
           "timeFrom": "7d",
           "timeShift": null,
           "title": "SpeedIndex",
@@ -587,7 +751,10 @@
           },
           "type": "graph",
           "xaxis": {
-            "show": true
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
           },
           "yaxes": [
             {
@@ -619,14 +786,8 @@
           "editable": true,
           "error": false,
           "fill": 0,
-          "grid": {
-            "threshold1": null,
-            "threshold1Color": "rgba(216, 200, 27, 0.27)",
-            "threshold2": null,
-            "threshold2Color": "rgba(234, 112, 112, 0.22)"
-          },
+          "grid": {},
           "id": 12,
-          "isNew": true,
           "legend": {
             "alignAsTable": true,
             "avg": false,
@@ -662,18 +823,19 @@
           "targets": [
             {
               "refId": "B",
-              "target": "aliasByNode(sitespeed_io.$path.summary.$group.webpagetest.$location.$connectivity.timing.$view.render.max, 10)"
+              "target": "aliasByNode($base.$path.summary.$group.webpagetest.$location.$connectivity.timing.$view.render.max, 10)"
             },
             {
+              "hide": false,
               "refId": "A",
-              "target": "aliasByNode(sitespeed_io.$path.summary.$group.webpagetest.$location.$connectivity.timing.$view.render.median, 10)",
-              "hide": false
+              "target": "aliasByNode($base.$path.summary.$group.webpagetest.$location.$connectivity.timing.$view.render.median, 10)"
             },
             {
               "refId": "C",
-              "target": "aliasByNode(sitespeed_io.$path.summary.$group.webpagetest.$location.$connectivity.timing.$view.render.min, 10)"
+              "target": "aliasByNode($base.$path.summary.$group.webpagetest.$location.$connectivity.timing.$view.render.min, 10)"
             }
           ],
+          "thresholds": [],
           "timeFrom": "7d",
           "timeShift": null,
           "title": "Start render",
@@ -685,7 +847,10 @@
           },
           "type": "graph",
           "xaxis": {
-            "show": true
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
           },
           "yaxes": [
             {
@@ -707,132 +872,13 @@
           ]
         }
       ],
-      "title": "New row"
+      "showTitle": false,
+      "titleSize": "h6",
+      "height": "250px",
+      "repeat": null,
+      "repeatRowId": null,
+      "repeatIteration": null,
+      "collapse": false
     }
-  ],
-  "time": {
-    "from": "now-6h",
-    "to": "now"
-  },
-  "timepicker": {
-    "refresh_intervals": [
-      "5s",
-      "10s",
-      "30s",
-      "1m",
-      "5m",
-      "15m",
-      "30m",
-      "1h",
-      "2h",
-      "1d"
-    ],
-    "time_options": [
-      "5m",
-      "15m",
-      "1h",
-      "6h",
-      "12h",
-      "24h",
-      "2d",
-      "7d",
-      "30d"
-    ]
-  },
-  "templating": {
-    "list": [
-      {
-        "current": {},
-        "datasource": "${DS_GRAPHITE}",
-        "hide": 0,
-        "includeAll": false,
-        "multi": false,
-        "name": "path",
-        "options": [],
-        "query": "sitespeed_io.*",
-        "refresh": 1,
-        "regex": "",
-        "type": "query"
-      },
-      {
-        "current": {},
-        "datasource": "${DS_GRAPHITE}",
-        "hide": 0,
-        "includeAll": false,
-        "multi": false,
-        "name": "group",
-        "options": [],
-        "query": "sitespeed_io.$path.summary.*",
-        "refresh": 1,
-        "regex": "",
-        "type": "query"
-      },
-      {
-        "current": {},
-        "datasource": "${DS_GRAPHITE}",
-        "hide": 0,
-        "includeAll": false,
-        "multi": false,
-        "name": "location",
-        "options": [],
-        "query": "sitespeed_io.$path.summary.$group.webpagetest.*",
-        "refresh": 1,
-        "regex": "",
-        "type": "query"
-      },
-      {
-        "current": {},
-        "datasource": "${DS_GRAPHITE}",
-        "hide": 0,
-        "includeAll": false,
-        "multi": false,
-        "name": "connectivity",
-        "options": [],
-        "query": "sitespeed_io.$path.summary.$group.webpagetest.$location.*",
-        "refresh": 1,
-        "regex": "",
-        "type": "query"
-      },
-      {
-        "current": {},
-        "datasource": "${DS_GRAPHITE}",
-        "hide": 0,
-        "includeAll": false,
-        "multi": false,
-        "name": "view",
-        "options": [],
-        "query": "sitespeed_io.$path.summary.$group.webpagetest.$location.$connectivity.*.*",
-        "refresh": 1,
-        "regex": "",
-        "type": "query"
-      }
-    ]
-  },
-  "annotations": {
-    "list": []
-  },
-  "refresh": false,
-  "schemaVersion": 12,
-  "version": 8,
-  "links": [
-    {
-      "asDropdown": true,
-      "icon": "external link",
-      "tags": [
-        "page"
-      ],
-      "title": "Pages",
-      "type": "dashboards"
-    },
-    {
-      "asDropdown": true,
-      "icon": "external link",
-      "tags": [
-        "site"
-      ],
-      "title": "Site",
-      "type": "dashboards"
-    }
-  ],
-  "gnetId": null
+  ]
 }
