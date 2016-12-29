@@ -171,6 +171,48 @@
         "tagValuesQuery": null,
         "tagsQuery": null,
         "type": "query"
+      },
+      {
+        "auto": false,
+        "auto_count": 30,
+        "auto_min": "10s",
+        "current": {
+          "text": "max",
+          "value": "max"
+        },
+        "hide": 0,
+        "label": null,
+        "name": "function",
+        "options": [
+          {
+            "text": "min",
+            "value": "min",
+            "selected": false
+          },
+          {
+            "text": "mean",
+            "value": "mean",
+            "selected": false
+          },
+          {
+            "text": "median",
+            "value": "median",
+            "selected": false
+          },
+          {
+            "text": "p90",
+            "value": "p90",
+            "selected": false
+          },
+          {
+            "text": "max",
+            "value": "max",
+            "selected": true
+          }
+        ],
+        "query": "min, mean,median,p90,max",
+        "refresh": 2,
+        "type": "interval"
       }
     ]
   },
@@ -178,7 +220,7 @@
     "list": []
   },
   "schemaVersion": 14,
-  "version": 9,
+  "version": 20,
   "links": [
     {
       "asDropdown": true,
@@ -204,7 +246,7 @@
   "gnetId": null,
   "rows": [
     {
-      "title": "New row",
+      "title": "Metrics [$function]",
       "panels": [
         {
           "cacheTimeout": null,
@@ -257,14 +299,14 @@
           "span": 2,
           "sparkline": {
             "fillColor": "rgba(31, 118, 189, 0.18)",
-            "full": false,
+            "full": true,
             "lineColor": "rgb(31, 120, 193)",
             "show": false
           },
           "targets": [
             {
               "refId": "A",
-              "target": "$base.$path.summary.$group.$browser.$connectivity.browsertime.visualMetrics.SpeedIndex.median",
+              "target": "$base.$path.summary.$group.$browser.$connectivity.browsertime.visualMetrics.SpeedIndex.$function",
               "textEditor": false
             }
           ],
@@ -332,19 +374,94 @@
           "span": 2,
           "sparkline": {
             "fillColor": "rgba(31, 118, 189, 0.18)",
-            "full": false,
+            "full": true,
             "lineColor": "rgb(31, 120, 193)",
             "show": false
           },
           "targets": [
             {
               "refId": "A",
-              "target": "$base.$path.summary.$group.$browser.$connectivity.browsertime.visualMetrics.FirstVisualChange.median",
+              "target": "$base.$path.summary.$group.$browser.$connectivity.browsertime.visualMetrics.FirstVisualChange.$function",
               "textEditor": false
             }
           ],
           "thresholds": "",
           "title": "First Visual Change",
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "current"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": false,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "datasource": "${DS_GRAPHITE}",
+          "editable": true,
+          "error": false,
+          "format": "ms",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "id": 22,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "span": 2,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": true,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": false
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "target": "$base.$path.summary.$group.$browser.$connectivity.browsertime.visualMetrics.LastVisualChange.$function",
+              "textEditor": false
+            }
+          ],
+          "thresholds": "",
+          "title": "Last Visual Change",
           "type": "singlestat",
           "valueFontSize": "80%",
           "valueMaps": [
@@ -407,14 +524,14 @@
           "span": 2,
           "sparkline": {
             "fillColor": "rgba(31, 118, 189, 0.18)",
-            "full": false,
+            "full": true,
             "lineColor": "rgb(31, 120, 193)",
             "show": false
           },
           "targets": [
             {
               "refId": "A",
-              "target": "$base.$path.summary.$group.$browser.$connectivity.browsertime.fullyLoaded.median",
+              "target": "$base.$path.summary.$group.$browser.$connectivity.browsertime.fullyLoaded.$function",
               "textEditor": false
             }
           ],
@@ -489,87 +606,12 @@
           "targets": [
             {
               "refId": "A",
-              "target": "$base.$path.summary.$group.$browser.$connectivity.browsertime.pageTimings.backEndTime.median",
+              "target": "$base.$path.summary.$group.$browser.$connectivity.browsertime.pageTimings.backEndTime.$function",
               "textEditor": false
             }
           ],
           "thresholds": "",
           "title": "Backend time",
-          "type": "singlestat",
-          "valueFontSize": "80%",
-          "valueMaps": [
-            {
-              "op": "=",
-              "text": "N/A",
-              "value": "null"
-            }
-          ],
-          "valueName": "current"
-        },
-        {
-          "cacheTimeout": null,
-          "colorBackground": false,
-          "colorValue": false,
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "datasource": "${DS_GRAPHITE}",
-          "editable": true,
-          "error": false,
-          "format": "ms",
-          "gauge": {
-            "maxValue": 100,
-            "minValue": 0,
-            "show": false,
-            "thresholdLabels": false,
-            "thresholdMarkers": true
-          },
-          "id": 22,
-          "interval": null,
-          "links": [],
-          "mappingType": 1,
-          "mappingTypes": [
-            {
-              "name": "value to text",
-              "value": 1
-            },
-            {
-              "name": "range to text",
-              "value": 2
-            }
-          ],
-          "maxDataPoints": 100,
-          "nullPointMode": "connected",
-          "nullText": null,
-          "postfix": "",
-          "postfixFontSize": "50%",
-          "prefix": "",
-          "prefixFontSize": "50%",
-          "rangeMaps": [
-            {
-              "from": "null",
-              "text": "N/A",
-              "to": "null"
-            }
-          ],
-          "span": 2,
-          "sparkline": {
-            "fillColor": "rgba(31, 118, 189, 0.18)",
-            "full": false,
-            "lineColor": "rgb(31, 120, 193)",
-            "show": false
-          },
-          "targets": [
-            {
-              "refId": "A",
-              "target": "$base.$path.summary.$group.$browser.$connectivity.browsertime.pageTimings.domContentLoadedTime.median",
-              "textEditor": false
-            }
-          ],
-          "thresholds": "",
-          "title": "DOM content loaded time",
           "type": "singlestat",
           "valueFontSize": "80%",
           "valueMaps": [
@@ -639,88 +681,12 @@
           "targets": [
             {
               "refId": "A",
-              "target": "$base.$path.summary.$group.$browser.$connectivity.browsertime.pageTimings.frontEndTime.median",
+              "target": "$base.$path.summary.$group.$browser.$connectivity.browsertime.pageTimings.frontEndTime.$function",
               "textEditor": false
             }
           ],
           "thresholds": "",
           "title": "Frontend time",
-          "type": "singlestat",
-          "valueFontSize": "80%",
-          "valueMaps": [
-            {
-              "op": "=",
-              "text": "N/A",
-              "value": "null"
-            }
-          ],
-          "valueName": "current"
-        },
-        {
-          "cacheTimeout": null,
-          "colorBackground": false,
-          "colorValue": false,
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "datasource": "${DS_GRAPHITE}",
-          "decimals": null,
-          "editable": true,
-          "error": false,
-          "format": "none",
-          "gauge": {
-            "maxValue": 100,
-            "minValue": 0,
-            "show": false,
-            "thresholdLabels": false,
-            "thresholdMarkers": true
-          },
-          "id": 12,
-          "interval": null,
-          "links": [],
-          "mappingType": 1,
-          "mappingTypes": [
-            {
-              "name": "value to text",
-              "value": 1
-            },
-            {
-              "name": "range to text",
-              "value": 2
-            }
-          ],
-          "maxDataPoints": 100,
-          "nullPointMode": "connected",
-          "nullText": null,
-          "postfix": "",
-          "postfixFontSize": "50%",
-          "prefix": "",
-          "prefixFontSize": "50%",
-          "rangeMaps": [
-            {
-              "from": "null",
-              "text": "N/A",
-              "to": "null"
-            }
-          ],
-          "span": 2,
-          "sparkline": {
-            "fillColor": "rgba(31, 118, 189, 0.18)",
-            "full": false,
-            "lineColor": "rgb(31, 120, 193)",
-            "show": false
-          },
-          "targets": [
-            {
-              "refId": "A",
-              "target": "$base.$path.summary.$group.$browser.$connectivity.pagexray.requests.max",
-              "textEditor": false
-            }
-          ],
-          "thresholds": "",
-          "title": "Request (max)",
           "type": "singlestat",
           "valueFontSize": "80%",
           "valueMaps": [
@@ -784,19 +750,19 @@
           "span": 2,
           "sparkline": {
             "fillColor": "rgba(31, 118, 189, 0.18)",
-            "full": false,
+            "full": true,
             "lineColor": "rgb(31, 120, 193)",
             "show": false
           },
           "targets": [
             {
               "refId": "A",
-              "target": "$base.$path.summary.$group.$browser.$connectivity.pagexray.requests.median",
+              "target": "$base.$path.summary.$group.$browser.$connectivity.pagexray.requests.$function",
               "textEditor": false
             }
           ],
           "thresholds": "",
-          "title": "Request (median)",
+          "title": "Requests",
           "type": "singlestat",
           "valueFontSize": "80%",
           "valueMaps": [
@@ -860,19 +826,19 @@
           "span": 2,
           "sparkline": {
             "fillColor": "rgba(31, 118, 189, 0.18)",
-            "full": false,
+            "full": true,
             "lineColor": "rgb(31, 120, 193)",
             "show": false
           },
           "targets": [
             {
               "refId": "A",
-              "target": "$base.$path.summary.$group.$browser.$connectivity.pagexray.contentTypes.css.requests.max",
+              "target": "$base.$path.summary.$group.$browser.$connectivity.pagexray.contentTypes.css.requests.$function",
               "textEditor": false
             }
           ],
           "thresholds": "",
-          "title": "CSS request (max)",
+          "title": "CSS requests",
           "type": "singlestat",
           "valueFontSize": "80%",
           "valueMaps": [
@@ -936,19 +902,19 @@
           "span": 2,
           "sparkline": {
             "fillColor": "rgba(31, 118, 189, 0.18)",
-            "full": false,
+            "full": true,
             "lineColor": "rgb(31, 120, 193)",
             "show": false
           },
           "targets": [
             {
               "refId": "A",
-              "target": "$base.$path.summary.$group.$browser.$connectivity.pagexray.contentTypes.javascript.requests.max",
+              "target": "$base.$path.summary.$group.$browser.$connectivity.pagexray.contentTypes.javascript.requests.$function",
               "textEditor": false
             }
           ],
           "thresholds": "",
-          "title": "Javascript request (max)",
+          "title": "Javascript requests",
           "type": "singlestat",
           "valueFontSize": "80%",
           "valueMaps": [
@@ -1012,19 +978,19 @@
           "span": 2,
           "sparkline": {
             "fillColor": "rgba(31, 118, 189, 0.18)",
-            "full": false,
+            "full": true,
             "lineColor": "rgb(31, 120, 193)",
             "show": false
           },
           "targets": [
             {
               "refId": "A",
-              "target": "$base.$path.summary.$group.$browser.$connectivity.pagexray.contentTypes.image.requests.max",
+              "target": "$base.$path.summary.$group.$browser.$connectivity.pagexray.contentTypes.image.requests.$function",
               "textEditor": false
             }
           ],
           "thresholds": "",
-          "title": "Image request (max)",
+          "title": "Image requests",
           "type": "singlestat",
           "valueFontSize": "80%",
           "valueMaps": [
@@ -1095,12 +1061,12 @@
           "targets": [
             {
               "refId": "A",
-              "target": "$base.$path.summary.$group.$browser.$connectivity.pagexray.domains.max",
+              "target": "$base.$path.summary.$group.$browser.$connectivity.pagexray.domains.$function",
               "textEditor": false
             }
           ],
           "thresholds": "",
-          "title": "Domains  (max)",
+          "title": "Domains",
           "type": "singlestat",
           "valueFontSize": "80%",
           "valueMaps": [
@@ -1125,7 +1091,7 @@
           "decimals": 0,
           "editable": true,
           "error": false,
-          "format": "s",
+          "format": "ms",
           "gauge": {
             "maxValue": 100,
             "minValue": 0,
@@ -1171,12 +1137,12 @@
           "targets": [
             {
               "refId": "A",
-              "target": "$base.$path.summary.$group.$browser.$connectivity.pagexray.expireStats.median",
+              "target": "$base.$path.summary.$group.$browser.$connectivity.pagexray.expireStats.$function",
               "textEditor": false
             }
           ],
           "thresholds": "",
-          "title": "Response expire time  (median)",
+          "title": "Response expire time",
           "type": "singlestat",
           "valueFontSize": "80%",
           "valueMaps": [
@@ -1247,12 +1213,12 @@
           "targets": [
             {
               "refId": "A",
-              "target": "$base.$path.summary.$group.$browser.$connectivity.pagexray.lastModifiedStats.median",
+              "target": "$base.$path.summary.$group.$browser.$connectivity.pagexray.lastModifiedStats.$function",
               "textEditor": false
             }
           ],
           "thresholds": "",
-          "title": "Last modified time  (median)",
+          "title": "Last modified time",
           "type": "singlestat",
           "valueFontSize": "80%",
           "valueMaps": [
@@ -1323,12 +1289,12 @@
           "targets": [
             {
               "refId": "A",
-              "target": "$base.$path.summary.$group.$browser.$connectivity.pagexray.contentTypes.image.contentSize.max",
+              "target": "$base.$path.summary.$group.$browser.$connectivity.pagexray.contentTypes.image.contentSize.$function",
               "textEditor": false
             }
           ],
           "thresholds": "",
-          "title": "Images transfer size (max)",
+          "title": "Images transfer size",
           "type": "singlestat",
           "valueFontSize": "80%",
           "valueMaps": [
@@ -1399,88 +1365,12 @@
           "targets": [
             {
               "refId": "A",
-              "target": "$base.$path.summary.$group.$browser.$connectivity.pagexray.transferSize.median",
+              "target": "$base.$path.summary.$group.$browser.$connectivity.pagexray.transferSize.$function",
               "textEditor": false
             }
           ],
           "thresholds": "",
-          "title": "Transfer size (median)",
-          "type": "singlestat",
-          "valueFontSize": "80%",
-          "valueMaps": [
-            {
-              "op": "=",
-              "text": "N/A",
-              "value": "null"
-            }
-          ],
-          "valueName": "current"
-        },
-        {
-          "cacheTimeout": null,
-          "colorBackground": false,
-          "colorValue": false,
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "datasource": "${DS_GRAPHITE}",
-          "decimals": null,
-          "editable": true,
-          "error": false,
-          "format": "bytes",
-          "gauge": {
-            "maxValue": 100,
-            "minValue": 0,
-            "show": false,
-            "thresholdLabels": false,
-            "thresholdMarkers": true
-          },
-          "id": 24,
-          "interval": null,
-          "links": [],
-          "mappingType": 1,
-          "mappingTypes": [
-            {
-              "name": "value to text",
-              "value": 1
-            },
-            {
-              "name": "range to text",
-              "value": 2
-            }
-          ],
-          "maxDataPoints": 100,
-          "nullPointMode": "connected",
-          "nullText": null,
-          "postfix": "",
-          "postfixFontSize": "50%",
-          "prefix": "",
-          "prefixFontSize": "50%",
-          "rangeMaps": [
-            {
-              "from": "null",
-              "text": "N/A",
-              "to": "null"
-            }
-          ],
-          "span": 2,
-          "sparkline": {
-            "fillColor": "rgba(31, 118, 189, 0.18)",
-            "full": false,
-            "lineColor": "rgb(31, 120, 193)",
-            "show": false
-          },
-          "targets": [
-            {
-              "refId": "A",
-              "target": "$base.$path.summary.$group.$browser.$connectivity.pagexray.transferSize.max",
-              "textEditor": false
-            }
-          ],
-          "thresholds": "",
-          "title": "Transfer size (max)",
+          "title": "Transfer size",
           "type": "singlestat",
           "valueFontSize": "80%",
           "valueMaps": [
@@ -1550,12 +1440,87 @@
           "targets": [
             {
               "refId": "A",
-              "target": "$base.$path.summary.$group.$browser.$connectivity.coach.score.median",
+              "target": "$base.$path.summary.$group.$browser.$connectivity.coach.score.$function",
               "textEditor": false
             }
           ],
           "thresholds": "80,90",
           "title": "Coach score",
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "current"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": false,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "datasource": "${DS_GRAPHITE}",
+          "editable": true,
+          "error": false,
+          "format": "none",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "id": 43,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "span": 2,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": false
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "target": "$base.$path.summary.$group.$browser.$connectivity.coach.performance.score.$function",
+              "textEditor": false
+            }
+          ],
+          "thresholds": "80,90",
+          "title": "Performance score",
           "type": "singlestat",
           "valueFontSize": "80%",
           "valueMaps": [
@@ -1615,7 +1580,7 @@
               "to": "null"
             }
           ],
-          "span": 12,
+          "span": 2,
           "sparkline": {
             "fillColor": "rgba(31, 118, 189, 0.18)",
             "full": false,
@@ -1643,7 +1608,7 @@
           "valueName": "current"
         }
       ],
-      "showTitle": false,
+      "showTitle": true,
       "titleSize": "h6",
       "height": "25px",
       "repeat": null,
@@ -1688,14 +1653,14 @@
           "targets": [
             {
               "refId": "A",
-              "target": "aliasByNode($base.$path.summary.$group.$browser.$connectivity.browsertime.pageTimings.*.median, 8)",
+              "target": "aliasByNode($base.$path.summary.$group.$browser.$connectivity.browsertime.pageTimings.*.$function, 8)",
               "textEditor": false
             }
           ],
           "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
-          "title": "Summary timings",
+          "title": "Summary timings [$function]",
           "tooltip": {
             "msResolution": false,
             "shared": true,
@@ -1773,25 +1738,25 @@
           "targets": [
             {
               "refId": "B",
-              "target": "alias(asPercent($base.$path.summary.$group.$browser.$connectivity.browsertime.pageTimings.backEndTime.median, #C), 'Backend')",
-              "targetFull": "alias(asPercent($base.$path.summary.$group.$browser.$connectivity.browsertime.pageTimings.backEndTime.median, sumSeries(sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.pageTimings.backEndTime.median,sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.pageTimings.frontEndTime.median)), 'Backend')"
+              "target": "alias(asPercent($base.$path.summary.$group.$browser.$connectivity.browsertime.pageTimings.backEndTime.$function, #C), 'Backend')",
+              "targetFull": "alias(asPercent($base.$path.summary.$group.$browser.$connectivity.browsertime.pageTimings.backEndTime.$function, sumSeries(sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.pageTimings.backEndTime.median,sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.pageTimings.frontEndTime.median)), 'Backend')"
             },
             {
               "refId": "A",
-              "target": "alias(asPercent($base.$path.summary.$group.$browser.$connectivity.browsertime.pageTimings.frontEndTime.median, #C), 'Frontend')",
-              "targetFull": "alias(asPercent($base.$path.summary.$group.$browser.$connectivity.browsertime.pageTimings.frontEndTime.median, sumSeries(sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.pageTimings.backEndTime.median,sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.pageTimings.frontEndTime.median)), 'Frontend')"
+              "target": "alias(asPercent($base.$path.summary.$group.$browser.$connectivity.browsertime.pageTimings.frontEndTime.$function, #C), 'Frontend')",
+              "targetFull": "alias(asPercent($base.$path.summary.$group.$browser.$connectivity.browsertime.pageTimings.frontEndTime.$function, sumSeries(sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.pageTimings.backEndTime.median,sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.pageTimings.frontEndTime.median)), 'Frontend')"
             },
             {
               "hide": true,
               "refId": "C",
-              "target": "sumSeries(sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.pageTimings.backEndTime.median,sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.pageTimings.frontEndTime.median)",
+              "target": "sumSeries(sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.pageTimings.backEndTime.$function,sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.pageTimings.frontEndTime.$function)",
               "textEditor": true
             }
           ],
           "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
-          "title": "Median time spent in backend vs frontend",
+          "title": "Time spent in backend vs frontend [$function]",
           "tooltip": {
             "msResolution": false,
             "shared": true,
@@ -1824,102 +1789,6 @@
             }
           ]
         },
-        {
-          "aliasColors": {},
-          "bars": false,
-          "datasource": "${DS_GRAPHITE}",
-          "editable": true,
-          "error": false,
-          "fill": 6,
-          "grid": {},
-          "id": 28,
-          "legend": {
-            "avg": false,
-            "current": false,
-            "max": false,
-            "min": false,
-            "show": true,
-            "total": false,
-            "values": false
-          },
-          "lines": true,
-          "linewidth": 0,
-          "links": [],
-          "nullPointMode": "connected",
-          "percentage": false,
-          "pointradius": 5,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [],
-          "span": 6,
-          "stack": true,
-          "steppedLine": false,
-          "targets": [
-            {
-              "refId": "B",
-              "target": "alias(asPercent($base.$path.summary.$group.$browser.$connectivity.browsertime.pageTimings.backEndTime.max, #C), 'Backend')",
-              "targetFull": "alias(asPercent($base.$path.summary.$group.$browser.$connectivity.browsertime.pageTimings.backEndTime.max, sumSeries(sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.pageTimings.backEndTime.max,sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.pageTimings.frontEndTime.max)), 'Backend')"
-            },
-            {
-              "refId": "A",
-              "target": "alias(asPercent($base.$path.summary.$group.$browser.$connectivity.browsertime.pageTimings.frontEndTime.max, #C), 'Frontend')",
-              "targetFull": "alias(asPercent($base.$path.summary.$group.$browser.$connectivity.browsertime.pageTimings.frontEndTime.max, sumSeries(sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.pageTimings.backEndTime.max,sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.pageTimings.frontEndTime.max)), 'Frontend')"
-            },
-            {
-              "hide": true,
-              "refId": "C",
-              "target": "sumSeries($base.$path.summary.$group.$browser.$connectivity.browsertime.pageTimings.backEndTime.max,$base.$path.summary.$group.$browser.$connectivity.browsertime.pageTimings.frontEndTime.max)",
-              "textEditor": true
-            }
-          ],
-          "thresholds": [],
-          "timeFrom": null,
-          "timeShift": null,
-          "title": "Max time spent in backend vs frontend",
-          "tooltip": {
-            "msResolution": false,
-            "shared": true,
-            "sort": 0,
-            "value_type": "individual"
-          },
-          "type": "graph",
-          "xaxis": {
-            "mode": "time",
-            "name": null,
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "format": "percent",
-              "label": "",
-              "logBase": 1,
-              "max": 100,
-              "min": 0,
-              "show": true
-            },
-            {
-              "format": "short",
-              "label": null,
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": true
-            }
-          ]
-        }
-      ],
-      "showTitle": false,
-      "titleSize": "h6",
-      "height": "250px",
-      "repeat": null,
-      "repeatRowId": null,
-      "repeatIteration": null,
-      "collapse": false
-    },
-    {
-      "title": "New row",
-      "panels": [
         {
           "aliasColors": {},
           "bars": false,
@@ -1955,87 +1824,13 @@
           "targets": [
             {
               "refId": "A",
-              "target": "aliasByNode($base.$path.summary.$group.$browser.$connectivity.pagexray.responseCodes.*.median, 8)"
+              "target": "aliasByNode($base.$path.summary.$group.$browser.$connectivity.pagexray.responseCodes.*.$function, 8)"
             }
           ],
           "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
-          "title": "Response codes (median)",
-          "tooltip": {
-            "msResolution": false,
-            "shared": true,
-            "sort": 0,
-            "value_type": "individual"
-          },
-          "type": "graph",
-          "xaxis": {
-            "mode": "time",
-            "name": null,
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "format": "short",
-              "label": null,
-              "logBase": 1,
-              "max": null,
-              "min": 0,
-              "show": true
-            },
-            {
-              "format": "short",
-              "label": null,
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": true
-            }
-          ]
-        },
-        {
-          "aliasColors": {},
-          "bars": false,
-          "datasource": "${DS_GRAPHITE}",
-          "editable": true,
-          "error": false,
-          "fill": 5,
-          "grid": {},
-          "id": 36,
-          "legend": {
-            "alignAsTable": true,
-            "avg": false,
-            "current": true,
-            "hideZero": true,
-            "max": true,
-            "min": false,
-            "show": true,
-            "total": false,
-            "values": true
-          },
-          "lines": true,
-          "linewidth": 0,
-          "links": [],
-          "nullPointMode": "connected",
-          "percentage": false,
-          "pointradius": 5,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [],
-          "span": 6,
-          "stack": true,
-          "steppedLine": false,
-          "targets": [
-            {
-              "refId": "A",
-              "target": "aliasByNode($base.$path.summary.$group.$browser.$connectivity.pagexray.responseCodes.*.max, 8)"
-            }
-          ],
-          "thresholds": [],
-          "timeFrom": null,
-          "timeShift": null,
-          "title": "Response codes (max)",
+          "title": "Response codes [$function]",
           "tooltip": {
             "msResolution": false,
             "shared": true,
@@ -2071,14 +1866,14 @@
       ],
       "showTitle": false,
       "titleSize": "h6",
-      "height": "250px",
+      "height": 450,
       "repeat": null,
       "repeatRowId": null,
       "repeatIteration": null,
       "collapse": false
     },
     {
-      "title": "1st vs 3rd party",
+      "title": "1st vs 3rd party [$function]",
       "panels": [
         {
           "cacheTimeout": null,
@@ -2138,11 +1933,11 @@
           "targets": [
             {
               "refId": "A",
-              "target": "$base.$path.summary.$group.$browser.$connectivity.pagexray.select metric"
+              "target": "$base.$path.summary.$group.$browser.$connectivity.pagexray.firstParty.contentSize.$function"
             }
           ],
           "thresholds": "",
-          "title": "First party size (max)",
+          "title": "First party size",
           "type": "singlestat",
           "valueFontSize": "80%",
           "valueMaps": [
@@ -2212,11 +2007,11 @@
           "targets": [
             {
               "refId": "A",
-              "target": "$base.$path.summary.$group.$browser.$connectivity.pagexray.select metric"
+              "target": "$base.$path.summary.$group.$browser.$connectivity.pagexray.thirdParty.contentSize.$function"
             }
           ],
           "thresholds": "",
-          "title": "Third party size (max)",
+          "title": "Third party size",
           "type": "singlestat",
           "valueFontSize": "80%",
           "valueMaps": [
@@ -2286,11 +2081,11 @@
           "targets": [
             {
               "refId": "A",
-              "target": "$base.$path.summary.$group.$browser.$connectivity.pagexray.select metric"
+              "target": "$base.$path.summary.$group.$browser.$connectivity.pagexray.firstParty.requests.$function"
             }
           ],
           "thresholds": "",
-          "title": "First party requests (max)",
+          "title": "First party requests",
           "type": "singlestat",
           "valueFontSize": "80%",
           "valueMaps": [
@@ -2360,11 +2155,11 @@
           "targets": [
             {
               "refId": "A",
-              "target": "$base.$path.summary.$group.$browser.$connectivity.pagexray.select metric"
+              "target": "$base.$path.summary.$group.$browser.$connectivity.pagexray.thirdParty.requests.$function"
             }
           ],
           "thresholds": "",
-          "title": "Third party requests (max)",
+          "title": "Third party requests",
           "type": "singlestat",
           "valueFontSize": "80%",
           "valueMaps": [
@@ -2386,7 +2181,7 @@
       "collapse": false
     },
     {
-      "title": "Chrome only",
+      "title": "Chrome only [$function]",
       "panels": [
         {
           "cacheTimeout": null,
@@ -2446,11 +2241,11 @@
           "targets": [
             {
               "refId": "A",
-              "target": "$base.$path.summary.$group.$browser.$connectivity.pagexray.transferSize.max"
+              "target": "$base.$path.summary.$group.$browser.$connectivity.pagexray.transferSize.$function"
             }
           ],
           "thresholds": "",
-          "title": "Total transfer size (max)",
+          "title": "Total transfer size",
           "type": "singlestat",
           "valueFontSize": "80%",
           "valueMaps": [
@@ -2520,11 +2315,11 @@
           "targets": [
             {
               "refId": "A",
-              "target": "$base.$path.summary.$group.$browser.$connectivity.pagexray.contentSize.max"
+              "target": "$base.$path.summary.$group.$browser.$connectivity.pagexray.contentSize.$function"
             }
           ],
           "thresholds": "",
-          "title": "Total content size (max)",
+          "title": "Total content size",
           "type": "singlestat",
           "valueFontSize": "80%",
           "valueMaps": [
@@ -2594,11 +2389,11 @@
           "targets": [
             {
               "refId": "A",
-              "target": "$base.$path.summary.$group.$browser.$connectivity.pagexray.contentTypes.css.transferSize.max"
+              "target": "$base.$path.summary.$group.$browser.$connectivity.pagexray.contentTypes.css.transferSize.$function"
             }
           ],
           "thresholds": "",
-          "title": "Total CSS transfer size (max)",
+          "title": "Total CSS transfer size",
           "type": "singlestat",
           "valueFontSize": "80%",
           "valueMaps": [
@@ -2668,11 +2463,11 @@
           "targets": [
             {
               "refId": "A",
-              "target": "$base.$path.summary.$group.$browser.$connectivity.pagexray.contentTypes.css.contentSize.max"
+              "target": "$base.$path.summary.$group.$browser.$connectivity.pagexray.contentTypes.css.contentSize.$function"
             }
           ],
           "thresholds": "",
-          "title": "Total CSS content size (max)",
+          "title": "Total CSS content size",
           "type": "singlestat",
           "valueFontSize": "80%",
           "valueMaps": [
@@ -2742,11 +2537,11 @@
           "targets": [
             {
               "refId": "A",
-              "target": "$base.$path.summary.$group.$browser.$connectivity.pagexray.contentTypes.javascript.transferSize.max"
+              "target": "$base.$path.summary.$group.$browser.$connectivity.pagexray.contentTypes.javascript.transferSize.$function"
             }
           ],
           "thresholds": "",
-          "title": "Total JS transfer size (max)",
+          "title": "Total JS transfer size",
           "type": "singlestat",
           "valueFontSize": "80%",
           "valueMaps": [
@@ -2816,11 +2611,11 @@
           "targets": [
             {
               "refId": "A",
-              "target": "$base.$path.summary.$group.$browser.$connectivity.pagexray.contentTypes.javascript.contentSize.max"
+              "target": "$base.$path.summary.$group.$browser.$connectivity.pagexray.contentTypes.javascript.contentSize.$function"
             }
           ],
           "thresholds": "",
-          "title": "Total JS content size (max)",
+          "title": "Total JS content size",
           "type": "singlestat",
           "valueFontSize": "80%",
           "valueMaps": [
