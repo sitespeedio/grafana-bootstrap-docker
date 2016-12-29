@@ -203,7 +203,7 @@
   },
   "refresh": false,
   "schemaVersion": 14,
-  "version": 53,
+  "version": 55,
   "links": [
     {
       "asDropdown": true,
@@ -2350,15 +2350,15 @@
           "targets": [
             {
               "refId": "B",
-              "target": "alias(asPercent($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.backEndTime.median, #C), 'Backend')",
-              "targetFull": "alias(asPercent($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.backEndTime.median, sumSeries($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.frontEndTime.max,$base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.backEndTime.max)), 'Backend')",
-              "textEditor": false
+              "target": "alias(asPercent($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.backEndTime.max, #C), 'Backend')",
+              "textEditor": false,
+              "targetFull": "alias(asPercent($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.backEndTime.max, sumSeries($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.frontEndTime.max,$base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.backEndTime.max)), 'Backend')"
             },
             {
               "refId": "A",
-              "target": "alias(asPercent($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.frontEndTime.median, #C), 'Frontend')",
-              "targetFull": "alias(asPercent($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.frontEndTime.median, sumSeries($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.frontEndTime.max,$base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.backEndTime.max)), 'Frontend')",
-              "textEditor": false
+              "target": "alias(asPercent($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.frontEndTime.max, #C), 'Frontend')",
+              "textEditor": false,
+              "targetFull": "alias(asPercent($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.frontEndTime.max, sumSeries($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.frontEndTime.max,$base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.backEndTime.max)), 'Frontend')"
             },
             {
               "hide": true,
