@@ -203,7 +203,7 @@
   },
   "refresh": false,
   "schemaVersion": 14,
-  "version": 60,
+  "version": 67,
   "links": [
     {
       "asDropdown": true,
@@ -301,7 +301,8 @@
               "value": "null"
             }
           ],
-          "valueName": "current"
+          "valueName": "current",
+          "description": "The time when something for the first time is painted within the current viewport. Calculated by analyzing the video."
         },
         {
           "cacheTimeout": null,
@@ -378,7 +379,8 @@
               "value": "null"
             }
           ],
-          "valueName": "current"
+          "valueName": "current",
+          "description": "The Speed Index is the average time at which visible parts of the page are displayed. It is expressed in milliseconds and dependent on size of the view port. It was created by Pat Meenan and you can checkout the full documentation [here](https://sites.google.com/a/webpagetest.org/docs/using-webpagetest/metrics/speed-index)."
         },
         {
           "cacheTimeout": null,
@@ -452,7 +454,8 @@
               "value": "null"
             }
           ],
-          "valueName": "current"
+          "valueName": "current",
+          "description": "The time when something for the last time changes within the current viewport. Calculated by analyzing the video."
         },
         {
           "cacheTimeout": null,
@@ -525,7 +528,8 @@
               "value": "null"
             }
           ],
-          "valueName": "current"
+          "valueName": "current",
+          "description": "The time when all assets in the page is downloaded. Calculated using the Resource Timing API."
         },
         {
           "cacheTimeout": null,
@@ -599,7 +603,8 @@
               "value": "null"
             }
           ],
-          "valueName": "current"
+          "valueName": "current",
+          "description": ""
         },
         {
           "cacheTimeout": null,
@@ -663,7 +668,7 @@
             }
           ],
           "thresholds": "",
-          "title": "Transfer size",
+          "title": "Total transfer size",
           "type": "singlestat",
           "valueFontSize": "80%",
           "valueMaps": [
@@ -673,7 +678,8 @@
               "value": "null"
             }
           ],
-          "valueName": "current"
+          "valueName": "current",
+          "description": "The total transfer size (compressed size if your asset is compressed) of all assets on this page."
         },
         {
           "cacheTimeout": null,
@@ -1598,7 +1604,8 @@
               "value": "null"
             }
           ],
-          "valueName": "current"
+          "valueName": "current",
+          "description": "The average DOM depth of the page."
         },
         {
           "cacheTimeout": null,
@@ -1672,7 +1679,8 @@
               "value": "null"
             }
           ],
-          "valueName": "current"
+          "valueName": "current",
+          "description": "The max depth of DOM elements on the page."
         },
         {
           "cacheTimeout": null,
@@ -1969,7 +1977,8 @@
               "value": "null"
             }
           ],
-          "valueName": "current"
+          "valueName": "current",
+          "description": "The coach knows much about performance best practices and match them against your page."
         }
       ],
       "showTitle": false,
@@ -2061,6 +2070,7 @@
           "aliasColors": {},
           "bars": false,
           "datasource": "${DS_GRAPHITE}",
+          "decimals": 0,
           "editable": true,
           "error": false,
           "fill": 10,
@@ -2129,8 +2139,7 @@
               "min": null,
               "show": true
             }
-          ],
-          "decimals": 0
+          ]
         }
       ],
       "showTitle": false,
@@ -2187,7 +2196,7 @@
           "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
-          "title": "Non 200 response codes",
+          "title": "None 200 response codes",
           "tooltip": {
             "msResolution": false,
             "shared": true,
@@ -2218,7 +2227,8 @@
               "min": null,
               "show": true
             }
-          ]
+          ],
+          "description": "All requests that are not a 200 HTTP Status Code."
         },
         {
           "aliasColors": {},
@@ -2667,7 +2677,8 @@
               "min": null,
               "show": true
             }
-          ]
+          ],
+          "description": "Navigation Timing API metrics."
         }
       ],
       "showTitle": false,
