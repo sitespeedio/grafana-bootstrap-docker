@@ -203,7 +203,7 @@
   },
   "refresh": false,
   "schemaVersion": 14,
-  "version": 67,
+  "version": 78,
   "links": [
     {
       "asDropdown": true,
@@ -302,7 +302,7 @@
             }
           ],
           "valueName": "current",
-          "description": "The time when something for the first time is painted within the current viewport. Calculated by analyzing the video."
+          "description": "The first visual change is when something for the first time is painted within the current viewport. It is calculated by analyzing a video recording of the screen."
         },
         {
           "cacheTimeout": null,
@@ -455,7 +455,7 @@
             }
           ],
           "valueName": "current",
-          "description": "The time when something for the last time changes within the current viewport. Calculated by analyzing the video."
+          "description": "The last visual change is when something for the last time is changing within the current viewport. It is calculated by analyzing a video recording of the screen."
         },
         {
           "cacheTimeout": null,
@@ -529,7 +529,7 @@
             }
           ],
           "valueName": "current",
-          "description": "The time when all assets in the page is downloaded. Calculated using the Resource Timing API."
+          "description": "Fully loaded time when the last of all assets is downloaded on the page. It is calculated using the Resource Timing API where we use the last downloaded asset."
         },
         {
           "cacheTimeout": null,
@@ -679,7 +679,7 @@
             }
           ],
           "valueName": "current",
-          "description": "The total transfer size (compressed size if your asset is compressed) of all assets on this page."
+          "description": "The total transfer size over the wire (compressed size if your asset is compressed) of all assets on the page."
         },
         {
           "cacheTimeout": null,
@@ -831,7 +831,8 @@
           ],
           "title": "Avg last 24 hours",
           "transform": "timeseries_aggregations",
-          "type": "table"
+          "type": "table",
+          "description": "The moving average of the last 24 hours median values for the visual metrics."
         },
         {
           "columns": [
@@ -928,7 +929,8 @@
           ],
           "title": "Relative to yesterday",
           "transform": "timeseries_aggregations",
-          "type": "table"
+          "type": "table",
+          "description": "Last 24 hours averages of median metrics compared to one day back in time. \n\nRed color background means a regression, green a positive change and yellow that the change is within the margin of error. You probably need to finetune the thresholds depending of how flakey your site is."
         },
         {
           "columns": [
@@ -1025,7 +1027,8 @@
           ],
           "title": "Relative to last week",
           "transform": "timeseries_aggregations",
-          "type": "table"
+          "type": "table",
+          "description": "Last 24 hours averages of median metrics compared to seven days back in time. \n\nRed color background means a regression, green a positive change and yellow that the change is within the margin of error. You probably need to finetune the thresholds depending of how flakey your site is."
         },
         {
           "columns": [
@@ -1122,7 +1125,8 @@
           ],
           "title": "Relative to last month",
           "transform": "timeseries_aggregations",
-          "type": "table"
+          "type": "table",
+          "description": "Last 24 hours averages of median metrics compared to one month back in time. \n\nRed color background means a regression, green a positive change and yellow that the change is within the margin of error. You probably need to finetune the thresholds depending of how flakey your site is."
         }
       ],
       "showTitle": false,
@@ -1227,7 +1231,8 @@
               "min": null,
               "show": true
             }
-          ]
+          ],
+          "description": "The history of [Speed Index](https://sites.google.com/a/webpagetest.org/docs/using-webpagetest/metrics/speed-index) showing the current median value, the average median per day and the average median per week."
         },
         {
           "aliasColors": {},
@@ -1320,7 +1325,8 @@
               "min": null,
               "show": true
             }
-          ]
+          ],
+          "description": "The history of First Visual Change (when something for the first time is painted within the current viewport) showing the current median value, the average median per day and the average median per week."
         }
       ],
       "showTitle": false,
@@ -1425,7 +1431,8 @@
               "min": null,
               "show": true
             }
-          ]
+          ],
+          "description": "The history of Last Visual Change (when something for the last time is changing within the current viewport) showing the current median value, the average median per day and the average median per week."
         },
         {
           "aliasColors": {},
@@ -1518,7 +1525,8 @@
               "min": null,
               "show": true
             }
-          ]
+          ],
+          "description": "The history of Fully Loaded (when the last of all assets is downloaded on the page) showing the current median value, the average median per day and the average median per week."
         }
       ],
       "showTitle": false,
@@ -1754,7 +1762,8 @@
               "value": "null"
             }
           ],
-          "valueName": "current"
+          "valueName": "current",
+          "description": "The total number of DOM elements on the page."
         },
         {
           "cacheTimeout": null,
@@ -1828,7 +1837,8 @@
               "value": "null"
             }
           ],
-          "valueName": "current"
+          "valueName": "current",
+          "description": "The document height in pixels."
         },
         {
           "cacheTimeout": null,
@@ -1903,7 +1913,8 @@
               "value": "null"
             }
           ],
-          "valueName": "current"
+          "valueName": "current",
+          "description": "The total number of iframes used on the page."
         },
         {
           "cacheTimeout": null,
@@ -1978,7 +1989,7 @@
             }
           ],
           "valueName": "current",
-          "description": "The coach knows much about performance best practices and match them against your page."
+          "description": "The performance score (0-100) calculated by the [Coach](https://www.sitespeed.io/documentation/coach/) using performance best practices."
         }
       ],
       "showTitle": false,
@@ -2064,7 +2075,8 @@
               "min": null,
               "show": true
             }
-          ]
+          ],
+          "description": "The total transfer size by content type."
         },
         {
           "aliasColors": {},
@@ -2139,7 +2151,8 @@
               "min": null,
               "show": true
             }
-          ]
+          ],
+          "description": "The total number of requests by content type."
         }
       ],
       "showTitle": false,
@@ -2314,7 +2327,8 @@
               "min": null,
               "show": true
             }
-          ]
+          ],
+          "description": "The max time spent in frontend vs backend time. \n\nThe backend time is the time it takes for the network and the server to generate and start sending the HTML. It is collected using the Navigation Timing API taking the responseStart minus navigationStart.\n\nThe frontend time is the time it takes for the browser to parse and create the page.  It is collected using the Navigation Timing API by taking the loadEventStart minus responseEnd."
         }
       ],
       "showTitle": false,
@@ -2410,7 +2424,8 @@
               "min": null,
               "show": true
             }
-          ]
+          ],
+          "description": "The time the browser takes to parse the document and execute deferred and parser-inserted scripts including the network time from the users location to your server.  It is collected using the Navigation Timing API by taking the domContentLoadedEventStart minus navigationStart."
         },
         {
           "aliasColors": {
@@ -2507,7 +2522,8 @@
               "min": null,
               "show": true
             }
-          ]
+          ],
+          "description": "The time it takes for the browser to parse and create the page.  It is collected using the Navigation Timing API by taking the loadEventStart minus responseEnd."
         }
       ],
       "showTitle": false,
@@ -2591,7 +2607,8 @@
               "min": null,
               "show": true
             }
-          ]
+          ],
+          "description": "All User Timing marks created on the page using the [User Timing API](https://www.w3.org/TR/user-timing/)."
         }
       ],
       "showTitle": false,
@@ -2678,7 +2695,7 @@
               "show": true
             }
           ],
-          "description": "Navigation Timing API metrics."
+          "description": "[Navigation Timing API](https://www.w3.org/TR/navigation-timing/) metrics."
         }
       ],
       "showTitle": false,
@@ -2764,7 +2781,8 @@
               "value": "null"
             }
           ],
-          "valueName": "avg"
+          "valueName": "avg",
+          "description": "The transfer size of all your third party responses.  \n\nThe third party content (content other companies/organizations serve like advertisement, social media buttons etc) are defined by the requests that doesn't match the regexp you supply with the parameter *--firstParty*"
         },
         {
           "cacheTimeout": null,
@@ -2838,7 +2856,8 @@
               "value": "null"
             }
           ],
-          "valueName": "avg"
+          "valueName": "avg",
+          "description": "The transfer size of all your first party responses.  \n\nThe first party content (content you serve your self ) are defined by the requests that  match the regexp you supply with the parameter *--firstParty*"
         },
         {
           "cacheTimeout": null,
@@ -2912,7 +2931,8 @@
               "value": "null"
             }
           ],
-          "valueName": "avg"
+          "valueName": "avg",
+          "description": "The number of requests for all your third party responses.  \n\nThe third party content (content other companies/organizations serve like advertisement, social media buttons etc) are defined by the requests that doesn't match the regexp you supply with the parameter *--firstParty*"
         },
         {
           "cacheTimeout": null,
@@ -2986,7 +3006,8 @@
               "value": "null"
             }
           ],
-          "valueName": "avg"
+          "valueName": "avg",
+          "description": "The number of requests for all your first party responses.  \n\nThe first party content (content you serve your self ) are defined by the requests that match the regexp you supply with the parameter *--firstParty*"
         }
       ],
       "showTitle": true,
@@ -3072,7 +3093,8 @@
               "value": "null"
             }
           ],
-          "valueName": "current"
+          "valueName": "current",
+          "description": "The total size over the wire for all assets served for this page."
         },
         {
           "cacheTimeout": null,
@@ -3146,7 +3168,8 @@
               "value": "null"
             }
           ],
-          "valueName": "current"
+          "valueName": "current",
+          "description": "The total size for all assets served for this page. This includes the uncompressed size for compressed text/css/html/js/font content."
         },
         {
           "cacheTimeout": null,
@@ -3220,7 +3243,8 @@
               "value": "null"
             }
           ],
-          "valueName": "current"
+          "valueName": "current",
+          "description": "The total size over the wire for all stylesheet assets served for this page."
         },
         {
           "cacheTimeout": null,
@@ -3294,7 +3318,8 @@
               "value": "null"
             }
           ],
-          "valueName": "current"
+          "valueName": "current",
+          "description": "The total size for stylesheets assets served for this page. This includes the uncompressed size of CSS responses."
         },
         {
           "cacheTimeout": null,
@@ -3368,7 +3393,8 @@
               "value": "null"
             }
           ],
-          "valueName": "current"
+          "valueName": "current",
+          "description": "The total size over the wire for all Javascript assets served for this page."
         },
         {
           "cacheTimeout": null,
@@ -3442,7 +3468,8 @@
               "value": "null"
             }
           ],
-          "valueName": "current"
+          "valueName": "current",
+          "description": "The total size for Javascripts assets served for this page. This includes the uncompressed size of JS responses."
         }
       ],
       "showTitle": true,
