@@ -203,7 +203,7 @@
   },
   "refresh": false,
   "schemaVersion": 14,
-  "version": 55,
+  "version": 60,
   "links": [
     {
       "asDropdown": true,
@@ -1981,92 +1981,6 @@
       "collapse": false
     },
     {
-      "title": "Row",
-      "panels": [
-        {
-          "aliasColors": {},
-          "bars": false,
-          "datasource": "${DS_GRAPHITE}",
-          "editable": true,
-          "error": false,
-          "fill": 0,
-          "grid": {},
-          "id": 1,
-          "legend": {
-            "alignAsTable": true,
-            "avg": false,
-            "current": true,
-            "max": true,
-            "min": false,
-            "show": true,
-            "total": false,
-            "values": true
-          },
-          "lines": true,
-          "linewidth": 2,
-          "links": [],
-          "nullPointMode": "connected",
-          "percentage": false,
-          "pointradius": 5,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [],
-          "span": 12,
-          "stack": false,
-          "steppedLine": false,
-          "targets": [
-            {
-              "refId": "A",
-              "target": "aliasByNode($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.*.median, 11)",
-              "textEditor": false
-            }
-          ],
-          "thresholds": [],
-          "timeFrom": null,
-          "timeShift": null,
-          "title": "Navigation Timings",
-          "tooltip": {
-            "msResolution": false,
-            "shared": true,
-            "sort": 0,
-            "value_type": "cumulative"
-          },
-          "type": "graph",
-          "xaxis": {
-            "mode": "time",
-            "name": null,
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "format": "ms",
-              "label": null,
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": true
-            },
-            {
-              "format": "short",
-              "label": null,
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": true
-            }
-          ]
-        }
-      ],
-      "showTitle": false,
-      "titleSize": "h6",
-      "height": "300px",
-      "repeat": null,
-      "repeatRowId": null,
-      "repeatIteration": null,
-      "collapse": false
-    },
-    {
       "title": "New row",
       "panels": [
         {
@@ -2215,7 +2129,8 @@
               "min": null,
               "show": true
             }
-          ]
+          ],
+          "decimals": 0
         }
       ],
       "showTitle": false,
@@ -2259,20 +2174,20 @@
           "points": false,
           "renderer": "flot",
           "seriesOverrides": [],
-          "span": 12,
+          "span": 6,
           "stack": true,
           "steppedLine": false,
           "targets": [
             {
               "refId": "A",
-              "target": "aliasByNode($base.$path.pageSummary.$group.$page.$browser.$connectivity.pagexray.responseCodes.*, 9)",
+              "target": "aliasByNode(exclude($base.$path.pageSummary.$group.$page.$browser.$connectivity.pagexray.responseCodes.*, '200'), 9)",
               "textEditor": false
             }
           ],
           "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
-          "title": "Response codes",
+          "title": "Non 200 response codes",
           "tooltip": {
             "msResolution": false,
             "shared": true,
@@ -2304,19 +2219,7 @@
               "show": true
             }
           ]
-        }
-      ],
-      "showTitle": false,
-      "titleSize": "h6",
-      "height": "250px",
-      "repeat": null,
-      "repeatRowId": null,
-      "repeatIteration": null,
-      "collapse": false
-    },
-    {
-      "title": "New row",
-      "panels": [
+        },
         {
           "aliasColors": {},
           "bars": false,
@@ -2344,21 +2247,21 @@
           "points": false,
           "renderer": "flot",
           "seriesOverrides": [],
-          "span": 12,
+          "span": 6,
           "stack": true,
           "steppedLine": false,
           "targets": [
             {
               "refId": "B",
               "target": "alias(asPercent($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.backEndTime.max, #C), 'Backend')",
-              "textEditor": false,
-              "targetFull": "alias(asPercent($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.backEndTime.max, sumSeries($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.frontEndTime.max,$base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.backEndTime.max)), 'Backend')"
+              "targetFull": "alias(asPercent($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.backEndTime.max, sumSeries($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.frontEndTime.max,$base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.backEndTime.max)), 'Backend')",
+              "textEditor": false
             },
             {
               "refId": "A",
               "target": "alias(asPercent($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.frontEndTime.max, #C), 'Frontend')",
-              "textEditor": false,
-              "targetFull": "alias(asPercent($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.frontEndTime.max, sumSeries($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.frontEndTime.max,$base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.backEndTime.max)), 'Frontend')"
+              "targetFull": "alias(asPercent($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.frontEndTime.max, sumSeries($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.frontEndTime.max,$base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.backEndTime.max)), 'Frontend')",
+              "textEditor": false
             },
             {
               "hide": true,
@@ -2620,8 +2523,8 @@
           "legend": {
             "avg": false,
             "current": true,
-            "max": false,
-            "min": false,
+            "max": true,
+            "min": true,
             "show": true,
             "total": false,
             "values": true
@@ -2684,6 +2587,92 @@
       "showTitle": false,
       "titleSize": "h6",
       "height": "250px",
+      "repeat": null,
+      "repeatRowId": null,
+      "repeatIteration": null,
+      "collapse": false
+    },
+    {
+      "title": "Row",
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "${DS_GRAPHITE}",
+          "editable": true,
+          "error": false,
+          "fill": 0,
+          "grid": {},
+          "id": 1,
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": true,
+            "max": true,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 12,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "aliasByNode($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.*.median, 11)",
+              "textEditor": false
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Navigation Timings",
+          "tooltip": {
+            "msResolution": false,
+            "shared": true,
+            "sort": 0,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "ms",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        }
+      ],
+      "showTitle": false,
+      "titleSize": "h6",
+      "height": "300px",
       "repeat": null,
       "repeatRowId": null,
       "repeatIteration": null,
