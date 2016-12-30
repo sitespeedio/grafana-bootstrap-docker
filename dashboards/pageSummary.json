@@ -203,7 +203,7 @@
   },
   "refresh": false,
   "schemaVersion": 14,
-  "version": 78,
+  "version": 80,
   "links": [
     {
       "asDropdown": true,
@@ -239,6 +239,7 @@
             "rgba(50, 172, 45, 0.97)"
           ],
           "datasource": "${DS_GRAPHITE}",
+          "description": "The first visual change is when something for the first time is painted within the current viewport. It is calculated by analyzing a video recording of the screen.",
           "editable": true,
           "error": false,
           "format": "ms",
@@ -301,8 +302,7 @@
               "value": "null"
             }
           ],
-          "valueName": "current",
-          "description": "The first visual change is when something for the first time is painted within the current viewport. It is calculated by analyzing a video recording of the screen."
+          "valueName": "current"
         },
         {
           "cacheTimeout": null,
@@ -314,6 +314,7 @@
             "rgba(50, 172, 45, 0.97)"
           ],
           "datasource": "${DS_GRAPHITE}",
+          "description": "The Speed Index is the average time at which visible parts of the page are displayed. It is expressed in milliseconds and dependent on size of the view port. It was created by Pat Meenan and you can checkout the full documentation [here](https://sites.google.com/a/webpagetest.org/docs/using-webpagetest/metrics/speed-index).",
           "editable": true,
           "error": false,
           "format": "none",
@@ -379,8 +380,7 @@
               "value": "null"
             }
           ],
-          "valueName": "current",
-          "description": "The Speed Index is the average time at which visible parts of the page are displayed. It is expressed in milliseconds and dependent on size of the view port. It was created by Pat Meenan and you can checkout the full documentation [here](https://sites.google.com/a/webpagetest.org/docs/using-webpagetest/metrics/speed-index)."
+          "valueName": "current"
         },
         {
           "cacheTimeout": null,
@@ -392,6 +392,7 @@
             "rgba(50, 172, 45, 0.97)"
           ],
           "datasource": "${DS_GRAPHITE}",
+          "description": "The last visual change is when something for the last time is changing within the current viewport. It is calculated by analyzing a video recording of the screen.",
           "editable": true,
           "error": false,
           "format": "ms",
@@ -454,8 +455,7 @@
               "value": "null"
             }
           ],
-          "valueName": "current",
-          "description": "The last visual change is when something for the last time is changing within the current viewport. It is calculated by analyzing a video recording of the screen."
+          "valueName": "current"
         },
         {
           "cacheTimeout": null,
@@ -467,6 +467,7 @@
             "rgba(50, 172, 45, 0.97)"
           ],
           "datasource": "${DS_GRAPHITE}",
+          "description": "Fully loaded time when the last of all assets is downloaded on the page. It is calculated using the Resource Timing API where we use the last downloaded asset.",
           "format": "ms",
           "gauge": {
             "maxValue": 100,
@@ -528,8 +529,7 @@
               "value": "null"
             }
           ],
-          "valueName": "current",
-          "description": "Fully loaded time when the last of all assets is downloaded on the page. It is calculated using the Resource Timing API where we use the last downloaded asset."
+          "valueName": "current"
         },
         {
           "cacheTimeout": null,
@@ -541,6 +541,7 @@
             "rgba(50, 172, 45, 0.97)"
           ],
           "datasource": "${DS_GRAPHITE}",
+          "description": "",
           "editable": true,
           "error": false,
           "format": "none",
@@ -603,8 +604,7 @@
               "value": "null"
             }
           ],
-          "valueName": "current",
-          "description": ""
+          "valueName": "current"
         },
         {
           "cacheTimeout": null,
@@ -616,6 +616,7 @@
             "rgba(50, 172, 45, 0.97)"
           ],
           "datasource": "${DS_GRAPHITE}",
+          "description": "The total transfer size over the wire (compressed size if your asset is compressed) of all assets on the page.",
           "editable": true,
           "error": false,
           "format": "bytes",
@@ -678,8 +679,7 @@
               "value": "null"
             }
           ],
-          "valueName": "current",
-          "description": "The total transfer size over the wire (compressed size if your asset is compressed) of all assets on the page."
+          "valueName": "current"
         },
         {
           "cacheTimeout": null,
@@ -774,6 +774,7 @@
               "value": "current"
             }
           ],
+          "description": "The moving average of the last 24 hours median values for the visual metrics.",
           "editable": true,
           "error": false,
           "fontSize": "100%",
@@ -831,8 +832,7 @@
           ],
           "title": "Avg last 24 hours",
           "transform": "timeseries_aggregations",
-          "type": "table",
-          "description": "The moving average of the last 24 hours median values for the visual metrics."
+          "type": "table"
         },
         {
           "columns": [
@@ -841,6 +841,7 @@
               "value": "current"
             }
           ],
+          "description": "Last 24 hours averages of median metrics compared to one day back in time. \n\nRed color background means a regression, green a positive change and yellow that the change is within the margin of error. You probably need to finetune the thresholds depending of how flakey your site is. Default threshold is +-10%.",
           "editable": true,
           "error": false,
           "fontSize": "100%",
@@ -870,11 +871,11 @@
               "decimals": 0,
               "pattern": "/.*/",
               "thresholds": [
-                "-50",
-                "50"
+                "-10",
+                "10"
               ],
               "type": "number",
-              "unit": "none"
+              "unit": "percent"
             }
           ],
           "targets": [
@@ -892,15 +893,15 @@
             },
             {
               "refId": "C",
-              "target": "aliasByNode(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.median, '24h'), #A), 10)",
-              "targetFull": "aliasByNode(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.median, '24h'), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.median, '24h'), '1d')), 10)",
-              "textEditor": false
+              "target": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.median, '24h'), #A), #A), 10)",
+              "textEditor": false,
+              "targetFull": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.median, '24h'), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.median, '24h'), '1d')), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.median, '24h'), '1d')), 10)"
             },
             {
               "refId": "D",
-              "target": "aliasByNode(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.median, '24h'), #B), 10)",
-              "targetFull": "aliasByNode(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.median, '24h'), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.median, '24h'), '1d')), 10)",
-              "textEditor": false
+              "target": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.median, '24h'), #B), #B), 10)",
+              "textEditor": false,
+              "targetFull": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.median, '24h'), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.median, '24h'), '1d')), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.median, '24h'), '1d')), 10)"
             },
             {
               "hide": true,
@@ -910,9 +911,9 @@
             },
             {
               "refId": "F",
-              "target": "aliasByNode(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.PerceptualSpeedIndex.median, '24h'), #E), 10)",
-              "targetFull": "aliasByNode(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.PerceptualSpeedIndex.median, '24h'), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.PerceptualSpeedIndex.select metric, '24h'), '1d')), 10)",
-              "textEditor": false
+              "target": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.PerceptualSpeedIndex.median, '24h'), #E), #E), 10)",
+              "textEditor": false,
+              "targetFull": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.PerceptualSpeedIndex.median, '24h'), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.PerceptualSpeedIndex.median, '24h'), '1d')), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.PerceptualSpeedIndex.median, '24h'), '1d')), 10)"
             },
             {
               "hide": true,
@@ -922,15 +923,14 @@
             },
             {
               "refId": "H",
-              "target": "aliasByNode(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.LastVisualChange.median, '24h'), #G), 10)",
-              "targetFull": "aliasByNode(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.LastVisualChange.median, '24h'), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.LastVisualChange.select metric, '24h'), '1d')), 10)",
-              "textEditor": false
+              "target": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.LastVisualChange.median, '24h'), #G), #G), 10)",
+              "textEditor": false,
+              "targetFull": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.LastVisualChange.median, '24h'), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.LastVisualChange.median, '24h'), '1d')), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.LastVisualChange.median, '24h'), '1d')), 10)"
             }
           ],
           "title": "Relative to yesterday",
           "transform": "timeseries_aggregations",
-          "type": "table",
-          "description": "Last 24 hours averages of median metrics compared to one day back in time. \n\nRed color background means a regression, green a positive change and yellow that the change is within the margin of error. You probably need to finetune the thresholds depending of how flakey your site is."
+          "type": "table"
         },
         {
           "columns": [
@@ -939,6 +939,7 @@
               "value": "current"
             }
           ],
+          "description": "Last 24 hours averages of median metrics compared to seven days back in time. \n\nRed color background means a regression, green a positive change and yellow that the change is within the margin of error. You probably need to finetune the thresholds depending of how flakey your site is. Default threshold is +-10%.",
           "editable": true,
           "error": false,
           "fontSize": "100%",
@@ -968,11 +969,11 @@
               "decimals": 0,
               "pattern": "/.*/",
               "thresholds": [
-                "-50",
-                "50"
+                "-10",
+                "10"
               ],
               "type": "number",
-              "unit": "none"
+              "unit": "percent"
             }
           ],
           "targets": [
@@ -990,15 +991,15 @@
             },
             {
               "refId": "C",
-              "target": "aliasByNode(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.median, '24h'), #A), 10)",
-              "targetFull": "aliasByNode(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.median, '24h'), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.select metric, '24h'), '7d')), 10)",
-              "textEditor": false
+              "target": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.median, '24h'), #A), #A), 10)",
+              "textEditor": false,
+              "targetFull": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.median, '24h'), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.median, '24h'), '7d')), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.median, '24h'), '7d')), 10)"
             },
             {
               "refId": "D",
-              "target": "aliasByNode(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.median, '24h'), #B), 10)",
-              "targetFull": "aliasByNode(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.median, '24h'), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.select metric, '24h'), '7d')), 10)",
-              "textEditor": false
+              "target": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.median, '24h'), #B), #B), 10)",
+              "textEditor": false,
+              "targetFull": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.median, '24h'), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.median, '24h'), '7d')), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.median, '24h'), '7d')), 10)"
             },
             {
               "hide": true,
@@ -1008,9 +1009,9 @@
             },
             {
               "refId": "F",
-              "target": "aliasByNode(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.LastVisualChange.median, '24h'), #E), 10)",
-              "targetFull": "aliasByNode(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.LastVisualChange.median, '24h'), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.LastVisualChange.select metric, '24h'), '7d')), 10)",
-              "textEditor": false
+              "target": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.LastVisualChange.median, '24h'), #E), #E), 10)",
+              "textEditor": false,
+              "targetFull": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.LastVisualChange.median, '24h'), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.LastVisualChange.median, '24h'), '7d')), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.LastVisualChange.median, '24h'), '7d')), 10)"
             },
             {
               "hide": true,
@@ -1020,15 +1021,14 @@
             },
             {
               "refId": "H",
-              "target": "aliasByNode(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.PerceptualSpeedIndex.median, '24h'), #G), 10)",
-              "targetFull": "aliasByNode(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.PerceptualSpeedIndex.median, '24h'), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.PerceptualSpeedIndex.select metric, '24h'), '7d')), 10)",
-              "textEditor": false
+              "target": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.PerceptualSpeedIndex.median, '24h'), #G), #G), 10)",
+              "textEditor": false,
+              "targetFull": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.PerceptualSpeedIndex.median, '24h'), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.PerceptualSpeedIndex.median, '24h'), '7d')), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.PerceptualSpeedIndex.median, '24h'), '7d')), 10)"
             }
           ],
           "title": "Relative to last week",
           "transform": "timeseries_aggregations",
-          "type": "table",
-          "description": "Last 24 hours averages of median metrics compared to seven days back in time. \n\nRed color background means a regression, green a positive change and yellow that the change is within the margin of error. You probably need to finetune the thresholds depending of how flakey your site is."
+          "type": "table"
         },
         {
           "columns": [
@@ -1037,6 +1037,7 @@
               "value": "current"
             }
           ],
+          "description": "Last 24 hours averages of median metrics compared to one month back in time. \n\nRed color background means a regression, green a positive change and yellow that the change is within the margin of error. You probably need to finetune the thresholds depending of how flakey your site is. Default threshold is +-10%.",
           "editable": true,
           "error": false,
           "fontSize": "100%",
@@ -1066,11 +1067,11 @@
               "decimals": 0,
               "pattern": "/.*/",
               "thresholds": [
-                "-50",
-                "50"
+                "-10",
+                "10"
               ],
               "type": "number",
-              "unit": "none"
+              "unit": "percent"
             }
           ],
           "targets": [
@@ -1088,15 +1089,15 @@
             },
             {
               "refId": "C",
-              "target": "aliasByNode(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.median, '24h'), #A), 10)",
-              "targetFull": "aliasByNode(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.median, '24h'), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.select metric, '24h'), '30d')), 10)",
-              "textEditor": false
+              "target": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.median, '24h'), #A), #A), 10)",
+              "textEditor": false,
+              "targetFull": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.median, '24h'), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.median, '24h'), '30d')), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.median, '24h'), '30d')), 10)"
             },
             {
               "refId": "D",
-              "target": "aliasByNode(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.median, '24h'), #B), 10)",
-              "targetFull": "aliasByNode(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.median, '24h'), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.select metric, '24h'), '30d')), 10)",
-              "textEditor": false
+              "target": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.median, '24h'), #B), #B), 10)",
+              "textEditor": false,
+              "targetFull": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.median, '24h'), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.median, '24h'), '30d')), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.median, '24h'), '30d')), 10)"
             },
             {
               "hide": true,
@@ -1106,9 +1107,9 @@
             },
             {
               "refId": "F",
-              "target": "aliasByNode(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.LastVisualChange.median, '24h'), #E), 10)",
-              "targetFull": "aliasByNode(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.LastVisualChange.median, '24h'), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.LastVisualChange.select metric, '24h'), '30d')), 10)",
-              "textEditor": false
+              "target": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.LastVisualChange.median, '24h'), #E), #E), 10)",
+              "textEditor": false,
+              "targetFull": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.LastVisualChange.median, '24h'), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.LastVisualChange.median, '24h'), '30d')), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.LastVisualChange.median, '24h'), '30d')), 10)"
             },
             {
               "hide": true,
@@ -1118,15 +1119,14 @@
             },
             {
               "refId": "H",
-              "target": "aliasByNode(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.PerceptualSpeedIndex.median, '24h'), #G), 10)",
-              "targetFull": "aliasByNode(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.PerceptualSpeedIndex.median, '24h'), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.PerceptualSpeedIndex.select metric, '24h'), '30d')), 10)",
-              "textEditor": false
+              "target": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.PerceptualSpeedIndex.median, '24h'), #G), #G), 10)",
+              "textEditor": false,
+              "targetFull": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.PerceptualSpeedIndex.median, '24h'), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.PerceptualSpeedIndex.median, '24h'), '30d')), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.PerceptualSpeedIndex.median, '24h'), '30d')), 10)"
             }
           ],
           "title": "Relative to last month",
           "transform": "timeseries_aggregations",
-          "type": "table",
-          "description": "Last 24 hours averages of median metrics compared to one month back in time. \n\nRed color background means a regression, green a positive change and yellow that the change is within the margin of error. You probably need to finetune the thresholds depending of how flakey your site is."
+          "type": "table"
         }
       ],
       "showTitle": false,
@@ -1144,6 +1144,7 @@
           "aliasColors": {},
           "bars": false,
           "datasource": "${DS_GRAPHITE}",
+          "description": "The history of [Speed Index](https://sites.google.com/a/webpagetest.org/docs/using-webpagetest/metrics/speed-index) showing the current median value, the average median per day and the average median per week.",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -1231,13 +1232,13 @@
               "min": null,
               "show": true
             }
-          ],
-          "description": "The history of [Speed Index](https://sites.google.com/a/webpagetest.org/docs/using-webpagetest/metrics/speed-index) showing the current median value, the average median per day and the average median per week."
+          ]
         },
         {
           "aliasColors": {},
           "bars": false,
           "datasource": "${DS_GRAPHITE}",
+          "description": "The history of First Visual Change (when something for the first time is painted within the current viewport) showing the current median value, the average median per day and the average median per week.",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -1325,8 +1326,7 @@
               "min": null,
               "show": true
             }
-          ],
-          "description": "The history of First Visual Change (when something for the first time is painted within the current viewport) showing the current median value, the average median per day and the average median per week."
+          ]
         }
       ],
       "showTitle": false,
@@ -1344,6 +1344,7 @@
           "aliasColors": {},
           "bars": false,
           "datasource": "${DS_GRAPHITE}",
+          "description": "The history of Last Visual Change (when something for the last time is changing within the current viewport) showing the current median value, the average median per day and the average median per week.",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -1431,13 +1432,13 @@
               "min": null,
               "show": true
             }
-          ],
-          "description": "The history of Last Visual Change (when something for the last time is changing within the current viewport) showing the current median value, the average median per day and the average median per week."
+          ]
         },
         {
           "aliasColors": {},
           "bars": false,
           "datasource": "${DS_GRAPHITE}",
+          "description": "The history of Fully Loaded (when the last of all assets is downloaded on the page) showing the current median value, the average median per day and the average median per week.",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -1525,8 +1526,7 @@
               "min": null,
               "show": true
             }
-          ],
-          "description": "The history of Fully Loaded (when the last of all assets is downloaded on the page) showing the current median value, the average median per day and the average median per week."
+          ]
         }
       ],
       "showTitle": false,
@@ -1550,6 +1550,7 @@
             "rgba(50, 172, 45, 0.97)"
           ],
           "datasource": "${DS_GRAPHITE}",
+          "description": "The average DOM depth of the page.",
           "editable": true,
           "error": false,
           "format": "none",
@@ -1612,8 +1613,7 @@
               "value": "null"
             }
           ],
-          "valueName": "current",
-          "description": "The average DOM depth of the page."
+          "valueName": "current"
         },
         {
           "cacheTimeout": null,
@@ -1625,6 +1625,7 @@
             "rgba(50, 172, 45, 0.97)"
           ],
           "datasource": "${DS_GRAPHITE}",
+          "description": "The max depth of DOM elements on the page.",
           "editable": true,
           "error": false,
           "format": "none",
@@ -1687,8 +1688,7 @@
               "value": "null"
             }
           ],
-          "valueName": "current",
-          "description": "The max depth of DOM elements on the page."
+          "valueName": "current"
         },
         {
           "cacheTimeout": null,
@@ -1700,6 +1700,7 @@
             "rgba(50, 172, 45, 0.97)"
           ],
           "datasource": "${DS_GRAPHITE}",
+          "description": "The total number of DOM elements on the page.",
           "editable": true,
           "error": false,
           "format": "none",
@@ -1762,8 +1763,7 @@
               "value": "null"
             }
           ],
-          "valueName": "current",
-          "description": "The total number of DOM elements on the page."
+          "valueName": "current"
         },
         {
           "cacheTimeout": null,
@@ -1775,6 +1775,7 @@
             "rgba(50, 172, 45, 0.97)"
           ],
           "datasource": "${DS_GRAPHITE}",
+          "description": "The document height in pixels.",
           "editable": true,
           "error": false,
           "format": "none",
@@ -1837,8 +1838,7 @@
               "value": "null"
             }
           ],
-          "valueName": "current",
-          "description": "The document height in pixels."
+          "valueName": "current"
         },
         {
           "cacheTimeout": null,
@@ -1850,6 +1850,7 @@
             "rgba(50, 172, 45, 0.97)"
           ],
           "datasource": "${DS_GRAPHITE}",
+          "description": "The total number of iframes used on the page.",
           "editable": true,
           "error": false,
           "format": "none",
@@ -1913,8 +1914,7 @@
               "value": "null"
             }
           ],
-          "valueName": "current",
-          "description": "The total number of iframes used on the page."
+          "valueName": "current"
         },
         {
           "cacheTimeout": null,
@@ -1926,6 +1926,7 @@
             "rgba(50, 172, 45, 0.97)"
           ],
           "datasource": "${DS_GRAPHITE}",
+          "description": "The performance score (0-100) calculated by the [Coach](https://www.sitespeed.io/documentation/coach/) using performance best practices.",
           "editable": true,
           "error": false,
           "format": "none",
@@ -1988,8 +1989,7 @@
               "value": "null"
             }
           ],
-          "valueName": "current",
-          "description": "The performance score (0-100) calculated by the [Coach](https://www.sitespeed.io/documentation/coach/) using performance best practices."
+          "valueName": "current"
         }
       ],
       "showTitle": false,
@@ -2007,6 +2007,7 @@
           "aliasColors": {},
           "bars": false,
           "datasource": "${DS_GRAPHITE}",
+          "description": "The total transfer size by content type.",
           "editable": true,
           "error": false,
           "fill": 10,
@@ -2075,14 +2076,14 @@
               "min": null,
               "show": true
             }
-          ],
-          "description": "The total transfer size by content type."
+          ]
         },
         {
           "aliasColors": {},
           "bars": false,
           "datasource": "${DS_GRAPHITE}",
           "decimals": 0,
+          "description": "The total number of requests by content type.",
           "editable": true,
           "error": false,
           "fill": 10,
@@ -2151,8 +2152,7 @@
               "min": null,
               "show": true
             }
-          ],
-          "description": "The total number of requests by content type."
+          ]
         }
       ],
       "showTitle": false,
@@ -2171,6 +2171,7 @@
           "bars": false,
           "datasource": "${DS_GRAPHITE}",
           "decimals": 0,
+          "description": "All requests that are not a 200 HTTP Status Code.",
           "editable": true,
           "error": false,
           "fill": 5,
@@ -2240,13 +2241,13 @@
               "min": null,
               "show": true
             }
-          ],
-          "description": "All requests that are not a 200 HTTP Status Code."
+          ]
         },
         {
           "aliasColors": {},
           "bars": false,
           "datasource": "${DS_GRAPHITE}",
+          "description": "The max time spent in frontend vs backend time. \n\nThe backend time is the time it takes for the network and the server to generate and start sending the HTML. It is collected using the Navigation Timing API taking the responseStart minus navigationStart.\n\nThe frontend time is the time it takes for the browser to parse and create the page.  It is collected using the Navigation Timing API by taking the loadEventStart minus responseEnd.",
           "editable": true,
           "error": false,
           "fill": 5,
@@ -2327,8 +2328,7 @@
               "min": null,
               "show": true
             }
-          ],
-          "description": "The max time spent in frontend vs backend time. \n\nThe backend time is the time it takes for the network and the server to generate and start sending the HTML. It is collected using the Navigation Timing API taking the responseStart minus navigationStart.\n\nThe frontend time is the time it takes for the browser to parse and create the page.  It is collected using the Navigation Timing API by taking the loadEventStart minus responseEnd."
+          ]
         }
       ],
       "showTitle": false,
@@ -2346,6 +2346,7 @@
           "aliasColors": {},
           "bars": false,
           "datasource": "${DS_GRAPHITE}",
+          "description": "The time the browser takes to parse the document and execute deferred and parser-inserted scripts including the network time from the users location to your server.  It is collected using the Navigation Timing API by taking the domContentLoadedEventStart minus navigationStart.",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -2424,8 +2425,7 @@
               "min": null,
               "show": true
             }
-          ],
-          "description": "The time the browser takes to parse the document and execute deferred and parser-inserted scripts including the network time from the users location to your server.  It is collected using the Navigation Timing API by taking the domContentLoadedEventStart minus navigationStart."
+          ]
         },
         {
           "aliasColors": {
@@ -2435,6 +2435,7 @@
           },
           "bars": false,
           "datasource": "${DS_GRAPHITE}",
+          "description": "The time it takes for the browser to parse and create the page.  It is collected using the Navigation Timing API by taking the loadEventStart minus responseEnd.",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -2522,8 +2523,7 @@
               "min": null,
               "show": true
             }
-          ],
-          "description": "The time it takes for the browser to parse and create the page.  It is collected using the Navigation Timing API by taking the loadEventStart minus responseEnd."
+          ]
         }
       ],
       "showTitle": false,
@@ -2541,6 +2541,7 @@
           "aliasColors": {},
           "bars": false,
           "datasource": "${DS_GRAPHITE}",
+          "description": "All User Timing marks created on the page using the [User Timing API](https://www.w3.org/TR/user-timing/).",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -2607,8 +2608,7 @@
               "min": null,
               "show": true
             }
-          ],
-          "description": "All User Timing marks created on the page using the [User Timing API](https://www.w3.org/TR/user-timing/)."
+          ]
         }
       ],
       "showTitle": false,
@@ -2626,6 +2626,7 @@
           "aliasColors": {},
           "bars": false,
           "datasource": "${DS_GRAPHITE}",
+          "description": "[Navigation Timing API](https://www.w3.org/TR/navigation-timing/) metrics.",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -2694,8 +2695,7 @@
               "min": null,
               "show": true
             }
-          ],
-          "description": "[Navigation Timing API](https://www.w3.org/TR/navigation-timing/) metrics."
+          ]
         }
       ],
       "showTitle": false,
@@ -2719,6 +2719,7 @@
             "rgba(50, 172, 45, 0.97)"
           ],
           "datasource": "${DS_GRAPHITE}",
+          "description": "The transfer size of all your third party responses.  \n\nThe third party content (content other companies/organizations serve like advertisement, social media buttons etc) are defined by the requests that doesn't match the regexp you supply with the parameter *--firstParty*",
           "editable": true,
           "error": false,
           "format": "bytes",
@@ -2781,8 +2782,7 @@
               "value": "null"
             }
           ],
-          "valueName": "avg",
-          "description": "The transfer size of all your third party responses.  \n\nThe third party content (content other companies/organizations serve like advertisement, social media buttons etc) are defined by the requests that doesn't match the regexp you supply with the parameter *--firstParty*"
+          "valueName": "avg"
         },
         {
           "cacheTimeout": null,
@@ -2794,6 +2794,7 @@
             "rgba(50, 172, 45, 0.97)"
           ],
           "datasource": "${DS_GRAPHITE}",
+          "description": "The transfer size of all your first party responses.  \n\nThe first party content (content you serve your self ) are defined by the requests that  match the regexp you supply with the parameter *--firstParty*",
           "editable": true,
           "error": false,
           "format": "bytes",
@@ -2856,8 +2857,7 @@
               "value": "null"
             }
           ],
-          "valueName": "avg",
-          "description": "The transfer size of all your first party responses.  \n\nThe first party content (content you serve your self ) are defined by the requests that  match the regexp you supply with the parameter *--firstParty*"
+          "valueName": "avg"
         },
         {
           "cacheTimeout": null,
@@ -2869,6 +2869,7 @@
             "rgba(50, 172, 45, 0.97)"
           ],
           "datasource": "${DS_GRAPHITE}",
+          "description": "The number of requests for all your third party responses.  \n\nThe third party content (content other companies/organizations serve like advertisement, social media buttons etc) are defined by the requests that doesn't match the regexp you supply with the parameter *--firstParty*",
           "editable": true,
           "error": false,
           "format": "none",
@@ -2931,8 +2932,7 @@
               "value": "null"
             }
           ],
-          "valueName": "avg",
-          "description": "The number of requests for all your third party responses.  \n\nThe third party content (content other companies/organizations serve like advertisement, social media buttons etc) are defined by the requests that doesn't match the regexp you supply with the parameter *--firstParty*"
+          "valueName": "avg"
         },
         {
           "cacheTimeout": null,
@@ -2944,6 +2944,7 @@
             "rgba(50, 172, 45, 0.97)"
           ],
           "datasource": "${DS_GRAPHITE}",
+          "description": "The number of requests for all your first party responses.  \n\nThe first party content (content you serve your self ) are defined by the requests that match the regexp you supply with the parameter *--firstParty*",
           "editable": true,
           "error": false,
           "format": "none",
@@ -3006,8 +3007,7 @@
               "value": "null"
             }
           ],
-          "valueName": "avg",
-          "description": "The number of requests for all your first party responses.  \n\nThe first party content (content you serve your self ) are defined by the requests that match the regexp you supply with the parameter *--firstParty*"
+          "valueName": "avg"
         }
       ],
       "showTitle": true,
@@ -3031,6 +3031,7 @@
             "rgba(50, 172, 45, 0.97)"
           ],
           "datasource": "${DS_GRAPHITE}",
+          "description": "The total size over the wire for all assets served for this page.",
           "editable": true,
           "error": false,
           "format": "bytes",
@@ -3093,8 +3094,7 @@
               "value": "null"
             }
           ],
-          "valueName": "current",
-          "description": "The total size over the wire for all assets served for this page."
+          "valueName": "current"
         },
         {
           "cacheTimeout": null,
@@ -3106,6 +3106,7 @@
             "rgba(50, 172, 45, 0.97)"
           ],
           "datasource": "${DS_GRAPHITE}",
+          "description": "The total size for all assets served for this page. This includes the uncompressed size for compressed text/css/html/js/font content.",
           "editable": true,
           "error": false,
           "format": "bytes",
@@ -3168,8 +3169,7 @@
               "value": "null"
             }
           ],
-          "valueName": "current",
-          "description": "The total size for all assets served for this page. This includes the uncompressed size for compressed text/css/html/js/font content."
+          "valueName": "current"
         },
         {
           "cacheTimeout": null,
@@ -3181,6 +3181,7 @@
             "rgba(50, 172, 45, 0.97)"
           ],
           "datasource": "${DS_GRAPHITE}",
+          "description": "The total size over the wire for all stylesheet assets served for this page.",
           "editable": true,
           "error": false,
           "format": "bytes",
@@ -3243,8 +3244,7 @@
               "value": "null"
             }
           ],
-          "valueName": "current",
-          "description": "The total size over the wire for all stylesheet assets served for this page."
+          "valueName": "current"
         },
         {
           "cacheTimeout": null,
@@ -3256,6 +3256,7 @@
             "rgba(50, 172, 45, 0.97)"
           ],
           "datasource": "${DS_GRAPHITE}",
+          "description": "The total size for stylesheets assets served for this page. This includes the uncompressed size of CSS responses.",
           "editable": true,
           "error": false,
           "format": "bytes",
@@ -3318,8 +3319,7 @@
               "value": "null"
             }
           ],
-          "valueName": "current",
-          "description": "The total size for stylesheets assets served for this page. This includes the uncompressed size of CSS responses."
+          "valueName": "current"
         },
         {
           "cacheTimeout": null,
@@ -3331,6 +3331,7 @@
             "rgba(50, 172, 45, 0.97)"
           ],
           "datasource": "${DS_GRAPHITE}",
+          "description": "The total size over the wire for all Javascript assets served for this page.",
           "editable": true,
           "error": false,
           "format": "bytes",
@@ -3393,8 +3394,7 @@
               "value": "null"
             }
           ],
-          "valueName": "current",
-          "description": "The total size over the wire for all Javascript assets served for this page."
+          "valueName": "current"
         },
         {
           "cacheTimeout": null,
@@ -3406,6 +3406,7 @@
             "rgba(50, 172, 45, 0.97)"
           ],
           "datasource": "${DS_GRAPHITE}",
+          "description": "The total size for Javascripts assets served for this page. This includes the uncompressed size of JS responses.",
           "editable": true,
           "error": false,
           "format": "bytes",
@@ -3468,8 +3469,7 @@
               "value": "null"
             }
           ],
-          "valueName": "current",
-          "description": "The total size for Javascripts assets served for this page. This includes the uncompressed size of JS responses."
+          "valueName": "current"
         }
       ],
       "showTitle": true,
