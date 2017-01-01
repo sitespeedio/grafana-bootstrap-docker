@@ -203,7 +203,7 @@
   },
   "refresh": false,
   "schemaVersion": 14,
-  "version": 80,
+  "version": 81,
   "links": [
     {
       "asDropdown": true,
@@ -894,14 +894,14 @@
             {
               "refId": "C",
               "target": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.median, '24h'), #A), #A), 10)",
-              "textEditor": false,
-              "targetFull": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.median, '24h'), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.median, '24h'), '1d')), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.median, '24h'), '1d')), 10)"
+              "targetFull": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.median, '24h'), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.median, '24h'), '1d')), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.median, '24h'), '1d')), 10)",
+              "textEditor": false
             },
             {
               "refId": "D",
               "target": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.median, '24h'), #B), #B), 10)",
-              "textEditor": false,
-              "targetFull": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.median, '24h'), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.median, '24h'), '1d')), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.median, '24h'), '1d')), 10)"
+              "targetFull": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.median, '24h'), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.median, '24h'), '1d')), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.median, '24h'), '1d')), 10)",
+              "textEditor": false
             },
             {
               "hide": true,
@@ -912,8 +912,8 @@
             {
               "refId": "F",
               "target": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.PerceptualSpeedIndex.median, '24h'), #E), #E), 10)",
-              "textEditor": false,
-              "targetFull": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.PerceptualSpeedIndex.median, '24h'), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.PerceptualSpeedIndex.median, '24h'), '1d')), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.PerceptualSpeedIndex.median, '24h'), '1d')), 10)"
+              "targetFull": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.PerceptualSpeedIndex.median, '24h'), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.PerceptualSpeedIndex.median, '24h'), '1d')), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.PerceptualSpeedIndex.median, '24h'), '1d')), 10)",
+              "textEditor": false
             },
             {
               "hide": true,
@@ -924,8 +924,8 @@
             {
               "refId": "H",
               "target": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.LastVisualChange.median, '24h'), #G), #G), 10)",
-              "textEditor": false,
-              "targetFull": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.LastVisualChange.median, '24h'), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.LastVisualChange.median, '24h'), '1d')), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.LastVisualChange.median, '24h'), '1d')), 10)"
+              "targetFull": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.LastVisualChange.median, '24h'), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.LastVisualChange.median, '24h'), '1d')), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.LastVisualChange.median, '24h'), '1d')), 10)",
+              "textEditor": false
             }
           ],
           "title": "Relative to yesterday",
@@ -992,14 +992,14 @@
             {
               "refId": "C",
               "target": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.median, '24h'), #A), #A), 10)",
-              "textEditor": false,
-              "targetFull": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.median, '24h'), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.median, '24h'), '7d')), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.median, '24h'), '7d')), 10)"
+              "targetFull": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.median, '24h'), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.median, '24h'), '7d')), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.median, '24h'), '7d')), 10)",
+              "textEditor": false
             },
             {
               "refId": "D",
               "target": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.median, '24h'), #B), #B), 10)",
-              "textEditor": false,
-              "targetFull": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.median, '24h'), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.median, '24h'), '7d')), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.median, '24h'), '7d')), 10)"
+              "targetFull": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.median, '24h'), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.median, '24h'), '7d')), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.median, '24h'), '7d')), 10)",
+              "textEditor": false
             },
             {
               "hide": true,
@@ -1010,8 +1010,8 @@
             {
               "refId": "F",
               "target": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.LastVisualChange.median, '24h'), #E), #E), 10)",
-              "textEditor": false,
-              "targetFull": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.LastVisualChange.median, '24h'), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.LastVisualChange.median, '24h'), '7d')), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.LastVisualChange.median, '24h'), '7d')), 10)"
+              "targetFull": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.LastVisualChange.median, '24h'), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.LastVisualChange.median, '24h'), '7d')), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.LastVisualChange.median, '24h'), '7d')), 10)",
+              "textEditor": false
             },
             {
               "hide": true,
@@ -1022,8 +1022,8 @@
             {
               "refId": "H",
               "target": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.PerceptualSpeedIndex.median, '24h'), #G), #G), 10)",
-              "textEditor": false,
-              "targetFull": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.PerceptualSpeedIndex.median, '24h'), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.PerceptualSpeedIndex.median, '24h'), '7d')), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.PerceptualSpeedIndex.median, '24h'), '7d')), 10)"
+              "targetFull": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.PerceptualSpeedIndex.median, '24h'), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.PerceptualSpeedIndex.median, '24h'), '7d')), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.PerceptualSpeedIndex.median, '24h'), '7d')), 10)",
+              "textEditor": false
             }
           ],
           "title": "Relative to last week",
@@ -1090,14 +1090,14 @@
             {
               "refId": "C",
               "target": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.median, '24h'), #A), #A), 10)",
-              "textEditor": false,
-              "targetFull": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.median, '24h'), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.median, '24h'), '30d')), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.median, '24h'), '30d')), 10)"
+              "targetFull": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.median, '24h'), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.median, '24h'), '30d')), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.median, '24h'), '30d')), 10)",
+              "textEditor": false
             },
             {
               "refId": "D",
               "target": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.median, '24h'), #B), #B), 10)",
-              "textEditor": false,
-              "targetFull": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.median, '24h'), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.median, '24h'), '30d')), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.median, '24h'), '30d')), 10)"
+              "targetFull": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.median, '24h'), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.median, '24h'), '30d')), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.median, '24h'), '30d')), 10)",
+              "textEditor": false
             },
             {
               "hide": true,
@@ -1108,8 +1108,8 @@
             {
               "refId": "F",
               "target": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.LastVisualChange.median, '24h'), #E), #E), 10)",
-              "textEditor": false,
-              "targetFull": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.LastVisualChange.median, '24h'), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.LastVisualChange.median, '24h'), '30d')), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.LastVisualChange.median, '24h'), '30d')), 10)"
+              "targetFull": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.LastVisualChange.median, '24h'), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.LastVisualChange.median, '24h'), '30d')), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.LastVisualChange.median, '24h'), '30d')), 10)",
+              "textEditor": false
             },
             {
               "hide": true,
@@ -1120,8 +1120,8 @@
             {
               "refId": "H",
               "target": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.PerceptualSpeedIndex.median, '24h'), #G), #G), 10)",
-              "textEditor": false,
-              "targetFull": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.PerceptualSpeedIndex.median, '24h'), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.PerceptualSpeedIndex.median, '24h'), '30d')), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.PerceptualSpeedIndex.median, '24h'), '30d')), 10)"
+              "targetFull": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.PerceptualSpeedIndex.median, '24h'), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.PerceptualSpeedIndex.median, '24h'), '30d')), timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.PerceptualSpeedIndex.median, '24h'), '30d')), 10)",
+              "textEditor": false
             }
           ],
           "title": "Relative to last month",
@@ -2719,81 +2719,6 @@
             "rgba(50, 172, 45, 0.97)"
           ],
           "datasource": "${DS_GRAPHITE}",
-          "description": "The transfer size of all your third party responses.  \n\nThe third party content (content other companies/organizations serve like advertisement, social media buttons etc) are defined by the requests that doesn't match the regexp you supply with the parameter *--firstParty*",
-          "editable": true,
-          "error": false,
-          "format": "bytes",
-          "gauge": {
-            "maxValue": 100,
-            "minValue": 0,
-            "show": false,
-            "thresholdLabels": false,
-            "thresholdMarkers": true
-          },
-          "id": 32,
-          "interval": null,
-          "links": [],
-          "mappingType": 1,
-          "mappingTypes": [
-            {
-              "name": "value to text",
-              "value": 1
-            },
-            {
-              "name": "range to text",
-              "value": 2
-            }
-          ],
-          "maxDataPoints": 100,
-          "nullPointMode": "connected",
-          "nullText": null,
-          "postfix": "",
-          "postfixFontSize": "50%",
-          "prefix": "",
-          "prefixFontSize": "50%",
-          "rangeMaps": [
-            {
-              "from": "null",
-              "text": "N/A",
-              "to": "null"
-            }
-          ],
-          "span": 3,
-          "sparkline": {
-            "fillColor": "rgba(31, 118, 189, 0.18)",
-            "full": false,
-            "lineColor": "rgb(31, 120, 193)",
-            "show": true
-          },
-          "targets": [
-            {
-              "refId": "A",
-              "target": "$base.$path.pageSummary.$group.$page.$browser.$connectivity.pagexray.thirdParty.transferSize"
-            }
-          ],
-          "thresholds": "",
-          "title": "Third party transfer size",
-          "type": "singlestat",
-          "valueFontSize": "80%",
-          "valueMaps": [
-            {
-              "op": "=",
-              "text": "N/A",
-              "value": "null"
-            }
-          ],
-          "valueName": "avg"
-        },
-        {
-          "cacheTimeout": null,
-          "colorBackground": false,
-          "colorValue": false,
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "datasource": "${DS_GRAPHITE}",
           "description": "The transfer size of all your first party responses.  \n\nThe first party content (content you serve your self ) are defined by the requests that  match the regexp you supply with the parameter *--firstParty*",
           "editable": true,
           "error": false,
@@ -2869,10 +2794,10 @@
             "rgba(50, 172, 45, 0.97)"
           ],
           "datasource": "${DS_GRAPHITE}",
-          "description": "The number of requests for all your third party responses.  \n\nThe third party content (content other companies/organizations serve like advertisement, social media buttons etc) are defined by the requests that doesn't match the regexp you supply with the parameter *--firstParty*",
+          "description": "The transfer size of all your third party responses.  \n\nThe third party content (content other companies/organizations serve like advertisement, social media buttons etc) are defined by the requests that doesn't match the regexp you supply with the parameter *--firstParty*",
           "editable": true,
           "error": false,
-          "format": "none",
+          "format": "bytes",
           "gauge": {
             "maxValue": 100,
             "minValue": 0,
@@ -2880,7 +2805,7 @@
             "thresholdLabels": false,
             "thresholdMarkers": true
           },
-          "id": 34,
+          "id": 32,
           "interval": null,
           "links": [],
           "mappingType": 1,
@@ -2918,11 +2843,11 @@
           "targets": [
             {
               "refId": "A",
-              "target": "$base.$path.pageSummary.$group.$page.$browser.$connectivity.pagexray.thirdParty.requests"
+              "target": "$base.$path.pageSummary.$group.$page.$browser.$connectivity.pagexray.thirdParty.transferSize"
             }
           ],
           "thresholds": "",
-          "title": "Third party request",
+          "title": "Third party transfer size",
           "type": "singlestat",
           "valueFontSize": "80%",
           "valueMaps": [
@@ -2998,6 +2923,81 @@
           ],
           "thresholds": "",
           "title": "First party request",
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "avg"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": false,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "datasource": "${DS_GRAPHITE}",
+          "description": "The number of requests for all your third party responses.  \n\nThe third party content (content other companies/organizations serve like advertisement, social media buttons etc) are defined by the requests that doesn't match the regexp you supply with the parameter *--firstParty*",
+          "editable": true,
+          "error": false,
+          "format": "none",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "id": 34,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "span": 3,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": true
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "target": "$base.$path.pageSummary.$group.$page.$browser.$connectivity.pagexray.thirdParty.requests"
+            }
+          ],
+          "thresholds": "",
+          "title": "Third party request",
           "type": "singlestat",
           "valueFontSize": "80%",
           "valueMaps": [
