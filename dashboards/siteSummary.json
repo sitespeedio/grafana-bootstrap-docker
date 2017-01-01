@@ -177,8 +177,8 @@
         "auto_count": 30,
         "auto_min": "10s",
         "current": {
-          "text": "mean",
-          "value": "mean"
+          "text": "max",
+          "value": "max"
         },
         "hide": 0,
         "label": null,
@@ -192,7 +192,7 @@
           {
             "text": "mean",
             "value": "mean",
-            "selected": true
+            "selected": false
           },
           {
             "text": "median",
@@ -207,7 +207,7 @@
           {
             "text": "max",
             "value": "max",
-            "selected": false
+            "selected": true
           }
         ],
         "query": "min, mean,median,p90,max",
@@ -220,7 +220,7 @@
     "list": []
   },
   "schemaVersion": 14,
-  "version": 23,
+  "version": 26,
   "links": [
     {
       "asDropdown": true,
@@ -308,7 +308,7 @@
             {
               "refId": "A",
               "target": "$base.$path.summary.$group.$browser.$connectivity.browsertime.visualMetrics.FirstVisualChange.$function",
-              "textEditor": false
+              "textEditor": true
             }
           ],
           "thresholds": "",
@@ -1023,6 +1023,7 @@
           ],
           "datasource": "${DS_GRAPHITE}",
           "decimals": null,
+          "description": "The $function number of domains used for all the analyzed pages.",
           "editable": true,
           "error": false,
           "format": "none",
@@ -1086,8 +1087,7 @@
               "value": "null"
             }
           ],
-          "valueName": "current",
-          "description": "The $function number of domains used for all the analyzed pages."
+          "valueName": "current"
         },
         {
           "cacheTimeout": null,
@@ -1317,7 +1317,8 @@
               "value": "null"
             }
           ],
-          "valueName": "current"
+          "valueName": "current",
+          "description": "The $function transfer size over the wire of all images on all analyzed page."
         },
         {
           "cacheTimeout": null,
@@ -1406,6 +1407,7 @@
             "rgba(50, 172, 45, 0.97)"
           ],
           "datasource": "${DS_GRAPHITE}",
+          "description": "The $function total score from the [Coach](https://www.sitespeed.io/documentation/coach/) for all tested pages.",
           "editable": true,
           "error": false,
           "format": "none",
@@ -1469,8 +1471,7 @@
               "value": "null"
             }
           ],
-          "valueName": "current",
-          "description": "The $function total score from the [Coach](https://www.sitespeed.io/documentation/coach/) for all tested pages."
+          "valueName": "current"
         },
         {
           "cacheTimeout": null,
@@ -1482,6 +1483,7 @@
             "rgba(50, 172, 45, 0.97)"
           ],
           "datasource": "${DS_GRAPHITE}",
+          "description": "The $function performance score from the [Coach](https://www.sitespeed.io/documentation/coach/) for all tested pages.",
           "editable": true,
           "error": false,
           "format": "none",
@@ -1545,8 +1547,7 @@
               "value": "null"
             }
           ],
-          "valueName": "current",
-          "description": "The $function performance score from the [Coach](https://www.sitespeed.io/documentation/coach/) for all tested pages."
+          "valueName": "current"
         },
         {
           "cacheTimeout": null,
@@ -1634,6 +1635,93 @@
       "collapse": false
     },
     {
+      "title": "Dashboard Row",
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "${DS_GRAPHITE}",
+          "editable": true,
+          "error": false,
+          "fill": 0,
+          "grid": {},
+          "id": 45,
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": true,
+            "max": true,
+            "min": true,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 12,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "aliasByNode($base.$path.summary.$group.$browser.$connectivity.browsertime.visualMetrics.*.$function, 8)",
+              "textEditor": false
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Summary Visual Metrics  [$function]",
+          "tooltip": {
+            "msResolution": false,
+            "shared": true,
+            "sort": 0,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "none",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "description": ""
+        }
+      ],
+      "showTitle": false,
+      "titleSize": "h6",
+      "height": 250,
+      "repeat": null,
+      "repeatRowId": null,
+      "repeatIteration": null,
+      "collapse": false
+    },
+    {
       "title": "Row",
       "panels": [
         {
@@ -1708,7 +1796,8 @@
               "min": null,
               "show": true
             }
-          ]
+          ],
+          "description": "[Navigation Timing API](https://www.w3.org/TR/navigation-timing/) metrics."
         }
       ],
       "showTitle": false,
@@ -1726,6 +1815,7 @@
           "aliasColors": {},
           "bars": false,
           "datasource": "${DS_GRAPHITE}",
+          "description": "The max time spent in frontend vs backend time. \n\nThe backend time is the time it takes for the network and the server to generate and start sending the HTML. It is collected using the Navigation Timing API taking the responseStart minus navigationStart.\n\nThe frontend time is the time it takes for the browser to parse and create the page.  It is collected using the Navigation Timing API by taking the loadEventStart minus responseEnd.",
           "editable": true,
           "error": false,
           "fill": 6,
@@ -1804,8 +1894,7 @@
               "min": null,
               "show": true
             }
-          ],
-          "description": "The max time spent in frontend vs backend time. \n\nThe backend time is the time it takes for the network and the server to generate and start sending the HTML. It is collected using the Navigation Timing API taking the responseStart minus navigationStart.\n\nThe frontend time is the time it takes for the browser to parse and create the page.  It is collected using the Navigation Timing API by taking the loadEventStart minus responseEnd."
+          ]
         },
         {
           "aliasColors": {},
@@ -1903,6 +1992,7 @@
             "rgba(50, 172, 45, 0.97)"
           ],
           "datasource": "${DS_GRAPHITE}",
+          "description": "The $function transfer size of all your first party responses.  \n\nThe first party content (content you serve your self ) are defined by the requests that  match the regexp you supply with the parameter *--firstParty*",
           "editable": true,
           "error": false,
           "format": "bytes",
@@ -1965,8 +2055,7 @@
               "value": "null"
             }
           ],
-          "valueName": "avg",
-          "description": "The $function transfer size of all your first party responses.  \n\nThe first party content (content you serve your self ) are defined by the requests that  match the regexp you supply with the parameter *--firstParty*"
+          "valueName": "avg"
         },
         {
           "cacheTimeout": null,
@@ -1978,6 +2067,7 @@
             "rgba(50, 172, 45, 0.97)"
           ],
           "datasource": "${DS_GRAPHITE}",
+          "description": "The $function transfer size of all your third party responses.  \n\nThe third party content (content other companies/organizations serve like advertisement, social media buttons etc) are defined by the requests that doesn't match the regexp you supply with the parameter *--firstParty*",
           "editable": true,
           "error": false,
           "format": "bytes",
@@ -2040,8 +2130,7 @@
               "value": "null"
             }
           ],
-          "valueName": "avg",
-          "description": "The $function transfer size of all your third party responses.  \n\nThe third party content (content other companies/organizations serve like advertisement, social media buttons etc) are defined by the requests that doesn't match the regexp you supply with the parameter *--firstParty*"
+          "valueName": "avg"
         },
         {
           "cacheTimeout": null,
@@ -2053,6 +2142,7 @@
             "rgba(50, 172, 45, 0.97)"
           ],
           "datasource": "${DS_GRAPHITE}",
+          "description": "The $function number of requests for all your first party responses.  \n\nThe first party content (content you serve your self ) are defined by the requests that match the regexp you supply with the parameter *--firstParty*",
           "editable": true,
           "error": false,
           "format": "none",
@@ -2115,8 +2205,7 @@
               "value": "null"
             }
           ],
-          "valueName": "avg",
-          "description": "The $function number of requests for all your first party responses.  \n\nThe first party content (content you serve your self ) are defined by the requests that match the regexp you supply with the parameter *--firstParty*"
+          "valueName": "avg"
         },
         {
           "cacheTimeout": null,
@@ -2128,6 +2217,7 @@
             "rgba(50, 172, 45, 0.97)"
           ],
           "datasource": "${DS_GRAPHITE}",
+          "description": "The $function number of requests for all your third party responses.  \n\nThe third party content (content other companies/organizations serve like advertisement, social media buttons etc) are defined by the requests that doesn't match the regexp you supply with the parameter *--firstParty*",
           "editable": true,
           "error": false,
           "format": "none",
@@ -2190,8 +2280,7 @@
               "value": "null"
             }
           ],
-          "valueName": "avg",
-          "description": "The $function number of requests for all your third party responses.  \n\nThe third party content (content other companies/organizations serve like advertisement, social media buttons etc) are defined by the requests that doesn't match the regexp you supply with the parameter *--firstParty*"
+          "valueName": "avg"
         }
       ],
       "showTitle": true,
@@ -2215,6 +2304,7 @@
             "rgba(50, 172, 45, 0.97)"
           ],
           "datasource": "${DS_GRAPHITE}",
+          "description": "The $function total size over the wire for all assets served for this page.",
           "editable": true,
           "error": false,
           "format": "bytes",
@@ -2277,8 +2367,7 @@
               "value": "null"
             }
           ],
-          "valueName": "avg",
-          "description": "The $function total size over the wire for all assets served for this page."
+          "valueName": "avg"
         },
         {
           "cacheTimeout": null,
@@ -2290,6 +2379,7 @@
             "rgba(50, 172, 45, 0.97)"
           ],
           "datasource": "${DS_GRAPHITE}",
+          "description": "The $function total size for all assets served for this page. This includes the uncompressed size for compressed text/css/html/js/font content.",
           "editable": true,
           "error": false,
           "format": "bytes",
@@ -2352,8 +2442,7 @@
               "value": "null"
             }
           ],
-          "valueName": "avg",
-          "description": "The $function total size for all assets served for this page. This includes the uncompressed size for compressed text/css/html/js/font content."
+          "valueName": "avg"
         },
         {
           "cacheTimeout": null,
@@ -2365,6 +2454,7 @@
             "rgba(50, 172, 45, 0.97)"
           ],
           "datasource": "${DS_GRAPHITE}",
+          "description": "The $function total size over the wire for all stylesheet assets served for this page.",
           "editable": true,
           "error": false,
           "format": "bytes",
@@ -2427,8 +2517,7 @@
               "value": "null"
             }
           ],
-          "valueName": "avg",
-          "description": "The $function total size over the wire for all stylesheet assets served for this page."
+          "valueName": "avg"
         },
         {
           "cacheTimeout": null,
@@ -2440,6 +2529,7 @@
             "rgba(50, 172, 45, 0.97)"
           ],
           "datasource": "${DS_GRAPHITE}",
+          "description": "The $function total size for stylesheets assets served for this page. This includes the uncompressed size of CSS responses.",
           "editable": true,
           "error": false,
           "format": "bytes",
@@ -2502,8 +2592,7 @@
               "value": "null"
             }
           ],
-          "valueName": "avg",
-          "description": "The $function total size for stylesheets assets served for this page. This includes the uncompressed size of CSS responses."
+          "valueName": "avg"
         },
         {
           "cacheTimeout": null,
@@ -2515,6 +2604,7 @@
             "rgba(50, 172, 45, 0.97)"
           ],
           "datasource": "${DS_GRAPHITE}",
+          "description": "The $function total size over the wire for all Javascript assets served for this page.",
           "editable": true,
           "error": false,
           "format": "bytes",
@@ -2577,8 +2667,7 @@
               "value": "null"
             }
           ],
-          "valueName": "avg",
-          "description": "The $function total size over the wire for all Javascript assets served for this page."
+          "valueName": "avg"
         },
         {
           "cacheTimeout": null,
@@ -2590,6 +2679,7 @@
             "rgba(50, 172, 45, 0.97)"
           ],
           "datasource": "${DS_GRAPHITE}",
+          "description": "The $function total size for Javascripts assets served for this page. This includes the uncompressed size of JS responses.",
           "editable": true,
           "error": false,
           "format": "bytes",
@@ -2652,8 +2742,7 @@
               "value": "null"
             }
           ],
-          "valueName": "avg",
-          "description": "The $function total size for Javascripts assets served for this page. This includes the uncompressed size of JS responses."
+          "valueName": "avg"
         }
       ],
       "showTitle": true,
