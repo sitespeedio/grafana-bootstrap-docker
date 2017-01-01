@@ -177,8 +177,8 @@
         "auto_count": 30,
         "auto_min": "10s",
         "current": {
-          "text": "max",
-          "value": "max"
+          "text": "mean",
+          "value": "mean"
         },
         "hide": 0,
         "label": null,
@@ -192,7 +192,7 @@
           {
             "text": "mean",
             "value": "mean",
-            "selected": false
+            "selected": true
           },
           {
             "text": "median",
@@ -207,7 +207,7 @@
           {
             "text": "max",
             "value": "max",
-            "selected": true
+            "selected": false
           }
         ],
         "query": "min, mean,median,p90,max",
@@ -220,7 +220,7 @@
     "list": []
   },
   "schemaVersion": 14,
-  "version": 20,
+  "version": 21,
   "links": [
     {
       "asDropdown": true,
@@ -248,81 +248,6 @@
     {
       "title": "Metrics [$function]",
       "panels": [
-        {
-          "cacheTimeout": null,
-          "colorBackground": false,
-          "colorValue": false,
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "datasource": "${DS_GRAPHITE}",
-          "editable": true,
-          "error": false,
-          "format": "none",
-          "gauge": {
-            "maxValue": 100,
-            "minValue": 0,
-            "show": false,
-            "thresholdLabels": false,
-            "thresholdMarkers": true
-          },
-          "id": 2,
-          "interval": null,
-          "links": [],
-          "mappingType": 1,
-          "mappingTypes": [
-            {
-              "name": "value to text",
-              "value": 1
-            },
-            {
-              "name": "range to text",
-              "value": 2
-            }
-          ],
-          "maxDataPoints": 100,
-          "nullPointMode": "connected",
-          "nullText": null,
-          "postfix": "",
-          "postfixFontSize": "50%",
-          "prefix": "",
-          "prefixFontSize": "50%",
-          "rangeMaps": [
-            {
-              "from": "null",
-              "text": "N/A",
-              "to": "null"
-            }
-          ],
-          "span": 2,
-          "sparkline": {
-            "fillColor": "rgba(31, 118, 189, 0.18)",
-            "full": true,
-            "lineColor": "rgb(31, 120, 193)",
-            "show": false
-          },
-          "targets": [
-            {
-              "refId": "A",
-              "target": "$base.$path.summary.$group.$browser.$connectivity.browsertime.visualMetrics.SpeedIndex.$function",
-              "textEditor": false
-            }
-          ],
-          "thresholds": "",
-          "title": "Speed Index",
-          "type": "singlestat",
-          "valueFontSize": "80%",
-          "valueMaps": [
-            {
-              "op": "=",
-              "text": "N/A",
-              "value": "null"
-            }
-          ],
-          "valueName": "current"
-        },
         {
           "cacheTimeout": null,
           "colorBackground": false,
@@ -396,7 +321,84 @@
               "value": "null"
             }
           ],
-          "valueName": "current"
+          "valueName": "current",
+          "description": "The first visual change is when something for the first time is painted within the current viewport. It is calculated by analyzing a video recording of the screen."
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": false,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "datasource": "${DS_GRAPHITE}",
+          "editable": true,
+          "error": false,
+          "format": "none",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "id": 2,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "span": 2,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": true,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": false
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "target": "$base.$path.summary.$group.$browser.$connectivity.browsertime.visualMetrics.SpeedIndex.$function",
+              "textEditor": false
+            }
+          ],
+          "thresholds": "",
+          "title": "Speed Index",
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "current",
+          "description": "The Speed Index is the average time at which visible parts of the page are displayed. It is expressed in milliseconds and dependent on size of the view port. It was created by Pat Meenan and you can checkout the full documentation [here](https://sites.google.com/a/webpagetest.org/docs/using-webpagetest/metrics/speed-index)."
         },
         {
           "cacheTimeout": null,
@@ -471,7 +473,8 @@
               "value": "null"
             }
           ],
-          "valueName": "current"
+          "valueName": "current",
+          "description": "The last visual change is when something for the last time is changing within the current viewport. It is calculated by analyzing a video recording of the screen."
         },
         {
           "cacheTimeout": null,
@@ -546,7 +549,8 @@
               "value": "null"
             }
           ],
-          "valueName": "current"
+          "valueName": "current",
+          "description": "Fully loaded time when the last of all assets is downloaded on the page. It is calculated using the Resource Timing API where we use the last downloaded asset."
         },
         {
           "cacheTimeout": null,
@@ -621,7 +625,8 @@
               "value": "null"
             }
           ],
-          "valueName": "current"
+          "valueName": "current",
+          "description": "The backend $function time is the time it takes for the network and the server to generate and start sending the HTML. It is collected using the Navigation Timing API taking the responseStart minus navigationStart."
         },
         {
           "cacheTimeout": null,
@@ -696,7 +701,8 @@
               "value": "null"
             }
           ],
-          "valueName": "current"
+          "valueName": "current",
+          "description": "The frontend $function time is the time it takes for the browser to parse and create the page.  It is collected using the Navigation Timing API by taking the loadEventStart minus responseEnd."
         },
         {
           "cacheTimeout": null,
@@ -772,7 +778,8 @@
               "value": "null"
             }
           ],
-          "valueName": "current"
+          "valueName": "current",
+          "description": "The $function number of requests of a page"
         },
         {
           "cacheTimeout": null,
@@ -848,7 +855,8 @@
               "value": "null"
             }
           ],
-          "valueName": "current"
+          "valueName": "current",
+          "description": "The $function number of CSS requests of a page"
         },
         {
           "cacheTimeout": null,
@@ -924,7 +932,8 @@
               "value": "null"
             }
           ],
-          "valueName": "current"
+          "valueName": "current",
+          "description": "The $function number of Javascript requests of a page"
         },
         {
           "cacheTimeout": null,
@@ -1000,7 +1009,8 @@
               "value": "null"
             }
           ],
-          "valueName": "current"
+          "valueName": "current",
+          "description": "The $function number of image requests of a page"
         },
         {
           "cacheTimeout": null,
@@ -1152,7 +1162,8 @@
               "value": "null"
             }
           ],
-          "valueName": "current"
+          "valueName": "current",
+          "description": "The $function value for the response expire time of all assets. Compare this with the $function last modified $function value to understand how good you configured the cache settings on your site."
         },
         {
           "cacheTimeout": null,
@@ -1228,7 +1239,8 @@
               "value": "-1"
             }
           ],
-          "valueName": "current"
+          "valueName": "current",
+          "description": "The $function value for the last modified time of all assets. Compare this with the $function cache time to know how smart you have configured the cache settings."
         },
         {
           "cacheTimeout": null,
@@ -1370,7 +1382,7 @@
             }
           ],
           "thresholds": "",
-          "title": "Transfer size",
+          "title": "Total transfer size",
           "type": "singlestat",
           "valueFontSize": "80%",
           "valueMaps": [
@@ -1380,7 +1392,8 @@
               "value": "null"
             }
           ],
-          "valueName": "current"
+          "valueName": "current",
+          "description": "The $function total transfer size over the wire (compressed size if your asset is compressed) of all assets on a page."
         },
         {
           "cacheTimeout": null,
@@ -1605,7 +1618,8 @@
               "value": "null"
             }
           ],
-          "valueName": "current"
+          "valueName": "current",
+          "description": "The size of the largest image on all the analyzed pages."
         }
       ],
       "showTitle": true,
