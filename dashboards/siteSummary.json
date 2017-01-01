@@ -220,7 +220,7 @@
     "list": []
   },
   "schemaVersion": 14,
-  "version": 21,
+  "version": 23,
   "links": [
     {
       "asDropdown": true,
@@ -258,6 +258,7 @@
             "rgba(50, 172, 45, 0.97)"
           ],
           "datasource": "${DS_GRAPHITE}",
+          "description": "The first visual change is when something for the first time is painted within the current viewport. It is calculated by analyzing a video recording of the screen.",
           "editable": true,
           "error": false,
           "format": "ms",
@@ -321,8 +322,7 @@
               "value": "null"
             }
           ],
-          "valueName": "current",
-          "description": "The first visual change is when something for the first time is painted within the current viewport. It is calculated by analyzing a video recording of the screen."
+          "valueName": "current"
         },
         {
           "cacheTimeout": null,
@@ -334,6 +334,7 @@
             "rgba(50, 172, 45, 0.97)"
           ],
           "datasource": "${DS_GRAPHITE}",
+          "description": "The Speed Index is the average time at which visible parts of the page are displayed. It is expressed in milliseconds and dependent on size of the view port. It was created by Pat Meenan and you can checkout the full documentation [here](https://sites.google.com/a/webpagetest.org/docs/using-webpagetest/metrics/speed-index).",
           "editable": true,
           "error": false,
           "format": "none",
@@ -397,8 +398,7 @@
               "value": "null"
             }
           ],
-          "valueName": "current",
-          "description": "The Speed Index is the average time at which visible parts of the page are displayed. It is expressed in milliseconds and dependent on size of the view port. It was created by Pat Meenan and you can checkout the full documentation [here](https://sites.google.com/a/webpagetest.org/docs/using-webpagetest/metrics/speed-index)."
+          "valueName": "current"
         },
         {
           "cacheTimeout": null,
@@ -410,6 +410,7 @@
             "rgba(50, 172, 45, 0.97)"
           ],
           "datasource": "${DS_GRAPHITE}",
+          "description": "The last visual change is when something for the last time is changing within the current viewport. It is calculated by analyzing a video recording of the screen.",
           "editable": true,
           "error": false,
           "format": "ms",
@@ -473,8 +474,7 @@
               "value": "null"
             }
           ],
-          "valueName": "current",
-          "description": "The last visual change is when something for the last time is changing within the current viewport. It is calculated by analyzing a video recording of the screen."
+          "valueName": "current"
         },
         {
           "cacheTimeout": null,
@@ -486,6 +486,7 @@
             "rgba(50, 172, 45, 0.97)"
           ],
           "datasource": "${DS_GRAPHITE}",
+          "description": "Fully loaded time when the last of all assets is downloaded on the page. It is calculated using the Resource Timing API where we use the last downloaded asset.",
           "editable": true,
           "error": false,
           "format": "ms",
@@ -549,8 +550,7 @@
               "value": "null"
             }
           ],
-          "valueName": "current",
-          "description": "Fully loaded time when the last of all assets is downloaded on the page. It is calculated using the Resource Timing API where we use the last downloaded asset."
+          "valueName": "current"
         },
         {
           "cacheTimeout": null,
@@ -562,6 +562,7 @@
             "rgba(50, 172, 45, 0.97)"
           ],
           "datasource": "${DS_GRAPHITE}",
+          "description": "The  $function backend time is the  $function time it takes for the network and the server to generate and start sending the HTML for all the analyzed pages. It is collected using the Navigation Timing API taking the responseStart minus navigationStart.",
           "editable": true,
           "error": false,
           "format": "ms",
@@ -625,8 +626,7 @@
               "value": "null"
             }
           ],
-          "valueName": "current",
-          "description": "The backend $function time is the time it takes for the network and the server to generate and start sending the HTML. It is collected using the Navigation Timing API taking the responseStart minus navigationStart."
+          "valueName": "current"
         },
         {
           "cacheTimeout": null,
@@ -638,6 +638,7 @@
             "rgba(50, 172, 45, 0.97)"
           ],
           "datasource": "${DS_GRAPHITE}",
+          "description": "The frontend $function time is the time it takes for the browser to parse and create the page.  It is collected using the Navigation Timing API by taking the loadEventStart minus responseEnd.",
           "editable": true,
           "error": false,
           "format": "ms",
@@ -701,8 +702,7 @@
               "value": "null"
             }
           ],
-          "valueName": "current",
-          "description": "The frontend $function time is the time it takes for the browser to parse and create the page.  It is collected using the Navigation Timing API by taking the loadEventStart minus responseEnd."
+          "valueName": "current"
         },
         {
           "cacheTimeout": null,
@@ -715,6 +715,7 @@
           ],
           "datasource": "${DS_GRAPHITE}",
           "decimals": null,
+          "description": "The $function number of requests for all the analyzed pages.",
           "editable": true,
           "error": false,
           "format": "none",
@@ -778,8 +779,7 @@
               "value": "null"
             }
           ],
-          "valueName": "current",
-          "description": "The $function number of requests of a page"
+          "valueName": "current"
         },
         {
           "cacheTimeout": null,
@@ -792,6 +792,7 @@
           ],
           "datasource": "${DS_GRAPHITE}",
           "decimals": null,
+          "description": "The $function number of CSS requests for all the analyzed pages.",
           "editable": true,
           "error": false,
           "format": "none",
@@ -855,8 +856,7 @@
               "value": "null"
             }
           ],
-          "valueName": "current",
-          "description": "The $function number of CSS requests of a page"
+          "valueName": "current"
         },
         {
           "cacheTimeout": null,
@@ -869,6 +869,7 @@
           ],
           "datasource": "${DS_GRAPHITE}",
           "decimals": null,
+          "description": "The $function number of Javascript requests for all the analyzed pages.",
           "editable": true,
           "error": false,
           "format": "none",
@@ -932,8 +933,7 @@
               "value": "null"
             }
           ],
-          "valueName": "current",
-          "description": "The $function number of Javascript requests of a page"
+          "valueName": "current"
         },
         {
           "cacheTimeout": null,
@@ -946,6 +946,7 @@
           ],
           "datasource": "${DS_GRAPHITE}",
           "decimals": null,
+          "description": "The $function number of image requests for all the analyzed pages.",
           "editable": true,
           "error": false,
           "format": "none",
@@ -1009,8 +1010,7 @@
               "value": "null"
             }
           ],
-          "valueName": "current",
-          "description": "The $function number of image requests of a page"
+          "valueName": "current"
         },
         {
           "cacheTimeout": null,
@@ -1086,7 +1086,8 @@
               "value": "null"
             }
           ],
-          "valueName": "current"
+          "valueName": "current",
+          "description": "The $function number of domains used for all the analyzed pages."
         },
         {
           "cacheTimeout": null,
@@ -1099,6 +1100,7 @@
           ],
           "datasource": "${DS_GRAPHITE}",
           "decimals": 0,
+          "description": "The $function value for the response expire time of all assets. Compare this with the $function last modified $function value to understand how good you configured the cache settings on your site.",
           "editable": true,
           "error": false,
           "format": "ms",
@@ -1162,8 +1164,7 @@
               "value": "null"
             }
           ],
-          "valueName": "current",
-          "description": "The $function value for the response expire time of all assets. Compare this with the $function last modified $function value to understand how good you configured the cache settings on your site."
+          "valueName": "current"
         },
         {
           "cacheTimeout": null,
@@ -1176,6 +1177,7 @@
           ],
           "datasource": "${DS_GRAPHITE}",
           "decimals": 0,
+          "description": "The $function value for the last modified time of all assets. Compare this with the $function cache time to know how smart you have configured the cache settings.",
           "editable": true,
           "error": false,
           "format": "s",
@@ -1239,8 +1241,7 @@
               "value": "-1"
             }
           ],
-          "valueName": "current",
-          "description": "The $function value for the last modified time of all assets. Compare this with the $function cache time to know how smart you have configured the cache settings."
+          "valueName": "current"
         },
         {
           "cacheTimeout": null,
@@ -1329,6 +1330,7 @@
           ],
           "datasource": "${DS_GRAPHITE}",
           "decimals": null,
+          "description": "The $function total transfer size over the wire (compressed size if your asset is compressed) of all assets on a page.",
           "editable": true,
           "error": false,
           "format": "bytes",
@@ -1392,8 +1394,7 @@
               "value": "null"
             }
           ],
-          "valueName": "current",
-          "description": "The $function total transfer size over the wire (compressed size if your asset is compressed) of all assets on a page."
+          "valueName": "current"
         },
         {
           "cacheTimeout": null,
@@ -1468,7 +1469,8 @@
               "value": "null"
             }
           ],
-          "valueName": "current"
+          "valueName": "current",
+          "description": "The $function total score from the [Coach](https://www.sitespeed.io/documentation/coach/) for all tested pages."
         },
         {
           "cacheTimeout": null,
@@ -1543,7 +1545,8 @@
               "value": "null"
             }
           ],
-          "valueName": "current"
+          "valueName": "current",
+          "description": "The $function performance score from the [Coach](https://www.sitespeed.io/documentation/coach/) for all tested pages."
         },
         {
           "cacheTimeout": null,
@@ -1555,6 +1558,7 @@
             "rgba(50, 172, 45, 0.97)"
           ],
           "datasource": "${DS_GRAPHITE}",
+          "description": "The size of the largest image on all the analyzed pages.",
           "editable": true,
           "error": false,
           "format": "bytes",
@@ -1618,8 +1622,7 @@
               "value": "null"
             }
           ],
-          "valueName": "current",
-          "description": "The size of the largest image on all the analyzed pages."
+          "valueName": "current"
         }
       ],
       "showTitle": true,
@@ -1674,7 +1677,7 @@
           "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
-          "title": "Summary timings [$function]",
+          "title": "Summary Navigation Timings [$function]",
           "tooltip": {
             "msResolution": false,
             "shared": true,
@@ -1801,7 +1804,8 @@
               "min": null,
               "show": true
             }
-          ]
+          ],
+          "description": "The max time spent in frontend vs backend time. \n\nThe backend time is the time it takes for the network and the server to generate and start sending the HTML. It is collected using the Navigation Timing API taking the responseStart minus navigationStart.\n\nThe frontend time is the time it takes for the browser to parse and create the page.  It is collected using the Navigation Timing API by taking the loadEventStart minus responseEnd."
         },
         {
           "aliasColors": {},
@@ -1961,7 +1965,8 @@
               "value": "null"
             }
           ],
-          "valueName": "avg"
+          "valueName": "avg",
+          "description": "The $function transfer size of all your first party responses.  \n\nThe first party content (content you serve your self ) are defined by the requests that  match the regexp you supply with the parameter *--firstParty*"
         },
         {
           "cacheTimeout": null,
@@ -2035,7 +2040,8 @@
               "value": "null"
             }
           ],
-          "valueName": "avg"
+          "valueName": "avg",
+          "description": "The $function transfer size of all your third party responses.  \n\nThe third party content (content other companies/organizations serve like advertisement, social media buttons etc) are defined by the requests that doesn't match the regexp you supply with the parameter *--firstParty*"
         },
         {
           "cacheTimeout": null,
@@ -2109,7 +2115,8 @@
               "value": "null"
             }
           ],
-          "valueName": "avg"
+          "valueName": "avg",
+          "description": "The $function number of requests for all your first party responses.  \n\nThe first party content (content you serve your self ) are defined by the requests that match the regexp you supply with the parameter *--firstParty*"
         },
         {
           "cacheTimeout": null,
@@ -2183,7 +2190,8 @@
               "value": "null"
             }
           ],
-          "valueName": "avg"
+          "valueName": "avg",
+          "description": "The $function number of requests for all your third party responses.  \n\nThe third party content (content other companies/organizations serve like advertisement, social media buttons etc) are defined by the requests that doesn't match the regexp you supply with the parameter *--firstParty*"
         }
       ],
       "showTitle": true,
@@ -2269,7 +2277,8 @@
               "value": "null"
             }
           ],
-          "valueName": "avg"
+          "valueName": "avg",
+          "description": "The $function total size over the wire for all assets served for this page."
         },
         {
           "cacheTimeout": null,
@@ -2343,7 +2352,8 @@
               "value": "null"
             }
           ],
-          "valueName": "avg"
+          "valueName": "avg",
+          "description": "The $function total size for all assets served for this page. This includes the uncompressed size for compressed text/css/html/js/font content."
         },
         {
           "cacheTimeout": null,
@@ -2417,7 +2427,8 @@
               "value": "null"
             }
           ],
-          "valueName": "avg"
+          "valueName": "avg",
+          "description": "The $function total size over the wire for all stylesheet assets served for this page."
         },
         {
           "cacheTimeout": null,
@@ -2491,7 +2502,8 @@
               "value": "null"
             }
           ],
-          "valueName": "avg"
+          "valueName": "avg",
+          "description": "The $function total size for stylesheets assets served for this page. This includes the uncompressed size of CSS responses."
         },
         {
           "cacheTimeout": null,
@@ -2565,7 +2577,8 @@
               "value": "null"
             }
           ],
-          "valueName": "avg"
+          "valueName": "avg",
+          "description": "The $function total size over the wire for all Javascript assets served for this page."
         },
         {
           "cacheTimeout": null,
@@ -2639,7 +2652,8 @@
               "value": "null"
             }
           ],
-          "valueName": "avg"
+          "valueName": "avg",
+          "description": "The $function total size for Javascripts assets served for this page. This includes the uncompressed size of JS responses."
         }
       ],
       "showTitle": true,
