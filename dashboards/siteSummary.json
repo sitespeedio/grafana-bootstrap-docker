@@ -869,7 +869,7 @@
           ],
           "datasource": "${DS_GRAPHITE}",
           "decimals": null,
-          "description": "The $function number of Javascript requests for all the analyzed pages.",
+          "description": "The $function number of JavaScript requests for all the analyzed pages.",
           "editable": true,
           "error": false,
           "format": "none",
@@ -923,7 +923,7 @@
             }
           ],
           "thresholds": "",
-          "title": "Javascript requests",
+          "title": "JavaScript requests",
           "type": "singlestat",
           "valueFontSize": "80%",
           "valueMaps": [
