@@ -1432,7 +1432,7 @@
             "fillColor": "rgba(31, 118, 189, 0.18)",
             "full": true,
             "lineColor": "rgb(31, 120, 193)",
-            "show": true
+            "show": false
           },
           "targets": [
             {
@@ -3211,5 +3211,5 @@
   },
   "timezone": "browser",
   "title": "Site summary",
-  "version": 30
+  "version": 31
 }
