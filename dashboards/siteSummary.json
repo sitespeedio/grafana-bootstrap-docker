@@ -1470,7 +1470,7 @@
           "aliasColors": {},
           "bars": false,
           "datasource": "${DS_GRAPHITE}",
-          "description": "",
+          "description": "The history of First Visual Change (when something for the first time is painted within the current viewport) showing the current median value, the average median per day and the average median per week for all tested pages.",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -1555,7 +1555,7 @@
           "aliasColors": {},
           "bars": false,
           "datasource": "${DS_GRAPHITE}",
-          "description": "",
+          "description": "The history of [Speed Index](https://sites.google.com/a/webpagetest.org/docs/using-webpagetest/metrics/speed-index) showing the current median value, the average median per day and the average median per week for all tested pages.",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -1640,7 +1640,7 @@
           "aliasColors": {},
           "bars": false,
           "datasource": "${DS_GRAPHITE}",
-          "description": "",
+          "description": "The history of Last Visual Change (when something for the last time is changing within the current viewport) showing the current median value, the average median per day and the average median per week for all tested pages.",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -1725,7 +1725,7 @@
           "aliasColors": {},
           "bars": false,
           "datasource": "${DS_GRAPHITE}",
-          "description": "",
+          "description": "The history of Fully Loaded (when the last of all assets is downloaded on the page) showing the current median value, the average median per day and the average median per week for all tested pages.",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -3476,5 +3476,5 @@
   },
   "timezone": "browser",
   "title": "Site summary",
-  "version": 35
+  "version": 36
 }
