@@ -28,7 +28,7 @@ import_data() {
   set -e
   echo " "
   echo $1
-  curl -s -S -H 'Content-Type:application/json' -u $GF_USER:$GF_PASSWORD --data-raw "$2" ${GF_API}$3
+  echo "$2" | curl -s -S -H 'Content-Type:application/json' -u $GF_USER:$GF_PASSWORD --data @- ${GF_API}$3
   echo " "
   set +e
 }
