@@ -49,7 +49,17 @@
     }
   ],
   "annotations": {
-    "list": []
+    "list": [
+      {
+        "datasource": "${DS_GRAPHITE}",
+        "enable": true,
+        "iconColor": "rgba(255, 96, 96, 1)",
+        "limit": 100,
+        "name": "sitespeed.io",
+        "tags": "$domain $page $browser $connectivity $base",
+        "type": "alert"
+      }
+    ]
   },
   "editable": true,
   "gnetId": null,
@@ -3953,8 +3963,8 @@
         "auto_count": 30,
         "auto_min": "10s",
         "current": {
-          "text": "mean",
-          "value": "mean"
+          "text": "median",
+          "value": "median"
         },
         "hide": 0,
         "label": null,
@@ -3966,12 +3976,12 @@
             "value": "min"
           },
           {
-            "selected": true,
+            "selected": false,
             "text": "mean",
             "value": "mean"
           },
           {
-            "selected": false,
+            "selected": true,
             "text": "median",
             "value": "median"
           },
@@ -4023,5 +4033,5 @@
   },
   "timezone": "browser",
   "title": "Page summary",
-  "version": 99
+  "version": 101
 }
