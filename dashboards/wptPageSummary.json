@@ -571,7 +571,15 @@
             "collapse": false,
             "height": "300px",
             "panels": [{
-                    "aliasColors": {},
+                    "aliasColors": {
+                        "css": "#b2ea94",
+                        "flash": "#2db7c1",
+                        "font": "#ff523e",
+                        "html": "#82b5fc",
+                        "image": "#c49ae8",
+                        "js": "#fec584",
+                        "other": "#c4c4c4"
+                    },
                     "bars": false,
                     "datasource": "${DS_GRAPHITE}",
                     "editable": true,
@@ -641,7 +649,15 @@
                     ]
                 },
                 {
-                    "aliasColors": {},
+                    "aliasColors": {
+                        "css": "#b2ea94",
+                        "flash": "#2db7c1",
+                        "font": "#ff523e",
+                        "html": "#82b5fc",
+                        "image": "#c49ae8",
+                        "js": "#fec584",
+                        "other": "#c4c4c4"
+                    },
                     "bars": false,
                     "datasource": "${DS_GRAPHITE}",
                     "editable": true,
