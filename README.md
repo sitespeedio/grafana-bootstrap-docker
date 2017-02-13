@@ -18,6 +18,6 @@ Example: `docker run -it --link graphite_grafana_1:grafana --network graphite_de
 1. Run the container `docker run -it --link <name of your grafana container>:grafana --network <name of your grafana network> sitespeedio_dashboards`
 
 
-# Bugs
+#### Bugs
 
 Currently when exporting dashboards with constants the JSON file will need to be tweaked so that the label and value of each constant for a dashboard matches before re-importing into a grafana instance. This is a known bug with grafana API imports.
