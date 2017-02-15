@@ -345,7 +345,7 @@
                     },
                     "targets": [{
                         "refId": "A",
-                        "target": "sitespeed_io.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.fullyLoaded.$function",
+                        "target": "$base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.fullyLoaded.$function",
                         "textEditor": false
                     }],
                     "thresholds": "",
@@ -1679,7 +1679,7 @@
                     },
                     "targets": [{
                         "refId": "A",
-                        "target": "sitespeed_io.$path.pageSummary.$group.$page.$browser.$connectivity.coach.advice.info.iframes",
+                        "target": "$base.$path.pageSummary.$group.$page.$browser.$connectivity.coach.advice.info.iframes",
                         "textEditor": false
                     }],
                     "thresholds": "",

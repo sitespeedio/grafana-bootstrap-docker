@@ -212,7 +212,7 @@
                         "refId": "A",
                         "step": 120,
                         "target": "aliasByNode(asPercent($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.thirdParty.requests, #C), 8)",
-                        "targetFull": "aliasByNode(asPercent($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.thirdParty.requests, aliasByNode(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.requests, 8)), 8)",
+                        "targetFull": "aliasByNode(asPercent($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.thirdParty.requests, aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.requests, 8)), 8)",
                         "textEditor": false
                     },
                     {
@@ -225,7 +225,7 @@
                         "refId": "B",
                         "step": 120,
                         "target": "aliasByNode(asPercent($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.firstParty.requests, #C), 8)",
-                        "targetFull": "aliasByNode(asPercent($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.firstParty.requests, aliasByNode(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.requests, 8)), 8)",
+                        "targetFull": "aliasByNode(asPercent($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.firstParty.requests, aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.requests, 8)), 8)",
                         "textEditor": false
                     }
                 ],
@@ -333,7 +333,7 @@
                         "refId": "A",
                         "step": 120,
                         "target": "aliasByNode(asPercent($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.thirdParty.contentSize, #C), 8)",
-                        "targetFull": "aliasByNode(asPercent($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.thirdParty.contentSize, aliasByNode(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.contentSize, 8)), 8)",
+                        "targetFull": "aliasByNode(asPercent($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.thirdParty.contentSize, aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.contentSize, 8)), 8)",
                         "textEditor": false
                     },
                     {
@@ -346,7 +346,7 @@
                         "refId": "B",
                         "step": 120,
                         "target": "aliasByNode(asPercent($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.firstParty.contentSize, #C), 8)",
-                        "targetFull": "aliasByNode(asPercent($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.firstParty.contentSize, aliasByNode(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.contentSize, 8)), 8)",
+                        "targetFull": "aliasByNode(asPercent($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.firstParty.contentSize, aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.contentSize, 8)), 8)",
                         "textEditor": false
                     }
                 ],
@@ -450,7 +450,7 @@
                         "refId": "A",
                         "step": 120,
                         "target": "aliasByNode(asPercent($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.thirdParty.transferSize, #C), 8)",
-                        "targetFull": "aliasByNode(asPercent($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.thirdParty.transferSize, aliasByNode(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.transferSize, 8)), 8)",
+                        "targetFull": "aliasByNode(asPercent($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.thirdParty.transferSize, aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.transferSize, 8)), 8)",
                         "textEditor": false
                     },
                     {
@@ -463,7 +463,7 @@
                         "refId": "B",
                         "step": 120,
                         "target": "aliasByNode(asPercent($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.firstParty.transferSize, #C), 8)",
-                        "targetFull": "aliasByNode(asPercent($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.firstParty.transferSize, aliasByNode(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.transferSize, 8)), 8)",
+                        "targetFull": "aliasByNode(asPercent($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.firstParty.transferSize, aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.transferSize, 8)), 8)",
                         "textEditor": false
                     }
                 ],

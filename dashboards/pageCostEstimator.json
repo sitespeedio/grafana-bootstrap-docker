@@ -213,7 +213,7 @@
                             "hide": false,
                             "refId": "A",
                             "target": "divideSeries(scale(divideSeries($base.$path.summary.$domain.$browser.$Connection.pagexray.contentSize.median, #B), 25), #C)",
-                            "targetFull": "divideSeries(scale(divideSeries($base.$path.summary.$domain.$browser.$Connection.pagexray.contentSize.median, sitespeed_io.$path.summary.$domain.$browser.$Connection.pagexray.contentSize.median), 25), scale(scale(sitespeed_io.$path.summary.$domain.$browser.$Connection.pagexray.contentSize.median, $cost), 0.01))",
+                            "targetFull": "divideSeries(scale(divideSeries($base.$path.summary.$domain.$browser.$Connection.pagexray.contentSize.median, $base.$path.summary.$domain.$browser.$Connection.pagexray.contentSize.median), 25), scale(scale($base.$path.summary.$domain.$browser.$Connection.pagexray.contentSize.median, $cost), 0.01))",
                             "textEditor": false
                         },
                         {
@@ -304,7 +304,7 @@
                             "hide": false,
                             "refId": "A",
                             "target": "scale(divideSeries(scale(divideSeries($base.$path.summary.$domain.$browser.$Connection.pagexray.contentSize.median, #B), 25), #C), 0.03)",
-                            "targetFull": "scale(divideSeries(scale(divideSeries($base.$path.summary.$domain.$browser.$Connection.pagexray.contentSize.median, sitespeed_io.$path.summary.$domain.$browser.$Connection.pagexray.contentSize.median), 25), scale(scale(sitespeed_io.$path.summary.$domain.$browser.$Connection.pagexray.contentSize.median, $cost), 0.01)), 0.03)",
+                            "targetFull": "scale(divideSeries(scale(divideSeries($base.$path.summary.$domain.$browser.$Connection.pagexray.contentSize.median, $base.$path.summary.$domain.$browser.$Connection.pagexray.contentSize.median), 25), scale(scale($base.$path.summary.$domain.$browser.$Connection.pagexray.contentSize.median, $cost), 0.01)), 0.03)",
                             "textEditor": false
                         },
                         {

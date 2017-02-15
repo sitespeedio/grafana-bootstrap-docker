@@ -1793,17 +1793,17 @@
                     "targets": [{
                             "refId": "B",
                             "target": "alias(asPercent($base.$path.summary.$group.$browser.$connectivity.browsertime.pageTimings.backEndTime.$function, #C), 'Backend')",
-                            "targetFull": "alias(asPercent($base.$path.summary.$group.$browser.$connectivity.browsertime.pageTimings.backEndTime.$function, sumSeries(sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.pageTimings.backEndTime.median,sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.pageTimings.frontEndTime.median)), 'Backend')"
+                            "targetFull": "alias(asPercent($base.$path.summary.$group.$browser.$connectivity.browsertime.pageTimings.backEndTime.$function, sumSeries($base.$path.summary.$group.$browser.$connectivity.browsertime.pageTimings.backEndTime.median,$base.$path.summary.$group.$browser.$connectivity.browsertime.pageTimings.frontEndTime.median)), 'Backend')"
                         },
                         {
                             "refId": "A",
                             "target": "alias(asPercent($base.$path.summary.$group.$browser.$connectivity.browsertime.pageTimings.frontEndTime.$function, #C), 'Frontend')",
-                            "targetFull": "alias(asPercent($base.$path.summary.$group.$browser.$connectivity.browsertime.pageTimings.frontEndTime.$function, sumSeries(sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.pageTimings.backEndTime.median,sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.pageTimings.frontEndTime.median)), 'Frontend')"
+                            "targetFull": "alias(asPercent($base.$path.summary.$group.$browser.$connectivity.browsertime.pageTimings.frontEndTime.$function, sumSeries($base.$path.summary.$group.$browser.$connectivity.browsertime.pageTimings.backEndTime.median,$base.$path.summary.$group.$browser.$connectivity.browsertime.pageTimings.frontEndTime.median)), 'Frontend')"
                         },
                         {
                             "hide": true,
                             "refId": "C",
-                            "target": "sumSeries(sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.pageTimings.backEndTime.$function,sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.pageTimings.frontEndTime.$function)",
+                            "target": "sumSeries($base.$path.summary.$group.$browser.$connectivity.browsertime.pageTimings.backEndTime.$function,$base.$path.summary.$group.$browser.$connectivity.browsertime.pageTimings.frontEndTime.$function)",
                             "textEditor": true
                         }
                     ],
