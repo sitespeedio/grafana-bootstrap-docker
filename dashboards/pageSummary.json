@@ -11,7 +11,7 @@
     {
       "name": "VAR_BASE",
       "type": "constant",
-      "label": "base",
+      "label": "sitespeed_io",
       "value": "sitespeed_io",
       "description": ""
     }
@@ -4389,7 +4389,7 @@
           "text": "${VAR_BASE}"
         },
         "hide": 2,
-        "label": "base",
+        "label": "sitespeed_io",
         "name": "base",
         "options": [
           {
@@ -4575,5 +4575,5 @@
   },
   "timezone": "browser",
   "title": "Page summary",
-  "version": 24
+  "version": 2
 }
