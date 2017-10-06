@@ -4,6 +4,8 @@ GF_API=${GF_API:-http://grafana:3000/api}
 GF_USER=${GF_USER:-admin}
 GF_PASSWORD=${GF_PASSWORD:-admin}
 
+BACKEND=${BACKEND:-graphite}
+
 print_header() {
   echo " "
   echo "------------------"
@@ -44,7 +46,7 @@ wait_for_api
 
 print_header "Adding datasources"
 
-for datasource in `ls -1 /datasources/*.json`; do
+for datasource in `ls -1 /datasources/$BACKEND/*.json`; do
   datasource_json=$( cat $datasource )
   ds_name=$( echo $datasource_json | jq -r '.name' )
   api_path="${GF_API}/datasources/id/${ds_name}"
@@ -56,9 +58,9 @@ for datasource in `ls -1 /datasources/*.json`; do
   fi
 done
 
-print_header "Adding dashboards"
+print_header "Adding Graphite dashboards"
 
-for dashboard in `ls -1 /dashboards/*.json`; do
+for dashboard in `ls -1 /dashboards/$BACKEND/*.json`; do
   dashboard_json=$( wrap_dashboard_json $dashboard )
   import_data "$dashboard" "$dashboard_json" "/dashboards/import"
 done
