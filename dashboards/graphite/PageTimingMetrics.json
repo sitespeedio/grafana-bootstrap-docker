@@ -21,7 +21,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "4.5.1"
+      "version": "4.6.0-beta3"
     },
     {
       "type": "panel",
@@ -39,8 +39,17 @@
   "annotations": {
     "list": [
       {
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      },
+      {
         "datasource": "${DS_GRAPHITE}",
-        "enable": false,
+        "enable": true,
         "iconColor": "rgb(96, 255, 103)",
         "limit": 100,
         "name": "runs",
@@ -127,20 +136,20 @@
           "targets": [
             {
               "hide": false,
+              "refId": "B",
+              "target": "aliasByNode($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.$function, 10)",
+              "textEditor": false
+            },
+            {
+              "hide": false,
               "refId": "A",
               "target": "aliasByNode($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.$function, 10)",
               "textEditor": false
             },
             {
               "hide": false,
-              "refId": "E",
+              "refId": "C",
               "target": "aliasByNode($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.PerceptualSpeedIndex.$function, 10)",
-              "textEditor": false
-            },
-            {
-              "hide": false,
-              "refId": "B",
-              "target": "aliasByNode($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.$function, 10)",
               "textEditor": false
             },
             {
@@ -151,26 +160,20 @@
             },
             {
               "hide": false,
-              "refId": "G",
+              "refId": "E",
               "target": "aliasByNode($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.VisualComplete95.$function, 10)",
               "textEditor": false
             },
             {
               "hide": false,
-              "refId": "H",
+              "refId": "F",
               "target": "aliasByNode($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.VisualComplete99.$function, 10)",
               "textEditor": false
             },
             {
               "hide": false,
-              "refId": "C",
+              "refId": "G",
               "target": "aliasByNode($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.LastVisualChange.$function, 10)",
-              "textEditor": false
-            },
-            {
-              "hide": false,
-              "refId": "F",
-              "target": "aliasByNode($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.fullyLoaded.$function, 10)",
               "textEditor": false
             }
           ],
@@ -390,7 +393,7 @@
     ]
   },
   "time": {
-    "from": "now-30d",
+    "from": "now-2d",
     "to": "now"
   },
   "timepicker": {
@@ -420,5 +423,5 @@
   },
   "timezone": "browser",
   "title": "Page timing metrics",
-  "version": 8
+  "version": 13
 }
