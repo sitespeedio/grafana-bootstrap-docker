@@ -14,7 +14,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "4.5.1"
+      "version": "4.6.2"
     },
     {
       "type": "panel",
@@ -33,10 +33,25 @@
       "id": "singlestat",
       "name": "Singlestat",
       "version": ""
+    },
+    {
+      "type": "panel",
+      "id": "table",
+      "name": "Table",
+      "version": ""
     }
   ],
   "annotations": {
     "list": [
+      {
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      },
       {
         "datasource": "${DS_INFLUXDB}",
         "enable": false,
@@ -113,9 +128,9 @@
           "span": 2,
           "sparkline": {
             "fillColor": "rgba(31, 118, 189, 0.18)",
-            "full": false,
+            "full": true,
             "lineColor": "rgb(31, 120, 193)",
-            "show": false
+            "show": true
           },
           "tableColumn": "",
           "targets": [
@@ -136,8 +151,9 @@
                 }
               ],
               "measurement": "FirstVisualChange",
-              "policy": "autogen",
-              "query": "SELECT last(\"median\") FROM \"autogen\".\"FirstVisualChange\" WHERE \"group\" =~ /^$group$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"page\" =~ /^$page$/ AND $timeFilter GROUP BY time($__interval) fill(null)",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "query": "SELECT last(\"median\") FROM \"FirstVisualChange\" WHERE \"group\" =~ /^$group$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"page\" =~ /^$page$/ AND $timeFilter GROUP BY time($__interval) fill(null)",
               "rawQuery": false,
               "refId": "A",
               "resultFormat": "time_series",
@@ -252,9 +268,9 @@
           "span": 2,
           "sparkline": {
             "fillColor": "rgba(31, 118, 189, 0.18)",
-            "full": false,
+            "full": true,
             "lineColor": "rgb(31, 120, 193)",
-            "show": false
+            "show": true
           },
           "tableColumn": "",
           "targets": [
@@ -275,8 +291,9 @@
                 }
               ],
               "measurement": "SpeedIndex",
-              "policy": "autogen",
-              "query": "SELECT last(\"median\") FROM \"autogen\".\"SpeedIndex\" WHERE \"group\" =~ /^$group$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"page\" =~ /^$page$/ AND $timeFilter GROUP BY time($__interval) fill(null)",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "query": "SELECT last(\"median\") FROM \"SpeedIndex\" WHERE \"group\" =~ /^$group$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"page\" =~ /^$page$/ AND $timeFilter GROUP BY time($__interval) fill(null)",
               "rawQuery": false,
               "refId": "A",
               "resultFormat": "time_series",
@@ -391,9 +408,9 @@
           "span": 2,
           "sparkline": {
             "fillColor": "rgba(31, 118, 189, 0.18)",
-            "full": false,
+            "full": true,
             "lineColor": "rgb(31, 120, 193)",
-            "show": false
+            "show": true
           },
           "tableColumn": "",
           "targets": [
@@ -414,8 +431,9 @@
                 }
               ],
               "measurement": "VisualComplete85",
-              "policy": "autogen",
-              "query": "SELECT last(\"median\") FROM \"autogen\".\"VisualComplete85\" WHERE \"group\" =~ /^$group$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"page\" =~ /^$page$/ AND $timeFilter GROUP BY time($__interval) fill(null)",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "query": "SELECT last(\"median\") FROM \"VisualComplete85\" WHERE \"group\" =~ /^$group$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"page\" =~ /^$page$/ AND $timeFilter GROUP BY time($__interval) fill(null)",
               "rawQuery": false,
               "refId": "A",
               "resultFormat": "time_series",
@@ -530,9 +548,9 @@
           "span": 2,
           "sparkline": {
             "fillColor": "rgba(31, 118, 189, 0.18)",
-            "full": false,
+            "full": true,
             "lineColor": "rgb(31, 120, 193)",
-            "show": false
+            "show": true
           },
           "tableColumn": "",
           "targets": [
@@ -553,8 +571,9 @@
                 }
               ],
               "measurement": "LastVisualChange",
-              "policy": "autogen",
-              "query": "SELECT last(\"median\") FROM \"autogen\".\"LastVisualChange\" WHERE \"group\" =~ /^$group$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"page\" =~ /^$page$/ AND \"summaryType\" = 'pageSummary' AND \"category\" =~ /^$category$/ AND $timeFilter GROUP BY time($__interval) fill(null)",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "query": "SELECT last(\"median\") FROM \"LastVisualChange\" WHERE \"group\" =~ /^$group$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"page\" =~ /^$page$/ AND \"summaryType\" = 'pageSummary' AND \"category\" =~ /^$category$/ AND $timeFilter GROUP BY time($__interval) fill(null)",
               "rawQuery": false,
               "refId": "A",
               "resultFormat": "time_series",
@@ -675,9 +694,9 @@
           "span": 2,
           "sparkline": {
             "fillColor": "rgba(31, 118, 189, 0.18)",
-            "full": false,
+            "full": true,
             "lineColor": "rgb(31, 120, 193)",
-            "show": false
+            "show": true
           },
           "tableColumn": "",
           "targets": [
@@ -698,8 +717,9 @@
                 }
               ],
               "measurement": "fullyLoaded",
-              "policy": "autogen",
-              "query": "SELECT last(\"median\") FROM \"autogen\".\"fullyLoaded\" WHERE \"group\" =~ /^$group$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"page\" =~ /^$page$/ AND \"summaryType\" = 'pageSummary' AND $timeFilter GROUP BY time($__interval) fill(null)",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "query": "SELECT last(\"median\") FROM \"fullyLoaded\" WHERE \"group\" =~ /^$group$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"page\" =~ /^$page$/ AND \"summaryType\" = 'pageSummary' AND $timeFilter GROUP BY time($__interval) fill(null)",
               "rawQuery": false,
               "refId": "A",
               "resultFormat": "time_series",
@@ -819,9 +839,9 @@
           "span": 2,
           "sparkline": {
             "fillColor": "rgba(31, 118, 189, 0.18)",
-            "full": false,
+            "full": true,
             "lineColor": "rgb(31, 120, 193)",
-            "show": false
+            "show": true
           },
           "tableColumn": "",
           "targets": [
@@ -842,8 +862,9 @@
                 }
               ],
               "measurement": "requests",
-              "policy": "autogen",
-              "query": "SELECT last(\"value\") FROM \"autogen\".\"requests\" WHERE \"group\" =~ /^$group$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"page\" =~ /^$page$/ AND \"summaryType\" = 'pageSummary' AND $timeFilter GROUP BY time($__interval) fill(null)",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "query": "SELECT last(\"value\") FROM \"requests\" WHERE \"group\" =~ /^$group$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"page\" =~ /^$page$/ AND \"summaryType\" = 'pageSummary' AND $timeFilter GROUP BY time($__interval) fill(null)",
               "rawQuery": false,
               "refId": "A",
               "resultFormat": "time_series",
@@ -987,8 +1008,9 @@
                 }
               ],
               "measurement": "transferSize",
-              "policy": "autogen",
-              "query": "SELECT last(\"value\") FROM \"autogen\".\"transferSize\" WHERE \"group\" =~ /^$group$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"page\" =~ /^$page$/ AND \"summaryType\" = 'pageSummary' AND \"origin\" = 'pagexray' AND $timeFilter GROUP BY time($__interval) fill(null)",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "query": "SELECT last(\"value\") FROM \"transferSize\" WHERE \"group\" =~ /^$group$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"page\" =~ /^$page$/ AND \"summaryType\" = 'pageSummary' AND \"origin\" = 'pagexray' AND $timeFilter GROUP BY time($__interval) fill(null)",
               "rawQuery": false,
               "refId": "A",
               "resultFormat": "time_series",
@@ -1138,8 +1160,7 @@
                 }
               ],
               "measurement": "contentSize",
-              "policy": "autogen",
-              "query": "SELECT last(\"value\") FROM \"autogen\".\"contentSize\" WHERE \"group\" =~ /^$group$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"page\" =~ /^$page$/ AND \"summaryType\" = 'pageSummary' AND \"origin\" = 'pagexray' AND \"category\" =~ /^$category$/ AND $timeFilter GROUP BY time($__interval) fill(null)",
+              "query": "SELECT last(\"value\") FROM \"contentSize\" WHERE \"group\" =~ /^$group$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"page\" =~ /^$page$/ AND \"summaryType\" = 'pageSummary' AND \"origin\" = 'pagexray' AND \"category\" =~ /^$category$/ AND $timeFilter GROUP BY time($__interval) fill(null)",
               "rawQuery": true,
               "refId": "A",
               "resultFormat": "time_series",
@@ -1289,8 +1310,7 @@
                 }
               ],
               "measurement": "score",
-              "policy": "autogen",
-              "query": "SELECT last(\"value\") FROM \"autogen\".\"score\" WHERE \"group\" =~ /^$group$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"page\" =~ /^$page$/ AND \"summaryType\" = 'pageSummary' AND \"advice\" = 'performance' AND $timeFilter GROUP BY time($__interval) fill(null)",
+              "query": "SELECT last(\"value\") FROM \"score\" WHERE \"group\" =~ /^$group$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"page\" =~ /^$page$/ AND \"summaryType\" = 'pageSummary' AND \"advice\" = 'performance' AND $timeFilter GROUP BY time($__interval) fill(null)",
               "rawQuery": false,
               "refId": "A",
               "resultFormat": "time_series",
@@ -1440,8 +1460,7 @@
                 }
               ],
               "measurement": "domElements",
-              "policy": "autogen",
-              "query": "SELECT last(\"value\") FROM \"autogen\".\"domElements\" WHERE \"group\" =~ /^$group$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"page\" =~ /^$page$/ AND \"summaryType\" = 'pageSummary' AND \"origin\" = 'coach' AND $timeFilter GROUP BY time($__interval) fill(null)",
+              "query": "SELECT last(\"value\") FROM \"domElements\" WHERE \"group\" =~ /^$group$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"page\" =~ /^$page$/ AND \"summaryType\" = 'pageSummary' AND \"origin\" = 'coach' AND $timeFilter GROUP BY time($__interval) fill(null)",
               "rawQuery": false,
               "refId": "A",
               "resultFormat": "time_series",
@@ -1591,8 +1610,7 @@
                 }
               ],
               "measurement": "documentHeight",
-              "policy": "autogen",
-              "query": "SELECT last(\"value\") FROM \"autogen\".\"documentHeight\" WHERE \"group\" =~ /^$group$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"page\" =~ /^$page$/ AND \"summaryType\" = 'pageSummary' AND \"origin\" = 'coach' AND $timeFilter GROUP BY time($__interval) fill(null)",
+              "query": "SELECT last(\"value\") FROM \"documentHeight\" WHERE \"group\" =~ /^$group$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"page\" =~ /^$page$/ AND \"summaryType\" = 'pageSummary' AND \"origin\" = 'coach' AND $timeFilter GROUP BY time($__interval) fill(null)",
               "rawQuery": false,
               "refId": "A",
               "resultFormat": "time_series",
@@ -1742,8 +1760,7 @@
                 }
               ],
               "measurement": "iframes",
-              "policy": "autogen",
-              "query": "SELECT last(\"value\") FROM \"autogen\".\"iframes\" WHERE \"group\" =~ /^$group$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"page\" =~ /^$page$/ AND \"summaryType\" = 'pageSummary' AND \"origin\" = 'coach' AND $timeFilter GROUP BY time($__interval) fill(null)",
+              "query": "SELECT last(\"value\") FROM \"iframes\" WHERE \"group\" =~ /^$group$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"page\" =~ /^$page$/ AND \"summaryType\" = 'pageSummary' AND \"origin\" = 'coach' AND $timeFilter GROUP BY time($__interval) fill(null)",
               "rawQuery": false,
               "refId": "A",
               "resultFormat": "time_series",
@@ -1893,8 +1910,7 @@
                 }
               ],
               "measurement": "domDepth",
-              "policy": "autogen",
-              "query": "SELECT last(\"value\") FROM \"autogen\".\"iframes\" WHERE \"group\" =~ /^$group$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"page\" =~ /^$page$/ AND \"summaryType\" = 'pageSummary' AND \"origin\" = 'coach' AND $timeFilter GROUP BY time($__interval) fill(null)",
+              "query": "SELECT last(\"value\") FROM \"iframes\" WHERE \"group\" =~ /^$group$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"page\" =~ /^$page$/ AND \"summaryType\" = 'pageSummary' AND \"origin\" = 'coach' AND $timeFilter GROUP BY time($__interval) fill(null)",
               "rawQuery": false,
               "refId": "A",
               "resultFormat": "time_series",
@@ -2044,8 +2060,7 @@
                 }
               ],
               "measurement": "domDepth",
-              "policy": "autogen",
-              "query": "SELECT last(\"avg\") FROM \"autogen\".\"domDepth\" WHERE \"group\" =~ /^$group$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"page\" =~ /^$page$/ AND \"summaryType\" = 'pageSummary' AND \"origin\" = 'coach' AND $timeFilter GROUP BY time($__interval) fill(null)",
+              "query": "SELECT last(\"avg\") FROM \"domDepth\" WHERE \"group\" =~ /^$group$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"page\" =~ /^$page$/ AND \"summaryType\" = 'pageSummary' AND \"origin\" = 'coach' AND $timeFilter GROUP BY time($__interval) fill(null)",
               "rawQuery": false,
               "refId": "A",
               "resultFormat": "time_series",
@@ -2195,8 +2210,7 @@
                 }
               ],
               "measurement": "scripts",
-              "policy": "autogen",
-              "query": "SELECT last(\"max\") FROM \"autogen\".\"domDepth\" WHERE \"group\" =~ /^$group$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"page\" =~ /^$page$/ AND \"summaryType\" = 'pageSummary' AND \"origin\" = 'coach' AND $timeFilter GROUP BY time($__interval) fill(null)",
+              "query": "SELECT last(\"max\") FROM \"domDepth\" WHERE \"group\" =~ /^$group$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"page\" =~ /^$page$/ AND \"summaryType\" = 'pageSummary' AND \"origin\" = 'coach' AND $timeFilter GROUP BY time($__interval) fill(null)",
               "rawQuery": false,
               "refId": "A",
               "resultFormat": "time_series",
@@ -2345,8 +2359,7 @@
                 }
               ],
               "measurement": "totalDomains",
-              "policy": "autogen",
-              "query": "SELECT last(\"value\") FROM \"autogen\".\"scripts\" WHERE \"group\" =~ /^$group$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"page\" =~ /^$page$/ AND \"summaryType\" = 'pageSummary' AND \"origin\" = 'coach' AND $timeFilter GROUP BY time($__interval) fill(null)",
+              "query": "SELECT last(\"value\") FROM \"scripts\" WHERE \"group\" =~ /^$group$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"page\" =~ /^$page$/ AND \"summaryType\" = 'pageSummary' AND \"origin\" = 'coach' AND $timeFilter GROUP BY time($__interval) fill(null)",
               "rawQuery": false,
               "refId": "A",
               "resultFormat": "time_series",
@@ -2495,8 +2508,7 @@
                 }
               ],
               "measurement": "cookieStats",
-              "policy": "autogen",
-              "query": "SELECT last(\"median\") FROM \"autogen\".\"cookieStats\" WHERE \"group\" =~ /^$group$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"page\" =~ /^$page$/ AND \"summaryType\" = 'pageSummary' AND \"origin\" = 'pagexray' AND $timeFilter GROUP BY time($__interval) fill(null)",
+              "query": "SELECT last(\"median\") FROM \"cookieStats\" WHERE \"group\" =~ /^$group$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"page\" =~ /^$page$/ AND \"summaryType\" = 'pageSummary' AND \"origin\" = 'pagexray' AND $timeFilter GROUP BY time($__interval) fill(null)",
               "rawQuery": false,
               "refId": "A",
               "resultFormat": "time_series",
@@ -2645,8 +2657,7 @@
                 }
               ],
               "measurement": "localStorageSize",
-              "policy": "autogen",
-              "query": "SELECT last(\"median\") FROM \"autogen\".\"cookieStats\" WHERE \"group\" =~ /^$group$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"page\" =~ /^$page$/ AND \"summaryType\" = 'pageSummary' AND \"origin\" = 'pagexray' AND $timeFilter GROUP BY time($__interval) fill(null)",
+              "query": "SELECT last(\"median\") FROM \"cookieStats\" WHERE \"group\" =~ /^$group$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"page\" =~ /^$page$/ AND \"summaryType\" = 'pageSummary' AND \"origin\" = 'pagexray' AND $timeFilter GROUP BY time($__interval) fill(null)",
               "rawQuery": false,
               "refId": "A",
               "resultFormat": "time_series",
@@ -2733,6 +2744,1637 @@
     },
     {
       "collapse": false,
+      "height": 250,
+      "panels": [
+        {
+          "columns": [
+            {
+              "text": "Current",
+              "value": "current"
+            }
+          ],
+          "datasource": "${DS_INFLUXDB}",
+          "description": "The moving average of the last 24 hours median values for the visual metrics.",
+          "editable": true,
+          "error": false,
+          "filterNull": false,
+          "fontSize": "100%",
+          "id": 43,
+          "links": [],
+          "pageSize": null,
+          "scroll": false,
+          "showHeader": true,
+          "sort": {
+            "col": 0,
+            "desc": false
+          },
+          "span": 3,
+          "styles": [
+            {
+              "dateFormat": "YYYY-MM-DD HH:mm:ss",
+              "pattern": "Time",
+              "type": "date"
+            },
+            {
+              "colorMode": null,
+              "colors": [
+                "rgba(245, 54, 54, 0.9)",
+                "rgba(237, 129, 40, 0.89)",
+                "rgba(50, 172, 45, 0.97)"
+              ],
+              "decimals": 0,
+              "pattern": "/.*/",
+              "thresholds": [],
+              "type": "number",
+              "unit": "none"
+            }
+          ],
+          "targets": [
+            {
+              "alias": "FirstVisualChange",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "FirstVisualChange",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "mean"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [
+                      10
+                    ],
+                    "type": "moving_average"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "category",
+                  "operator": "=~",
+                  "value": "/^$category$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "group",
+                  "operator": "=~",
+                  "value": "/^$group$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "page",
+                  "operator": "=~",
+                  "value": "/^$page$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "browser",
+                  "operator": "=~",
+                  "value": "/^$browser$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "connectivity",
+                  "operator": "=~",
+                  "value": "/^$connectivity$/"
+                }
+              ],
+              "target": "aliasByNode(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.$function, '24h'), 10)",
+              "textEditor": false
+            },
+            {
+              "alias": "LastVisualChange",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "LastVisualChange",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "B",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "mean"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [
+                      10
+                    ],
+                    "type": "moving_average"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "category",
+                  "operator": "=~",
+                  "value": "/^$category$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "group",
+                  "operator": "=~",
+                  "value": "/^$group$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "page",
+                  "operator": "=~",
+                  "value": "/^$page$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "browser",
+                  "operator": "=~",
+                  "value": "/^$browser$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "connectivity",
+                  "operator": "=~",
+                  "value": "/^$connectivity$/"
+                }
+              ],
+              "target": "aliasByNode(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.$function, '24h'), 10)",
+              "textEditor": false
+            },
+            {
+              "alias": "PerceptualSpeedIndex",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "PerceptualSpeedIndex",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "C",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "mean"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [
+                      10
+                    ],
+                    "type": "moving_average"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "category",
+                  "operator": "=~",
+                  "value": "/^$category$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "group",
+                  "operator": "=~",
+                  "value": "/^$group$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "page",
+                  "operator": "=~",
+                  "value": "/^$page$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "browser",
+                  "operator": "=~",
+                  "value": "/^$browser$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "connectivity",
+                  "operator": "=~",
+                  "value": "/^$connectivity$/"
+                }
+              ],
+              "target": "aliasByNode(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.$function, '24h'), 10)",
+              "textEditor": false
+            },
+            {
+              "alias": "SpeedIndex",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "SpeedIndex",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "D",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "mean"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [
+                      10
+                    ],
+                    "type": "moving_average"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "category",
+                  "operator": "=~",
+                  "value": "/^$category$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "group",
+                  "operator": "=~",
+                  "value": "/^$group$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "page",
+                  "operator": "=~",
+                  "value": "/^$page$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "browser",
+                  "operator": "=~",
+                  "value": "/^$browser$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "connectivity",
+                  "operator": "=~",
+                  "value": "/^$connectivity$/"
+                }
+              ],
+              "target": "aliasByNode(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.$function, '24h'), 10)",
+              "textEditor": false
+            },
+            {
+              "alias": "VisualComplete85",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "VisualComplete85",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "E",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "mean"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [
+                      10
+                    ],
+                    "type": "moving_average"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "category",
+                  "operator": "=~",
+                  "value": "/^$category$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "group",
+                  "operator": "=~",
+                  "value": "/^$group$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "page",
+                  "operator": "=~",
+                  "value": "/^$page$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "browser",
+                  "operator": "=~",
+                  "value": "/^$browser$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "connectivity",
+                  "operator": "=~",
+                  "value": "/^$connectivity$/"
+                }
+              ],
+              "target": "aliasByNode(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.$function, '24h'), 10)",
+              "textEditor": false
+            },
+            {
+              "alias": "FullyLoaded",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "fullyLoaded",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "F",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "mean"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [
+                      10
+                    ],
+                    "type": "moving_average"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "category",
+                  "operator": "=~",
+                  "value": "/^$category$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "group",
+                  "operator": "=~",
+                  "value": "/^$group$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "page",
+                  "operator": "=~",
+                  "value": "/^$page$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "browser",
+                  "operator": "=~",
+                  "value": "/^$browser$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "connectivity",
+                  "operator": "=~",
+                  "value": "/^$connectivity$/"
+                }
+              ],
+              "target": "aliasByNode(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.$function, '24h'), 10)",
+              "textEditor": false
+            }
+          ],
+          "title": "Avg last 24 hours",
+          "transform": "timeseries_aggregations",
+          "type": "table"
+        },
+        {
+          "columns": [
+            {
+              "text": "Current",
+              "value": "current"
+            }
+          ],
+          "datasource": "${DS_INFLUXDB}",
+          "description": "Last 24 hours averages of median metrics compared to one day back in time. \n\nRed color background means a regression, green a positive change and yellow that the change is within the margin of error. You probably need to finetune the thresholds depending of how flakey your site is. Default threshold is +-10%.",
+          "editable": true,
+          "error": false,
+          "filterNull": false,
+          "fontSize": "100%",
+          "hideTimeOverride": true,
+          "id": 47,
+          "links": [],
+          "pageSize": null,
+          "scroll": false,
+          "showHeader": true,
+          "sort": {
+            "col": 0,
+            "desc": false
+          },
+          "span": 3,
+          "styles": [
+            {
+              "dateFormat": "YYYY-MM-DD HH:mm:ss",
+              "pattern": "Time",
+              "type": "date"
+            },
+            {
+              "colorMode": null,
+              "colors": [
+                "rgba(245, 54, 54, 0.9)",
+                "rgba(237, 129, 40, 0.89)",
+                "rgba(50, 172, 45, 0.97)"
+              ],
+              "decimals": 0,
+              "pattern": "/.*/",
+              "thresholds": [],
+              "type": "number",
+              "unit": "none"
+            }
+          ],
+          "targets": [
+            {
+              "alias": "FirstVisualChange",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "FirstVisualChange",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "query": "SELECT moving_average(\"mean\", 10) FROM \"FirstVisualChange\" WHERE \"category\" =~ /^$category$/ AND \"group\" =~ /^$group$/ AND \"page\" =~ /^$page$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/",
+              "rawQuery": false,
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "mean"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [
+                      "10"
+                    ],
+                    "type": "moving_average"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "category",
+                  "operator": "=~",
+                  "value": "/^$category$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "group",
+                  "operator": "=~",
+                  "value": "/^$group$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "page",
+                  "operator": "=~",
+                  "value": "/^$page$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "browser",
+                  "operator": "=~",
+                  "value": "/^$browser$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "connectivity",
+                  "operator": "=~",
+                  "value": "/^$connectivity$/"
+                }
+              ],
+              "target": "aliasByNode(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.$function, '24h'), 10)",
+              "textEditor": false
+            },
+            {
+              "alias": "LastVisualChange",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "LastVisualChange",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "B",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "mean"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [
+                      "10"
+                    ],
+                    "type": "moving_average"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "category",
+                  "operator": "=~",
+                  "value": "/^$category$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "group",
+                  "operator": "=~",
+                  "value": "/^$group$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "page",
+                  "operator": "=~",
+                  "value": "/^$page$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "browser",
+                  "operator": "=~",
+                  "value": "/^$browser$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "connectivity",
+                  "operator": "=~",
+                  "value": "/^$connectivity$/"
+                }
+              ],
+              "target": "aliasByNode(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.$function, '24h'), 10)",
+              "textEditor": false
+            },
+            {
+              "alias": "PerceptualSpeedIndex",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "PerceptualSpeedIndex",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "C",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "mean"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [
+                      "10"
+                    ],
+                    "type": "moving_average"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "category",
+                  "operator": "=~",
+                  "value": "/^$category$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "group",
+                  "operator": "=~",
+                  "value": "/^$group$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "page",
+                  "operator": "=~",
+                  "value": "/^$page$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "browser",
+                  "operator": "=~",
+                  "value": "/^$browser$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "connectivity",
+                  "operator": "=~",
+                  "value": "/^$connectivity$/"
+                }
+              ],
+              "target": "aliasByNode(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.$function, '24h'), 10)",
+              "textEditor": false
+            },
+            {
+              "alias": "SpeedIndex",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "SpeedIndex",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "D",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "mean"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [
+                      "10"
+                    ],
+                    "type": "moving_average"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "category",
+                  "operator": "=~",
+                  "value": "/^$category$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "group",
+                  "operator": "=~",
+                  "value": "/^$group$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "page",
+                  "operator": "=~",
+                  "value": "/^$page$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "browser",
+                  "operator": "=~",
+                  "value": "/^$browser$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "connectivity",
+                  "operator": "=~",
+                  "value": "/^$connectivity$/"
+                }
+              ],
+              "target": "aliasByNode(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.$function, '24h'), 10)",
+              "textEditor": false
+            },
+            {
+              "alias": "VisualComplete85",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "VisualComplete85",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "E",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "mean"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [
+                      "10"
+                    ],
+                    "type": "moving_average"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "category",
+                  "operator": "=~",
+                  "value": "/^$category$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "group",
+                  "operator": "=~",
+                  "value": "/^$group$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "page",
+                  "operator": "=~",
+                  "value": "/^$page$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "browser",
+                  "operator": "=~",
+                  "value": "/^$browser$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "connectivity",
+                  "operator": "=~",
+                  "value": "/^$connectivity$/"
+                }
+              ],
+              "target": "aliasByNode(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.$function, '24h'), 10)",
+              "textEditor": false
+            },
+            {
+              "alias": "FullyLoaded",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "fullyLoaded",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "F",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "mean"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [
+                      "10"
+                    ],
+                    "type": "moving_average"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "category",
+                  "operator": "=~",
+                  "value": "/^$category$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "group",
+                  "operator": "=~",
+                  "value": "/^$group$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "page",
+                  "operator": "=~",
+                  "value": "/^$page$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "browser",
+                  "operator": "=~",
+                  "value": "/^$browser$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "connectivity",
+                  "operator": "=~",
+                  "value": "/^$connectivity$/"
+                }
+              ],
+              "target": "aliasByNode(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.$function, '24h'), 10)",
+              "textEditor": false
+            }
+          ],
+          "timeShift": "1d",
+          "title": "Relative to yesterday",
+          "transform": "timeseries_aggregations",
+          "type": "table"
+        },
+        {
+          "columns": [
+            {
+              "text": "Current",
+              "value": "current"
+            }
+          ],
+          "datasource": "${DS_INFLUXDB}",
+          "description": "Last 24 hours averages of median metrics compared to seven days back in time. \n\nRed color background means a regression, green a positive change and yellow that the change is within the margin of error. You probably need to finetune the thresholds depending of how flakey your site is. Default threshold is +-10%.",
+          "editable": true,
+          "error": false,
+          "filterNull": false,
+          "fontSize": "100%",
+          "hideTimeOverride": true,
+          "id": 48,
+          "links": [],
+          "pageSize": null,
+          "scroll": false,
+          "showHeader": true,
+          "sort": {
+            "col": 0,
+            "desc": false
+          },
+          "span": 3,
+          "styles": [
+            {
+              "dateFormat": "YYYY-MM-DD HH:mm:ss",
+              "pattern": "Time",
+              "type": "date"
+            },
+            {
+              "colorMode": null,
+              "colors": [
+                "rgba(245, 54, 54, 0.9)",
+                "rgba(237, 129, 40, 0.89)",
+                "rgba(50, 172, 45, 0.97)"
+              ],
+              "decimals": 0,
+              "pattern": "/.*/",
+              "thresholds": [],
+              "type": "number",
+              "unit": "none"
+            }
+          ],
+          "targets": [
+            {
+              "alias": "FirstVisualChange",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "FirstVisualChange",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "mean"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [
+                      "10"
+                    ],
+                    "type": "moving_average"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "category",
+                  "operator": "=~",
+                  "value": "/^$category$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "group",
+                  "operator": "=~",
+                  "value": "/^$group$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "page",
+                  "operator": "=~",
+                  "value": "/^$page$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "browser",
+                  "operator": "=~",
+                  "value": "/^$browser$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "connectivity",
+                  "operator": "=~",
+                  "value": "/^$connectivity$/"
+                }
+              ],
+              "target": "aliasByNode(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.$function, '24h'), 10)",
+              "textEditor": false
+            },
+            {
+              "alias": "LastVisualChange",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "LastVisualChange",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "B",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "mean"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [
+                      "10"
+                    ],
+                    "type": "moving_average"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "category",
+                  "operator": "=~",
+                  "value": "/^$category$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "group",
+                  "operator": "=~",
+                  "value": "/^$group$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "page",
+                  "operator": "=~",
+                  "value": "/^$page$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "browser",
+                  "operator": "=~",
+                  "value": "/^$browser$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "connectivity",
+                  "operator": "=~",
+                  "value": "/^$connectivity$/"
+                }
+              ],
+              "target": "aliasByNode(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.$function, '24h'), 10)",
+              "textEditor": false
+            },
+            {
+              "alias": "PerceptualSpeedIndex",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "PerceptualSpeedIndex",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "C",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "mean"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [
+                      "10"
+                    ],
+                    "type": "moving_average"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "category",
+                  "operator": "=~",
+                  "value": "/^$category$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "group",
+                  "operator": "=~",
+                  "value": "/^$group$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "page",
+                  "operator": "=~",
+                  "value": "/^$page$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "browser",
+                  "operator": "=~",
+                  "value": "/^$browser$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "connectivity",
+                  "operator": "=~",
+                  "value": "/^$connectivity$/"
+                }
+              ],
+              "target": "aliasByNode(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.$function, '24h'), 10)",
+              "textEditor": false
+            },
+            {
+              "alias": "SpeedIndex",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "SpeedIndex",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "D",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "mean"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [
+                      "10"
+                    ],
+                    "type": "moving_average"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "category",
+                  "operator": "=~",
+                  "value": "/^$category$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "group",
+                  "operator": "=~",
+                  "value": "/^$group$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "page",
+                  "operator": "=~",
+                  "value": "/^$page$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "browser",
+                  "operator": "=~",
+                  "value": "/^$browser$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "connectivity",
+                  "operator": "=~",
+                  "value": "/^$connectivity$/"
+                }
+              ],
+              "target": "aliasByNode(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.$function, '24h'), 10)",
+              "textEditor": false
+            },
+            {
+              "alias": "VisualComplete85",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "VisualComplete85",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "E",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "mean"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [
+                      "10"
+                    ],
+                    "type": "moving_average"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "category",
+                  "operator": "=~",
+                  "value": "/^$category$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "group",
+                  "operator": "=~",
+                  "value": "/^$group$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "page",
+                  "operator": "=~",
+                  "value": "/^$page$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "browser",
+                  "operator": "=~",
+                  "value": "/^$browser$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "connectivity",
+                  "operator": "=~",
+                  "value": "/^$connectivity$/"
+                }
+              ],
+              "target": "aliasByNode(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.$function, '24h'), 10)",
+              "textEditor": false
+            },
+            {
+              "alias": "FullyLoaded",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "fullyLoaded",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "F",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "mean"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [
+                      "10"
+                    ],
+                    "type": "moving_average"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "category",
+                  "operator": "=~",
+                  "value": "/^$category$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "group",
+                  "operator": "=~",
+                  "value": "/^$group$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "page",
+                  "operator": "=~",
+                  "value": "/^$page$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "browser",
+                  "operator": "=~",
+                  "value": "/^$browser$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "connectivity",
+                  "operator": "=~",
+                  "value": "/^$connectivity$/"
+                }
+              ],
+              "target": "aliasByNode(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.$function, '24h'), 10)",
+              "textEditor": false
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": "7d",
+          "title": "Relative to last week",
+          "transform": "timeseries_aggregations",
+          "type": "table"
+        },
+        {
+          "columns": [
+            {
+              "text": "Current",
+              "value": "current"
+            }
+          ],
+          "datasource": "${DS_INFLUXDB}",
+          "description": "Last 24 hours averages of median metrics compared to one month back in time. \n\nRed color background means a regression, green a positive change and yellow that the change is within the margin of error. You probably need to finetune the thresholds depending of how flakey your site is. Default threshold is +-10%.",
+          "editable": true,
+          "error": false,
+          "filterNull": false,
+          "fontSize": "100%",
+          "id": 49,
+          "links": [],
+          "pageSize": null,
+          "scroll": false,
+          "showHeader": true,
+          "sort": {
+            "col": 0,
+            "desc": false
+          },
+          "span": 3,
+          "styles": [
+            {
+              "dateFormat": "YYYY-MM-DD HH:mm:ss",
+              "pattern": "Time",
+              "type": "date"
+            },
+            {
+              "colorMode": null,
+              "colors": [
+                "rgba(245, 54, 54, 0.9)",
+                "rgba(237, 129, 40, 0.89)",
+                "rgba(50, 172, 45, 0.97)"
+              ],
+              "decimals": 0,
+              "pattern": "/.*/",
+              "thresholds": [],
+              "type": "number",
+              "unit": "none"
+            }
+          ],
+          "targets": [
+            {
+              "alias": "FirstVisualChange",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "FirstVisualChange",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "mean"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [
+                      "40"
+                    ],
+                    "type": "moving_average"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "category",
+                  "operator": "=~",
+                  "value": "/^$category$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "group",
+                  "operator": "=~",
+                  "value": "/^$group$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "page",
+                  "operator": "=~",
+                  "value": "/^$page$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "browser",
+                  "operator": "=~",
+                  "value": "/^$browser$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "connectivity",
+                  "operator": "=~",
+                  "value": "/^$connectivity$/"
+                }
+              ],
+              "target": "aliasByNode(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.$function, '24h'), 10)",
+              "textEditor": false
+            },
+            {
+              "alias": "LastVisualChange",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "LastVisualChange",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "B",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "mean"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [
+                      "40"
+                    ],
+                    "type": "moving_average"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "category",
+                  "operator": "=~",
+                  "value": "/^$category$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "group",
+                  "operator": "=~",
+                  "value": "/^$group$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "page",
+                  "operator": "=~",
+                  "value": "/^$page$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "browser",
+                  "operator": "=~",
+                  "value": "/^$browser$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "connectivity",
+                  "operator": "=~",
+                  "value": "/^$connectivity$/"
+                }
+              ],
+              "target": "aliasByNode(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.$function, '24h'), 10)",
+              "textEditor": false
+            },
+            {
+              "alias": "PerceptualSpeedIndex",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "PerceptualSpeedIndex",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "C",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "mean"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [
+                      "40"
+                    ],
+                    "type": "moving_average"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "category",
+                  "operator": "=~",
+                  "value": "/^$category$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "group",
+                  "operator": "=~",
+                  "value": "/^$group$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "page",
+                  "operator": "=~",
+                  "value": "/^$page$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "browser",
+                  "operator": "=~",
+                  "value": "/^$browser$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "connectivity",
+                  "operator": "=~",
+                  "value": "/^$connectivity$/"
+                }
+              ],
+              "target": "aliasByNode(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.$function, '24h'), 10)",
+              "textEditor": false
+            },
+            {
+              "alias": "SpeedIndex",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "SpeedIndex",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "D",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "mean"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [
+                      "40"
+                    ],
+                    "type": "moving_average"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "category",
+                  "operator": "=~",
+                  "value": "/^$category$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "group",
+                  "operator": "=~",
+                  "value": "/^$group$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "page",
+                  "operator": "=~",
+                  "value": "/^$page$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "browser",
+                  "operator": "=~",
+                  "value": "/^$browser$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "connectivity",
+                  "operator": "=~",
+                  "value": "/^$connectivity$/"
+                }
+              ],
+              "target": "aliasByNode(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.$function, '24h'), 10)",
+              "textEditor": false
+            },
+            {
+              "alias": "VisualComplete85",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "VisualComplete85",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "E",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "mean"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [
+                      "40"
+                    ],
+                    "type": "moving_average"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "category",
+                  "operator": "=~",
+                  "value": "/^$category$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "group",
+                  "operator": "=~",
+                  "value": "/^$group$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "page",
+                  "operator": "=~",
+                  "value": "/^$page$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "browser",
+                  "operator": "=~",
+                  "value": "/^$browser$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "connectivity",
+                  "operator": "=~",
+                  "value": "/^$connectivity$/"
+                }
+              ],
+              "target": "aliasByNode(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.$function, '24h'), 10)",
+              "textEditor": false
+            },
+            {
+              "alias": "FullyLoaded",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "fullyLoaded",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "F",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "mean"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [
+                      "40"
+                    ],
+                    "type": "moving_average"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "category",
+                  "operator": "=~",
+                  "value": "/^$category$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "group",
+                  "operator": "=~",
+                  "value": "/^$group$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "page",
+                  "operator": "=~",
+                  "value": "/^$page$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "browser",
+                  "operator": "=~",
+                  "value": "/^$browser$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "connectivity",
+                  "operator": "=~",
+                  "value": "/^$connectivity$/"
+                }
+              ],
+              "target": "aliasByNode(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.$function, '24h'), 10)",
+              "textEditor": false
+            }
+          ],
+          "title": "Relative to last month",
+          "transform": "timeseries_aggregations",
+          "type": "table"
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "Dashboard Row",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": false,
       "height": 434,
       "panels": [
         {
@@ -2742,6 +4384,7 @@
           "dashes": false,
           "datasource": "${DS_INFLUXDB}",
           "decimals": 2,
+          "description": "The history of First Visual Change (when something for the first time is painted within the current viewport) showing the current median value, the average median per day and the average median per week.",
           "fill": 1,
           "id": 8,
           "legend": {
@@ -2786,8 +4429,9 @@
                 }
               ],
               "measurement": "FirstVisualChange",
-              "policy": "autogen",
-              "query": "SELECT median(\"median\") FROM \"autogen\".\"FirstVisualChange\" WHERE \"group\" =~ /^$group$/ AND \"page\" =~ /^$page$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"category\" =~ /^$category$/ AND $timeFilter GROUP BY time(1h) fill(null)",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "query": "SELECT median(\"median\") FROM \"FirstVisualChange\" WHERE \"group\" =~ /^$group$/ AND \"page\" =~ /^$page$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"category\" =~ /^$category$/ AND $timeFilter GROUP BY time(1h) fill(null)",
               "rawQuery": false,
               "refId": "A",
               "resultFormat": "time_series",
@@ -2850,14 +4494,15 @@
                 },
                 {
                   "params": [
-                    "null"
+                    "previous"
                   ],
                   "type": "fill"
                 }
               ],
               "measurement": "FirstVisualChange",
-              "policy": "autogen",
-              "query": "SELECT median(\"median\") FROM \"autogen\".\"FirstVisualChange\" WHERE \"group\" =~ /^$group$/ AND \"page\" =~ /^$page$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND $timeFilter AND  time > now() - 7d GROUP BY time(1d)",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "query": "SELECT median(\"median\") FROM \"FirstVisualChange\" WHERE \"group\" =~ /^$group$/ AND \"page\" =~ /^$page$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND $timeFilter AND  time > now() - 7d GROUP BY time(1d)",
               "rawQuery": false,
               "refId": "B",
               "resultFormat": "time_series",
@@ -2904,12 +4549,6 @@
                   "key": "category",
                   "operator": "=~",
                   "value": "/^$category$/"
-                },
-                {
-                  "condition": "AND",
-                  "key": "time",
-                  "operator": ">",
-                  "value": "now() - 7d"
                 }
               ],
               "target": ""
@@ -2926,14 +4565,15 @@
                 },
                 {
                   "params": [
-                    "null"
+                    "previous"
                   ],
                   "type": "fill"
                 }
               ],
               "measurement": "FirstVisualChange",
-              "policy": "autogen",
-              "query": "SELECT median(\"median\") FROM \"autogen\".\"FirstVisualChange\" WHERE \"group\" =~ /^$group$/ AND \"page\" =~ /^$page$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"category\" =~ /^$category$/ AND $timeFilter GROUP BY time(1h) fill(null)",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "query": "SELECT median(\"median\") FROM \"FirstVisualChange\" WHERE \"group\" =~ /^$group$/ AND \"page\" =~ /^$page$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"category\" =~ /^$category$/ AND $timeFilter GROUP BY time(1h) fill(null)",
               "rawQuery": false,
               "refId": "C",
               "resultFormat": "time_series",
@@ -2980,12 +4620,6 @@
                   "key": "category",
                   "operator": "=~",
                   "value": "/^$category$/"
-                },
-                {
-                  "condition": "AND",
-                  "key": "time",
-                  "operator": ">",
-                  "value": "now() - 28d"
                 }
               ],
               "target": ""
@@ -3033,6 +4667,7 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": "${DS_INFLUXDB}",
+          "description": "The history of [Speed Index](https://sites.google.com/a/webpagetest.org/docs/using-webpagetest/metrics/speed-index) showing the current median value, the average median per day and the average median per week.",
           "fill": 1,
           "id": 9,
           "legend": {
@@ -3077,8 +4712,9 @@
                 }
               ],
               "measurement": "SpeedIndex",
-              "policy": "autogen",
-              "query": "SELECT median(\"median\") FROM \"autogen\".\"SpeedIndex\" WHERE \"group\" =~ /^$group$/ AND \"page\" =~ /^$page$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND $timeFilter GROUP BY time(1h) fill(null)",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "query": "SELECT median(\"median\") FROM \"SpeedIndex\" WHERE \"group\" =~ /^$group$/ AND \"page\" =~ /^$page$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND $timeFilter GROUP BY time(1h) fill(null)",
               "rawQuery": false,
               "refId": "A",
               "resultFormat": "time_series",
@@ -3141,14 +4777,15 @@
                 },
                 {
                   "params": [
-                    "null"
+                    "previous"
                   ],
                   "type": "fill"
                 }
               ],
               "measurement": "SpeedIndex",
-              "policy": "autogen",
-              "query": "SELECT median(\"median\") FROM \"autogen\".\"SpeedIndex\" WHERE \"group\" =~ /^$group$/ AND \"page\" =~ /^$page$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"category\" =~ /^$category$/ AND $timeFilter GROUP BY time(1h) fill(null)",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "query": "SELECT median(\"median\") FROM \"SpeedIndex\" WHERE \"group\" =~ /^$group$/ AND \"page\" =~ /^$page$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"category\" =~ /^$category$/ AND $timeFilter GROUP BY time(1h) fill(null)",
               "rawQuery": false,
               "refId": "B",
               "resultFormat": "time_series",
@@ -3195,12 +4832,6 @@
                   "key": "category",
                   "operator": "=~",
                   "value": "/^$category$/"
-                },
-                {
-                  "condition": "AND",
-                  "key": "time",
-                  "operator": ">",
-                  "value": "now() - 7d"
                 }
               ],
               "target": ""
@@ -3217,14 +4848,15 @@
                 },
                 {
                   "params": [
-                    "null"
+                    "previous"
                   ],
                   "type": "fill"
                 }
               ],
               "measurement": "SpeedIndex",
-              "policy": "autogen",
-              "query": "SELECT median(\"median\") FROM \"autogen\".\"SpeedIndex\" WHERE \"group\" =~ /^$group$/ AND \"page\" =~ /^$page$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"category\" =~ /^$category$/ AND $timeFilter GROUP BY time(1h) fill(null)",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "query": "SELECT median(\"median\") FROM \"SpeedIndex\" WHERE \"group\" =~ /^$group$/ AND \"page\" =~ /^$page$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"category\" =~ /^$category$/ AND $timeFilter GROUP BY time(1h) fill(null)",
               "rawQuery": false,
               "refId": "C",
               "resultFormat": "time_series",
@@ -3271,12 +4903,6 @@
                   "key": "category",
                   "operator": "=~",
                   "value": "/^$category$/"
-                },
-                {
-                  "condition": "AND",
-                  "key": "time",
-                  "operator": ">",
-                  "value": "now() - 28d"
                 }
               ],
               "target": ""
@@ -3381,8 +5007,9 @@
                 }
               ],
               "measurement": "VisualComplete85",
-              "policy": "autogen",
-              "query": "SELECT median(\"median\") FROM \"autogen\".\"VisualComplete85\" WHERE \"group\" =~ /^$group$/ AND \"page\" =~ /^$page$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND $timeFilter GROUP BY time(1h) fill(null)",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "query": "SELECT median(\"median\") FROM \"VisualComplete85\" WHERE \"group\" =~ /^$group$/ AND \"page\" =~ /^$page$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND $timeFilter GROUP BY time(1h) fill(null)",
               "rawQuery": false,
               "refId": "A",
               "resultFormat": "time_series",
@@ -3445,14 +5072,15 @@
                 },
                 {
                   "params": [
-                    "null"
+                    "previous"
                   ],
                   "type": "fill"
                 }
               ],
               "measurement": "VisualComplete85",
-              "policy": "autogen",
-              "query": "SELECT median(\"median\") FROM \"autogen\".\"VisualComplete85\" WHERE \"group\" =~ /^$group$/ AND \"page\" =~ /^$page$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"category\" =~ /^$category$/ AND $timeFilter GROUP BY time(1h) fill(null)",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "query": "SELECT median(\"median\") FROM \"VisualComplete85\" WHERE \"group\" =~ /^$group$/ AND \"page\" =~ /^$page$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"category\" =~ /^$category$/ AND $timeFilter GROUP BY time(1h) fill(null)",
               "rawQuery": false,
               "refId": "B",
               "resultFormat": "time_series",
@@ -3499,12 +5127,6 @@
                   "key": "category",
                   "operator": "=~",
                   "value": "/^$category$/"
-                },
-                {
-                  "condition": "AND",
-                  "key": "time",
-                  "operator": ">",
-                  "value": "now() - 7d"
                 }
               ],
               "target": ""
@@ -3521,14 +5143,15 @@
                 },
                 {
                   "params": [
-                    "null"
+                    "previous"
                   ],
                   "type": "fill"
                 }
               ],
               "measurement": "VisualComplete85",
-              "policy": "autogen",
-              "query": "SELECT median(\"median\") FROM \"autogen\".\"VisualComplete85\" WHERE \"group\" =~ /^$group$/ AND \"page\" =~ /^$page$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"category\" =~ /^$category$/ AND $timeFilter GROUP BY time(1h) fill(null)",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "query": "SELECT median(\"median\") FROM \"VisualComplete85\" WHERE \"group\" =~ /^$group$/ AND \"page\" =~ /^$page$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"category\" =~ /^$category$/ AND $timeFilter GROUP BY time(1h) fill(null)",
               "rawQuery": false,
               "refId": "C",
               "resultFormat": "time_series",
@@ -3575,12 +5198,6 @@
                   "key": "category",
                   "operator": "=~",
                   "value": "/^$category$/"
-                },
-                {
-                  "condition": "AND",
-                  "key": "time",
-                  "operator": ">",
-                  "value": "now() - 28d"
                 }
               ],
               "target": ""
@@ -3673,8 +5290,9 @@
                 }
               ],
               "measurement": "LastVisualChange",
-              "policy": "autogen",
-              "query": "SELECT median(\"median\") FROM \"autogen\".\"LastVisualChange\" WHERE \"group\" =~ /^$group$/ AND \"page\" =~ /^$page$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND $timeFilter GROUP BY time(1h) fill(null)",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "query": "SELECT median(\"median\") FROM \"LastVisualChange\" WHERE \"group\" =~ /^$group$/ AND \"page\" =~ /^$page$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND $timeFilter GROUP BY time(1h) fill(null)",
               "rawQuery": false,
               "refId": "A",
               "resultFormat": "time_series",
@@ -3737,14 +5355,15 @@
                 },
                 {
                   "params": [
-                    "null"
+                    "previous"
                   ],
                   "type": "fill"
                 }
               ],
               "measurement": "LastVisualChange",
-              "policy": "autogen",
-              "query": "SELECT median(\"median\") FROM \"autogen\".\"LastVisualChange\" WHERE \"group\" =~ /^$group$/ AND \"page\" =~ /^$page$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"category\" =~ /^$category$/ AND $timeFilter GROUP BY time(1h) fill(null)",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "query": "SELECT median(\"median\") FROM \"LastVisualChange\" WHERE \"group\" =~ /^$group$/ AND \"page\" =~ /^$page$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"category\" =~ /^$category$/ AND $timeFilter GROUP BY time(1h) fill(null)",
               "rawQuery": false,
               "refId": "B",
               "resultFormat": "time_series",
@@ -3791,12 +5410,6 @@
                   "key": "category",
                   "operator": "=~",
                   "value": "/^$category$/"
-                },
-                {
-                  "condition": "AND",
-                  "key": "time",
-                  "operator": ">",
-                  "value": "now() - 7d"
                 }
               ],
               "target": ""
@@ -3813,14 +5426,15 @@
                 },
                 {
                   "params": [
-                    "null"
+                    "previous"
                   ],
                   "type": "fill"
                 }
               ],
               "measurement": "LastVisualChange",
-              "policy": "autogen",
-              "query": "SELECT median(\"median\") FROM \"autogen\".\"LastVisualChange\" WHERE \"group\" =~ /^$group$/ AND \"page\" =~ /^$page$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"category\" =~ /^$category$/ AND $timeFilter GROUP BY time(1h) fill(null)",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "query": "SELECT median(\"median\") FROM \"LastVisualChange\" WHERE \"group\" =~ /^$group$/ AND \"page\" =~ /^$page$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"category\" =~ /^$category$/ AND $timeFilter GROUP BY time(1h) fill(null)",
               "rawQuery": false,
               "refId": "C",
               "resultFormat": "time_series",
@@ -3867,12 +5481,6 @@
                   "key": "category",
                   "operator": "=~",
                   "value": "/^$category$/"
-                },
-                {
-                  "condition": "AND",
-                  "key": "time",
-                  "operator": ">",
-                  "value": "now() - 28d"
                 }
               ],
               "target": ""
@@ -3965,8 +5573,9 @@
                 }
               ],
               "measurement": "fullyLoaded",
-              "policy": "autogen",
-              "query": "SELECT median(\"median\") FROM \"autogen\".\"LastVisualChange\" WHERE \"group\" =~ /^$group$/ AND \"page\" =~ /^$page$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"category\" =~ /^$category$/ AND $timeFilter GROUP BY time(1h) fill(null)",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "query": "SELECT median(\"median\") FROM \"LastVisualChange\" WHERE \"group\" =~ /^$group$/ AND \"page\" =~ /^$page$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"category\" =~ /^$category$/ AND $timeFilter GROUP BY time(1h) fill(null)",
               "rawQuery": false,
               "refId": "A",
               "resultFormat": "time_series",
@@ -4029,14 +5638,15 @@
                 },
                 {
                   "params": [
-                    "null"
+                    "previous"
                   ],
                   "type": "fill"
                 }
               ],
               "measurement": "fullyLoaded",
-              "policy": "autogen",
-              "query": "SELECT median(\"median\") FROM \"autogen\".\"fullyLoaded\" WHERE \"group\" =~ /^$group$/ AND \"page\" =~ /^$page$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"category\" =~ /^$category$/ AND $timeFilter GROUP BY time(1h) fill(null)",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "query": "SELECT median(\"median\") FROM \"fullyLoaded\" WHERE \"group\" =~ /^$group$/ AND \"page\" =~ /^$page$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"category\" =~ /^$category$/ AND $timeFilter GROUP BY time(1h) fill(null)",
               "rawQuery": false,
               "refId": "B",
               "resultFormat": "time_series",
@@ -4083,12 +5693,6 @@
                   "key": "category",
                   "operator": "=~",
                   "value": "/^$category$/"
-                },
-                {
-                  "condition": "AND",
-                  "key": "time",
-                  "operator": ">",
-                  "value": "now() - 7d"
                 }
               ],
               "target": ""
@@ -4105,14 +5709,15 @@
                 },
                 {
                   "params": [
-                    "null"
+                    "previous"
                   ],
                   "type": "fill"
                 }
               ],
               "measurement": "fullyLoaded",
-              "policy": "autogen",
-              "query": "SELECT median(\"median\") FROM \"autogen\".\"fullyLoaded\" WHERE \"group\" =~ /^$group$/ AND \"page\" =~ /^$page$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"category\" =~ /^$category$/ AND $timeFilter GROUP BY time(1h) fill(null)",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "query": "SELECT median(\"median\") FROM \"fullyLoaded\" WHERE \"group\" =~ /^$group$/ AND \"page\" =~ /^$page$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"category\" =~ /^$category$/ AND $timeFilter GROUP BY time(1h) fill(null)",
               "rawQuery": false,
               "refId": "C",
               "resultFormat": "time_series",
@@ -4159,12 +5764,6 @@
                   "key": "category",
                   "operator": "=~",
                   "value": "/^$category$/"
-                },
-                {
-                  "condition": "AND",
-                  "key": "time",
-                  "operator": ">",
-                  "value": "now() - 28d"
                 }
               ],
               "target": ""
@@ -4239,7 +5838,7 @@
           "lines": false,
           "linewidth": 1,
           "links": [],
-          "nullPointMode": "null",
+          "nullPointMode": "connected",
           "percentage": false,
           "pointradius": 5,
           "points": false,
@@ -4262,8 +5861,9 @@
                 }
               ],
               "measurement": "contentSize",
-              "policy": "autogen",
-              "query": "SELECT \"value\" FROM \"autogen\".\"contentSize\" WHERE  \"group\" =~ /^$group$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"page\" =~ /^$page$/ AND \"origin\" = 'pagexray' AND \"category\" =~ /^$category$/ AND $timeFilter GROUP BY \"contentType\"",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "query": "SELECT \"value\" FROM \"contentSize\" WHERE  \"group\" =~ /^$group$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"page\" =~ /^$page$/ AND \"origin\" = 'pagexray' AND \"category\" =~ /^$category$/ AND $timeFilter GROUP BY \"contentType\"",
               "rawQuery": false,
               "refId": "A",
               "resultFormat": "time_series",
@@ -4397,8 +5997,7 @@
                 }
               ],
               "measurement": "requests",
-              "policy": "autogen",
-              "query": "SELECT \"value\" FROM \"autogen\".\"requests\" WHERE  \"group\" =~ /^$group$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"page\" =~ /^$page$/ AND \"origin\" = 'pagexray' AND \"category\" =~ /^$category$/ AND $timeFilter GROUP BY \"contentType\"",
+              "query": "SELECT \"value\" FROM \"requests\" WHERE  \"group\" =~ /^$group$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"page\" =~ /^$page$/ AND \"origin\" = 'pagexray' AND \"category\" =~ /^$category$/ AND $timeFilter GROUP BY \"contentType\"",
               "rawQuery": false,
               "refId": "A",
               "resultFormat": "time_series",
@@ -4506,8 +6105,340 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": "${DS_INFLUXDB}",
-          "description": "The time the browser takes to parse the document and execute deferred and parser-inserted scripts including the network time from the users location to your server.  It is collected using the Navigation Timing API by taking the domContentLoadedEventStart minus navigationStart.",
+          "description": "All requests that are not a 200 HTTP Status Code.",
           "fill": 1,
+          "id": 30,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "alias": "Non 200",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [
+                    "$__interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "null"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "200",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "category",
+                  "operator": "=~",
+                  "value": "/^$category$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "group",
+                  "operator": "=~",
+                  "value": "/^$group$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "page",
+                  "operator": "=~",
+                  "value": "/^$page$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "browser",
+                  "operator": "=~",
+                  "value": "/^$browser$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "connectivity",
+                  "operator": "=~",
+                  "value": "/^$connectivity$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "origin",
+                  "operator": "=",
+                  "value": "pagexray"
+                }
+              ]
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "None 200 Response Codes",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": true,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_INFLUXDB}",
+          "description": "The max time spent in frontend vs backend time. \\n\\nThe backend time is the time it takes for the network and the server to generate and start sending the HTML. It is collected using the Navigation Timing API taking the responseStart minus navigationStart.\\n\\nThe frontend time is the time it takes for the browser to parse and create the page.  It is collected using the Navigation Timing API by taking the loadEventStart minus responseEnd.",
+          "fill": 0,
+          "id": 31,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": false,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": true,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [
+            {
+              "alias": "Frontend"
+            }
+          ],
+          "spaceLength": 10,
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "alias": "Backend",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "backEndTime",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "median"
+                    ],
+                    "type": "field"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "category",
+                  "operator": "=~",
+                  "value": "/^$category$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "group",
+                  "operator": "=~",
+                  "value": "/^$group$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "page",
+                  "operator": "=~",
+                  "value": "/^$page$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "browser",
+                  "operator": "=~",
+                  "value": "/^$browser$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "connectivity",
+                  "operator": "=~",
+                  "value": "/^$connectivity$/"
+                }
+              ]
+            },
+            {
+              "alias": "Frontend",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "frontEndTime",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "B",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "median"
+                    ],
+                    "type": "field"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "category",
+                  "operator": "=~",
+                  "value": "/^$category$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "group",
+                  "operator": "=~",
+                  "value": "/^$group$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "page",
+                  "operator": "=~",
+                  "value": "/^$page$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "browser",
+                  "operator": "=~",
+                  "value": "/^$browser$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "connectivity",
+                  "operator": "=~",
+                  "value": "/^$connectivity$/"
+                }
+              ]
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Time spent in backend vs frontend % [median]",
+          "tooltip": {
+            "shared": false,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": [
+              "total"
+            ]
+          },
+          "yaxes": [
+            {
+              "format": "ms",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "percent",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "Dashboard Row",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": false,
+      "height": 250,
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_INFLUXDB}",
+          "description": "The time the browser takes to parse the document and execute deferred and parser-inserted scripts including the network time from the users location to your server.  It is collected using the Navigation Timing API by taking the domContentLoadedEventStart minus navigationStart.",
+          "fill": 0,
           "id": 26,
           "legend": {
             "alignAsTable": true,
@@ -4520,14 +6451,20 @@
             "values": true
           },
           "lines": true,
-          "linewidth": 1,
+          "linewidth": 2,
           "links": [],
-          "nullPointMode": "null",
+          "nullPointMode": "connected",
           "percentage": false,
           "pointradius": 5,
           "points": false,
           "renderer": "flot",
-          "seriesOverrides": [],
+          "seriesOverrides": [
+            {
+              "alias": "daily",
+              "fill": 2,
+              "linewidth": 0
+            }
+          ],
           "spaceLength": 10,
           "span": 6,
           "stack": false,
@@ -4551,8 +6488,9 @@
                 }
               ],
               "measurement": "domContentLoadedTime",
-              "policy": "autogen",
-              "query": "SELECT median(\"value\") FROM \"autogen\".\"domContentLoadedTime\" WHERE \"group\" =~ /^$group$/ AND \"page\" =~ /^$page$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"category\" =~ /^$category$/ AND $timeFilter AND $timeFilter GROUP BY time(1h) fill(null)",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "query": "SELECT median(\"value\") FROM \"domContentLoadedTime\" WHERE \"group\" =~ /^$group$/ AND \"page\" =~ /^$page$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"category\" =~ /^$category$/ AND $timeFilter AND $timeFilter GROUP BY time(1h) fill(null)",
               "rawQuery": false,
               "refId": "A",
               "resultFormat": "time_series",
@@ -4621,8 +6559,9 @@
                 }
               ],
               "measurement": "domContentLoadedTime",
-              "policy": "autogen",
-              "query": "SELECT median(\"median\") FROM \"autogen\".\"domContentLoadedTime\" WHERE \"browser\" =~ /^$browser$/ AND \"category\" =~ /^$category$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"group\" =~ /^$group$/ AND \"page\" =~ /^$page$/ AND $timeFilter GROUP BY time(1h) fill(null)",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "query": "SELECT median(\"median\") FROM \"domContentLoadedTime\" WHERE \"browser\" =~ /^$browser$/ AND \"category\" =~ /^$category$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"group\" =~ /^$group$/ AND \"page\" =~ /^$page$/ AND $timeFilter GROUP BY time(1h) fill(null)",
               "rawQuery": false,
               "refId": "B",
               "resultFormat": "time_series",
@@ -4742,7 +6681,7 @@
           "lines": true,
           "linewidth": 1,
           "links": [],
-          "nullPointMode": "null",
+          "nullPointMode": "connected",
           "percentage": false,
           "pointradius": 5,
           "points": false,
@@ -4781,8 +6720,9 @@
                 }
               ],
               "measurement": "frontEndTime",
-              "policy": "autogen",
-              "query": "SELECT median(\"max\") FROM \"autogen\".\"frontEndTime\" WHERE \"browser\" =~ /^$browser$/ AND \"category\" =~ /^$category$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"group\" =~ /^$group$/ AND \"page\" =~ /^$page$/ AND $timeFilter GROUP BY time(1h) fill(null)",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "query": "SELECT median(\"max\") FROM \"frontEndTime\" WHERE \"browser\" =~ /^$browser$/ AND \"category\" =~ /^$category$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"group\" =~ /^$group$/ AND \"page\" =~ /^$page$/ AND $timeFilter GROUP BY time(1h) fill(null)",
               "rawQuery": true,
               "refId": "C",
               "resultFormat": "time_series",
@@ -4851,9 +6791,10 @@
                 }
               ],
               "measurement": "frontEndTime",
-              "policy": "autogen",
-              "query": "SELECT median(\"median\") FROM \"autogen\".\"frontEndTime\" WHERE \"browser\" =~ /^$browser$/ AND \"category\" =~ /^$category$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"group\" =~ /^$group$/ AND \"page\" =~ /^$page$/ AND $timeFilter GROUP BY time(1h) fill(null)",
-              "rawQuery": true,
+              "orderByTime": "ASC",
+              "policy": "default",
+              "query": "SELECT median(\"median\") FROM \"frontEndTime\" WHERE \"browser\" =~ /^$browser$/ AND \"category\" =~ /^$category$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"group\" =~ /^$group$/ AND \"page\" =~ /^$page$/ AND $timeFilter GROUP BY time(1h) fill(null)",
+              "rawQuery": false,
               "refId": "A",
               "resultFormat": "time_series",
               "select": [
@@ -4921,9 +6862,10 @@
                 }
               ],
               "measurement": "frontEndTime",
-              "policy": "autogen",
-              "query": "SELECT median(\"min\") FROM \"autogen\".\"frontEndTime\" WHERE \"browser\" =~ /^$browser$/ AND \"category\" =~ /^$category$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"group\" =~ /^$group$/ AND \"page\" =~ /^$page$/ AND $timeFilter GROUP BY time(1h) fill(null)",
-              "rawQuery": true,
+              "orderByTime": "ASC",
+              "policy": "default",
+              "query": "SELECT median(\"min\") FROM \"frontEndTime\" WHERE \"browser\" =~ /^$browser$/ AND \"category\" =~ /^$category$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"group\" =~ /^$group$/ AND \"page\" =~ /^$page$/ AND $timeFilter GROUP BY time(1h) fill(null)",
+              "rawQuery": false,
               "refId": "B",
               "resultFormat": "time_series",
               "select": [
@@ -5009,6 +6951,2311 @@
               "show": true
             }
           ]
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "Dashboard Row",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": false,
+      "height": 250,
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_INFLUXDB}",
+          "description": "All User Timing marks created on the page using the [User Timing API](https://www.w3.org/TR/user-timing/)",
+          "fill": 0,
+          "id": 29,
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": true,
+            "max": true,
+            "min": true,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "span": 12,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "alias": "Now Current",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "domContentLoadedTime",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "mean"
+                    ],
+                    "type": "field"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "category",
+                  "operator": "=~",
+                  "value": "/^$category$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "group",
+                  "operator": "=~",
+                  "value": "/^$group$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "page",
+                  "operator": "=",
+                  "value": "_"
+                },
+                {
+                  "condition": "AND",
+                  "key": "browser",
+                  "operator": "=~",
+                  "value": "/^$browser$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "connectivity",
+                  "operator": "=~",
+                  "value": "/^$connectivity$/"
+                }
+              ]
+            },
+            {
+              "alias": "One Week Back Current",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "domContentLoadedTime",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "B",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "mean"
+                    ],
+                    "type": "field"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "category",
+                  "operator": "=~",
+                  "value": "/^$category$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "group",
+                  "operator": "=~",
+                  "value": "/^$group$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "page",
+                  "operator": "=",
+                  "value": "_"
+                },
+                {
+                  "condition": "AND",
+                  "key": "browser",
+                  "operator": "=~",
+                  "value": "/^$browser$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "connectivity",
+                  "operator": "=~",
+                  "value": "/^$connectivity$/"
+                }
+              ]
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "User Timings",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "Dashboard Row",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": false,
+      "height": 250,
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_INFLUXDB}",
+          "description": "[Navigation Timing API](https://www.w3.org/TR/navigation-timing/) metrics.",
+          "fill": 0,
+          "id": 28,
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": true,
+            "max": true,
+            "min": true,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "span": 12,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "alias": "backendTime",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "backEndTime",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "median"
+                    ],
+                    "type": "field"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "category",
+                  "operator": "=~",
+                  "value": "/^$category$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "group",
+                  "operator": "=~",
+                  "value": "/^$group$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "page",
+                  "operator": "=~",
+                  "value": "/^$page$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "browser",
+                  "operator": "=~",
+                  "value": "/^$browser$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "connectivity",
+                  "operator": "=~",
+                  "value": "/^$connectivity$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "pageTimings",
+                  "operator": "=",
+                  "value": "backEndTime"
+                }
+              ]
+            },
+            {
+              "alias": "domContentLoadedTime",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "domContentLoadedTime",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "B",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "median"
+                    ],
+                    "type": "field"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "category",
+                  "operator": "=~",
+                  "value": "/^$category$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "group",
+                  "operator": "=~",
+                  "value": "/^$group$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "page",
+                  "operator": "=~",
+                  "value": "/^$page$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "browser",
+                  "operator": "=~",
+                  "value": "/^$browser$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "connectivity",
+                  "operator": "=~",
+                  "value": "/^$connectivity$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "pageTimings",
+                  "operator": "=",
+                  "value": "domContentLoadedTime"
+                }
+              ]
+            },
+            {
+              "alias": "domInteractiveTime",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "domInteractiveTime",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "C",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "median"
+                    ],
+                    "type": "field"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "category",
+                  "operator": "=~",
+                  "value": "/^$category$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "group",
+                  "operator": "=~",
+                  "value": "/^$group$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "page",
+                  "operator": "=~",
+                  "value": "/^$page$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "browser",
+                  "operator": "=~",
+                  "value": "/^$browser$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "connectivity",
+                  "operator": "=~",
+                  "value": "/^$connectivity$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "pageTimings",
+                  "operator": "=",
+                  "value": "domInteractiveTime"
+                }
+              ]
+            },
+            {
+              "alias": "domainLookupTime",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "domainLookupTime",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "D",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "median"
+                    ],
+                    "type": "field"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "category",
+                  "operator": "=~",
+                  "value": "/^$category$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "group",
+                  "operator": "=~",
+                  "value": "/^$group$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "page",
+                  "operator": "=~",
+                  "value": "/^$page$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "browser",
+                  "operator": "=~",
+                  "value": "/^$browser$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "connectivity",
+                  "operator": "=~",
+                  "value": "/^$connectivity$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "pageTimings",
+                  "operator": "=",
+                  "value": "domainLookupTime"
+                }
+              ]
+            },
+            {
+              "alias": "frontEndTime",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "frontEndTime",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "E",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "median"
+                    ],
+                    "type": "field"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "category",
+                  "operator": "=~",
+                  "value": "/^$category$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "group",
+                  "operator": "=~",
+                  "value": "/^$group$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "page",
+                  "operator": "=~",
+                  "value": "/^$page$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "browser",
+                  "operator": "=~",
+                  "value": "/^$browser$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "connectivity",
+                  "operator": "=~",
+                  "value": "/^$connectivity$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "pageTimings",
+                  "operator": "=",
+                  "value": "frontEndTime"
+                }
+              ]
+            },
+            {
+              "alias": "pageDownloadTime",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "pageDownloadTime",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "F",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "median"
+                    ],
+                    "type": "field"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "category",
+                  "operator": "=~",
+                  "value": "/^$category$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "group",
+                  "operator": "=~",
+                  "value": "/^$group$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "page",
+                  "operator": "=~",
+                  "value": "/^$page$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "browser",
+                  "operator": "=~",
+                  "value": "/^$browser$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "connectivity",
+                  "operator": "=~",
+                  "value": "/^$connectivity$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "pageTimings",
+                  "operator": "=",
+                  "value": "pageDownloadTime"
+                }
+              ]
+            },
+            {
+              "alias": "pageLoadTime",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "pageLoadTime",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "G",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "median"
+                    ],
+                    "type": "field"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "category",
+                  "operator": "=~",
+                  "value": "/^$category$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "group",
+                  "operator": "=~",
+                  "value": "/^$group$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "page",
+                  "operator": "=~",
+                  "value": "/^$page$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "browser",
+                  "operator": "=~",
+                  "value": "/^$browser$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "connectivity",
+                  "operator": "=~",
+                  "value": "/^$connectivity$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "pageTimings",
+                  "operator": "=",
+                  "value": "pageLoadTime"
+                }
+              ]
+            },
+            {
+              "alias": "redirectionTime",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "redirectionTime",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "H",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "median"
+                    ],
+                    "type": "field"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "category",
+                  "operator": "=~",
+                  "value": "/^$category$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "group",
+                  "operator": "=~",
+                  "value": "/^$group$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "page",
+                  "operator": "=~",
+                  "value": "/^$page$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "browser",
+                  "operator": "=~",
+                  "value": "/^$browser$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "connectivity",
+                  "operator": "=~",
+                  "value": "/^$connectivity$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "pageTimings",
+                  "operator": "=",
+                  "value": "redirectionTime"
+                }
+              ]
+            },
+            {
+              "alias": "serverConnectionTime",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "serverConnectionTime",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "I",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "median"
+                    ],
+                    "type": "field"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "category",
+                  "operator": "=~",
+                  "value": "/^$category$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "group",
+                  "operator": "=~",
+                  "value": "/^$group$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "page",
+                  "operator": "=~",
+                  "value": "/^$page$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "browser",
+                  "operator": "=~",
+                  "value": "/^$browser$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "connectivity",
+                  "operator": "=~",
+                  "value": "/^$connectivity$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "pageTimings",
+                  "operator": "=",
+                  "value": "serverConnectionTime"
+                }
+              ]
+            },
+            {
+              "alias": "serverResponseTime",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "serverResponseTime",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "J",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "median"
+                    ],
+                    "type": "field"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "category",
+                  "operator": "=~",
+                  "value": "/^$category$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "group",
+                  "operator": "=~",
+                  "value": "/^$group$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "page",
+                  "operator": "=~",
+                  "value": "/^$page$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "browser",
+                  "operator": "=~",
+                  "value": "/^$browser$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "connectivity",
+                  "operator": "=~",
+                  "value": "/^$connectivity$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "pageTimings",
+                  "operator": "=",
+                  "value": "serverResponseTime"
+                }
+              ]
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Navigation Timings",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "ms",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "ms",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ]
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "Dashboard Row",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": false,
+      "height": "38",
+      "panels": [
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": false,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "datasource": "${DS_INFLUXDB}",
+          "description": "The total size for stylesheets assets served for this page. This includes the uncompressed size of CSS responses.",
+          "format": "decbytes",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "id": 32,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "span": 2,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": true,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": true
+          },
+          "tableColumn": "",
+          "targets": [
+            {
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "contentSize",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "query": "SELECT last(\"median\") FROM \"FirstVisualChange\" WHERE \"group\" =~ /^$group$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"page\" =~ /^$page$/ AND $timeFilter GROUP BY time($__interval) fill(null)",
+              "rawQuery": false,
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "last"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "group",
+                  "operator": "=~",
+                  "value": "/^$group$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "browser",
+                  "operator": "=~",
+                  "value": "/^$browser$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "connectivity",
+                  "operator": "=~",
+                  "value": "/^$connectivity$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "page",
+                  "operator": "=~",
+                  "value": "/^$page$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "category",
+                  "operator": "=~",
+                  "value": "/^$category$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "contentType",
+                  "operator": "=",
+                  "value": "css"
+                }
+              ],
+              "target": ""
+            }
+          ],
+          "thresholds": "",
+          "title": "Total CSS Content Size",
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "avg"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": false,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "datasource": "${DS_INFLUXDB}",
+          "description": "The total size over the wire for all stylesheet assets served for this page.",
+          "format": "decbytes",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "id": 33,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "span": 2,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": true,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": true
+          },
+          "tableColumn": "",
+          "targets": [
+            {
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "transferSize",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "query": "SELECT last(\"median\") FROM \"FirstVisualChange\" WHERE \"group\" =~ /^$group$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"page\" =~ /^$page$/ AND $timeFilter GROUP BY time($__interval) fill(null)",
+              "rawQuery": false,
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "last"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "group",
+                  "operator": "=~",
+                  "value": "/^$group$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "browser",
+                  "operator": "=~",
+                  "value": "/^$browser$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "connectivity",
+                  "operator": "=~",
+                  "value": "/^$connectivity$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "page",
+                  "operator": "=~",
+                  "value": "/^$page$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "category",
+                  "operator": "=~",
+                  "value": "/^$category$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "contentType",
+                  "operator": "=",
+                  "value": "css"
+                }
+              ],
+              "target": ""
+            }
+          ],
+          "thresholds": "",
+          "title": "Total CSS Transfert Size",
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "avg"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": false,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "datasource": "${DS_INFLUXDB}",
+          "description": "The total size for Javascripts assets served for this page. This includes the uncompressed size of JS responses.",
+          "format": "decbytes",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "id": 34,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "span": 2,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": true,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": true
+          },
+          "tableColumn": "",
+          "targets": [
+            {
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "contentSize",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "query": "SELECT last(\"median\") FROM \"FirstVisualChange\" WHERE \"group\" =~ /^$group$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"page\" =~ /^$page$/ AND $timeFilter GROUP BY time($__interval) fill(null)",
+              "rawQuery": false,
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "last"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "group",
+                  "operator": "=~",
+                  "value": "/^$group$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "browser",
+                  "operator": "=~",
+                  "value": "/^$browser$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "connectivity",
+                  "operator": "=~",
+                  "value": "/^$connectivity$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "page",
+                  "operator": "=~",
+                  "value": "/^$page$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "category",
+                  "operator": "=~",
+                  "value": "/^$category$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "contentType",
+                  "operator": "=",
+                  "value": "javascript"
+                }
+              ],
+              "target": ""
+            }
+          ],
+          "thresholds": "",
+          "title": "Total JS Content Size",
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "avg"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": false,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "datasource": "${DS_INFLUXDB}",
+          "description": "The total size over the wire for all Javascript assets served for this page.",
+          "format": "decbytes",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "id": 35,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "span": 2,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": true,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": true
+          },
+          "tableColumn": "",
+          "targets": [
+            {
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "transferSize",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "query": "SELECT last(\"median\") FROM \"FirstVisualChange\" WHERE \"group\" =~ /^$group$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"page\" =~ /^$page$/ AND $timeFilter GROUP BY time($__interval) fill(null)",
+              "rawQuery": false,
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "last"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "group",
+                  "operator": "=~",
+                  "value": "/^$group$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "browser",
+                  "operator": "=~",
+                  "value": "/^$browser$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "connectivity",
+                  "operator": "=~",
+                  "value": "/^$connectivity$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "page",
+                  "operator": "=~",
+                  "value": "/^$page$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "category",
+                  "operator": "=~",
+                  "value": "/^$category$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "contentType",
+                  "operator": "=",
+                  "value": "javascript"
+                }
+              ],
+              "target": ""
+            }
+          ],
+          "thresholds": "",
+          "title": "Total JS Transfer Size",
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "avg"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": false,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "datasource": "${DS_INFLUXDB}",
+          "description": "The total size for HTML served for this page. This includes the uncompressed size of HTML.",
+          "format": "decbytes",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "id": 36,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "span": 2,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": true,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": true
+          },
+          "tableColumn": "",
+          "targets": [
+            {
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "contentSize",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "query": "SELECT last(\"median\") FROM \"FirstVisualChange\" WHERE \"group\" =~ /^$group$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"page\" =~ /^$page$/ AND $timeFilter GROUP BY time($__interval) fill(null)",
+              "rawQuery": false,
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "last"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "group",
+                  "operator": "=~",
+                  "value": "/^$group$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "browser",
+                  "operator": "=~",
+                  "value": "/^$browser$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "connectivity",
+                  "operator": "=~",
+                  "value": "/^$connectivity$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "page",
+                  "operator": "=~",
+                  "value": "/^$page$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "category",
+                  "operator": "=~",
+                  "value": "/^$category$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "contentType",
+                  "operator": "=",
+                  "value": "html"
+                }
+              ],
+              "target": ""
+            }
+          ],
+          "thresholds": "",
+          "title": "Total HTML Content Size",
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "avg"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": false,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "datasource": "${DS_INFLUXDB}",
+          "description": "The total size over the wire for all HTML served for this page.",
+          "format": "decbytes",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "id": 37,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "span": 2,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": true,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": true
+          },
+          "tableColumn": "",
+          "targets": [
+            {
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "transferSize",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "query": "SELECT last(\"median\") FROM \"FirstVisualChange\" WHERE \"group\" =~ /^$group$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"page\" =~ /^$page$/ AND $timeFilter GROUP BY time($__interval) fill(null)",
+              "rawQuery": false,
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "last"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "group",
+                  "operator": "=~",
+                  "value": "/^$group$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "browser",
+                  "operator": "=~",
+                  "value": "/^$browser$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "connectivity",
+                  "operator": "=~",
+                  "value": "/^$connectivity$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "page",
+                  "operator": "=~",
+                  "value": "/^$page$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "category",
+                  "operator": "=~",
+                  "value": "/^$category$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "contentType",
+                  "operator": "=",
+                  "value": "html"
+                }
+              ],
+              "target": ""
+            }
+          ],
+          "thresholds": "",
+          "title": "Total HTML Transfer Size",
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "avg"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": false,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "datasource": "${DS_INFLUXDB}",
+          "description": "The total size for font(s) served for this page. This includes the uncompressed size.",
+          "format": "decbytes",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "id": 38,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "span": 2,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": true,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": true
+          },
+          "tableColumn": "",
+          "targets": [
+            {
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "contentSize",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "query": "SELECT last(\"median\") FROM \"FirstVisualChange\" WHERE \"group\" =~ /^$group$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"page\" =~ /^$page$/ AND $timeFilter GROUP BY time($__interval) fill(null)",
+              "rawQuery": false,
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "last"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "group",
+                  "operator": "=~",
+                  "value": "/^$group$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "browser",
+                  "operator": "=~",
+                  "value": "/^$browser$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "connectivity",
+                  "operator": "=~",
+                  "value": "/^$connectivity$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "page",
+                  "operator": "=~",
+                  "value": "/^$page$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "category",
+                  "operator": "=~",
+                  "value": "/^$category$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "contentType",
+                  "operator": "=",
+                  "value": "font"
+                }
+              ],
+              "target": ""
+            }
+          ],
+          "thresholds": "",
+          "title": "Total Font Content Size",
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "avg"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": false,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "datasource": "${DS_INFLUXDB}",
+          "description": "The total size over the wire for all font(s) served for this page.",
+          "format": "decbytes",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "id": 39,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "span": 2,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": true,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": true
+          },
+          "tableColumn": "",
+          "targets": [
+            {
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "transferSize",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "query": "SELECT last(\"median\") FROM \"FirstVisualChange\" WHERE \"group\" =~ /^$group$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"page\" =~ /^$page$/ AND $timeFilter GROUP BY time($__interval) fill(null)",
+              "rawQuery": false,
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "last"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "group",
+                  "operator": "=~",
+                  "value": "/^$group$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "browser",
+                  "operator": "=~",
+                  "value": "/^$browser$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "connectivity",
+                  "operator": "=~",
+                  "value": "/^$connectivity$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "page",
+                  "operator": "=~",
+                  "value": "/^$page$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "category",
+                  "operator": "=~",
+                  "value": "/^$category$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "contentType",
+                  "operator": "=",
+                  "value": "font"
+                }
+              ],
+              "target": ""
+            }
+          ],
+          "thresholds": "",
+          "title": "Total Font Transfer Size",
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "avg"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": false,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "datasource": "${DS_INFLUXDB}",
+          "description": "The total size for images served for this page.",
+          "format": "decbytes",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "id": 40,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "span": 2,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": true,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": true
+          },
+          "tableColumn": "",
+          "targets": [
+            {
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "contentSize",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "query": "SELECT last(\"median\") FROM \"FirstVisualChange\" WHERE \"group\" =~ /^$group$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"page\" =~ /^$page$/ AND $timeFilter GROUP BY time($__interval) fill(null)",
+              "rawQuery": false,
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "last"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "group",
+                  "operator": "=~",
+                  "value": "/^$group$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "browser",
+                  "operator": "=~",
+                  "value": "/^$browser$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "connectivity",
+                  "operator": "=~",
+                  "value": "/^$connectivity$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "page",
+                  "operator": "=~",
+                  "value": "/^$page$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "category",
+                  "operator": "=~",
+                  "value": "/^$category$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "contentType",
+                  "operator": "=",
+                  "value": "image"
+                }
+              ],
+              "target": ""
+            }
+          ],
+          "thresholds": "",
+          "title": "Total Images Size",
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "avg"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": false,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "datasource": "${DS_INFLUXDB}",
+          "description": "The total size for other elements served for this page.",
+          "format": "decbytes",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "id": 41,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "span": 2,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": true,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": true
+          },
+          "tableColumn": "",
+          "targets": [
+            {
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "transferSize",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "query": "SELECT last(\"median\") FROM \"FirstVisualChange\" WHERE \"group\" =~ /^$group$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"page\" =~ /^$page$/ AND $timeFilter GROUP BY time($__interval) fill(null)",
+              "rawQuery": false,
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "last"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "group",
+                  "operator": "=~",
+                  "value": "/^$group$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "browser",
+                  "operator": "=~",
+                  "value": "/^$browser$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "connectivity",
+                  "operator": "=~",
+                  "value": "/^$connectivity$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "page",
+                  "operator": "=~",
+                  "value": "/^$page$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "category",
+                  "operator": "=~",
+                  "value": "/^$category$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "contentType",
+                  "operator": "=",
+                  "value": "other"
+                }
+              ],
+              "target": ""
+            }
+          ],
+          "thresholds": "",
+          "title": "Total Other Transfer Size",
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "avg"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": false,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "datasource": "${DS_INFLUXDB}",
+          "description": "Calculate SpeedIndex measurements using Resource Timings",
+          "format": "none",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "id": 42,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "span": 2,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": true,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": true
+          },
+          "tableColumn": "",
+          "targets": [
+            {
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "rumSpeedIndex",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "query": "SELECT last(\"median\") FROM \"FirstVisualChange\" WHERE \"group\" =~ /^$group$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"page\" =~ /^$page$/ AND $timeFilter GROUP BY time($__interval) fill(null)",
+              "rawQuery": false,
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "median"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "last"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "group",
+                  "operator": "=~",
+                  "value": "/^$group$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "browser",
+                  "operator": "=~",
+                  "value": "/^$browser$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "connectivity",
+                  "operator": "=~",
+                  "value": "/^$connectivity$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "page",
+                  "operator": "=~",
+                  "value": "/^$page$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "category",
+                  "operator": "=~",
+                  "value": "/^$category$/"
+                }
+              ],
+              "target": ""
+            }
+          ],
+          "thresholds": "",
+          "title": "RUM Speed Index",
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "avg"
         }
       ],
       "repeat": null,
@@ -5156,6 +9403,6 @@
     ]
   },
   "timezone": "browser",
-  "title": "WIP Influxdb",
-  "version": 56
+  "title": "PageSummary [InfluxDB]",
+  "version": 3
 }
