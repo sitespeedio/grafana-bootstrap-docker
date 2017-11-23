@@ -11,7 +11,7 @@
     {
       "name": "VAR_BASE",
       "type": "constant",
-      "label": "base",
+      "label": "sitespeed_io",
       "value": "sitespeed_io",
       "description": ""
     },
@@ -28,7 +28,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "4.5.1"
+      "version": "4.6.2"
     },
     {
       "type": "datasource",
@@ -50,7 +50,17 @@
     }
   ],
   "annotations": {
-    "list": []
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
   },
   "editable": true,
   "gnetId": null,
@@ -441,7 +451,7 @@
             }
           ],
           "repeat": "page",
-          "span": 6,
+          "span": 12,
           "sparkline": {
             "fillColor": "rgba(31, 118, 189, 0.18)",
             "full": false,
@@ -493,7 +503,7 @@
           "text": "${VAR_BASE}"
         },
         "hide": 2,
-        "label": "",
+        "label": "sitespeed_io",
         "name": "base",
         "options": [
           {
@@ -654,5 +664,5 @@
   },
   "timezone": "browser",
   "title": "Page Cost Estimator",
-  "version": 3
+  "version": 2
 }

@@ -11,14 +11,14 @@
     {
       "name": "VAR_BASE",
       "type": "constant",
-      "label": "base",
+      "label": "sitespeed_io",
       "value": "sitespeed_io",
       "description": ""
     },
     {
       "name": "VAR_PATH",
       "type": "constant",
-      "label": "path",
+      "label": "desktop",
       "value": "desktop",
       "description": ""
     }
@@ -417,8 +417,8 @@
           "value": "${VAR_BASE}",
           "text": "${VAR_BASE}"
         },
-        "hide": 0,
-        "label": null,
+        "hide": 2,
+        "label": "sitespeed_io",
         "name": "base",
         "options": [
           {
@@ -434,8 +434,8 @@
           "value": "${VAR_PATH}",
           "text": "${VAR_PATH}"
         },
-        "hide": 0,
-        "label": "",
+        "hide": 2,
+        "label": "desktop",
         "name": "path",
         "options": [
           {
@@ -479,5 +479,5 @@
   },
   "timezone": "",
   "title": "Compare performance",
-  "version": 5
+  "version": 3
 }

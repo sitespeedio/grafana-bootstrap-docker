@@ -11,7 +11,7 @@
     {
       "name": "VAR_BASE",
       "type": "constant",
-      "label": "base",
+      "label": "sitespeed_io",
       "value": "sitespeed_io",
       "description": ""
     }
@@ -21,7 +21,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "4.6.0"
+      "version": "4.6.2"
     },
     {
       "type": "panel",
@@ -1072,7 +1072,7 @@
           "text": "${VAR_BASE}"
         },
         "hide": 2,
-        "label": null,
+        "label": "sitespeed_io",
         "name": "base",
         "options": [
           {
@@ -1216,5 +1216,5 @@
   },
   "timezone": "browser",
   "title": "3rd vs 1st party",
-  "version": 10
+  "version": 2
 }
