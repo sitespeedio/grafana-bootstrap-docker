@@ -11,8 +11,8 @@
     {
       "name": "VAR_PATH",
       "type": "constant",
-      "label": "desktop",
-      "value": "desktop",
+      "label": "default",
+      "value": "default",
       "description": ""
     },
     {

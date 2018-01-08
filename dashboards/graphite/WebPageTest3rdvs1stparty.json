@@ -11,8 +11,8 @@
     {
       "name": "VAR_PATH",
       "type": "constant",
-      "label": "desktop",
-      "value": "desktop",
+      "label": "default",
+      "value": "default",
       "description": ""
     },
     {
@@ -277,7 +277,7 @@
           "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
-          "title": "Poids : domaine principal VS domaines tiers",
+          "title": "Weight : main domain VS 3rd party domain",
           "tooltip": {
             "msResolution": false,
             "shared": true,
@@ -381,7 +381,7 @@
           "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
-          "title": "Requêtes par domaine tiers (top 10)",
+          "title": "Top 10 Number of requests from 3rd party domains",
           "tooltip": {
             "msResolution": false,
             "shared": true,
@@ -485,7 +485,7 @@
           "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
-          "title": "Poids par domaine tiers (top 10)",
+          "title": "Top 10 weight per 3rd party domain",
           "tooltip": {
             "msResolution": false,
             "shared": true,
