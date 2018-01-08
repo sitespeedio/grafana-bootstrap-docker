@@ -109,7 +109,7 @@
             "rgba(50, 172, 45, 0.97)"
           ],
           "datasource": "${DS_GRAPHITE}",
-          "description": "The first visual change is when something for the first time is painted within the current viewport. It is calculated by analyzing a video recording of the screen.",
+          "description": "The Start Render is when something for the first time is painted within the current viewport. It is calculated by analyzing a video recording of the screen.",
           "editable": true,
           "error": false,
           "format": "ms",
@@ -159,11 +159,11 @@
           "targets": [
             {
               "refId": "A",
-              "target": "sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.render"
+              "target": "$base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.render"
             }
           ],
           "thresholds": "",
-          "title": "First visual change",
+          "title": "Start Render",
           "type": "singlestat",
           "valueFontSize": "80%",
           "valueMaps": [
@@ -235,7 +235,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.SpeedIndex"
+              "target": "$base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.SpeedIndex"
             }
           ],
           "thresholds": "",
@@ -314,7 +314,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.visualComplete85"
+              "target": "$base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.visualComplete85"
             }
           ],
           "thresholds": "",
@@ -390,7 +390,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.visualComplete95"
+              "target": "$base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.visualComplete95"
             }
           ],
           "thresholds": "",
@@ -427,7 +427,7 @@
             "thresholdLabels": false,
             "thresholdMarkers": true
           },
-          "id": 61,
+          "id": 62,
           "interval": null,
           "links": [],
           "mappingType": 1,
@@ -466,7 +466,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.visualComplete99"
+              "target": "$base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.visualComplete99"
             }
           ],
           "thresholds": "",
@@ -481,19 +481,7 @@
             }
           ],
           "valueName": "current"
-        }
-      ],
-      "repeat": null,
-      "repeatIteration": null,
-      "repeatRowId": null,
-      "showTitle": false,
-      "title": "Dashboard Row",
-      "titleSize": "h6"
-    },
-    {
-      "collapse": false,
-      "height": "138",
-      "panels": [
+        },
         {
           "cacheTimeout": null,
           "colorBackground": false,
@@ -554,7 +542,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.lastVisualChange"
+              "target": "$base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.lastVisualChange"
             }
           ],
           "thresholds": "",
@@ -569,7 +557,437 @@
             }
           ],
           "valueName": "current"
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": true,
+      "title": "Visual metrics",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": false,
+      "height": 276,
+      "panels": [
+        {
+          "columns": [
+            {
+              "text": "Current",
+              "value": "current"
+            }
+          ],
+          "description": "The moving average of the last 24 hours median values for the visual metrics.",
+          "editable": true,
+          "error": false,
+          "filterNull": false,
+          "fontSize": "100%",
+          "id": 36,
+          "links": [],
+          "pageSize": null,
+          "scroll": false,
+          "showHeader": true,
+          "sort": {
+            "col": 0,
+            "desc": false
+          },
+          "span": 3,
+          "styles": [
+            {
+              "dateFormat": "YYYY-MM-DD HH:mm:ss",
+              "pattern": "Time",
+              "type": "date"
+            },
+            {
+              "colorMode": null,
+              "colors": [
+                "rgba(245, 54, 54, 0.9)",
+                "rgba(237, 129, 40, 0.89)",
+                "rgba(50, 172, 45, 0.97)"
+              ],
+              "decimals": 0,
+              "pattern": "/.*/",
+              "thresholds": [],
+              "type": "number",
+              "unit": "none"
+            }
+          ],
+          "targets": [
+            {
+              "refId": "A",
+              "target": "aliasByNode(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.SpeedIndex, '24h'), 11)",
+              "textEditor": false
+            },
+            {
+              "refId": "B",
+              "target": "aliasByNode(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.render, '24h'), 11)",
+              "textEditor": false
+            },
+            {
+              "refId": "D",
+              "target": "aliasByNode(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.lastVisualChange, '24h'), 11)",
+              "textEditor": false
+            },
+            {
+              "refId": "E",
+              "target": "aliasByNode(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.fullyLoaded, '24h'), 11)",
+              "textEditor": false
+            },
+            {
+              "refId": "F",
+              "target": "aliasByNode(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.visualComplete85, '24h'), 11)",
+              "textEditor": false
+            }
+          ],
+          "title": "Avg last 24 hours",
+          "transform": "timeseries_aggregations",
+          "type": "table"
         },
+        {
+          "columns": [
+            {
+              "text": "Current",
+              "value": "current"
+            }
+          ],
+          "description": "Last 24 hours averages of median metrics compared to one day back in time. \n\nRed color background means a regression, green a positive change and yellow that the change is within the margin of error. You probably need to finetune the thresholds depending of how flakey your site is. Default threshold is +-10%.",
+          "editable": true,
+          "error": false,
+          "filterNull": false,
+          "fontSize": "100%",
+          "id": 37,
+          "links": [],
+          "pageSize": null,
+          "scroll": true,
+          "showHeader": true,
+          "sort": {
+            "col": 0,
+            "desc": false
+          },
+          "span": 3,
+          "styles": [
+            {
+              "dateFormat": "YYYY-MM-DD HH:mm:ss",
+              "pattern": "Time",
+              "type": "date"
+            },
+            {
+              "colorMode": "cell",
+              "colors": [
+                "rgba(50, 172, 45, 0.97)",
+                "rgba(237, 129, 40, 0.89)",
+                "rgba(245, 54, 54, 0.9)"
+              ],
+              "decimals": 0,
+              "pattern": "/.*/",
+              "thresholds": [
+                "-10",
+                "10"
+              ],
+              "type": "number",
+              "unit": "percent"
+            }
+          ],
+          "targets": [
+            {
+              "hide": true,
+              "refId": "A",
+              "target": "timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.SpeedIndex, '24h'), '1d')",
+              "textEditor": false
+            },
+            {
+              "hide": true,
+              "refId": "B",
+              "target": "timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.render, '24h'), '1d')",
+              "textEditor": false
+            },
+            {
+              "refId": "C",
+              "target": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.SpeedIndex, '24h'), #A), #A), 11)",
+              "targetFull": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.SpeedIndex, '24h'), timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.SpeedIndex, '24h'), '1d')), timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.SpeedIndex, '24h'), '1d')), 11)",
+              "textEditor": false
+            },
+            {
+              "refId": "D",
+              "target": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.render, '24h'), #B), #B), 11)",
+              "targetFull": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.render, '24h'), timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.render, '24h'), '1d')), timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.render, '24h'), '1d')), 11)",
+              "textEditor": false
+            },
+            {
+              "hide": true,
+              "refId": "G",
+              "target": "timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.lastVisualChange, '24h'), '1d')",
+              "textEditor": false
+            },
+            {
+              "refId": "H",
+              "target": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.lastVisualChange, '24h'), #G), #G), 11)",
+              "targetFull": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.lastVisualChange, '24h'), timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.lastVisualChange, '24h'), '1d')), timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.lastVisualChange, '24h'), '1d')), 11)",
+              "textEditor": false
+            },
+            {
+              "hide": true,
+              "refId": "I",
+              "target": "timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.fullyLoaded, '24h'), '1d')",
+              "textEditor": false
+            },
+            {
+              "refId": "J",
+              "target": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.fullyLoaded, '24h'), #I), #I), 11)",
+              "targetFull": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.fullyLoaded, '24h'), timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.fullyLoaded, '24h'), '1d')), timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.fullyLoaded, '24h'), '1d')), 11)",
+              "textEditor": false
+            },
+            {
+              "hide": true,
+              "refId": "K",
+              "target": "timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.visualComplete85, '24h'), '1d')",
+              "textEditor": false
+            },
+            {
+              "refId": "L",
+              "target": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.visualComplete85, '24h'), #K), #K), 11)",
+              "targetFull": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.visualComplete85, '24h'), timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.visualComplete85, '24h'), '1d')), timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.visualComplete85, '24h'), '1d')), 11)",
+              "textEditor": false
+            }
+          ],
+          "title": "Relative to yesterday",
+          "transform": "timeseries_aggregations",
+          "type": "table"
+        },
+        {
+          "columns": [
+            {
+              "text": "Current",
+              "value": "current"
+            }
+          ],
+          "description": "Last 24 hours averages of median metrics compared to seven days back in time. \n\nRed color background means a regression, green a positive change and yellow that the change is within the margin of error. You probably need to finetune the thresholds depending of how flakey your site is. Default threshold is +-10%.",
+          "editable": true,
+          "error": false,
+          "filterNull": false,
+          "fontSize": "100%",
+          "id": 38,
+          "links": [],
+          "pageSize": null,
+          "scroll": true,
+          "showHeader": true,
+          "sort": {
+            "col": 0,
+            "desc": false
+          },
+          "span": 3,
+          "styles": [
+            {
+              "dateFormat": "YYYY-MM-DD HH:mm:ss",
+              "pattern": "Time",
+              "type": "date"
+            },
+            {
+              "colorMode": "cell",
+              "colors": [
+                "rgba(50, 172, 45, 0.97)",
+                "rgba(237, 129, 40, 0.89)",
+                "rgba(245, 54, 54, 0.9)"
+              ],
+              "decimals": 0,
+              "pattern": "/.*/",
+              "thresholds": [
+                "-10",
+                "10"
+              ],
+              "type": "number",
+              "unit": "percent"
+            }
+          ],
+          "targets": [
+            {
+              "hide": true,
+              "refId": "A",
+              "target": "timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.SpeedIndex, '24h'), '7d')",
+              "textEditor": false
+            },
+            {
+              "hide": true,
+              "refId": "B",
+              "target": "timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.render, '24h'), '7d')",
+              "textEditor": false
+            },
+            {
+              "refId": "C",
+              "target": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.SpeedIndex, '24h'), #A), #A), 11)",
+              "targetFull": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.SpeedIndex, '24h'), timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.SpeedIndex, '24h'), '7d')), timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.SpeedIndex, '24h'), '7d')), 11)",
+              "textEditor": false
+            },
+            {
+              "refId": "D",
+              "target": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.render, '24h'), #B), #B), 11)",
+              "targetFull": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.render, '24h'), timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.render, '24h'), '7d')), timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.render, '24h'), '7d')), 11)",
+              "textEditor": false
+            },
+            {
+              "hide": true,
+              "refId": "E",
+              "target": "timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.lastVisualChange, '24h'), '7d')",
+              "textEditor": false
+            },
+            {
+              "refId": "F",
+              "target": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.lastVisualChange, '24h'), #E), #E), 11)",
+              "targetFull": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.lastVisualChange, '24h'), timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.lastVisualChange, '24h'), '7d')), timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.lastVisualChange, '24h'), '7d')), 11)",
+              "textEditor": false
+            },
+            {
+              "hide": true,
+              "refId": "I",
+              "target": "timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.fullyLoaded, '24h'), '7d')",
+              "textEditor": false
+            },
+            {
+              "refId": "J",
+              "target": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.fullyLoaded, '24h'), #I), #I), 11)",
+              "targetFull": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.fullyLoaded, '24h'), timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.fullyLoaded, '24h'), '7d')), timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.fullyLoaded, '24h'), '7d')), 11)",
+              "textEditor": false
+            },
+            {
+              "hide": true,
+              "refId": "K",
+              "target": "timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.visualComplete85, '24h'), '7d')",
+              "textEditor": false
+            },
+            {
+              "refId": "L",
+              "target": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.visualComplete85, '24h'), #K), #K), 11)",
+              "targetFull": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.visualComplete85, '24h'), timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.visualComplete85, '24h'), '7d')), timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.visualComplete85, '24h'), '7d')), 11)",
+              "textEditor": false
+            }
+          ],
+          "title": "Relative to last week",
+          "transform": "timeseries_aggregations",
+          "type": "table"
+        },
+        {
+          "columns": [
+            {
+              "text": "Current",
+              "value": "current"
+            }
+          ],
+          "description": "Last 24 hours averages of median metrics compared to one month back in time. \n\nRed color background means a regression, green a positive change and yellow that the change is within the margin of error. You probably need to finetune the thresholds depending of how flakey your site is. Default threshold is +-10%.",
+          "editable": true,
+          "error": false,
+          "filterNull": false,
+          "fontSize": "100%",
+          "id": 39,
+          "links": [],
+          "pageSize": null,
+          "scroll": true,
+          "showHeader": true,
+          "sort": {
+            "col": 0,
+            "desc": false
+          },
+          "span": 3,
+          "styles": [
+            {
+              "dateFormat": "YYYY-MM-DD HH:mm:ss",
+              "pattern": "Time",
+              "type": "date"
+            },
+            {
+              "colorMode": "cell",
+              "colors": [
+                "rgba(50, 172, 45, 0.97)",
+                "rgba(237, 129, 40, 0.89)",
+                "rgba(245, 54, 54, 0.9)"
+              ],
+              "decimals": 0,
+              "pattern": "/.*/",
+              "thresholds": [
+                "-10",
+                "10"
+              ],
+              "type": "number",
+              "unit": "percent"
+            }
+          ],
+          "targets": [
+            {
+              "hide": true,
+              "refId": "A",
+              "target": "timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.SpeedIndex, '24h'), '30d')",
+              "textEditor": false
+            },
+            {
+              "hide": true,
+              "refId": "B",
+              "target": "timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.render, '24h'), '30d')",
+              "textEditor": false
+            },
+            {
+              "refId": "C",
+              "target": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.SpeedIndex, '24h'), #A), #A), 11)",
+              "targetFull": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.SpeedIndex, '24h'), timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.SpeedIndex, '24h'), '30d')), timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.SpeedIndex, '24h'), '30d')), 11)",
+              "textEditor": false
+            },
+            {
+              "refId": "D",
+              "target": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.render, '24h'), #B), #B), 11)",
+              "targetFull": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.render, '24h'), timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.render, '24h'), '30d')), timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.render, '24h'), '30d')), 11)",
+              "textEditor": false
+            },
+            {
+              "hide": true,
+              "refId": "E",
+              "target": "timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.lastVisualChange, '24h'), '30d')",
+              "textEditor": false
+            },
+            {
+              "refId": "F",
+              "target": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.lastVisualChange, '24h'), #E), #E), 11)",
+              "targetFull": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.lastVisualChange, '24h'), timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.lastVisualChange, '24h'), '30d')), timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.lastVisualChange, '24h'), '30d')), 11)",
+              "textEditor": false
+            },
+            {
+              "hide": true,
+              "refId": "I",
+              "target": "timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.fullyLoaded, '24h'), '30d')",
+              "textEditor": false
+            },
+            {
+              "refId": "J",
+              "target": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.fullyLoaded, '24h'), #I), #I), 11)",
+              "targetFull": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.fullyLoaded, '24h'), timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.fullyLoaded, '24h'), '30d')), timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.fullyLoaded, '24h'), '30d')), 11)",
+              "textEditor": false
+            },
+            {
+              "hide": true,
+              "refId": "K",
+              "target": "timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.visualComplete85, '24h'), '30d')",
+              "textEditor": false
+            },
+            {
+              "refId": "L",
+              "target": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.visualComplete85, '24h'), #K), #K), 11)",
+              "targetFull": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.visualComplete85, '24h'), timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.visualComplete85, '24h'), '30d')), timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.visualComplete85, '24h'), '30d')), 11)",
+              "textEditor": false
+            }
+          ],
+          "title": "Relative to last month",
+          "transform": "timeseries_aggregations",
+          "type": "table"
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": true,
+      "title": "Visual metrics trends",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": false,
+      "height": "138",
+      "panels": [
         {
           "cacheTimeout": null,
           "colorBackground": false,
@@ -617,7 +1035,7 @@
               "to": "null"
             }
           ],
-          "span": 2,
+          "span": 3,
           "sparkline": {
             "fillColor": "rgba(31, 118, 189, 0.18)",
             "full": true,
@@ -694,7 +1112,7 @@
               "to": "null"
             }
           ],
-          "span": 2,
+          "span": 3,
           "sparkline": {
             "fillColor": "rgba(31, 118, 189, 0.18)",
             "full": true,
@@ -705,7 +1123,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "$base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.pagexray.requests"
+              "target": "$base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.requestsFull"
             }
           ],
           "thresholds": "",
@@ -770,7 +1188,7 @@
               "to": "null"
             }
           ],
-          "span": 2,
+          "span": 3,
           "sparkline": {
             "fillColor": "rgba(31, 118, 189, 0.18)",
             "full": true,
@@ -796,13 +1214,89 @@
             }
           ],
           "valueName": "current"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": false,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "datasource": "${DS_GRAPHITE}",
+          "description": "domContentLoadedEventEnd : most of the time, your javascript waits for this event so you could consider that everything JS-dependant is available at this stage",
+          "editable": true,
+          "error": false,
+          "format": "ms",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "id": 54,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "span": 3,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": true,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": true
+          },
+          "tableColumn": "",
+          "targets": [
+            {
+              "refId": "A",
+              "target": "$base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.domContentLoadedEventEnd"
+            }
+          ],
+          "thresholds": "",
+          "title": "Document ready",
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "current"
         }
       ],
       "repeat": null,
       "repeatIteration": null,
       "repeatRowId": null,
-      "showTitle": false,
-      "title": "Dashboard Row",
+      "showTitle": true,
+      "title": "Technical metrics",
       "titleSize": "h6"
     },
     {
@@ -812,322 +1306,17 @@
         {
           "cacheTimeout": null,
           "colorBackground": false,
-          "colorValue": false,
+          "colorValue": true,
           "colors": [
             "rgba(245, 54, 54, 0.9)",
             "rgba(237, 129, 40, 0.89)",
             "rgba(50, 172, 45, 0.97)"
           ],
           "datasource": "${DS_GRAPHITE}",
-          "description": "The performance score (0-100) calculated by the [Coach](https://www.sitespeed.io/documentation/coach/) using performance best practices.",
+          "description": "",
           "editable": true,
           "error": false,
-          "format": "none",
-          "gauge": {
-            "maxValue": 100,
-            "minValue": 0,
-            "show": false,
-            "thresholdLabels": false,
-            "thresholdMarkers": true
-          },
-          "id": 11,
-          "interval": null,
-          "links": [],
-          "mappingType": 1,
-          "mappingTypes": [
-            {
-              "name": "value to text",
-              "value": 1
-            },
-            {
-              "name": "range to text",
-              "value": 2
-            }
-          ],
-          "maxDataPoints": 100,
-          "nullPointMode": "connected",
-          "nullText": null,
-          "postfix": "",
-          "postfixFontSize": "50%",
-          "prefix": "",
-          "prefixFontSize": "50%",
-          "rangeMaps": [
-            {
-              "from": "null",
-              "text": "N/A",
-              "to": "null"
-            }
-          ],
-          "span": 2,
-          "sparkline": {
-            "fillColor": "rgba(31, 118, 189, 0.18)",
-            "full": true,
-            "lineColor": "rgb(31, 120, 193)",
-            "show": true
-          },
-          "tableColumn": "",
-          "targets": [
-            {
-              "refId": "A",
-              "target": "$base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.coach.advice.performance.score"
-            }
-          ],
-          "thresholds": "",
-          "title": "Performance score",
-          "type": "singlestat",
-          "valueFontSize": "80%",
-          "valueMaps": [
-            {
-              "op": "=",
-              "text": "N/A",
-              "value": "null"
-            }
-          ],
-          "valueName": "current"
-        },
-        {
-          "cacheTimeout": null,
-          "colorBackground": false,
-          "colorValue": false,
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "datasource": "${DS_GRAPHITE}",
-          "description": "The coach score (0-100) calculated by the [Coach](https://www.sitespeed.io/documentation/coach/) using best practices.",
-          "editable": true,
-          "error": false,
-          "format": "none",
-          "gauge": {
-            "maxValue": 100,
-            "minValue": 0,
-            "show": false,
-            "thresholdLabels": false,
-            "thresholdMarkers": true
-          },
-          "id": 62,
-          "interval": null,
-          "links": [],
-          "mappingType": 1,
-          "mappingTypes": [
-            {
-              "name": "value to text",
-              "value": 1
-            },
-            {
-              "name": "range to text",
-              "value": 2
-            }
-          ],
-          "maxDataPoints": 100,
-          "nullPointMode": "connected",
-          "nullText": null,
-          "postfix": "",
-          "postfixFontSize": "50%",
-          "prefix": "",
-          "prefixFontSize": "50%",
-          "rangeMaps": [
-            {
-              "from": "null",
-              "text": "N/A",
-              "to": "null"
-            }
-          ],
-          "span": 2,
-          "sparkline": {
-            "fillColor": "rgba(31, 118, 189, 0.18)",
-            "full": true,
-            "lineColor": "rgb(31, 120, 193)",
-            "show": true
-          },
-          "tableColumn": "",
-          "targets": [
-            {
-              "refId": "A",
-              "target": "$base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.coach.advice.score"
-            }
-          ],
-          "thresholds": "",
-          "title": "Coach score",
-          "type": "singlestat",
-          "valueFontSize": "80%",
-          "valueMaps": [
-            {
-              "op": "=",
-              "text": "N/A",
-              "value": "null"
-            }
-          ],
-          "valueName": "current"
-        },
-        {
-          "cacheTimeout": null,
-          "colorBackground": false,
-          "colorValue": false,
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "datasource": "${DS_GRAPHITE}",
-          "description": "The total number of iframes used on the page.",
-          "editable": true,
-          "error": false,
-          "format": "none",
-          "gauge": {
-            "maxValue": 100,
-            "minValue": 0,
-            "show": false,
-            "thresholdLabels": false,
-            "thresholdMarkers": true
-          },
-          "id": 23,
-          "interval": null,
-          "links": [],
-          "mappingType": 1,
-          "mappingTypes": [
-            {
-              "name": "value to text",
-              "value": 1
-            },
-            {
-              "name": "range to text",
-              "value": 2
-            }
-          ],
-          "maxDataPoints": 100,
-          "nullPointMode": "connected",
-          "nullText": null,
-          "postfix": "",
-          "postfixFontSize": "50%",
-          "prefix": "",
-          "prefixFontSize": "50%",
-          "rangeMaps": [
-            {
-              "from": "null",
-              "text": "N/A",
-              "to": "null"
-            }
-          ],
-          "span": 2,
-          "sparkline": {
-            "fillColor": "rgba(31, 118, 189, 0.18)",
-            "full": true,
-            "lineColor": "rgb(31, 120, 193)",
-            "show": true
-          },
-          "tableColumn": "",
-          "targets": [
-            {
-              "refId": "A",
-              "target": "$base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.iframes",
-              "textEditor": false
-            }
-          ],
-          "thresholds": "",
-          "title": "Iframes",
-          "type": "singlestat",
-          "valueFontSize": "80%",
-          "valueMaps": [
-            {
-              "op": "=",
-              "text": "N/A",
-              "value": "null"
-            }
-          ],
-          "valueName": "current"
-        },
-        {
-          "cacheTimeout": null,
-          "colorBackground": false,
-          "colorValue": false,
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "datasource": "${DS_GRAPHITE}",
-          "description": "The total number of DOM elements on the page.",
-          "editable": true,
-          "error": false,
-          "format": "none",
-          "gauge": {
-            "maxValue": 100,
-            "minValue": 0,
-            "show": false,
-            "thresholdLabels": false,
-            "thresholdMarkers": true
-          },
-          "id": 21,
-          "interval": null,
-          "links": [],
-          "mappingType": 1,
-          "mappingTypes": [
-            {
-              "name": "value to text",
-              "value": 1
-            },
-            {
-              "name": "range to text",
-              "value": 2
-            }
-          ],
-          "maxDataPoints": 100,
-          "nullPointMode": "connected",
-          "nullText": null,
-          "postfix": "",
-          "postfixFontSize": "50%",
-          "prefix": "",
-          "prefixFontSize": "50%",
-          "rangeMaps": [
-            {
-              "from": "null",
-              "text": "N/A",
-              "to": "null"
-            }
-          ],
-          "span": 2,
-          "sparkline": {
-            "fillColor": "rgba(31, 118, 189, 0.18)",
-            "full": true,
-            "lineColor": "rgb(31, 120, 193)",
-            "show": true
-          },
-          "tableColumn": "",
-          "targets": [
-            {
-              "refId": "A",
-              "target": "$base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.domElements"
-            }
-          ],
-          "thresholds": "",
-          "title": "DOM Elements",
-          "type": "singlestat",
-          "valueFontSize": "80%",
-          "valueMaps": [
-            {
-              "op": "=",
-              "text": "N/A",
-              "value": "null"
-            }
-          ],
-          "valueName": "current"
-        },
-        {
-          "cacheTimeout": null,
-          "colorBackground": false,
-          "colorValue": false,
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "datasource": "${DS_GRAPHITE}",
-          "description": "The average DOM depth of the page.",
-          "editable": true,
-          "error": false,
-          "format": "none",
+          "format": "percent",
           "gauge": {
             "maxValue": 100,
             "minValue": 0,
@@ -1163,170 +1352,6 @@
               "to": "null"
             }
           ],
-          "span": 2,
-          "sparkline": {
-            "fillColor": "rgba(31, 118, 189, 0.18)",
-            "full": true,
-            "lineColor": "rgb(31, 120, 193)",
-            "show": true
-          },
-          "tableColumn": "",
-          "targets": [
-            {
-              "refId": "A",
-              "target": "$base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.domDepth.avg"
-            }
-          ],
-          "thresholds": "",
-          "title": "DOM depth (avg)",
-          "type": "singlestat",
-          "valueFontSize": "80%",
-          "valueMaps": [
-            {
-              "op": "=",
-              "text": "N/A",
-              "value": "null"
-            }
-          ],
-          "valueName": "current"
-        },
-        {
-          "cacheTimeout": null,
-          "colorBackground": false,
-          "colorValue": false,
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "datasource": "${DS_GRAPHITE}",
-          "description": "The max depth of DOM elements on the page.",
-          "editable": true,
-          "error": false,
-          "format": "none",
-          "gauge": {
-            "maxValue": 100,
-            "minValue": 0,
-            "show": false,
-            "thresholdLabels": false,
-            "thresholdMarkers": true
-          },
-          "id": 20,
-          "interval": null,
-          "links": [],
-          "mappingType": 1,
-          "mappingTypes": [
-            {
-              "name": "value to text",
-              "value": 1
-            },
-            {
-              "name": "range to text",
-              "value": 2
-            }
-          ],
-          "maxDataPoints": 100,
-          "nullPointMode": "connected",
-          "nullText": null,
-          "postfix": "",
-          "postfixFontSize": "50%",
-          "prefix": "",
-          "prefixFontSize": "50%",
-          "rangeMaps": [
-            {
-              "from": "null",
-              "text": "N/A",
-              "to": "null"
-            }
-          ],
-          "span": 2,
-          "sparkline": {
-            "fillColor": "rgba(31, 118, 189, 0.18)",
-            "full": true,
-            "lineColor": "rgb(31, 120, 193)",
-            "show": true
-          },
-          "tableColumn": "",
-          "targets": [
-            {
-              "refId": "A",
-              "target": "$base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.domDepth.max"
-            }
-          ],
-          "thresholds": "",
-          "title": "DOM depth (max)",
-          "type": "singlestat",
-          "valueFontSize": "80%",
-          "valueMaps": [
-            {
-              "op": "=",
-              "text": "N/A",
-              "value": "null"
-            }
-          ],
-          "valueName": "current"
-        }
-      ],
-      "repeat": null,
-      "repeatIteration": null,
-      "repeatRowId": null,
-      "showTitle": false,
-      "title": "Dashboard Row",
-      "titleSize": "h6"
-    },
-    {
-      "collapse": false,
-      "height": 120,
-      "panels": [
-        {
-          "cacheTimeout": null,
-          "colorBackground": false,
-          "colorValue": false,
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "datasource": "${DS_GRAPHITE}",
-          "description": "In the DOM",
-          "editable": true,
-          "error": false,
-          "format": "none",
-          "gauge": {
-            "maxValue": 100,
-            "minValue": 0,
-            "show": false,
-            "thresholdLabels": false,
-            "thresholdMarkers": true
-          },
-          "id": 55,
-          "interval": null,
-          "links": [],
-          "mappingType": 1,
-          "mappingTypes": [
-            {
-              "name": "value to text",
-              "value": 1
-            },
-            {
-              "name": "range to text",
-              "value": 2
-            }
-          ],
-          "maxDataPoints": 100,
-          "nullPointMode": "connected",
-          "nullText": null,
-          "postfix": "",
-          "postfixFontSize": "50%",
-          "prefix": "",
-          "prefixFontSize": "50%",
-          "rangeMaps": [
-            {
-              "from": "null",
-              "text": "N/A",
-              "to": "null"
-            }
-          ],
           "span": 3,
           "sparkline": {
             "fillColor": "rgba(31, 118, 189, 0.18)",
@@ -1338,11 +1363,11 @@
           "targets": [
             {
               "refId": "A",
-              "target": "$base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.scripts"
+              "target": "$base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.score_cache"
             }
           ],
-          "thresholds": "",
-          "title": "Script tags",
+          "thresholds": "70,90",
+          "title": "Cache Static Content Score",
           "type": "singlestat",
           "valueFontSize": "80%",
           "valueMaps": [
@@ -1357,82 +1382,7 @@
         {
           "cacheTimeout": null,
           "colorBackground": false,
-          "colorValue": false,
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "datasource": "${DS_GRAPHITE}",
-          "editable": true,
-          "error": false,
-          "format": "none",
-          "gauge": {
-            "maxValue": 100,
-            "minValue": 0,
-            "show": false,
-            "thresholdLabels": false,
-            "thresholdMarkers": true
-          },
-          "id": 15,
-          "interval": null,
-          "links": [],
-          "mappingType": 1,
-          "mappingTypes": [
-            {
-              "name": "value to text",
-              "value": 1
-            },
-            {
-              "name": "range to text",
-              "value": 2
-            }
-          ],
-          "maxDataPoints": 100,
-          "nullPointMode": "connected",
-          "nullText": null,
-          "postfix": "",
-          "postfixFontSize": "50%",
-          "prefix": "",
-          "prefixFontSize": "50%",
-          "rangeMaps": [
-            {
-              "from": "null",
-              "text": "N/A",
-              "to": "null"
-            }
-          ],
-          "span": 3,
-          "sparkline": {
-            "fillColor": "rgba(31, 118, 189, 0.18)",
-            "full": true,
-            "lineColor": "rgb(31, 120, 193)",
-            "show": true
-          },
-          "tableColumn": "",
-          "targets": [
-            {
-              "refId": "A",
-              "target": "$base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.pagexray.totalDomains"
-            }
-          ],
-          "thresholds": "",
-          "title": "Domains",
-          "type": "singlestat",
-          "valueFontSize": "80%",
-          "valueMaps": [
-            {
-              "op": "=",
-              "text": "N/A",
-              "value": "null"
-            }
-          ],
-          "valueName": "current"
-        },
-        {
-          "cacheTimeout": null,
-          "colorBackground": false,
-          "colorValue": false,
+          "colorValue": true,
           "colors": [
             "rgba(245, 54, 54, 0.9)",
             "rgba(237, 129, 40, 0.89)",
@@ -1442,7 +1392,7 @@
           "description": "",
           "editable": true,
           "error": false,
-          "format": "none",
+          "format": "percent",
           "gauge": {
             "maxValue": 100,
             "minValue": 0,
@@ -1450,7 +1400,7 @@
             "thresholdLabels": false,
             "thresholdMarkers": true
           },
-          "id": 57,
+          "id": 59,
           "interval": null,
           "links": [],
           "mappingType": 1,
@@ -1489,11 +1439,14 @@
           "targets": [
             {
               "refId": "A",
-              "target": "$base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.pagexray.cookieStats"
+              "target": "$base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.score_minify"
             }
           ],
-          "thresholds": "",
-          "title": "Cookies",
+          "thresholds": "70,90",
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "CSS/JS minification score",
+          "transparent": false,
           "type": "singlestat",
           "valueFontSize": "80%",
           "valueMaps": [
@@ -1508,17 +1461,17 @@
         {
           "cacheTimeout": null,
           "colorBackground": false,
-          "colorValue": false,
+          "colorValue": true,
           "colors": [
             "rgba(245, 54, 54, 0.9)",
             "rgba(237, 129, 40, 0.89)",
             "rgba(50, 172, 45, 0.97)"
           ],
           "datasource": "${DS_GRAPHITE}",
-          "description": "",
+          "description": "This score might not be meaningful if your server is on HTTP/2",
           "editable": true,
           "error": false,
-          "format": "decbytes",
+          "format": "percent",
           "gauge": {
             "maxValue": 100,
             "minValue": 0,
@@ -1526,7 +1479,7 @@
             "thresholdLabels": false,
             "thresholdMarkers": true
           },
-          "id": 56,
+          "id": 21,
           "interval": null,
           "links": [],
           "mappingType": 1,
@@ -1565,11 +1518,87 @@
           "targets": [
             {
               "refId": "A",
-              "target": "$base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.localStorageSize"
+              "target": "$base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.score_combine"
             }
           ],
-          "thresholds": "",
-          "title": "Local storage size",
+          "thresholds": "70,90",
+          "title": "CSS/JS concatenation",
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "current"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": true,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "datasource": "${DS_GRAPHITE}",
+          "description": "",
+          "editable": true,
+          "error": false,
+          "format": "percent",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "id": 61,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "span": 3,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": true,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": true
+          },
+          "tableColumn": "",
+          "targets": [
+            {
+              "refId": "A",
+              "target": "$base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.score_gzip"
+            }
+          ],
+          "thresholds": "80,95",
+          "title": "Compression score",
           "type": "singlestat",
           "valueFontSize": "80%",
           "valueMaps": [
@@ -1585,431 +1614,13 @@
       "repeat": null,
       "repeatIteration": null,
       "repeatRowId": null,
-      "showTitle": false,
-      "title": "Dashboard Row",
+      "showTitle": true,
+      "title": "WebPageTest scores",
       "titleSize": "h6"
     },
     {
       "collapse": false,
-      "height": 276,
-      "panels": [
-        {
-          "columns": [
-            {
-              "text": "Current",
-              "value": "current"
-            }
-          ],
-          "description": "The moving average of the last 24 hours median values for the visual metrics.",
-          "editable": true,
-          "error": false,
-          "filterNull": false,
-          "fontSize": "100%",
-          "id": 36,
-          "links": [],
-          "pageSize": null,
-          "scroll": false,
-          "showHeader": true,
-          "sort": {
-            "col": 0,
-            "desc": false
-          },
-          "span": 3,
-          "styles": [
-            {
-              "dateFormat": "YYYY-MM-DD HH:mm:ss",
-              "pattern": "Time",
-              "type": "date"
-            },
-            {
-              "colorMode": null,
-              "colors": [
-                "rgba(245, 54, 54, 0.9)",
-                "rgba(237, 129, 40, 0.89)",
-                "rgba(50, 172, 45, 0.97)"
-              ],
-              "decimals": 0,
-              "pattern": "/.*/",
-              "thresholds": [],
-              "type": "number",
-              "unit": "none"
-            }
-          ],
-          "targets": [
-            {
-              "refId": "A",
-              "target": "aliasByNode(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.SpeedIndex, '24h'), 11)",
-              "textEditor": false
-            },
-            {
-              "refId": "B",
-              "target": "aliasByNode(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.render, '24h'), 11)",
-              "textEditor": false
-            },
-            {
-              "refId": "D",
-              "target": "aliasByNode(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.lastVisualChange, '24h'), 11)",
-              "textEditor": false
-            },
-            {
-              "refId": "E",
-              "target": "aliasByNode(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.fullyLoaded, '24h'), 11)",
-              "textEditor": false
-            },
-            {
-              "refId": "F",
-              "target": "aliasByNode(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.visualComplete85, '24h'), 11)",
-              "textEditor": false
-            }
-          ],
-          "title": "Avg last 24 hours",
-          "transform": "timeseries_aggregations",
-          "type": "table"
-        },
-        {
-          "columns": [
-            {
-              "text": "Current",
-              "value": "current"
-            }
-          ],
-          "description": "Last 24 hours averages of median metrics compared to one day back in time. \n\nRed color background means a regression, green a positive change and yellow that the change is within the margin of error. You probably need to finetune the thresholds depending of how flakey your site is. Default threshold is +-10%.",
-          "editable": true,
-          "error": false,
-          "filterNull": false,
-          "fontSize": "100%",
-          "id": 37,
-          "links": [],
-          "pageSize": null,
-          "scroll": true,
-          "showHeader": true,
-          "sort": {
-            "col": 0,
-            "desc": false
-          },
-          "span": 3,
-          "styles": [
-            {
-              "dateFormat": "YYYY-MM-DD HH:mm:ss",
-              "pattern": "Time",
-              "type": "date"
-            },
-            {
-              "colorMode": "cell",
-              "colors": [
-                "rgba(50, 172, 45, 0.97)",
-                "rgba(237, 129, 40, 0.89)",
-                "rgba(245, 54, 54, 0.9)"
-              ],
-              "decimals": 0,
-              "pattern": "/.*/",
-              "thresholds": [
-                "-10",
-                "10"
-              ],
-              "type": "number",
-              "unit": "percent"
-            }
-          ],
-          "targets": [
-            {
-              "hide": true,
-              "refId": "A",
-              "target": "timeShift(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.SpeedIndex, '24h'), '1d')",
-              "textEditor": false
-            },
-            {
-              "hide": true,
-              "refId": "B",
-              "target": "timeShift(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.render, '24h'), '1d')",
-              "textEditor": false
-            },
-            {
-              "refId": "C",
-              "target": "aliasByNode(asPercent(diffSeries(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.SpeedIndex, '24h'), #A), #A), 11)",
-              "targetFull": "aliasByNode(asPercent(diffSeries(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.SpeedIndex, '24h'), timeShift(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.SpeedIndex, '24h'), '1d')), timeShift(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.SpeedIndex, '24h'), '1d')), 11)",
-              "textEditor": false
-            },
-            {
-              "refId": "D",
-              "target": "aliasByNode(asPercent(diffSeries(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.render, '24h'), #B), #B), 11)",
-              "targetFull": "aliasByNode(asPercent(diffSeries(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.render, '24h'), timeShift(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.render, '24h'), '1d')), timeShift(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.render, '24h'), '1d')), 11)",
-              "textEditor": false
-            },
-            {
-              "hide": true,
-              "refId": "G",
-              "target": "timeShift(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.lastVisualChange, '24h'), '1d')",
-              "textEditor": false
-            },
-            {
-              "refId": "H",
-              "target": "aliasByNode(asPercent(diffSeries(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.lastVisualChange, '24h'), #G), #G), 11)",
-              "targetFull": "aliasByNode(asPercent(diffSeries(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.lastVisualChange, '24h'), timeShift(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.lastVisualChange, '24h'), '1d')), timeShift(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.lastVisualChange, '24h'), '1d')), 11)",
-              "textEditor": false
-            },
-            {
-              "hide": true,
-              "refId": "I",
-              "target": "timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.fullyLoaded, '24h'), '1d')",
-              "textEditor": false
-            },
-            {
-              "refId": "J",
-              "target": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.fullyLoaded, '24h'), #I), #I), 11)",
-              "targetFull": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.fullyLoaded, '24h'), timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.fullyLoaded, '24h'), '1d')), timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.fullyLoaded, '24h'), '1d')), 11)",
-              "textEditor": false
-            },
-            {
-              "hide": true,
-              "refId": "K",
-              "target": "timeShift(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.visualComplete85, '24h'), '1d')",
-              "textEditor": false
-            },
-            {
-              "refId": "L",
-              "target": "aliasByNode(asPercent(diffSeries(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.visualComplete85, '24h'), #K), #K), 11)",
-              "targetFull": "aliasByNode(asPercent(diffSeries(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.visualComplete85, '24h'), timeShift(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.visualComplete85, '24h'), '1d')), timeShift(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.visualComplete85, '24h'), '1d')), 11)",
-              "textEditor": false
-            }
-          ],
-          "title": "Relative to yesterday",
-          "transform": "timeseries_aggregations",
-          "type": "table"
-        },
-        {
-          "columns": [
-            {
-              "text": "Current",
-              "value": "current"
-            }
-          ],
-          "description": "Last 24 hours averages of median metrics compared to seven days back in time. \n\nRed color background means a regression, green a positive change and yellow that the change is within the margin of error. You probably need to finetune the thresholds depending of how flakey your site is. Default threshold is +-10%.",
-          "editable": true,
-          "error": false,
-          "filterNull": false,
-          "fontSize": "100%",
-          "id": 38,
-          "links": [],
-          "pageSize": null,
-          "scroll": true,
-          "showHeader": true,
-          "sort": {
-            "col": 0,
-            "desc": false
-          },
-          "span": 3,
-          "styles": [
-            {
-              "dateFormat": "YYYY-MM-DD HH:mm:ss",
-              "pattern": "Time",
-              "type": "date"
-            },
-            {
-              "colorMode": "cell",
-              "colors": [
-                "rgba(50, 172, 45, 0.97)",
-                "rgba(237, 129, 40, 0.89)",
-                "rgba(245, 54, 54, 0.9)"
-              ],
-              "decimals": 0,
-              "pattern": "/.*/",
-              "thresholds": [
-                "-10",
-                "10"
-              ],
-              "type": "number",
-              "unit": "percent"
-            }
-          ],
-          "targets": [
-            {
-              "hide": true,
-              "refId": "A",
-              "target": "timeShift(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.SpeedIndex, '24h'), '7d')",
-              "textEditor": false
-            },
-            {
-              "hide": true,
-              "refId": "B",
-              "target": "timeShift(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.render, '24h'), '7d')",
-              "textEditor": false
-            },
-            {
-              "refId": "C",
-              "target": "aliasByNode(asPercent(diffSeries(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.SpeedIndex, '24h'), #A), #A), 11)",
-              "targetFull": "aliasByNode(asPercent(diffSeries(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.SpeedIndex, '24h'), timeShift(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.SpeedIndex, '24h'), '7d')), timeShift(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.SpeedIndex, '24h'), '7d')), 11)",
-              "textEditor": false
-            },
-            {
-              "refId": "D",
-              "target": "aliasByNode(asPercent(diffSeries(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.render, '24h'), #B), #B), 11)",
-              "targetFull": "aliasByNode(asPercent(diffSeries(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.render, '24h'), timeShift(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.render, '24h'), '7d')), timeShift(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.render, '24h'), '7d')), 11)",
-              "textEditor": false
-            },
-            {
-              "hide": true,
-              "refId": "E",
-              "target": "timeShift(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.lastVisualChange, '24h'), '7d')",
-              "textEditor": false
-            },
-            {
-              "refId": "F",
-              "target": "aliasByNode(asPercent(diffSeries(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.lastVisualChange, '24h'), #E), #E), 11)",
-              "targetFull": "aliasByNode(asPercent(diffSeries(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.lastVisualChange, '24h'), timeShift(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.lastVisualChange, '24h'), '7d')), timeShift(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.lastVisualChange, '24h'), '7d')), 11)",
-              "textEditor": false
-            },
-            {
-              "hide": true,
-              "refId": "I",
-              "target": "timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.fullyLoaded, '24h'), '7d')",
-              "textEditor": false
-            },
-            {
-              "refId": "J",
-              "target": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.fullyLoaded, '24h'), #I), #I), 11)",
-              "targetFull": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.fullyLoaded, '24h'), timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.fullyLoaded, '24h'), '7d')), timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.fullyLoaded, '24h'), '7d')), 11)",
-              "textEditor": false
-            },
-            {
-              "hide": true,
-              "refId": "K",
-              "target": "timeShift(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.visualComplete85, '24h'), '7d')",
-              "textEditor": false
-            },
-            {
-              "refId": "L",
-              "target": "aliasByNode(asPercent(diffSeries(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.visualComplete85, '24h'), #K), #K), 11)",
-              "targetFull": "aliasByNode(asPercent(diffSeries(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.visualComplete85, '24h'), timeShift(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.visualComplete85, '24h'), '7d')), timeShift(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.visualComplete85, '24h'), '7d')), 11)",
-              "textEditor": false
-            }
-          ],
-          "title": "Relative to last week",
-          "transform": "timeseries_aggregations",
-          "type": "table"
-        },
-        {
-          "columns": [
-            {
-              "text": "Current",
-              "value": "current"
-            }
-          ],
-          "description": "Last 24 hours averages of median metrics compared to one month back in time. \n\nRed color background means a regression, green a positive change and yellow that the change is within the margin of error. You probably need to finetune the thresholds depending of how flakey your site is. Default threshold is +-10%.",
-          "editable": true,
-          "error": false,
-          "filterNull": false,
-          "fontSize": "100%",
-          "id": 39,
-          "links": [],
-          "pageSize": null,
-          "scroll": true,
-          "showHeader": true,
-          "sort": {
-            "col": 0,
-            "desc": false
-          },
-          "span": 3,
-          "styles": [
-            {
-              "dateFormat": "YYYY-MM-DD HH:mm:ss",
-              "pattern": "Time",
-              "type": "date"
-            },
-            {
-              "colorMode": "cell",
-              "colors": [
-                "rgba(50, 172, 45, 0.97)",
-                "rgba(237, 129, 40, 0.89)",
-                "rgba(245, 54, 54, 0.9)"
-              ],
-              "decimals": 0,
-              "pattern": "/.*/",
-              "thresholds": [
-                "-10",
-                "10"
-              ],
-              "type": "number",
-              "unit": "percent"
-            }
-          ],
-          "targets": [
-            {
-              "hide": true,
-              "refId": "A",
-              "target": "timeShift(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.SpeedIndex, '24h'), '30d')",
-              "textEditor": false
-            },
-            {
-              "hide": true,
-              "refId": "B",
-              "target": "timeShift(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.render, '24h'), '30d')",
-              "textEditor": false
-            },
-            {
-              "refId": "C",
-              "target": "aliasByNode(asPercent(diffSeries(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.SpeedIndex, '24h'), #A), #A), 11)",
-              "targetFull": "aliasByNode(asPercent(diffSeries(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.SpeedIndex, '24h'), timeShift(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.SpeedIndex, '24h'), '30d')), timeShift(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.SpeedIndex, '24h'), '30d')), 11)",
-              "textEditor": false
-            },
-            {
-              "refId": "D",
-              "target": "aliasByNode(asPercent(diffSeries(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.render, '24h'), #B), #B), 11)",
-              "targetFull": "aliasByNode(asPercent(diffSeries(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.render, '24h'), timeShift(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.render, '24h'), '30d')), timeShift(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.render, '24h'), '30d')), 11)",
-              "textEditor": false
-            },
-            {
-              "hide": true,
-              "refId": "E",
-              "target": "timeShift(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.lastVisualChange, '24h'), '30d')",
-              "textEditor": false
-            },
-            {
-              "refId": "F",
-              "target": "aliasByNode(asPercent(diffSeries(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.lastVisualChange, '24h'), #E), #E), 11)",
-              "targetFull": "aliasByNode(asPercent(diffSeries(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.lastVisualChange, '24h'), timeShift(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.lastVisualChange, '24h'), '30d')), timeShift(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.lastVisualChange, '24h'), '30d')), 11)",
-              "textEditor": false
-            },
-            {
-              "hide": true,
-              "refId": "I",
-              "target": "timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.fullyLoaded, '24h'), '30d')",
-              "textEditor": false
-            },
-            {
-              "refId": "J",
-              "target": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.fullyLoaded, '24h'), #I), #I), 11)",
-              "targetFull": "aliasByNode(asPercent(diffSeries(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.fullyLoaded, '24h'), timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.fullyLoaded, '24h'), '30d')), timeShift(movingAverage($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.fullyLoaded, '24h'), '30d')), 11)",
-              "textEditor": false
-            },
-            {
-              "hide": true,
-              "refId": "K",
-              "target": "timeShift(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.visualComplete85, '24h'), '30d')",
-              "textEditor": false
-            },
-            {
-              "refId": "L",
-              "target": "aliasByNode(asPercent(diffSeries(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.visualComplete85, '24h'), #K), #K), 11)",
-              "targetFull": "aliasByNode(asPercent(diffSeries(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.visualComplete85, '24h'), timeShift(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.visualComplete85, '24h'), '30d')), timeShift(movingAverage(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.visualComplete85, '24h'), '30d')), 11)",
-              "textEditor": false
-            }
-          ],
-          "title": "Relative to last month",
-          "transform": "timeseries_aggregations",
-          "type": "table"
-        }
-      ],
-      "repeat": null,
-      "repeatIteration": null,
-      "repeatRowId": null,
-      "showTitle": false,
-      "title": "Dashboard Row",
-      "titleSize": "h6"
-    },
-    {
-      "collapse": false,
-      "height": 477,
+      "height": 455,
       "panels": [
         {
           "aliasColors": {},
@@ -2017,7 +1628,7 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": "${DS_GRAPHITE}",
-          "description": "The history of First Visual Change (when something for the first time is painted within the current viewport) showing the current median value, the average median per day and the average median per week.",
+          "description": "The history of Start Render (when something for the first time is painted within the current viewport) showing the current median value, the average median per day and the average median per week.",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -2058,24 +1669,24 @@
           "targets": [
             {
               "refId": "A",
-              "target": "aliasByNode(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.render, 11)",
+              "target": "aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.render, 11)",
               "textEditor": false
             },
             {
               "refId": "B",
-              "target": "alias(summarize(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.render, '24h', 'avg', true), 'Daily')",
+              "target": "alias(summarize($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.render, '24h', 'avg', true), 'Daily')",
               "textEditor": false
             },
             {
               "refId": "C",
-              "target": "alias(summarize(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.render, '7d', 'avg', true), 'Weekly ')",
+              "target": "alias(summarize($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.render, '7d', 'avg', true), 'Weekly ')",
               "textEditor": false
             }
           ],
           "thresholds": [],
           "timeFrom": "30d",
           "timeShift": null,
-          "title": "History First Visual Change",
+          "title": "History Start Render",
           "tooltip": {
             "msResolution": false,
             "shared": true,
@@ -2156,17 +1767,17 @@
           "targets": [
             {
               "refId": "A",
-              "target": "aliasByNode(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.SpeedIndex, 11)",
+              "target": "aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.SpeedIndex, 11)",
               "textEditor": false
             },
             {
               "refId": "B",
-              "target": "alias(summarize(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.SpeedIndex, '24h', 'avg', true), 'Daily')",
+              "target": "alias(summarize($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.SpeedIndex, '24h', 'avg', true), 'Daily')",
               "textEditor": false
             },
             {
               "refId": "C",
-              "target": "alias(summarize(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.SpeedIndex, '7d', 'avg', true), 'Weekly')",
+              "target": "alias(summarize($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.SpeedIndex, '7d', 'avg', true), 'Weekly')",
               "textEditor": false
             }
           ],
@@ -2206,19 +1817,7 @@
               "show": true
             }
           ]
-        }
-      ],
-      "repeat": null,
-      "repeatIteration": null,
-      "repeatRowId": null,
-      "showTitle": false,
-      "title": "VisualMetrics",
-      "titleSize": "h6"
-    },
-    {
-      "collapse": false,
-      "height": 455,
-      "panels": [
+        },
         {
           "aliasColors": {},
           "bars": false,
@@ -2266,17 +1865,17 @@
           "targets": [
             {
               "refId": "A",
-              "target": "aliasByNode(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.visualComplete85, 11)",
+              "target": "aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.visualComplete85, 11)",
               "textEditor": false
             },
             {
               "refId": "B",
-              "target": "alias(summarize(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.visualComplete85, '24h', 'avg', true), 'Daily')",
+              "target": "alias(summarize($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.visualComplete85, '24h', 'avg', true), 'Daily')",
               "textEditor": false
             },
             {
               "refId": "C",
-              "target": "alias(summarize(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.visualComplete85, '7d', 'avg', true), 'Weekly')",
+              "target": "alias(summarize($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.visualComplete85, '7d', 'avg', true), 'Weekly')",
               "textEditor": false
             }
           ],
@@ -2316,7 +1915,19 @@
               "show": true
             }
           ]
-        },
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": true,
+      "title": "History of visual metrics",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": false,
+      "height": 455,
+      "panels": [
         {
           "aliasColors": {},
           "bars": false,
@@ -2358,7 +1969,7 @@
             }
           ],
           "spaceLength": 10,
-          "span": 4,
+          "span": 6,
           "stack": false,
           "steppedLine": false,
           "targets": [
@@ -2421,7 +2032,7 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": "${DS_GRAPHITE}",
-          "description": "The history of Last Visual Change (when something for the last time is changing within the current viewport) showing the current median value, the average median per day and the average median per week.",
+          "description": "The history of DOMContentLoadedEnd",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -2456,30 +2067,30 @@
             }
           ],
           "spaceLength": 10,
-          "span": 4,
+          "span": 6,
           "stack": false,
           "steppedLine": false,
           "targets": [
             {
               "refId": "A",
-              "target": "aliasByNode(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.lastVisualChange, 11)",
+              "target": "aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.domContentLoadedEventEnd, 11)",
               "textEditor": false
             },
             {
               "refId": "B",
-              "target": "alias(summarize(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.lastVisualChange, '24h', 'avg', true), 'Daily')",
+              "target": "alias(summarize($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.domContentLoadedEventEnd, '24h', 'avg', true), 'Daily')",
               "textEditor": false
             },
             {
               "refId": "C",
-              "target": "alias(summarize(sitespeed_io.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.lastVisualChange, '7d', 'avg', true), 'Weekly')",
+              "target": "alias(summarize($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.domContentLoadedEventEnd, '7d', 'avg', true), 'Weekly')",
               "textEditor": false
             }
           ],
           "thresholds": [],
           "timeFrom": "30d",
           "timeShift": null,
-          "title": "History Last Visual Change",
+          "title": "History Document ready",
           "tooltip": {
             "msResolution": false,
             "shared": true,
@@ -2517,8 +2128,8 @@
       "repeat": null,
       "repeatIteration": null,
       "repeatRowId": null,
-      "showTitle": false,
-      "title": "Dashboard Row",
+      "showTitle": true,
+      "title": "History of technical metrics",
       "titleSize": "h6"
     },
     {
