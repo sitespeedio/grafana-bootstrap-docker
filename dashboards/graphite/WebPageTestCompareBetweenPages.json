@@ -28,7 +28,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "4.5.1"
+      "version": "4.6.0-beta3"
     },
     {
       "type": "panel",
@@ -41,18 +41,6 @@
       "id": "graphite",
       "name": "Graphite",
       "version": "1.0.0"
-    },
-    {
-      "type": "panel",
-      "id": "singlestat",
-      "name": "Singlestat",
-      "version": ""
-    },
-    {
-      "type": "panel",
-      "id": "table",
-      "name": "Table",
-      "version": ""
     }
   ],
   "annotations": {
@@ -72,7 +60,7 @@
   "gnetId": null,
   "graphTooltip": 2,
   "hideControls": false,
-  "id": 2,
+  "id": 7,
   "links": [],
   "rows": [
     {
@@ -113,7 +101,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "aliasByNode($base.$path.pageSummary.*.*.webpagetest.*.*.data.median.firstView.SpeedIndex, 3, 4)",
+              "target": "aliasByNode($base.$path.pageSummary.*.*.webpagetest.$location.$connectivity.$run.SpeedIndex, 3, 4)",
               "textEditor": true
             }
           ],
@@ -199,7 +187,8 @@
           "targets": [
             {
               "refId": "A",
-              "target": "aliasByNode($base.$path.pageSummary.*.*.webpagetest.*.*.data.median.firstView.requestsFull, 3, 4)"
+              "target": "aliasByNode($base.$path.pageSummary.*.*.webpagetest.$location.$connectivity.$run.requestsFull, 3, 4)",
+              "textEditor": true
             }
           ],
           "thresholds": [],
@@ -272,7 +261,8 @@
           "targets": [
             {
               "refId": "A",
-              "target": "aliasByNode($base.$path.pageSummary.*.*.webpagetest.*.*.data.median.firstView.bytesIn, 3, 4)"
+              "target": "aliasByNode($base.$path.pageSummary.*.*.webpagetest.$location.$connectivity.$run.bytesIn, 3, 4)",
+              "textEditor": true
             }
           ],
           "thresholds": [],
@@ -327,6 +317,7 @@
     "list": [
       {
         "current": {
+          "tags": [],
           "text": "${VAR_BASE}",
           "value": "${VAR_BASE}"
         },
@@ -335,6 +326,7 @@
         "name": "base",
         "options": [
           {
+            "selected": true,
             "text": "${VAR_BASE}",
             "value": "${VAR_BASE}"
           }
@@ -343,20 +335,124 @@
         "type": "constant"
       },
       {
+        "allValue": null,
         "current": {
           "text": "${VAR_PATH}",
           "value": "${VAR_PATH}"
         },
+        "datasource": "${DS_GRAPHITE}",
         "hide": 2,
-        "label": "${VAR_PATH}",
+        "includeAll": false,
+        "label": "",
+        "multi": false,
         "name": "path",
+        "options": [],
+        "query": "$base.*",
+        "refresh": 1,
+        "regex": "",
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "allValue": null,
+        "current": {},
+        "datasource": "${DS_GRAPHITE}",
+        "hide": 2,
+        "includeAll": false,
+        "label": null,
+        "multi": false,
+        "name": "domain",
+        "options": [],
+        "query": "$base.$path.pageSummary.*",
+        "refresh": 1,
+        "regex": "",
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "allValue": null,
+        "current": {},
+        "datasource": "${DS_GRAPHITE}",
+        "hide": 2,
+        "includeAll": false,
+        "label": null,
+        "multi": false,
+        "name": "page",
+        "options": [],
+        "query": "$base.$path.pageSummary.$domain.*",
+        "refresh": 1,
+        "regex": "",
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "allValue": null,
+        "current": {},
+        "datasource": "${DS_GRAPHITE}",
+        "hide": 0,
+        "includeAll": false,
+        "label": null,
+        "multi": false,
+        "name": "location",
+        "options": [],
+        "query": "$base.$path.pageSummary.$domain.$page.webpagetest.*",
+        "refresh": 1,
+        "regex": "",
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "allValue": null,
+        "current": {},
+        "datasource": "${DS_GRAPHITE}",
+        "hide": 0,
+        "includeAll": false,
+        "label": "",
+        "multi": false,
+        "name": "connectivity",
+        "options": [],
+        "query": "$base.$path.pageSummary.$domain.$page.webpagetest.$location.*",
+        "refresh": 1,
+        "regex": "",
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "current": {
+          "text": "data.median.firstView",
+          "value": "data.median.firstView"
+        },
+        "hide": 2,
+        "label": null,
+        "name": "run",
         "options": [
           {
-            "text": "${VAR_PATH}",
-            "value": "${VAR_PATH}"
+            "selected": true,
+            "text": "data.median.firstView",
+            "value": "data.median.firstView"
           }
         ],
-        "query": "${VAR_PATH}",
+        "query": "data.median.firstView",
         "type": "constant"
       }
     ]
@@ -391,6 +487,6 @@
     ]
   },
   "timezone": "",
-  "title": "WebPageTest Compare performance",
-  "version": 11
+  "title": "Compare performance",
+  "version": 36
 }
