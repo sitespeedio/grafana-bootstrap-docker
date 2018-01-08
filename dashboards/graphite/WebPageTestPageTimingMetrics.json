@@ -167,7 +167,7 @@
           "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
-          "title": "$page — métriques visuelles",
+          "title": "$page — visual metrics",
           "tooltip": {
             "shared": false,
             "sort": 0,
@@ -278,7 +278,7 @@
         "thresholds": [],
         "timeFrom": null,
         "timeShift": null,
-        "title": "$page — mesures CPU",
+        "title": "$page — CPU consumed",
         "tooltip": {
           "shared": false,
           "sort": 0,
@@ -517,6 +517,6 @@
     ]
   },
   "timezone": "browser",
-  "title": "WebPageTest Page timing metrics",
+  "title": "Page timing metrics",
   "version": 13
 }
