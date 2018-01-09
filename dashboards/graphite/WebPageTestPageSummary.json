@@ -2155,6 +2155,7 @@
           "error": false,
           "fill": 10,
           "grid": {},
+          "height": 450,
           "id": 2,
           "legend": {
             "alignAsTable": true,
@@ -2243,6 +2244,7 @@
           "error": false,
           "fill": 10,
           "grid": {},
+          "height": 450,
           "id": 3,
           "legend": {
             "alignAsTable": true,
@@ -2410,7 +2412,7 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": "${DS_GRAPHITE}",
-          "description": "Backend : responseEnd (quand le HTML a fini d'être rapatrié)\n\n Frontend : loadEventStart",
+          "description": "Backend : responseEnd (when HTML is here)\n\n Frontend : loadEventStart \n\n Available only if run with Chrome and --timeline option",
           "editable": true,
           "error": false,
           "fill": 5,
@@ -2615,8 +2617,8 @@
           "legend": {
             "avg": false,
             "current": true,
-            "max": true,
-            "min": true,
+            "max": false,
+            "min": false,
             "show": true,
             "total": false,
             "values": true
@@ -2647,17 +2649,18 @@
           "targets": [
             {
               "refId": "A",
-              "target": "aliasByMetric($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.chromeUserTiming.loadEventStart.max)",
+              "target": "alias($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.chromeUserTiming.loadEventStart, 'Now')",
               "textEditor": false
             },
             {
               "refId": "B",
-              "target": "aliasByMetric($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.chromeUserTiming.loadEventStart.median)",
+              "target": "alias(timeShift($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.chromeUserTiming.loadEventStart, '7d'), 'One week back')",
               "textEditor": false
             },
             {
+              "hide": false,
               "refId": "C",
-              "target": "aliasByMetric($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.chromeUserTiming.loadEventStart.min)",
+              "target": "alias(summarize(#A, '1day', 'avg', true), \"daily avg\")",
               "textEditor": false
             }
           ],
@@ -2747,7 +2750,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.userTimes.*, 10)"
+              "target": "aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.userTimes.*, 12)"
             }
           ],
           "thresholds": [],
@@ -2805,7 +2808,7 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": "${DS_GRAPHITE}",
-          "description": "[Navigation Timing API](https://www.w3.org/TR/navigation-timing/) metrics.",
+          "description": "If WPT has been run with chrome and the --timeline option, show the [Navigation Timing API](https://www.w3.org/TR/navigation-timing/) metrics in chromeUserTiming.",
           "editable": true,
           "error": false,
           "fill": 0,

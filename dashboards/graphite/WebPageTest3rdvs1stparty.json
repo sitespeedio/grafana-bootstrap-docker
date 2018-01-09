@@ -161,7 +161,7 @@
           "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
-          "title": "Requêtes : domaine principal VS domaines tiers",
+          "title": "Weight : main domain VS 3rd party domain",
           "tooltip": {
             "msResolution": false,
             "shared": true,
@@ -327,6 +327,7 @@
           "error": false,
           "fill": 4,
           "grid": {},
+          "height": 550,
           "id": 11,
           "legend": {
             "alignAsTable": true,
@@ -431,6 +432,7 @@
           "error": false,
           "fill": 4,
           "grid": {},
+          "height": 550,
           "id": 12,
           "legend": {
             "alignAsTable": true,
