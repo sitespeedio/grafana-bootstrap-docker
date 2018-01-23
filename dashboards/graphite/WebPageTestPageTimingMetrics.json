@@ -9,13 +9,6 @@
       "pluginName": "Graphite"
     },
     {
-      "name": "VAR_PATH",
-      "type": "constant",
-      "label": "default",
-      "value": "default",
-      "description": ""
-    },
-    {
       "name": "VAR_BASE",
       "type": "constant",
       "label": "sitespeed_io",
@@ -28,7 +21,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "4.6.0-beta3"
+      "version": "4.6.3"
     },
     {
       "type": "panel",
@@ -56,7 +49,7 @@
       },
       {
         "datasource": "${DS_GRAPHITE}",
-        "enable": true,
+        "enable": false,
         "iconColor": "rgb(96, 255, 103)",
         "limit": 100,
         "name": "runs",
@@ -122,52 +115,43 @@
           "steppedLine": false,
           "targets": [
             {
-              "hide": false,
               "refId": "B",
-              "target": "aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.render, 11)",
-              "textEditor": false
+              "target": "aliasByNode($base.$path.pageSummary.$group.$page.webpagetest.$location.$connectivity.data.median.$view.TTFB, 11)",
+              "textEditor": true
             },
             {
-              "hide": false,
               "refId": "A",
-              "target": "aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.SpeedIndex, 11)",
-              "textEditor": false
+              "target": "aliasByNode($base.$path.pageSummary.$group.$page.webpagetest.$location.$connectivity.data.median.$view.render, 11)"
             },
             {
-              "hide": false,
               "refId": "C",
-              "target": "aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.TTFB, 11)",
-              "textEditor": false
+              "target": "aliasByNode($base.$path.pageSummary.$group.$page.webpagetest.$location.$connectivity.data.median.$view.SpeedIndex, 11)"
             },
             {
-              "hide": false,
               "refId": "D",
-              "target": "aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.visualComplete85, 11)",
-              "textEditor": false
+              "target": "aliasByNode($base.$path.pageSummary.$group.$page.webpagetest.$location.$connectivity.data.median.$view.visualComplete85, 11)"
             },
             {
-              "hide": false,
               "refId": "E",
-              "target": "aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.visualComplete95, 11)",
-              "textEditor": false
+              "target": "aliasByNode($base.$path.pageSummary.$group.$page.webpagetest.$location.$connectivity.data.median.$view.visualComplete90, 11)"
             },
             {
-              "hide": false,
               "refId": "F",
-              "target": "aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.visualComplete99, 11)",
-              "textEditor": false
+              "target": "aliasByNode($base.$path.pageSummary.$group.$page.webpagetest.$location.$connectivity.data.median.$view.visualComplete95, 11)"
             },
             {
-              "hide": false,
               "refId": "G",
-              "target": "aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.lastVisualChange, 11)",
-              "textEditor": false
+              "target": "aliasByNode($base.$path.pageSummary.$group.$page.webpagetest.$location.$connectivity.data.median.$view.visualComplete99, 11)"
+            },
+            {
+              "refId": "H",
+              "target": "aliasByNode($base.$path.pageSummary.$group.$page.webpagetest.$location.$connectivity.data.median.$view.lastVisualChange, 11)"
             }
           ],
           "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
-          "title": "$page — visual metrics",
+          "title": "$group$page — visual metrics",
           "tooltip": {
             "shared": false,
             "sort": 0,
@@ -184,7 +168,7 @@
           },
           "yaxes": [
             {
-              "format": "dtdurationms",
+              "format": "none",
               "label": null,
               "logBase": 1,
               "max": null,
@@ -210,123 +194,118 @@
       "titleSize": "h6"
     },
     {
-    "collapse": false,
-    "height": "593",
-    "panels": [
-      {
-        "aliasColors": {},
-        "bars": false,
-        "dashLength": 10,
-        "dashes": false,
-        "datasource": "graphite",
-        "fill": 0,
-        "id": 2,
-        "legend": {
-          "alignAsTable": true,
-          "avg": true,
-          "current": true,
-          "max": true,
-          "min": true,
-          "show": true,
-          "total": false,
-          "values": true
-        },
-        "lines": true,
-        "linewidth": 1,
-        "links": [
-          {
-            "dashUri": "db/page-summary",
-            "dashboard": "Page summary",
-            "includeVars": true,
-            "keepTime": true,
-            "targetBlank": true,
-            "title": "Page summary $page",
-            "type": "dashboard"
-          }
-        ],
-        "minSpan": 6,
-        "nullPointMode": "connected",
-        "percentage": false,
-        "pointradius": 5,
-        "points": false,
-        "renderer": "flot",
-        "seriesOverrides": [],
-        "spaceLength": 10,
-        "span": 12,
-        "stack": false,
-        "steppedLine": false,
-        "targets": [
-          {
-            "hide": false,
-            "refId": "B",
-            "target": "aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.docCPUms, 11)",
-            "textEditor": false
+      "collapse": false,
+      "height": "593",
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_GRAPHITE}",
+          "fill": 2,
+          "id": 2,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": true,
+            "show": true,
+            "total": false,
+            "values": true
           },
-          {
-            "hide": false,
-            "refId": "A",
-            "target": "aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.fullyLoadedCPUms, 11)",
-            "textEditor": true
+          "lines": true,
+          "linewidth": 2,
+          "links": [
+            {
+              "dashUri": "db/page-summary",
+              "dashboard": "Page summary",
+              "includeVars": true,
+              "keepTime": true,
+              "targetBlank": true,
+              "title": "Page summary $page",
+              "type": "dashboard"
+            }
+          ],
+          "minSpan": 6,
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [
+            {
+              "alias": "fullyLoadedCPUms",
+              "stack": false
+            }
+          ],
+          "spaceLength": 10,
+          "span": 12,
+          "stack": true,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "aliasByNode($base.$path.pageSummary.$group.$page.webpagetest.$location.$connectivity.data.median.$view.fullyLoadedCPUms, 11)",
+              "textEditor": false
+            },
+            {
+              "refId": "B",
+              "target": "aliasByNode($base.$path.pageSummary.$group.$page.webpagetest.$location.$connectivity.data.median.$view.cpuTimes.*, 12)",
+              "textEditor": false
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "$group$page — CPU consumed",
+          "tooltip": {
+            "shared": false,
+            "sort": 0,
+            "value_type": "individual"
           },
-          {
-            "hide": false,
-            "refId": "C",
-            "target": "aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$location.$connectivity.$run.cpuTimes.*, 12)",
-            "textEditor": true
-          }
-        ],
-        "thresholds": [],
-        "timeFrom": null,
-        "timeShift": null,
-        "title": "$page — CPU consumed",
-        "tooltip": {
-          "shared": false,
-          "sort": 0,
-          "value_type": "individual"
-        },
-        "transparent": false,
-        "type": "graph",
-        "xaxis": {
-          "buckets": null,
-          "mode": "time",
-          "name": null,
-          "show": true,
-          "values": []
-        },
-        "yaxes": [
-          {
-            "format": "dtdurationms",
-            "label": null,
-            "logBase": 1,
-            "max": null,
-            "min": null,
-            "show": true
+          "transparent": false,
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
           },
-          {
-            "format": "short",
-            "label": null,
-            "logBase": 1,
-            "max": null,
-            "min": null,
-            "show": true
-          }
-        ]
-      }
-    ],
-    "repeat": null,
-    "repeatIteration": null,
-    "repeatRowId": null,
-    "showTitle": false,
-    "title": "Dashboard Row",
-    "titleSize": "h6"
-  }
-
+          "yaxes": [
+            {
+              "format": "ms",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "Dashboard Row",
+      "titleSize": "h6"
+    }
   ],
   "schemaVersion": 14,
   "style": "dark",
   "tags": [
-    "page",
-    "site"
+    "page"
   ],
   "templating": {
     "list": [
@@ -375,7 +354,7 @@
         "includeAll": false,
         "label": null,
         "multi": false,
-        "name": "domain",
+        "name": "group",
         "options": [],
         "query": "$base.$path.pageSummary.*",
         "refresh": 1,
@@ -388,24 +367,6 @@
         "useTags": false
       },
       {
-        "current": {
-          "text": "data.median.firstView",
-          "value": "data.median.firstView"
-        },
-        "hide": 2,
-        "label": null,
-        "name": "run",
-        "options": [
-          {
-            "selected": true,
-            "text": "data.median.firstView",
-            "value": "data.median.firstView"
-          }
-        ],
-        "query": "data.median.firstView",
-        "type": "constant"
-      },
-      {
         "allValue": null,
         "current": {},
         "datasource": "${DS_GRAPHITE}",
@@ -415,7 +376,7 @@
         "multi": false,
         "name": "page",
         "options": [],
-        "query": "$base.$path.pageSummary.$domain.*",
+        "query": "$base.$path.pageSummary.$group.*",
         "refresh": 1,
         "regex": "",
         "sort": 1,
@@ -455,7 +416,7 @@
         "multi": false,
         "name": "location",
         "options": [],
-        "query": "$base.$path.pageSummary.$domain.$page.$browser.*",
+        "query": "$base.$path.pageSummary.$group.$page.webpagetest.*",
         "refresh": 1,
         "regex": "",
         "sort": 0,
@@ -475,13 +436,33 @@
         "multi": false,
         "name": "connectivity",
         "options": [],
-        "query": "$base.$path.pageSummary.$domain.$page.$browser.$location.*",
+        "query": "$base.$path.pageSummary.$group.$page.webpagetest.$location.*",
         "refresh": 1,
         "regex": "",
         "sort": 0,
         "tagValuesQuery": null,
         "tags": [],
         "tagsQuery": null,
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "allValue": null,
+        "current": {},
+        "datasource": "${DS_GRAPHITE}",
+        "hide": 0,
+        "includeAll": false,
+        "label": null,
+        "multi": false,
+        "name": "view",
+        "options": [],
+        "query": "$base.$path.pageSummary.$group.$page.webpagetest.$location.$connectivity.data.median.*",
+        "refresh": 1,
+        "regex": "",
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
         "type": "query",
         "useTags": false
       }
@@ -518,5 +499,5 @@
   },
   "timezone": "browser",
   "title": "Webpagetest Page timing metrics",
-  "version": 13
+  "version": 5
 }

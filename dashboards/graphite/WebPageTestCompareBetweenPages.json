@@ -9,13 +9,6 @@
       "pluginName": "Graphite"
     },
     {
-      "name": "VAR_PATH",
-      "type": "constant",
-      "label": "default",
-      "value": "default",
-      "description": ""
-    },
-    {
       "name": "VAR_BASE",
       "type": "constant",
       "label": "sitespeed_io",
@@ -28,7 +21,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "4.6.0-beta3"
+      "version": "4.6.3"
     },
     {
       "type": "panel",
@@ -60,7 +53,7 @@
   "gnetId": null,
   "graphTooltip": 2,
   "hideControls": false,
-  "id": 7,
+  "id": null,
   "links": [],
   "rows": [
     {
@@ -95,14 +88,88 @@
           "renderer": "flot",
           "seriesOverrides": [],
           "spaceLength": 10,
-          "span": 12,
+          "span": 6,
           "stack": false,
           "steppedLine": false,
           "targets": [
             {
               "refId": "A",
-              "target": "aliasByNode($base.$path.pageSummary.*.*.webpagetest.$location.$connectivity.$run.SpeedIndex, 3, 4)",
-              "textEditor": true
+              "target": "aliasByNode($base.$path.pageSummary.*.*.webpagetest.$location.$connectivity.data.median.$view.render, 3, 4)",
+              "textEditor": false
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Render",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "ms",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_GRAPHITE}",
+          "fill": 0,
+          "id": 5,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": true,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "aliasByNode($base.$path.pageSummary.*.*.webpagetest.$location.$connectivity.data.median.$view.SpeedIndex, 3, 4)",
+              "textEditor": false
             }
           ],
           "thresholds": [],
@@ -187,8 +254,8 @@
           "targets": [
             {
               "refId": "A",
-              "target": "aliasByNode($base.$path.pageSummary.*.*.webpagetest.$location.$connectivity.$run.requestsFull, 3, 4)",
-              "textEditor": true
+              "target": "aliasByNode($base.$path.pageSummary.*.*.webpagetest.$location.$connectivity.data.median.$view.requestsFull, 3, 4)",
+              "textEditor": false
             }
           ],
           "thresholds": [],
@@ -261,8 +328,8 @@
           "targets": [
             {
               "refId": "A",
-              "target": "aliasByNode($base.$path.pageSummary.*.*.webpagetest.$location.$connectivity.$run.bytesIn, 3, 4)",
-              "textEditor": true
+              "target": "aliasByNode($base.$path.pageSummary.*.*.webpagetest.$location.$connectivity.data.median.$view.bytesIn, 3, 4)",
+              "textEditor": false
             }
           ],
           "thresholds": [],
@@ -317,18 +384,16 @@
     "list": [
       {
         "current": {
-          "tags": [],
-          "text": "${VAR_BASE}",
-          "value": "${VAR_BASE}"
+          "value": "${VAR_BASE}",
+          "text": "${VAR_BASE}"
         },
         "hide": 2,
-        "label": "${VAR_BASE}",
+        "label": "sitespeed_io",
         "name": "base",
         "options": [
           {
-            "selected": true,
-            "text": "${VAR_BASE}",
-            "value": "${VAR_BASE}"
+            "value": "${VAR_BASE}",
+            "text": "${VAR_BASE}"
           }
         ],
         "query": "${VAR_BASE}",
@@ -336,10 +401,7 @@
       },
       {
         "allValue": null,
-        "current": {
-          "text": "${VAR_PATH}",
-          "value": "${VAR_PATH}"
-        },
+        "current": {},
         "datasource": "${DS_GRAPHITE}",
         "hide": 2,
         "includeAll": false,
@@ -361,53 +423,13 @@
         "allValue": null,
         "current": {},
         "datasource": "${DS_GRAPHITE}",
-        "hide": 2,
-        "includeAll": false,
-        "label": null,
-        "multi": false,
-        "name": "domain",
-        "options": [],
-        "query": "$base.$path.pageSummary.*",
-        "refresh": 1,
-        "regex": "",
-        "sort": 0,
-        "tagValuesQuery": "",
-        "tags": [],
-        "tagsQuery": "",
-        "type": "query",
-        "useTags": false
-      },
-      {
-        "allValue": null,
-        "current": {},
-        "datasource": "${DS_GRAPHITE}",
-        "hide": 2,
-        "includeAll": false,
-        "label": null,
-        "multi": false,
-        "name": "page",
-        "options": [],
-        "query": "$base.$path.pageSummary.$domain.*",
-        "refresh": 1,
-        "regex": "",
-        "sort": 0,
-        "tagValuesQuery": "",
-        "tags": [],
-        "tagsQuery": "",
-        "type": "query",
-        "useTags": false
-      },
-      {
-        "allValue": null,
-        "current": {},
-        "datasource": "${DS_GRAPHITE}",
         "hide": 0,
         "includeAll": false,
         "label": null,
         "multi": false,
         "name": "location",
         "options": [],
-        "query": "$base.$path.pageSummary.$domain.$page.webpagetest.*",
+        "query": "$base.$path.pageSummary.*.*.webpagetest.*",
         "refresh": 1,
         "regex": "",
         "sort": 0,
@@ -423,11 +445,11 @@
         "datasource": "${DS_GRAPHITE}",
         "hide": 0,
         "includeAll": false,
-        "label": "",
+        "label": null,
         "multi": false,
         "name": "connectivity",
         "options": [],
-        "query": "$base.$path.pageSummary.$domain.$page.webpagetest.$location.*",
+        "query": "$base.$path.pageSummary.*.*.webpagetest.$location.*",
         "refresh": 1,
         "regex": "",
         "sort": 0,
@@ -438,22 +460,24 @@
         "useTags": false
       },
       {
-        "current": {
-          "text": "data.median.firstView",
-          "value": "data.median.firstView"
-        },
-        "hide": 2,
+        "allValue": null,
+        "current": {},
+        "datasource": "${DS_GRAPHITE}",
+        "hide": 0,
+        "includeAll": false,
         "label": null,
-        "name": "run",
-        "options": [
-          {
-            "selected": true,
-            "text": "data.median.firstView",
-            "value": "data.median.firstView"
-          }
-        ],
-        "query": "data.median.firstView",
-        "type": "constant"
+        "multi": false,
+        "name": "view",
+        "options": [],
+        "query": "$base.$path.pageSummary.*.*.webpagetest.$location.$connectivity.data.median.*",
+        "refresh": 1,
+        "regex": "",
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
       }
     ]
   },
@@ -488,5 +512,5 @@
   },
   "timezone": "",
   "title": "WebPagetest Compare performance",
-  "version": 36
+  "version": 3
 }

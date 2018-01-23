@@ -21,7 +21,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "4.6.2"
+      "version": "4.6.3"
     },
     {
       "type": "panel",
@@ -145,7 +145,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "$base.$path.summary.$group.webpagetest.$location.$connectivity.timing.$view.TTFB.max"
+              "target": "$base.$path.summary.$group.webpagetest.$location.$connectivity.timing.$view.TTFB.$function"
             }
           ],
           "thresholds": "",
@@ -220,7 +220,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "$base.$path.summary.$group.webpagetest.$location.$connectivity.timing.$view.render.max"
+              "target": "$base.$path.summary.$group.webpagetest.$location.$connectivity.timing.$view.render.$function"
             }
           ],
           "thresholds": "",
@@ -295,7 +295,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "$base.$path.summary.$group.webpagetest.$location.$connectivity.timing.$view.SpeedIndex.max"
+              "target": "$base.$path.summary.$group.webpagetest.$location.$connectivity.timing.$view.SpeedIndex.$function"
             }
           ],
           "thresholds": "",
@@ -370,7 +370,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "$base.$path.summary.$group.webpagetest.$location.$connectivity.timing.$view.fullyLoaded.max"
+              "target": "$base.$path.summary.$group.webpagetest.$location.$connectivity.timing.$view.fullyLoaded.$function"
             }
           ],
           "thresholds": "",
@@ -445,7 +445,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "sumSeries($base.$path.summary.$group.webpagetest.$location.$connectivity.asset.$view.breakdown.*.requests.max)"
+              "target": "sumSeries($base.$path.summary.$group.webpagetest.$location.$connectivity.asset.$view.breakdown.*.requests.$function)"
             }
           ],
           "thresholds": "",
@@ -520,7 +520,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "sumSeries($base.$path.summary.$group.webpagetest.$location.$connectivity.asset.$view.breakdown.*.bytes.max)"
+              "target": "sumSeries($base.$path.summary.$group.webpagetest.$location.$connectivity.asset.$view.breakdown.*.bytes.$function)"
             }
           ],
           "thresholds": "",
@@ -541,13 +541,113 @@
       "repeatIteration": null,
       "repeatRowId": null,
       "showTitle": true,
-      "title": "Max",
+      "title": "$function",
       "titleSize": "h6"
     },
     {
       "collapse": false,
       "height": "250px",
       "panels": [
+        {
+          "aliasColors": {
+            "max": "#890F02",
+            "median": "#C15C17",
+            "min": "#890F02"
+          },
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_GRAPHITE}",
+          "editable": true,
+          "error": false,
+          "fill": 0,
+          "grid": {},
+          "id": 12,
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": true,
+            "max": true,
+            "min": true,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [
+            {
+              "alias": "max",
+              "fillBelowTo": "min",
+              "lines": false
+            },
+            {
+              "alias": "min",
+              "lines": false
+            }
+          ],
+          "spaceLength": 10,
+          "span": 4,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "B",
+              "target": "aliasByNode($base.$path.summary.$group.webpagetest.$location.$connectivity.timing.$view.render.max, 10)"
+            },
+            {
+              "hide": false,
+              "refId": "A",
+              "target": "aliasByNode($base.$path.summary.$group.webpagetest.$location.$connectivity.timing.$view.render.median, 10)"
+            },
+            {
+              "refId": "C",
+              "target": "aliasByNode($base.$path.summary.$group.webpagetest.$location.$connectivity.timing.$view.render.min, 10)"
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": "7d",
+          "timeShift": null,
+          "title": "Start render",
+          "tooltip": {
+            "msResolution": false,
+            "shared": true,
+            "sort": 0,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "none",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        },
         {
           "aliasColors": {
             "max": "#890F02",
@@ -593,7 +693,7 @@
             }
           ],
           "spaceLength": 10,
-          "span": 12,
+          "span": 4,
           "stack": false,
           "steppedLine": false,
           "targets": [
@@ -662,7 +762,7 @@
           "error": false,
           "fill": 0,
           "grid": {},
-          "id": 12,
+          "id": 13,
           "legend": {
             "alignAsTable": true,
             "avg": false,
@@ -693,28 +793,28 @@
             }
           ],
           "spaceLength": 10,
-          "span": 12,
+          "span": 4,
           "stack": false,
           "steppedLine": false,
           "targets": [
             {
               "refId": "B",
-              "target": "aliasByNode($base.$path.summary.$group.webpagetest.$location.$connectivity.timing.$view.render.max, 10)"
+              "target": "aliasByNode($base.$path.summary.$group.webpagetest.$location.$connectivity.timing.$view.fullyLoaded.max, 10)"
             },
             {
               "hide": false,
               "refId": "A",
-              "target": "aliasByNode($base.$path.summary.$group.webpagetest.$location.$connectivity.timing.$view.render.median, 10)"
+              "target": "aliasByNode($base.$path.summary.$group.webpagetest.$location.$connectivity.timing.$view.fullyLoaded.median, 10)"
             },
             {
               "refId": "C",
-              "target": "aliasByNode($base.$path.summary.$group.webpagetest.$location.$connectivity.timing.$view.render.min, 10)"
+              "target": "aliasByNode($base.$path.summary.$group.webpagetest.$location.$connectivity.timing.$view.fullyLoaded.min, 10)"
             }
           ],
           "thresholds": [],
           "timeFrom": "7d",
           "timeShift": null,
-          "title": "Start render",
+          "title": "Fully Loaded",
           "tooltip": {
             "msResolution": false,
             "shared": true,
@@ -755,13 +855,224 @@
       "showTitle": false,
       "title": "New row",
       "titleSize": "h6"
+    },
+    {
+      "collapse": false,
+      "height": 250,
+      "panels": [
+        {
+          "aliasColors": {
+            "max": "#890F02",
+            "median": "#C15C17",
+            "min": "#890F02"
+          },
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_GRAPHITE}",
+          "editable": true,
+          "error": false,
+          "fill": 0,
+          "grid": {},
+          "id": 14,
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": true,
+            "max": true,
+            "min": true,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [
+            {
+              "alias": "max",
+              "fillBelowTo": "min",
+              "lines": false
+            },
+            {
+              "alias": "min",
+              "lines": false
+            }
+          ],
+          "spaceLength": 10,
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "B",
+              "target": "aliasByNode(sumSeries($base.$path.summary.$group.webpagetest.$location.$connectivity.asset.$view.breakdown.*.bytes.max), 12)"
+            },
+            {
+              "hide": false,
+              "refId": "A",
+              "target": "aliasByNode(sumSeries($base.$path.summary.$group.webpagetest.$location.$connectivity.asset.$view.breakdown.*.bytes.median), 12)"
+            },
+            {
+              "refId": "C",
+              "target": "aliasByNode(sumSeries($base.$path.summary.$group.webpagetest.$location.$connectivity.asset.$view.breakdown.*.bytes.min), 12)"
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": "7d",
+          "timeShift": null,
+          "title": "Size",
+          "tooltip": {
+            "msResolution": false,
+            "shared": true,
+            "sort": 0,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "decbytes",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        },
+        {
+          "aliasColors": {
+            "max": "#890F02",
+            "median": "#C15C17",
+            "min": "#890F02"
+          },
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_GRAPHITE}",
+          "editable": true,
+          "error": false,
+          "fill": 0,
+          "grid": {},
+          "id": 15,
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": true,
+            "max": true,
+            "min": true,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [
+            {
+              "alias": "max",
+              "fillBelowTo": "min",
+              "lines": false
+            },
+            {
+              "alias": "min",
+              "lines": false
+            }
+          ],
+          "spaceLength": 10,
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "B",
+              "target": "aliasByNode(sumSeries($base.$path.summary.$group.webpagetest.$location.$connectivity.asset.$view.breakdown.*.requests.max), 12)"
+            },
+            {
+              "hide": false,
+              "refId": "A",
+              "target": "aliasByNode(sumSeries($base.$path.summary.$group.webpagetest.$location.$connectivity.asset.$view.breakdown.*.requests.median), 12)"
+            },
+            {
+              "refId": "C",
+              "target": "aliasByNode(sumSeries($base.$path.summary.$group.webpagetest.$location.$connectivity.asset.$view.breakdown.*.requests.min), 12)"
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": "7d",
+          "timeShift": null,
+          "title": "Requests",
+          "tooltip": {
+            "msResolution": false,
+            "shared": true,
+            "sort": 0,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "none",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "Dashboard Row",
+      "titleSize": "h6"
     }
   ],
   "schemaVersion": 14,
   "style": "dark",
   "tags": [
-    "site",
-    "templated"
+    "site"
   ],
   "templating": {
     "list": [
@@ -881,6 +1192,43 @@
         "tagsQuery": null,
         "type": "query",
         "useTags": false
+      },
+      {
+        "allValue": null,
+        "current": {
+          "tags": [],
+          "text": "median",
+          "value": "median"
+        },
+        "hide": 0,
+        "includeAll": false,
+        "label": null,
+        "multi": false,
+        "name": "function",
+        "options": [
+          {
+            "selected": false,
+            "text": "min",
+            "value": "min"
+          },
+          {
+            "selected": false,
+            "text": "mean",
+            "value": "mean"
+          },
+          {
+            "selected": true,
+            "text": "median",
+            "value": "median"
+          },
+          {
+            "selected": false,
+            "text": "max",
+            "value": "max"
+          }
+        ],
+        "query": "min, mean, median, max",
+        "type": "custom"
       }
     ]
   },
@@ -915,5 +1263,5 @@
   },
   "timezone": "browser",
   "title": "WebPageTest site summary",
-  "version": 2
+  "version": 8
 }
