@@ -21,19 +21,19 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "4.6.2"
+      "version": "5.0.4"
     },
     {
       "type": "panel",
       "id": "graph",
       "name": "Graph",
-      "version": ""
+      "version": "5.0.0"
     },
     {
       "type": "datasource",
       "id": "graphite",
       "name": "Graphite",
-      "version": "1.0.0"
+      "version": "5.0.0"
     }
   ],
   "annotations": {
@@ -52,1014 +52,1047 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 1,
-  "hideControls": true,
   "id": null,
+  "iteration": 1527759371596,
   "links": [],
-  "refresh": "15m",
-  "rows": [
+  "panels": [
     {
-      "collapse": false,
-      "height": "250px",
-      "panels": [
+      "aliasColors": {
+        "firstParty": "#7EB26D",
+        "fullyLoaded": "#7EB26D",
+        "requests": "#EAB839",
+        "thirdParty": "#890F02"
+      },
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "${DS_GRAPHITE}",
+      "decimals": 0,
+      "editable": true,
+      "error": false,
+      "fill": 4,
+      "grid": {},
+      "gridPos": {
+        "h": 7,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 2,
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
+        "hideEmpty": true,
+        "hideZero": true,
+        "max": true,
+        "min": true,
+        "rightSide": false,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "connected",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [
         {
-          "aliasColors": {
-            "firstParty": "#7EB26D",
-            "fullyLoaded": "#7EB26D",
-            "requests": "#EAB839",
-            "thirdParty": "#890F02"
-          },
-          "bars": false,
-          "dashLength": 10,
-          "dashes": false,
-          "datasource": "${DS_GRAPHITE}",
-          "decimals": 0,
-          "editable": true,
-          "error": false,
-          "fill": 4,
-          "grid": {},
-          "id": 2,
-          "legend": {
-            "alignAsTable": true,
-            "avg": true,
-            "current": true,
-            "hideEmpty": true,
-            "hideZero": true,
-            "max": true,
-            "min": true,
-            "rightSide": false,
-            "show": true,
-            "total": false,
-            "values": true
-          },
-          "lines": true,
-          "linewidth": 1,
-          "links": [],
-          "nullPointMode": "connected",
-          "percentage": false,
-          "pointradius": 5,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [
-            {
-              "alias": "fullyLoaded",
-              "bars": true,
-              "lines": false,
-              "yaxis": 2
-            }
-          ],
-          "spaceLength": 10,
-          "span": 12,
-          "stack": false,
-          "steppedLine": false,
-          "targets": [
-            {
-              "expr": "sitespeed_firstparty{value=\"requests\", metric=\"median\"} + sitespeed_thirdparty{value=\"requests\", metric=\"median\"}",
-              "hide": false,
-              "interval": "",
-              "intervalFactor": 2,
-              "legendFormat": "Total",
-              "refId": "C",
-              "step": 30,
-              "target": "aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.requests, 8)",
-              "textEditor": false
-            },
-            {
-              "refId": "B",
-              "target": "aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.timings.fullyLoaded.median, 10)"
-            }
-          ],
-          "thresholds": [],
-          "timeFrom": null,
-          "timeShift": null,
-          "title": "# of Requests vs fullyLoaded",
-          "tooltip": {
-            "msResolution": false,
-            "shared": true,
-            "sort": 0,
-            "value_type": "cumulative"
-          },
-          "type": "graph",
-          "xaxis": {
-            "buckets": null,
-            "mode": "time",
-            "name": null,
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "format": "short",
-              "label": "# Requests",
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": true
-            },
-            {
-              "format": "ms",
-              "label": "Time to Fully Loaded",
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": true
-            }
-          ]
-        },
-        {
-          "aliasColors": {
-            "firstParty": "#7EB26D",
-            "requests": "#EAB839",
-            "thirdParty": "#890F02"
-          },
-          "bars": false,
-          "dashLength": 10,
-          "dashes": false,
-          "datasource": "${DS_GRAPHITE}",
-          "decimals": 0,
-          "editable": true,
-          "error": false,
-          "fill": 4,
-          "grid": {},
-          "id": 1,
-          "legend": {
-            "alignAsTable": true,
-            "avg": true,
-            "current": true,
-            "hideEmpty": true,
-            "hideZero": true,
-            "max": true,
-            "min": true,
-            "rightSide": false,
-            "show": true,
-            "total": false,
-            "values": true
-          },
-          "lines": true,
-          "linewidth": 1,
-          "links": [],
-          "nullPointMode": "connected",
-          "percentage": true,
-          "pointradius": 5,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [
-            {
-              "alias": "requests",
-              "lines": false,
-              "stack": false,
-              "yaxis": 2
-            },
-            {
-              "alias": "firstParty"
-            }
-          ],
-          "spaceLength": 10,
-          "span": 12,
-          "stack": true,
-          "steppedLine": false,
-          "targets": [
-            {
-              "expr": "sitespeed_firstparty{value=\"requests\", metric=\"median\"} + sitespeed_thirdparty{value=\"requests\", metric=\"median\"}",
-              "hide": true,
-              "interval": "",
-              "intervalFactor": 2,
-              "legendFormat": "Total",
-              "refId": "C",
-              "step": 30,
-              "target": "aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.requests, 8)",
-              "textEditor": true
-            },
-            {
-              "expr": "sitespeed_firstparty{value=\"requests\", metric=\"median\"}",
-              "hide": false,
-              "interval": "",
-              "intervalFactor": 2,
-              "legendFormat": "First Party",
-              "metric": "sitespeed_firstparty",
-              "refId": "A",
-              "step": 120,
-              "target": "aliasByNode(asPercent($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.thirdParty.requests, #C), 8)",
-              "targetFull": "aliasByNode(asPercent($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.thirdParty.requests, aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.requests, 8)), 8)",
-              "textEditor": false
-            },
-            {
-              "expr": "sitespeed_thirdparty{value=\"requests\", metric=\"median\"}",
-              "hide": false,
-              "interval": "",
-              "intervalFactor": 2,
-              "legendFormat": "Third party",
-              "metric": "sitespeed_thirdparty",
-              "refId": "B",
-              "step": 120,
-              "target": "aliasByNode(asPercent($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.firstParty.requests, #C), 8)",
-              "targetFull": "aliasByNode(asPercent($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.firstParty.requests, aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.requests, 8)), 8)",
-              "textEditor": false
-            }
-          ],
-          "thresholds": [],
-          "timeFrom": null,
-          "timeShift": null,
-          "title": "1st vs 3rd party requests",
-          "tooltip": {
-            "msResolution": false,
-            "shared": true,
-            "sort": 0,
-            "value_type": "cumulative"
-          },
-          "type": "graph",
-          "xaxis": {
-            "buckets": null,
-            "mode": "time",
-            "name": null,
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "format": "percent",
-              "label": "Percentage of Requests",
-              "logBase": 1,
-              "max": 100,
-              "min": 0,
-              "show": true
-            },
-            {
-              "format": "short",
-              "label": "",
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": false
-            }
-          ]
-        },
-        {
-          "aliasColors": {
-            "firstParty": "#7EB26D",
-            "requests": "#EAB839",
-            "thirdParty": "#890F02"
-          },
-          "bars": false,
-          "dashLength": 10,
-          "dashes": false,
-          "datasource": "${DS_GRAPHITE}",
-          "decimals": 0,
-          "editable": true,
-          "error": false,
-          "fill": 4,
-          "grid": {},
-          "id": 3,
-          "legend": {
-            "alignAsTable": true,
-            "avg": true,
-            "current": true,
-            "hideEmpty": true,
-            "hideZero": true,
-            "max": true,
-            "min": true,
-            "rightSide": false,
-            "show": true,
-            "total": false,
-            "values": true
-          },
-          "lines": true,
-          "linewidth": 1,
-          "links": [],
-          "nullPointMode": "connected",
-          "percentage": true,
-          "pointradius": 5,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [
-            {
-              "alias": "requests",
-              "lines": false,
-              "stack": false,
-              "yaxis": 2
-            },
-            {
-              "alias": "firstParty"
-            }
-          ],
-          "spaceLength": 10,
-          "span": 4,
-          "stack": true,
-          "steppedLine": false,
-          "targets": [
-            {
-              "expr": "sitespeed_firstparty{value=\"requests\", metric=\"median\"} + sitespeed_thirdparty{value=\"requests\", metric=\"median\"}",
-              "hide": true,
-              "interval": "",
-              "intervalFactor": 2,
-              "legendFormat": "Total",
-              "refId": "C",
-              "step": 30,
-              "target": "aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.contentSize, 8)",
-              "textEditor": false
-            },
-            {
-              "expr": "sitespeed_firstparty{value=\"requests\", metric=\"median\"}",
-              "hide": false,
-              "interval": "",
-              "intervalFactor": 2,
-              "legendFormat": "First Party",
-              "metric": "sitespeed_firstparty",
-              "refId": "A",
-              "step": 120,
-              "target": "aliasByNode(asPercent($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.thirdParty.contentSize, #C), 8)",
-              "targetFull": "aliasByNode(asPercent($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.thirdParty.contentSize, aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.contentSize, 8)), 8)",
-              "textEditor": false
-            },
-            {
-              "expr": "sitespeed_thirdparty{value=\"requests\", metric=\"median\"}",
-              "hide": false,
-              "interval": "",
-              "intervalFactor": 2,
-              "legendFormat": "Third party",
-              "metric": "sitespeed_thirdparty",
-              "refId": "B",
-              "step": 120,
-              "target": "aliasByNode(asPercent($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.firstParty.contentSize, #C), 8)",
-              "targetFull": "aliasByNode(asPercent($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.firstParty.contentSize, aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.contentSize, 8)), 8)",
-              "textEditor": false
-            }
-          ],
-          "thresholds": [],
-          "timeFrom": null,
-          "timeShift": null,
-          "title": "1st vs 3rd party content size",
-          "tooltip": {
-            "msResolution": false,
-            "shared": true,
-            "sort": 0,
-            "value_type": "cumulative"
-          },
-          "type": "graph",
-          "xaxis": {
-            "buckets": null,
-            "mode": "time",
-            "name": null,
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "format": "percent",
-              "label": "Percentage of Content Size",
-              "logBase": 1,
-              "max": 100,
-              "min": 0,
-              "show": true
-            },
-            {
-              "format": "short",
-              "label": "",
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": false
-            }
-          ]
-        },
-        {
-          "aliasColors": {
-            "firstParty": "#7EB26D",
-            "requests": "#EAB839",
-            "thirdParty": "#890F02"
-          },
-          "bars": false,
-          "dashLength": 10,
-          "dashes": false,
-          "datasource": "${DS_GRAPHITE}",
-          "decimals": 0,
-          "editable": true,
-          "error": false,
-          "fill": 4,
-          "grid": {},
-          "id": 4,
-          "legend": {
-            "alignAsTable": true,
-            "avg": true,
-            "current": true,
-            "hideEmpty": true,
-            "hideZero": true,
-            "max": true,
-            "min": true,
-            "rightSide": false,
-            "show": true,
-            "total": false,
-            "values": true
-          },
-          "lines": true,
-          "linewidth": 1,
-          "links": [],
-          "nullPointMode": "connected",
-          "percentage": true,
-          "pointradius": 5,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [
-            {
-              "alias": "requests",
-              "lines": false,
-              "stack": false,
-              "yaxis": 2
-            }
-          ],
-          "spaceLength": 10,
-          "span": 4,
-          "stack": true,
-          "steppedLine": false,
-          "targets": [
-            {
-              "expr": "sitespeed_firstparty{value=\"requests\", metric=\"median\"} + sitespeed_thirdparty{value=\"requests\", metric=\"median\"}",
-              "hide": true,
-              "interval": "",
-              "intervalFactor": 2,
-              "legendFormat": "Total",
-              "refId": "C",
-              "step": 30,
-              "target": "aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.transferSize, 8)",
-              "textEditor": false
-            },
-            {
-              "expr": "sitespeed_firstparty{value=\"requests\", metric=\"median\"}",
-              "hide": false,
-              "interval": "",
-              "intervalFactor": 2,
-              "legendFormat": "First Party",
-              "metric": "sitespeed_firstparty",
-              "refId": "A",
-              "step": 120,
-              "target": "aliasByNode(asPercent($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.thirdParty.transferSize, #C), 8)",
-              "targetFull": "aliasByNode(asPercent($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.thirdParty.transferSize, aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.transferSize, 8)), 8)",
-              "textEditor": false
-            },
-            {
-              "expr": "sitespeed_thirdparty{value=\"requests\", metric=\"median\"}",
-              "hide": false,
-              "interval": "",
-              "intervalFactor": 2,
-              "legendFormat": "Third party",
-              "metric": "sitespeed_thirdparty",
-              "refId": "B",
-              "step": 120,
-              "target": "aliasByNode(asPercent($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.firstParty.transferSize, #C), 8)",
-              "targetFull": "aliasByNode(asPercent($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.firstParty.transferSize, aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.transferSize, 8)), 8)",
-              "textEditor": false
-            }
-          ],
-          "thresholds": [],
-          "timeFrom": null,
-          "timeShift": null,
-          "title": "1st vs 3rd party transfer size",
-          "tooltip": {
-            "msResolution": false,
-            "shared": true,
-            "sort": 0,
-            "value_type": "cumulative"
-          },
-          "type": "graph",
-          "xaxis": {
-            "buckets": null,
-            "mode": "time",
-            "name": null,
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "format": "percent",
-              "label": "Percentage of Transfer Size",
-              "logBase": 1,
-              "max": 100,
-              "min": 0,
-              "show": true
-            },
-            {
-              "format": "short",
-              "label": "",
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": false
-            }
-          ]
-        },
-        {
-          "aliasColors": {
-            "firstParty": "#7EB26D",
-            "requests": "#EAB839",
-            "thirdParty": "#890F02"
-          },
-          "bars": false,
-          "dashLength": 10,
-          "dashes": false,
-          "datasource": "${DS_GRAPHITE}",
-          "decimals": 0,
-          "editable": true,
-          "error": false,
-          "fill": 4,
-          "grid": {},
-          "id": 7,
-          "legend": {
-            "alignAsTable": true,
-            "avg": true,
-            "current": true,
-            "hideEmpty": true,
-            "hideZero": true,
-            "max": true,
-            "min": true,
-            "rightSide": false,
-            "show": true,
-            "total": false,
-            "values": true
-          },
-          "lines": true,
-          "linewidth": 1,
-          "links": [],
-          "nullPointMode": "connected",
-          "percentage": true,
-          "pointradius": 5,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [
-            {
-              "alias": "firstParty",
-              "zindex": -3
-            }
-          ],
-          "spaceLength": 10,
-          "span": 4,
-          "stack": true,
-          "steppedLine": false,
-          "targets": [
-            {
-              "expr": "sitespeed_firstparty{value=\"requests\", metric=\"median\"}",
-              "hide": false,
-              "interval": "",
-              "intervalFactor": 2,
-              "legendFormat": "First Party",
-              "metric": "sitespeed_firstparty",
-              "refId": "A",
-              "step": 120,
-              "target": "aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.thirdParty.headerSize, 8)",
-              "textEditor": false
-            },
-            {
-              "expr": "sitespeed_thirdparty{value=\"requests\", metric=\"median\"}",
-              "hide": false,
-              "interval": "",
-              "intervalFactor": 2,
-              "legendFormat": "Third party",
-              "metric": "sitespeed_thirdparty",
-              "refId": "B",
-              "step": 120,
-              "target": "aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.firstParty.headerSize, 8)",
-              "textEditor": false
-            }
-          ],
-          "thresholds": [],
-          "timeFrom": null,
-          "timeShift": null,
-          "title": "1st vs 3rd party header size",
-          "tooltip": {
-            "msResolution": false,
-            "shared": true,
-            "sort": 0,
-            "value_type": "cumulative"
-          },
-          "type": "graph",
-          "xaxis": {
-            "buckets": null,
-            "mode": "time",
-            "name": null,
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "format": "bytes",
-              "label": "Percentage of Header Size",
-              "logBase": 1,
-              "max": 100,
-              "min": 0,
-              "show": true
-            },
-            {
-              "format": "short",
-              "label": "",
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": false
-            }
-          ]
-        },
-        {
-          "aliasColors": {
-            "firstParty": "#7EB26D",
-            "requests": "#EAB839",
-            "thirdParty": "#890F02"
-          },
-          "bars": false,
-          "dashLength": 10,
-          "dashes": false,
-          "datasource": "${DS_GRAPHITE}",
-          "decimals": 0,
-          "editable": true,
-          "error": false,
-          "fill": 4,
-          "grid": {},
-          "height": "",
-          "id": 8,
-          "legend": {
-            "alignAsTable": true,
-            "avg": true,
-            "current": true,
-            "hideEmpty": true,
-            "hideZero": true,
-            "max": true,
-            "min": true,
-            "rightSide": false,
-            "show": true,
-            "total": false,
-            "values": true
-          },
-          "lines": true,
-          "linewidth": 1,
-          "links": [],
-          "nullPointMode": "connected",
-          "percentage": true,
-          "pointradius": 5,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [
-            {
-              "alias": "firstParty"
-            }
-          ],
-          "spaceLength": 10,
-          "span": 6,
-          "stack": false,
-          "steppedLine": false,
-          "targets": [
-            {
-              "expr": "sitespeed_firstparty{value=\"requests\", metric=\"median\"}",
-              "hide": false,
-              "interval": "",
-              "intervalFactor": 2,
-              "legendFormat": "First Party",
-              "metric": "sitespeed_firstparty",
-              "refId": "A",
-              "step": 120,
-              "target": "aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.firstParty.contentTypes.*.requests, 10)",
-              "textEditor": false
-            }
-          ],
-          "thresholds": [],
-          "timeFrom": null,
-          "timeShift": null,
-          "title": "1st Party Content Breakdown Request Count",
-          "tooltip": {
-            "msResolution": false,
-            "shared": true,
-            "sort": 2,
-            "value_type": "cumulative"
-          },
-          "type": "graph",
-          "xaxis": {
-            "buckets": null,
-            "mode": "time",
-            "name": null,
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "format": "short",
-              "label": "",
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": true
-            },
-            {
-              "format": "short",
-              "label": "",
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": false
-            }
-          ]
-        },
-        {
-          "aliasColors": {
-            "firstParty": "#7EB26D",
-            "requests": "#EAB839",
-            "thirdParty": "#890F02"
-          },
-          "bars": false,
-          "dashLength": 10,
-          "dashes": false,
-          "datasource": "${DS_GRAPHITE}",
-          "decimals": 0,
-          "editable": true,
-          "error": false,
-          "fill": 4,
-          "grid": {},
-          "height": "",
-          "id": 9,
-          "legend": {
-            "alignAsTable": true,
-            "avg": true,
-            "current": true,
-            "hideEmpty": true,
-            "hideZero": true,
-            "max": true,
-            "min": true,
-            "rightSide": false,
-            "show": true,
-            "total": false,
-            "values": true
-          },
-          "lines": true,
-          "linewidth": 1,
-          "links": [],
-          "nullPointMode": "connected",
-          "percentage": true,
-          "pointradius": 5,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [
-            {
-              "alias": "firstParty"
-            }
-          ],
-          "spaceLength": 10,
-          "span": 6,
-          "stack": false,
-          "steppedLine": false,
-          "targets": [
-            {
-              "expr": "sitespeed_firstparty{value=\"requests\", metric=\"median\"}",
-              "hide": false,
-              "interval": "",
-              "intervalFactor": 2,
-              "legendFormat": "First Party",
-              "metric": "sitespeed_firstparty",
-              "refId": "A",
-              "step": 120,
-              "target": "aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.thirdParty.contentTypes.*.requests, 10)",
-              "textEditor": false
-            }
-          ],
-          "thresholds": [],
-          "timeFrom": null,
-          "timeShift": null,
-          "title": "3rd Party Content Breakdown Request Count",
-          "tooltip": {
-            "msResolution": false,
-            "shared": true,
-            "sort": 2,
-            "value_type": "cumulative"
-          },
-          "type": "graph",
-          "xaxis": {
-            "buckets": null,
-            "mode": "time",
-            "name": null,
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "format": "short",
-              "label": "",
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": true
-            },
-            {
-              "format": "short",
-              "label": "",
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": false
-            }
-          ]
-        },
-        {
-          "aliasColors": {
-            "firstParty": "#7EB26D",
-            "requests": "#EAB839",
-            "thirdParty": "#890F02"
-          },
-          "bars": false,
-          "dashLength": 10,
-          "dashes": false,
-          "datasource": "${DS_GRAPHITE}",
-          "decimals": 0,
-          "editable": true,
-          "error": false,
-          "fill": 4,
-          "grid": {},
-          "id": 6,
-          "legend": {
-            "alignAsTable": true,
-            "avg": true,
-            "current": true,
-            "hideEmpty": true,
-            "hideZero": true,
-            "max": true,
-            "min": true,
-            "rightSide": false,
-            "show": true,
-            "total": false,
-            "values": true
-          },
-          "lines": true,
-          "linewidth": 1,
-          "links": [],
-          "nullPointMode": "connected",
-          "percentage": true,
-          "pointradius": 5,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [
-            {
-              "alias": "requests",
-              "lines": false,
-              "stack": false,
-              "yaxis": 2
-            },
-            {
-              "alias": "firstParty"
-            }
-          ],
-          "spaceLength": 10,
-          "span": 6,
-          "stack": false,
-          "steppedLine": false,
-          "targets": [
-            {
-              "expr": "sitespeed_firstparty{value=\"requests\", metric=\"median\"}",
-              "hide": false,
-              "interval": "",
-              "intervalFactor": 2,
-              "legendFormat": "First Party",
-              "metric": "sitespeed_firstparty",
-              "refId": "A",
-              "step": 120,
-              "target": "aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.*.median, 11)",
-              "textEditor": false
-            }
-          ],
-          "thresholds": [],
-          "timeFrom": null,
-          "timeShift": null,
-          "title": "Page Timings",
-          "tooltip": {
-            "msResolution": false,
-            "shared": true,
-            "sort": 2,
-            "value_type": "cumulative"
-          },
-          "type": "graph",
-          "xaxis": {
-            "buckets": null,
-            "mode": "time",
-            "name": null,
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "format": "ms",
-              "label": "",
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": true
-            },
-            {
-              "format": "short",
-              "label": "",
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": false
-            }
-          ]
-        },
-        {
-          "aliasColors": {
-            "firstParty": "#7EB26D",
-            "requests": "#EAB839",
-            "thirdParty": "#890F02"
-          },
-          "bars": false,
-          "dashLength": 10,
-          "dashes": false,
-          "datasource": "${DS_GRAPHITE}",
-          "decimals": 2,
-          "editable": true,
-          "error": false,
-          "fill": 4,
-          "grid": {},
-          "id": 5,
-          "legend": {
-            "alignAsTable": true,
-            "avg": true,
-            "current": true,
-            "hideEmpty": true,
-            "hideZero": true,
-            "max": true,
-            "min": true,
-            "rightSide": false,
-            "show": true,
-            "sort": "current",
-            "sortDesc": true,
-            "total": false,
-            "values": true
-          },
-          "lines": true,
-          "linewidth": 1,
-          "links": [],
-          "nullPointMode": "connected",
-          "percentage": false,
-          "pointradius": 5,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [],
-          "spaceLength": 10,
-          "span": 6,
-          "stack": false,
-          "steppedLine": false,
-          "targets": [
-            {
-              "expr": "sitespeed_firstparty{value=\"requests\", metric=\"median\"}",
-              "hide": false,
-              "interval": "",
-              "intervalFactor": 2,
-              "legendFormat": "First Party",
-              "metric": "sitespeed_firstparty",
-              "refId": "A",
-              "step": 120,
-              "target": "aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.timings.userTimings.marks.*.median, 12)",
-              "textEditor": false
-            }
-          ],
-          "thresholds": [],
-          "timeFrom": null,
-          "timeShift": null,
-          "title": "User Timings",
-          "tooltip": {
-            "msResolution": false,
-            "shared": true,
-            "sort": 2,
-            "value_type": "cumulative"
-          },
-          "type": "graph",
-          "xaxis": {
-            "buckets": null,
-            "mode": "time",
-            "name": null,
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "format": "ms",
-              "label": "Percentage of Content Size",
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": true
-            },
-            {
-              "format": "short",
-              "label": "",
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": false
-            }
-          ]
+          "alias": "fullyLoaded",
+          "bars": true,
+          "lines": false,
+          "yaxis": 2
         }
       ],
-      "repeat": null,
-      "repeatIteration": null,
-      "repeatRowId": null,
-      "showTitle": false,
-      "title": "Row",
-      "titleSize": "h6"
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "sitespeed_firstparty{value=\"requests\", metric=\"median\"} + sitespeed_thirdparty{value=\"requests\", metric=\"median\"}",
+          "hide": false,
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "Total",
+          "refId": "C",
+          "step": 30,
+          "target": "aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.requests, 8)",
+          "textEditor": false
+        },
+        {
+          "refId": "B",
+          "target": "aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.timings.fullyLoaded.median, 10)"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "# of Requests vs fullyLoaded",
+      "tooltip": {
+        "msResolution": false,
+        "shared": true,
+        "sort": 0,
+        "value_type": "cumulative"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": "# Requests",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "ms",
+          "label": "Time to Fully Loaded",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ]
+    },
+    {
+      "aliasColors": {
+        "firstParty": "#7EB26D",
+        "requests": "#EAB839",
+        "thirdParty": "#890F02"
+      },
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "${DS_GRAPHITE}",
+      "decimals": 0,
+      "editable": true,
+      "error": false,
+      "fill": 4,
+      "grid": {},
+      "gridPos": {
+        "h": 7,
+        "w": 24,
+        "x": 0,
+        "y": 7
+      },
+      "id": 1,
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
+        "hideEmpty": true,
+        "hideZero": true,
+        "max": true,
+        "min": true,
+        "rightSide": false,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "connected",
+      "percentage": true,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [
+        {
+          "alias": "requests",
+          "lines": false,
+          "stack": false,
+          "yaxis": 2
+        },
+        {
+          "alias": "firstParty"
+        }
+      ],
+      "spaceLength": 10,
+      "stack": true,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "sitespeed_firstparty{value=\"requests\", metric=\"median\"} + sitespeed_thirdparty{value=\"requests\", metric=\"median\"}",
+          "hide": true,
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "Total",
+          "refId": "C",
+          "step": 30,
+          "target": "aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.requests, 8)",
+          "textEditor": true
+        },
+        {
+          "expr": "sitespeed_firstparty{value=\"requests\", metric=\"median\"}",
+          "hide": false,
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "First Party",
+          "metric": "sitespeed_firstparty",
+          "refId": "A",
+          "step": 120,
+          "target": "aliasByNode(asPercent($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.thirdParty.requests, #C), 8)",
+          "targetFull": "aliasByNode(asPercent($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.thirdParty.requests, aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.requests, 8)), 8)",
+          "textEditor": false
+        },
+        {
+          "expr": "sitespeed_thirdparty{value=\"requests\", metric=\"median\"}",
+          "hide": false,
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "Third party",
+          "metric": "sitespeed_thirdparty",
+          "refId": "B",
+          "step": 120,
+          "target": "aliasByNode(asPercent($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.firstParty.requests, #C), 8)",
+          "targetFull": "aliasByNode(asPercent($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.firstParty.requests, aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.requests, 8)), 8)",
+          "textEditor": false
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "1st vs 3rd party requests",
+      "tooltip": {
+        "msResolution": false,
+        "shared": true,
+        "sort": 0,
+        "value_type": "cumulative"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "percent",
+          "label": "Percentage of Requests",
+          "logBase": 1,
+          "max": 100,
+          "min": 0,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
+        }
+      ]
+    },
+    {
+      "aliasColors": {
+        "firstParty": "#7EB26D",
+        "requests": "#EAB839",
+        "thirdParty": "#890F02"
+      },
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "${DS_GRAPHITE}",
+      "decimals": 0,
+      "editable": true,
+      "error": false,
+      "fill": 4,
+      "grid": {},
+      "gridPos": {
+        "h": 7,
+        "w": 8,
+        "x": 0,
+        "y": 14
+      },
+      "id": 3,
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
+        "hideEmpty": true,
+        "hideZero": true,
+        "max": true,
+        "min": true,
+        "rightSide": false,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "connected",
+      "percentage": true,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [
+        {
+          "alias": "requests",
+          "lines": false,
+          "stack": false,
+          "yaxis": 2
+        },
+        {
+          "alias": "firstParty"
+        }
+      ],
+      "spaceLength": 10,
+      "stack": true,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "sitespeed_firstparty{value=\"requests\", metric=\"median\"} + sitespeed_thirdparty{value=\"requests\", metric=\"median\"}",
+          "hide": true,
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "Total",
+          "refId": "C",
+          "step": 30,
+          "target": "aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.contentSize, 8)",
+          "textEditor": false
+        },
+        {
+          "expr": "sitespeed_firstparty{value=\"requests\", metric=\"median\"}",
+          "hide": false,
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "First Party",
+          "metric": "sitespeed_firstparty",
+          "refId": "A",
+          "step": 120,
+          "target": "aliasByNode(asPercent($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.thirdParty.contentSize, #C), 8)",
+          "targetFull": "aliasByNode(asPercent($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.thirdParty.contentSize, aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.contentSize, 8)), 8)",
+          "textEditor": false
+        },
+        {
+          "expr": "sitespeed_thirdparty{value=\"requests\", metric=\"median\"}",
+          "hide": false,
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "Third party",
+          "metric": "sitespeed_thirdparty",
+          "refId": "B",
+          "step": 120,
+          "target": "aliasByNode(asPercent($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.firstParty.contentSize, #C), 8)",
+          "targetFull": "aliasByNode(asPercent($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.firstParty.contentSize, aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.contentSize, 8)), 8)",
+          "textEditor": false
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "1st vs 3rd party content size",
+      "tooltip": {
+        "msResolution": false,
+        "shared": true,
+        "sort": 0,
+        "value_type": "cumulative"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "percent",
+          "label": "Percentage of Content Size",
+          "logBase": 1,
+          "max": 100,
+          "min": 0,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
+        }
+      ]
+    },
+    {
+      "aliasColors": {
+        "firstParty": "#7EB26D",
+        "requests": "#EAB839",
+        "thirdParty": "#890F02"
+      },
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "${DS_GRAPHITE}",
+      "decimals": 0,
+      "editable": true,
+      "error": false,
+      "fill": 4,
+      "grid": {},
+      "gridPos": {
+        "h": 7,
+        "w": 8,
+        "x": 8,
+        "y": 14
+      },
+      "id": 4,
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
+        "hideEmpty": true,
+        "hideZero": true,
+        "max": true,
+        "min": true,
+        "rightSide": false,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "connected",
+      "percentage": true,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [
+        {
+          "alias": "requests",
+          "lines": false,
+          "stack": false,
+          "yaxis": 2
+        }
+      ],
+      "spaceLength": 10,
+      "stack": true,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "sitespeed_firstparty{value=\"requests\", metric=\"median\"} + sitespeed_thirdparty{value=\"requests\", metric=\"median\"}",
+          "hide": true,
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "Total",
+          "refId": "C",
+          "step": 30,
+          "target": "aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.transferSize, 8)",
+          "textEditor": false
+        },
+        {
+          "expr": "sitespeed_firstparty{value=\"requests\", metric=\"median\"}",
+          "hide": false,
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "First Party",
+          "metric": "sitespeed_firstparty",
+          "refId": "A",
+          "step": 120,
+          "target": "aliasByNode(asPercent($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.thirdParty.transferSize, #C), 8)",
+          "targetFull": "aliasByNode(asPercent($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.thirdParty.transferSize, aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.transferSize, 8)), 8)",
+          "textEditor": false
+        },
+        {
+          "expr": "sitespeed_thirdparty{value=\"requests\", metric=\"median\"}",
+          "hide": false,
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "Third party",
+          "metric": "sitespeed_thirdparty",
+          "refId": "B",
+          "step": 120,
+          "target": "aliasByNode(asPercent($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.firstParty.transferSize, #C), 8)",
+          "targetFull": "aliasByNode(asPercent($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.firstParty.transferSize, aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.transferSize, 8)), 8)",
+          "textEditor": false
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "1st vs 3rd party transfer size",
+      "tooltip": {
+        "msResolution": false,
+        "shared": true,
+        "sort": 0,
+        "value_type": "cumulative"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "percent",
+          "label": "Percentage of Transfer Size",
+          "logBase": 1,
+          "max": 100,
+          "min": 0,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
+        }
+      ]
+    },
+    {
+      "aliasColors": {
+        "firstParty": "#7EB26D",
+        "requests": "#EAB839",
+        "thirdParty": "#890F02"
+      },
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "${DS_GRAPHITE}",
+      "decimals": 0,
+      "editable": true,
+      "error": false,
+      "fill": 4,
+      "grid": {},
+      "gridPos": {
+        "h": 7,
+        "w": 8,
+        "x": 16,
+        "y": 14
+      },
+      "id": 7,
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
+        "hideEmpty": true,
+        "hideZero": true,
+        "max": true,
+        "min": true,
+        "rightSide": false,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "connected",
+      "percentage": true,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [
+        {
+          "alias": "firstParty",
+          "zindex": -3
+        }
+      ],
+      "spaceLength": 10,
+      "stack": true,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "sitespeed_firstparty{value=\"requests\", metric=\"median\"}",
+          "hide": false,
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "First Party",
+          "metric": "sitespeed_firstparty",
+          "refId": "A",
+          "step": 120,
+          "target": "aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.thirdParty.headerSize, 8)",
+          "textEditor": false
+        },
+        {
+          "expr": "sitespeed_thirdparty{value=\"requests\", metric=\"median\"}",
+          "hide": false,
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "Third party",
+          "metric": "sitespeed_thirdparty",
+          "refId": "B",
+          "step": 120,
+          "target": "aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.firstParty.headerSize, 8)",
+          "textEditor": false
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "1st vs 3rd party header size",
+      "tooltip": {
+        "msResolution": false,
+        "shared": true,
+        "sort": 0,
+        "value_type": "cumulative"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "bytes",
+          "label": "Percentage of Header Size",
+          "logBase": 1,
+          "max": 100,
+          "min": 0,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
+        }
+      ]
+    },
+    {
+      "aliasColors": {
+        "firstParty": "#7EB26D",
+        "requests": "#EAB839",
+        "thirdParty": "#890F02"
+      },
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "${DS_GRAPHITE}",
+      "decimals": 0,
+      "editable": true,
+      "error": false,
+      "fill": 4,
+      "grid": {},
+      "gridPos": {
+        "h": 7,
+        "w": 12,
+        "x": 0,
+        "y": 21
+      },
+      "height": "",
+      "id": 8,
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
+        "hideEmpty": true,
+        "hideZero": true,
+        "max": true,
+        "min": true,
+        "rightSide": false,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "connected",
+      "percentage": true,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [
+        {
+          "alias": "firstParty"
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "sitespeed_firstparty{value=\"requests\", metric=\"median\"}",
+          "hide": false,
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "First Party",
+          "metric": "sitespeed_firstparty",
+          "refId": "A",
+          "step": 120,
+          "target": "aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.firstParty.contentTypes.*.requests, 10)",
+          "textEditor": false
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "1st Party Content Breakdown Request Count",
+      "tooltip": {
+        "msResolution": false,
+        "shared": true,
+        "sort": 2,
+        "value_type": "cumulative"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
+        }
+      ]
+    },
+    {
+      "aliasColors": {
+        "firstParty": "#7EB26D",
+        "requests": "#EAB839",
+        "thirdParty": "#890F02"
+      },
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "${DS_GRAPHITE}",
+      "decimals": 0,
+      "editable": true,
+      "error": false,
+      "fill": 4,
+      "grid": {},
+      "gridPos": {
+        "h": 7,
+        "w": 12,
+        "x": 12,
+        "y": 21
+      },
+      "height": "",
+      "id": 9,
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
+        "hideEmpty": true,
+        "hideZero": true,
+        "max": true,
+        "min": true,
+        "rightSide": false,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "connected",
+      "percentage": true,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [
+        {
+          "alias": "firstParty"
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "sitespeed_firstparty{value=\"requests\", metric=\"median\"}",
+          "hide": false,
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "First Party",
+          "metric": "sitespeed_firstparty",
+          "refId": "A",
+          "step": 120,
+          "target": "aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$connectivity.pagexray.thirdParty.contentTypes.*.requests, 10)",
+          "textEditor": false
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "3rd Party Content Breakdown Request Count",
+      "tooltip": {
+        "msResolution": false,
+        "shared": true,
+        "sort": 2,
+        "value_type": "cumulative"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
+        }
+      ]
+    },
+    {
+      "aliasColors": {
+        "firstParty": "#7EB26D",
+        "requests": "#EAB839",
+        "thirdParty": "#890F02"
+      },
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "${DS_GRAPHITE}",
+      "decimals": 0,
+      "editable": true,
+      "error": false,
+      "fill": 4,
+      "grid": {},
+      "gridPos": {
+        "h": 7,
+        "w": 12,
+        "x": 0,
+        "y": 28
+      },
+      "id": 6,
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
+        "hideEmpty": true,
+        "hideZero": true,
+        "max": true,
+        "min": true,
+        "rightSide": false,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "connected",
+      "percentage": true,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [
+        {
+          "alias": "requests",
+          "lines": false,
+          "stack": false,
+          "yaxis": 2
+        },
+        {
+          "alias": "firstParty"
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "sitespeed_firstparty{value=\"requests\", metric=\"median\"}",
+          "hide": false,
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "First Party",
+          "metric": "sitespeed_firstparty",
+          "refId": "A",
+          "step": 120,
+          "target": "aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.*.median, 11)",
+          "textEditor": false
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Page Timings",
+      "tooltip": {
+        "msResolution": false,
+        "shared": true,
+        "sort": 2,
+        "value_type": "cumulative"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "ms",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
+        }
+      ]
+    },
+    {
+      "aliasColors": {
+        "firstParty": "#7EB26D",
+        "requests": "#EAB839",
+        "thirdParty": "#890F02"
+      },
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "${DS_GRAPHITE}",
+      "decimals": 2,
+      "editable": true,
+      "error": false,
+      "fill": 4,
+      "grid": {},
+      "gridPos": {
+        "h": 7,
+        "w": 12,
+        "x": 12,
+        "y": 28
+      },
+      "id": 5,
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
+        "hideEmpty": true,
+        "hideZero": true,
+        "max": true,
+        "min": true,
+        "rightSide": false,
+        "show": true,
+        "sort": "current",
+        "sortDesc": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "connected",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "sitespeed_firstparty{value=\"requests\", metric=\"median\"}",
+          "hide": false,
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "First Party",
+          "metric": "sitespeed_firstparty",
+          "refId": "A",
+          "step": 120,
+          "target": "aliasByNode($base.$path.pageSummary.$domain.$page.$browser.$connectivity.browsertime.statistics.timings.userTimings.marks.*.median, 12)",
+          "textEditor": false
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "User Timings",
+      "tooltip": {
+        "msResolution": false,
+        "shared": true,
+        "sort": 2,
+        "value_type": "cumulative"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "ms",
+          "label": "Percentage of Content Size",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
+        }
+      ]
     }
   ],
-  "schemaVersion": 14,
+  "refresh": "15m",
+  "schemaVersion": 16,
   "style": "dark",
   "tags": [
     "page"
@@ -1216,5 +1249,6 @@
   },
   "timezone": "browser",
   "title": "3rd vs 1st party",
-  "version": 2
+  "uid": "000000048",
+  "version": 9
 }
