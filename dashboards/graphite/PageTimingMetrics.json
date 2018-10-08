@@ -21,7 +21,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "5.0.4"
+      "version": "5.2.1"
     },
     {
       "type": "panel",
@@ -62,7 +62,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1527759241592,
+  "iteration": 1538992194487,
   "links": [
     {
       "asDropdown": true,
@@ -86,20 +86,6 @@
   ],
   "panels": [
     {
-      "collapsed": false,
-      "gridPos": {
-        "h": 1,
-        "w": 24,
-        "x": 0,
-        "y": 0
-      },
-      "id": 3,
-      "panels": [],
-      "repeat": null,
-      "title": "Visual Metrics",
-      "type": "row"
-    },
-    {
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
@@ -108,16 +94,17 @@
       "description": "The Visual Metrics are collected by recording and analysing a video of the screen.",
       "fill": 0,
       "gridPos": {
-        "h": 17,
-        "w": 24,
+        "h": 21,
+        "w": 13,
         "x": 0,
-        "y": 1
+        "y": 0
       },
       "id": 1,
       "legend": {
         "alignAsTable": true,
         "avg": true,
         "current": true,
+        "hideEmpty": true,
         "max": true,
         "min": true,
         "show": true,
@@ -173,6 +160,20 @@
         {
           "hide": false,
           "refCount": 0,
+          "refId": "H",
+          "target": "aliasByNode($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.Heading.$function, 10)",
+          "textEditor": false
+        },
+        {
+          "hide": false,
+          "refCount": 0,
+          "refId": "I",
+          "target": "aliasByNode($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.LargestImage.$function, 10)",
+          "textEditor": false
+        },
+        {
+          "hide": false,
+          "refCount": 0,
           "refId": "D",
           "target": "aliasByNode($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.VisualComplete85.$function, 10)",
           "textEditor": false
@@ -197,19 +198,12 @@
           "refId": "G",
           "target": "aliasByNode($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.LastVisualChange.$function, 10)",
           "textEditor": false
-        },
-        {
-          "hide": false,
-          "refCount": 0,
-          "refId": "H",
-          "target": "aliasByNode($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.VisualReadiness.$function, 10)",
-          "textEditor": false
         }
       ],
       "thresholds": [],
       "timeFrom": null,
       "timeShift": null,
-      "title": "$page",
+      "title": "Visual metrics",
       "tooltip": {
         "shared": false,
         "sort": 0,
@@ -241,21 +235,11 @@
           "min": null,
           "show": true
         }
-      ]
-    },
-    {
-      "collapsed": false,
-      "gridPos": {
-        "h": 1,
-        "w": 24,
-        "x": 0,
-        "y": 18
-      },
-      "id": 4,
-      "panels": [],
-      "repeat": null,
-      "title": "Technical Timing Metrics",
-      "type": "row"
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     },
     {
       "aliasColors": {},
@@ -263,19 +247,20 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": "${DS_GRAPHITE}",
-      "description": "The Technical metrics are collected from the browser.",
+      "description": "The Technical metrics are collected from the browser using the Navigation Timing API, the User Timing API and firstPaint (when available).",
       "fill": 0,
       "gridPos": {
-        "h": 14,
-        "w": 24,
-        "x": 0,
-        "y": 19
+        "h": 21,
+        "w": 11,
+        "x": 13,
+        "y": 0
       },
       "id": 2,
       "legend": {
         "alignAsTable": true,
         "avg": true,
         "current": true,
+        "hideEmpty": true,
         "max": true,
         "min": true,
         "show": true,
@@ -309,15 +294,15 @@
         {
           "hide": false,
           "refCount": 0,
-          "refId": "B",
-          "target": "aliasByNode($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.firstPaint.$function, 10)",
+          "refId": "G",
+          "target": "aliasByNode($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.serverResponseTime.$function, 11)",
           "textEditor": false
         },
         {
           "hide": false,
           "refCount": 0,
-          "refId": "A",
-          "target": "aliasByNode($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.fullyLoaded.$function, 10)",
+          "refId": "B",
+          "target": "aliasByNode($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.firstPaint.$function, 10)",
           "textEditor": false
         },
         {
@@ -351,15 +336,42 @@
         {
           "hide": false,
           "refCount": 0,
-          "refId": "G",
-          "target": "aliasByNode($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.serverResponseTime.$function, 11)",
+          "refId": "I",
+          "target": "aliasByNode($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.pageLoadTime.$function, 11)",
+          "textEditor": false
+        },
+        {
+          "hide": false,
+          "refCount": 0,
+          "refId": "A",
+          "target": "aliasByNode($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.fullyLoaded.$function, 10)",
+          "textEditor": false
+        },
+        {
+          "refCount": 0,
+          "refId": "H",
+          "target": "aliasByNode($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.userTimings.marks.*.$function, 12)",
+          "textEditor": false
+        },
+        {
+          "hide": false,
+          "refCount": 0,
+          "refId": "J",
+          "target": "aliasByNode($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.paintTiming.first-contentful-paint.$function, 11)",
+          "textEditor": false
+        },
+        {
+          "hide": false,
+          "refCount": 0,
+          "refId": "K",
+          "target": "aliasByNode($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.timeToDomContentFlushed.$function, 10)",
           "textEditor": false
         }
       ],
       "thresholds": [],
       "timeFrom": null,
       "timeShift": null,
-      "title": "$page",
+      "title": "Technical timing metrics",
       "tooltip": {
         "shared": false,
         "sort": 0,
@@ -391,7 +403,11 @@
           "min": null,
           "show": true
         }
-      ]
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     },
     {
       "collapsed": false,
@@ -399,11 +415,11 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 33
+        "y": 21
       },
       "id": 8,
       "panels": [],
-      "title": "CPU spent per category  [Chrome only]",
+      "title": "CPU spent [Chrome only]",
       "type": "row"
     },
     {
@@ -415,16 +431,17 @@
       "description": "The CPU metrics are collected from Chrome when you add --chrome.timeline to your run. The trace log is analyzed and categorized.",
       "fill": 0,
       "gridPos": {
-        "h": 12,
-        "w": 24,
+        "h": 14,
+        "w": 12,
         "x": 0,
-        "y": 34
+        "y": 22
       },
       "id": 6,
       "legend": {
         "alignAsTable": true,
         "avg": false,
         "current": true,
+        "hideEmpty": true,
         "max": true,
         "min": true,
         "show": true,
@@ -453,7 +470,7 @@
       "thresholds": [],
       "timeFrom": null,
       "timeShift": null,
-      "title": "$page",
+      "title": "CPU timing metrics per category",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -484,20 +501,11 @@
           "min": null,
           "show": true
         }
-      ]
-    },
-    {
-      "collapsed": false,
-      "gridPos": {
-        "h": 1,
-        "w": 24,
-        "x": 0,
-        "y": 46
-      },
-      "id": 10,
-      "panels": [],
-      "title": "CPU spent [Chrome only]",
-      "type": "row"
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     },
     {
       "aliasColors": {},
@@ -508,16 +516,17 @@
       "description": "The CPU metrics are collected from Chrome when you add --chrome.timeline to your run. The trace log is analyzed and sorted by type.",
       "fill": 0,
       "gridPos": {
-        "h": 12,
-        "w": 24,
-        "x": 0,
-        "y": 47
+        "h": 14,
+        "w": 12,
+        "x": 12,
+        "y": 22
       },
       "id": 11,
       "legend": {
         "alignAsTable": true,
         "avg": false,
         "current": true,
+        "hideEmpty": true,
         "max": true,
         "min": true,
         "show": true,
@@ -546,7 +555,7 @@
       "thresholds": [],
       "timeFrom": null,
       "timeShift": null,
-      "title": "$page",
+      "title": "CPU time spent per event",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -577,7 +586,11 @@
           "min": null,
           "show": true
         }
-      ]
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     }
   ],
   "refresh": false,
@@ -750,7 +763,7 @@
     ]
   },
   "time": {
-    "from": "now-2d",
+    "from": "now-7d",
     "to": "now"
   },
   "timepicker": {
@@ -781,5 +794,5 @@
   "timezone": "browser",
   "title": "Page timing metrics",
   "uid": "000000044",
-  "version": 19
+  "version": 30
 }
