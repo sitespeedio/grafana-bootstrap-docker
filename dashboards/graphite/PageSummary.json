@@ -74,7 +74,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1537808354313,
+  "iteration": 1538992165284,
   "links": [
     {
       "asDropdown": true,
@@ -131,20 +131,23 @@
       "seriesOverrides": [
         {
           "alias": "LastVisualChange",
-          "fillBelowTo": "FirstVisualChange",
-          "lines": false
+          "color": "#cca300",
+          "fillBelowTo": "FirstVisualChange"
         },
         {
-          "alias": "FirstVisualChange",
-          "lines": false
+          "alias": "FirstVisualChange"
         },
         {
           "alias": "Heading",
-          "dashes": true
+          "dashLength": 2,
+          "dashes": true,
+          "spaceLength": 2
         },
         {
           "alias": "LargestImage",
-          "dashes": true
+          "dashLength": 3,
+          "dashes": true,
+          "spaceLength": 3
         }
       ],
       "spaceLength": 10,
@@ -5720,7 +5723,7 @@
     ]
   },
   "time": {
-    "from": "now-7d",
+    "from": "now-2d",
     "to": "now"
   },
   "timepicker": {
@@ -5751,5 +5754,5 @@
   "timezone": "browser",
   "title": "Page summary",
   "uid": "000000043",
-  "version": 22
+  "version": 23
 }

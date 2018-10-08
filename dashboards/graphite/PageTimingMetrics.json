@@ -62,7 +62,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1537808320625,
+  "iteration": 1538992194487,
   "links": [
     {
       "asDropdown": true,
@@ -94,7 +94,7 @@
       "description": "The Visual Metrics are collected by recording and analysing a video of the screen.",
       "fill": 0,
       "gridPos": {
-        "h": 20,
+        "h": 21,
         "w": 13,
         "x": 0,
         "y": 0
@@ -250,7 +250,7 @@
       "description": "The Technical metrics are collected from the browser using the Navigation Timing API, the User Timing API and firstPaint (when available).",
       "fill": 0,
       "gridPos": {
-        "h": 20,
+        "h": 21,
         "w": 11,
         "x": 13,
         "y": 0
@@ -352,6 +352,20 @@
           "refId": "H",
           "target": "aliasByNode($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.userTimings.marks.*.$function, 12)",
           "textEditor": false
+        },
+        {
+          "hide": false,
+          "refCount": 0,
+          "refId": "J",
+          "target": "aliasByNode($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.paintTiming.first-contentful-paint.$function, 11)",
+          "textEditor": false
+        },
+        {
+          "hide": false,
+          "refCount": 0,
+          "refId": "K",
+          "target": "aliasByNode($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.timeToDomContentFlushed.$function, 10)",
+          "textEditor": false
         }
       ],
       "thresholds": [],
@@ -401,7 +415,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 20
+        "y": 21
       },
       "id": 8,
       "panels": [],
@@ -420,7 +434,7 @@
         "h": 14,
         "w": 12,
         "x": 0,
-        "y": 21
+        "y": 22
       },
       "id": 6,
       "legend": {
@@ -505,7 +519,7 @@
         "h": 14,
         "w": 12,
         "x": 12,
-        "y": 21
+        "y": 22
       },
       "id": 11,
       "legend": {
@@ -749,7 +763,7 @@
     ]
   },
   "time": {
-    "from": "now-2d",
+    "from": "now-7d",
     "to": "now"
   },
   "timepicker": {
@@ -780,5 +794,5 @@
   "timezone": "browser",
   "title": "Page timing metrics",
   "uid": "000000044",
-  "version": 29
+  "version": 30
 }
