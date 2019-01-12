@@ -21,7 +21,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "5.2.1"
+      "version": "5.3.4"
     },
     {
       "type": "panel",
@@ -62,7 +62,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1538992194487,
+  "iteration": 1547321218393,
   "links": [
     {
       "asDropdown": true,
@@ -94,7 +94,7 @@
       "description": "The Visual Metrics are collected by recording and analysing a video of the screen.",
       "fill": 0,
       "gridPos": {
-        "h": 21,
+        "h": 18,
         "w": 13,
         "x": 0,
         "y": 0
@@ -105,6 +105,7 @@
         "avg": true,
         "current": true,
         "hideEmpty": true,
+        "hideZero": true,
         "max": true,
         "min": true,
         "show": true,
@@ -250,7 +251,7 @@
       "description": "The Technical metrics are collected from the browser using the Navigation Timing API, the User Timing API and firstPaint (when available).",
       "fill": 0,
       "gridPos": {
-        "h": 21,
+        "h": 18,
         "w": 11,
         "x": 13,
         "y": 0
@@ -261,6 +262,7 @@
         "avg": true,
         "current": true,
         "hideEmpty": true,
+        "hideZero": true,
         "max": true,
         "min": true,
         "show": true,
@@ -415,7 +417,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 21
+        "y": 18
       },
       "id": 8,
       "panels": [],
@@ -431,10 +433,10 @@
       "description": "The CPU metrics are collected from Chrome when you add --chrome.timeline to your run. The trace log is analyzed and categorized.",
       "fill": 0,
       "gridPos": {
-        "h": 14,
-        "w": 12,
+        "h": 10,
+        "w": 24,
         "x": 0,
-        "y": 22
+        "y": 19
       },
       "id": 6,
       "legend": {
@@ -442,6 +444,7 @@
         "avg": false,
         "current": true,
         "hideEmpty": true,
+        "hideZero": true,
         "max": true,
         "min": true,
         "show": true,
@@ -516,10 +519,10 @@
       "description": "The CPU metrics are collected from Chrome when you add --chrome.timeline to your run. The trace log is analyzed and sorted by type.",
       "fill": 0,
       "gridPos": {
-        "h": 14,
-        "w": 12,
-        "x": 12,
-        "y": 22
+        "h": 28,
+        "w": 24,
+        "x": 0,
+        "y": 29
       },
       "id": 11,
       "legend": {
@@ -527,9 +530,12 @@
         "avg": false,
         "current": true,
         "hideEmpty": true,
+        "hideZero": true,
         "max": true,
         "min": true,
         "show": true,
+        "sort": "current",
+        "sortDesc": true,
         "total": false,
         "values": true
       },
@@ -616,6 +622,7 @@
           }
         ],
         "query": "${VAR_BASE}",
+        "skipUrlSync": false,
         "type": "constant"
       },
       {
@@ -631,6 +638,7 @@
         "query": "$base.*",
         "refresh": 1,
         "regex": "",
+        "skipUrlSync": false,
         "sort": 0,
         "tagValuesQuery": null,
         "tags": [],
@@ -651,6 +659,7 @@
         "query": "$base.$path.pageSummary.*",
         "refresh": 1,
         "regex": "",
+        "skipUrlSync": false,
         "sort": 0,
         "tagValuesQuery": null,
         "tags": [],
@@ -671,6 +680,7 @@
         "query": "$base.$path.pageSummary.$group.*",
         "refresh": 1,
         "regex": "",
+        "skipUrlSync": false,
         "sort": 1,
         "tagValuesQuery": null,
         "tags": [],
@@ -691,6 +701,7 @@
         "query": "$base.$path.pageSummary.$group.$page.*",
         "refresh": 1,
         "regex": "",
+        "skipUrlSync": false,
         "sort": 0,
         "tagValuesQuery": null,
         "tags": [],
@@ -711,6 +722,7 @@
         "query": "$base.$path.pageSummary.$group.$page.$browser.*",
         "refresh": 1,
         "regex": "",
+        "skipUrlSync": false,
         "sort": 0,
         "tagValuesQuery": null,
         "tags": [],
@@ -758,6 +770,7 @@
         ],
         "query": "min,mean,median,p90,max",
         "refresh": 2,
+        "skipUrlSync": false,
         "type": "interval"
       }
     ]
@@ -794,5 +807,5 @@
   "timezone": "browser",
   "title": "Page timing metrics",
   "uid": "000000044",
-  "version": 30
+  "version": 35
 }
