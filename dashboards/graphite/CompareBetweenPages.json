@@ -7,20 +7,6 @@
       "type": "datasource",
       "pluginId": "graphite",
       "pluginName": "Graphite"
-    },
-    {
-      "name": "VAR_BASE",
-      "type": "constant",
-      "label": "sitespeed_io",
-      "value": "sitespeed_io",
-      "description": ""
-    },
-    {
-      "name": "VAR_PATH",
-      "type": "constant",
-      "label": "desktop",
-      "value": "desktop",
-      "description": ""
     }
   ],
   "__requires": [
@@ -66,16 +52,29 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1547330764062,
+  "iteration": 1547331300389,
   "links": [],
   "panels": [
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 7,
+      "panels": [],
+      "title": "",
+      "type": "row"
+    },
     {
       "content": "# Compare performance between sites\nThis is an example dashboard on how you can do to compare performance between sites. To make this dashboard work for you, you need to reconfigure the constants (template) $base and $path. ",
       "gridPos": {
         "h": 3,
         "w": 24,
         "x": 0,
-        "y": 0
+        "y": 1
       },
       "id": 5,
       "links": [],
@@ -94,13 +93,15 @@
         "h": 15,
         "w": 12,
         "x": 0,
-        "y": 3
+        "y": 4
       },
       "id": 1,
       "legend": {
         "alignAsTable": true,
         "avg": true,
         "current": true,
+        "hideEmpty": true,
+        "hideZero": true,
         "max": true,
         "min": true,
         "show": true,
@@ -177,13 +178,15 @@
         "h": 15,
         "w": 12,
         "x": 12,
-        "y": 3
+        "y": 4
       },
       "id": 2,
       "legend": {
         "alignAsTable": true,
         "avg": true,
         "current": true,
+        "hideEmpty": true,
+        "hideZero": true,
         "max": true,
         "min": true,
         "show": true,
@@ -260,13 +263,15 @@
         "h": 12,
         "w": 12,
         "x": 0,
-        "y": 18
+        "y": 19
       },
       "id": 3,
       "legend": {
         "alignAsTable": true,
         "avg": true,
         "current": true,
+        "hideEmpty": true,
+        "hideZero": true,
         "max": true,
         "min": true,
         "show": true,
@@ -343,13 +348,15 @@
         "h": 12,
         "w": 12,
         "x": 12,
-        "y": 18
+        "y": 19
       },
       "id": 4,
       "legend": {
         "alignAsTable": true,
         "avg": true,
         "current": true,
+        "hideEmpty": true,
+        "hideZero": true,
         "max": true,
         "min": true,
         "show": true,
@@ -414,6 +421,179 @@
         "align": false,
         "alignLevel": null
       }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "${DS_GRAPHITE}",
+      "fill": 0,
+      "gridPos": {
+        "h": 15,
+        "w": 12,
+        "x": 0,
+        "y": 31
+      },
+      "id": 8,
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
+        "hideEmpty": true,
+        "hideZero": true,
+        "max": true,
+        "min": true,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "connected",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "refId": "A",
+          "target": "aliasByNode($base.$path.pageSummary.*.*.chrome.cable.coach.advice.performance.score, 3, 4)"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Performance score",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "none",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "${DS_GRAPHITE}",
+      "decimals": 0,
+      "fill": 0,
+      "gridPos": {
+        "h": 15,
+        "w": 12,
+        "x": 12,
+        "y": 31
+      },
+      "id": 9,
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
+        "hideEmpty": true,
+        "hideZero": true,
+        "max": true,
+        "min": true,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "connected",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "refId": "A",
+          "target": "aliasByNode($base.$path.pageSummary.*.*.chrome.cable.coach.advice.privacy.score, 3, 4)"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Privacy score",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": 0,
+          "format": "none",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "decimals": 0,
+          "format": "short",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     }
   ],
   "schemaVersion": 16,
@@ -423,39 +603,39 @@
     "list": [
       {
         "current": {
-          "value": "${VAR_BASE}",
-          "text": "${VAR_BASE}"
+          "text": "sitespeed_io",
+          "value": "sitespeed_io"
         },
-        "hide": 2,
-        "label": "sitespeed_io",
+        "hide": 0,
+        "label": "base",
         "name": "base",
         "options": [
           {
-            "value": "${VAR_BASE}",
-            "text": "${VAR_BASE}"
+            "text": "sitespeed_io",
+            "value": "sitespeed_io"
           }
         ],
-        "query": "${VAR_BASE}",
+        "query": "sitespeed_io",
         "skipUrlSync": false,
-        "type": "constant"
+        "type": "textbox"
       },
       {
         "current": {
-          "value": "${VAR_PATH}",
-          "text": "${VAR_PATH}"
+          "text": "desktop-do",
+          "value": "desktop-do"
         },
-        "hide": 2,
-        "label": "desktop",
+        "hide": 0,
+        "label": "path",
         "name": "path",
         "options": [
           {
-            "value": "${VAR_PATH}",
-            "text": "${VAR_PATH}"
+            "text": "desktop-do",
+            "value": "desktop-do"
           }
         ],
-        "query": "${VAR_PATH}",
+        "query": "desktop-do",
         "skipUrlSync": false,
-        "type": "constant"
+        "type": "textbox"
       }
     ]
   },
@@ -491,5 +671,5 @@
   "timezone": "",
   "title": "Compare performance",
   "uid": "000000049",
-  "version": 2
+  "version": 4
 }
