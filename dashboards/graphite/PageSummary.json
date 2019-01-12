@@ -21,7 +21,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "5.3.4"
+      "version": "5.4.2"
     },
     {
       "type": "panel",
@@ -74,7 +74,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1547322000793,
+  "iteration": 1547330328158,
   "links": [
     {
       "asDropdown": true,
@@ -183,6 +183,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Visual Metrics",
       "tooltip": {
@@ -268,6 +269,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "CPU [Chrome only]",
       "tooltip": {
@@ -2878,6 +2880,7 @@
       ],
       "thresholds": [],
       "timeFrom": "30d",
+      "timeRegions": [],
       "timeShift": null,
       "title": "History First Visual Change",
       "tooltip": {
@@ -2985,6 +2988,7 @@
       ],
       "thresholds": [],
       "timeFrom": "30d",
+      "timeRegions": [],
       "timeShift": null,
       "title": "History Speed Index",
       "tooltip": {
@@ -3092,6 +3096,7 @@
       ],
       "thresholds": [],
       "timeFrom": "30d",
+      "timeRegions": [],
       "timeShift": null,
       "title": "History Perceptual Speed Index",
       "tooltip": {
@@ -3213,6 +3218,7 @@
       ],
       "thresholds": [],
       "timeFrom": "30d",
+      "timeRegions": [],
       "timeShift": null,
       "title": "History Visual Complete 85%",
       "tooltip": {
@@ -3320,6 +3326,7 @@
       ],
       "thresholds": [],
       "timeFrom": "30d",
+      "timeRegions": [],
       "timeShift": null,
       "title": "History Last Visual Change",
       "tooltip": {
@@ -3427,6 +3434,7 @@
       ],
       "thresholds": [],
       "timeFrom": "30d",
+      "timeRegions": [],
       "timeShift": null,
       "title": "History Fully Loaded",
       "tooltip": {
@@ -3510,6 +3518,8 @@
         "alignAsTable": true,
         "avg": false,
         "current": true,
+        "hideEmpty": true,
+        "hideZero": true,
         "max": true,
         "min": true,
         "rightSide": true,
@@ -3538,6 +3548,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Transfer Size",
       "tooltip": {
@@ -3608,6 +3619,8 @@
         "alignAsTable": true,
         "avg": false,
         "current": true,
+        "hideEmpty": true,
+        "hideZero": true,
         "max": true,
         "min": true,
         "rightSide": true,
@@ -3636,6 +3649,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Requests",
       "tooltip": {
@@ -3740,6 +3754,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "None 200 response codes",
       "tooltip": {
@@ -3841,6 +3856,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Time spent in backend vs frontend % [$function]",
       "tooltip": {
@@ -3954,6 +3970,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "DOMContentLoaded Time",
       "tooltip": {
@@ -4066,6 +4083,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Frontend Time",
       "tooltip": {
@@ -4169,6 +4187,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "User timings",
       "tooltip": {
@@ -4245,6 +4264,7 @@
         "avg": false,
         "current": true,
         "hideEmpty": true,
+        "hideZero": true,
         "max": true,
         "min": false,
         "rightSide": true,
@@ -4273,6 +4293,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Navigation Timings",
       "tooltip": {
@@ -5667,6 +5688,7 @@
         "allValue": null,
         "current": {},
         "datasource": "${DS_GRAPHITE}",
+        "definition": "",
         "hide": 0,
         "includeAll": false,
         "label": null,
@@ -5688,6 +5710,7 @@
         "allValue": null,
         "current": {},
         "datasource": "${DS_GRAPHITE}",
+        "definition": "",
         "hide": 0,
         "includeAll": false,
         "label": "",
@@ -5709,6 +5732,7 @@
         "allValue": null,
         "current": {},
         "datasource": "${DS_GRAPHITE}",
+        "definition": "",
         "hide": 0,
         "includeAll": false,
         "label": null,
@@ -5730,6 +5754,7 @@
         "allValue": null,
         "current": {},
         "datasource": "${DS_GRAPHITE}",
+        "definition": "",
         "hide": 0,
         "includeAll": false,
         "label": null,
@@ -5751,6 +5776,7 @@
         "allValue": null,
         "current": {},
         "datasource": "${DS_GRAPHITE}",
+        "definition": "",
         "hide": 0,
         "includeAll": false,
         "label": null,
@@ -5845,5 +5871,5 @@
   "timezone": "browser",
   "title": "Page summary",
   "uid": "000000043",
-  "version": 28
+  "version": 3
 }

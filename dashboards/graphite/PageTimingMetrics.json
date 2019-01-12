@@ -21,7 +21,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "5.3.4"
+      "version": "5.4.2"
     },
     {
       "type": "panel",
@@ -62,7 +62,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1547321218393,
+  "iteration": 1547330431901,
   "links": [
     {
       "asDropdown": true,
@@ -203,6 +203,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Visual metrics",
       "tooltip": {
@@ -372,6 +373,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Technical timing metrics",
       "tooltip": {
@@ -472,6 +474,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "CPU timing metrics per category",
       "tooltip": {
@@ -519,7 +522,7 @@
       "description": "The CPU metrics are collected from Chrome when you add --chrome.timeline to your run. The trace log is analyzed and sorted by type.",
       "fill": 0,
       "gridPos": {
-        "h": 28,
+        "h": 20,
         "w": 24,
         "x": 0,
         "y": 29
@@ -533,6 +536,7 @@
         "hideZero": true,
         "max": true,
         "min": true,
+        "rightSide": true,
         "show": true,
         "sort": "current",
         "sortDesc": true,
@@ -560,6 +564,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "CPU time spent per event",
       "tooltip": {
@@ -629,6 +634,7 @@
         "allValue": null,
         "current": {},
         "datasource": "${DS_GRAPHITE}",
+        "definition": "",
         "hide": 0,
         "includeAll": false,
         "label": null,
@@ -650,6 +656,7 @@
         "allValue": null,
         "current": {},
         "datasource": "${DS_GRAPHITE}",
+        "definition": "",
         "hide": 0,
         "includeAll": false,
         "label": null,
@@ -671,6 +678,7 @@
         "allValue": null,
         "current": {},
         "datasource": "${DS_GRAPHITE}",
+        "definition": "",
         "hide": 0,
         "includeAll": false,
         "label": null,
@@ -692,6 +700,7 @@
         "allValue": null,
         "current": {},
         "datasource": "${DS_GRAPHITE}",
+        "definition": "",
         "hide": 0,
         "includeAll": false,
         "label": null,
@@ -713,6 +722,7 @@
         "allValue": null,
         "current": {},
         "datasource": "${DS_GRAPHITE}",
+        "definition": "",
         "hide": 0,
         "includeAll": false,
         "label": null,
@@ -807,5 +817,5 @@
   "timezone": "browser",
   "title": "Page timing metrics",
   "uid": "000000044",
-  "version": 35
+  "version": 3
 }

@@ -28,7 +28,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "5.0.4"
+      "version": "5.4.2"
     },
     {
       "type": "panel",
@@ -66,7 +66,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1527759439745,
+  "iteration": 1547330764062,
   "links": [],
   "panels": [
     {
@@ -127,6 +127,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "SpeedIndex",
       "tooltip": {
@@ -159,7 +160,11 @@
           "min": null,
           "show": true
         }
-      ]
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     },
     {
       "aliasColors": {},
@@ -205,6 +210,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "FirstVisualChange",
       "tooltip": {
@@ -237,7 +243,11 @@
           "min": null,
           "show": true
         }
-      ]
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     },
     {
       "aliasColors": {},
@@ -283,6 +293,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Requests",
       "tooltip": {
@@ -315,7 +326,11 @@
           "min": null,
           "show": true
         }
-      ]
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     },
     {
       "aliasColors": {},
@@ -361,6 +376,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Total transfer size",
       "tooltip": {
@@ -393,7 +409,11 @@
           "min": null,
           "show": true
         }
-      ]
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     }
   ],
   "schemaVersion": 16,
@@ -416,6 +436,7 @@
           }
         ],
         "query": "${VAR_BASE}",
+        "skipUrlSync": false,
         "type": "constant"
       },
       {
@@ -433,6 +454,7 @@
           }
         ],
         "query": "${VAR_PATH}",
+        "skipUrlSync": false,
         "type": "constant"
       }
     ]
@@ -469,5 +491,5 @@
   "timezone": "",
   "title": "Compare performance",
   "uid": "000000049",
-  "version": 8
+  "version": 2
 }
