@@ -62,7 +62,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1547648772852,
+  "iteration": 1547753496210,
   "links": [
     {
       "asDropdown": true,
@@ -619,7 +619,7 @@
       "timeShift": null,
       "title": "First Visual Change",
       "tooltip": {
-        "shared": false,
+        "shared": true,
         "sort": 0,
         "value_type": "individual"
       },
@@ -734,7 +734,7 @@
       "timeShift": null,
       "title": "Speed Index",
       "tooltip": {
-        "shared": false,
+        "shared": true,
         "sort": 0,
         "value_type": "individual"
       },
@@ -849,7 +849,7 @@
       "timeShift": null,
       "title": "Back end time",
       "tooltip": {
-        "shared": false,
+        "shared": true,
         "sort": 0,
         "value_type": "individual"
       },
@@ -964,7 +964,7 @@
       "timeShift": null,
       "title": "Fully Loaded",
       "tooltip": {
-        "shared": false,
+        "shared": true,
         "sort": 0,
         "value_type": "individual"
       },
@@ -1079,7 +1079,7 @@
       "timeShift": null,
       "title": "Rendering",
       "tooltip": {
-        "shared": false,
+        "shared": true,
         "sort": 0,
         "value_type": "individual"
       },
@@ -1194,7 +1194,7 @@
       "timeShift": null,
       "title": "Scripting",
       "tooltip": {
-        "shared": false,
+        "shared": true,
         "sort": 0,
         "value_type": "individual"
       },
@@ -1634,5 +1634,5 @@
   "timezone": "browser",
   "title": "Page timing metrics",
   "uid": "000000044",
-  "version": 8
+  "version": 9
 }
