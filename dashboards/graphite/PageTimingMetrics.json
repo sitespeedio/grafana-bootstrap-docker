@@ -62,7 +62,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1547753496210,
+  "iteration": 1548056940586,
   "links": [
     {
       "asDropdown": true,
@@ -360,7 +360,7 @@
           "hide": false,
           "refCount": 0,
           "refId": "A",
-          "target": "alias($base.$path.pageSummary.$group.$page.$browser.$connectivity.pagexray.fullyLoaded, 'Fully loaded')",
+          "target": "alias($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.fullyLoaded.$function, 'Fully loaded')",
           "textEditor": false
         },
         {
@@ -1634,5 +1634,5 @@
   "timezone": "browser",
   "title": "Page timing metrics",
   "uid": "000000044",
-  "version": 9
+  "version": 10
 }
