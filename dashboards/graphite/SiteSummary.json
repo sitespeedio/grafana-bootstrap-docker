@@ -21,7 +21,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "5.0.4"
+      "version": "5.4.2"
     },
     {
       "type": "panel",
@@ -59,7 +59,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1527759701985,
+  "iteration": 1547330559713,
   "links": [
     {
       "asDropdown": true,
@@ -1861,6 +1861,7 @@
       ],
       "thresholds": [],
       "timeFrom": "30d",
+      "timeRegions": [],
       "timeShift": null,
       "title": "History First Visual Change [$function]",
       "tooltip": {
@@ -1894,7 +1895,11 @@
           "min": null,
           "show": true
         }
-      ]
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     },
     {
       "aliasColors": {},
@@ -1955,6 +1960,7 @@
       ],
       "thresholds": [],
       "timeFrom": "30d",
+      "timeRegions": [],
       "timeShift": null,
       "title": "History Speed Index  [$function]",
       "tooltip": {
@@ -1988,7 +1994,11 @@
           "min": null,
           "show": true
         }
-      ]
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     },
     {
       "aliasColors": {},
@@ -2049,6 +2059,7 @@
       ],
       "thresholds": [],
       "timeFrom": "30d",
+      "timeRegions": [],
       "timeShift": null,
       "title": "History Visual Complete 85%  [$function]",
       "tooltip": {
@@ -2082,7 +2093,11 @@
           "min": null,
           "show": true
         }
-      ]
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     },
     {
       "aliasColors": {},
@@ -2143,6 +2158,7 @@
       ],
       "thresholds": [],
       "timeFrom": "30d",
+      "timeRegions": [],
       "timeShift": null,
       "title": "History Last Visual Change [$function]",
       "tooltip": {
@@ -2176,7 +2192,11 @@
           "min": null,
           "show": true
         }
-      ]
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     },
     {
       "aliasColors": {},
@@ -2237,6 +2257,7 @@
       ],
       "thresholds": [],
       "timeFrom": "30d",
+      "timeRegions": [],
       "timeShift": null,
       "title": "History Fully Loaded  [$function]",
       "tooltip": {
@@ -2270,7 +2291,11 @@
           "min": null,
           "show": true
         }
-      ]
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     },
     {
       "collapsed": false,
@@ -2298,7 +2323,7 @@
       "fill": 0,
       "grid": {},
       "gridPos": {
-        "h": 9,
+        "h": 11,
         "w": 24,
         "x": 0,
         "y": 40
@@ -2308,8 +2333,11 @@
         "alignAsTable": true,
         "avg": false,
         "current": true,
+        "hideEmpty": true,
+        "hideZero": true,
         "max": true,
         "min": true,
+        "rightSide": true,
         "show": true,
         "total": false,
         "values": true
@@ -2335,6 +2363,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Summary Navigation Timings [$function]",
       "tooltip": {
@@ -2368,7 +2397,11 @@
           "min": null,
           "show": true
         }
-      ]
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     },
     {
       "collapsed": false,
@@ -2376,7 +2409,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 49
+        "y": 51
       },
       "id": 64,
       "panels": [],
@@ -2399,17 +2432,18 @@
         "h": 12,
         "w": 12,
         "x": 0,
-        "y": 50
+        "y": 52
       },
       "id": 27,
       "legend": {
+        "alignAsTable": true,
         "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
+        "current": true,
+        "max": true,
+        "min": true,
         "show": true,
         "total": false,
-        "values": false
+        "values": true
       },
       "lines": true,
       "linewidth": 0,
@@ -2443,6 +2477,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Time spent in backend vs frontend [$function]",
       "tooltip": {
@@ -2476,7 +2511,11 @@
           "min": null,
           "show": true
         }
-      ]
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     },
     {
       "aliasColors": {},
@@ -2492,7 +2531,7 @@
         "h": 12,
         "w": 12,
         "x": 12,
-        "y": 50
+        "y": 52
       },
       "id": 35,
       "legend": {
@@ -2526,6 +2565,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Response codes [$function]",
       "tooltip": {
@@ -2559,7 +2599,11 @@
           "min": null,
           "show": true
         }
-      ]
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     },
     {
       "collapsed": false,
@@ -2567,7 +2611,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 62
+        "y": 64
       },
       "id": 65,
       "panels": [],
@@ -2600,7 +2644,7 @@
         "h": 3,
         "w": 6,
         "x": 0,
-        "y": 63
+        "y": 65
       },
       "id": 37,
       "interval": null,
@@ -2681,7 +2725,7 @@
         "h": 3,
         "w": 6,
         "x": 6,
-        "y": 63
+        "y": 65
       },
       "id": 38,
       "interval": null,
@@ -2762,7 +2806,7 @@
         "h": 3,
         "w": 6,
         "x": 12,
-        "y": 63
+        "y": 65
       },
       "id": 40,
       "interval": null,
@@ -2843,7 +2887,7 @@
         "h": 3,
         "w": 6,
         "x": 18,
-        "y": 63
+        "y": 65
       },
       "id": 41,
       "interval": null,
@@ -2905,7 +2949,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 66
+        "y": 68
       },
       "id": 66,
       "panels": [],
@@ -2938,7 +2982,7 @@
         "h": 3,
         "w": 4,
         "x": 0,
-        "y": 67
+        "y": 69
       },
       "id": 29,
       "interval": null,
@@ -3019,7 +3063,7 @@
         "h": 3,
         "w": 4,
         "x": 4,
-        "y": 67
+        "y": 69
       },
       "id": 30,
       "interval": null,
@@ -3100,7 +3144,7 @@
         "h": 3,
         "w": 4,
         "x": 8,
-        "y": 67
+        "y": 69
       },
       "id": 31,
       "interval": null,
@@ -3181,7 +3225,7 @@
         "h": 3,
         "w": 4,
         "x": 12,
-        "y": 67
+        "y": 69
       },
       "id": 32,
       "interval": null,
@@ -3262,7 +3306,7 @@
         "h": 3,
         "w": 4,
         "x": 16,
-        "y": 67
+        "y": 69
       },
       "id": 33,
       "interval": null,
@@ -3343,7 +3387,7 @@
         "h": 3,
         "w": 4,
         "x": 20,
-        "y": 67
+        "y": 69
       },
       "id": 34,
       "interval": null,
@@ -3424,7 +3468,7 @@
         "h": 3,
         "w": 4,
         "x": 0,
-        "y": 70
+        "y": 72
       },
       "id": 46,
       "interval": null,
@@ -3505,7 +3549,7 @@
         "h": 3,
         "w": 4,
         "x": 4,
-        "y": 70
+        "y": 72
       },
       "id": 47,
       "interval": null,
@@ -3586,7 +3630,7 @@
         "h": 3,
         "w": 4,
         "x": 8,
-        "y": 70
+        "y": 72
       },
       "id": 48,
       "interval": null,
@@ -3667,7 +3711,7 @@
         "h": 3,
         "w": 4,
         "x": 12,
-        "y": 70
+        "y": 72
       },
       "id": 49,
       "interval": null,
@@ -3748,7 +3792,7 @@
         "h": 3,
         "w": 4,
         "x": 16,
-        "y": 70
+        "y": 72
       },
       "id": 50,
       "interval": null,
@@ -3829,7 +3873,7 @@
         "h": 3,
         "w": 4,
         "x": 20,
-        "y": 70
+        "y": 72
       },
       "id": 51,
       "interval": null,
@@ -3908,12 +3952,14 @@
           }
         ],
         "query": "${VAR_BASE}",
+        "skipUrlSync": false,
         "type": "constant"
       },
       {
         "allValue": null,
         "current": {},
         "datasource": "${DS_GRAPHITE}",
+        "definition": "",
         "hide": 0,
         "includeAll": false,
         "label": null,
@@ -3923,6 +3969,7 @@
         "query": "$base.*",
         "refresh": 1,
         "regex": "",
+        "skipUrlSync": false,
         "sort": 0,
         "tagValuesQuery": null,
         "tags": [],
@@ -3934,6 +3981,7 @@
         "allValue": null,
         "current": {},
         "datasource": "${DS_GRAPHITE}",
+        "definition": "",
         "hide": 0,
         "includeAll": false,
         "label": null,
@@ -3943,6 +3991,7 @@
         "query": "$base.$path.summary.*",
         "refresh": 1,
         "regex": "",
+        "skipUrlSync": false,
         "sort": 0,
         "tagValuesQuery": null,
         "tags": [],
@@ -3954,6 +4003,7 @@
         "allValue": null,
         "current": {},
         "datasource": "${DS_GRAPHITE}",
+        "definition": "",
         "hide": 0,
         "includeAll": false,
         "label": null,
@@ -3963,6 +4013,7 @@
         "query": "$base.$path.summary.$group.*",
         "refresh": 1,
         "regex": "",
+        "skipUrlSync": false,
         "sort": 0,
         "tagValuesQuery": null,
         "tags": [],
@@ -3974,6 +4025,7 @@
         "allValue": null,
         "current": {},
         "datasource": "${DS_GRAPHITE}",
+        "definition": "",
         "hide": 0,
         "includeAll": false,
         "label": null,
@@ -3983,6 +4035,7 @@
         "query": "$base.$path.summary.$group.$browser.*",
         "refresh": 1,
         "regex": "",
+        "skipUrlSync": false,
         "sort": 0,
         "tagValuesQuery": null,
         "tags": [],
@@ -4030,6 +4083,7 @@
         ],
         "query": "min, mean,median,p90,max",
         "refresh": 2,
+        "skipUrlSync": false,
         "type": "interval"
       }
     ]
@@ -4066,5 +4120,5 @@
   "timezone": "browser",
   "title": "Site summary",
   "uid": "000000045",
-  "version": 11
+  "version": 3
 }

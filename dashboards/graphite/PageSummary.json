@@ -21,7 +21,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "5.2.1"
+      "version": "5.4.2"
     },
     {
       "type": "panel",
@@ -74,7 +74,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1538992165284,
+  "iteration": 1547330328158,
   "links": [
     {
       "asDropdown": true,
@@ -114,6 +114,8 @@
         "alignAsTable": true,
         "avg": false,
         "current": true,
+        "hideEmpty": true,
+        "hideZero": true,
         "max": true,
         "min": true,
         "show": true,
@@ -181,6 +183,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Visual Metrics",
       "tooltip": {
@@ -238,6 +241,7 @@
         "avg": false,
         "current": true,
         "hideEmpty": true,
+        "hideZero": true,
         "max": true,
         "min": true,
         "show": true,
@@ -265,6 +269,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "CPU [Chrome only]",
       "tooltip": {
@@ -2411,7 +2416,7 @@
       },
       "gridPos": {
         "h": 3,
-        "w": 6,
+        "w": 5,
         "x": 0,
         "y": 36
       },
@@ -2492,8 +2497,8 @@
       },
       "gridPos": {
         "h": 3,
-        "w": 6,
-        "x": 6,
+        "w": 5,
+        "x": 5,
         "y": 36
       },
       "id": 11,
@@ -2573,8 +2578,8 @@
       },
       "gridPos": {
         "h": 3,
-        "w": 6,
-        "x": 12,
+        "w": 4,
+        "x": 10,
         "y": 36
       },
       "id": 63,
@@ -2654,8 +2659,8 @@
       },
       "gridPos": {
         "h": 3,
-        "w": 6,
-        "x": 18,
+        "w": 5,
+        "x": 14,
         "y": 36
       },
       "id": 64,
@@ -2701,6 +2706,87 @@
       ],
       "thresholds": "",
       "title": "Best Practice Score",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "current"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "rgba(245, 54, 54, 0.9)",
+        "rgba(237, 129, 40, 0.89)",
+        "rgba(50, 172, 45, 0.97)"
+      ],
+      "datasource": "${DS_GRAPHITE}",
+      "description": "The privacy score (0-100) calculated by the [Coach](https://www.sitespeed.io/documentation/coach/) using user privacy best practices.",
+      "editable": true,
+      "error": false,
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 5,
+        "x": 19,
+        "y": 36
+      },
+      "id": 82,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": true,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": true
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "refId": "A",
+          "target": "$base.$path.pageSummary.$group.$page.$browser.$connectivity.coach.advice.privacy.score"
+        }
+      ],
+      "thresholds": "",
+      "title": "Privacy Score",
       "type": "singlestat",
       "valueFontSize": "80%",
       "valueMaps": [
@@ -2794,6 +2880,7 @@
       ],
       "thresholds": [],
       "timeFrom": "30d",
+      "timeRegions": [],
       "timeShift": null,
       "title": "History First Visual Change",
       "tooltip": {
@@ -2901,6 +2988,7 @@
       ],
       "thresholds": [],
       "timeFrom": "30d",
+      "timeRegions": [],
       "timeShift": null,
       "title": "History Speed Index",
       "tooltip": {
@@ -3008,6 +3096,7 @@
       ],
       "thresholds": [],
       "timeFrom": "30d",
+      "timeRegions": [],
       "timeShift": null,
       "title": "History Perceptual Speed Index",
       "tooltip": {
@@ -3129,6 +3218,7 @@
       ],
       "thresholds": [],
       "timeFrom": "30d",
+      "timeRegions": [],
       "timeShift": null,
       "title": "History Visual Complete 85%",
       "tooltip": {
@@ -3236,6 +3326,7 @@
       ],
       "thresholds": [],
       "timeFrom": "30d",
+      "timeRegions": [],
       "timeShift": null,
       "title": "History Last Visual Change",
       "tooltip": {
@@ -3343,6 +3434,7 @@
       ],
       "thresholds": [],
       "timeFrom": "30d",
+      "timeRegions": [],
       "timeShift": null,
       "title": "History Fully Loaded",
       "tooltip": {
@@ -3426,6 +3518,8 @@
         "alignAsTable": true,
         "avg": false,
         "current": true,
+        "hideEmpty": true,
+        "hideZero": true,
         "max": true,
         "min": true,
         "rightSide": true,
@@ -3454,6 +3548,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Transfer Size",
       "tooltip": {
@@ -3524,6 +3619,8 @@
         "alignAsTable": true,
         "avg": false,
         "current": true,
+        "hideEmpty": true,
+        "hideZero": true,
         "max": true,
         "min": true,
         "rightSide": true,
@@ -3552,6 +3649,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Requests",
       "tooltip": {
@@ -3656,6 +3754,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "None 200 response codes",
       "tooltip": {
@@ -3757,6 +3856,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Time spent in backend vs frontend % [$function]",
       "tooltip": {
@@ -3870,6 +3970,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "DOMContentLoaded Time",
       "tooltip": {
@@ -3982,6 +4083,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Frontend Time",
       "tooltip": {
@@ -4085,6 +4187,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "User timings",
       "tooltip": {
@@ -4161,6 +4264,7 @@
         "avg": false,
         "current": true,
         "hideEmpty": true,
+        "hideZero": true,
         "max": true,
         "min": false,
         "rightSide": true,
@@ -4189,6 +4293,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Navigation Timings",
       "tooltip": {
@@ -5576,12 +5681,14 @@
           }
         ],
         "query": "${VAR_BASE}",
+        "skipUrlSync": false,
         "type": "constant"
       },
       {
         "allValue": null,
         "current": {},
         "datasource": "${DS_GRAPHITE}",
+        "definition": "",
         "hide": 0,
         "includeAll": false,
         "label": null,
@@ -5591,6 +5698,7 @@
         "query": "$base.*",
         "refresh": 1,
         "regex": "",
+        "skipUrlSync": false,
         "sort": 0,
         "tagValuesQuery": null,
         "tags": [],
@@ -5602,6 +5710,7 @@
         "allValue": null,
         "current": {},
         "datasource": "${DS_GRAPHITE}",
+        "definition": "",
         "hide": 0,
         "includeAll": false,
         "label": "",
@@ -5611,6 +5720,7 @@
         "query": "$base.$path.pageSummary.*",
         "refresh": 1,
         "regex": "",
+        "skipUrlSync": false,
         "sort": 0,
         "tagValuesQuery": null,
         "tags": [],
@@ -5622,6 +5732,7 @@
         "allValue": null,
         "current": {},
         "datasource": "${DS_GRAPHITE}",
+        "definition": "",
         "hide": 0,
         "includeAll": false,
         "label": null,
@@ -5631,6 +5742,7 @@
         "query": "$base.$path.pageSummary.$group.*",
         "refresh": 1,
         "regex": "",
+        "skipUrlSync": false,
         "sort": 0,
         "tagValuesQuery": null,
         "tags": [],
@@ -5642,6 +5754,7 @@
         "allValue": null,
         "current": {},
         "datasource": "${DS_GRAPHITE}",
+        "definition": "",
         "hide": 0,
         "includeAll": false,
         "label": null,
@@ -5651,6 +5764,7 @@
         "query": "$base.$path.pageSummary.$group.$page.*",
         "refresh": 1,
         "regex": "chrome|firefox",
+        "skipUrlSync": false,
         "sort": 0,
         "tagValuesQuery": null,
         "tags": [],
@@ -5662,6 +5776,7 @@
         "allValue": null,
         "current": {},
         "datasource": "${DS_GRAPHITE}",
+        "definition": "",
         "hide": 0,
         "includeAll": false,
         "label": null,
@@ -5671,6 +5786,7 @@
         "query": "$base.$path.pageSummary.$group.$page.$browser.*",
         "refresh": 1,
         "regex": "",
+        "skipUrlSync": false,
         "sort": 0,
         "tagValuesQuery": null,
         "tags": [],
@@ -5718,6 +5834,7 @@
         ],
         "query": "min, mean,median,p90,max",
         "refresh": 2,
+        "skipUrlSync": false,
         "type": "interval"
       }
     ]
@@ -5754,5 +5871,5 @@
   "timezone": "browser",
   "title": "Page summary",
   "uid": "000000043",
-  "version": 23
+  "version": 3
 }

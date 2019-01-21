@@ -21,7 +21,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "5.0.4"
+      "version": "5.4.2"
     },
     {
       "type": "panel",
@@ -53,7 +53,7 @@
   "gnetId": null,
   "graphTooltip": 1,
   "id": null,
-  "iteration": 1527759371596,
+  "iteration": 1547756412412,
   "links": [],
   "panels": [
     {
@@ -130,6 +130,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "# of Requests vs fullyLoaded",
       "tooltip": {
@@ -163,7 +164,11 @@
           "min": null,
           "show": true
         }
-      ]
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     },
     {
       "aliasColors": {
@@ -263,6 +268,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "1st vs 3rd party requests",
       "tooltip": {
@@ -296,7 +302,11 @@
           "min": null,
           "show": false
         }
-      ]
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     },
     {
       "aliasColors": {
@@ -396,6 +406,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "1st vs 3rd party content size",
       "tooltip": {
@@ -429,7 +440,11 @@
           "min": null,
           "show": false
         }
-      ]
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     },
     {
       "aliasColors": {
@@ -526,6 +541,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "1st vs 3rd party transfer size",
       "tooltip": {
@@ -559,7 +575,11 @@
           "min": null,
           "show": false
         }
-      ]
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     },
     {
       "aliasColors": {
@@ -641,6 +661,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "1st vs 3rd party header size",
       "tooltip": {
@@ -674,7 +695,11 @@
           "min": null,
           "show": false
         }
-      ]
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     },
     {
       "aliasColors": {
@@ -692,7 +717,7 @@
       "fill": 4,
       "grid": {},
       "gridPos": {
-        "h": 7,
+        "h": 8,
         "w": 12,
         "x": 0,
         "y": 21
@@ -707,7 +732,7 @@
         "hideZero": true,
         "max": true,
         "min": true,
-        "rightSide": false,
+        "rightSide": true,
         "show": true,
         "total": false,
         "values": true
@@ -744,6 +769,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "1st Party Content Breakdown Request Count",
       "tooltip": {
@@ -777,7 +803,11 @@
           "min": null,
           "show": false
         }
-      ]
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     },
     {
       "aliasColors": {
@@ -795,7 +825,7 @@
       "fill": 4,
       "grid": {},
       "gridPos": {
-        "h": 7,
+        "h": 8,
         "w": 12,
         "x": 12,
         "y": 21
@@ -810,7 +840,7 @@
         "hideZero": true,
         "max": true,
         "min": true,
-        "rightSide": false,
+        "rightSide": true,
         "show": true,
         "total": false,
         "values": true
@@ -847,6 +877,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "3rd Party Content Breakdown Request Count",
       "tooltip": {
@@ -880,7 +911,11 @@
           "min": null,
           "show": false
         }
-      ]
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     },
     {
       "aliasColors": {
@@ -898,10 +933,10 @@
       "fill": 4,
       "grid": {},
       "gridPos": {
-        "h": 7,
-        "w": 12,
+        "h": 8,
+        "w": 24,
         "x": 0,
-        "y": 28
+        "y": 29
       },
       "id": 6,
       "legend": {
@@ -912,7 +947,7 @@
         "hideZero": true,
         "max": true,
         "min": true,
-        "rightSide": false,
+        "rightSide": true,
         "show": true,
         "total": false,
         "values": true
@@ -955,6 +990,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Page Timings",
       "tooltip": {
@@ -988,7 +1024,11 @@
           "min": null,
           "show": false
         }
-      ]
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     },
     {
       "aliasColors": {
@@ -1006,10 +1046,10 @@
       "fill": 4,
       "grid": {},
       "gridPos": {
-        "h": 7,
-        "w": 12,
-        "x": 12,
-        "y": 28
+        "h": 8,
+        "w": 24,
+        "x": 0,
+        "y": 37
       },
       "id": 5,
       "legend": {
@@ -1020,7 +1060,7 @@
         "hideZero": true,
         "max": true,
         "min": true,
-        "rightSide": false,
+        "rightSide": true,
         "show": true,
         "sort": "current",
         "sortDesc": true,
@@ -1055,6 +1095,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "User Timings",
       "tooltip": {
@@ -1088,7 +1129,11 @@
           "min": null,
           "show": false
         }
-      ]
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     }
   ],
   "refresh": "15m",
@@ -1114,12 +1159,14 @@
           }
         ],
         "query": "${VAR_BASE}",
+        "skipUrlSync": false,
         "type": "constant"
       },
       {
         "allValue": null,
         "current": {},
         "datasource": "${DS_GRAPHITE}",
+        "definition": "",
         "hide": 0,
         "includeAll": false,
         "label": null,
@@ -1129,6 +1176,7 @@
         "query": "$base.*",
         "refresh": 1,
         "regex": "",
+        "skipUrlSync": false,
         "sort": 0,
         "tagValuesQuery": null,
         "tags": [],
@@ -1140,6 +1188,7 @@
         "allValue": null,
         "current": {},
         "datasource": "${DS_GRAPHITE}",
+        "definition": "",
         "hide": 0,
         "includeAll": false,
         "label": null,
@@ -1149,6 +1198,7 @@
         "query": "$base.$path.pageSummary.*",
         "refresh": 1,
         "regex": "",
+        "skipUrlSync": false,
         "sort": 0,
         "tagValuesQuery": null,
         "tags": [],
@@ -1160,6 +1210,7 @@
         "allValue": null,
         "current": {},
         "datasource": "${DS_GRAPHITE}",
+        "definition": "",
         "hide": 0,
         "includeAll": false,
         "label": null,
@@ -1169,6 +1220,7 @@
         "query": "$base.$path.pageSummary.$domain.*",
         "refresh": 1,
         "regex": "",
+        "skipUrlSync": false,
         "sort": 0,
         "tagValuesQuery": null,
         "tags": [],
@@ -1180,6 +1232,7 @@
         "allValue": null,
         "current": {},
         "datasource": "${DS_GRAPHITE}",
+        "definition": "",
         "hide": 0,
         "includeAll": false,
         "label": null,
@@ -1189,6 +1242,7 @@
         "query": "$base.$path.pageSummary.$domain.$page.*",
         "refresh": 1,
         "regex": "",
+        "skipUrlSync": false,
         "sort": 0,
         "tagValuesQuery": null,
         "tags": [],
@@ -1200,6 +1254,7 @@
         "allValue": null,
         "current": {},
         "datasource": "${DS_GRAPHITE}",
+        "definition": "",
         "hide": 0,
         "includeAll": false,
         "label": null,
@@ -1209,6 +1264,7 @@
         "query": "$base.$path.pageSummary.$domain.$page.$browser.*",
         "refresh": 1,
         "regex": "",
+        "skipUrlSync": false,
         "sort": 0,
         "tagValuesQuery": null,
         "tags": [],
@@ -1250,5 +1306,5 @@
   "timezone": "browser",
   "title": "3rd vs 1st party",
   "uid": "000000048",
-  "version": 9
+  "version": 3
 }
