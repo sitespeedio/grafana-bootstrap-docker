@@ -5,8 +5,8 @@ Run this container to get a default Graphite datasource linked with the default 
 
 The following environment variables can be set:
 
-* *GF_USER* - Grafana user that has privileges to setup dashboards & datasources (default: sitespeedio)
-* *GF_PASSWORD* - password for the Grafana user (default: hdeAga76VG6ga7plZ1)
+* *GF_USER* - Grafana user that has privileges to setup dashboards & datasources (default: admin)
+* *GF_PASSWORD* - password for the Grafana user (default: admin)
 * *GF_API*  - path to the Grafana API (default: ["http://grafana:3000/api"](http://grafana:3000/api)).
 * *BACKEND* - Choose between graphite or influxdb (default: graphite) 
 
