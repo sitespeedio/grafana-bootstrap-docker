@@ -21,31 +21,31 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "5.4.3"
+      "version": "6.1.4"
     },
     {
       "type": "panel",
       "id": "graph",
       "name": "Graph",
-      "version": "5.0.0"
+      "version": ""
     },
     {
       "type": "datasource",
       "id": "graphite",
       "name": "Graphite",
-      "version": "5.0.0"
+      "version": "1.0.0"
     },
     {
       "type": "panel",
       "id": "singlestat",
       "name": "Singlestat",
-      "version": "5.0.0"
+      "version": ""
     },
     {
       "type": "panel",
       "id": "table",
       "name": "Table",
-      "version": "5.0.0"
+      "version": ""
     }
   ],
   "annotations": {
@@ -74,7 +74,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1553945360030,
+  "iteration": 1556081935904,
   "links": [
     {
       "asDropdown": true,
@@ -486,7 +486,6 @@
       "timeFrom": null,
       "timeShift": null,
       "title": "SpeedIndex",
-      "transparent": false,
       "type": "singlestat",
       "valueFontSize": "80%",
       "valueMaps": [
@@ -570,7 +569,6 @@
       "timeFrom": null,
       "timeShift": null,
       "title": "Perceptual SpeedIndex",
-      "transparent": false,
       "type": "singlestat",
       "valueFontSize": "80%",
       "valueMaps": [
@@ -2817,6 +2815,109 @@
         "x": 0,
         "y": 40
       },
+      "id": 93,
+      "panels": [],
+      "title": "Errors",
+      "type": "row"
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "${DS_GRAPHITE}",
+      "description": "Show number of errors from Browsertime and other tools.",
+      "fill": 0,
+      "gridPos": {
+        "h": 5,
+        "w": 24,
+        "x": 0,
+        "y": 41
+      },
+      "id": 94,
+      "legend": {
+        "alignAsTable": true,
+        "avg": false,
+        "current": true,
+        "hideEmpty": true,
+        "hideZero": true,
+        "max": true,
+        "min": true,
+        "rightSide": true,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "connected",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "refCount": 0,
+          "refId": "A",
+          "target": "aliasByNode($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.errors.$function, 10)",
+          "textEditor": false
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Errors",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": 0,
+          "format": "none",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 46
+      },
       "id": 86,
       "panels": [],
       "title": "Third Party",
@@ -2834,7 +2935,7 @@
         "h": 15,
         "w": 12,
         "x": 0,
-        "y": 41
+        "y": 47
       },
       "id": 91,
       "legend": {
@@ -2943,7 +3044,7 @@
         "h": 15,
         "w": 12,
         "x": 12,
-        "y": 41
+        "y": 47
       },
       "id": 90,
       "legend": {
@@ -3046,7 +3147,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 56
+        "y": 62
       },
       "id": 70,
       "panels": [],
@@ -3069,7 +3170,7 @@
         "h": 12,
         "w": 8,
         "x": 0,
-        "y": 57
+        "y": 63
       },
       "id": 42,
       "legend": {
@@ -3177,7 +3278,7 @@
         "h": 12,
         "w": 8,
         "x": 8,
-        "y": 57
+        "y": 63
       },
       "id": 41,
       "legend": {
@@ -3285,7 +3386,7 @@
         "h": 12,
         "w": 8,
         "x": 16,
-        "y": 57
+        "y": 63
       },
       "id": 59,
       "legend": {
@@ -3384,7 +3485,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 69
+        "y": 75
       },
       "id": 71,
       "panels": [],
@@ -3407,7 +3508,7 @@
         "h": 12,
         "w": 8,
         "x": 0,
-        "y": 70
+        "y": 76
       },
       "id": 44,
       "legend": {
@@ -3515,7 +3616,7 @@
         "h": 12,
         "w": 8,
         "x": 8,
-        "y": 70
+        "y": 76
       },
       "id": 52,
       "legend": {
@@ -3623,7 +3724,7 @@
         "h": 12,
         "w": 8,
         "x": 16,
-        "y": 70
+        "y": 76
       },
       "id": 45,
       "legend": {
@@ -3722,7 +3823,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 82
+        "y": 88
       },
       "id": 72,
       "panels": [],
@@ -3753,7 +3854,7 @@
         "h": 8,
         "w": 24,
         "x": 0,
-        "y": 83
+        "y": 89
       },
       "id": 2,
       "legend": {
@@ -3854,7 +3955,7 @@
         "h": 7,
         "w": 24,
         "x": 0,
-        "y": 91
+        "y": 97
       },
       "id": 3,
       "legend": {
@@ -3937,7 +4038,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 98
+        "y": 104
       },
       "id": 73,
       "panels": [],
@@ -3961,7 +4062,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 99
+        "y": 105
       },
       "id": 4,
       "legend": {
@@ -4051,7 +4152,7 @@
         "h": 9,
         "w": 12,
         "x": 12,
-        "y": 99
+        "y": 105
       },
       "id": 5,
       "legend": {
@@ -4144,7 +4245,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 108
+        "y": 114
       },
       "id": 74,
       "panels": [],
@@ -4167,7 +4268,7 @@
         "h": 10,
         "w": 12,
         "x": 0,
-        "y": 109
+        "y": 115
       },
       "id": 6,
       "legend": {
@@ -4271,7 +4372,7 @@
         "h": 10,
         "w": 12,
         "x": 12,
-        "y": 109
+        "y": 115
       },
       "id": 7,
       "legend": {
@@ -4371,7 +4472,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 119
+        "y": 125
       },
       "id": 75,
       "panels": [],
@@ -4394,7 +4495,7 @@
         "h": 7,
         "w": 24,
         "x": 0,
-        "y": 120
+        "y": 126
       },
       "id": 16,
       "legend": {
@@ -4475,7 +4576,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 127
+        "y": 133
       },
       "id": 76,
       "panels": [],
@@ -4498,7 +4599,7 @@
         "h": 12,
         "w": 24,
         "x": 0,
-        "y": 128
+        "y": 134
       },
       "id": 1,
       "legend": {
@@ -4581,7 +4682,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 140
+        "y": 146
       },
       "id": 77,
       "panels": [],
@@ -4614,7 +4715,7 @@
         "h": 3,
         "w": 6,
         "x": 0,
-        "y": 141
+        "y": 147
       },
       "id": 33,
       "interval": null,
@@ -4695,7 +4796,7 @@
         "h": 3,
         "w": 6,
         "x": 6,
-        "y": 141
+        "y": 147
       },
       "id": 32,
       "interval": null,
@@ -4776,7 +4877,7 @@
         "h": 3,
         "w": 6,
         "x": 12,
-        "y": 141
+        "y": 147
       },
       "id": 35,
       "interval": null,
@@ -4857,7 +4958,7 @@
         "h": 3,
         "w": 6,
         "x": 18,
-        "y": 141
+        "y": 147
       },
       "id": 34,
       "interval": null,
@@ -4919,7 +5020,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 144
+        "y": 150
       },
       "id": 78,
       "panels": [],
@@ -4952,7 +5053,7 @@
         "h": 3,
         "w": 4,
         "x": 0,
-        "y": 145
+        "y": 151
       },
       "id": 25,
       "interval": null,
@@ -5033,7 +5134,7 @@
         "h": 3,
         "w": 4,
         "x": 4,
-        "y": 145
+        "y": 151
       },
       "id": 26,
       "interval": null,
@@ -5114,7 +5215,7 @@
         "h": 3,
         "w": 4,
         "x": 8,
-        "y": 145
+        "y": 151
       },
       "id": 27,
       "interval": null,
@@ -5195,7 +5296,7 @@
         "h": 3,
         "w": 4,
         "x": 12,
-        "y": 145
+        "y": 151
       },
       "id": 28,
       "interval": null,
@@ -5276,7 +5377,7 @@
         "h": 3,
         "w": 4,
         "x": 16,
-        "y": 145
+        "y": 151
       },
       "id": 29,
       "interval": null,
@@ -5357,7 +5458,7 @@
         "h": 3,
         "w": 4,
         "x": 20,
-        "y": 145
+        "y": 151
       },
       "id": 30,
       "interval": null,
@@ -5438,7 +5539,7 @@
         "h": 3,
         "w": 4,
         "x": 0,
-        "y": 148
+        "y": 154
       },
       "id": 46,
       "interval": null,
@@ -5519,7 +5620,7 @@
         "h": 3,
         "w": 4,
         "x": 4,
-        "y": 148
+        "y": 154
       },
       "id": 47,
       "interval": null,
@@ -5600,7 +5701,7 @@
         "h": 3,
         "w": 4,
         "x": 8,
-        "y": 148
+        "y": 154
       },
       "id": 48,
       "interval": null,
@@ -5681,7 +5782,7 @@
         "h": 3,
         "w": 4,
         "x": 12,
-        "y": 148
+        "y": 154
       },
       "id": 49,
       "interval": null,
@@ -5762,7 +5863,7 @@
         "h": 3,
         "w": 4,
         "x": 16,
-        "y": 148
+        "y": 154
       },
       "id": 50,
       "interval": null,
@@ -5843,7 +5944,7 @@
         "h": 3,
         "w": 4,
         "x": 20,
-        "y": 148
+        "y": 154
       },
       "id": 51,
       "interval": null,
@@ -5901,7 +6002,7 @@
     }
   ],
   "refresh": false,
-  "schemaVersion": 16,
+  "schemaVersion": 18,
   "style": "dark",
   "tags": [
     "page"
@@ -6113,5 +6214,5 @@
   "timezone": "browser",
   "title": "Page summary",
   "uid": "000000043",
-  "version": 7
+  "version": 12
 }
