@@ -62,7 +62,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1558266086318,
+  "iteration": 1558333948704,
   "links": [
     {
       "asDropdown": true,
@@ -1794,8 +1794,8 @@
       "description": "The CPU metrics are collected from Chrome when you add --chrome.timeline to your run. The trace log is analyzed and categorized.",
       "fill": 0,
       "gridPos": {
-        "h": 12,
-        "w": 12,
+        "h": 10,
+        "w": 24,
         "x": 0,
         "y": 66
       },
@@ -1835,7 +1835,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "CPU timing metrics per category",
+      "title": "CPU time spent per category",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -1878,13 +1878,13 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": "${DS_GRAPHITE}",
-      "description": "",
+      "description": "Activate by adding --cpu to to your run.",
       "fill": 0,
       "gridPos": {
-        "h": 12,
-        "w": 12,
-        "x": 12,
-        "y": 66
+        "h": 13,
+        "w": 24,
+        "x": 0,
+        "y": 76
       },
       "id": 31,
       "legend": {
@@ -1895,6 +1895,7 @@
         "hideZero": true,
         "max": true,
         "min": true,
+        "rightSide": true,
         "show": true,
         "total": false,
         "values": true
@@ -1922,7 +1923,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "CPU timing metrics per tool",
+      "title": "CPU time spent per tool/domain [Chrome only]",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -1965,7 +1966,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 78
+        "y": 89
       },
       "id": 8,
       "panels": [],
@@ -1984,7 +1985,7 @@
         "h": 20,
         "w": 24,
         "x": 0,
-        "y": 79
+        "y": 90
       },
       "id": 11,
       "legend": {
@@ -2276,5 +2277,5 @@
   "timezone": "browser",
   "title": "Page timing metrics",
   "uid": "000000044",
-  "version": 5
+  "version": 6
 }
