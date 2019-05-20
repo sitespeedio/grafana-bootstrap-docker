@@ -21,7 +21,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "6.1.4"
+      "version": "6.1.6"
     },
     {
       "type": "panel",
@@ -74,7 +74,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1556081935904,
+  "iteration": 1558266875911,
   "links": [
     {
       "asDropdown": true,
@@ -6214,5 +6214,5 @@
   "timezone": "browser",
   "title": "Page summary",
   "uid": "000000043",
-  "version": 12
+  "version": 14
 }

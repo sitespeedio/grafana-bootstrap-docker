@@ -1,4 +1,41 @@
 {
+  "__inputs": [
+    {
+      "name": "DS_GRAPHITE",
+      "label": "graphite",
+      "description": "",
+      "type": "datasource",
+      "pluginId": "graphite",
+      "pluginName": "Graphite"
+    },
+    {
+      "name": "VAR_BASE",
+      "type": "constant",
+      "label": "sitespeed_io",
+      "value": "sitespeed_io",
+      "description": ""
+    }
+  ],
+  "__requires": [
+    {
+      "type": "grafana",
+      "id": "grafana",
+      "name": "Grafana",
+      "version": "6.1.6"
+    },
+    {
+      "type": "panel",
+      "id": "graph",
+      "name": "Graph",
+      "version": ""
+    },
+    {
+      "type": "datasource",
+      "id": "graphite",
+      "name": "Graphite",
+      "version": "1.0.0"
+    }
+  ],
   "annotations": {
     "list": [
       {
@@ -11,7 +48,7 @@
         "type": "dashboard"
       },
       {
-        "datasource": "graphite",
+        "datasource": "${DS_GRAPHITE}",
         "enable": false,
         "iconColor": "rgb(96, 255, 103)",
         "limit": 100,
@@ -24,8 +61,8 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 14,
-  "iteration": 1553154405963,
+  "id": null,
+  "iteration": 1558333948704,
   "links": [
     {
       "asDropdown": true,
@@ -66,7 +103,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "graphite",
+      "datasource": "${DS_GRAPHITE}",
       "description": "The Visual Metrics are collected by recording and analysing a video of the screen.",
       "fill": 0,
       "gridPos": {
@@ -101,7 +138,7 @@
           "type": "dashboard"
         }
       ],
-      "minSpan": 12,
+      "maxPerRow": 2,
       "nullPointMode": "connected",
       "percentage": false,
       "pointradius": 5,
@@ -187,7 +224,6 @@
         "sort": 0,
         "value_type": "individual"
       },
-      "transparent": false,
       "type": "graph",
       "xaxis": {
         "buckets": null,
@@ -224,7 +260,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "graphite",
+      "datasource": "${DS_GRAPHITE}",
       "description": "The Technical metrics are collected from the browser using the Navigation Timing API, the User Timing API and firstPaint (when available).",
       "fill": 0,
       "gridPos": {
@@ -259,7 +295,7 @@
           "type": "dashboard"
         }
       ],
-      "minSpan": 12,
+      "maxPerRow": 2,
       "nullPointMode": "connected",
       "percentage": false,
       "pointradius": 5,
@@ -371,7 +407,6 @@
         "sort": 0,
         "value_type": "individual"
       },
-      "transparent": false,
       "type": "graph",
       "xaxis": {
         "buckets": null,
@@ -408,7 +443,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "graphite",
+      "datasource": "${DS_GRAPHITE}",
       "description": "Collected from the User Timing API.",
       "fill": 0,
       "gridPos": {
@@ -444,7 +479,7 @@
           "type": "dashboard"
         }
       ],
-      "minSpan": 12,
+      "maxPerRow": 2,
       "nullPointMode": "connected",
       "percentage": false,
       "pointradius": 5,
@@ -472,7 +507,6 @@
         "sort": 0,
         "value_type": "individual"
       },
-      "transparent": false,
       "type": "graph",
       "xaxis": {
         "buckets": null,
@@ -522,7 +556,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "graphite",
+      "datasource": "${DS_GRAPHITE}",
       "description": "The Visual Metrics are collected by recording and analysing a video of the screen.",
       "fill": 1,
       "gridPos": {
@@ -557,7 +591,7 @@
           "type": "dashboard"
         }
       ],
-      "minSpan": 12,
+      "maxPerRow": 2,
       "nullPointMode": "connected",
       "percentage": false,
       "pointradius": 5,
@@ -600,7 +634,6 @@
         "sort": 0,
         "value_type": "individual"
       },
-      "transparent": false,
       "type": "graph",
       "xaxis": {
         "buckets": null,
@@ -637,7 +670,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "graphite",
+      "datasource": "${DS_GRAPHITE}",
       "description": "The Visual Metrics are collected by recording and analysing a video of the screen.",
       "fill": 1,
       "gridPos": {
@@ -672,7 +705,7 @@
           "type": "dashboard"
         }
       ],
-      "minSpan": 12,
+      "maxPerRow": 2,
       "nullPointMode": "connected",
       "percentage": false,
       "pointradius": 5,
@@ -715,7 +748,6 @@
         "sort": 0,
         "value_type": "individual"
       },
-      "transparent": false,
       "type": "graph",
       "xaxis": {
         "buckets": null,
@@ -752,7 +784,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "graphite",
+      "datasource": "${DS_GRAPHITE}",
       "description": "",
       "fill": 1,
       "gridPos": {
@@ -787,7 +819,7 @@
           "type": "dashboard"
         }
       ],
-      "minSpan": 12,
+      "maxPerRow": 2,
       "nullPointMode": "connected",
       "percentage": false,
       "pointradius": 5,
@@ -830,7 +862,6 @@
         "sort": 0,
         "value_type": "individual"
       },
-      "transparent": false,
       "type": "graph",
       "xaxis": {
         "buckets": null,
@@ -867,7 +898,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "graphite",
+      "datasource": "${DS_GRAPHITE}",
       "description": "",
       "fill": 1,
       "gridPos": {
@@ -902,7 +933,7 @@
           "type": "dashboard"
         }
       ],
-      "minSpan": 12,
+      "maxPerRow": 2,
       "nullPointMode": "connected",
       "percentage": false,
       "pointradius": 5,
@@ -945,7 +976,6 @@
         "sort": 0,
         "value_type": "individual"
       },
-      "transparent": false,
       "type": "graph",
       "xaxis": {
         "buckets": null,
@@ -982,12 +1012,12 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "graphite",
+      "datasource": "${DS_GRAPHITE}",
       "description": "",
       "fill": 1,
       "gridPos": {
-        "h": 8,
-        "w": 12,
+        "h": 9,
+        "w": 6,
         "x": 0,
         "y": 44
       },
@@ -1017,7 +1047,7 @@
           "type": "dashboard"
         }
       ],
-      "minSpan": 12,
+      "maxPerRow": 2,
       "nullPointMode": "connected",
       "percentage": false,
       "pointradius": 5,
@@ -1039,14 +1069,14 @@
           "hide": false,
           "refCount": 0,
           "refId": "B",
-          "target": "aliasByNode(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.cpu.categories.Rendering.$function, '24h'), 11)",
+          "target": "aliasByNode(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.cpu.categories.paintCompositeRender.$function, '24h'), 11)",
           "textEditor": false
         },
         {
           "hide": false,
           "refCount": 0,
           "refId": "A",
-          "target": "alias(timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.cpu.categories.Rendering.median, '24h'), '7d'), 'One week earlier')",
+          "target": "alias(timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.cpu.categories.paintCompositeRender.median, '24h'), '7d'), 'One week earlier')",
           "textEditor": false
         }
       ],
@@ -1054,13 +1084,12 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Rendering",
+      "title": "Page composite render",
       "tooltip": {
         "shared": true,
         "sort": 0,
         "value_type": "individual"
       },
-      "transparent": false,
       "type": "graph",
       "xaxis": {
         "buckets": null,
@@ -1097,13 +1126,13 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "graphite",
+      "datasource": "${DS_GRAPHITE}",
       "description": "",
       "fill": 1,
       "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 12,
+        "h": 9,
+        "w": 6,
+        "x": 6,
         "y": 44
       },
       "id": 21,
@@ -1132,7 +1161,7 @@
           "type": "dashboard"
         }
       ],
-      "minSpan": 12,
+      "maxPerRow": 2,
       "nullPointMode": "connected",
       "percentage": false,
       "pointradius": 5,
@@ -1154,14 +1183,14 @@
           "hide": false,
           "refCount": 0,
           "refId": "B",
-          "target": "aliasByNode(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.cpu.categories.Scripting.$function, '24h'), 11)",
+          "target": "aliasByNode(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.cpu.categories.scriptEvaluation.$function, '24h'), 11)",
           "textEditor": false
         },
         {
           "hide": false,
           "refCount": 0,
           "refId": "A",
-          "target": "alias(timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.cpu.categories.Scripting.median, '24h'), '7d'), 'One week earlier')",
+          "target": "alias(timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.cpu.categories.scriptEvaluation.median, '24h'), '7d'), 'One week earlier')",
           "textEditor": false
         }
       ],
@@ -1169,13 +1198,240 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Scripting",
+      "title": "Script evaluate",
       "tooltip": {
         "shared": true,
         "sort": 0,
         "value_type": "individual"
       },
-      "transparent": false,
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "ms",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "${DS_GRAPHITE}",
+      "description": "",
+      "fill": 1,
+      "gridPos": {
+        "h": 9,
+        "w": 6,
+        "x": 12,
+        "y": 44
+      },
+      "id": 32,
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
+        "hideEmpty": true,
+        "hideZero": true,
+        "max": true,
+        "min": true,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 3,
+      "links": [
+        {
+          "dashUri": "db/page-summary",
+          "dashboard": "Page summary",
+          "includeVars": true,
+          "keepTime": true,
+          "targetBlank": true,
+          "title": "Page summary $page",
+          "type": "dashboard"
+        }
+      ],
+      "maxPerRow": 2,
+      "nullPointMode": "connected",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [
+        {
+          "alias": "/earlier/",
+          "fill": 0,
+          "linewidth": 3,
+          "zindex": -1
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "hide": false,
+          "refCount": 0,
+          "refId": "B",
+          "target": "aliasByNode(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.cpu.categories.scriptParseCompile.$function, '24h'), 11)",
+          "textEditor": false
+        },
+        {
+          "hide": false,
+          "refCount": 0,
+          "refId": "A",
+          "target": "alias(timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.cpu.categories.scriptParseCompile.median, '24h'), '7d'), 'One week earlier')",
+          "textEditor": false
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Script parse compile",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "ms",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "${DS_GRAPHITE}",
+      "description": "",
+      "fill": 1,
+      "gridPos": {
+        "h": 9,
+        "w": 6,
+        "x": 18,
+        "y": 44
+      },
+      "id": 33,
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
+        "hideEmpty": true,
+        "hideZero": true,
+        "max": true,
+        "min": true,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 3,
+      "links": [
+        {
+          "dashUri": "db/page-summary",
+          "dashboard": "Page summary",
+          "includeVars": true,
+          "keepTime": true,
+          "targetBlank": true,
+          "title": "Page summary $page",
+          "type": "dashboard"
+        }
+      ],
+      "maxPerRow": 2,
+      "nullPointMode": "connected",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [
+        {
+          "alias": "/earlier/",
+          "fill": 0,
+          "linewidth": 3,
+          "zindex": -1
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "hide": false,
+          "refCount": 0,
+          "refId": "B",
+          "target": "aliasByNode(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.cpu.categories.styleLayout.$function, '24h'), 11)",
+          "textEditor": false
+        },
+        {
+          "hide": false,
+          "refCount": 0,
+          "refId": "A",
+          "target": "alias(timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.cpu.categories.styleLayout.median, '24h'), '7d'), 'One week earlier')",
+          "textEditor": false
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Style layout",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
       "type": "graph",
       "xaxis": {
         "buckets": null,
@@ -1213,28 +1469,337 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 52
+        "y": 53
       },
-      "id": 8,
+      "id": 26,
       "panels": [],
-      "title": "CPU spent [Chrome only]",
+      "title": "CPU Long Tasks",
       "type": "row"
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "cacheTimeout": "",
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "${DS_GRAPHITE}",
+      "decimals": 0,
+      "description": "Metrics from the Long Task API. CPU tasks that takes more than 50 ms to run.",
+      "fill": 0,
+      "gridPos": {
+        "h": 12,
+        "w": 9,
+        "x": 0,
+        "y": 54
+      },
+      "id": 24,
+      "legend": {
+        "alignAsTable": true,
+        "avg": false,
+        "current": true,
+        "hideEmpty": true,
+        "hideZero": true,
+        "max": true,
+        "min": true,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "connected",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "refCount": 0,
+          "refId": "A",
+          "target": "alias($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.cpu.longTasks.tasks.$function, 'Total long tasks')",
+          "textEditor": false
+        },
+        {
+          "refCount": 0,
+          "refId": "B",
+          "target": "alias($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.cpu.longTasks.beforeFirstPaint.tasks.$function, 'Before First Paint')",
+          "textEditor": false
+        },
+        {
+          "refCount": 0,
+          "refId": "C",
+          "target": "alias($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.cpu.longTasks.beforeFirstContentfulPaint.tasks.$function, 'Before First Contentful Paint')",
+          "textEditor": false
+        },
+        {
+          "refCount": 0,
+          "refId": "D",
+          "target": "alias($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.cpu.longTasks.afterLoadEventEnd.tasks.$function, 'After Load Event End')",
+          "textEditor": false
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Long Tasks",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": 0,
+          "format": "none",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "none",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "cacheTimeout": "",
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "${DS_GRAPHITE}",
+      "decimals": 2,
+      "description": "Metrics from the Long Task API. CPU tasks that takes more than 50 ms to run.",
+      "fill": 0,
+      "gridPos": {
+        "h": 12,
+        "w": 7,
+        "x": 9,
+        "y": 54
+      },
+      "id": 30,
+      "legend": {
+        "alignAsTable": true,
+        "avg": false,
+        "current": true,
+        "hideEmpty": true,
+        "hideZero": true,
+        "max": true,
+        "min": true,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "connected",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "refCount": 0,
+          "refId": "A",
+          "target": "alias($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.cpu.longTasks.totalDuration.$function, 'Total long tasks')",
+          "textEditor": false
+        },
+        {
+          "refCount": 0,
+          "refId": "B",
+          "target": "alias($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.cpu.longTasks.beforeFirstPaint.totalDuration.$function, 'Before First Paint')",
+          "textEditor": false
+        },
+        {
+          "refCount": 0,
+          "refId": "C",
+          "target": "alias($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.cpu.longTasks.beforeFirstContentfulPaint.totalDuration.$function, 'Before First Contentful Paint')",
+          "textEditor": false
+        },
+        {
+          "refCount": 0,
+          "refId": "D",
+          "target": "alias($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.cpu.longTasks.afterLoadEventEnd.totalDuration.$function, 'After Load Event End')",
+          "textEditor": false
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Long Tasks Total Durations",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": 2,
+          "format": "ms",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "none",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "cacheTimeout": "",
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "${DS_GRAPHITE}",
+      "decimals": 2,
+      "description": "Metrics from the Long Task API. CPU tasks that takes more than 50 ms to run.",
+      "fill": 0,
+      "gridPos": {
+        "h": 12,
+        "w": 8,
+        "x": 16,
+        "y": 54
+      },
+      "id": 29,
+      "legend": {
+        "alignAsTable": true,
+        "avg": false,
+        "current": true,
+        "hideEmpty": true,
+        "hideZero": true,
+        "max": true,
+        "min": true,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "connected",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "refCount": 0,
+          "refId": "A",
+          "target": "alias($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.cpu.longTasks.durations.max, 'Longest long task')",
+          "textEditor": false
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Longest long task",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": 2,
+          "format": "ms",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "none",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     },
     {
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "graphite",
+      "datasource": "${DS_GRAPHITE}",
       "description": "The CPU metrics are collected from Chrome when you add --chrome.timeline to your run. The trace log is analyzed and categorized.",
       "fill": 0,
       "gridPos": {
-        "h": 11,
+        "h": 10,
         "w": 24,
         "x": 0,
-        "y": 53
+        "y": 66
       },
-      "id": 6,
+      "id": 23,
       "legend": {
         "alignAsTable": true,
         "avg": false,
@@ -1270,7 +1835,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "CPU timing metrics per category",
+      "title": "CPU time spent per category",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -1312,14 +1877,115 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "graphite",
+      "datasource": "${DS_GRAPHITE}",
+      "description": "Activate by adding --cpu to to your run.",
+      "fill": 0,
+      "gridPos": {
+        "h": 13,
+        "w": 24,
+        "x": 0,
+        "y": 76
+      },
+      "id": 31,
+      "legend": {
+        "alignAsTable": true,
+        "avg": false,
+        "current": true,
+        "hideEmpty": true,
+        "hideZero": true,
+        "max": true,
+        "min": true,
+        "rightSide": true,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "connected",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "refId": "A",
+          "target": "aliasByNode($base.$path.pageSummary.$group.$page.$browser.$connectivity.thirdparty.tool.*.cpu.$function, 9)",
+          "textEditor": false
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "CPU time spent per tool/domain [Chrome only]",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "ms",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 89
+      },
+      "id": 8,
+      "panels": [],
+      "title": "CPU spent [Chrome only]",
+      "type": "row"
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "${DS_GRAPHITE}",
       "description": "The CPU metrics are collected from Chrome when you add --chrome.timeline to your run. The trace log is analyzed and sorted by type.",
       "fill": 0,
       "gridPos": {
         "h": 20,
         "w": 24,
         "x": 0,
-        "y": 64
+        "y": 90
       },
       "id": 11,
       "legend": {
@@ -1399,7 +2065,7 @@
     }
   ],
   "refresh": false,
-  "schemaVersion": 16,
+  "schemaVersion": 18,
   "style": "dark",
   "tags": [
     "page"
@@ -1408,29 +2074,26 @@
     "list": [
       {
         "current": {
-          "text": "sitespeed_io",
-          "value": "sitespeed_io"
+          "value": "${VAR_BASE}",
+          "text": "${VAR_BASE}"
         },
         "hide": 2,
         "label": "sitespeed_io",
         "name": "base",
         "options": [
           {
-            "text": "sitespeed_io",
-            "value": "sitespeed_io"
+            "value": "${VAR_BASE}",
+            "text": "${VAR_BASE}"
           }
         ],
-        "query": "sitespeed_io",
+        "query": "${VAR_BASE}",
         "skipUrlSync": false,
         "type": "constant"
       },
       {
         "allValue": null,
-        "current": {
-          "text": "desktop",
-          "value": "desktop"
-        },
-        "datasource": "graphite",
+        "current": {},
+        "datasource": "${DS_GRAPHITE}",
         "definition": "",
         "hide": 0,
         "includeAll": false,
@@ -1451,11 +2114,8 @@
       },
       {
         "allValue": null,
-        "current": {
-          "text": "en_wikipedia_org",
-          "value": "en_wikipedia_org"
-        },
-        "datasource": "graphite",
+        "current": {},
+        "datasource": "${DS_GRAPHITE}",
         "definition": "",
         "hide": 0,
         "includeAll": false,
@@ -1476,11 +2136,8 @@
       },
       {
         "allValue": null,
-        "current": {
-          "text": "_wiki_Barack_Obama",
-          "value": "_wiki_Barack_Obama"
-        },
-        "datasource": "graphite",
+        "current": {},
+        "datasource": "${DS_GRAPHITE}",
         "definition": "",
         "hide": 0,
         "includeAll": false,
@@ -1501,12 +2158,8 @@
       },
       {
         "allValue": null,
-        "current": {
-          "tags": [],
-          "text": "firefox",
-          "value": "firefox"
-        },
-        "datasource": "graphite",
+        "current": {},
+        "datasource": "${DS_GRAPHITE}",
         "definition": "",
         "hide": 0,
         "includeAll": false,
@@ -1527,11 +2180,8 @@
       },
       {
         "allValue": null,
-        "current": {
-          "text": "cable",
-          "value": "cable"
-        },
-        "datasource": "graphite",
+        "current": {},
+        "datasource": "${DS_GRAPHITE}",
         "definition": "",
         "hide": 0,
         "includeAll": false,
@@ -1627,5 +2277,5 @@
   "timezone": "browser",
   "title": "Page timing metrics",
   "uid": "000000044",
-  "version": 2
+  "version": 6
 }
