@@ -11,7 +11,7 @@
     {
       "name": "VAR_BASE",
       "type": "constant",
-      "label": "namespace",
+      "label": "sitespeed_io",
       "value": "sitespeed_io",
       "description": ""
     }
@@ -21,7 +21,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "6.2.0"
+      "version": "6.2.1"
     },
     {
       "type": "panel",
@@ -62,7 +62,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1558982539178,
+  "iteration": 1558984717271,
   "links": [
     {
       "icon": "external link",
@@ -2094,8 +2094,8 @@
           "value": "${VAR_BASE}",
           "text": "${VAR_BASE}"
         },
-        "hide": 0,
-        "label": "namespace",
+        "hide": 2,
+        "label": "sitespeed_io",
         "name": "base",
         "options": [
           {
@@ -2222,6 +2222,7 @@
         "auto_count": 30,
         "auto_min": "10s",
         "current": {
+          "selected": true,
           "text": "median",
           "value": "median"
         },
@@ -2294,5 +2295,5 @@
   "timezone": "browser",
   "title": "Page timing metrics",
   "uid": "000000044",
-  "version": 16
+  "version": 20
 }

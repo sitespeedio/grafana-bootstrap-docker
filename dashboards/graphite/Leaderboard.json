@@ -11,7 +11,7 @@
     {
       "name": "VAR_NAMESPACE",
       "type": "constant",
-      "label": "namespace",
+      "label": "sitespeed_io",
       "value": "sitespeed_io",
       "description": ""
     }
@@ -33,7 +33,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "6.2.0"
+      "version": "6.2.1"
     },
     {
       "type": "panel",
@@ -65,7 +65,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1558982560887,
+  "iteration": 1558984602133,
   "links": [
     {
       "icon": "external link",
@@ -1322,7 +1322,7 @@
         "showThresholdLabels": true,
         "showThresholdMarkers": false
       },
-      "pluginVersion": "6.2.0",
+      "pluginVersion": "6.2.1",
       "targets": [
         {
           "refId": "A",
@@ -1381,7 +1381,7 @@
         "showThresholdLabels": true,
         "showThresholdMarkers": false
       },
-      "pluginVersion": "6.2.0",
+      "pluginVersion": "6.2.1",
       "targets": [
         {
           "refId": "A",
@@ -2398,8 +2398,8 @@
           "value": "${VAR_NAMESPACE}",
           "text": "${VAR_NAMESPACE}"
         },
-        "hide": 0,
-        "label": "namespace",
+        "hide": 2,
+        "label": "sitespeed_io",
         "name": "namespace",
         "options": [
           {
@@ -2599,5 +2599,5 @@
   "timezone": "",
   "title": "Leaderboard",
   "uid": "000000060",
-  "version": 24
+  "version": 28
 }
