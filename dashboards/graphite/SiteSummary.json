@@ -65,7 +65,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1558984830206,
+  "iteration": 1559081249142,
   "links": [
     {
       "icon": "external link",
@@ -82,6 +82,15 @@
       "keepTime": true,
       "tags": [
         "page summary"
+      ],
+      "type": "dashboards"
+    },
+    {
+      "icon": "external link",
+      "includeVars": true,
+      "keepTime": true,
+      "tags": [
+        "page timings"
       ],
       "type": "dashboards"
     }
@@ -105,7 +114,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "description": "",
+      "description": "The first visual change is when something for the first time is painted within the current viewport. It is calculated by analyzing a video recording of the screen.",
       "fill": 0,
       "gridPos": {
         "h": 8,
@@ -214,7 +223,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "description": "",
+      "description": "The Speed Index is the average time at which visible parts of the page are displayed. It is expressed in milliseconds and dependent on size of the view port. It was created by Pat Meenan and you can checkout the full documentation [here](https://sites.google.com/a/webpagetest.org/docs/using-webpagetest/metrics/speed-index).",
       "fill": 0,
       "gridPos": {
         "h": 8,
@@ -324,7 +333,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "description": "",
+      "description": "The largest image is the time when the largest image within the viewport is painted and on its final position. It is calculated by analyzing a video recording of the screen.",
       "fill": 0,
       "gridPos": {
         "h": 8,
@@ -433,7 +442,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "description": "",
+      "description": "The last visual change is when something for the last time is changing within the current viewport. It is calculated by analyzing a video recording of the screen.",
       "fill": 0,
       "gridPos": {
         "h": 8,
@@ -1613,6 +1622,692 @@
         "x": 0,
         "y": 23
       },
+      "id": 85,
+      "panels": [],
+      "title": "CPU Long Tasks",
+      "type": "row"
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "description": "The average number of CPU Long Tasks per page. A CPU long Task is by default a CPU task that takes longer than 50 ms to run. This metrics is Chrome only at the moment.",
+      "fill": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 24
+      },
+      "id": 87,
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
+        "max": true,
+        "min": true,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "connected",
+      "options": {},
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [
+        {
+          "alias": "max",
+          "fillBelowTo": "min",
+          "lines": false
+        },
+        {
+          "alias": "min",
+          "lines": false
+        },
+        {
+          "alias": "min",
+          "lines": false
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "refCount": 0,
+          "refId": "A",
+          "target": "aliasByMetric(sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.cpu.longTasks.tasks.max)"
+        },
+        {
+          "refCount": 0,
+          "refId": "B",
+          "target": "aliasByMetric(sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.cpu.longTasks.tasks.median)"
+        },
+        {
+          "refCount": 0,
+          "refId": "C",
+          "target": "aliasByMetric(sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.cpu.longTasks.tasks.min)"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Number of CPU Long Tasks",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": 0,
+          "format": "none",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "description": "",
+      "fill": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 24
+      },
+      "id": 88,
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
+        "max": true,
+        "min": true,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "connected",
+      "options": {},
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [
+        {
+          "alias": "max",
+          "fillBelowTo": "min",
+          "lines": false
+        },
+        {
+          "alias": "min",
+          "lines": false
+        },
+        {
+          "alias": "min",
+          "lines": false
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "refCount": 0,
+          "refId": "A",
+          "target": "aliasByMetric(sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.cpu.longTasks.totalDuration.max)"
+        },
+        {
+          "refCount": 0,
+          "refId": "B",
+          "target": "aliasByMetric(sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.cpu.longTasks.totalDuration.median)"
+        },
+        {
+          "refCount": 0,
+          "refId": "C",
+          "target": "aliasByMetric(sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.cpu.longTasks.totalDuration.min)"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "CPU Long Tasks total duration",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": 0,
+          "format": "ms",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 32
+      },
+      "id": 90,
+      "panels": [],
+      "title": "CPU Time Spent",
+      "type": "row"
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "description": "",
+      "fill": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 33
+      },
+      "id": 91,
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
+        "max": true,
+        "min": true,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "connected",
+      "options": {},
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [
+        {
+          "alias": "max",
+          "fillBelowTo": "min",
+          "lines": false
+        },
+        {
+          "alias": "min",
+          "lines": false
+        },
+        {
+          "alias": "min",
+          "lines": false
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "refCount": 0,
+          "refId": "A",
+          "target": "aliasByMetric(sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.cpu.categories.scriptEvaluation.max)"
+        },
+        {
+          "refCount": 0,
+          "refId": "B",
+          "target": "aliasByMetric(sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.cpu.categories.scriptEvaluation.median)"
+        },
+        {
+          "refCount": 0,
+          "refId": "C",
+          "target": "aliasByMetric(sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.cpu.categories.scriptEvaluation.min)"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Script evaluation",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": 0,
+          "format": "ms",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "description": "",
+      "fill": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 33
+      },
+      "id": 93,
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
+        "max": true,
+        "min": true,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "connected",
+      "options": {},
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [
+        {
+          "alias": "max",
+          "fillBelowTo": "min",
+          "lines": false
+        },
+        {
+          "alias": "min",
+          "lines": false
+        },
+        {
+          "alias": "min",
+          "lines": false
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "refCount": 0,
+          "refId": "A",
+          "target": "aliasByMetric(sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.cpu.categories.scriptParseCompile.max)"
+        },
+        {
+          "refCount": 0,
+          "refId": "B",
+          "target": "aliasByMetric(sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.cpu.categories.scriptParseCompile.median)"
+        },
+        {
+          "refCount": 0,
+          "refId": "C",
+          "target": "aliasByMetric(sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.cpu.categories.scriptParseCompile.min)"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Script parse compile",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": 0,
+          "format": "ms",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "description": "",
+      "fill": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 41
+      },
+      "id": 94,
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
+        "max": true,
+        "min": true,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "connected",
+      "options": {},
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [
+        {
+          "alias": "max",
+          "fillBelowTo": "min",
+          "lines": false
+        },
+        {
+          "alias": "min",
+          "lines": false
+        },
+        {
+          "alias": "min",
+          "lines": false
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "refCount": 0,
+          "refId": "A",
+          "target": "aliasByMetric(sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.cpu.categories.paintCompositeRender.max)"
+        },
+        {
+          "refCount": 0,
+          "refId": "B",
+          "target": "aliasByMetric(sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.cpu.categories.paintCompositeRender.median)"
+        },
+        {
+          "refCount": 0,
+          "refId": "C",
+          "target": "aliasByMetric(sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.cpu.categories.paintCompositeRender.min)"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Paint composite render",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": 0,
+          "format": "ms",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "description": "",
+      "fill": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 41
+      },
+      "id": 92,
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
+        "max": true,
+        "min": true,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "connected",
+      "options": {},
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [
+        {
+          "alias": "max",
+          "fillBelowTo": "min",
+          "lines": false
+        },
+        {
+          "alias": "min",
+          "lines": false
+        },
+        {
+          "alias": "min",
+          "lines": false
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "refCount": 0,
+          "refId": "A",
+          "target": "aliasByMetric(sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.cpu.categories.styleLayout.max)"
+        },
+        {
+          "refCount": 0,
+          "refId": "B",
+          "target": "aliasByMetric(sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.cpu.categories.styleLayout.median)"
+        },
+        {
+          "refCount": 0,
+          "refId": "C",
+          "target": "aliasByMetric(sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.cpu.categories.styleLayout.min)"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Style Layout",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": 0,
+          "format": "ms",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 49
+      },
       "id": 80,
       "panels": [],
       "title": "Technical Metrics",
@@ -1629,7 +2324,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 24
+        "y": 50
       },
       "id": 82,
       "legend": {
@@ -1738,7 +2433,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 24
+        "y": 50
       },
       "id": 83,
       "legend": {
@@ -1842,7 +2537,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 32
+        "y": 58
       },
       "id": 59,
       "panels": [],
@@ -1876,7 +2571,7 @@
         "h": 3,
         "w": 4,
         "x": 0,
-        "y": 33
+        "y": 59
       },
       "id": 11,
       "interval": null,
@@ -1960,7 +2655,7 @@
         "h": 3,
         "w": 4,
         "x": 4,
-        "y": 33
+        "y": 59
       },
       "id": 9,
       "interval": null,
@@ -2043,7 +2738,7 @@
         "h": 3,
         "w": 4,
         "x": 8,
-        "y": 33
+        "y": 59
       },
       "id": 6,
       "interval": null,
@@ -2126,7 +2821,7 @@
         "h": 3,
         "w": 4,
         "x": 12,
-        "y": 33
+        "y": 59
       },
       "id": 43,
       "interval": null,
@@ -2210,7 +2905,7 @@
         "h": 3,
         "w": 4,
         "x": 16,
-        "y": 33
+        "y": 59
       },
       "id": 18,
       "interval": null,
@@ -2294,7 +2989,7 @@
         "h": 3,
         "w": 4,
         "x": 20,
-        "y": 33
+        "y": 59
       },
       "id": 19,
       "interval": null,
@@ -2358,7 +3053,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 36
+        "y": 62
       },
       "id": 60,
       "panels": [],
@@ -2392,7 +3087,7 @@
         "h": 3,
         "w": 4,
         "x": 0,
-        "y": 37
+        "y": 63
       },
       "id": 16,
       "interval": null,
@@ -2476,7 +3171,7 @@
         "h": 3,
         "w": 8,
         "x": 4,
-        "y": 37
+        "y": 63
       },
       "id": 13,
       "interval": null,
@@ -2559,7 +3254,7 @@
         "h": 3,
         "w": 6,
         "x": 12,
-        "y": 37
+        "y": 63
       },
       "id": 42,
       "interval": null,
@@ -2643,7 +3338,7 @@
         "h": 3,
         "w": 6,
         "x": 18,
-        "y": 37
+        "y": 63
       },
       "id": 17,
       "interval": null,
@@ -2707,7 +3402,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 40
+        "y": 66
       },
       "id": 61,
       "panels": [],
@@ -2740,7 +3435,7 @@
         "h": 3,
         "w": 6,
         "x": 0,
-        "y": 41
+        "y": 67
       },
       "id": 21,
       "interval": null,
@@ -2823,7 +3518,7 @@
         "h": 3,
         "w": 4,
         "x": 6,
-        "y": 41
+        "y": 67
       },
       "id": 23,
       "interval": null,
@@ -2891,89 +3586,6 @@
         "rgba(50, 172, 45, 0.97)"
       ],
       "datasource": "${DS_GRAPHITE}",
-      "description": "Fully loaded time when the last of all assets is downloaded on the page. It is calculated using the Resource Timing API where we use the last downloaded asset.",
-      "editable": true,
-      "error": false,
-      "format": "ms",
-      "gauge": {
-        "maxValue": 100,
-        "minValue": 0,
-        "show": false,
-        "thresholdLabels": false,
-        "thresholdMarkers": true
-      },
-      "gridPos": {
-        "h": 3,
-        "w": 4,
-        "x": 10,
-        "y": 41
-      },
-      "id": 4,
-      "interval": null,
-      "links": [],
-      "mappingType": 1,
-      "mappingTypes": [
-        {
-          "name": "value to text",
-          "value": 1
-        },
-        {
-          "name": "range to text",
-          "value": 2
-        }
-      ],
-      "maxDataPoints": 100,
-      "nullPointMode": "connected",
-      "nullText": null,
-      "options": {},
-      "postfix": "",
-      "postfixFontSize": "50%",
-      "prefix": "",
-      "prefixFontSize": "50%",
-      "rangeMaps": [
-        {
-          "from": "null",
-          "text": "N/A",
-          "to": "null"
-        }
-      ],
-      "sparkline": {
-        "fillColor": "rgba(31, 118, 189, 0.18)",
-        "full": true,
-        "lineColor": "rgb(31, 120, 193)",
-        "show": false
-      },
-      "tableColumn": "",
-      "targets": [
-        {
-          "refId": "A",
-          "target": "$base.$path.summary.$group.$browser.$connectivity.browsertime.fullyLoaded.$function",
-          "textEditor": false
-        }
-      ],
-      "thresholds": "",
-      "title": "Fully loaded",
-      "type": "singlestat",
-      "valueFontSize": "80%",
-      "valueMaps": [
-        {
-          "op": "=",
-          "text": "N/A",
-          "value": "null"
-        }
-      ],
-      "valueName": "current"
-    },
-    {
-      "cacheTimeout": null,
-      "colorBackground": false,
-      "colorValue": false,
-      "colors": [
-        "rgba(245, 54, 54, 0.9)",
-        "rgba(237, 129, 40, 0.89)",
-        "rgba(50, 172, 45, 0.97)"
-      ],
-      "datasource": "${DS_GRAPHITE}",
       "decimals": null,
       "description": "The $function number of JavaScript requests for all the analyzed pages.",
       "editable": true,
@@ -2988,9 +3600,9 @@
       },
       "gridPos": {
         "h": 3,
-        "w": 6,
-        "x": 14,
-        "y": 41
+        "w": 5,
+        "x": 10,
+        "y": 67
       },
       "id": 15,
       "interval": null,
@@ -3073,8 +3685,8 @@
       "gridPos": {
         "h": 3,
         "w": 4,
-        "x": 20,
-        "y": 41
+        "x": 15,
+        "y": 67
       },
       "id": 14,
       "interval": null,
@@ -3138,7 +3750,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 44
+        "y": 70
       },
       "id": 63,
       "panels": [],
@@ -3161,7 +3773,7 @@
         "h": 11,
         "w": 24,
         "x": 0,
-        "y": 45
+        "y": 71
       },
       "id": 1,
       "legend": {
@@ -3245,7 +3857,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 56
+        "y": 82
       },
       "id": 64,
       "panels": [],
@@ -3268,7 +3880,7 @@
         "h": 12,
         "w": 12,
         "x": 0,
-        "y": 57
+        "y": 83
       },
       "id": 27,
       "legend": {
@@ -3368,7 +3980,7 @@
         "h": 12,
         "w": 12,
         "x": 12,
-        "y": 57
+        "y": 83
       },
       "id": 35,
       "legend": {
@@ -3449,7 +4061,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 69
+        "y": 95
       },
       "id": 65,
       "panels": [],
@@ -3482,7 +4094,7 @@
         "h": 3,
         "w": 6,
         "x": 0,
-        "y": 70
+        "y": 96
       },
       "id": 37,
       "interval": null,
@@ -3564,7 +4176,7 @@
         "h": 3,
         "w": 6,
         "x": 6,
-        "y": 70
+        "y": 96
       },
       "id": 38,
       "interval": null,
@@ -3646,7 +4258,7 @@
         "h": 3,
         "w": 6,
         "x": 12,
-        "y": 70
+        "y": 96
       },
       "id": 40,
       "interval": null,
@@ -3728,7 +4340,7 @@
         "h": 3,
         "w": 6,
         "x": 18,
-        "y": 70
+        "y": 96
       },
       "id": 41,
       "interval": null,
@@ -3791,7 +4403,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 73
+        "y": 99
       },
       "id": 66,
       "panels": [],
@@ -3824,7 +4436,7 @@
         "h": 3,
         "w": 4,
         "x": 0,
-        "y": 74
+        "y": 100
       },
       "id": 29,
       "interval": null,
@@ -3906,7 +4518,7 @@
         "h": 3,
         "w": 4,
         "x": 4,
-        "y": 74
+        "y": 100
       },
       "id": 30,
       "interval": null,
@@ -3988,7 +4600,7 @@
         "h": 3,
         "w": 4,
         "x": 8,
-        "y": 74
+        "y": 100
       },
       "id": 31,
       "interval": null,
@@ -4070,7 +4682,7 @@
         "h": 3,
         "w": 4,
         "x": 12,
-        "y": 74
+        "y": 100
       },
       "id": 32,
       "interval": null,
@@ -4152,7 +4764,7 @@
         "h": 3,
         "w": 4,
         "x": 16,
-        "y": 74
+        "y": 100
       },
       "id": 33,
       "interval": null,
@@ -4234,7 +4846,7 @@
         "h": 3,
         "w": 4,
         "x": 20,
-        "y": 74
+        "y": 100
       },
       "id": 34,
       "interval": null,
@@ -4316,7 +4928,7 @@
         "h": 3,
         "w": 4,
         "x": 0,
-        "y": 77
+        "y": 103
       },
       "id": 46,
       "interval": null,
@@ -4398,7 +5010,7 @@
         "h": 3,
         "w": 4,
         "x": 4,
-        "y": 77
+        "y": 103
       },
       "id": 47,
       "interval": null,
@@ -4480,7 +5092,7 @@
         "h": 3,
         "w": 4,
         "x": 8,
-        "y": 77
+        "y": 103
       },
       "id": 48,
       "interval": null,
@@ -4562,7 +5174,7 @@
         "h": 3,
         "w": 4,
         "x": 12,
-        "y": 77
+        "y": 103
       },
       "id": 49,
       "interval": null,
@@ -4644,7 +5256,7 @@
         "h": 3,
         "w": 4,
         "x": 16,
-        "y": 77
+        "y": 103
       },
       "id": 50,
       "interval": null,
@@ -4726,7 +5338,7 @@
         "h": 3,
         "w": 4,
         "x": 20,
-        "y": 77
+        "y": 103
       },
       "id": 51,
       "interval": null,
@@ -4902,7 +5514,6 @@
         "auto_count": 30,
         "auto_min": "10s",
         "current": {
-          "selected": true,
           "text": "median",
           "value": "median"
         },
@@ -4975,5 +5586,5 @@
   "timezone": "browser",
   "title": "Site summary",
   "uid": "000000045",
-  "version": 24
+  "version": 30
 }

@@ -62,7 +62,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1558984717271,
+  "iteration": 1559081452692,
   "links": [
     {
       "icon": "external link",
@@ -79,6 +79,15 @@
       "keepTime": true,
       "tags": [
         "page summary"
+      ],
+      "type": "dashboards"
+    },
+    {
+      "icon": "external link",
+      "includeVars": true,
+      "keepTime": true,
+      "tags": [
+        "site summary"
       ],
       "type": "dashboards"
     }
@@ -2295,5 +2304,5 @@
   "timezone": "browser",
   "title": "Page timing metrics",
   "uid": "000000044",
-  "version": 20
+  "version": 22
 }
