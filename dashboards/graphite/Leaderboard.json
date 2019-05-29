@@ -65,7 +65,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1559081442651,
+  "iteration": 1559157820464,
   "links": [
     {
       "icon": "external link",
@@ -1194,8 +1194,13 @@
               "value": null
             },
             {
-              "color": "red",
+              "color": "#EAB839",
               "index": 1,
+              "value": 100000
+            },
+            {
+              "color": "red",
+              "index": 2,
               "value": 200000
             }
           ],
@@ -1247,8 +1252,13 @@
               "value": null
             },
             {
-              "color": "red",
+              "color": "#EAB839",
               "index": 1,
+              "value": 250000
+            },
+            {
+              "color": "red",
+              "index": 2,
               "value": 500000
             }
           ],
@@ -1278,7 +1288,7 @@
       },
       "id": 35,
       "panels": [],
-      "title": "Requests and size",
+      "title": "Requests and size gauge",
       "type": "row"
     },
     {
@@ -1407,7 +1417,7 @@
           "cacheTimeout": "",
           "description": "Total number of requests for the full page.",
           "gridPos": {
-            "h": 9,
+            "h": 14,
             "w": 12,
             "x": 0,
             "y": 87
@@ -1434,9 +1444,14 @@
                   "value": null
                 },
                 {
-                  "color": "red",
+                  "color": "yellow",
                   "index": 1,
-                  "value": 80
+                  "value": 50
+                },
+                {
+                  "color": "red",
+                  "index": 2,
+                  "value": 100
                 }
               ],
               "values": false
@@ -1460,7 +1475,7 @@
           "cacheTimeout": "",
           "description": "Total page weight (compressed over the wire).",
           "gridPos": {
-            "h": 9,
+            "h": 14,
             "w": 12,
             "x": 12,
             "y": 87
@@ -2526,7 +2541,6 @@
         "auto_count": 30,
         "auto_min": "10s",
         "current": {
-          "selected": true,
           "text": "median",
           "value": "median"
         },
@@ -2599,5 +2613,5 @@
   "timezone": "",
   "title": "Leaderboard",
   "uid": "000000060",
-  "version": 29
+  "version": 30
 }
