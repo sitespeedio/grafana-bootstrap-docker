@@ -21,7 +21,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "6.1.6"
+      "version": "6.2.1"
     },
     {
       "type": "panel",
@@ -62,25 +62,33 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1558333948704,
+  "iteration": 1559081452692,
   "links": [
     {
-      "asDropdown": true,
       "icon": "external link",
+      "includeVars": true,
+      "keepTime": true,
       "tags": [
-        "site"
+        "leaderboard"
       ],
-      "title": "Site",
       "type": "dashboards"
     },
     {
-      "asDropdown": true,
       "icon": "external link",
-      "includeVars": false,
+      "includeVars": true,
+      "keepTime": true,
       "tags": [
-        "page"
+        "page summary"
       ],
-      "title": "Pages",
+      "type": "dashboards"
+    },
+    {
+      "icon": "external link",
+      "includeVars": true,
+      "keepTime": true,
+      "tags": [
+        "site summary"
+      ],
       "type": "dashboards"
     }
   ],
@@ -140,6 +148,7 @@
       ],
       "maxPerRow": 2,
       "nullPointMode": "connected",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -297,6 +306,7 @@
       ],
       "maxPerRow": 2,
       "nullPointMode": "connected",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -481,6 +491,7 @@
       ],
       "maxPerRow": 2,
       "nullPointMode": "connected",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -593,6 +604,7 @@
       ],
       "maxPerRow": 2,
       "nullPointMode": "connected",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -707,6 +719,7 @@
       ],
       "maxPerRow": 2,
       "nullPointMode": "connected",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -821,6 +834,7 @@
       ],
       "maxPerRow": 2,
       "nullPointMode": "connected",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -935,6 +949,7 @@
       ],
       "maxPerRow": 2,
       "nullPointMode": "connected",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -1049,6 +1064,7 @@
       ],
       "maxPerRow": 2,
       "nullPointMode": "connected",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -1163,6 +1179,7 @@
       ],
       "maxPerRow": 2,
       "nullPointMode": "connected",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -1277,6 +1294,7 @@
       ],
       "maxPerRow": 2,
       "nullPointMode": "connected",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -1391,6 +1409,7 @@
       ],
       "maxPerRow": 2,
       "nullPointMode": "connected",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -1509,6 +1528,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "connected",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -1618,6 +1638,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "connected",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -1727,6 +1748,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "connected",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -1816,6 +1838,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "connected",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -1878,7 +1901,7 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": "${DS_GRAPHITE}",
-      "description": "Activate by adding --cpu to to your run.",
+      "description": "Activate by adding --thirdParty.cpu  to to your run.",
       "fill": 0,
       "gridPos": {
         "h": 13,
@@ -1904,6 +1927,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "connected",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -1923,7 +1947,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "CPU time spent per tool/domain [Chrome only]",
+      "title": "CPU time spent per tool/domain - enable using --thirdParty.cpu  [Chrome only]",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -2007,6 +2031,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "connected",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -2068,7 +2093,8 @@
   "schemaVersion": 18,
   "style": "dark",
   "tags": [
-    "page"
+    "page",
+    "page timings"
   ],
   "templating": {
     "list": [
@@ -2119,7 +2145,7 @@
         "definition": "",
         "hide": 0,
         "includeAll": false,
-        "label": null,
+        "label": "domain",
         "multi": false,
         "name": "group",
         "options": [],
@@ -2205,6 +2231,7 @@
         "auto_count": 30,
         "auto_min": "10s",
         "current": {
+          "selected": true,
           "text": "median",
           "value": "median"
         },
@@ -2277,5 +2304,5 @@
   "timezone": "browser",
   "title": "Page timing metrics",
   "uid": "000000044",
-  "version": 6
+  "version": 22
 }
