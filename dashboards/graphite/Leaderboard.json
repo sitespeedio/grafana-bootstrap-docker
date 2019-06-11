@@ -111,6 +111,7 @@
     },
     {
       "cacheTimeout": "",
+      "datasource": "${DS_GRAPHITE}",
       "description": "The first visual change is when something for the first time is painted within the current viewport. It is calculated by analyzing a video recording of the screen.",
       "gridPos": {
         "h": 14,
@@ -158,7 +159,7 @@
       "targets": [
         {
           "refId": "A",
-          "target": "aliasByNode(sortBy($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.$function, 'average'),3, 4)",
+          "target": "aliasByNode($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.$function, 3, 4)",
           "textEditor": true
         }
       ],
@@ -169,6 +170,7 @@
     },
     {
       "cacheTimeout": "",
+      "datasource": "${DS_GRAPHITE}",
       "description": "The largest image is the time when the largest image within the viewport is painted and on its final position. It is calculated by analyzing a video recording of the screen.",
       "gridPos": {
         "h": 14,
@@ -216,7 +218,7 @@
       "targets": [
         {
           "refId": "A",
-          "target": "aliasByNode(sortBy($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.browsertime.statistics.visualMetrics.LargestImage.$function,'average'), 3, 4)",
+          "target": "aliasByNode($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.browsertime.statistics.visualMetrics.LargestImage.$function, 3, 4)",
           "textEditor": true
         }
       ],
@@ -227,6 +229,7 @@
     },
     {
       "cacheTimeout": "",
+      "datasource": "${DS_GRAPHITE}",
       "description": "The Speed Index is the average time at which visible parts of the page are displayed. It is expressed in milliseconds and dependent on size of the view port. It was created by Pat Meenan and you can checkout the full documentation [here](https://sites.google.com/a/webpagetest.org/docs/using-webpagetest/metrics/speed-index).",
       "gridPos": {
         "h": 14,
@@ -274,7 +277,7 @@
       "targets": [
         {
           "refId": "A",
-          "target": "aliasByNode(sortBy($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.$function,'average'), 3, 4)",
+          "target": "aliasByNode($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.$function, 3, 4)",
           "textEditor": true
         }
       ],
@@ -285,6 +288,7 @@
     },
     {
       "cacheTimeout": "",
+      "datasource": "${DS_GRAPHITE}",
       "description": "Visual readiness is the time between the first visual change and the last visual change within the viewport. It is calculated by analyzing a video recording of the screen.",
       "gridPos": {
         "h": 14,
@@ -332,7 +336,7 @@
       "targets": [
         {
           "refId": "A",
-          "target": "aliasByNode(sortBy($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.browsertime.statistics.visualMetrics.VisualReadiness.$function,'average'), 3, 4)",
+          "target": "aliasByNode($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.browsertime.statistics.visualMetrics.VisualReadiness.$function, 3, 4)",
           "textEditor": true
         }
       ],
@@ -718,6 +722,7 @@
     },
     {
       "cacheTimeout": "",
+      "datasource": "${DS_GRAPHITE}",
       "description": "CPU time spent evaluating JavaScript. Calculated using [Tracium](https://github.com/aslushnikov/tracium). This is a Chrome only metric at the moment.",
       "gridPos": {
         "h": 14,
@@ -765,7 +770,7 @@
       "targets": [
         {
           "refId": "A",
-          "target": "aliasByNode(sortBy($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.browsertime.statistics.cpu.categories.scriptEvaluation.$function,'average'), 3, 4)",
+          "target": "aliasByNode($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.browsertime.statistics.cpu.categories.scriptEvaluation.$function, 3, 4)",
           "textEditor": true
         }
       ],
@@ -776,6 +781,7 @@
     },
     {
       "cacheTimeout": "",
+      "datasource": "${DS_GRAPHITE}",
       "description": "CPU time spent rendering the page. Calculated using [Tracium](https://github.com/aslushnikov/tracium). This is a Chrome only metric at the moment.",
       "gridPos": {
         "h": 14,
@@ -823,7 +829,7 @@
       "targets": [
         {
           "refId": "A",
-          "target": "aliasByNode(sortBy($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.browsertime.statistics.cpu.categories.paintCompositeRender.$function,'average'), 3, 4)",
+          "target": "aliasByNode($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.browsertime.statistics.cpu.categories.paintCompositeRender.$function, 3, 4)",
           "textEditor": true
         }
       ],
@@ -847,6 +853,7 @@
     },
     {
       "cacheTimeout": "",
+      "datasource": "${DS_GRAPHITE}",
       "description": "Load Event End is when the load event end event fires in the Navigation Timing API",
       "gridPos": {
         "h": 14,
@@ -894,7 +901,7 @@
       "targets": [
         {
           "refId": "A",
-          "target": "aliasByNode(sortBy($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.browsertime.statistics.timings.loadEventEnd.$function,'average'), 3, 4)",
+          "target": "aliasByNode($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.browsertime.statistics.timings.loadEventEnd.$function, 3, 4)",
           "textEditor": true
         }
       ],
@@ -905,6 +912,7 @@
     },
     {
       "cacheTimeout": "",
+      "datasource": "${DS_GRAPHITE}",
       "description": "Fully loaded time when the last of all assets is downloaded on the page.",
       "gridPos": {
         "h": 14,
@@ -952,7 +960,7 @@
       "targets": [
         {
           "refId": "A",
-          "target": "aliasByNode(sortBy($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.browsertime.statistics.timings.fullyLoaded.$function,'average'), 3, 4)",
+          "target": "aliasByNode($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.browsertime.statistics.timings.fullyLoaded.$function, 3, 4)",
           "textEditor": true
         }
       ],
@@ -1164,6 +1172,7 @@
     },
     {
       "cacheTimeout": "",
+      "datasource": "${DS_GRAPHITE}",
       "description": "",
       "gridPos": {
         "h": 14,
@@ -1211,7 +1220,7 @@
       "targets": [
         {
           "refId": "A",
-          "target": "aliasByNode(sortBy($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.pagexray.contentTypes.javascript.transferSize,'average'), 3, 4)",
+          "target": "aliasByNode($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.pagexray.contentTypes.javascript.transferSize, 3, 4)",
           "textEditor": true
         }
       ],
@@ -1222,6 +1231,7 @@
     },
     {
       "cacheTimeout": "",
+      "datasource": "${DS_GRAPHITE}",
       "description": "The JavaScript size unpacked.",
       "gridPos": {
         "h": 14,
@@ -1269,7 +1279,7 @@
       "targets": [
         {
           "refId": "A",
-          "target": "aliasByNode(sortBy($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.pagexray.contentTypes.javascript.contentSize,'average'), 3, 4)",
+          "target": "aliasByNode($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.pagexray.contentTypes.javascript.contentSize, 3, 4)",
           "textEditor": true
         }
       ],
@@ -1346,6 +1356,7 @@
     },
     {
       "cacheTimeout": "",
+      "datasource": "${DS_GRAPHITE}",
       "description": "Total page weight (compressed over the wire).",
       "gridPos": {
         "h": 5,
@@ -1415,6 +1426,7 @@
       "panels": [
         {
           "cacheTimeout": "",
+          "datasource": "${DS_GRAPHITE}",
           "description": "Total number of requests for the full page.",
           "gridPos": {
             "h": 14,
@@ -1462,7 +1474,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "aliasByNode(sortBy($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.pagexray.requests,'average'), 3, 4)",
+              "target": "aliasByNode($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.pagexray.requests, 3, 4)",
               "textEditor": true
             }
           ],
@@ -1473,6 +1485,7 @@
         },
         {
           "cacheTimeout": "",
+          "datasource": "${DS_GRAPHITE}",
           "description": "Total page weight (compressed over the wire).",
           "gridPos": {
             "h": 14,
@@ -1521,7 +1534,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "aliasByNode(sortBy($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.pagexray.transferSize,'average'), 3, 4)",
+              "target": "aliasByNode($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.pagexray.transferSize, 3, 4)",
               "textEditor": true
             }
           ],
@@ -1735,6 +1748,7 @@
     },
     {
       "cacheTimeout": "",
+      "datasource": "${DS_GRAPHITE}",
       "description": "The average number of CPU Long Tasks per page. A CPU long Task is by default a CPU task that takes longer than 50 ms to run. This metrics is Chrome only at the moment.",
       "gridPos": {
         "h": 14,
@@ -1792,7 +1806,7 @@
       "targets": [
         {
           "refId": "A",
-          "target": "aliasByNode(sortBy($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.browsertime.statistics.cpu.longTasks.tasks.$function,'average'), 3, 4)",
+          "target": "aliasByNode($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.browsertime.statistics.cpu.longTasks.tasks.$function, 3, 4)",
           "textEditor": true
         }
       ],
@@ -1803,6 +1817,7 @@
     },
     {
       "cacheTimeout": "",
+      "datasource": "${DS_GRAPHITE}",
       "description": "This is the longest CPU task for each page (if they are over 50 ms long). This metrics is Chrome only at the moment.",
       "gridPos": {
         "h": 14,
@@ -1850,7 +1865,7 @@
       "targets": [
         {
           "refId": "A",
-          "target": "aliasByNode(sortBy($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.browsertime.statistics.cpu.longTasks.durations.max,'average'), 3, 4)",
+          "target": "aliasByNode($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.browsertime.statistics.cpu.longTasks.durations.max, 3, 4)",
           "textEditor": true
         }
       ],
@@ -2141,11 +2156,12 @@
       },
       "id": 52,
       "panels": [],
-      "title": "Third parties  [$function]",
+      "title": "Third parties [$function]",
       "type": "row"
     },
     {
       "cacheTimeout": "",
+      "datasource": "${DS_GRAPHITE}",
       "description": "Third party requests are calculated using the [Third party web](https://github.com/patrickhulce/third-party-web) library.",
       "gridPos": {
         "h": 14,
@@ -2203,7 +2219,7 @@
       "targets": [
         {
           "refId": "A",
-          "target": "aliasByNode(sortBy($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.thirdparty.requests.total.$function, 'average'), 3, 4)",
+          "target": "aliasByNode($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.thirdparty.requests.total.$function, 3, 4)",
           "textEditor": true
         }
       ],
@@ -2214,6 +2230,7 @@
     },
     {
       "cacheTimeout": "",
+      "datasource": "${DS_GRAPHITE}",
       "description": "Third party % are calculated using the [Third party web](https://github.com/patrickhulce/third-party-web) library.",
       "gridPos": {
         "h": 14,
@@ -2261,7 +2278,7 @@
       "targets": [
         {
           "refId": "A",
-          "target": "aliasByNode(sortBy($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.thirdparty.requests.percentage.$function, 'average'), 3, 4)",
+          "target": "aliasByNode($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.thirdparty.requests.percentage.$function, 3, 4)",
           "textEditor": true
         }
       ],
@@ -2285,6 +2302,7 @@
     },
     {
       "cacheTimeout": "",
+      "datasource": "${DS_GRAPHITE}",
       "description": "The performance score (0-100) calculated by the [Coach](https://www.sitespeed.io/documentation/coach/) using performance best practices.",
       "gridPos": {
         "h": 14,
@@ -2332,7 +2350,7 @@
       "targets": [
         {
           "refId": "A",
-          "target": "aliasByNode(sortBy($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.coach.advice.performance.score, 'average', true),3, 4)",
+          "target": "aliasByNode($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.coach.advice.performance.score),3, 4)",
           "textEditor": true
         }
       ],
@@ -2343,6 +2361,7 @@
     },
     {
       "cacheTimeout": "",
+      "datasource": "${DS_GRAPHITE}",
       "description": "The privacy score (0-100) calculated by the [Coach](https://www.sitespeed.io/documentation/coach/) using user privacy best practices.",
       "gridPos": {
         "h": 14,
@@ -2390,7 +2409,7 @@
       "targets": [
         {
           "refId": "A",
-          "target": "aliasByNode(sortBy($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.coach.advice.privacy.score, 'average', true),3, 4)",
+          "target": "aliasByNode($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.coach.advice.privacy.score),3, 4)",
           "textEditor": true
         }
       ],
