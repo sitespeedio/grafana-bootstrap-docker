@@ -21,19 +21,19 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "5.0.4"
+      "version": "6.3.3"
     },
     {
       "type": "panel",
       "id": "graph",
       "name": "Graph",
-      "version": "5.0.0"
+      "version": ""
     },
     {
       "type": "datasource",
       "id": "graphite",
       "name": "Graphite",
-      "version": "5.0.0"
+      "version": "1.0.0"
     }
   ],
   "annotations": {
@@ -53,8 +53,22 @@
         "iconColor": "rgb(96, 255, 103)",
         "limit": 100,
         "name": "runs",
-        "tags": "$base $path $domain $page $browser $connectivity",
+        "showIn": 0,
+        "tags": "$base $path $group $page $connectivity $location",
         "type": "alert"
+      },
+      {
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": false,
+        "iconColor": "rgba(255, 96, 96, 1)",
+        "limit": 100,
+        "name": "sitespeed.io",
+        "showIn": 0,
+        "tags": [
+          "sitespeed.io"
+        ],
+        "type": "tags"
       }
     ]
   },
@@ -62,7 +76,7 @@
   "gnetId": null,
   "graphTooltip": 2,
   "id": null,
-  "iteration": 1527759989933,
+  "iteration": 1566994432203,
   "links": [],
   "panels": [
     {
@@ -72,6 +86,7 @@
       "dashes": false,
       "datasource": "${DS_GRAPHITE}",
       "fill": 0,
+      "fillGradient": 0,
       "gridPos": {
         "h": 15,
         "w": 24,
@@ -93,17 +108,16 @@
       "linewidth": 1,
       "links": [
         {
-          "dashUri": "db/page-summary",
-          "dashboard": "Page summary",
-          "includeVars": true,
-          "keepTime": true,
           "targetBlank": true,
           "title": "Page summary $page",
-          "type": "dashboard"
+          "url": "/dashboard/db/page-summary?$__url_time_range&$__all_variables"
         }
       ],
-      "minSpan": 12,
+      "maxPerRow": 2,
       "nullPointMode": "connected",
+      "options": {
+        "dataLinks": []
+      },
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -145,6 +159,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "$page",
       "tooltip": {
@@ -152,7 +167,6 @@
         "sort": 0,
         "value_type": "individual"
       },
-      "transparent": false,
       "type": "graph",
       "xaxis": {
         "buckets": null,
@@ -178,7 +192,11 @@
           "min": null,
           "show": true
         }
-      ]
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     },
     {
       "aliasColors": {},
@@ -187,6 +205,7 @@
       "dashes": false,
       "datasource": "${DS_GRAPHITE}",
       "fill": 2,
+      "fillGradient": 0,
       "gridPos": {
         "h": 15,
         "w": 24,
@@ -208,17 +227,16 @@
       "linewidth": 2,
       "links": [
         {
-          "dashUri": "db/page-summary",
-          "dashboard": "Page summary",
-          "includeVars": true,
-          "keepTime": true,
           "targetBlank": true,
           "title": "Page summary $page",
-          "type": "dashboard"
+          "url": "/dashboard/db/page-summary?$__url_time_range&$__all_variables"
         }
       ],
-      "minSpan": 12,
+      "maxPerRow": 2,
       "nullPointMode": "connected",
+      "options": {
+        "dataLinks": []
+      },
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -246,6 +264,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "$group$page — CPU consumed",
       "tooltip": {
@@ -253,7 +272,6 @@
         "sort": 0,
         "value_type": "individual"
       },
-      "transparent": false,
       "type": "graph",
       "xaxis": {
         "buckets": null,
@@ -279,11 +297,15 @@
           "min": null,
           "show": true
         }
-      ]
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     }
   ],
   "refresh": false,
-  "schemaVersion": 16,
+  "schemaVersion": 19,
   "style": "dark",
   "tags": [
     "page"
@@ -305,12 +327,14 @@
           }
         ],
         "query": "${VAR_BASE}",
+        "skipUrlSync": false,
         "type": "constant"
       },
       {
         "allValue": null,
         "current": {},
         "datasource": "${DS_GRAPHITE}",
+        "definition": "",
         "hide": 0,
         "includeAll": false,
         "label": null,
@@ -320,6 +344,7 @@
         "query": "$base.*",
         "refresh": 1,
         "regex": "",
+        "skipUrlSync": false,
         "sort": 0,
         "tagValuesQuery": null,
         "tags": [],
@@ -331,6 +356,7 @@
         "allValue": null,
         "current": {},
         "datasource": "${DS_GRAPHITE}",
+        "definition": "",
         "hide": 0,
         "includeAll": false,
         "label": null,
@@ -340,6 +366,7 @@
         "query": "$base.$path.pageSummary.*",
         "refresh": 1,
         "regex": "",
+        "skipUrlSync": false,
         "sort": 0,
         "tagValuesQuery": null,
         "tags": [],
@@ -351,6 +378,7 @@
         "allValue": null,
         "current": {},
         "datasource": "${DS_GRAPHITE}",
+        "definition": "",
         "hide": 0,
         "includeAll": false,
         "label": null,
@@ -360,6 +388,7 @@
         "query": "$base.$path.pageSummary.$group.*",
         "refresh": 1,
         "regex": "",
+        "skipUrlSync": false,
         "sort": 1,
         "tagValuesQuery": null,
         "tags": [],
@@ -371,6 +400,7 @@
         "allValue": null,
         "current": {},
         "datasource": "${DS_GRAPHITE}",
+        "definition": "",
         "hide": 2,
         "includeAll": false,
         "label": null,
@@ -380,6 +410,7 @@
         "query": "$base.$path.pageSummary.$domain.$page.*",
         "refresh": 1,
         "regex": "",
+        "skipUrlSync": false,
         "sort": 0,
         "tagValuesQuery": null,
         "tags": [],
@@ -391,6 +422,7 @@
         "allValue": null,
         "current": {},
         "datasource": "${DS_GRAPHITE}",
+        "definition": "",
         "hide": 0,
         "includeAll": false,
         "label": null,
@@ -400,6 +432,7 @@
         "query": "$base.$path.pageSummary.$group.$page.webpagetest.*",
         "refresh": 1,
         "regex": "",
+        "skipUrlSync": false,
         "sort": 0,
         "tagValuesQuery": null,
         "tags": [],
@@ -411,6 +444,7 @@
         "allValue": null,
         "current": {},
         "datasource": "${DS_GRAPHITE}",
+        "definition": "",
         "hide": 0,
         "includeAll": false,
         "label": null,
@@ -420,6 +454,7 @@
         "query": "$base.$path.pageSummary.$group.$page.webpagetest.$location.*",
         "refresh": 1,
         "regex": "",
+        "skipUrlSync": false,
         "sort": 0,
         "tagValuesQuery": null,
         "tags": [],
@@ -431,6 +466,7 @@
         "allValue": null,
         "current": {},
         "datasource": "${DS_GRAPHITE}",
+        "definition": "",
         "hide": 0,
         "includeAll": false,
         "label": null,
@@ -440,6 +476,7 @@
         "query": "$base.$path.pageSummary.$group.$page.webpagetest.$location.$connectivity.data.median.*",
         "refresh": 1,
         "regex": "",
+        "skipUrlSync": false,
         "sort": 0,
         "tagValuesQuery": "",
         "tags": [],
@@ -481,5 +518,5 @@
   "timezone": "browser",
   "title": "Webpagetest Page timing metrics",
   "uid": "000000057",
-  "version": 10
+  "version": 28
 }

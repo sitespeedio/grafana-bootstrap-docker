@@ -21,31 +21,31 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "5.0.4"
+      "version": "6.3.3"
     },
     {
       "type": "panel",
       "id": "graph",
       "name": "Graph",
-      "version": "5.0.0"
+      "version": ""
     },
     {
       "type": "datasource",
       "id": "graphite",
       "name": "Graphite",
-      "version": "5.0.0"
+      "version": "1.0.0"
     },
     {
       "type": "panel",
       "id": "singlestat",
       "name": "Singlestat",
-      "version": "5.0.0"
+      "version": ""
     },
     {
       "type": "panel",
       "id": "table",
       "name": "Table",
-      "version": "5.0.0"
+      "version": ""
     }
   ],
   "annotations": {
@@ -65,8 +65,22 @@
         "iconColor": "rgb(96, 255, 113)",
         "limit": 100,
         "name": "runs",
-        "tags": "$base $path $domain $page $browser $connectivity",
+        "showIn": 0,
+        "tags": "$base $path $group $page $connectivity $location",
         "type": "alert"
+      },
+      {
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": false,
+        "iconColor": "rgba(255, 96, 96, 1)",
+        "limit": 100,
+        "name": "sitespeed.io",
+        "showIn": 0,
+        "tags": [
+          "sitespeed.io"
+        ],
+        "type": "tags"
       }
     ]
   },
@@ -74,7 +88,7 @@
   "gnetId": null,
   "graphTooltip": 2,
   "id": null,
-  "iteration": 1527759809001,
+  "iteration": 1566994475945,
   "links": [
     {
       "asDropdown": true,
@@ -154,6 +168,7 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
+      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -236,6 +251,7 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
+      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -265,7 +281,6 @@
       "timeFrom": null,
       "timeShift": null,
       "title": "SpeedIndex",
-      "transparent": false,
       "type": "singlestat",
       "valueFontSize": "80%",
       "valueMaps": [
@@ -321,6 +336,7 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
+      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -403,6 +419,7 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
+      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -485,6 +502,7 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
+      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -567,6 +585,7 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
+      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -640,6 +659,7 @@
       },
       "id": 36,
       "links": [],
+      "options": {},
       "pageSize": null,
       "scroll": false,
       "showHeader": true,
@@ -714,6 +734,7 @@
       },
       "id": 37,
       "links": [],
+      "options": {},
       "pageSize": null,
       "scroll": true,
       "showHeader": true,
@@ -819,6 +840,7 @@
       },
       "id": 68,
       "links": [],
+      "options": {},
       "pageSize": null,
       "scroll": true,
       "showHeader": true,
@@ -924,6 +946,7 @@
       },
       "id": 69,
       "links": [],
+      "options": {},
       "pageSize": null,
       "scroll": true,
       "showHeader": true,
@@ -1064,6 +1087,7 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
+      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -1146,6 +1170,7 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
+      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -1228,6 +1253,7 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
+      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -1310,6 +1336,7 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
+      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -1406,6 +1433,7 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
+      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -1488,6 +1516,7 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
+      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -1517,7 +1546,6 @@
       "timeFrom": null,
       "timeShift": null,
       "title": "CSS/JS minification score",
-      "transparent": false,
       "type": "singlestat",
       "valueFontSize": "80%",
       "valueMaps": [
@@ -1573,6 +1601,7 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
+      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -1655,6 +1684,7 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
+      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -1717,6 +1747,7 @@
       "editable": true,
       "error": false,
       "fill": 0,
+      "fillGradient": 0,
       "grid": {},
       "gridPos": {
         "h": 12,
@@ -1739,6 +1770,9 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "connected",
+      "options": {
+        "dataLinks": []
+      },
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -1775,6 +1809,7 @@
       ],
       "thresholds": [],
       "timeFrom": "30d",
+      "timeRegions": [],
       "timeShift": null,
       "title": "History Start Render",
       "tooltip": {
@@ -1808,7 +1843,11 @@
           "min": null,
           "show": true
         }
-      ]
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     },
     {
       "aliasColors": {},
@@ -1820,6 +1859,7 @@
       "editable": true,
       "error": false,
       "fill": 0,
+      "fillGradient": 0,
       "grid": {},
       "gridPos": {
         "h": 12,
@@ -1842,6 +1882,9 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "connected",
+      "options": {
+        "dataLinks": []
+      },
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -1878,6 +1921,7 @@
       ],
       "thresholds": [],
       "timeFrom": "30d",
+      "timeRegions": [],
       "timeShift": null,
       "title": "History Speed Index",
       "tooltip": {
@@ -1911,7 +1955,11 @@
           "min": null,
           "show": true
         }
-      ]
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     },
     {
       "aliasColors": {},
@@ -1923,6 +1971,7 @@
       "editable": true,
       "error": false,
       "fill": 0,
+      "fillGradient": 0,
       "grid": {},
       "gridPos": {
         "h": 12,
@@ -1945,6 +1994,9 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "connected",
+      "options": {
+        "dataLinks": []
+      },
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -1981,6 +2033,7 @@
       ],
       "thresholds": [],
       "timeFrom": "30d",
+      "timeRegions": [],
       "timeShift": null,
       "title": "History Visual Complete 85%",
       "tooltip": {
@@ -2014,7 +2067,11 @@
           "min": null,
           "show": true
         }
-      ]
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     },
     {
       "collapsed": false,
@@ -2062,6 +2119,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "connected",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -2165,6 +2223,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "connected",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -2291,6 +2350,7 @@
       "linewidth": 0,
       "links": [],
       "nullPointMode": "connected",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -2385,6 +2445,7 @@
       "linewidth": 0,
       "links": [],
       "nullPointMode": "connected",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -2482,6 +2543,7 @@
       "linewidth": 2,
       "links": [],
       "nullPointMode": "connected",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -2577,6 +2639,7 @@
       "linewidth": 2,
       "links": [],
       "nullPointMode": "connected",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -2686,6 +2749,7 @@
       "linewidth": 2,
       "links": [],
       "nullPointMode": "connected",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -2786,6 +2850,7 @@
       "linewidth": 2,
       "links": [],
       "nullPointMode": "connected",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -2896,6 +2961,7 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
+      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -2978,6 +3044,7 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
+      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -3060,6 +3127,7 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
+      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -3142,6 +3210,7 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
+      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -3224,6 +3293,7 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
+      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -3306,6 +3376,7 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
+      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -3346,7 +3417,7 @@
     }
   ],
   "refresh": false,
-  "schemaVersion": 16,
+  "schemaVersion": 19,
   "style": "dark",
   "tags": [
     "page"
@@ -3368,12 +3439,14 @@
           }
         ],
         "query": "${VAR_BASE}",
+        "skipUrlSync": false,
         "type": "constant"
       },
       {
         "allValue": null,
         "current": {},
         "datasource": "${DS_GRAPHITE}",
+        "definition": "",
         "hide": 0,
         "includeAll": false,
         "label": null,
@@ -3383,6 +3456,7 @@
         "query": "$base.*",
         "refresh": 1,
         "regex": "",
+        "skipUrlSync": false,
         "sort": 0,
         "tagValuesQuery": null,
         "tags": [],
@@ -3394,6 +3468,7 @@
         "allValue": null,
         "current": {},
         "datasource": "${DS_GRAPHITE}",
+        "definition": "",
         "hide": 0,
         "includeAll": false,
         "label": null,
@@ -3403,6 +3478,7 @@
         "query": "$base.$path.pageSummary.*",
         "refresh": 1,
         "regex": "",
+        "skipUrlSync": false,
         "sort": 0,
         "tagValuesQuery": null,
         "tags": [],
@@ -3414,6 +3490,7 @@
         "allValue": null,
         "current": {},
         "datasource": "${DS_GRAPHITE}",
+        "definition": "",
         "hide": 0,
         "includeAll": false,
         "label": null,
@@ -3423,6 +3500,7 @@
         "query": "$base.$path.pageSummary.$group.*",
         "refresh": 1,
         "regex": "",
+        "skipUrlSync": false,
         "sort": 0,
         "tagValuesQuery": null,
         "tags": [],
@@ -3434,6 +3512,7 @@
         "allValue": null,
         "current": {},
         "datasource": "${DS_GRAPHITE}",
+        "definition": "",
         "hide": 0,
         "includeAll": false,
         "label": null,
@@ -3443,6 +3522,7 @@
         "query": "$base.$path.pageSummary.$group.$page.webpagetest.*",
         "refresh": 1,
         "regex": "",
+        "skipUrlSync": false,
         "sort": 0,
         "tagValuesQuery": null,
         "tags": [],
@@ -3454,6 +3534,7 @@
         "allValue": null,
         "current": {},
         "datasource": "${DS_GRAPHITE}",
+        "definition": "",
         "hide": 0,
         "includeAll": false,
         "label": null,
@@ -3463,6 +3544,7 @@
         "query": "$base.$path.pageSummary.$group.$page.webpagetest.$location.*",
         "refresh": 1,
         "regex": "",
+        "skipUrlSync": false,
         "sort": 0,
         "tagValuesQuery": "",
         "tags": [],
@@ -3474,6 +3556,7 @@
         "allValue": null,
         "current": {},
         "datasource": "${DS_GRAPHITE}",
+        "definition": "",
         "hide": 0,
         "includeAll": false,
         "label": null,
@@ -3483,6 +3566,7 @@
         "query": "$base.$path.pageSummary.$group.$page.webpagetest.$location.*.data.median.*",
         "refresh": 1,
         "regex": "",
+        "skipUrlSync": false,
         "sort": 0,
         "tagValuesQuery": "",
         "tags": [],
@@ -3524,5 +3608,5 @@
   "timezone": "browser",
   "title": "WebPagetest Page summary",
   "uid": "000000051",
-  "version": 14
+  "version": 28
 }
