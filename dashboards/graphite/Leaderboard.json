@@ -33,7 +33,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "6.2.1"
+      "version": "6.3.3"
     },
     {
       "type": "panel",
@@ -65,7 +65,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1559157820464,
+  "iteration": 1566120187838,
   "links": [
     {
       "icon": "external link",
@@ -127,34 +127,32 @@
             "mean"
           ],
           "defaults": {
+            "mappings": [],
             "max": 3000,
             "min": 0,
+            "thresholds": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 1000
+              },
+              {
+                "color": "red",
+                "value": 2000
+              }
+            ],
             "title": "",
             "unit": "ms"
           },
-          "mappings": [],
           "override": {},
-          "thresholds": [
-            {
-              "color": "green",
-              "index": 0,
-              "value": null
-            },
-            {
-              "color": "#EAB839",
-              "index": 1,
-              "value": 1000
-            },
-            {
-              "color": "red",
-              "index": 2,
-              "value": 2000
-            }
-          ],
           "values": false
         },
         "orientation": "horizontal"
       },
+      "pluginVersion": "6.3.3",
       "targets": [
         {
           "refId": "A",
@@ -185,34 +183,32 @@
             "mean"
           ],
           "defaults": {
+            "mappings": [],
             "max": 10000,
             "min": 0,
+            "thresholds": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 1000
+              },
+              {
+                "color": "red",
+                "value": 2000
+              }
+            ],
             "title": "",
             "unit": "ms"
           },
-          "mappings": [],
           "override": {},
-          "thresholds": [
-            {
-              "color": "green",
-              "index": 0,
-              "value": null
-            },
-            {
-              "color": "#EAB839",
-              "index": 1,
-              "value": 1000
-            },
-            {
-              "color": "red",
-              "index": 2,
-              "value": 2000
-            }
-          ],
           "values": false
         },
         "orientation": "horizontal"
       },
+      "pluginVersion": "6.3.3",
       "targets": [
         {
           "refId": "A",
@@ -243,34 +239,32 @@
             "mean"
           ],
           "defaults": {
+            "mappings": [],
             "max": 8000,
             "min": 0,
+            "thresholds": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 1000
+              },
+              {
+                "color": "red",
+                "value": 2000
+              }
+            ],
             "title": "",
             "unit": "ms"
           },
-          "mappings": [],
           "override": {},
-          "thresholds": [
-            {
-              "color": "green",
-              "index": 0,
-              "value": null
-            },
-            {
-              "color": "#EAB839",
-              "index": 1,
-              "value": 1000
-            },
-            {
-              "color": "red",
-              "index": 2,
-              "value": 2000
-            }
-          ],
           "values": false
         },
         "orientation": "horizontal"
       },
+      "pluginVersion": "6.3.3",
       "targets": [
         {
           "refId": "A",
@@ -301,34 +295,32 @@
             "mean"
           ],
           "defaults": {
+            "mappings": [],
             "max": 10000,
             "min": 0,
+            "thresholds": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 1000
+              },
+              {
+                "color": "red",
+                "value": 2000
+              }
+            ],
             "title": "",
             "unit": "ms"
           },
-          "mappings": [],
           "override": {},
-          "thresholds": [
-            {
-              "color": "green",
-              "index": 0,
-              "value": null
-            },
-            {
-              "color": "#EAB839",
-              "index": 1,
-              "value": 1000
-            },
-            {
-              "color": "red",
-              "index": 2,
-              "value": 2000
-            }
-          ],
           "values": false
         },
         "orientation": "horizontal"
       },
+      "pluginVersion": "6.3.3",
       "targets": [
         {
           "refId": "A",
@@ -734,34 +726,32 @@
             "mean"
           ],
           "defaults": {
+            "mappings": [],
             "max": 2500,
             "min": 0,
+            "thresholds": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 200
+              },
+              {
+                "color": "red",
+                "value": 1000
+              }
+            ],
             "title": "",
             "unit": "ms"
           },
-          "mappings": [],
           "override": {},
-          "thresholds": [
-            {
-              "color": "green",
-              "index": 0,
-              "value": null
-            },
-            {
-              "color": "#EAB839",
-              "index": 1,
-              "value": 200
-            },
-            {
-              "color": "red",
-              "index": 2,
-              "value": 1000
-            }
-          ],
           "values": false
         },
         "orientation": "horizontal"
       },
+      "pluginVersion": "6.3.3",
       "targets": [
         {
           "refId": "A",
@@ -792,34 +782,32 @@
             "mean"
           ],
           "defaults": {
+            "mappings": [],
             "max": 800,
             "min": 0,
+            "thresholds": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 50
+              },
+              {
+                "color": "red",
+                "value": 400
+              }
+            ],
             "title": "",
             "unit": "ms"
           },
-          "mappings": [],
           "override": {},
-          "thresholds": [
-            {
-              "color": "green",
-              "index": 0,
-              "value": null
-            },
-            {
-              "color": "#EAB839",
-              "index": 1,
-              "value": 50
-            },
-            {
-              "color": "red",
-              "index": 2,
-              "value": 400
-            }
-          ],
           "values": false
         },
         "orientation": "horizontal"
       },
+      "pluginVersion": "6.3.3",
       "targets": [
         {
           "refId": "A",
@@ -863,34 +851,32 @@
             "mean"
           ],
           "defaults": {
+            "mappings": [],
             "max": 15000,
             "min": 0,
+            "thresholds": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 2000
+              },
+              {
+                "color": "red",
+                "value": 4000
+              }
+            ],
             "title": "",
             "unit": "ms"
           },
-          "mappings": [],
           "override": {},
-          "thresholds": [
-            {
-              "color": "green",
-              "index": 0,
-              "value": null
-            },
-            {
-              "color": "#EAB839",
-              "index": 1,
-              "value": 2000
-            },
-            {
-              "color": "red",
-              "index": 2,
-              "value": 4000
-            }
-          ],
           "values": false
         },
         "orientation": "horizontal"
       },
+      "pluginVersion": "6.3.3",
       "targets": [
         {
           "refId": "A",
@@ -921,34 +907,32 @@
             "mean"
           ],
           "defaults": {
+            "mappings": [],
             "max": 20000,
             "min": 0,
+            "thresholds": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 2000
+              },
+              {
+                "color": "red",
+                "value": 5000
+              }
+            ],
             "title": "",
             "unit": "ms"
           },
-          "mappings": [],
           "override": {},
-          "thresholds": [
-            {
-              "color": "green",
-              "index": 0,
-              "value": null
-            },
-            {
-              "color": "#EAB839",
-              "index": 1,
-              "value": 2000
-            },
-            {
-              "color": "red",
-              "index": 2,
-              "value": 5000
-            }
-          ],
           "values": false
         },
         "orientation": "horizontal"
       },
+      "pluginVersion": "6.3.3",
       "targets": [
         {
           "refId": "A",
@@ -1180,34 +1164,32 @@
             "mean"
           ],
           "defaults": {
+            "mappings": [],
             "max": 2000000,
             "min": 0,
+            "thresholds": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 100000
+              },
+              {
+                "color": "red",
+                "value": 200000
+              }
+            ],
             "title": "",
             "unit": "decbytes"
           },
-          "mappings": [],
           "override": {},
-          "thresholds": [
-            {
-              "color": "green",
-              "index": 0,
-              "value": null
-            },
-            {
-              "color": "#EAB839",
-              "index": 1,
-              "value": 100000
-            },
-            {
-              "color": "red",
-              "index": 2,
-              "value": 200000
-            }
-          ],
           "values": false
         },
         "orientation": "horizontal"
       },
+      "pluginVersion": "6.3.3",
       "targets": [
         {
           "refId": "A",
@@ -1238,34 +1220,32 @@
             "mean"
           ],
           "defaults": {
+            "mappings": [],
             "max": 6000000,
             "min": 0,
+            "thresholds": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 250000
+              },
+              {
+                "color": "red",
+                "value": 500000
+              }
+            ],
             "title": "",
             "unit": "decbytes"
           },
-          "mappings": [],
           "override": {},
-          "thresholds": [
-            {
-              "color": "green",
-              "index": 0,
-              "value": null
-            },
-            {
-              "color": "#EAB839",
-              "index": 1,
-              "value": 250000
-            },
-            {
-              "color": "red",
-              "index": 2,
-              "value": 500000
-            }
-          ],
           "values": false
         },
         "orientation": "horizontal"
       },
+      "pluginVersion": "6.3.3",
       "targets": [
         {
           "refId": "A",
@@ -1308,31 +1288,29 @@
             "mean"
           ],
           "defaults": {
+            "mappings": [],
             "max": 500,
             "min": 0,
+            "thresholds": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ],
             "title": ""
           },
-          "mappings": [],
           "override": {},
-          "thresholds": [
-            {
-              "color": "green",
-              "index": 0,
-              "value": null
-            },
-            {
-              "color": "red",
-              "index": 1,
-              "value": 80
-            }
-          ],
           "values": false
         },
         "orientation": "auto",
         "showThresholdLabels": true,
         "showThresholdMarkers": false
       },
-      "pluginVersion": "6.2.1",
+      "pluginVersion": "6.3.3",
       "targets": [
         {
           "refId": "A",
@@ -1361,37 +1339,34 @@
             "mean"
           ],
           "defaults": {
+            "mappings": [],
             "max": 5000000,
             "min": 0,
+            "thresholds": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "yellow",
+                "value": 500000
+              },
+              {
+                "color": "red",
+                "value": 2000000
+              }
+            ],
             "title": "",
             "unit": "decbytes"
           },
-          "mappings": [],
           "override": {},
-          "thresholds": [
-            {
-              "color": "green",
-              "index": 0,
-              "value": null
-            },
-            {
-              "color": "yellow",
-              "index": 1,
-              "value": 500000
-            },
-            {
-              "color": "red",
-              "index": 2,
-              "value": 2000000
-            }
-          ],
           "values": false
         },
         "orientation": "auto",
         "showThresholdLabels": true,
         "showThresholdMarkers": false
       },
-      "pluginVersion": "6.2.1",
+      "pluginVersion": "6.3.3",
       "targets": [
         {
           "refId": "A",
@@ -1721,12 +1696,134 @@
       "type": "row"
     },
     {
-      "collapsed": false,
+      "collapsed": true,
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
         "y": 88
+      },
+      "id": 74,
+      "panels": [
+        {
+          "cacheTimeout": "",
+          "description": "",
+          "gridPos": {
+            "h": 14,
+            "w": 12,
+            "x": 0,
+            "y": 89
+          },
+          "id": 75,
+          "links": [],
+          "options": {
+            "displayMode": "lcd",
+            "fieldOptions": {
+              "calcs": [
+                "mean"
+              ],
+              "defaults": {
+                "mappings": [],
+                "max": 20,
+                "min": 0,
+                "thresholds": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 1
+                  }
+                ],
+                "title": "",
+                "unit": "none"
+              },
+              "override": {},
+              "values": false
+            },
+            "orientation": "horizontal"
+          },
+          "pluginVersion": "6.3.3",
+          "targets": [
+            {
+              "refId": "A",
+              "target": "aliasByNode(sortBy($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.axe.violations.critical.$function, 'average'),3, 4)",
+              "textEditor": true
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Axe critical violations",
+          "type": "bargauge"
+        },
+        {
+          "cacheTimeout": "",
+          "description": "",
+          "gridPos": {
+            "h": 14,
+            "w": 12,
+            "x": 12,
+            "y": 89
+          },
+          "id": 76,
+          "links": [],
+          "options": {
+            "displayMode": "lcd",
+            "fieldOptions": {
+              "calcs": [
+                "mean"
+              ],
+              "defaults": {
+                "mappings": [],
+                "max": 20,
+                "min": 0,
+                "thresholds": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "#EAB839",
+                    "value": 1
+                  },
+                  {
+                    "color": "red",
+                    "value": 2
+                  }
+                ],
+                "title": "",
+                "unit": "none"
+              },
+              "override": {},
+              "values": false
+            },
+            "orientation": "horizontal"
+          },
+          "pluginVersion": "6.3.3",
+          "targets": [
+            {
+              "refId": "A",
+              "target": "aliasByNode(sortBy($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.axe.violations.serious.$function, 'average'),3, 4)",
+              "textEditor": true
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Axe serious violations",
+          "type": "bargauge"
+        }
+      ],
+      "title": "Axe violations",
+      "type": "row"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 89
       },
       "id": 48,
       "panels": [],
@@ -1740,7 +1837,7 @@
         "h": 14,
         "w": 12,
         "x": 0,
-        "y": 89
+        "y": 90
       },
       "id": 49,
       "links": [],
@@ -1751,44 +1848,42 @@
             "mean"
           ],
           "defaults": {
+            "mappings": [
+              {
+                "from": "",
+                "id": 1,
+                "operator": "",
+                "text": "No long task",
+                "to": "",
+                "type": 1,
+                "value": "0"
+              }
+            ],
             "max": 8,
             "min": 0,
+            "thresholds": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 1
+              },
+              {
+                "color": "red",
+                "value": 5
+              }
+            ],
             "title": "",
             "unit": "none"
           },
-          "mappings": [
-            {
-              "from": "",
-              "id": 1,
-              "operator": "",
-              "text": "No long task",
-              "to": "",
-              "type": 1,
-              "value": "0"
-            }
-          ],
           "override": {},
-          "thresholds": [
-            {
-              "color": "green",
-              "index": 0,
-              "value": null
-            },
-            {
-              "color": "#EAB839",
-              "index": 1,
-              "value": 1
-            },
-            {
-              "color": "red",
-              "index": 2,
-              "value": 5
-            }
-          ],
           "values": false
         },
         "orientation": "horizontal"
       },
+      "pluginVersion": "6.3.3",
       "targets": [
         {
           "refId": "A",
@@ -1808,7 +1903,7 @@
         "h": 14,
         "w": 12,
         "x": 12,
-        "y": 89
+        "y": 90
       },
       "id": 50,
       "links": [],
@@ -1819,34 +1914,32 @@
             "mean"
           ],
           "defaults": {
+            "mappings": [],
             "max": 1000,
             "min": 0,
+            "thresholds": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 60
+              },
+              {
+                "color": "red",
+                "value": 200
+              }
+            ],
             "title": "",
             "unit": "ms"
           },
-          "mappings": [],
           "override": {},
-          "thresholds": [
-            {
-              "color": "green",
-              "index": 0,
-              "value": null
-            },
-            {
-              "color": "#EAB839",
-              "index": 1,
-              "value": 60
-            },
-            {
-              "color": "red",
-              "index": 2,
-              "value": 200
-            }
-          ],
           "values": false
         },
         "orientation": "horizontal"
       },
+      "pluginVersion": "6.3.3",
       "targets": [
         {
           "refId": "A",
@@ -1865,7 +1958,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 103
+        "y": 104
       },
       "id": 18,
       "panels": [
@@ -2137,7 +2230,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 104
+        "y": 105
       },
       "id": 52,
       "panels": [],
@@ -2151,7 +2244,7 @@
         "h": 14,
         "w": 12,
         "x": 0,
-        "y": 105
+        "y": 106
       },
       "id": 53,
       "links": [],
@@ -2162,44 +2255,42 @@
             "mean"
           ],
           "defaults": {
+            "mappings": [
+              {
+                "from": "",
+                "id": 1,
+                "operator": "",
+                "text": "No 3rd parties",
+                "to": "",
+                "type": 1,
+                "value": "0"
+              }
+            ],
             "max": 200,
             "min": 0,
+            "thresholds": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 1
+              },
+              {
+                "color": "red",
+                "value": 10
+              }
+            ],
             "title": "",
             "unit": "none"
           },
-          "mappings": [
-            {
-              "from": "",
-              "id": 1,
-              "operator": "",
-              "text": "No 3rd parties",
-              "to": "",
-              "type": 1,
-              "value": "0"
-            }
-          ],
           "override": {},
-          "thresholds": [
-            {
-              "color": "green",
-              "index": 0,
-              "value": null
-            },
-            {
-              "color": "#EAB839",
-              "index": 1,
-              "value": 1
-            },
-            {
-              "color": "red",
-              "index": 2,
-              "value": 10
-            }
-          ],
           "values": false
         },
         "orientation": "horizontal"
       },
+      "pluginVersion": "6.3.3",
       "targets": [
         {
           "refId": "A",
@@ -2219,7 +2310,7 @@
         "h": 14,
         "w": 12,
         "x": 12,
-        "y": 105
+        "y": 106
       },
       "id": 54,
       "links": [],
@@ -2230,34 +2321,32 @@
             "mean"
           ],
           "defaults": {
+            "mappings": [],
             "max": 100,
             "min": 0,
+            "thresholds": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 5
+              },
+              {
+                "color": "red",
+                "value": 10
+              }
+            ],
             "title": "",
             "unit": "percent"
           },
-          "mappings": [],
           "override": {},
-          "thresholds": [
-            {
-              "color": "green",
-              "index": 0,
-              "value": null
-            },
-            {
-              "color": "#EAB839",
-              "index": 1,
-              "value": 5
-            },
-            {
-              "color": "red",
-              "index": 2,
-              "value": 10
-            }
-          ],
           "values": false
         },
         "orientation": "horizontal"
       },
+      "pluginVersion": "6.3.3",
       "targets": [
         {
           "refId": "A",
@@ -2276,7 +2365,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 119
+        "y": 120
       },
       "id": 56,
       "panels": [],
@@ -2290,7 +2379,7 @@
         "h": 14,
         "w": 12,
         "x": 0,
-        "y": 120
+        "y": 121
       },
       "id": 57,
       "links": [],
@@ -2301,34 +2390,32 @@
             "mean"
           ],
           "defaults": {
+            "mappings": [],
             "max": 100,
             "min": 0,
+            "thresholds": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "yellow",
+                "value": 80
+              },
+              {
+                "color": "green",
+                "value": 90
+              }
+            ],
             "title": "",
             "unit": "none"
           },
-          "mappings": [],
           "override": {},
-          "thresholds": [
-            {
-              "color": "red",
-              "index": 0,
-              "value": null
-            },
-            {
-              "color": "yellow",
-              "index": 1,
-              "value": 80
-            },
-            {
-              "color": "green",
-              "index": 2,
-              "value": 90
-            }
-          ],
           "values": false
         },
         "orientation": "horizontal"
       },
+      "pluginVersion": "6.3.3",
       "targets": [
         {
           "refId": "A",
@@ -2348,7 +2435,7 @@
         "h": 14,
         "w": 12,
         "x": 12,
-        "y": 120
+        "y": 121
       },
       "id": 58,
       "links": [],
@@ -2359,34 +2446,32 @@
             "mean"
           ],
           "defaults": {
+            "mappings": [],
             "max": 100,
             "min": 0,
+            "thresholds": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "yellow",
+                "value": 80
+              },
+              {
+                "color": "green",
+                "value": 90
+              }
+            ],
             "title": "",
             "unit": "none"
           },
-          "mappings": [],
           "override": {},
-          "thresholds": [
-            {
-              "color": "red",
-              "index": 0,
-              "value": null
-            },
-            {
-              "color": "yellow",
-              "index": 1,
-              "value": 80
-            },
-            {
-              "color": "green",
-              "index": 2,
-              "value": 90
-            }
-          ],
           "values": false
         },
         "orientation": "horizontal"
       },
+      "pluginVersion": "6.3.3",
       "targets": [
         {
           "refId": "A",
@@ -2400,7 +2485,7 @@
       "type": "bargauge"
     }
   ],
-  "schemaVersion": 18,
+  "schemaVersion": 19,
   "style": "dark",
   "tags": [
     "leaderboard",
@@ -2613,5 +2698,5 @@
   "timezone": "",
   "title": "Leaderboard",
   "uid": "000000060",
-  "version": 30
+  "version": 38
 }

@@ -27,7 +27,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "6.2.2"
+      "version": "6.3.3"
     },
     {
       "type": "panel",
@@ -58,6 +58,19 @@
         "iconColor": "rgba(0, 211, 255, 1)",
         "name": "Annotations & Alerts",
         "type": "dashboard"
+      },
+      {
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": false,
+        "iconColor": "#8AB8FF",
+        "limit": 100,
+        "name": "sitespeed.io",
+        "showIn": 0,
+        "tags": [
+          "sitespeed.io"
+        ],
+        "type": "tags"
       }
     ]
   },
@@ -65,7 +78,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1562053173915,
+  "iteration": 1566040864151,
   "links": [
     {
       "icon": "external link",
@@ -116,6 +129,7 @@
       "dashes": false,
       "description": "The first visual change is when something for the first time is painted within the current viewport. It is calculated by analyzing a video recording of the screen.",
       "fill": 0,
+      "fillGradient": 0,
       "gridPos": {
         "h": 8,
         "w": 12,
@@ -137,7 +151,9 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "connected",
-      "options": {},
+      "options": {
+        "dataLinks": []
+      },
       "percentage": false,
       "pointradius": 2,
       "points": false,
@@ -164,17 +180,17 @@
         {
           "refCount": 0,
           "refId": "A",
-          "target": "aliasByMetric($base.$path.summary.$group.$browser.$connectivity.browsertime.visualMetrics.FirstVisualChange.median)"
+          "target": "aliasByMetric(sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.visualMetrics.FirstVisualChange.median)"
         },
         {
           "refCount": 0,
           "refId": "B",
-          "target": "aliasByMetric($base.$path.summary.$group.$browser.$connectivity.browsertime.visualMetrics.FirstVisualChange.max)"
+          "target": "aliasByMetric(sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.visualMetrics.FirstVisualChange.max)"
         },
         {
           "refCount": 0,
           "refId": "C",
-          "target": "aliasByMetric($base.$path.summary.$group.$browser.$connectivity.browsertime.visualMetrics.FirstVisualChange.min)"
+          "target": "aliasByMetric(sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.visualMetrics.FirstVisualChange.min)"
         }
       ],
       "thresholds": [],
@@ -225,6 +241,7 @@
       "dashes": false,
       "description": "The Speed Index is the average time at which visible parts of the page are displayed. It is expressed in milliseconds and dependent on size of the view port. It was created by Pat Meenan and you can checkout the full documentation [here](https://sites.google.com/a/webpagetest.org/docs/using-webpagetest/metrics/speed-index).",
       "fill": 0,
+      "fillGradient": 0,
       "gridPos": {
         "h": 8,
         "w": 12,
@@ -247,7 +264,9 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "connected",
-      "options": {},
+      "options": {
+        "dataLinks": []
+      },
       "percentage": false,
       "pointradius": 2,
       "points": false,
@@ -274,17 +293,17 @@
         {
           "refCount": 0,
           "refId": "A",
-          "target": "aliasByMetric($base.$path.summary.$group.$browser.$connectivity.browsertime.visualMetrics.SpeedIndex.median)"
+          "target": "aliasByMetric(sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.visualMetrics.SpeedIndex.median)"
         },
         {
           "refCount": 0,
           "refId": "B",
-          "target": "aliasByMetric($base.$path.summary.$group.$browser.$connectivity.browsertime.visualMetrics.SpeedIndex.max)"
+          "target": "aliasByMetric(sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.visualMetrics.SpeedIndex.max)"
         },
         {
           "refCount": 0,
           "refId": "C",
-          "target": "aliasByMetric($base.$path.summary.$group.$browser.$connectivity.browsertime.visualMetrics.SpeedIndex.min)"
+          "target": "aliasByMetric(sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.visualMetrics.SpeedIndex.min)"
         }
       ],
       "thresholds": [],
@@ -335,6 +354,7 @@
       "dashes": false,
       "description": "The largest image is the time when the largest image within the viewport is painted and on its final position. It is calculated by analyzing a video recording of the screen.",
       "fill": 0,
+      "fillGradient": 0,
       "gridPos": {
         "h": 8,
         "w": 12,
@@ -356,7 +376,9 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "connected",
-      "options": {},
+      "options": {
+        "dataLinks": []
+      },
       "percentage": false,
       "pointradius": 2,
       "points": false,
@@ -383,17 +405,17 @@
         {
           "refCount": 0,
           "refId": "A",
-          "target": "aliasByMetric($base.$path.summary.$group.$browser.$connectivity.browsertime.visualMetrics.LargestImage.median)"
+          "target": "aliasByMetric(sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.visualMetrics.LargestImage.median)"
         },
         {
           "refCount": 0,
           "refId": "B",
-          "target": "aliasByMetric($base.$path.summary.$group.$browser.$connectivity.browsertime.visualMetrics.LargestImage.max)"
+          "target": "aliasByMetric(sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.visualMetrics.LargestImage.max)"
         },
         {
           "refCount": 0,
           "refId": "C",
-          "target": "aliasByMetric($base.$path.summary.$group.$browser.$connectivity.browsertime.visualMetrics.LargestImage.min)"
+          "target": "aliasByMetric(sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.visualMetrics.LargestImage.min)"
         }
       ],
       "thresholds": [],
@@ -444,6 +466,7 @@
       "dashes": false,
       "description": "The last visual change is when something for the last time is changing within the current viewport. It is calculated by analyzing a video recording of the screen.",
       "fill": 0,
+      "fillGradient": 0,
       "gridPos": {
         "h": 8,
         "w": 12,
@@ -465,7 +488,9 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "connected",
-      "options": {},
+      "options": {
+        "dataLinks": []
+      },
       "percentage": false,
       "pointradius": 2,
       "points": false,
@@ -492,17 +517,17 @@
         {
           "refCount": 0,
           "refId": "A",
-          "target": "aliasByMetric($base.$path.summary.$group.$browser.$connectivity.browsertime.visualMetrics.LastVisualChange.median)"
+          "target": "aliasByMetric(sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.visualMetrics.LastVisualChange.median)"
         },
         {
           "refCount": 0,
           "refId": "B",
-          "target": "aliasByMetric($base.$path.summary.$group.$browser.$connectivity.browsertime.visualMetrics.LastVisualChange.max)"
+          "target": "aliasByMetric(sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.visualMetrics.LastVisualChange.max)"
         },
         {
           "refCount": 0,
           "refId": "C",
-          "target": "aliasByMetric($base.$path.summary.$group.$browser.$connectivity.browsertime.visualMetrics.LastVisualChange.min)"
+          "target": "aliasByMetric(sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.visualMetrics.LastVisualChange.min)"
         }
       ],
       "thresholds": [],
@@ -627,7 +652,7 @@
         {
           "refId": "A",
           "target": "$base.$path.summary.$group.$browser.$connectivity.browsertime.visualMetrics.FirstVisualChange.$function",
-          "textEditor": false
+          "textEditor": true
         }
       ],
       "thresholds": "",
@@ -1032,7 +1057,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "aliasByNode($base.$path.pageSummary.$group.*.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.$function, 3, 4)"
+              "target": "aliasByNode(sitespeed_io.$path.pageSummary.$group.*.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.$function, 3, 4)"
             }
           ],
           "timeFrom": null,
@@ -1087,7 +1112,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "aliasByNode($base.$path.pageSummary.$group.*.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.$function, 3, 4)"
+              "target": "aliasByNode(sitespeed_io.$path.pageSummary.$group.*.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.$function, 3, 4)"
             }
           ],
           "timeFrom": null,
@@ -1100,7 +1125,7 @@
       "type": "row"
     },
     {
-      "collapsed": false,
+      "collapsed": true,
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -1108,510 +1133,511 @@
         "y": 22
       },
       "id": 62,
-      "panels": [],
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_GRAPHITE}",
+          "description": "The history of First Visual Change (when something for the first time is painted within the current viewport) showing the current median value, the average median per day and the average median per week for all tested pages.",
+          "editable": true,
+          "error": false,
+          "fill": 0,
+          "grid": {},
+          "gridPos": {
+            "h": 11,
+            "w": 12,
+            "x": 0,
+            "y": 23
+          },
+          "id": 45,
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": true,
+            "max": true,
+            "min": true,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "connected",
+          "options": {},
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "aliasByNode($base.$path.summary.$group.$browser.$connectivity.browsertime.visualMetrics.FirstVisualChange.$function, 9)",
+              "textEditor": false
+            },
+            {
+              "refId": "B",
+              "target": "alias(summarize($base.$path.summary.$group.$browser.$connectivity.browsertime.visualMetrics.FirstVisualChange.$function, '24h', 'avg', false), 'Daily')",
+              "textEditor": false
+            },
+            {
+              "refId": "C",
+              "target": "alias(summarize($base.$path.summary.$group.$browser.$connectivity.browsertime.visualMetrics.FirstVisualChange.$function, '7d', 'avg', false), 'Weekly')",
+              "textEditor": false
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": "30d",
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "History First Visual Change [$function]",
+          "tooltip": {
+            "msResolution": false,
+            "shared": true,
+            "sort": 0,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "none",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_GRAPHITE}",
+          "description": "The history of [Speed Index](https://sites.google.com/a/webpagetest.org/docs/using-webpagetest/metrics/speed-index) showing the current median value, the average median per day and the average median per week for all tested pages.",
+          "editable": true,
+          "error": false,
+          "fill": 0,
+          "grid": {},
+          "gridPos": {
+            "h": 11,
+            "w": 12,
+            "x": 12,
+            "y": 23
+          },
+          "id": 52,
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": true,
+            "max": true,
+            "min": true,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "connected",
+          "options": {},
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "aliasByNode($base.$path.summary.$group.$browser.$connectivity.browsertime.visualMetrics.SpeedIndex.$function, 9)",
+              "textEditor": false
+            },
+            {
+              "refId": "B",
+              "target": "alias(summarize($base.$path.summary.$group.$browser.$connectivity.browsertime.visualMetrics.SpeedIndex.$function, '24h', 'avg', false), 'Daily')",
+              "textEditor": false
+            },
+            {
+              "refId": "C",
+              "target": "alias(summarize($base.$path.summary.$group.$browser.$connectivity.browsertime.visualMetrics.SpeedIndex.$function, '7d', 'avg', false), 'Weekly')",
+              "textEditor": false
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": "30d",
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "History Speed Index  [$function]",
+          "tooltip": {
+            "msResolution": false,
+            "shared": true,
+            "sort": 0,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "none",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_GRAPHITE}",
+          "description": "The history of Visual Complete 85%  (when 85% or more is ready within the current viewport) showing the current median value, the average median per day and the average median per week for all tested pages.",
+          "editable": true,
+          "error": false,
+          "fill": 0,
+          "grid": {},
+          "gridPos": {
+            "h": 11,
+            "w": 8,
+            "x": 0,
+            "y": 34
+          },
+          "id": 53,
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": true,
+            "max": true,
+            "min": true,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "connected",
+          "options": {},
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "aliasByNode($base.$path.summary.$group.$browser.$connectivity.browsertime.visualMetrics.VisualComplete85.$function, 9)",
+              "textEditor": false
+            },
+            {
+              "refId": "B",
+              "target": "alias(summarize($base.$path.summary.$group.$browser.$connectivity.browsertime.visualMetrics.VisualComplete85.$function, '24h', 'avg', false), 'Daily')",
+              "textEditor": false
+            },
+            {
+              "refId": "C",
+              "target": "alias(summarize($base.$path.summary.$group.$browser.$connectivity.browsertime.visualMetrics.VisualComplete85.$function, '7d', 'avg', false), 'Weekly')",
+              "textEditor": false
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": "30d",
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "History Visual Complete 85%  [$function]",
+          "tooltip": {
+            "msResolution": false,
+            "shared": true,
+            "sort": 0,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "none",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_GRAPHITE}",
+          "description": "The history of Last Visual Change (when something for the last time is changing within the current viewport) showing the current median value, the average median per day and the average median per week for all tested pages.",
+          "editable": true,
+          "error": false,
+          "fill": 0,
+          "grid": {},
+          "gridPos": {
+            "h": 11,
+            "w": 8,
+            "x": 8,
+            "y": 34
+          },
+          "id": 55,
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": true,
+            "max": true,
+            "min": true,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "connected",
+          "options": {},
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "aliasByNode($base.$path.summary.$group.$browser.$connectivity.browsertime.visualMetrics.LastVisualChange.$function, 9)",
+              "textEditor": false
+            },
+            {
+              "refId": "B",
+              "target": "alias(summarize($base.$path.summary.$group.$browser.$connectivity.browsertime.visualMetrics.LastVisualChange.$function, '24h', 'avg', false), 'Daily')",
+              "textEditor": false
+            },
+            {
+              "refId": "C",
+              "target": "alias(summarize($base.$path.summary.$group.$browser.$connectivity.browsertime.visualMetrics.LastVisualChange.$function, '7d', 'avg', false), 'Weekly')",
+              "textEditor": false
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": "30d",
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "History Last Visual Change [$function]",
+          "tooltip": {
+            "msResolution": false,
+            "shared": true,
+            "sort": 0,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "none",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_GRAPHITE}",
+          "description": "The history of Fully Loaded (when the last of all assets is downloaded on the page) showing the current median value, the average median per day and the average median per week for all tested pages.",
+          "editable": true,
+          "error": false,
+          "fill": 0,
+          "grid": {},
+          "gridPos": {
+            "h": 11,
+            "w": 8,
+            "x": 16,
+            "y": 34
+          },
+          "id": 54,
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": true,
+            "max": true,
+            "min": true,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "connected",
+          "options": {},
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "aliasByNode($base.$path.summary.$group.$browser.$connectivity.browsertime.fullyLoaded.$function, 8)",
+              "textEditor": false
+            },
+            {
+              "refId": "B",
+              "target": "alias(summarize($base.$path.summary.$group.$browser.$connectivity.browsertime.fullyLoaded.$function, '24h', 'avg', false), 'Daily')",
+              "textEditor": false
+            },
+            {
+              "refId": "C",
+              "target": "alias(summarize($base.$path.summary.$group.$browser.$connectivity.browsertime.fullyLoaded.$function, '7d', 'avg', false), 'Weekly')",
+              "textEditor": false
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": "30d",
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "History Fully Loaded  [$function]",
+          "tooltip": {
+            "msResolution": false,
+            "shared": true,
+            "sort": 0,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "none",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        }
+      ],
       "repeat": null,
       "title": "History Visual Metrics",
       "type": "row"
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "${DS_GRAPHITE}",
-      "description": "The history of First Visual Change (when something for the first time is painted within the current viewport) showing the current median value, the average median per day and the average median per week for all tested pages.",
-      "editable": true,
-      "error": false,
-      "fill": 0,
-      "grid": {},
-      "gridPos": {
-        "h": 11,
-        "w": 12,
-        "x": 0,
-        "y": 23
-      },
-      "id": 45,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": true,
-        "max": true,
-        "min": true,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 2,
-      "links": [],
-      "nullPointMode": "connected",
-      "options": {},
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "refId": "A",
-          "target": "aliasByNode($base.$path.summary.$group.$browser.$connectivity.browsertime.visualMetrics.FirstVisualChange.$function, 9)",
-          "textEditor": false
-        },
-        {
-          "refId": "B",
-          "target": "alias(summarize($base.$path.summary.$group.$browser.$connectivity.browsertime.visualMetrics.FirstVisualChange.$function, '24h', 'avg', false), 'Daily')",
-          "textEditor": false
-        },
-        {
-          "refId": "C",
-          "target": "alias(summarize($base.$path.summary.$group.$browser.$connectivity.browsertime.visualMetrics.FirstVisualChange.$function, '7d', 'avg', false), 'Weekly')",
-          "textEditor": false
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": "30d",
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "History First Visual Change [$function]",
-      "tooltip": {
-        "msResolution": false,
-        "shared": true,
-        "sort": 0,
-        "value_type": "cumulative"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "none",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "${DS_GRAPHITE}",
-      "description": "The history of [Speed Index](https://sites.google.com/a/webpagetest.org/docs/using-webpagetest/metrics/speed-index) showing the current median value, the average median per day and the average median per week for all tested pages.",
-      "editable": true,
-      "error": false,
-      "fill": 0,
-      "grid": {},
-      "gridPos": {
-        "h": 11,
-        "w": 12,
-        "x": 12,
-        "y": 23
-      },
-      "id": 52,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": true,
-        "max": true,
-        "min": true,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 2,
-      "links": [],
-      "nullPointMode": "connected",
-      "options": {},
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "refId": "A",
-          "target": "aliasByNode($base.$path.summary.$group.$browser.$connectivity.browsertime.visualMetrics.SpeedIndex.$function, 9)",
-          "textEditor": false
-        },
-        {
-          "refId": "B",
-          "target": "alias(summarize($base.$path.summary.$group.$browser.$connectivity.browsertime.visualMetrics.SpeedIndex.$function, '24h', 'avg', false), 'Daily')",
-          "textEditor": false
-        },
-        {
-          "refId": "C",
-          "target": "alias(summarize($base.$path.summary.$group.$browser.$connectivity.browsertime.visualMetrics.SpeedIndex.$function, '7d', 'avg', false), 'Weekly')",
-          "textEditor": false
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": "30d",
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "History Speed Index  [$function]",
-      "tooltip": {
-        "msResolution": false,
-        "shared": true,
-        "sort": 0,
-        "value_type": "cumulative"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "none",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "${DS_GRAPHITE}",
-      "description": "The history of Visual Complete 85%  (when 85% or more is ready within the current viewport) showing the current median value, the average median per day and the average median per week for all tested pages.",
-      "editable": true,
-      "error": false,
-      "fill": 0,
-      "grid": {},
-      "gridPos": {
-        "h": 11,
-        "w": 8,
-        "x": 0,
-        "y": 34
-      },
-      "id": 53,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": true,
-        "max": true,
-        "min": true,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 2,
-      "links": [],
-      "nullPointMode": "connected",
-      "options": {},
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "refId": "A",
-          "target": "aliasByNode($base.$path.summary.$group.$browser.$connectivity.browsertime.visualMetrics.VisualComplete85.$function, 9)",
-          "textEditor": false
-        },
-        {
-          "refId": "B",
-          "target": "alias(summarize($base.$path.summary.$group.$browser.$connectivity.browsertime.visualMetrics.VisualComplete85.$function, '24h', 'avg', false), 'Daily')",
-          "textEditor": false
-        },
-        {
-          "refId": "C",
-          "target": "alias(summarize($base.$path.summary.$group.$browser.$connectivity.browsertime.visualMetrics.VisualComplete85.$function, '7d', 'avg', false), 'Weekly')",
-          "textEditor": false
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": "30d",
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "History Visual Complete 85%  [$function]",
-      "tooltip": {
-        "msResolution": false,
-        "shared": true,
-        "sort": 0,
-        "value_type": "cumulative"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "none",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "${DS_GRAPHITE}",
-      "description": "The history of Last Visual Change (when something for the last time is changing within the current viewport) showing the current median value, the average median per day and the average median per week for all tested pages.",
-      "editable": true,
-      "error": false,
-      "fill": 0,
-      "grid": {},
-      "gridPos": {
-        "h": 11,
-        "w": 8,
-        "x": 8,
-        "y": 34
-      },
-      "id": 55,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": true,
-        "max": true,
-        "min": true,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 2,
-      "links": [],
-      "nullPointMode": "connected",
-      "options": {},
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "refId": "A",
-          "target": "aliasByNode($base.$path.summary.$group.$browser.$connectivity.browsertime.visualMetrics.LastVisualChange.$function, 9)",
-          "textEditor": false
-        },
-        {
-          "refId": "B",
-          "target": "alias(summarize($base.$path.summary.$group.$browser.$connectivity.browsertime.visualMetrics.LastVisualChange.$function, '24h', 'avg', false), 'Daily')",
-          "textEditor": false
-        },
-        {
-          "refId": "C",
-          "target": "alias(summarize($base.$path.summary.$group.$browser.$connectivity.browsertime.visualMetrics.LastVisualChange.$function, '7d', 'avg', false), 'Weekly')",
-          "textEditor": false
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": "30d",
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "History Last Visual Change [$function]",
-      "tooltip": {
-        "msResolution": false,
-        "shared": true,
-        "sort": 0,
-        "value_type": "cumulative"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "none",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "${DS_GRAPHITE}",
-      "description": "The history of Fully Loaded (when the last of all assets is downloaded on the page) showing the current median value, the average median per day and the average median per week for all tested pages.",
-      "editable": true,
-      "error": false,
-      "fill": 0,
-      "grid": {},
-      "gridPos": {
-        "h": 11,
-        "w": 8,
-        "x": 16,
-        "y": 34
-      },
-      "id": 54,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": true,
-        "max": true,
-        "min": true,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 2,
-      "links": [],
-      "nullPointMode": "connected",
-      "options": {},
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "refId": "A",
-          "target": "aliasByNode($base.$path.summary.$group.$browser.$connectivity.browsertime.fullyLoaded.$function, 8)",
-          "textEditor": false
-        },
-        {
-          "refId": "B",
-          "target": "alias(summarize($base.$path.summary.$group.$browser.$connectivity.browsertime.fullyLoaded.$function, '24h', 'avg', false), 'Daily')",
-          "textEditor": false
-        },
-        {
-          "refId": "C",
-          "target": "alias(summarize($base.$path.summary.$group.$browser.$connectivity.browsertime.fullyLoaded.$function, '7d', 'avg', false), 'Weekly')",
-          "textEditor": false
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": "30d",
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "History Fully Loaded  [$function]",
-      "tooltip": {
-        "msResolution": false,
-        "shared": true,
-        "sort": 0,
-        "value_type": "cumulative"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "none",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
     },
     {
       "collapsed": false,
@@ -1619,7 +1645,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 45
+        "y": 23
       },
       "id": 85,
       "panels": [],
@@ -1633,11 +1659,12 @@
       "dashes": false,
       "description": "The average number of CPU Long Tasks per page. A CPU long Task is by default a CPU task that takes longer than 50 ms to run. This metrics is Chrome only at the moment.",
       "fill": 0,
+      "fillGradient": 0,
       "gridPos": {
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 46
+        "y": 24
       },
       "id": 87,
       "legend": {
@@ -1654,7 +1681,9 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "connected",
-      "options": {},
+      "options": {
+        "dataLinks": []
+      },
       "percentage": false,
       "pointradius": 2,
       "points": false,
@@ -1681,17 +1710,17 @@
         {
           "refCount": 0,
           "refId": "A",
-          "target": "aliasByMetric($base.$path.summary.$group.$browser.$connectivity.browsertime.cpu.longTasks.tasks.max)"
+          "target": "aliasByMetric(sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.cpu.longTasks.tasks.max)"
         },
         {
           "refCount": 0,
           "refId": "B",
-          "target": "aliasByMetric($base.$path.summary.$group.$browser.$connectivity.browsertime.cpu.longTasks.tasks.median)"
+          "target": "aliasByMetric(sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.cpu.longTasks.tasks.median)"
         },
         {
           "refCount": 0,
           "refId": "C",
-          "target": "aliasByMetric($base.$path.summary.$group.$browser.$connectivity.browsertime.cpu.longTasks.tasks.min)"
+          "target": "aliasByMetric(sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.cpu.longTasks.tasks.min)"
         }
       ],
       "thresholds": [],
@@ -1743,11 +1772,12 @@
       "dashes": false,
       "description": "",
       "fill": 0,
+      "fillGradient": 0,
       "gridPos": {
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 46
+        "y": 24
       },
       "id": 88,
       "legend": {
@@ -1764,7 +1794,9 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "connected",
-      "options": {},
+      "options": {
+        "dataLinks": []
+      },
       "percentage": false,
       "pointradius": 2,
       "points": false,
@@ -1791,17 +1823,17 @@
         {
           "refCount": 0,
           "refId": "A",
-          "target": "aliasByMetric($base.$path.summary.$group.$browser.$connectivity.browsertime.cpu.longTasks.totalDuration.max)"
+          "target": "aliasByMetric(sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.cpu.longTasks.totalDuration.max)"
         },
         {
           "refCount": 0,
           "refId": "B",
-          "target": "aliasByMetric($base.$path.summary.$group.$browser.$connectivity.browsertime.cpu.longTasks.totalDuration.median)"
+          "target": "aliasByMetric(sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.cpu.longTasks.totalDuration.median)"
         },
         {
           "refCount": 0,
           "refId": "C",
-          "target": "aliasByMetric($base.$path.summary.$group.$browser.$connectivity.browsertime.cpu.longTasks.totalDuration.min)"
+          "target": "aliasByMetric(sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.cpu.longTasks.totalDuration.min)"
         }
       ],
       "thresholds": [],
@@ -1852,7 +1884,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 54
+        "y": 32
       },
       "id": 90,
       "panels": [],
@@ -1870,7 +1902,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 55
+        "y": 33
       },
       "id": 91,
       "legend": {
@@ -1914,17 +1946,17 @@
         {
           "refCount": 0,
           "refId": "A",
-          "target": "aliasByMetric($base.$path.summary.$group.$browser.$connectivity.browsertime.cpu.categories.scriptEvaluation.max)"
+          "target": "aliasByMetric(sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.cpu.categories.scriptEvaluation.max)"
         },
         {
           "refCount": 0,
           "refId": "B",
-          "target": "aliasByMetric($base.$path.summary.$group.$browser.$connectivity.browsertime.cpu.categories.scriptEvaluation.median)"
+          "target": "aliasByMetric(sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.cpu.categories.scriptEvaluation.median)"
         },
         {
           "refCount": 0,
           "refId": "C",
-          "target": "aliasByMetric($base.$path.summary.$group.$browser.$connectivity.browsertime.cpu.categories.scriptEvaluation.min)"
+          "target": "aliasByMetric(sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.cpu.categories.scriptEvaluation.min)"
         }
       ],
       "thresholds": [],
@@ -1980,7 +2012,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 55
+        "y": 33
       },
       "id": 93,
       "legend": {
@@ -2024,17 +2056,17 @@
         {
           "refCount": 0,
           "refId": "A",
-          "target": "aliasByMetric($base.$path.summary.$group.$browser.$connectivity.browsertime.cpu.categories.scriptParseCompile.max)"
+          "target": "aliasByMetric(sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.cpu.categories.scriptParseCompile.max)"
         },
         {
           "refCount": 0,
           "refId": "B",
-          "target": "aliasByMetric($base.$path.summary.$group.$browser.$connectivity.browsertime.cpu.categories.scriptParseCompile.median)"
+          "target": "aliasByMetric(sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.cpu.categories.scriptParseCompile.median)"
         },
         {
           "refCount": 0,
           "refId": "C",
-          "target": "aliasByMetric($base.$path.summary.$group.$browser.$connectivity.browsertime.cpu.categories.scriptParseCompile.min)"
+          "target": "aliasByMetric(sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.cpu.categories.scriptParseCompile.min)"
         }
       ],
       "thresholds": [],
@@ -2090,7 +2122,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 63
+        "y": 41
       },
       "id": 94,
       "legend": {
@@ -2134,17 +2166,17 @@
         {
           "refCount": 0,
           "refId": "A",
-          "target": "aliasByMetric($base.$path.summary.$group.$browser.$connectivity.browsertime.cpu.categories.paintCompositeRender.max)"
+          "target": "aliasByMetric(sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.cpu.categories.paintCompositeRender.max)"
         },
         {
           "refCount": 0,
           "refId": "B",
-          "target": "aliasByMetric($base.$path.summary.$group.$browser.$connectivity.browsertime.cpu.categories.paintCompositeRender.median)"
+          "target": "aliasByMetric(sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.cpu.categories.paintCompositeRender.median)"
         },
         {
           "refCount": 0,
           "refId": "C",
-          "target": "aliasByMetric($base.$path.summary.$group.$browser.$connectivity.browsertime.cpu.categories.paintCompositeRender.min)"
+          "target": "aliasByMetric(sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.cpu.categories.paintCompositeRender.min)"
         }
       ],
       "thresholds": [],
@@ -2200,7 +2232,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 63
+        "y": 41
       },
       "id": 92,
       "legend": {
@@ -2244,17 +2276,17 @@
         {
           "refCount": 0,
           "refId": "A",
-          "target": "aliasByMetric($base.$path.summary.$group.$browser.$connectivity.browsertime.cpu.categories.styleLayout.max)"
+          "target": "aliasByMetric(sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.cpu.categories.styleLayout.max)"
         },
         {
           "refCount": 0,
           "refId": "B",
-          "target": "aliasByMetric($base.$path.summary.$group.$browser.$connectivity.browsertime.cpu.categories.styleLayout.median)"
+          "target": "aliasByMetric(sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.cpu.categories.styleLayout.median)"
         },
         {
           "refCount": 0,
           "refId": "C",
-          "target": "aliasByMetric($base.$path.summary.$group.$browser.$connectivity.browsertime.cpu.categories.styleLayout.min)"
+          "target": "aliasByMetric(sitespeed_io.$path.summary.$group.$browser.$connectivity.browsertime.cpu.categories.styleLayout.min)"
         }
       ],
       "thresholds": [],
@@ -2305,7 +2337,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 71
+        "y": 49
       },
       "id": 80,
       "panels": [],
@@ -2323,7 +2355,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 72
+        "y": 50
       },
       "id": 82,
       "legend": {
@@ -2367,17 +2399,17 @@
         {
           "refCount": 0,
           "refId": "A",
-          "target": "aliasByMetric($base.$path.summary.$group.$browser.$connectivity.pagexray.requests.median)"
+          "target": "aliasByMetric(sitespeed_io.$path.summary.$group.$browser.$connectivity.pagexray.requests.median)"
         },
         {
           "refCount": 0,
           "refId": "B",
-          "target": "aliasByMetric($base.$path.summary.$group.$browser.$connectivity.pagexray.requests.max)"
+          "target": "aliasByMetric(sitespeed_io.$path.summary.$group.$browser.$connectivity.pagexray.requests.max)"
         },
         {
           "refCount": 0,
           "refId": "C",
-          "target": "aliasByMetric($base.$path.summary.$group.$browser.$connectivity.pagexray.requests.min)"
+          "target": "aliasByMetric(sitespeed_io.$path.summary.$group.$browser.$connectivity.pagexray.requests.min)"
         }
       ],
       "thresholds": [],
@@ -2432,7 +2464,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 72
+        "y": 50
       },
       "id": 83,
       "legend": {
@@ -2476,17 +2508,17 @@
         {
           "refCount": 0,
           "refId": "A",
-          "target": "aliasByMetric($base.$path.summary.$group.$browser.$connectivity.pagexray.transferSize.median)"
+          "target": "aliasByMetric(sitespeed_io.$path.summary.$group.$browser.$connectivity.pagexray.transferSize.median)"
         },
         {
           "refCount": 0,
           "refId": "B",
-          "target": "aliasByMetric($base.$path.summary.$group.$browser.$connectivity.pagexray.transferSize.max)"
+          "target": "aliasByMetric(sitespeed_io.$path.summary.$group.$browser.$connectivity.pagexray.transferSize.max)"
         },
         {
           "refCount": 0,
           "refId": "C",
-          "target": "aliasByMetric($base.$path.summary.$group.$browser.$connectivity.pagexray.transferSize.min)"
+          "target": "aliasByMetric(sitespeed_io.$path.summary.$group.$browser.$connectivity.pagexray.transferSize.min)"
         }
       ],
       "thresholds": [],
@@ -2536,7 +2568,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 80
+        "y": 58
       },
       "id": 59,
       "panels": [],
@@ -2570,7 +2602,7 @@
         "h": 3,
         "w": 4,
         "x": 0,
-        "y": 81
+        "y": 59
       },
       "id": 11,
       "interval": null,
@@ -2654,7 +2686,7 @@
         "h": 3,
         "w": 4,
         "x": 4,
-        "y": 81
+        "y": 59
       },
       "id": 9,
       "interval": null,
@@ -2737,7 +2769,7 @@
         "h": 3,
         "w": 4,
         "x": 8,
-        "y": 81
+        "y": 59
       },
       "id": 6,
       "interval": null,
@@ -2820,7 +2852,7 @@
         "h": 3,
         "w": 4,
         "x": 12,
-        "y": 81
+        "y": 59
       },
       "id": 43,
       "interval": null,
@@ -2904,7 +2936,7 @@
         "h": 3,
         "w": 4,
         "x": 16,
-        "y": 81
+        "y": 59
       },
       "id": 18,
       "interval": null,
@@ -2988,7 +3020,7 @@
         "h": 3,
         "w": 4,
         "x": 20,
-        "y": 81
+        "y": 59
       },
       "id": 19,
       "interval": null,
@@ -3052,7 +3084,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 84
+        "y": 62
       },
       "id": 60,
       "panels": [],
@@ -3086,7 +3118,7 @@
         "h": 3,
         "w": 4,
         "x": 0,
-        "y": 85
+        "y": 63
       },
       "id": 16,
       "interval": null,
@@ -3170,7 +3202,7 @@
         "h": 3,
         "w": 8,
         "x": 4,
-        "y": 85
+        "y": 63
       },
       "id": 13,
       "interval": null,
@@ -3253,7 +3285,7 @@
         "h": 3,
         "w": 6,
         "x": 12,
-        "y": 85
+        "y": 63
       },
       "id": 42,
       "interval": null,
@@ -3337,7 +3369,7 @@
         "h": 3,
         "w": 6,
         "x": 18,
-        "y": 85
+        "y": 63
       },
       "id": 17,
       "interval": null,
@@ -3401,7 +3433,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 88
+        "y": 66
       },
       "id": 61,
       "panels": [],
@@ -3434,7 +3466,7 @@
         "h": 3,
         "w": 6,
         "x": 0,
-        "y": 89
+        "y": 67
       },
       "id": 21,
       "interval": null,
@@ -3517,7 +3549,7 @@
         "h": 3,
         "w": 4,
         "x": 6,
-        "y": 89
+        "y": 67
       },
       "id": 23,
       "interval": null,
@@ -3601,7 +3633,7 @@
         "h": 3,
         "w": 5,
         "x": 10,
-        "y": 89
+        "y": 67
       },
       "id": 15,
       "interval": null,
@@ -3685,7 +3717,7 @@
         "h": 3,
         "w": 4,
         "x": 15,
-        "y": 89
+        "y": 67
       },
       "id": 14,
       "interval": null,
@@ -3749,7 +3781,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 92
+        "y": 70
       },
       "id": 63,
       "panels": [],
@@ -3772,7 +3804,7 @@
         "h": 11,
         "w": 24,
         "x": 0,
-        "y": 93
+        "y": 71
       },
       "id": 1,
       "legend": {
@@ -3856,7 +3888,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 104
+        "y": 82
       },
       "id": 64,
       "panels": [],
@@ -3879,7 +3911,7 @@
         "h": 12,
         "w": 12,
         "x": 0,
-        "y": 105
+        "y": 83
       },
       "id": 27,
       "legend": {
@@ -3979,7 +4011,7 @@
         "h": 12,
         "w": 12,
         "x": 12,
-        "y": 105
+        "y": 83
       },
       "id": 35,
       "legend": {
@@ -4060,7 +4092,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 117
+        "y": 95
       },
       "id": 65,
       "panels": [],
@@ -4093,7 +4125,7 @@
         "h": 3,
         "w": 6,
         "x": 0,
-        "y": 118
+        "y": 96
       },
       "id": 37,
       "interval": null,
@@ -4175,7 +4207,7 @@
         "h": 3,
         "w": 6,
         "x": 6,
-        "y": 118
+        "y": 96
       },
       "id": 38,
       "interval": null,
@@ -4257,7 +4289,7 @@
         "h": 3,
         "w": 6,
         "x": 12,
-        "y": 118
+        "y": 96
       },
       "id": 40,
       "interval": null,
@@ -4339,7 +4371,7 @@
         "h": 3,
         "w": 6,
         "x": 18,
-        "y": 118
+        "y": 96
       },
       "id": 41,
       "interval": null,
@@ -4402,7 +4434,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 121
+        "y": 99
       },
       "id": 66,
       "panels": [],
@@ -4435,7 +4467,7 @@
         "h": 3,
         "w": 4,
         "x": 0,
-        "y": 122
+        "y": 100
       },
       "id": 29,
       "interval": null,
@@ -4517,7 +4549,7 @@
         "h": 3,
         "w": 4,
         "x": 4,
-        "y": 122
+        "y": 100
       },
       "id": 30,
       "interval": null,
@@ -4599,7 +4631,7 @@
         "h": 3,
         "w": 4,
         "x": 8,
-        "y": 122
+        "y": 100
       },
       "id": 31,
       "interval": null,
@@ -4681,7 +4713,7 @@
         "h": 3,
         "w": 4,
         "x": 12,
-        "y": 122
+        "y": 100
       },
       "id": 32,
       "interval": null,
@@ -4763,7 +4795,7 @@
         "h": 3,
         "w": 4,
         "x": 16,
-        "y": 122
+        "y": 100
       },
       "id": 33,
       "interval": null,
@@ -4845,7 +4877,7 @@
         "h": 3,
         "w": 4,
         "x": 20,
-        "y": 122
+        "y": 100
       },
       "id": 34,
       "interval": null,
@@ -4927,7 +4959,7 @@
         "h": 3,
         "w": 4,
         "x": 0,
-        "y": 125
+        "y": 103
       },
       "id": 46,
       "interval": null,
@@ -5009,7 +5041,7 @@
         "h": 3,
         "w": 4,
         "x": 4,
-        "y": 125
+        "y": 103
       },
       "id": 47,
       "interval": null,
@@ -5091,7 +5123,7 @@
         "h": 3,
         "w": 4,
         "x": 8,
-        "y": 125
+        "y": 103
       },
       "id": 48,
       "interval": null,
@@ -5173,7 +5205,7 @@
         "h": 3,
         "w": 4,
         "x": 12,
-        "y": 125
+        "y": 103
       },
       "id": 49,
       "interval": null,
@@ -5255,7 +5287,7 @@
         "h": 3,
         "w": 4,
         "x": 16,
-        "y": 125
+        "y": 103
       },
       "id": 50,
       "interval": null,
@@ -5337,7 +5369,7 @@
         "h": 3,
         "w": 4,
         "x": 20,
-        "y": 125
+        "y": 103
       },
       "id": 51,
       "interval": null,
@@ -5395,7 +5427,7 @@
       "valueName": "avg"
     }
   ],
-  "schemaVersion": 18,
+  "schemaVersion": 19,
   "style": "dark",
   "tags": [
     "site summary"
@@ -5554,7 +5586,7 @@
     ]
   },
   "time": {
-    "from": "now-6h",
+    "from": "now-7d",
     "to": "now"
   },
   "timepicker": {
@@ -5585,5 +5617,5 @@
   "timezone": "browser",
   "title": "Site summary",
   "uid": "000000045",
-  "version": 34
+  "version": 39
 }
