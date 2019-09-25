@@ -53,59 +53,17 @@
         "iconColor": "rgb(96, 255, 103)",
         "limit": 100,
         "name": "runs",
-        "showIn": 0,
-        "tags": "$base $path $group $page $browser $connectivity",
+        "tags": "$base $path $domain $page $browser $connectivity",
         "type": "alert"
-      },
-      {
-        "datasource": "-- Grafana --",
-        "enable": true,
-        "hide": false,
-        "iconColor": "#8AB8FF",
-        "limit": 100,
-        "name": "sitespeed.io",
-        "showIn": 0,
-        "tags": [
-          "sitespeed.io"
-        ],
-        "type": "tags"
       }
     ]
   },
   "editable": true,
   "gnetId": null,
-  "graphTooltip": 0,
+  "graphTooltip": 2,
   "id": null,
-  "iteration": 1569331420633,
-  "links": [
-    {
-      "icon": "external link",
-      "includeVars": true,
-      "keepTime": true,
-      "tags": [
-        "leaderboard"
-      ],
-      "type": "dashboards"
-    },
-    {
-      "icon": "external link",
-      "includeVars": true,
-      "keepTime": true,
-      "tags": [
-        "page summary"
-      ],
-      "type": "dashboards"
-    },
-    {
-      "icon": "external link",
-      "includeVars": true,
-      "keepTime": true,
-      "tags": [
-        "site summary"
-      ],
-      "type": "dashboards"
-    }
-  ],
+  "iteration": 1569393161323,
+  "links": [],
   "panels": [
     {
       "collapsed": false,
@@ -115,9 +73,9 @@
         "x": 0,
         "y": 0
       },
-      "id": 13,
+      "id": 10,
       "panels": [],
-      "title": "Current",
+      "title": "Metrics",
       "type": "row"
     },
     {
@@ -126,12 +84,12 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": "${DS_GRAPHITE}",
-      "description": "The Visual Metrics are collected by recording and analysing a video of the screen.",
+      "description": "",
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
-        "h": 16,
-        "w": 24,
+        "h": 18,
+        "w": 12,
         "x": 0,
         "y": 1
       },
@@ -140,8 +98,6 @@
         "alignAsTable": true,
         "avg": true,
         "current": true,
-        "hideEmpty": true,
-        "hideZero": true,
         "max": true,
         "min": true,
         "show": true,
@@ -173,350 +129,31 @@
       "steppedLine": false,
       "targets": [
         {
-          "hide": false,
-          "refCount": 0,
-          "refId": "B",
-          "target": "aliasByNode($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.stddev, 10)",
-          "textEditor": false
-        },
-        {
-          "hide": false,
           "refCount": 0,
           "refId": "A",
-          "target": "aliasByNode($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.stddev, 10)",
-          "textEditor": false
+          "target": "aliasByNode($base.$path.pageSummary.$group.$page.webpagetest.$location.$connectivity.data.standardDeviation.$view.render, 11)"
         },
         {
-          "hide": false,
-          "refCount": 0,
-          "refId": "C",
-          "target": "aliasByNode($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.PerceptualSpeedIndex.stddev, 10)",
-          "textEditor": false
-        },
-        {
-          "hide": false,
-          "refCount": 0,
-          "refId": "H",
-          "target": "aliasByNode($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.Heading.stddev, 10)",
-          "textEditor": false
-        },
-        {
-          "hide": false,
-          "refCount": 0,
-          "refId": "I",
-          "target": "aliasByNode($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.LargestImage.$function, 10)",
-          "textEditor": false
-        },
-        {
-          "hide": false,
-          "refCount": 0,
-          "refId": "D",
-          "target": "aliasByNode($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.VisualComplete85.stddev, 10)",
-          "textEditor": false
-        },
-        {
-          "hide": false,
-          "refCount": 0,
-          "refId": "E",
-          "target": "aliasByNode($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.VisualComplete95.stddev, 10)",
-          "textEditor": false
-        },
-        {
-          "hide": false,
-          "refCount": 0,
-          "refId": "F",
-          "target": "aliasByNode($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.VisualComplete99.stddev, 10)",
-          "textEditor": false
-        },
-        {
-          "hide": false,
-          "refCount": 0,
-          "refId": "G",
-          "target": "aliasByNode($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.visualMetrics.LastVisualChange.stddev, 10)",
-          "textEditor": false
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "Visual metrics stdefv",
-      "tooltip": {
-        "shared": false,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "ms",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "${DS_GRAPHITE}",
-      "description": "The Technical metrics are collected from the browser using the Navigation Timing API, the User Timing API and firstPaint (when available).",
-      "fill": 0,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 21,
-        "w": 24,
-        "x": 0,
-        "y": 17
-      },
-      "id": 2,
-      "legend": {
-        "alignAsTable": true,
-        "avg": true,
-        "current": true,
-        "hideEmpty": true,
-        "hideZero": true,
-        "max": true,
-        "min": true,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [
-        {
-          "targetBlank": true,
-          "title": "Page summary $page",
-          "url": "/dashboard/db/page-summary?$__url_time_range&$__all_variables"
-        }
-      ],
-      "maxPerRow": 2,
-      "nullPointMode": "connected",
-      "options": {
-        "dataLinks": []
-      },
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "hide": false,
-          "refCount": 0,
-          "refId": "G",
-          "target": "aliasByNode($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.serverResponseTime.stddev, 11)",
-          "textEditor": false
-        },
-        {
-          "hide": false,
           "refCount": 0,
           "refId": "B",
-          "target": "aliasByNode($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.firstPaint.stddev, 10)",
-          "textEditor": false
+          "target": "aliasByNode($base.$path.pageSummary.$group.$page.webpagetest.$location.$connectivity.data.standardDeviation.$view, 12)"
         },
         {
-          "hide": false,
-          "refCount": 0,
-          "refId": "C",
-          "target": "aliasByNode($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.backEndTime.stddev, 11)",
-          "textEditor": false
-        },
-        {
-          "hide": false,
-          "refCount": 0,
-          "refId": "D",
-          "target": "aliasByNode($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.domContentLoadedTime.stddev, 11)",
-          "textEditor": false
-        },
-        {
-          "hide": false,
-          "refCount": 0,
-          "refId": "E",
-          "target": "aliasByNode($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.domInteractiveTime.stddev, 11)",
-          "textEditor": false
-        },
-        {
-          "hide": false,
           "refCount": 0,
           "refId": "F",
-          "target": "aliasByNode($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.frontEndTime.stddev, 11)",
-          "textEditor": false
-        },
-        {
-          "hide": false,
-          "refCount": 0,
-          "refId": "I",
-          "target": "aliasByNode($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.pageLoadTime.stddev, 11)",
-          "textEditor": false
-        },
-        {
-          "hide": false,
-          "refCount": 0,
-          "refId": "A",
-          "target": "alias($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.fullyLoaded.stddev, 'Fully loaded')",
-          "textEditor": false
+          "target": "aliasByNode($base.$path.pageSummary.$group.$page.webpagetest.$location.$connectivity.data.standardDeviation.$view.visualComplete95, 11)"
         },
         {
           "refCount": 0,
           "refId": "H",
-          "target": "aliasByNode($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.userTimings.marks.*.stddev, 12)",
-          "textEditor": false
-        },
-        {
-          "hide": false,
-          "refCount": 0,
-          "refId": "J",
-          "target": "aliasByNode($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.paintTiming.first-contentful-paint.stddev, 11)",
-          "textEditor": false
+          "target": "aliasByNode($base.$path.pageSummary.$group.$page.webpagetest.$location.$connectivity.data.standardDeviation.$view.lastVisualChange, 11)"
         }
       ],
       "thresholds": [],
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Browser timing metrics stdefv",
-      "tooltip": {
-        "shared": false,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "ms",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "collapsed": false,
-      "gridPos": {
-        "h": 1,
-        "w": 24,
-        "x": 0,
-        "y": 38
-      },
-      "id": 37,
-      "panels": [],
-      "title": "Element Rendering [Chrome only]",
-      "type": "row"
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "cacheTimeout": "",
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "${DS_GRAPHITE}",
-      "description": "Collected using the Element Timing API",
-      "fill": 0,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 0,
-        "y": 39
-      },
-      "id": 34,
-      "legend": {
-        "alignAsTable": true,
-        "avg": true,
-        "current": true,
-        "hideEmpty": true,
-        "hideZero": true,
-        "max": true,
-        "min": true,
-        "rightSide": false,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [
-        {
-          "targetBlank": true,
-          "title": "Page summary $page",
-          "url": "/dashboard/db/page-summary?$__url_time_range&$__all_variables"
-        }
-      ],
-      "maxPerRow": 2,
-      "nullPointMode": "connected",
-      "options": {
-        "dataLinks": []
-      },
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "refCount": 0,
-          "refId": "H",
-          "target": "aliasByNode($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.elementTimings.*.renderTime.stddev, 11)",
-          "textEditor": false
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "Element Timings Render Time stdev [Çhrome only]",
+      "title": "Visual Metrics",
       "tooltip": {
         "shared": false,
         "sort": 0,
@@ -556,29 +193,24 @@
     {
       "aliasColors": {},
       "bars": false,
-      "cacheTimeout": "",
       "dashLength": 10,
       "dashes": false,
       "datasource": "${DS_GRAPHITE}",
-      "description": "Collected using the Largest Contentful API",
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
-        "h": 8,
+        "h": 18,
         "w": 12,
         "x": 12,
-        "y": 39
+        "y": 1
       },
-      "id": 35,
+      "id": 3,
       "legend": {
         "alignAsTable": true,
         "avg": true,
         "current": true,
-        "hideEmpty": true,
-        "hideZero": true,
         "max": true,
         "min": true,
-        "rightSide": false,
         "show": true,
         "total": false,
         "values": true
@@ -608,16 +240,25 @@
       "targets": [
         {
           "refCount": 0,
-          "refId": "H",
-          "target": "aliasByNode($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.largestContentfulPaint.renderTime.stddev, 11)",
-          "textEditor": false
+          "refId": "A",
+          "target": "aliasByNode($base.$path.pageSummary.$group.$page.webpagetest.$location.$connectivity.data.standardDeviation.$view.TimeToInteractive, 11)"
+        },
+        {
+          "refCount": 0,
+          "refId": "B",
+          "target": "aliasByNode($base.$path.pageSummary.$group.$page.webpagetest.$location.$connectivity.data.standardDeviation.$view.FirstInteractive, 11)"
+        },
+        {
+          "refCount": 0,
+          "refId": "C",
+          "target": "aliasByNode($base.$path.pageSummary.$group.$page.webpagetest.$location.$connectivity.data.standardDeviation.$view.LastInteractive, 11)"
         }
       ],
       "thresholds": [],
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Largest Contentful Paint stdev [Çhrome only]",
+      "title": "Interactive",
       "tooltip": {
         "shared": false,
         "sort": 0,
@@ -660,22 +301,19 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": "${DS_GRAPHITE}",
-      "description": "The CPU metrics are collected from Chrome when you add --chrome.timeline to your run. The trace log is analyzed and categorized.",
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
         "h": 10,
         "w": 24,
         "x": 0,
-        "y": 47
+        "y": 19
       },
-      "id": 23,
+      "id": 4,
       "legend": {
         "alignAsTable": true,
-        "avg": false,
+        "avg": true,
         "current": true,
-        "hideEmpty": true,
-        "hideZero": true,
         "max": true,
         "min": true,
         "show": true,
@@ -684,7 +322,14 @@
       },
       "lines": true,
       "linewidth": 1,
-      "links": [],
+      "links": [
+        {
+          "targetBlank": true,
+          "title": "Page summary $page",
+          "url": "/dashboard/db/page-summary?$__url_time_range&$__all_variables"
+        }
+      ],
+      "maxPerRow": 2,
       "nullPointMode": "connected",
       "options": {
         "dataLinks": []
@@ -699,18 +344,18 @@
       "steppedLine": false,
       "targets": [
         {
+          "refCount": 0,
           "refId": "A",
-          "target": "aliasByNode($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.cpu.categories.*.stddev, 11)",
-          "textEditor": false
+          "target": "aliasByNode($base.$path.pageSummary.$group.$page.webpagetest.$location.$connectivity.data.standardDeviation.$view.SpeedIndex, 11)"
         }
       ],
       "thresholds": [],
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "CPU time spent per category stdev",
+      "title": "Speed Index",
       "tooltip": {
-        "shared": true,
+        "shared": false,
         "sort": 0,
         "value_type": "individual"
       },
@@ -746,52 +391,40 @@
       }
     },
     {
-      "collapsed": false,
-      "gridPos": {
-        "h": 1,
-        "w": 24,
-        "x": 0,
-        "y": 57
-      },
-      "id": 8,
-      "panels": [],
-      "title": "CPU spent [Chrome only]",
-      "type": "row"
-    },
-    {
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
       "dashes": false,
       "datasource": "${DS_GRAPHITE}",
-      "description": "The CPU metrics are collected from Chrome when you add --chrome.timeline to your run. The trace log is analyzed and sorted by type.",
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
-        "h": 20,
+        "h": 10,
         "w": 24,
         "x": 0,
-        "y": 58
+        "y": 29
       },
       "id": 11,
       "legend": {
         "alignAsTable": true,
-        "avg": false,
+        "avg": true,
         "current": true,
-        "hideEmpty": true,
-        "hideZero": true,
         "max": true,
         "min": true,
-        "rightSide": true,
         "show": true,
-        "sort": "current",
-        "sortDesc": true,
         "total": false,
         "values": true
       },
       "lines": true,
       "linewidth": 1,
-      "links": [],
+      "links": [
+        {
+          "targetBlank": true,
+          "title": "Page summary $page",
+          "url": "/dashboard/db/page-summary?$__url_time_range&$__all_variables"
+        }
+      ],
+      "maxPerRow": 2,
       "nullPointMode": "connected",
       "options": {
         "dataLinks": []
@@ -806,18 +439,28 @@
       "steppedLine": false,
       "targets": [
         {
+          "refCount": 0,
           "refId": "A",
-          "target": "aliasByNode($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.cpu.events.*.stddev, 11)",
-          "textEditor": false
+          "target": "aliasByNode($base.$path.pageSummary.$group.$page.webpagetest.$location.$connectivity.data.standardDeviation.$view.fullyLoaded, 11)"
+        },
+        {
+          "refCount": 0,
+          "refId": "B",
+          "target": "aliasByNode($base.$path.pageSummary.$group.$page.webpagetest.$location.$connectivity.data.standardDeviation.$view.loadTime, 11)"
+        },
+        {
+          "refCount": 0,
+          "refId": "C",
+          "target": "aliasByNode($base.$path.pageSummary.$group.$page.webpagetest.$location.$connectivity.data.standardDeviation.$view.TTFB, 11)"
         }
       ],
       "thresholds": [],
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "CPU time spent per event stdev",
+      "title": "Timing metrics",
       "tooltip": {
-        "shared": true,
+        "shared": false,
         "sort": 0,
         "value_type": "individual"
       },
@@ -857,8 +500,7 @@
   "schemaVersion": 19,
   "style": "dark",
   "tags": [
-    "page",
-    "page timings"
+    "page"
   ],
   "templating": {
     "list": [
@@ -909,7 +551,7 @@
         "definition": "",
         "hide": 0,
         "includeAll": false,
-        "label": "domain",
+        "label": null,
         "multi": false,
         "name": "group",
         "options": [],
@@ -951,13 +593,35 @@
         "current": {},
         "datasource": "${DS_GRAPHITE}",
         "definition": "",
-        "hide": 0,
+        "hide": 2,
         "includeAll": false,
         "label": null,
         "multi": false,
         "name": "browser",
         "options": [],
-        "query": "$base.$path.pageSummary.$group.$page.*",
+        "query": "$base.$path.pageSummary.$domain.$page.*",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": null,
+        "tags": [],
+        "tagsQuery": null,
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "allValue": null,
+        "current": {},
+        "datasource": "${DS_GRAPHITE}",
+        "definition": "",
+        "hide": 0,
+        "includeAll": false,
+        "label": null,
+        "multi": false,
+        "name": "location",
+        "options": [],
+        "query": "$base.$path.pageSummary.$group.$page.webpagetest.*",
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -979,7 +643,7 @@
         "multi": false,
         "name": "connectivity",
         "options": [],
-        "query": "$base.$path.pageSummary.$group.$page.$browser.*",
+        "query": "$base.$path.pageSummary.$group.$page.webpagetest.$location.*",
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -987,6 +651,28 @@
         "tagValuesQuery": null,
         "tags": [],
         "tagsQuery": null,
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "allValue": null,
+        "current": {},
+        "datasource": "${DS_GRAPHITE}",
+        "definition": "",
+        "hide": 0,
+        "includeAll": false,
+        "label": null,
+        "multi": false,
+        "name": "view",
+        "options": [],
+        "query": "$base.$path.pageSummary.$group.$page.webpagetest.$location.$connectivity.data.median.*",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
         "type": "query",
         "useTags": false
       }
@@ -1022,7 +708,7 @@
     ]
   },
   "timezone": "browser",
-  "title": "Page timing deviation",
-  "uid": "000000047",
-  "version": 2
+  "title": "Webpagetest Page deviation",
+  "uid": "000000058",
+  "version": 3
 }

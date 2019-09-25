@@ -21,7 +21,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "6.3.3"
+      "version": "6.3.4"
     },
     {
       "type": "panel",
@@ -65,22 +65,8 @@
         "iconColor": "rgb(96, 255, 113)",
         "limit": 100,
         "name": "runs",
-        "showIn": 0,
-        "tags": "$base $path $group $page $connectivity $location",
+        "tags": "$base $path $domain $page $browser $connectivity",
         "type": "alert"
-      },
-      {
-        "datasource": "-- Grafana --",
-        "enable": true,
-        "hide": false,
-        "iconColor": "rgba(255, 96, 96, 1)",
-        "limit": 100,
-        "name": "sitespeed.io",
-        "showIn": 0,
-        "tags": [
-          "sitespeed.io"
-        ],
-        "type": "tags"
       }
     ]
   },
@@ -88,7 +74,7 @@
   "gnetId": null,
   "graphTooltip": 2,
   "id": null,
-  "iteration": 1566994475945,
+  "iteration": 1569393028419,
   "links": [
     {
       "asDropdown": true,
@@ -652,7 +638,7 @@
       "filterNull": false,
       "fontSize": "100%",
       "gridPos": {
-        "h": 7,
+        "h": 6,
         "w": 6,
         "x": 0,
         "y": 6
@@ -727,7 +713,7 @@
       "filterNull": false,
       "fontSize": "100%",
       "gridPos": {
-        "h": 7,
+        "h": 6,
         "w": 6,
         "x": 6,
         "y": 6
@@ -833,7 +819,7 @@
       "filterNull": false,
       "fontSize": "100%",
       "gridPos": {
-        "h": 7,
+        "h": 6,
         "w": 6,
         "x": 12,
         "y": 6
@@ -939,7 +925,7 @@
       "filterNull": false,
       "fontSize": "100%",
       "gridPos": {
-        "h": 7,
+        "h": 6,
         "w": 6,
         "x": 18,
         "y": 6
@@ -1037,7 +1023,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 13
+        "y": 12
       },
       "id": 72,
       "panels": [],
@@ -1068,7 +1054,7 @@
         "h": 4,
         "w": 6,
         "x": 0,
-        "y": 14
+        "y": 13
       },
       "id": 43,
       "interval": null,
@@ -1151,7 +1137,7 @@
         "h": 4,
         "w": 6,
         "x": 6,
-        "y": 14
+        "y": 13
       },
       "id": 12,
       "interval": null,
@@ -1234,7 +1220,7 @@
         "h": 4,
         "w": 6,
         "x": 12,
-        "y": 14
+        "y": 13
       },
       "id": 14,
       "interval": null,
@@ -1317,7 +1303,7 @@
         "h": 4,
         "w": 6,
         "x": 18,
-        "y": 14
+        "y": 13
       },
       "id": 54,
       "interval": null,
@@ -1381,7 +1367,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 18
+        "y": 17
       },
       "id": 73,
       "panels": [],
@@ -1414,7 +1400,7 @@
         "h": 4,
         "w": 6,
         "x": 0,
-        "y": 19
+        "y": 18
       },
       "id": 19,
       "interval": null,
@@ -1497,7 +1483,7 @@
         "h": 4,
         "w": 6,
         "x": 6,
-        "y": 19
+        "y": 18
       },
       "id": 59,
       "interval": null,
@@ -1582,7 +1568,7 @@
         "h": 4,
         "w": 6,
         "x": 12,
-        "y": 19
+        "y": 18
       },
       "id": 21,
       "interval": null,
@@ -1665,7 +1651,7 @@
         "h": 4,
         "w": 6,
         "x": 18,
-        "y": 19
+        "y": 18
       },
       "id": 61,
       "interval": null,
@@ -1729,7 +1715,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 23
+        "y": 22
       },
       "id": 74,
       "panels": [],
@@ -1753,7 +1739,7 @@
         "h": 12,
         "w": 8,
         "x": 0,
-        "y": 24
+        "y": 23
       },
       "id": 65,
       "legend": {
@@ -1865,7 +1851,7 @@
         "h": 12,
         "w": 8,
         "x": 8,
-        "y": 24
+        "y": 23
       },
       "id": 66,
       "legend": {
@@ -1977,7 +1963,7 @@
         "h": 12,
         "w": 8,
         "x": 16,
-        "y": 24
+        "y": 23
       },
       "id": 67,
       "legend": {
@@ -2079,7 +2065,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 36
+        "y": 35
       },
       "id": 75,
       "panels": [],
@@ -2097,12 +2083,13 @@
       "editable": true,
       "error": false,
       "fill": 0,
+      "fillGradient": 0,
       "grid": {},
       "gridPos": {
         "h": 12,
         "w": 12,
         "x": 0,
-        "y": 37
+        "y": 36
       },
       "id": 45,
       "legend": {
@@ -2119,7 +2106,9 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "connected",
-      "options": {},
+      "options": {
+        "dataLinks": []
+      },
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -2156,6 +2145,7 @@
       ],
       "thresholds": [],
       "timeFrom": "30d",
+      "timeRegions": [],
       "timeShift": null,
       "title": "History Fully Loaded",
       "tooltip": {
@@ -2189,7 +2179,11 @@
           "min": null,
           "show": true
         }
-      ]
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     },
     {
       "aliasColors": {},
@@ -2201,12 +2195,13 @@
       "editable": true,
       "error": false,
       "fill": 0,
+      "fillGradient": 0,
       "grid": {},
       "gridPos": {
         "h": 12,
         "w": 12,
         "x": 12,
-        "y": 37
+        "y": 36
       },
       "id": 64,
       "legend": {
@@ -2223,7 +2218,9 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "connected",
-      "options": {},
+      "options": {
+        "dataLinks": []
+      },
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -2260,6 +2257,7 @@
       ],
       "thresholds": [],
       "timeFrom": "30d",
+      "timeRegions": [],
       "timeShift": null,
       "title": "History Document Ready",
       "tooltip": {
@@ -2293,7 +2291,11 @@
           "min": null,
           "show": true
         }
-      ]
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     },
     {
       "collapsed": false,
@@ -2301,7 +2303,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 49
+        "y": 48
       },
       "id": 76,
       "panels": [],
@@ -2327,12 +2329,13 @@
       "editable": true,
       "error": false,
       "fill": 10,
+      "fillGradient": 0,
       "grid": {},
       "gridPos": {
         "h": 12,
         "w": 12,
         "x": 0,
-        "y": 50
+        "y": 49
       },
       "height": 450,
       "id": 2,
@@ -2350,7 +2353,9 @@
       "linewidth": 0,
       "links": [],
       "nullPointMode": "connected",
-      "options": {},
+      "options": {
+        "dataLinks": []
+      },
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -2368,6 +2373,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Size",
       "tooltip": {
@@ -2401,7 +2407,11 @@
           "min": null,
           "show": true
         }
-      ]
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     },
     {
       "aliasColors": {
@@ -2422,12 +2432,13 @@
       "editable": true,
       "error": false,
       "fill": 10,
+      "fillGradient": 0,
       "grid": {},
       "gridPos": {
         "h": 12,
         "w": 12,
         "x": 12,
-        "y": 50
+        "y": 49
       },
       "height": 450,
       "id": 3,
@@ -2445,7 +2456,9 @@
       "linewidth": 0,
       "links": [],
       "nullPointMode": "connected",
-      "options": {},
+      "options": {
+        "dataLinks": []
+      },
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -2463,6 +2476,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Requests",
       "tooltip": {
@@ -2496,7 +2510,11 @@
           "min": null,
           "show": true
         }
-      ]
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     },
     {
       "collapsed": false,
@@ -2504,7 +2522,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 62
+        "y": 61
       },
       "id": 77,
       "panels": [],
@@ -2522,12 +2540,13 @@
       "editable": true,
       "error": false,
       "fill": 0,
+      "fillGradient": 0,
       "grid": {},
       "gridPos": {
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 63
+        "y": 62
       },
       "id": 6,
       "legend": {
@@ -2543,7 +2562,9 @@
       "linewidth": 2,
       "links": [],
       "nullPointMode": "connected",
-      "options": {},
+      "options": {
+        "dataLinks": []
+      },
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -2573,6 +2594,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "domContentLoadedEventEnd Time",
       "tooltip": {
@@ -2606,7 +2628,11 @@
           "min": null,
           "show": true
         }
-      ]
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     },
     {
       "aliasColors": {},
@@ -2618,12 +2644,13 @@
       "editable": true,
       "error": false,
       "fill": 0,
+      "fillGradient": 0,
       "grid": {},
       "gridPos": {
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 63
+        "y": 62
       },
       "id": 63,
       "legend": {
@@ -2639,7 +2666,9 @@
       "linewidth": 2,
       "links": [],
       "nullPointMode": "connected",
-      "options": {},
+      "options": {
+        "dataLinks": []
+      },
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -2669,6 +2698,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Front End Time",
       "tooltip": {
@@ -2702,7 +2732,11 @@
           "min": null,
           "show": true
         }
-      ]
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     },
     {
       "collapsed": false,
@@ -2710,7 +2744,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 70
+        "y": 69
       },
       "id": 78,
       "panels": [],
@@ -2728,19 +2762,22 @@
       "editable": true,
       "error": false,
       "fill": 0,
+      "fillGradient": 0,
       "grid": {},
       "gridPos": {
-        "h": 7,
+        "h": 11,
         "w": 24,
         "x": 0,
-        "y": 71
+        "y": 70
       },
       "id": 16,
       "legend": {
+        "alignAsTable": true,
         "avg": false,
         "current": true,
         "max": true,
         "min": true,
+        "rightSide": true,
         "show": true,
         "total": false,
         "values": true
@@ -2749,7 +2786,9 @@
       "linewidth": 2,
       "links": [],
       "nullPointMode": "connected",
-      "options": {},
+      "options": {
+        "dataLinks": []
+      },
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -2767,6 +2806,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "User timings",
       "tooltip": {
@@ -2800,7 +2840,11 @@
           "min": null,
           "show": true
         }
-      ]
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     },
     {
       "collapsed": false,
@@ -2808,7 +2852,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 78
+        "y": 81
       },
       "id": 79,
       "panels": [],
@@ -2826,12 +2870,13 @@
       "editable": true,
       "error": false,
       "fill": 0,
+      "fillGradient": 0,
       "grid": {},
       "gridPos": {
-        "h": 8,
+        "h": 12,
         "w": 24,
         "x": 0,
-        "y": 79
+        "y": 82
       },
       "id": 1,
       "legend": {
@@ -2840,6 +2885,7 @@
         "current": true,
         "max": true,
         "min": false,
+        "rightSide": true,
         "show": true,
         "sort": "max",
         "sortDesc": true,
@@ -2850,7 +2896,9 @@
       "linewidth": 2,
       "links": [],
       "nullPointMode": "connected",
-      "options": {},
+      "options": {
+        "dataLinks": []
+      },
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -2868,6 +2916,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Chrome User Timings",
       "tooltip": {
@@ -2901,7 +2950,11 @@
           "min": null,
           "show": true
         }
-      ]
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     },
     {
       "collapsed": false,
@@ -2909,7 +2962,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 87
+        "y": 94
       },
       "id": 80,
       "panels": [],
@@ -2942,7 +2995,7 @@
         "h": 3,
         "w": 4,
         "x": 0,
-        "y": 88
+        "y": 95
       },
       "id": 25,
       "interval": null,
@@ -3025,7 +3078,7 @@
         "h": 3,
         "w": 4,
         "x": 4,
-        "y": 88
+        "y": 95
       },
       "id": 27,
       "interval": null,
@@ -3108,7 +3161,7 @@
         "h": 3,
         "w": 4,
         "x": 8,
-        "y": 88
+        "y": 95
       },
       "id": 29,
       "interval": null,
@@ -3191,7 +3244,7 @@
         "h": 3,
         "w": 4,
         "x": 12,
-        "y": 88
+        "y": 95
       },
       "id": 46,
       "interval": null,
@@ -3274,7 +3327,7 @@
         "h": 3,
         "w": 4,
         "x": 16,
-        "y": 88
+        "y": 95
       },
       "id": 48,
       "interval": null,
@@ -3357,7 +3410,7 @@
         "h": 3,
         "w": 4,
         "x": 20,
-        "y": 88
+        "y": 95
       },
       "id": 50,
       "interval": null,
@@ -3608,5 +3661,5 @@
   "timezone": "browser",
   "title": "WebPagetest Page summary",
   "uid": "000000051",
-  "version": 28
+  "version": 31
 }
