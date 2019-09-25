@@ -62,7 +62,7 @@
   "gnetId": null,
   "graphTooltip": 2,
   "id": null,
-  "iteration": 1569393439215,
+  "iteration": 1569393161323,
   "links": [],
   "panels": [
     {
@@ -88,8 +88,8 @@
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
-        "h": 17,
-        "w": 24,
+        "h": 18,
+        "w": 12,
         "x": 0,
         "y": 1
       },
@@ -131,22 +131,22 @@
         {
           "refCount": 0,
           "refId": "A",
-          "target": "aliasByNode($base.$path.pageSummary.$group.$page.webpagetest.$location.$connectivity.data.median.$view.render, 11)"
+          "target": "aliasByNode($base.$path.pageSummary.$group.$page.webpagetest.$location.$connectivity.data.standardDeviation.$view.render, 11)"
         },
         {
           "refCount": 0,
           "refId": "B",
-          "target": "aliasByNode($base.$path.pageSummary.$group.$page.webpagetest.$location.$connectivity.data.median.$view.heroElementTimes.*, 12)"
+          "target": "aliasByNode($base.$path.pageSummary.$group.$page.webpagetest.$location.$connectivity.data.standardDeviation.$view, 12)"
         },
         {
           "refCount": 0,
           "refId": "F",
-          "target": "aliasByNode($base.$path.pageSummary.$group.$page.webpagetest.$location.$connectivity.data.median.$view.visualComplete95, 11)"
+          "target": "aliasByNode($base.$path.pageSummary.$group.$page.webpagetest.$location.$connectivity.data.standardDeviation.$view.visualComplete95, 11)"
         },
         {
           "refCount": 0,
           "refId": "H",
-          "target": "aliasByNode($base.$path.pageSummary.$group.$page.webpagetest.$location.$connectivity.data.median.$view.lastVisualChange, 11)"
+          "target": "aliasByNode($base.$path.pageSummary.$group.$page.webpagetest.$location.$connectivity.data.standardDeviation.$view.lastVisualChange, 11)"
         }
       ],
       "thresholds": [],
@@ -199,10 +199,10 @@
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
-        "h": 16,
-        "w": 24,
-        "x": 0,
-        "y": 18
+        "h": 18,
+        "w": 12,
+        "x": 12,
+        "y": 1
       },
       "id": 3,
       "legend": {
@@ -241,17 +241,17 @@
         {
           "refCount": 0,
           "refId": "A",
-          "target": "aliasByNode($base.$path.pageSummary.$group.$page.webpagetest.$location.$connectivity.data.median.$view.TimeToInteractive, 11)"
+          "target": "aliasByNode($base.$path.pageSummary.$group.$page.webpagetest.$location.$connectivity.data.standardDeviation.$view.TimeToInteractive, 11)"
         },
         {
           "refCount": 0,
           "refId": "B",
-          "target": "aliasByNode($base.$path.pageSummary.$group.$page.webpagetest.$location.$connectivity.data.median.$view.FirstInteractive, 11)"
+          "target": "aliasByNode($base.$path.pageSummary.$group.$page.webpagetest.$location.$connectivity.data.standardDeviation.$view.FirstInteractive, 11)"
         },
         {
           "refCount": 0,
           "refId": "C",
-          "target": "aliasByNode($base.$path.pageSummary.$group.$page.webpagetest.$location.$connectivity.data.median.$view.LastInteractive, 11)"
+          "target": "aliasByNode($base.$path.pageSummary.$group.$page.webpagetest.$location.$connectivity.data.standardDeviation.$view.LastInteractive, 11)"
         }
       ],
       "thresholds": [],
@@ -304,20 +304,18 @@
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
-        "h": 16,
+        "h": 10,
         "w": 24,
         "x": 0,
-        "y": 34
+        "y": 19
       },
-      "id": 11,
+      "id": 4,
       "legend": {
         "alignAsTable": true,
         "avg": true,
         "current": true,
-        "hideZero": true,
         "max": true,
         "min": true,
-        "rightSide": true,
         "show": true,
         "total": false,
         "values": true
@@ -348,14 +346,14 @@
         {
           "refCount": 0,
           "refId": "A",
-          "target": "aliasByNode($base.$path.pageSummary.$group.$page.webpagetest.$location.$connectivity.data.median.$view.userTimes.*, 12)"
+          "target": "aliasByNode($base.$path.pageSummary.$group.$page.webpagetest.$location.$connectivity.data.standardDeviation.$view.SpeedIndex, 11)"
         }
       ],
       "thresholds": [],
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "User Timing API",
+      "title": "Speed Index",
       "tooltip": {
         "shared": false,
         "sort": 0,
@@ -404,9 +402,9 @@
         "h": 10,
         "w": 24,
         "x": 0,
-        "y": 50
+        "y": 29
       },
-      "id": 4,
+      "id": 11,
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -443,259 +441,24 @@
         {
           "refCount": 0,
           "refId": "A",
-          "target": "aliasByNode($base.$path.pageSummary.$group.$page.webpagetest.$location.$connectivity.data.median.$view.SpeedIndex, 11)"
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "Speed Index",
-      "tooltip": {
-        "shared": false,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "ms",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "collapsed": false,
-      "gridPos": {
-        "h": 1,
-        "w": 24,
-        "x": 0,
-        "y": 60
-      },
-      "id": 8,
-      "panels": [],
-      "title": "Chrome",
-      "type": "row"
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "${DS_GRAPHITE}",
-      "fill": 2,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 16,
-        "w": 24,
-        "x": 0,
-        "y": 61
-      },
-      "id": 2,
-      "legend": {
-        "alignAsTable": true,
-        "avg": true,
-        "current": true,
-        "max": true,
-        "min": true,
-        "rightSide": true,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 2,
-      "links": [
-        {
-          "targetBlank": true,
-          "title": "Page summary $page",
-          "url": "/dashboard/db/page-summary?$__url_time_range&$__all_variables"
-        }
-      ],
-      "maxPerRow": 2,
-      "nullPointMode": "connected",
-      "options": {
-        "dataLinks": []
-      },
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [
-        {
-          "alias": "fullyLoadedCPUms",
-          "stack": false
-        }
-      ],
-      "spaceLength": 10,
-      "stack": true,
-      "steppedLine": false,
-      "targets": [
-        {
-          "refId": "B",
-          "target": "aliasByNode($base.$path.pageSummary.$group.$page.webpagetest.$location.$connectivity.data.median.$view.cpuTimes.*, 12)",
-          "textEditor": false
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "CPU [Chrome only]",
-      "tooltip": {
-        "shared": false,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "ms",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "${DS_GRAPHITE}",
-      "description": "",
-      "fill": 0,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 14,
-        "w": 24,
-        "x": 0,
-        "y": 77
-      },
-      "id": 6,
-      "legend": {
-        "alignAsTable": true,
-        "avg": true,
-        "current": true,
-        "max": true,
-        "min": true,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [
-        {
-          "targetBlank": true,
-          "title": "Page summary $page",
-          "url": "/dashboard/db/page-summary?$__url_time_range&$__all_variables"
-        }
-      ],
-      "maxPerRow": 2,
-      "nullPointMode": "connected",
-      "options": {
-        "dataLinks": []
-      },
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "refCount": 0,
-          "refId": "A",
-          "target": "aliasByNode($base.$path.pageSummary.$group.$page.webpagetest.$location.$connectivity.data.median.$view.chromeUserTiming.LargestContentfulPaint, 12)"
+          "target": "aliasByNode($base.$path.pageSummary.$group.$page.webpagetest.$location.$connectivity.data.standardDeviation.$view.fullyLoaded, 11)"
         },
         {
           "refCount": 0,
           "refId": "B",
-          "target": "aliasByNode($base.$path.pageSummary.$group.$page.webpagetest.$location.$connectivity.data.median.$view.chromeUserTiming.LayoutShift, 12)"
+          "target": "aliasByNode($base.$path.pageSummary.$group.$page.webpagetest.$location.$connectivity.data.standardDeviation.$view.loadTime, 11)"
         },
         {
           "refCount": 0,
           "refId": "C",
-          "target": "aliasByNode($base.$path.pageSummary.$group.$page.webpagetest.$location.$connectivity.data.median.$view.chromeUserTiming.domComplete, 12)"
-        },
-        {
-          "refCount": 0,
-          "refId": "D",
-          "target": "aliasByNode($base.$path.pageSummary.$group.$page.webpagetest.$location.$connectivity.data.median.$view.chromeUserTiming.firstContentfulPaint, 12)"
-        },
-        {
-          "refCount": 0,
-          "refId": "E",
-          "target": "aliasByNode($base.$path.pageSummary.$group.$page.webpagetest.$location.$connectivity.data.median.$view.chromeUserTiming.firstImagePaint, 12)"
-        },
-        {
-          "refCount": 0,
-          "refId": "F",
-          "target": "aliasByNode($base.$path.pageSummary.$group.$page.webpagetest.$location.$connectivity.data.median.$view.chromeUserTiming.firstMeaningfulPaint, 12)"
-        },
-        {
-          "refCount": 0,
-          "refId": "G",
-          "target": "aliasByNode($base.$path.pageSummary.$group.$page.webpagetest.$location.$connectivity.data.median.$view.chromeUserTiming.firstPaint, 12)"
-        },
-        {
-          "refCount": 0,
-          "refId": "H",
-          "target": "aliasByNode($base.$path.pageSummary.$group.$page.webpagetest.$location.$connectivity.data.median.$view.chromeUserTiming.loadEventEnd, 12)"
+          "target": "aliasByNode($base.$path.pageSummary.$group.$page.webpagetest.$location.$connectivity.data.standardDeviation.$view.TTFB, 11)"
         }
       ],
       "thresholds": [],
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Chrome timings [Chrome only]",
+      "title": "Timing metrics",
       "tooltip": {
         "shared": false,
         "sort": 0,
@@ -945,7 +708,7 @@
     ]
   },
   "timezone": "browser",
-  "title": "Webpagetest Page timing metrics",
-  "uid": "000000057",
-  "version": 34
+  "title": "Webpagetest Page deviation",
+  "uid": "000000058",
+  "version": 3
 }

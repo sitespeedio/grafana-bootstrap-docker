@@ -21,7 +21,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "6.3.3"
+      "version": "6.3.4"
     },
     {
       "type": "panel",
@@ -76,7 +76,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1566040760257,
+  "iteration": 1569393014681,
   "links": [
     {
       "icon": "external link",
@@ -2498,9 +2498,14 @@
             "selected": false,
             "text": "max",
             "value": "max"
+          },
+          {
+            "selected": false,
+            "text": "stddev",
+            "value": "stddev"
           }
         ],
-        "query": "min,mean,median,p90,max",
+        "query": "min,mean,median,p90,max,stddev",
         "refresh": 2,
         "skipUrlSync": false,
         "type": "interval"
@@ -2539,5 +2544,5 @@
   "timezone": "browser",
   "title": "Page timing metrics",
   "uid": "000000044",
-  "version": 30
+  "version": 34
 }
