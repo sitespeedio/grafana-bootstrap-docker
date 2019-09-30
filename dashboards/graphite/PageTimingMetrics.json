@@ -21,7 +21,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "6.3.3"
+      "version": "6.3.4"
     },
     {
       "type": "panel",
@@ -75,7 +75,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1569824773606,
+  "iteration": 1569843878345,
   "links": [
     {
       "icon": "external link",
@@ -1191,6 +1191,7 @@
         {
           "aliasColors": {},
           "bars": false,
+          "cacheTimeout": "",
           "dashLength": 10,
           "dashes": false,
           "datasource": "${DS_GRAPHITE}",
@@ -1250,14 +1251,14 @@
               "hide": false,
               "refCount": 0,
               "refId": "B",
-              "target": "aliasByNode(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.backEndTime.$function, '24h'), 11)",
+              "target": "alias(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.serverResponseTime.$function, '24h'), 'TTFB')",
               "textEditor": false
             },
             {
               "hide": false,
               "refCount": 0,
               "refId": "A",
-              "target": "alias(timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.backEndTime.$function, '24h'), '7d'), 'One week earlier')",
+              "target": "alias(timeShift(movingAverage($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.serverResponseTime.$function, '24h'), '7d'), 'One week earlier')",
               "textEditor": false
             }
           ],
@@ -1265,7 +1266,7 @@
           "timeFrom": null,
           "timeRegions": [],
           "timeShift": null,
-          "title": "Back end time",
+          "title": "TTFB/Server response time",
           "tooltip": {
             "shared": true,
             "sort": 0,
@@ -2701,8 +2702,8 @@
         "auto_min": "10s",
         "current": {
           "tags": [],
-          "text": "stddev",
-          "value": "stddev"
+          "text": "median",
+          "value": "median"
         },
         "hide": 0,
         "label": null,
@@ -2719,7 +2720,7 @@
             "value": "mean"
           },
           {
-            "selected": false,
+            "selected": true,
             "text": "median",
             "value": "median"
           },
@@ -2734,7 +2735,7 @@
             "value": "max"
           },
           {
-            "selected": true,
+            "selected": false,
             "text": "stddev",
             "value": "stddev"
           }
@@ -2778,5 +2779,5 @@
   "timezone": "browser",
   "title": "Page timing metrics",
   "uid": "000000059",
-  "version": 1
+  "version": 2
 }
