@@ -81,7 +81,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1569911972238,
+  "iteration": 1569953867348,
   "links": [
     {
       "icon": "external link",
@@ -379,7 +379,7 @@
         "x": 18,
         "y": 1
       },
-      "id": 111,
+      "id": 182,
       "legend": {
         "alignAsTable": true,
         "avg": false,
@@ -4214,7 +4214,7 @@
             "h": 9,
             "w": 24,
             "x": 0,
-            "y": 1
+            "y": 66
           },
           "id": 178,
           "legend": {
@@ -4313,14 +4313,110 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": "${DS_GRAPHITE}",
+          "decimals": 0,
+          "description": "",
+          "fill": 0,
+          "fillGradient": 0,
+          "gridPos": {
+            "h": 7,
+            "w": 12,
+            "x": 0,
+            "y": 67
+          },
+          "id": 111,
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": true,
+            "hideEmpty": true,
+            "hideZero": false,
+            "max": true,
+            "min": true,
+            "rightSide": true,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "connected",
+          "options": {
+            "dataLinks": []
+          },
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refCount": 0,
+              "refId": "A",
+              "target": "aliasByNode($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.console.*.$function, 10)",
+              "textEditor": false
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "Console error and warnings",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "decimals": 0,
+              "format": "none",
+              "label": "",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "decimals": null,
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_GRAPHITE}",
           "description": "Show number of errors from Browsertime and other tools.",
           "fill": 0,
           "fillGradient": 0,
           "gridPos": {
-            "h": 5,
-            "w": 24,
-            "x": 0,
-            "y": 1
+            "h": 7,
+            "w": 12,
+            "x": 12,
+            "y": 67
           },
           "id": 174,
           "legend": {
@@ -4363,7 +4459,7 @@
           "timeFrom": null,
           "timeRegions": [],
           "timeShift": null,
-          "title": "Errors",
+          "title": "Errors collecting the metrics",
           "tooltip": {
             "shared": true,
             "sort": 0,
@@ -4548,8 +4644,6 @@
         "auto_count": 30,
         "auto_min": "10s",
         "current": {
-          "selected": true,
-          "tags": [],
           "text": "median",
           "value": "median"
         },
@@ -4627,5 +4721,5 @@
   "timezone": "browser",
   "title": "Page timing metrics",
   "uid": "000000059",
-  "version": 9
+  "version": 10
 }
