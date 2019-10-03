@@ -81,7 +81,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1569953867348,
+  "iteration": 1570077278510,
   "links": [
     {
       "icon": "external link",
@@ -236,7 +236,7 @@
       "title": "Visual Metrics [$function]",
       "tooltip": {
         "shared": true,
-        "sort": 0,
+        "sort": 2,
         "value_type": "individual"
       },
       "type": "graph",
@@ -2817,7 +2817,7 @@
       "title": "Timings  [$function]",
       "tooltip": {
         "shared": true,
-        "sort": 0,
+        "sort": 2,
         "value_type": "individual"
       },
       "type": "graph",
@@ -3504,7 +3504,7 @@
       "title": "CPU [Chrome only]",
       "tooltip": {
         "shared": true,
-        "sort": 0,
+        "sort": 2,
         "value_type": "individual"
       },
       "type": "graph",
@@ -3598,7 +3598,7 @@
       "title": "CPU time spent per event",
       "tooltip": {
         "shared": true,
-        "sort": 0,
+        "sort": 2,
         "value_type": "individual"
       },
       "type": "graph",
@@ -3655,7 +3655,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 61
+            "y": 63
           },
           "id": 142,
           "legend": {
@@ -3769,7 +3769,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 61
+            "y": 63
           },
           "id": 144,
           "legend": {
@@ -3883,7 +3883,7 @@
             "h": 14,
             "w": 24,
             "x": 0,
-            "y": 71
+            "y": 73
           },
           "id": 134,
           "legend": {
@@ -4098,7 +4098,7 @@
             "h": 9,
             "w": 24,
             "x": 0,
-            "y": 67
+            "y": 65
           },
           "id": 104,
           "legend": {
@@ -4721,5 +4721,5 @@
   "timezone": "browser",
   "title": "Page timing metrics",
   "uid": "000000059",
-  "version": 10
+  "version": 12
 }
