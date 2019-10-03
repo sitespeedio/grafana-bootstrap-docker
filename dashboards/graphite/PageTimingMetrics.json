@@ -21,7 +21,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "6.3.4"
+      "version": "6.4.1"
     },
     {
       "type": "panel",
@@ -81,7 +81,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1570077278510,
+  "iteration": 1570114514386,
   "links": [
     {
       "icon": "external link",
@@ -114,6 +114,7 @@
   "panels": [
     {
       "collapsed": false,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -137,7 +138,7 @@
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
-        "h": 17,
+        "h": 19,
         "w": 12,
         "x": 0,
         "y": 1
@@ -653,12 +654,13 @@
       "cacheTimeout": "",
       "dashLength": 10,
       "dashes": false,
+      "datasource": "${DS_GRAPHITE}",
       "decimals": 0,
-      "description": "Metrics from the Long Task API. CPU tasks that takes more than 50 ms to run.",
+      "description": "Metrics from the Long Task API. CPU tasks that takes more than 50 ms to run. Enable collecting long tasks with --cpu [Chrome only].",
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
-        "h": 6,
+        "h": 8,
         "w": 6,
         "x": 12,
         "y": 12
@@ -763,12 +765,13 @@
       "cacheTimeout": "",
       "dashLength": 10,
       "dashes": false,
+      "datasource": "${DS_GRAPHITE}",
       "decimals": 0,
-      "description": "The longest CPU task.",
+      "description": "The longest CPU task. Enable collecting long tasks with --cpu [Chrome only].",
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
-        "h": 6,
+        "h": 8,
         "w": 6,
         "x": 18,
         "y": 12
@@ -856,14 +859,14 @@
       "dashes": false,
       "datasource": "${DS_GRAPHITE}",
       "decimals": 2,
-      "description": "Metrics from the Long Task API. CPU tasks that takes more than 50 ms to run.",
+      "description": "Metrics from the Long Task API. CPU tasks that takes more than 50 ms to run. Enable collecting long tasks with --cpu [Chrome only].",
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
         "h": 5,
         "w": 24,
         "x": 0,
-        "y": 18
+        "y": 20
       },
       "id": 132,
       "legend": {
@@ -964,11 +967,12 @@
     },
     {
       "collapsed": true,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 23
+        "y": 25
       },
       "id": 122,
       "panels": [
@@ -1535,11 +1539,12 @@
     },
     {
       "collapsed": false,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 24
+        "y": 26
       },
       "id": 146,
       "panels": [],
@@ -1571,7 +1576,7 @@
         "h": 2,
         "w": 3,
         "x": 0,
-        "y": 25
+        "y": 27
       },
       "id": 149,
       "interval": null,
@@ -1654,7 +1659,7 @@
         "h": 2,
         "w": 2,
         "x": 3,
-        "y": 25
+        "y": 27
       },
       "id": 151,
       "interval": null,
@@ -1737,7 +1742,7 @@
         "h": 2,
         "w": 2,
         "x": 5,
-        "y": 25
+        "y": 27
       },
       "id": 152,
       "interval": null,
@@ -1820,7 +1825,7 @@
         "h": 2,
         "w": 3,
         "x": 7,
-        "y": 25
+        "y": 27
       },
       "id": 155,
       "interval": null,
@@ -1902,7 +1907,7 @@
         "h": 2,
         "w": 3,
         "x": 10,
-        "y": 25
+        "y": 27
       },
       "id": 156,
       "interval": null,
@@ -1984,7 +1989,7 @@
         "h": 2,
         "w": 3,
         "x": 13,
-        "y": 25
+        "y": 27
       },
       "id": 150,
       "interval": null,
@@ -2067,7 +2072,7 @@
         "h": 2,
         "w": 3,
         "x": 16,
-        "y": 25
+        "y": 27
       },
       "id": 153,
       "interval": null,
@@ -2150,7 +2155,7 @@
         "h": 2,
         "w": 3,
         "x": 19,
-        "y": 25
+        "y": 27
       },
       "id": 154,
       "interval": null,
@@ -2233,7 +2238,7 @@
         "h": 2,
         "w": 2,
         "x": 22,
-        "y": 25
+        "y": 27
       },
       "id": 148,
       "interval": null,
@@ -2293,11 +2298,12 @@
     },
     {
       "collapsed": true,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 27
+        "y": 29
       },
       "id": 158,
       "panels": [
@@ -2717,11 +2723,12 @@
     },
     {
       "collapsed": false,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 28
+        "y": 30
       },
       "id": 115,
       "panels": [],
@@ -2742,7 +2749,7 @@
         "h": 12,
         "w": 12,
         "x": 0,
-        "y": 29
+        "y": 31
       },
       "id": 118,
       "legend": {
@@ -2808,6 +2815,18 @@
           "refId": "F",
           "target": "aliasByNode($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.serverResponseTime.$function, 11)",
           "textEditor": false
+        },
+        {
+          "refCount": 0,
+          "refId": "G",
+          "target": "aliasByNode($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.timeToContentfulPaint.$function, 10)",
+          "textEditor": false
+        },
+        {
+          "refCount": 0,
+          "refId": "H",
+          "target": "aliasByNode($base.$path.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.timeToFirstInteractive.$function, 10)",
+          "textEditor": false
         }
       ],
       "thresholds": [],
@@ -2865,7 +2884,7 @@
         "h": 12,
         "w": 12,
         "x": 12,
-        "y": 29
+        "y": 31
       },
       "id": 119,
       "legend": {
@@ -2959,7 +2978,7 @@
         "h": 7,
         "w": 24,
         "x": 0,
-        "y": 41
+        "y": 43
       },
       "id": 120,
       "legend": {
@@ -3041,11 +3060,12 @@
     },
     {
       "collapsed": true,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 48
+        "y": 50
       },
       "id": 113,
       "panels": [
@@ -3437,11 +3457,12 @@
     },
     {
       "collapsed": false,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 49
+        "y": 51
       },
       "id": 96,
       "panels": [],
@@ -3460,7 +3481,7 @@
         "h": 12,
         "w": 12,
         "x": 0,
-        "y": 50
+        "y": 52
       },
       "id": 81,
       "legend": {
@@ -3551,7 +3572,7 @@
         "h": 12,
         "w": 12,
         "x": 12,
-        "y": 50
+        "y": 52
       },
       "id": 138,
       "legend": {
@@ -3634,11 +3655,12 @@
     },
     {
       "collapsed": true,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 62
+        "y": 64
       },
       "id": 136,
       "panels": [
@@ -3655,7 +3677,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 63
+            "y": 65
           },
           "id": 142,
           "legend": {
@@ -3769,7 +3791,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 63
+            "y": 65
           },
           "id": 144,
           "legend": {
@@ -3883,7 +3905,7 @@
             "h": 14,
             "w": 24,
             "x": 0,
-            "y": 73
+            "y": 75
           },
           "id": 134,
           "legend": {
@@ -3968,11 +3990,12 @@
     },
     {
       "collapsed": true,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 63
+        "y": 65
       },
       "id": 168,
       "panels": [
@@ -4078,11 +4101,12 @@
     },
     {
       "collapsed": true,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 64
+        "y": 66
       },
       "id": 140,
       "panels": [
@@ -4189,11 +4213,12 @@
     },
     {
       "collapsed": true,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 65
+        "y": 67
       },
       "id": 176,
       "panels": [
@@ -4299,11 +4324,12 @@
     },
     {
       "collapsed": true,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 66
+        "y": 68
       },
       "id": 172,
       "panels": [
@@ -4503,7 +4529,7 @@
     }
   ],
   "refresh": false,
-  "schemaVersion": 19,
+  "schemaVersion": 20,
   "style": "dark",
   "tags": [
     "pages",
@@ -4721,5 +4747,5 @@
   "timezone": "browser",
   "title": "Page timing metrics",
   "uid": "000000059",
-  "version": 12
+  "version": 16
 }

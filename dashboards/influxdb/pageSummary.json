@@ -1,6 +1,14 @@
 {
   "__inputs": [
     {
+      "name": "DS_GRAPHITE",
+      "label": "graphite",
+      "description": "",
+      "type": "datasource",
+      "pluginId": "graphite",
+      "pluginName": "Graphite"
+    },
+    {
       "name": "DS_INFLUXDB",
       "label": "InfluxDB",
       "description": "",
@@ -14,13 +22,19 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "6.3.4"
+      "version": "6.4.1"
     },
     {
       "type": "panel",
       "id": "graph",
       "name": "Graph",
       "version": ""
+    },
+    {
+      "type": "datasource",
+      "id": "graphite",
+      "name": "Graphite",
+      "version": "1.0.0"
     },
     {
       "type": "datasource",
@@ -64,11 +78,12 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1570069279438,
+  "iteration": 1570114485770,
   "links": [],
   "panels": [
     {
       "collapsed": false,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -820,6 +835,7 @@
       "dashes": false,
       "datasource": "${DS_INFLUXDB}",
       "decimals": 0,
+      "description": "Total number of request for the page.",
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
@@ -981,6 +997,7 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": "${DS_INFLUXDB}",
+      "description": "The total transfer size over the wire (compressed size if your asset is compressed) of all assets on the page. The content size is the uncompressed size for compressed text/css/html/js/font content.",
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
@@ -1220,7 +1237,7 @@
       "dashes": false,
       "datasource": "${DS_INFLUXDB}",
       "decimals": 0,
-      "description": "",
+      "description": "The number of DOM elements on the page.",
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
@@ -1378,7 +1395,6 @@
     {
       "aliasColors": {},
       "bars": false,
-      "cacheTimeout": null,
       "dashLength": 10,
       "dashes": false,
       "datasource": "${DS_INFLUXDB}",
@@ -1392,7 +1408,8 @@
         "x": 18,
         "y": 7
       },
-      "id": 53,
+      "id": 72,
+      "interval": "",
       "legend": {
         "alignAsTable": true,
         "avg": false,
@@ -1404,14 +1421,14 @@
         "values": true
       },
       "lines": true,
-      "linewidth": 1,
+      "linewidth": 2,
       "links": [],
       "nullPointMode": "connected",
       "options": {
         "dataLinks": []
       },
       "percentage": false,
-      "pointradius": 2,
+      "pointradius": 5,
       "points": false,
       "renderer": "flot",
       "seriesOverrides": [],
@@ -1420,48 +1437,41 @@
       "steppedLine": false,
       "targets": [
         {
-          "alias": "DOM elements",
+          "alias": "First visual change",
           "dsType": "influxdb",
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "null"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "BlinkGC_AtomicPhase",
+          "groupBy": [],
+          "measurement": "FirstVisualChange",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT last(\"value\") FROM \"requests\" WHERE \"group\" =~ /^$group$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"page\" =~ /^$page$/ AND \"summaryType\" = 'pageSummary' AND $timeFilter GROUP BY time($__interval) fill(null)",
-          "rawQuery": false,
-          "refId": "A",
+          "refId": "B",
           "resultFormat": "time_series",
           "select": [
             [
               {
                 "params": [
-                  "value"
+                  "stddev"
                 ],
                 "type": "field"
-              },
-              {
-                "params": [],
-                "type": "last"
               }
             ]
           ],
           "tags": [
             {
+              "key": "category",
+              "operator": "=~",
+              "value": "/^$category$/"
+            },
+            {
+              "condition": "AND",
               "key": "group",
               "operator": "=~",
               "value": "/^$group$/"
+            },
+            {
+              "condition": "AND",
+              "key": "page",
+              "operator": "=~",
+              "value": "/^$page$/"
             },
             {
               "condition": "AND",
@@ -1474,46 +1484,15 @@
               "key": "connectivity",
               "operator": "=~",
               "value": "/^$connectivity$/"
-            },
-            {
-              "condition": "AND",
-              "key": "page",
-              "operator": "=~",
-              "value": "/^$page$/"
-            },
-            {
-              "condition": "AND",
-              "key": "summaryType",
-              "operator": "=",
-              "value": "pageSummary"
-            },
-            {
-              "condition": "AND",
-              "key": "category",
-              "operator": "=~",
-              "value": "/^$category$/"
-            },
-            {
-              "condition": "AND",
-              "key": "origin",
-              "operator": "=",
-              "value": "browsertime"
-            },
-            {
-              "condition": "AND",
-              "key": "cpu",
-              "operator": "=",
-              "value": "select tag value"
             }
-          ],
-          "target": ""
+          ]
         }
       ],
       "thresholds": [],
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "DOM elements",
+      "title": "Visual Metrics stddev",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -1529,20 +1508,21 @@
       },
       "yaxes": [
         {
-          "format": "none",
-          "label": null,
+          "decimals": 0,
+          "format": "ms",
+          "label": "",
           "logBase": 1,
           "max": null,
           "min": null,
           "show": true
         },
         {
-          "format": "short",
+          "format": "ms",
           "label": null,
           "logBase": 1,
           "max": null,
           "min": null,
-          "show": true
+          "show": false
         }
       ],
       "yaxis": {
@@ -1557,7 +1537,7 @@
       "dashes": false,
       "datasource": "${DS_INFLUXDB}",
       "decimals": 0,
-      "description": "",
+      "description": "Metrics from the Long Task API. CPU tasks that takes more than 50 ms to run.",
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
@@ -1815,7 +1795,7 @@
       "dashes": false,
       "datasource": "${DS_INFLUXDB}",
       "decimals": 0,
-      "description": "",
+      "description": "The longest CPU long task.",
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
@@ -1824,7 +1804,7 @@
         "x": 18,
         "y": 13
       },
-      "id": 72,
+      "id": 84,
       "interval": "",
       "legend": {
         "alignAsTable": true,
@@ -2213,6 +2193,7 @@
     },
     {
       "collapsed": true,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -3713,6 +3694,7 @@
     },
     {
       "collapsed": false,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -4358,6 +4340,7 @@
         "rgba(50, 172, 45, 0.97)"
       ],
       "datasource": "${DS_INFLUXDB}",
+      "description": "The number of domains used in the page.",
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -4426,6 +4409,8 @@
             }
           ],
           "measurement": "totalDomains",
+          "orderByTime": "ASC",
+          "policy": "default",
           "query": "SELECT last(\"value\") FROM \"scripts\" WHERE \"group\" =~ /^$group$/ AND \"browser\" =~ /^$browser$/ AND \"connectivity\" =~ /^$connectivity$/ AND \"page\" =~ /^$page$/ AND \"summaryType\" = 'pageSummary' AND \"origin\" = 'coach' AND $timeFilter GROUP BY time($__interval) fill(null)",
           "rawQuery": false,
           "refId": "A",
@@ -5121,6 +5106,7 @@
     },
     {
       "collapsed": false,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -5138,7 +5124,7 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": "${DS_INFLUXDB}",
-      "description": "[Navigation Timing API](https://www.w3.org/TR/navigation-timing/) metrics.",
+      "description": "Timing metrics collected from the browser.",
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
@@ -5582,7 +5568,6 @@
       "spaceLength": 10,
       "stack": false,
       "steppedLine": false,
-      "targets": [],
       "thresholds": [],
       "timeFrom": null,
       "timeRegions": [],
@@ -5626,6 +5611,7 @@
     },
     {
       "collapsed": true,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -5647,7 +5633,7 @@
             "h": 8,
             "w": 24,
             "x": 0,
-            "y": 54
+            "y": 45
           },
           "id": 69,
           "interval": "",
@@ -6068,6 +6054,7 @@
     },
     {
       "collapsed": true,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -7770,11 +7757,343 @@
     },
     {
       "collapsed": true,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
         "y": 46
+      },
+      "id": 86,
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_INFLUXDB}",
+          "decimals": 0,
+          "description": "",
+          "fill": 0,
+          "fillGradient": 0,
+          "gridPos": {
+            "h": 6,
+            "w": 24,
+            "x": 0,
+            "y": 1
+          },
+          "id": 87,
+          "interval": "",
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": true,
+            "max": true,
+            "min": true,
+            "rightSide": true,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "connected",
+          "options": {
+            "dataLinks": []
+          },
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "alias": "Minor",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "minor",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "B",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "median"
+                    ],
+                    "type": "field"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "category",
+                  "operator": "=~",
+                  "value": "/^$category$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "group",
+                  "operator": "=~",
+                  "value": "/^$group$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "page",
+                  "operator": "=~",
+                  "value": "/^$page$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "browser",
+                  "operator": "=~",
+                  "value": "/^$browser$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "connectivity",
+                  "operator": "=~",
+                  "value": "/^$connectivity$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "origin",
+                  "operator": "=",
+                  "value": "axe"
+                }
+              ]
+            },
+            {
+              "alias": "Critical",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "critical",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "median"
+                    ],
+                    "type": "field"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "category",
+                  "operator": "=~",
+                  "value": "/^$category$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "group",
+                  "operator": "=~",
+                  "value": "/^$group$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "page",
+                  "operator": "=~",
+                  "value": "/^$page$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "browser",
+                  "operator": "=~",
+                  "value": "/^$browser$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "connectivity",
+                  "operator": "=~",
+                  "value": "/^$connectivity$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "origin",
+                  "operator": "=",
+                  "value": "axe"
+                }
+              ]
+            },
+            {
+              "alias": "Moderate",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "moderate",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "C",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "median"
+                    ],
+                    "type": "field"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "category",
+                  "operator": "=~",
+                  "value": "/^$category$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "group",
+                  "operator": "=~",
+                  "value": "/^$group$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "page",
+                  "operator": "=~",
+                  "value": "/^$page$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "browser",
+                  "operator": "=~",
+                  "value": "/^$browser$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "connectivity",
+                  "operator": "=~",
+                  "value": "/^$connectivity$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "origin",
+                  "operator": "=",
+                  "value": "axe"
+                }
+              ]
+            },
+            {
+              "alias": "Serious",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "serious",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "D",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "median"
+                    ],
+                    "type": "field"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "category",
+                  "operator": "=~",
+                  "value": "/^$category$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "group",
+                  "operator": "=~",
+                  "value": "/^$group$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "page",
+                  "operator": "=~",
+                  "value": "/^$page$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "browser",
+                  "operator": "=~",
+                  "value": "/^$browser$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "connectivity",
+                  "operator": "=~",
+                  "value": "/^$connectivity$/"
+                },
+                {
+                  "condition": "AND",
+                  "key": "origin",
+                  "operator": "=",
+                  "value": "axe"
+                }
+              ]
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "Axe violations",
+          "tooltip": {
+            "shared": true,
+            "sort": 2,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "decimals": 0,
+              "format": "none",
+              "label": "",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "ms",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        }
+      ],
+      "title": "Axe violations (enable with --axe.enable)",
+      "type": "row"
+    },
+    {
+      "collapsed": true,
+      "datasource": "${DS_GRAPHITE}",
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 47
       },
       "id": 66,
       "panels": [
@@ -9174,11 +9493,12 @@
     },
     {
       "collapsed": true,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 47
+        "y": 48
       },
       "id": 80,
       "panels": [
@@ -9387,11 +9707,12 @@
     },
     {
       "collapsed": true,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 48
+        "y": 49
       },
       "id": 57,
       "panels": [
@@ -9418,7 +9739,7 @@
             "h": 3,
             "w": 4,
             "x": 0,
-            "y": 2
+            "y": 49
           },
           "id": 12,
           "interval": null,
@@ -9574,7 +9895,7 @@
             "h": 3,
             "w": 4,
             "x": 4,
-            "y": 2
+            "y": 49
           },
           "id": 58,
           "interval": null,
@@ -9732,7 +10053,7 @@
             "h": 3,
             "w": 4,
             "x": 8,
-            "y": 2
+            "y": 49
           },
           "id": 59,
           "interval": null,
@@ -9890,7 +10211,7 @@
             "h": 3,
             "w": 4,
             "x": 12,
-            "y": 2
+            "y": 49
           },
           "id": 60,
           "interval": null,
@@ -10032,7 +10353,7 @@
     }
   ],
   "refresh": false,
-  "schemaVersion": 19,
+  "schemaVersion": 20,
   "style": "dark",
   "tags": [],
   "templating": {
@@ -10181,5 +10502,5 @@
   "timezone": "browser",
   "title": "PageSummary [InfluxDB]",
   "uid": "000000053",
-  "version": 13
+  "version": 17
 }
