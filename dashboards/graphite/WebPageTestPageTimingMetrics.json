@@ -21,7 +21,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "6.3.3"
+      "version": "6.4.1"
     },
     {
       "type": "panel",
@@ -62,11 +62,12 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1569843302870,
+  "iteration": 1570114644040,
   "links": [],
   "panels": [
     {
       "collapsed": false,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -176,8 +177,8 @@
       "timeShift": null,
       "title": "Metrics",
       "tooltip": {
-        "shared": false,
-        "sort": 0,
+        "shared": true,
+        "sort": 2,
         "value_type": "individual"
       },
       "type": "graph",
@@ -674,8 +675,8 @@
       "timeShift": null,
       "title": "Interactive",
       "tooltip": {
-        "shared": false,
-        "sort": 0,
+        "shared": true,
+        "sort": 2,
         "value_type": "individual"
       },
       "type": "graph",
@@ -711,6 +712,7 @@
     },
     {
       "collapsed": true,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -1224,6 +1226,7 @@
     },
     {
       "collapsed": true,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -1692,8 +1695,8 @@
       "timeShift": null,
       "title": "User Timing API",
       "tooltip": {
-        "shared": false,
-        "sort": 0,
+        "shared": true,
+        "sort": 2,
         "value_type": "individual"
       },
       "type": "graph",
@@ -1729,6 +1732,7 @@
     },
     {
       "collapsed": false,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -1806,8 +1810,8 @@
       "timeShift": null,
       "title": "CPU [Chrome only]",
       "tooltip": {
-        "shared": false,
-        "sort": 0,
+        "shared": true,
+        "sort": 2,
         "value_type": "individual"
       },
       "type": "graph",
@@ -1851,7 +1855,7 @@
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
-        "h": 14,
+        "h": 9,
         "w": 24,
         "x": 0,
         "y": 52
@@ -1863,6 +1867,7 @@
         "current": true,
         "max": true,
         "min": true,
+        "rightSide": true,
         "show": true,
         "total": false,
         "values": true
@@ -1937,8 +1942,8 @@
       "timeShift": null,
       "title": "Chrome timings [Chrome only]",
       "tooltip": {
-        "shared": false,
-        "sort": 0,
+        "shared": true,
+        "sort": 2,
         "value_type": "individual"
       },
       "type": "graph",
@@ -1974,7 +1979,7 @@
     }
   ],
   "refresh": false,
-  "schemaVersion": 19,
+  "schemaVersion": 20,
   "style": "dark",
   "tags": [
     "page"
@@ -2187,5 +2192,5 @@
   "timezone": "browser",
   "title": "Webpagetest Page timing metrics",
   "uid": "000000057",
-  "version": 6
+  "version": 4
 }
