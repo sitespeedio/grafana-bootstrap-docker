@@ -21,7 +21,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "6.4.1"
+      "version": "6.4.3"
     },
     {
       "type": "panel",
@@ -53,7 +53,8 @@
         "iconColor": "rgb(96, 255, 103)",
         "limit": 100,
         "name": "runs",
-        "tags": "$base $path $domain $page $browser $connectivity",
+        "showIn": 0,
+        "tags": "$base $path $domain $page $browser $connectivity $location",
         "type": "alert"
       }
     ]
@@ -62,7 +63,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1570114644040,
+  "iteration": 1574258141364,
   "links": [],
   "panels": [
     {
@@ -132,8 +133,7 @@
           "lines": false
         },
         {
-          "alias": "render",
-          "lines": false
+          "alias": "render"
         }
       ],
       "spaceLength": 10,
@@ -177,8 +177,8 @@
       "timeShift": null,
       "title": "Metrics",
       "tooltip": {
-        "shared": true,
-        "sort": 2,
+        "shared": false,
+        "sort": 0,
         "value_type": "individual"
       },
       "type": "graph",
@@ -675,8 +675,8 @@
       "timeShift": null,
       "title": "Interactive",
       "tooltip": {
-        "shared": true,
-        "sort": 2,
+        "shared": false,
+        "sort": 0,
         "value_type": "individual"
       },
       "type": "graph",
@@ -1695,8 +1695,8 @@
       "timeShift": null,
       "title": "User Timing API",
       "tooltip": {
-        "shared": true,
-        "sort": 2,
+        "shared": false,
+        "sort": 0,
         "value_type": "individual"
       },
       "type": "graph",
@@ -1810,8 +1810,8 @@
       "timeShift": null,
       "title": "CPU [Chrome only]",
       "tooltip": {
-        "shared": true,
-        "sort": 2,
+        "shared": false,
+        "sort": 0,
         "value_type": "individual"
       },
       "type": "graph",
@@ -1855,7 +1855,7 @@
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
-        "h": 9,
+        "h": 14,
         "w": 24,
         "x": 0,
         "y": 52
@@ -1867,7 +1867,6 @@
         "current": true,
         "max": true,
         "min": true,
-        "rightSide": true,
         "show": true,
         "total": false,
         "values": true
@@ -1942,8 +1941,8 @@
       "timeShift": null,
       "title": "Chrome timings [Chrome only]",
       "tooltip": {
-        "shared": true,
-        "sort": 2,
+        "shared": false,
+        "sort": 0,
         "value_type": "individual"
       },
       "type": "graph",
@@ -2192,5 +2191,5 @@
   "timezone": "browser",
   "title": "Webpagetest Page timing metrics",
   "uid": "000000057",
-  "version": 4
+  "version": 7
 }
