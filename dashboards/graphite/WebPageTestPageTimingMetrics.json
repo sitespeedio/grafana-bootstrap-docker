@@ -63,7 +63,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1574258141364,
+  "iteration": 1574261346290,
   "links": [],
   "panels": [
     {
@@ -1634,6 +1634,20 @@
       "type": "row"
     },
     {
+      "collapsed": false,
+      "datasource": "${DS_GRAPHITE}",
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 28
+      },
+      "id": 31,
+      "panels": [],
+      "title": "User Timings",
+      "type": "row"
+    },
+    {
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
@@ -1645,7 +1659,7 @@
         "h": 7,
         "w": 24,
         "x": 0,
-        "y": 28
+        "y": 29
       },
       "id": 11,
       "legend": {
@@ -1737,7 +1751,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 35
+        "y": 36
       },
       "id": 8,
       "panels": [],
@@ -1756,7 +1770,7 @@
         "h": 16,
         "w": 24,
         "x": 0,
-        "y": 36
+        "y": 37
       },
       "id": 2,
       "legend": {
@@ -1858,7 +1872,7 @@
         "h": 14,
         "w": 24,
         "x": 0,
-        "y": 52
+        "y": 53
       },
       "id": 6,
       "legend": {
@@ -2191,5 +2205,5 @@
   "timezone": "browser",
   "title": "Webpagetest Page timing metrics",
   "uid": "000000057",
-  "version": 7
+  "version": 8
 }
