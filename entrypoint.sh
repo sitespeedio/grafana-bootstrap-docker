@@ -37,9 +37,16 @@ import_data() {
 
 # $1 = filename
 wrap_dashboard_json() {
-  cat $1 | jq '.id = null | { dashboard:., inputs:[.__inputs[] | .value = .label | del(.label)], overwrite: true }'
+  cat $1 | jq '.id = null | { dashboard:., inputs:[.__inputs[] | .value = (.value // .label) | del(.label)], overwrite: true }'
 }
 
+# $1 = path to dashboards directory
+add_dashboards() {
+  for dashboard in `ls -1 ${1}/*.json`; do
+    dashboard_json=$( wrap_dashboard_json $dashboard )
+    import_data "$dashboard" "$dashboard_json" "/dashboards/import"
+  done
+}
 # -----------
 
 wait_for_api
@@ -59,10 +66,11 @@ for datasource in `ls -1 /datasources/$BACKEND/*.json`; do
 done
 
 print_header "Adding Graphite dashboards"
+add_dashboards /dashboards/$BACKEND
 
-for dashboard in `ls -1 /dashboards/$BACKEND/*.json`; do
-  dashboard_json=$( wrap_dashboard_json $dashboard )
-  import_data "$dashboard" "$dashboard_json" "/dashboards/import"
-done
+if [[ -d /extras/dashboards ]]; then
+    print_header "Adding custom dashboards"
+    add_dashboards /extras/dashboards
+fi
 
 print_header "Done!"

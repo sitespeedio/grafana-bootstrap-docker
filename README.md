@@ -17,3 +17,7 @@ Example: `docker run -it --link graphite_grafana_1:grafana --network graphite_de
 1. Export JSON from Grafana (see [Grafana Doc](http://docs.grafana.org/reference/export_import/)) and put it in the /dashboards folder
 1. Rebuild the container `docker build -t sitespeedio_dashboards .`
 1. Run the container `docker run -it --link <name of your grafana container>:grafana --network <name of your grafana network> sitespeedio_dashboards`
+
+Alternatively you can add a volume with your custom dashboards and mount it to `/extras/dashboards` in container
+1. Export JSON from Grafana (see [Grafana Doc](http://docs.grafana.org/reference/export_import/)) and save it on disk
+1. Run the container `docker run -v <path to your dashboards directory>:/extras/dashboards <remaining options>  sitespeedio/grafana-bootstrap:latest`)
