@@ -21,25 +21,25 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "5.0.4"
+      "version": "7.0.0"
     },
     {
       "type": "panel",
       "id": "graph",
       "name": "Graph",
-      "version": "5.0.0"
+      "version": ""
     },
     {
       "type": "datasource",
       "id": "graphite",
       "name": "Graphite",
-      "version": "5.0.0"
+      "version": "1.0.0"
     },
     {
       "type": "panel",
       "id": "singlestat",
       "name": "Singlestat",
-      "version": "5.0.0"
+      "version": ""
     }
   ],
   "annotations": {
@@ -59,9 +59,10 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1527759916711,
+  "iteration": 1589956928677,
   "links": [
     {
+      "$$hashKey": "object:2726",
       "asDropdown": true,
       "icon": "external link",
       "tags": [
@@ -71,6 +72,7 @@
       "type": "dashboards"
     },
     {
+      "$$hashKey": "object:2727",
       "asDropdown": true,
       "icon": "external link",
       "tags": [
@@ -83,6 +85,7 @@
   "panels": [
     {
       "collapsed": false,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -107,6 +110,12 @@
       "datasource": "${DS_GRAPHITE}",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -155,7 +164,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.news.summary.edition_cnn_com.webpagetest.dulles-chrome.cable.timing.firstView.TTFB.median",
       "targets": [
         {
           "refId": "A",
@@ -187,6 +196,12 @@
       "datasource": "${DS_GRAPHITE}",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -235,7 +250,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.news.summary.edition_cnn_com.webpagetest.dulles-chrome.cable.timing.firstView.render.median",
       "targets": [
         {
           "refId": "A",
@@ -267,6 +282,12 @@
       "datasource": "${DS_GRAPHITE}",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -315,7 +336,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.news.summary.edition_cnn_com.webpagetest.dulles-chrome.cable.timing.firstView.SpeedIndex.median",
       "targets": [
         {
           "refId": "A",
@@ -347,6 +368,12 @@
       "datasource": "${DS_GRAPHITE}",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -395,7 +422,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.news.summary.edition_cnn_com.webpagetest.dulles-chrome.cable.timing.firstView.fullyLoaded.median",
       "targets": [
         {
           "refId": "A",
@@ -427,6 +454,12 @@
       "datasource": "${DS_GRAPHITE}",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -475,7 +508,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "",
+      "tableColumn": "sumSeries(sitespeed_io.news.summary.edition_cnn_com.webpagetest.dulles-chrome.cable.asset.firstView.breakdown.*.requests.median)",
       "targets": [
         {
           "refId": "A",
@@ -507,6 +540,12 @@
       "datasource": "${DS_GRAPHITE}",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "bytes",
       "gauge": {
         "maxValue": 100,
@@ -555,7 +594,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "",
+      "tableColumn": "sumSeries(sitespeed_io.news.summary.edition_cnn_com.webpagetest.dulles-chrome.cable.asset.firstView.breakdown.*.bytes.median)",
       "targets": [
         {
           "refId": "A",
@@ -577,6 +616,7 @@
     },
     {
       "collapsed": false,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -601,14 +641,22 @@
       "datasource": "${DS_GRAPHITE}",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
+      "fillGradient": 0,
       "grid": {},
       "gridPos": {
-        "h": 7,
+        "h": 10,
         "w": 8,
         "x": 0,
         "y": 5
       },
+      "hiddenSeries": false,
       "id": 12,
       "legend": {
         "alignAsTable": true,
@@ -624,6 +672,9 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "connected",
+      "options": {
+        "dataLinks": []
+      },
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -659,6 +710,7 @@
       ],
       "thresholds": [],
       "timeFrom": "7d",
+      "timeRegions": [],
       "timeShift": null,
       "title": "Start render",
       "tooltip": {
@@ -692,7 +744,11 @@
           "min": null,
           "show": true
         }
-      ]
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     },
     {
       "aliasColors": {
@@ -706,14 +762,22 @@
       "datasource": "${DS_GRAPHITE}",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
+      "fillGradient": 0,
       "grid": {},
       "gridPos": {
-        "h": 7,
+        "h": 10,
         "w": 8,
         "x": 8,
         "y": 5
       },
+      "hiddenSeries": false,
       "id": 7,
       "legend": {
         "alignAsTable": true,
@@ -729,6 +793,9 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "connected",
+      "options": {
+        "dataLinks": []
+      },
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -764,6 +831,7 @@
       ],
       "thresholds": [],
       "timeFrom": "7d",
+      "timeRegions": [],
       "timeShift": null,
       "title": "SpeedIndex",
       "tooltip": {
@@ -797,7 +865,11 @@
           "min": null,
           "show": true
         }
-      ]
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     },
     {
       "aliasColors": {
@@ -811,14 +883,22 @@
       "datasource": "${DS_GRAPHITE}",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
+      "fillGradient": 0,
       "grid": {},
       "gridPos": {
-        "h": 7,
+        "h": 10,
         "w": 8,
         "x": 16,
         "y": 5
       },
+      "hiddenSeries": false,
       "id": 13,
       "legend": {
         "alignAsTable": true,
@@ -834,6 +914,9 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "connected",
+      "options": {
+        "dataLinks": []
+      },
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -869,6 +952,7 @@
       ],
       "thresholds": [],
       "timeFrom": "7d",
+      "timeRegions": [],
       "timeShift": null,
       "title": "Fully Loaded",
       "tooltip": {
@@ -902,15 +986,20 @@
           "min": null,
           "show": true
         }
-      ]
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     },
     {
       "collapsed": false,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 12
+        "y": 15
       },
       "id": 18,
       "panels": [],
@@ -930,14 +1019,22 @@
       "datasource": "${DS_GRAPHITE}",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
+      "fillGradient": 0,
       "grid": {},
       "gridPos": {
-        "h": 7,
+        "h": 11,
         "w": 12,
         "x": 0,
-        "y": 13
+        "y": 16
       },
+      "hiddenSeries": false,
       "id": 14,
       "legend": {
         "alignAsTable": true,
@@ -953,6 +1050,9 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "connected",
+      "options": {
+        "dataLinks": []
+      },
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -988,6 +1088,7 @@
       ],
       "thresholds": [],
       "timeFrom": "7d",
+      "timeRegions": [],
       "timeShift": null,
       "title": "Size",
       "tooltip": {
@@ -1021,7 +1122,11 @@
           "min": null,
           "show": true
         }
-      ]
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     },
     {
       "aliasColors": {
@@ -1035,14 +1140,22 @@
       "datasource": "${DS_GRAPHITE}",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
+      "fillGradient": 0,
       "grid": {},
       "gridPos": {
-        "h": 7,
+        "h": 11,
         "w": 12,
         "x": 12,
-        "y": 13
+        "y": 16
       },
+      "hiddenSeries": false,
       "id": 15,
       "legend": {
         "alignAsTable": true,
@@ -1058,6 +1171,9 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "connected",
+      "options": {
+        "dataLinks": []
+      },
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -1093,6 +1209,7 @@
       ],
       "thresholds": [],
       "timeFrom": "7d",
+      "timeRegions": [],
       "timeShift": null,
       "title": "Requests",
       "tooltip": {
@@ -1126,11 +1243,15 @@
           "min": null,
           "show": true
         }
-      ]
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     }
   ],
   "refresh": false,
-  "schemaVersion": 16,
+  "schemaVersion": 25,
   "style": "dark",
   "tags": [
     "site"
@@ -1152,12 +1273,14 @@
           }
         ],
         "query": "${VAR_BASE}",
+        "skipUrlSync": false,
         "type": "constant"
       },
       {
         "allValue": null,
         "current": {},
         "datasource": "${DS_GRAPHITE}",
+        "definition": "",
         "hide": 0,
         "includeAll": false,
         "label": null,
@@ -1167,6 +1290,7 @@
         "query": "$base.*",
         "refresh": 1,
         "regex": "",
+        "skipUrlSync": false,
         "sort": 0,
         "tagValuesQuery": null,
         "tags": [],
@@ -1178,6 +1302,7 @@
         "allValue": null,
         "current": {},
         "datasource": "${DS_GRAPHITE}",
+        "definition": "",
         "hide": 0,
         "includeAll": false,
         "label": null,
@@ -1187,6 +1312,7 @@
         "query": "$base.$path.summary.*",
         "refresh": 1,
         "regex": "",
+        "skipUrlSync": false,
         "sort": 0,
         "tagValuesQuery": null,
         "tags": [],
@@ -1198,6 +1324,7 @@
         "allValue": null,
         "current": {},
         "datasource": "${DS_GRAPHITE}",
+        "definition": "",
         "hide": 0,
         "includeAll": false,
         "label": null,
@@ -1207,6 +1334,7 @@
         "query": "$base.$path.summary.$group.webpagetest.*",
         "refresh": 1,
         "regex": "",
+        "skipUrlSync": false,
         "sort": 0,
         "tagValuesQuery": null,
         "tags": [],
@@ -1218,6 +1346,7 @@
         "allValue": null,
         "current": {},
         "datasource": "${DS_GRAPHITE}",
+        "definition": "",
         "hide": 0,
         "includeAll": false,
         "label": null,
@@ -1227,6 +1356,7 @@
         "query": "$base.$path.summary.$group.webpagetest.$location.*",
         "refresh": 1,
         "regex": "",
+        "skipUrlSync": false,
         "sort": 0,
         "tagValuesQuery": null,
         "tags": [],
@@ -1238,6 +1368,7 @@
         "allValue": null,
         "current": {},
         "datasource": "${DS_GRAPHITE}",
+        "definition": "",
         "hide": 0,
         "includeAll": false,
         "label": null,
@@ -1247,6 +1378,7 @@
         "query": "$base.$path.summary.$group.webpagetest.$location.$connectivity.*.*",
         "refresh": 1,
         "regex": "",
+        "skipUrlSync": false,
         "sort": 0,
         "tagValuesQuery": null,
         "tags": [],
@@ -1289,6 +1421,7 @@
           }
         ],
         "query": "min, mean, median, max",
+        "skipUrlSync": false,
         "type": "custom"
       }
     ]
@@ -1299,7 +1432,6 @@
   },
   "timepicker": {
     "refresh_intervals": [
-      "5s",
       "10s",
       "30s",
       "1m",
@@ -1325,5 +1457,5 @@
   "timezone": "browser",
   "title": "WebPageTest site summary",
   "uid": "000000052",
-  "version": 13
+  "version": 14
 }

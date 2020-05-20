@@ -21,7 +21,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "6.3.3"
+      "version": "7.0.0"
     },
     {
       "type": "panel",
@@ -43,8 +43,8 @@
     },
     {
       "type": "panel",
-      "id": "table",
-      "name": "Table",
+      "id": "table-old",
+      "name": "Table (old)",
       "version": ""
     }
   ],
@@ -87,7 +87,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1566040831604,
+  "iteration": 1589956406248,
   "links": [
     {
       "icon": "external link",
@@ -119,6 +119,7 @@
   ],
   "panels": [
     {
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -135,14 +136,21 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": "${DS_GRAPHITE}",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
-        "h": 12,
+        "h": 15,
         "w": 12,
         "x": 0,
         "y": 1
       },
+      "hiddenSeries": false,
       "id": 80,
       "legend": {
         "alignAsTable": true,
@@ -265,14 +273,21 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": "${DS_GRAPHITE}",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
-        "h": 12,
+        "h": 15,
         "w": 12,
         "x": 12,
         "y": 1
       },
+      "hiddenSeries": false,
       "id": 81,
       "legend": {
         "alignAsTable": true,
@@ -351,11 +366,12 @@
     },
     {
       "collapsed": false,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 13
+        "y": 16
       },
       "id": 96,
       "panels": [],
@@ -368,15 +384,23 @@
       "cacheTimeout": "",
       "dashLength": 10,
       "dashes": false,
+      "datasource": "${DS_GRAPHITE}",
       "decimals": 0,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
-        "h": 8,
+        "h": 12,
         "w": 12,
         "x": 0,
-        "y": 14
+        "y": 17
       },
+      "hiddenSeries": false,
       "id": 99,
       "legend": {
         "alignAsTable": true,
@@ -477,15 +501,23 @@
       "cacheTimeout": "",
       "dashLength": 10,
       "dashes": false,
+      "datasource": "${DS_GRAPHITE}",
       "decimals": 0,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
-        "h": 8,
+        "h": 12,
         "w": 12,
         "x": 12,
-        "y": 14
+        "y": 17
       },
+      "hiddenSeries": false,
       "id": 100,
       "legend": {
         "alignAsTable": true,
@@ -563,11 +595,12 @@
     },
     {
       "collapsed": false,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 22
+        "y": 29
       },
       "id": 65,
       "panels": [],
@@ -588,6 +621,12 @@
       "description": "The first visual change is when something for the first time is painted within the current viewport. It is calculated by analyzing a video recording of the screen.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "ms",
       "gauge": {
         "maxValue": 100,
@@ -600,7 +639,7 @@
         "h": 4,
         "w": 4,
         "x": 0,
-        "y": 23
+        "y": 30
       },
       "id": 18,
       "interval": null,
@@ -619,7 +658,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -637,7 +675,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.pageSummary.en_wikipedia_org._wiki_Barack_Obama.chrome.cable.browsertime.statistics.visualMetrics.FirstVisualChange.median",
       "targets": [
         {
           "refId": "A",
@@ -670,6 +708,12 @@
       "description": "The Speed Index is the average time at which visible parts of the page are displayed. It is expressed in milliseconds and dependent on size of the view port. It was created by Pat Meenan and you can checkout the full documentation [here](https://sites.google.com/a/webpagetest.org/docs/using-webpagetest/metrics/speed-index).",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -682,7 +726,7 @@
         "h": 4,
         "w": 4,
         "x": 4,
-        "y": 23
+        "y": 30
       },
       "id": 58,
       "interval": null,
@@ -701,7 +745,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -719,7 +762,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.pageSummary.en_wikipedia_org._wiki_Barack_Obama.chrome.cable.browsertime.statistics.visualMetrics.SpeedIndex.median",
       "targets": [
         {
           "refId": "A",
@@ -754,6 +797,12 @@
       "description": "",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -766,7 +815,7 @@
         "h": 4,
         "w": 4,
         "x": 8,
-        "y": 23
+        "y": 30
       },
       "id": 9,
       "interval": null,
@@ -785,7 +834,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -803,7 +851,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.pageSummary.en_wikipedia_org._wiki_Barack_Obama.chrome.cable.browsertime.statistics.visualMetrics.PerceptualSpeedIndex.median",
       "targets": [
         {
           "refId": "A",
@@ -838,6 +886,12 @@
       "description": "The visual complete 85% is when 85% (or more) are finished within the current viewport. It is calculated by analyzing a video recording of the screen.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "ms",
       "gauge": {
         "maxValue": 100,
@@ -850,7 +904,7 @@
         "h": 4,
         "w": 4,
         "x": 12,
-        "y": 23
+        "y": 30
       },
       "id": 17,
       "interval": null,
@@ -869,7 +923,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -887,7 +940,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.pageSummary.en_wikipedia_org._wiki_Barack_Obama.chrome.cable.browsertime.statistics.visualMetrics.VisualComplete85.median",
       "targets": [
         {
           "refId": "A",
@@ -920,6 +973,12 @@
       "description": "The visual complete 95% is when 95% (or more) are finished within the current viewport. It is calculated by analyzing a video recording of the screen.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "ms",
       "gauge": {
         "maxValue": 100,
@@ -932,7 +991,7 @@
         "h": 4,
         "w": 4,
         "x": 16,
-        "y": 23
+        "y": 30
       },
       "id": 60,
       "interval": null,
@@ -951,7 +1010,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -969,7 +1027,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.pageSummary.en_wikipedia_org._wiki_Barack_Obama.chrome.cable.browsertime.statistics.visualMetrics.VisualComplete95.median",
       "targets": [
         {
           "refId": "A",
@@ -1002,6 +1060,12 @@
       "description": "The last visual change is when something for the last time is changing within the current viewport. It is calculated by analyzing a video recording of the screen.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "ms",
       "gauge": {
         "maxValue": 100,
@@ -1014,7 +1078,7 @@
         "h": 4,
         "w": 4,
         "x": 20,
-        "y": 23
+        "y": 30
       },
       "id": 53,
       "interval": null,
@@ -1033,7 +1097,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -1051,7 +1114,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.pageSummary.en_wikipedia_org._wiki_Barack_Obama.chrome.cable.browsertime.statistics.visualMetrics.LastVisualChange.median",
       "targets": [
         {
           "refId": "A",
@@ -1073,11 +1136,12 @@
     },
     {
       "collapsed": false,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 27
+        "y": 34
       },
       "id": 66,
       "panels": [],
@@ -1096,17 +1160,22 @@
       "description": "The moving average of the last 24 hours median values for the visual metrics.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "filterNull": false,
       "fontSize": "100%",
       "gridPos": {
-        "h": 7,
+        "h": 8,
         "w": 6,
         "x": 0,
-        "y": 28
+        "y": 35
       },
       "id": 36,
       "links": [],
-      "options": {},
       "pageSize": null,
       "scroll": false,
       "showHeader": true,
@@ -1116,11 +1185,13 @@
       },
       "styles": [
         {
+          "align": "auto",
           "dateFormat": "YYYY-MM-DD HH:mm:ss",
           "pattern": "Time",
           "type": "date"
         },
         {
+          "align": "auto",
           "colorMode": null,
           "colors": [
             "rgba(245, 54, 54, 0.9)",
@@ -1168,7 +1239,7 @@
       ],
       "title": "Avg last 24 hours",
       "transform": "timeseries_aggregations",
-      "type": "table"
+      "type": "table-old"
     },
     {
       "columns": [
@@ -1181,17 +1252,22 @@
       "description": "Last 24 hours averages of median metrics compared to one day back in time. \n\nRed color background means a regression, green a positive change and yellow that the change is within the margin of error. You probably need to finetune the thresholds depending of how flakey your site is. Default threshold is +-10%.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "filterNull": false,
       "fontSize": "100%",
       "gridPos": {
-        "h": 7,
+        "h": 8,
         "w": 6,
         "x": 6,
-        "y": 28
+        "y": 35
       },
       "id": 37,
       "links": [],
-      "options": {},
       "pageSize": null,
       "scroll": true,
       "showHeader": true,
@@ -1201,11 +1277,13 @@
       },
       "styles": [
         {
+          "align": "auto",
           "dateFormat": "YYYY-MM-DD HH:mm:ss",
           "pattern": "Time",
           "type": "date"
         },
         {
+          "align": "auto",
           "colorMode": "cell",
           "colors": [
             "rgba(50, 172, 45, 0.97)",
@@ -1298,7 +1376,7 @@
       ],
       "title": "Relative to yesterday",
       "transform": "timeseries_aggregations",
-      "type": "table"
+      "type": "table-old"
     },
     {
       "columns": [
@@ -1311,17 +1389,22 @@
       "description": "Last 24 hours averages of median metrics compared to seven days back in time. \n\nRed color background means a regression, green a positive change and yellow that the change is within the margin of error. You probably need to finetune the thresholds depending of how flakey your site is. Default threshold is +-10%.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "filterNull": false,
       "fontSize": "100%",
       "gridPos": {
-        "h": 7,
+        "h": 8,
         "w": 6,
         "x": 12,
-        "y": 28
+        "y": 35
       },
       "id": 38,
       "links": [],
-      "options": {},
       "pageSize": null,
       "scroll": true,
       "showHeader": true,
@@ -1331,11 +1414,13 @@
       },
       "styles": [
         {
+          "align": "auto",
           "dateFormat": "YYYY-MM-DD HH:mm:ss",
           "pattern": "Time",
           "type": "date"
         },
         {
+          "align": "auto",
           "colorMode": "cell",
           "colors": [
             "rgba(50, 172, 45, 0.97)",
@@ -1428,7 +1513,7 @@
       ],
       "title": "Relative to last week",
       "transform": "timeseries_aggregations",
-      "type": "table"
+      "type": "table-old"
     },
     {
       "columns": [
@@ -1441,17 +1526,22 @@
       "description": "Last 24 hours averages of median metrics compared to one month back in time. \n\nRed color background means a regression, green a positive change and yellow that the change is within the margin of error. You probably need to finetune the thresholds depending of how flakey your site is. Default threshold is +-10%.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "filterNull": false,
       "fontSize": "100%",
       "gridPos": {
-        "h": 7,
+        "h": 8,
         "w": 6,
         "x": 18,
-        "y": 28
+        "y": 35
       },
       "id": 39,
       "links": [],
-      "options": {},
       "pageSize": null,
       "scroll": true,
       "showHeader": true,
@@ -1461,11 +1551,13 @@
       },
       "styles": [
         {
+          "align": "auto",
           "dateFormat": "YYYY-MM-DD HH:mm:ss",
           "pattern": "Time",
           "type": "date"
         },
         {
+          "align": "auto",
           "colorMode": "cell",
           "colors": [
             "rgba(50, 172, 45, 0.97)",
@@ -1558,15 +1650,16 @@
       ],
       "title": "Relative to last month",
       "transform": "timeseries_aggregations",
-      "type": "table"
+      "type": "table-old"
     },
     {
       "collapsed": false,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 35
+        "y": 43
       },
       "id": 67,
       "panels": [],
@@ -1585,6 +1678,12 @@
       ],
       "datasource": "${DS_GRAPHITE}",
       "description": "Fully loaded time when the last of all assets is downloaded on the page. It is calculated using the Resource Timing API where we use the last downloaded asset.",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "ms",
       "gauge": {
         "maxValue": 100,
@@ -1597,7 +1696,7 @@
         "h": 4,
         "w": 4,
         "x": 0,
-        "y": 36
+        "y": 44
       },
       "id": 43,
       "interval": null,
@@ -1616,7 +1715,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -1634,7 +1732,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.pageSummary.en_wikipedia_org._wiki_Barack_Obama.chrome.cable.browsertime.statistics.timings.fullyLoaded.median",
       "targets": [
         {
           "refId": "A",
@@ -1668,6 +1766,12 @@
       "description": "",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -1680,7 +1784,7 @@
         "h": 4,
         "w": 4,
         "x": 4,
-        "y": 36
+        "y": 44
       },
       "id": 12,
       "interval": null,
@@ -1699,7 +1803,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -1717,7 +1820,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.pageSummary.en_wikipedia_org._wiki_Barack_Obama.chrome.cable.pagexray.requests",
       "targets": [
         {
           "refId": "A",
@@ -1750,6 +1853,12 @@
       "description": "The total transfer size over the wire (compressed size if your asset is compressed) of all assets on the page.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "bytes",
       "gauge": {
         "maxValue": 100,
@@ -1762,7 +1871,7 @@
         "h": 4,
         "w": 4,
         "x": 8,
-        "y": 36
+        "y": 44
       },
       "id": 14,
       "interval": null,
@@ -1781,7 +1890,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -1799,7 +1907,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.pageSummary.en_wikipedia_org._wiki_Barack_Obama.chrome.cable.pagexray.transferSize",
       "targets": [
         {
           "refId": "A",
@@ -1832,6 +1940,12 @@
       "description": "The total size for all assets served for this page. This includes the uncompressed size for compressed text/css/html/js/font content.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "bytes",
       "gauge": {
         "maxValue": 100,
@@ -1844,7 +1958,7 @@
         "h": 4,
         "w": 4,
         "x": 12,
-        "y": 36
+        "y": 44
       },
       "id": 54,
       "interval": null,
@@ -1863,7 +1977,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -1881,7 +1994,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.pageSummary.en_wikipedia_org._wiki_Barack_Obama.chrome.cable.pagexray.contentSize",
       "targets": [
         {
           "refId": "A",
@@ -1914,6 +2027,12 @@
       "description": "The document height in pixels.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -1926,7 +2045,7 @@
         "h": 4,
         "w": 4,
         "x": 16,
-        "y": 36
+        "y": 44
       },
       "id": 22,
       "interval": null,
@@ -1945,7 +2064,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -1963,7 +2081,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.pageSummary.en_wikipedia_org._wiki_Barack_Obama.chrome.cable.coach.advice.info.documentHeight",
       "targets": [
         {
           "refId": "A",
@@ -1996,6 +2114,12 @@
       "description": "The total number of DOM elements on the page.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -2008,7 +2132,7 @@
         "h": 4,
         "w": 4,
         "x": 20,
-        "y": 36
+        "y": 44
       },
       "id": 21,
       "interval": null,
@@ -2027,7 +2151,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -2045,7 +2168,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.pageSummary.en_wikipedia_org._wiki_Barack_Obama.chrome.cable.coach.advice.info.domElements",
       "targets": [
         {
           "refId": "A",
@@ -2067,11 +2190,12 @@
     },
     {
       "collapsed": false,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 40
+        "y": 48
       },
       "id": 68,
       "panels": [],
@@ -2092,6 +2216,12 @@
       "description": "The total number of iframes used on the page.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -2104,7 +2234,7 @@
         "h": 4,
         "w": 2,
         "x": 0,
-        "y": 41
+        "y": 49
       },
       "id": 23,
       "interval": null,
@@ -2123,7 +2253,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -2141,7 +2270,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.pageSummary.en_wikipedia_org._wiki_Barack_Obama.chrome.cable.coach.advice.info.iframes",
       "targets": [
         {
           "refId": "A",
@@ -2175,6 +2304,12 @@
       "description": "The average DOM depth of the page.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -2187,7 +2322,7 @@
         "h": 4,
         "w": 4,
         "x": 2,
-        "y": 41
+        "y": 49
       },
       "id": 19,
       "interval": null,
@@ -2206,7 +2341,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -2224,7 +2358,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.pageSummary.en_wikipedia_org._wiki_Barack_Obama.chrome.cable.coach.advice.info.domDepth.avg",
       "targets": [
         {
           "refId": "A",
@@ -2257,6 +2391,12 @@
       "description": "The max depth of DOM elements on the page.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -2269,7 +2409,7 @@
         "h": 4,
         "w": 4,
         "x": 6,
-        "y": 41
+        "y": 49
       },
       "id": 20,
       "interval": null,
@@ -2288,7 +2428,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -2306,7 +2445,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.pageSummary.en_wikipedia_org._wiki_Barack_Obama.chrome.cable.coach.advice.info.domDepth.max",
       "targets": [
         {
           "refId": "A",
@@ -2339,6 +2478,12 @@
       "description": "",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "decbytes",
       "gauge": {
         "maxValue": 100,
@@ -2351,7 +2496,7 @@
         "h": 4,
         "w": 4,
         "x": 10,
-        "y": 41
+        "y": 49
       },
       "id": 56,
       "interval": null,
@@ -2370,7 +2515,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -2388,7 +2532,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.pageSummary.en_wikipedia_org._wiki_Barack_Obama.chrome.cable.coach.advice.info.localStorageSize",
       "targets": [
         {
           "refId": "A",
@@ -2421,6 +2565,12 @@
       "description": "In the DOM",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -2433,7 +2583,7 @@
         "h": 4,
         "w": 4,
         "x": 14,
-        "y": 41
+        "y": 49
       },
       "id": 55,
       "interval": null,
@@ -2452,7 +2602,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -2470,7 +2619,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.pageSummary.en_wikipedia_org._wiki_Barack_Obama.chrome.cable.coach.advice.info.scripts",
       "targets": [
         {
           "refId": "A",
@@ -2503,6 +2652,12 @@
       "description": "",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -2515,7 +2670,7 @@
         "h": 4,
         "w": 2,
         "x": 18,
-        "y": 41
+        "y": 49
       },
       "id": 57,
       "interval": null,
@@ -2534,7 +2689,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -2552,7 +2706,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.pageSummary.en_wikipedia_org._wiki_Barack_Obama.chrome.cable.pagexray.cookieStats.median",
       "targets": [
         {
           "refId": "A",
@@ -2584,6 +2738,12 @@
       "datasource": "${DS_GRAPHITE}",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -2596,7 +2756,7 @@
         "h": 4,
         "w": 4,
         "x": 20,
-        "y": 41
+        "y": 49
       },
       "id": 15,
       "interval": null,
@@ -2615,7 +2775,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -2633,7 +2792,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.pageSummary.en_wikipedia_org._wiki_Barack_Obama.chrome.cable.pagexray.totalDomains",
       "targets": [
         {
           "refId": "A",
@@ -2655,11 +2814,12 @@
     },
     {
       "collapsed": false,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 45
+        "y": 53
       },
       "id": 69,
       "panels": [],
@@ -2680,6 +2840,12 @@
       "description": "The coach score (0-100) calculated by the [Coach](https://www.sitespeed.io/documentation/coach/) using best practices.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -2692,7 +2858,7 @@
         "h": 3,
         "w": 5,
         "x": 0,
-        "y": 46
+        "y": 54
       },
       "id": 62,
       "interval": null,
@@ -2711,7 +2877,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -2729,7 +2894,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.pageSummary.en_wikipedia_org._wiki_Barack_Obama.chrome.cable.coach.advice.score",
       "targets": [
         {
           "refId": "A",
@@ -2762,6 +2927,12 @@
       "description": "The performance score (0-100) calculated by the [Coach](https://www.sitespeed.io/documentation/coach/) using performance best practices.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -2774,7 +2945,7 @@
         "h": 3,
         "w": 5,
         "x": 5,
-        "y": 46
+        "y": 54
       },
       "id": 11,
       "interval": null,
@@ -2793,7 +2964,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -2811,7 +2981,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.pageSummary.en_wikipedia_org._wiki_Barack_Obama.chrome.cable.coach.advice.performance.score",
       "targets": [
         {
           "refId": "A",
@@ -2844,6 +3014,12 @@
       "description": "The accessibility score (0-100) calculated by the [Coach](https://www.sitespeed.io/documentation/coach/) using accessibility best practices.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -2856,7 +3032,7 @@
         "h": 3,
         "w": 4,
         "x": 10,
-        "y": 46
+        "y": 54
       },
       "id": 63,
       "interval": null,
@@ -2875,7 +3051,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -2893,7 +3068,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.pageSummary.en_wikipedia_org._wiki_Barack_Obama.chrome.cable.coach.advice.accessibility.score",
       "targets": [
         {
           "refId": "A",
@@ -2926,6 +3101,12 @@
       "description": "The best practice score (0-100) calculated by the [Coach](https://www.sitespeed.io/documentation/coach/) using web best practices.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -2938,7 +3119,7 @@
         "h": 3,
         "w": 5,
         "x": 14,
-        "y": 46
+        "y": 54
       },
       "id": 64,
       "interval": null,
@@ -2957,7 +3138,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -2975,7 +3155,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.pageSummary.en_wikipedia_org._wiki_Barack_Obama.chrome.cable.coach.advice.bestpractice.score",
       "targets": [
         {
           "refId": "A",
@@ -3008,6 +3188,12 @@
       "description": "The privacy score (0-100) calculated by the [Coach](https://www.sitespeed.io/documentation/coach/) using user privacy best practices.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -3020,7 +3206,7 @@
         "h": 3,
         "w": 5,
         "x": 19,
-        "y": 46
+        "y": 54
       },
       "id": 82,
       "interval": null,
@@ -3039,7 +3225,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -3057,7 +3242,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.pageSummary.en_wikipedia_org._wiki_Barack_Obama.chrome.cable.coach.advice.privacy.score",
       "targets": [
         {
           "refId": "A",
@@ -3079,11 +3264,12 @@
     },
     {
       "collapsed": false,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 49
+        "y": 57
       },
       "id": 93,
       "panels": [],
@@ -3097,14 +3283,21 @@
       "dashes": false,
       "datasource": "${DS_GRAPHITE}",
       "description": "Show number of errors from Browsertime and other tools.",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
         "h": 5,
         "w": 24,
         "x": 0,
-        "y": 50
+        "y": 58
       },
+      "hiddenSeries": false,
       "id": 94,
       "legend": {
         "alignAsTable": true,
@@ -3186,11 +3379,12 @@
     },
     {
       "collapsed": false,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 55
+        "y": 63
       },
       "id": 86,
       "panels": [],
@@ -3204,14 +3398,21 @@
       "dashes": false,
       "datasource": "${DS_GRAPHITE}",
       "decimals": 0,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
         "h": 15,
         "w": 12,
         "x": 0,
-        "y": 56
+        "y": 64
       },
+      "hiddenSeries": false,
       "id": 91,
       "legend": {
         "alignAsTable": true,
@@ -3317,14 +3518,21 @@
       "dashes": false,
       "datasource": "${DS_GRAPHITE}",
       "decimals": 0,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
         "h": 15,
         "w": 12,
         "x": 12,
-        "y": 56
+        "y": 64
       },
+      "hiddenSeries": false,
       "id": 90,
       "legend": {
         "alignAsTable": true,
@@ -3425,11 +3633,12 @@
     },
     {
       "collapsed": false,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 71
+        "y": 79
       },
       "id": 70,
       "panels": [],
@@ -3446,6 +3655,12 @@
       "description": "The history of First Visual Change (when something for the first time is painted within the current viewport) showing the current median value, the average median per day and the average median per week.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
       "fillGradient": 0,
       "grid": {},
@@ -3453,8 +3668,9 @@
         "h": 12,
         "w": 8,
         "x": 0,
-        "y": 72
+        "y": 80
       },
+      "hiddenSeries": false,
       "id": 42,
       "legend": {
         "alignAsTable": true,
@@ -3558,6 +3774,12 @@
       "description": "The history of [Speed Index](https://sites.google.com/a/webpagetest.org/docs/using-webpagetest/metrics/speed-index) showing the current median value, the average median per day and the average median per week.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
       "fillGradient": 0,
       "grid": {},
@@ -3565,8 +3787,9 @@
         "h": 12,
         "w": 8,
         "x": 8,
-        "y": 72
+        "y": 80
       },
+      "hiddenSeries": false,
       "id": 41,
       "legend": {
         "alignAsTable": true,
@@ -3670,6 +3893,12 @@
       "description": "",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
       "fillGradient": 0,
       "grid": {},
@@ -3677,8 +3906,9 @@
         "h": 12,
         "w": 8,
         "x": 16,
-        "y": 72
+        "y": 80
       },
+      "hiddenSeries": false,
       "id": 59,
       "legend": {
         "alignAsTable": true,
@@ -3775,11 +4005,12 @@
     },
     {
       "collapsed": false,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 84
+        "y": 92
       },
       "id": 71,
       "panels": [],
@@ -3796,6 +4027,12 @@
       "description": "The history of Visual Complete 85% (when 85% (or more) if the page in the current viewport is rendered) showing the current median value, the average median per day and the average median per week.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
       "fillGradient": 0,
       "grid": {},
@@ -3803,8 +4040,9 @@
         "h": 12,
         "w": 8,
         "x": 0,
-        "y": 85
+        "y": 93
       },
+      "hiddenSeries": false,
       "id": 44,
       "legend": {
         "alignAsTable": true,
@@ -3908,6 +4146,12 @@
       "description": "The history of Last Visual Change (when something for the last time is changing within the current viewport) showing the current median value, the average median per day and the average median per week.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
       "fillGradient": 0,
       "grid": {},
@@ -3915,8 +4159,9 @@
         "h": 12,
         "w": 8,
         "x": 8,
-        "y": 85
+        "y": 93
       },
+      "hiddenSeries": false,
       "id": 52,
       "legend": {
         "alignAsTable": true,
@@ -4020,6 +4265,12 @@
       "description": "The history of Fully Loaded (when the last of all assets is downloaded on the page) showing the current median value, the average median per day and the average median per week.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
       "fillGradient": 0,
       "grid": {},
@@ -4027,8 +4278,9 @@
         "h": 12,
         "w": 8,
         "x": 16,
-        "y": 85
+        "y": 93
       },
+      "hiddenSeries": false,
       "id": 45,
       "legend": {
         "alignAsTable": true,
@@ -4125,11 +4377,12 @@
     },
     {
       "collapsed": false,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 97
+        "y": 105
       },
       "id": 72,
       "panels": [],
@@ -4154,6 +4407,12 @@
       "description": "The total transfer size by content type.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 10,
       "fillGradient": 0,
       "grid": {},
@@ -4161,8 +4420,9 @@
         "h": 8,
         "w": 24,
         "x": 0,
-        "y": 98
+        "y": 106
       },
+      "hiddenSeries": false,
       "id": 2,
       "legend": {
         "alignAsTable": true,
@@ -4259,6 +4519,12 @@
       "description": "The total number of requests by content type.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 10,
       "fillGradient": 0,
       "grid": {},
@@ -4266,8 +4532,9 @@
         "h": 7,
         "w": 24,
         "x": 0,
-        "y": 106
+        "y": 114
       },
+      "hiddenSeries": false,
       "id": 3,
       "legend": {
         "alignAsTable": true,
@@ -4348,11 +4615,12 @@
     },
     {
       "collapsed": false,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 113
+        "y": 121
       },
       "id": 73,
       "panels": [],
@@ -4370,6 +4638,12 @@
       "description": "All requests that are not a 200 HTTP Status Code.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 5,
       "fillGradient": 0,
       "grid": {},
@@ -4377,8 +4651,9 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 114
+        "y": 122
       },
+      "hiddenSeries": false,
       "id": 4,
       "legend": {
         "alignAsTable": true,
@@ -4464,6 +4739,12 @@
       "description": "The max time spent in frontend vs backend time. \n\nThe backend time is the time it takes for the network and the server to generate and start sending the HTML. It is collected using the Navigation Timing API taking the responseStart minus navigationStart.\n\nThe frontend time is the time it takes for the browser to parse and create the page.  It is collected using the Navigation Timing API by taking the loadEventStart minus responseEnd.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 5,
       "fillGradient": 0,
       "grid": {},
@@ -4471,8 +4752,9 @@
         "h": 9,
         "w": 12,
         "x": 12,
-        "y": 114
+        "y": 122
       },
+      "hiddenSeries": false,
       "id": 5,
       "legend": {
         "alignAsTable": true,
@@ -4563,11 +4845,12 @@
     },
     {
       "collapsed": false,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 123
+        "y": 131
       },
       "id": 74,
       "panels": [],
@@ -4584,6 +4867,12 @@
       "description": "The time the browser takes to parse the document and execute deferred and parser-inserted scripts including the network time from the users location to your server.  It is collected using the Navigation Timing API by taking the domContentLoadedEventStart minus navigationStart.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
       "fillGradient": 0,
       "grid": {},
@@ -4591,8 +4880,9 @@
         "h": 10,
         "w": 12,
         "x": 0,
-        "y": 124
+        "y": 132
       },
+      "hiddenSeries": false,
       "id": 6,
       "legend": {
         "alignAsTable": true,
@@ -4692,6 +4982,12 @@
       "description": "The time it takes for the browser to parse and create the page.  It is collected using the Navigation Timing API by taking the loadEventStart minus responseEnd.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
       "fillGradient": 0,
       "grid": {},
@@ -4699,8 +4995,9 @@
         "h": 10,
         "w": 12,
         "x": 12,
-        "y": 124
+        "y": 132
       },
+      "hiddenSeries": false,
       "id": 7,
       "legend": {
         "alignAsTable": true,
@@ -4798,11 +5095,12 @@
     },
     {
       "collapsed": false,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 134
+        "y": 142
       },
       "id": 75,
       "panels": [],
@@ -4819,6 +5117,12 @@
       "description": "All User Timing marks created on the page using the [User Timing API](https://www.w3.org/TR/user-timing/).",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
       "fillGradient": 0,
       "grid": {},
@@ -4826,8 +5130,9 @@
         "h": 7,
         "w": 24,
         "x": 0,
-        "y": 135
+        "y": 143
       },
+      "hiddenSeries": false,
       "id": 16,
       "legend": {
         "alignAsTable": true,
@@ -4906,11 +5211,12 @@
     },
     {
       "collapsed": false,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 142
+        "y": 150
       },
       "id": 105,
       "panels": [],
@@ -4927,6 +5233,12 @@
       "description": "",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
       "fillGradient": 0,
       "grid": {},
@@ -4934,8 +5246,9 @@
         "h": 7,
         "w": 24,
         "x": 0,
-        "y": 143
+        "y": 151
       },
+      "hiddenSeries": false,
       "id": 103,
       "legend": {
         "alignAsTable": true,
@@ -5015,11 +5328,12 @@
     },
     {
       "collapsed": false,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 150
+        "y": 158
       },
       "id": 76,
       "panels": [],
@@ -5036,6 +5350,12 @@
       "description": "[Navigation Timing API](https://www.w3.org/TR/navigation-timing/) metrics.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
       "fillGradient": 0,
       "grid": {},
@@ -5043,8 +5363,9 @@
         "h": 12,
         "w": 24,
         "x": 0,
-        "y": 151
+        "y": 159
       },
+      "hiddenSeries": false,
       "id": 1,
       "legend": {
         "alignAsTable": true,
@@ -5125,11 +5446,12 @@
     },
     {
       "collapsed": false,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 163
+        "y": 171
       },
       "id": 77,
       "panels": [],
@@ -5150,6 +5472,12 @@
       "description": "The transfer size of all your first party responses.  \n\nThe first party content (content you serve your self ) are defined by the requests that  match the regexp you supply with the parameter *--firstParty*",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "bytes",
       "gauge": {
         "maxValue": 100,
@@ -5162,7 +5490,7 @@
         "h": 3,
         "w": 6,
         "x": 0,
-        "y": 164
+        "y": 172
       },
       "id": 33,
       "interval": null,
@@ -5181,7 +5509,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -5199,7 +5526,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.pageSummary.en_wikipedia_org._wiki_Barack_Obama.chrome.cable.pagexray.firstParty.transferSize",
       "targets": [
         {
           "refId": "A",
@@ -5232,6 +5559,12 @@
       "description": "The transfer size of all your third party responses.  \n\nThe third party content (content other companies/organizations serve like advertisement, social media buttons etc) are defined by the requests that doesn't match the regexp you supply with the parameter *--firstParty*",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "bytes",
       "gauge": {
         "maxValue": 100,
@@ -5244,7 +5577,7 @@
         "h": 3,
         "w": 6,
         "x": 6,
-        "y": 164
+        "y": 172
       },
       "id": 32,
       "interval": null,
@@ -5263,7 +5596,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -5314,6 +5646,12 @@
       "description": "The number of requests for all your first party responses.  \n\nThe first party content (content you serve your self ) are defined by the requests that match the regexp you supply with the parameter *--firstParty*",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -5326,7 +5664,7 @@
         "h": 3,
         "w": 6,
         "x": 12,
-        "y": 164
+        "y": 172
       },
       "id": 35,
       "interval": null,
@@ -5345,7 +5683,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -5363,7 +5700,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.pageSummary.en_wikipedia_org._wiki_Barack_Obama.chrome.cable.pagexray.firstParty.requests",
       "targets": [
         {
           "refId": "A",
@@ -5396,6 +5733,12 @@
       "description": "The number of requests for all your third party responses.  \n\nThe third party content (content other companies/organizations serve like advertisement, social media buttons etc) are defined by the requests that doesn't match the regexp you supply with the parameter *--firstParty*",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -5408,7 +5751,7 @@
         "h": 3,
         "w": 6,
         "x": 18,
-        "y": 164
+        "y": 172
       },
       "id": 34,
       "interval": null,
@@ -5427,7 +5770,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -5467,11 +5809,12 @@
     },
     {
       "collapsed": false,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 167
+        "y": 175
       },
       "id": 78,
       "panels": [],
@@ -5492,6 +5835,12 @@
       "description": "The total size over the wire for all assets served for this page.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "bytes",
       "gauge": {
         "maxValue": 100,
@@ -5504,7 +5853,7 @@
         "h": 3,
         "w": 4,
         "x": 0,
-        "y": 168
+        "y": 176
       },
       "id": 25,
       "interval": null,
@@ -5523,7 +5872,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -5541,7 +5889,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.pageSummary.en_wikipedia_org._wiki_Barack_Obama.chrome.cable.pagexray.transferSize",
       "targets": [
         {
           "refId": "A",
@@ -5574,6 +5922,12 @@
       "description": "The total size for all assets served for this page. This includes the uncompressed size for compressed text/css/html/js/font content.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "bytes",
       "gauge": {
         "maxValue": 100,
@@ -5586,7 +5940,7 @@
         "h": 3,
         "w": 4,
         "x": 4,
-        "y": 168
+        "y": 176
       },
       "id": 26,
       "interval": null,
@@ -5605,7 +5959,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -5623,7 +5976,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.pageSummary.en_wikipedia_org._wiki_Barack_Obama.chrome.cable.pagexray.contentSize",
       "targets": [
         {
           "refId": "A",
@@ -5656,6 +6009,12 @@
       "description": "The total size over the wire for all stylesheet assets served for this page.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "bytes",
       "gauge": {
         "maxValue": 100,
@@ -5668,7 +6027,7 @@
         "h": 3,
         "w": 4,
         "x": 8,
-        "y": 168
+        "y": 176
       },
       "id": 27,
       "interval": null,
@@ -5687,7 +6046,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -5705,7 +6063,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.pageSummary.en_wikipedia_org._wiki_Barack_Obama.chrome.cable.pagexray.contentTypes.css.transferSize",
       "targets": [
         {
           "refId": "A",
@@ -5738,6 +6096,12 @@
       "description": "The total size for stylesheets assets served for this page. This includes the uncompressed size of CSS responses.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "bytes",
       "gauge": {
         "maxValue": 100,
@@ -5750,7 +6114,7 @@
         "h": 3,
         "w": 4,
         "x": 12,
-        "y": 168
+        "y": 176
       },
       "id": 28,
       "interval": null,
@@ -5769,7 +6133,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -5787,7 +6150,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.pageSummary.en_wikipedia_org._wiki_Barack_Obama.chrome.cable.pagexray.contentTypes.css.contentSize",
       "targets": [
         {
           "refId": "A",
@@ -5820,6 +6183,12 @@
       "description": "The total size over the wire for all Javascript assets served for this page.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "bytes",
       "gauge": {
         "maxValue": 100,
@@ -5832,7 +6201,7 @@
         "h": 3,
         "w": 4,
         "x": 16,
-        "y": 168
+        "y": 176
       },
       "id": 29,
       "interval": null,
@@ -5851,7 +6220,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -5869,7 +6237,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.pageSummary.en_wikipedia_org._wiki_Barack_Obama.chrome.cable.pagexray.contentTypes.javascript.transferSize",
       "targets": [
         {
           "refId": "A",
@@ -5902,6 +6270,12 @@
       "description": "The total size for Javascripts assets served for this page. This includes the uncompressed size of JS responses.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "bytes",
       "gauge": {
         "maxValue": 100,
@@ -5914,7 +6288,7 @@
         "h": 3,
         "w": 4,
         "x": 20,
-        "y": 168
+        "y": 176
       },
       "id": 30,
       "interval": null,
@@ -5933,7 +6307,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -5951,7 +6324,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.pageSummary.en_wikipedia_org._wiki_Barack_Obama.chrome.cable.pagexray.contentTypes.javascript.contentSize",
       "targets": [
         {
           "refId": "A",
@@ -5984,6 +6357,12 @@
       "description": "The total size over the wire for all HTML served for this page.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "bytes",
       "gauge": {
         "maxValue": 100,
@@ -5996,7 +6375,7 @@
         "h": 3,
         "w": 4,
         "x": 0,
-        "y": 171
+        "y": 179
       },
       "id": 46,
       "interval": null,
@@ -6015,7 +6394,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -6033,7 +6411,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.pageSummary.en_wikipedia_org._wiki_Barack_Obama.chrome.cable.pagexray.contentTypes.html.transferSize",
       "targets": [
         {
           "refId": "A",
@@ -6066,6 +6444,12 @@
       "description": "The total size for HTML served for this page. This includes the uncompressed size of HTML.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "bytes",
       "gauge": {
         "maxValue": 100,
@@ -6078,7 +6462,7 @@
         "h": 3,
         "w": 4,
         "x": 4,
-        "y": 171
+        "y": 179
       },
       "id": 47,
       "interval": null,
@@ -6097,7 +6481,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -6115,7 +6498,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.pageSummary.en_wikipedia_org._wiki_Barack_Obama.chrome.cable.pagexray.contentTypes.html.contentSize",
       "targets": [
         {
           "refId": "A",
@@ -6148,6 +6531,12 @@
       "description": "The total size over the wire for all font(s) served for this page.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "bytes",
       "gauge": {
         "maxValue": 100,
@@ -6160,7 +6549,7 @@
         "h": 3,
         "w": 4,
         "x": 8,
-        "y": 171
+        "y": 179
       },
       "id": 48,
       "interval": null,
@@ -6179,7 +6568,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -6197,7 +6585,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.pageSummary.en_wikipedia_org._wiki_Barack_Obama.chrome.cable.pagexray.contentTypes.font.transferSize",
       "targets": [
         {
           "refId": "A",
@@ -6230,6 +6618,12 @@
       "description": "The total size for font(s) served for this page. This includes the uncompressed size.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "bytes",
       "gauge": {
         "maxValue": 100,
@@ -6242,7 +6636,7 @@
         "h": 3,
         "w": 4,
         "x": 12,
-        "y": 171
+        "y": 179
       },
       "id": 49,
       "interval": null,
@@ -6261,7 +6655,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -6279,7 +6672,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.pageSummary.en_wikipedia_org._wiki_Barack_Obama.chrome.cable.pagexray.contentTypes.font.contentSize",
       "targets": [
         {
           "refId": "A",
@@ -6312,6 +6705,12 @@
       "description": "The total size for images served for this page.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "bytes",
       "gauge": {
         "maxValue": 100,
@@ -6324,7 +6723,7 @@
         "h": 3,
         "w": 4,
         "x": 16,
-        "y": 171
+        "y": 179
       },
       "id": 50,
       "interval": null,
@@ -6343,7 +6742,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -6361,7 +6759,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.pageSummary.en_wikipedia_org._wiki_Barack_Obama.chrome.cable.pagexray.contentTypes.image.contentSize",
       "targets": [
         {
           "refId": "A",
@@ -6394,6 +6792,12 @@
       "description": "The total size over the wire for all SVG(s) served for this page.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "bytes",
       "gauge": {
         "maxValue": 100,
@@ -6406,7 +6810,7 @@
         "h": 3,
         "w": 4,
         "x": 20,
-        "y": 171
+        "y": 179
       },
       "id": 51,
       "interval": null,
@@ -6425,7 +6829,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -6443,7 +6846,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.pageSummary.en_wikipedia_org._wiki_Barack_Obama.chrome.cable.pagexray.contentTypes.svg.transferSize",
       "targets": [
         {
           "refId": "A",
@@ -6465,7 +6868,7 @@
     }
   ],
   "refresh": false,
-  "schemaVersion": 19,
+  "schemaVersion": 25,
   "style": "dark",
   "tags": [
     "page summary"
@@ -6605,6 +7008,7 @@
         "auto_count": 30,
         "auto_min": "10s",
         "current": {
+          "selected": false,
           "text": "median",
           "value": "median"
         },
@@ -6677,5 +7081,5 @@
   "timezone": "browser",
   "title": "Page summary",
   "uid": "000000043",
-  "version": 38
+  "version": 14
 }

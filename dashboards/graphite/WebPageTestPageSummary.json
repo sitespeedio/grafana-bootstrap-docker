@@ -21,7 +21,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "6.3.4"
+      "version": "7.0.0"
     },
     {
       "type": "panel",
@@ -43,8 +43,8 @@
     },
     {
       "type": "panel",
-      "id": "table",
-      "name": "Table",
+      "id": "table-old",
+      "name": "Table (old)",
       "version": ""
     }
   ],
@@ -74,7 +74,7 @@
   "gnetId": null,
   "graphTooltip": 2,
   "id": null,
-  "iteration": 1569393028419,
+  "iteration": 1589956803151,
   "links": [
     {
       "asDropdown": true,
@@ -98,6 +98,7 @@
   "panels": [
     {
       "collapsed": false,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -123,6 +124,12 @@
       "description": "The Start Render is when something for the first time is painted within the current viewport. It is calculated by analyzing a video recording of the screen.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "ms",
       "gauge": {
         "maxValue": 100,
@@ -154,7 +161,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -172,7 +178,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.news.pageSummary.edition_cnn_com._us.webpagetest.dulles-chrome.cable.data.median.firstView.render",
       "targets": [
         {
           "refId": "A",
@@ -206,6 +212,12 @@
       "description": "The Speed Index is the average time at which visible parts of the page are displayed. It is expressed in milliseconds and dependent on size of the view port. It was created by Pat Meenan and you can checkout the full documentation [here](https://sites.google.com/a/webpagetest.org/docs/using-webpagetest/metrics/speed-index).",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -237,7 +249,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -255,7 +266,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.news.pageSummary.edition_cnn_com._us.webpagetest.dulles-chrome.cable.data.median.firstView.SpeedIndex",
       "targets": [
         {
           "refId": "A",
@@ -291,6 +302,12 @@
       "description": "The visual complete 85% is when 85% (or more) are finished within the current viewport. It is calculated by analyzing a video recording of the screen.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "ms",
       "gauge": {
         "maxValue": 100,
@@ -322,7 +339,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -340,7 +356,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.news.pageSummary.edition_cnn_com._us.webpagetest.dulles-chrome.cable.data.median.firstView.visualComplete85",
       "targets": [
         {
           "refId": "A",
@@ -374,6 +390,12 @@
       "description": "The visual complete 95% is when 95% (or more) are finished within the current viewport. It is calculated by analyzing a video recording of the screen.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "ms",
       "gauge": {
         "maxValue": 100,
@@ -405,7 +427,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -423,7 +444,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.news.pageSummary.edition_cnn_com._us.webpagetest.dulles-chrome.cable.data.median.firstView.visualComplete95",
       "targets": [
         {
           "refId": "A",
@@ -457,6 +478,12 @@
       "description": "The visual complete 99% is when 99% (or more) are finished within the current viewport. It is calculated by analyzing a video recording of the screen.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "ms",
       "gauge": {
         "maxValue": 100,
@@ -488,7 +515,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -506,7 +532,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.news.pageSummary.edition_cnn_com._us.webpagetest.dulles-chrome.cable.data.median.firstView.visualComplete99",
       "targets": [
         {
           "refId": "A",
@@ -540,6 +566,12 @@
       "description": "The last visual change is when something for the last time is changing within the current viewport. It is calculated by analyzing a video recording of the screen.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "ms",
       "gauge": {
         "maxValue": 100,
@@ -571,7 +603,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -589,7 +620,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.news.pageSummary.edition_cnn_com._us.webpagetest.dulles-chrome.cable.data.median.firstView.lastVisualChange",
       "targets": [
         {
           "refId": "A",
@@ -612,6 +643,7 @@
     },
     {
       "collapsed": false,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -635,6 +667,12 @@
       "description": "The moving average of the last 24 hours median values for the visual metrics.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "filterNull": false,
       "fontSize": "100%",
       "gridPos": {
@@ -645,7 +683,6 @@
       },
       "id": 36,
       "links": [],
-      "options": {},
       "pageSize": null,
       "scroll": false,
       "showHeader": true,
@@ -655,11 +692,13 @@
       },
       "styles": [
         {
+          "align": "auto",
           "dateFormat": "YYYY-MM-DD HH:mm:ss",
           "pattern": "Time",
           "type": "date"
         },
         {
+          "align": "auto",
           "colorMode": null,
           "colors": [
             "rgba(245, 54, 54, 0.9)",
@@ -697,7 +736,7 @@
       ],
       "title": "Avg last 24 hours",
       "transform": "timeseries_aggregations",
-      "type": "table"
+      "type": "table-old"
     },
     {
       "columns": [
@@ -710,6 +749,12 @@
       "description": "Last 24 hours averages of median metrics compared to one day back in time. \n\nRed color background means a regression, green a positive change and yellow that the change is within the margin of error. You probably need to finetune the thresholds depending of how flakey your site is. Default threshold is +-10%.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "filterNull": false,
       "fontSize": "100%",
       "gridPos": {
@@ -720,7 +765,6 @@
       },
       "id": 37,
       "links": [],
-      "options": {},
       "pageSize": null,
       "scroll": true,
       "showHeader": true,
@@ -730,11 +774,13 @@
       },
       "styles": [
         {
+          "align": "auto",
           "dateFormat": "YYYY-MM-DD HH:mm:ss",
           "pattern": "Time",
           "type": "date"
         },
         {
+          "align": "auto",
           "colorMode": "cell",
           "colors": [
             "rgba(50, 172, 45, 0.97)",
@@ -803,7 +849,7 @@
       ],
       "title": "Relative to yesterday",
       "transform": "timeseries_aggregations",
-      "type": "table"
+      "type": "table-old"
     },
     {
       "columns": [
@@ -816,6 +862,12 @@
       "description": "Last 24 hours averages of median metrics compared to seven days back in time. \n\nRed color background means a regression, green a positive change and yellow that the change is within the margin of error. You probably need to finetune the thresholds depending of how flakey your site is. Default threshold is +-10%.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "filterNull": false,
       "fontSize": "100%",
       "gridPos": {
@@ -826,7 +878,6 @@
       },
       "id": 68,
       "links": [],
-      "options": {},
       "pageSize": null,
       "scroll": true,
       "showHeader": true,
@@ -836,11 +887,13 @@
       },
       "styles": [
         {
+          "align": "auto",
           "dateFormat": "YYYY-MM-DD HH:mm:ss",
           "pattern": "Time",
           "type": "date"
         },
         {
+          "align": "auto",
           "colorMode": "cell",
           "colors": [
             "rgba(50, 172, 45, 0.97)",
@@ -909,7 +962,7 @@
       ],
       "title": "Relative to last week",
       "transform": "timeseries_aggregations",
-      "type": "table"
+      "type": "table-old"
     },
     {
       "columns": [
@@ -922,6 +975,12 @@
       "description": "Last 24 hours averages of median metrics compared to one month back in time. \n\nRed color background means a regression, green a positive change and yellow that the change is within the margin of error. You probably need to finetune the thresholds depending of how flakey your site is. Default threshold is +-10%.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "filterNull": false,
       "fontSize": "100%",
       "gridPos": {
@@ -932,7 +991,6 @@
       },
       "id": 69,
       "links": [],
-      "options": {},
       "pageSize": null,
       "scroll": true,
       "showHeader": true,
@@ -942,11 +1000,13 @@
       },
       "styles": [
         {
+          "align": "auto",
           "dateFormat": "YYYY-MM-DD HH:mm:ss",
           "pattern": "Time",
           "type": "date"
         },
         {
+          "align": "auto",
           "colorMode": "cell",
           "colors": [
             "rgba(50, 172, 45, 0.97)",
@@ -1015,10 +1075,11 @@
       ],
       "title": "Relative to last month",
       "transform": "timeseries_aggregations",
-      "type": "table"
+      "type": "table-old"
     },
     {
       "collapsed": false,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -1042,6 +1103,12 @@
       ],
       "datasource": "${DS_GRAPHITE}",
       "description": "Fully loaded time when the last of all assets is downloaded on the page. It is calculated using the Resource Timing API where we use the last downloaded asset.",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "ms",
       "gauge": {
         "maxValue": 100,
@@ -1073,7 +1140,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -1091,7 +1157,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.news.pageSummary.edition_cnn_com._us.webpagetest.dulles-chrome.cable.data.median.firstView.fullyLoaded",
       "targets": [
         {
           "refId": "A",
@@ -1125,6 +1191,12 @@
       "description": "",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -1156,7 +1228,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -1174,7 +1245,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.news.pageSummary.edition_cnn_com._us.webpagetest.dulles-chrome.cable.data.median.firstView.requestsFull",
       "targets": [
         {
           "refId": "A",
@@ -1208,6 +1279,12 @@
       "description": "The total transfer size over the wire (compressed size if your asset is compressed) of all assets on the page.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "bytes",
       "gauge": {
         "maxValue": 100,
@@ -1239,7 +1316,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -1257,7 +1333,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.news.pageSummary.edition_cnn_com._us.webpagetest.dulles-chrome.cable.data.median.firstView.bytesIn",
       "targets": [
         {
           "refId": "A",
@@ -1291,6 +1367,12 @@
       "description": "domContentLoadedEventEnd : most of the time, your javascript waits for this event so you could consider that everything JS-dependant is available at this stage",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "ms",
       "gauge": {
         "maxValue": 100,
@@ -1322,7 +1404,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -1340,7 +1421,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.news.pageSummary.edition_cnn_com._us.webpagetest.dulles-chrome.cable.data.median.firstView.domContentLoadedEventEnd",
       "targets": [
         {
           "refId": "A",
@@ -1363,6 +1444,7 @@
     },
     {
       "collapsed": false,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -1388,6 +1470,12 @@
       "description": "",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "percent",
       "gauge": {
         "maxValue": 100,
@@ -1419,7 +1507,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -1437,7 +1524,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.news.pageSummary.edition_cnn_com._us.webpagetest.dulles-chrome.cable.data.median.firstView.score_cache",
       "targets": [
         {
           "refId": "A",
@@ -1471,6 +1558,12 @@
       "description": "",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "percent",
       "gauge": {
         "maxValue": 100,
@@ -1502,7 +1595,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -1520,7 +1612,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.news.pageSummary.edition_cnn_com._us.webpagetest.dulles-chrome.cable.data.median.firstView.score_minify",
       "targets": [
         {
           "refId": "A",
@@ -1556,6 +1648,12 @@
       "description": "This score might not be meaningful if your server is on HTTP/2",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "percent",
       "gauge": {
         "maxValue": 100,
@@ -1587,7 +1685,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -1605,7 +1702,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.news.pageSummary.edition_cnn_com._us.webpagetest.dulles-chrome.cable.data.median.firstView.score_combine",
       "targets": [
         {
           "refId": "A",
@@ -1639,6 +1736,12 @@
       "description": "",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "percent",
       "gauge": {
         "maxValue": 100,
@@ -1670,7 +1773,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -1688,7 +1790,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.news.pageSummary.edition_cnn_com._us.webpagetest.dulles-chrome.cable.data.median.firstView.score_gzip",
       "targets": [
         {
           "refId": "A",
@@ -1711,6 +1813,7 @@
     },
     {
       "collapsed": false,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -1732,6 +1835,12 @@
       "description": "The history of Start Render (when something for the first time is painted within the current viewport) showing the current median value, the average median per day and the average median per week.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
       "fillGradient": 0,
       "grid": {},
@@ -1741,6 +1850,7 @@
         "x": 0,
         "y": 23
       },
+      "hiddenSeries": false,
       "id": 65,
       "legend": {
         "alignAsTable": true,
@@ -1844,6 +1954,12 @@
       "description": "The history of [Speed Index](https://sites.google.com/a/webpagetest.org/docs/using-webpagetest/metrics/speed-index) showing the current median value, the average median per day and the average median per week.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
       "fillGradient": 0,
       "grid": {},
@@ -1853,6 +1969,7 @@
         "x": 8,
         "y": 23
       },
+      "hiddenSeries": false,
       "id": 66,
       "legend": {
         "alignAsTable": true,
@@ -1956,6 +2073,12 @@
       "description": "The history of Visual Complete 85% (when 85% (or more) if the page in the current viewport is rendered) showing the current median value, the average median per day and the average median per week.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
       "fillGradient": 0,
       "grid": {},
@@ -1965,6 +2088,7 @@
         "x": 16,
         "y": 23
       },
+      "hiddenSeries": false,
       "id": 67,
       "legend": {
         "alignAsTable": true,
@@ -2061,6 +2185,7 @@
     },
     {
       "collapsed": false,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -2082,6 +2207,12 @@
       "description": "The history of Fully Loaded (when the last of all assets is downloaded on the page) showing the current median value, the average median per day and the average median per week.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
       "fillGradient": 0,
       "grid": {},
@@ -2091,6 +2222,7 @@
         "x": 0,
         "y": 36
       },
+      "hiddenSeries": false,
       "id": 45,
       "legend": {
         "alignAsTable": true,
@@ -2194,6 +2326,12 @@
       "description": "The history of DOMContentLoadedEnd",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
       "fillGradient": 0,
       "grid": {},
@@ -2203,6 +2341,7 @@
         "x": 12,
         "y": 36
       },
+      "hiddenSeries": false,
       "id": 64,
       "legend": {
         "alignAsTable": true,
@@ -2299,6 +2438,7 @@
     },
     {
       "collapsed": false,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -2328,16 +2468,23 @@
       "description": "The total transfer size by content type.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 10,
       "fillGradient": 0,
       "grid": {},
       "gridPos": {
-        "h": 12,
+        "h": 15,
         "w": 12,
         "x": 0,
         "y": 49
       },
       "height": 450,
+      "hiddenSeries": false,
       "id": 2,
       "legend": {
         "alignAsTable": true,
@@ -2431,16 +2578,23 @@
       "description": "The total number of requests by content type.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 10,
       "fillGradient": 0,
       "grid": {},
       "gridPos": {
-        "h": 12,
+        "h": 15,
         "w": 12,
         "x": 12,
         "y": 49
       },
       "height": 450,
+      "hiddenSeries": false,
       "id": 3,
       "legend": {
         "alignAsTable": true,
@@ -2518,11 +2672,12 @@
     },
     {
       "collapsed": false,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 61
+        "y": 64
       },
       "id": 77,
       "panels": [],
@@ -2539,6 +2694,12 @@
       "description": "The time the browser takes to parse the document and execute deferred and parser-inserted scripts including the network time from the users location to your server.  It is collected using the Navigation Timing API by taking the domContentLoadedEventStart minus navigationStart.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
       "fillGradient": 0,
       "grid": {},
@@ -2546,8 +2707,9 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 62
+        "y": 65
       },
+      "hiddenSeries": false,
       "id": 6,
       "legend": {
         "avg": false,
@@ -2643,6 +2805,12 @@
       "description": "The time it takes for the browser to parse and create the page.  It is collected using the Navigation Timing API by taking the loadEventStart minus responseEnd.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
       "fillGradient": 0,
       "grid": {},
@@ -2650,8 +2818,9 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 62
+        "y": 65
       },
+      "hiddenSeries": false,
       "id": 63,
       "legend": {
         "avg": false,
@@ -2740,11 +2909,12 @@
     },
     {
       "collapsed": false,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 69
+        "y": 72
       },
       "id": 78,
       "panels": [],
@@ -2761,6 +2931,12 @@
       "description": "All User Timing marks created on the page using the [User Timing API](https://www.w3.org/TR/user-timing/).",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
       "fillGradient": 0,
       "grid": {},
@@ -2768,8 +2944,9 @@
         "h": 11,
         "w": 24,
         "x": 0,
-        "y": 70
+        "y": 73
       },
+      "hiddenSeries": false,
       "id": 16,
       "legend": {
         "alignAsTable": true,
@@ -2848,11 +3025,12 @@
     },
     {
       "collapsed": false,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 81
+        "y": 84
       },
       "id": 79,
       "panels": [],
@@ -2869,6 +3047,12 @@
       "description": "If WPT has been run with chrome and the --timeline option, show the [Navigation Timing API](https://www.w3.org/TR/navigation-timing/) metrics in chromeUserTiming.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
       "fillGradient": 0,
       "grid": {},
@@ -2876,8 +3060,9 @@
         "h": 12,
         "w": 24,
         "x": 0,
-        "y": 82
+        "y": 85
       },
+      "hiddenSeries": false,
       "id": 1,
       "legend": {
         "alignAsTable": true,
@@ -2958,11 +3143,12 @@
     },
     {
       "collapsed": false,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 94
+        "y": 97
       },
       "id": 80,
       "panels": [],
@@ -2983,6 +3169,12 @@
       "description": "The total size over the wire for all assets served for this page.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "bytes",
       "gauge": {
         "maxValue": 100,
@@ -2995,7 +3187,7 @@
         "h": 3,
         "w": 4,
         "x": 0,
-        "y": 95
+        "y": 98
       },
       "id": 25,
       "interval": null,
@@ -3014,7 +3206,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -3032,7 +3223,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.news.pageSummary.edition_cnn_com._us.webpagetest.dulles-chrome.cable.data.median.firstView.bytesIn",
       "targets": [
         {
           "refId": "A",
@@ -3066,6 +3257,12 @@
       "description": "The total size over the wire for all stylesheet assets served for this page.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "bytes",
       "gauge": {
         "maxValue": 100,
@@ -3078,7 +3275,7 @@
         "h": 3,
         "w": 4,
         "x": 4,
-        "y": 95
+        "y": 98
       },
       "id": 27,
       "interval": null,
@@ -3097,7 +3294,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -3115,7 +3311,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.news.pageSummary.edition_cnn_com._us.webpagetest.dulles-chrome.cable.data.median.firstView.breakdown.css.bytes",
       "targets": [
         {
           "refId": "A",
@@ -3149,6 +3345,12 @@
       "description": "The total size over the wire for all Javascript assets served for this page.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "bytes",
       "gauge": {
         "maxValue": 100,
@@ -3161,7 +3363,7 @@
         "h": 3,
         "w": 4,
         "x": 8,
-        "y": 95
+        "y": 98
       },
       "id": 29,
       "interval": null,
@@ -3180,7 +3382,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -3198,7 +3399,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.news.pageSummary.edition_cnn_com._us.webpagetest.dulles-chrome.cable.data.median.firstView.breakdown.js.bytes",
       "targets": [
         {
           "refId": "A",
@@ -3232,6 +3433,12 @@
       "description": "The total size over the wire for all HTML served for this page.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "bytes",
       "gauge": {
         "maxValue": 100,
@@ -3244,7 +3451,7 @@
         "h": 3,
         "w": 4,
         "x": 12,
-        "y": 95
+        "y": 98
       },
       "id": 46,
       "interval": null,
@@ -3263,7 +3470,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -3281,7 +3487,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.news.pageSummary.edition_cnn_com._us.webpagetest.dulles-chrome.cable.data.median.firstView.breakdown.html.bytes",
       "targets": [
         {
           "refId": "A",
@@ -3315,6 +3521,12 @@
       "description": "The total size over the wire for all font(s) served for this page.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "bytes",
       "gauge": {
         "maxValue": 100,
@@ -3327,7 +3539,7 @@
         "h": 3,
         "w": 4,
         "x": 16,
-        "y": 95
+        "y": 98
       },
       "id": 48,
       "interval": null,
@@ -3346,7 +3558,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -3364,7 +3575,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.news.pageSummary.edition_cnn_com._us.webpagetest.dulles-chrome.cable.data.median.firstView.breakdown.font.bytes",
       "targets": [
         {
           "refId": "A",
@@ -3398,6 +3609,12 @@
       "description": "The total size for images served for this page.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "bytes",
       "gauge": {
         "maxValue": 100,
@@ -3410,7 +3627,7 @@
         "h": 3,
         "w": 4,
         "x": 20,
-        "y": 95
+        "y": 98
       },
       "id": 50,
       "interval": null,
@@ -3429,7 +3646,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -3447,7 +3663,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.news.pageSummary.edition_cnn_com._us.webpagetest.dulles-chrome.cable.data.median.firstView.breakdown.image.bytes",
       "targets": [
         {
           "refId": "A",
@@ -3470,7 +3686,7 @@
     }
   ],
   "refresh": false,
-  "schemaVersion": 19,
+  "schemaVersion": 25,
   "style": "dark",
   "tags": [
     "page"
@@ -3635,7 +3851,6 @@
   },
   "timepicker": {
     "refresh_intervals": [
-      "5s",
       "10s",
       "30s",
       "1m",
@@ -3661,5 +3876,5 @@
   "timezone": "browser",
   "title": "WebPagetest Page summary",
   "uid": "000000051",
-  "version": 31
+  "version": 14
 }
