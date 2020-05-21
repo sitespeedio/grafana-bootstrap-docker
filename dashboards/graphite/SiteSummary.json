@@ -20,14 +20,14 @@
     {
       "type": "panel",
       "id": "bargauge",
-      "name": "Bar Gauge",
+      "name": "Bar gauge",
       "version": ""
     },
     {
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "6.3.3"
+      "version": "7.0.0"
     },
     {
       "type": "panel",
@@ -78,7 +78,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1566040864151,
+  "iteration": 1589956500976,
   "links": [
     {
       "icon": "external link",
@@ -111,6 +111,7 @@
   "panels": [
     {
       "collapsed": false,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -127,15 +128,23 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
+      "datasource": "${DS_GRAPHITE}",
       "description": "The first visual change is when something for the first time is painted within the current viewport. It is calculated by analyzing a video recording of the screen.",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
-        "h": 8,
+        "h": 10,
         "w": 12,
         "x": 0,
         "y": 1
       },
+      "hiddenSeries": false,
       "id": 75,
       "legend": {
         "alignAsTable": true,
@@ -239,15 +248,23 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
+      "datasource": "${DS_GRAPHITE}",
       "description": "The Speed Index is the average time at which visible parts of the page are displayed. It is expressed in milliseconds and dependent on size of the view port. It was created by Pat Meenan and you can checkout the full documentation [here](https://sites.google.com/a/webpagetest.org/docs/using-webpagetest/metrics/speed-index).",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
-        "h": 8,
+        "h": 10,
         "w": 12,
         "x": 12,
         "y": 1
       },
+      "hiddenSeries": false,
       "id": 76,
       "legend": {
         "alignAsTable": true,
@@ -352,15 +369,23 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
+      "datasource": "${DS_GRAPHITE}",
       "description": "The largest image is the time when the largest image within the viewport is painted and on its final position. It is calculated by analyzing a video recording of the screen.",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
-        "h": 8,
+        "h": 9,
         "w": 12,
         "x": 0,
-        "y": 9
+        "y": 11
       },
+      "hiddenSeries": false,
       "id": 77,
       "legend": {
         "alignAsTable": true,
@@ -464,15 +489,23 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
+      "datasource": "${DS_GRAPHITE}",
       "description": "The last visual change is when something for the last time is changing within the current viewport. It is calculated by analyzing a video recording of the screen.",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
-        "h": 8,
+        "h": 9,
         "w": 12,
         "x": 12,
-        "y": 9
+        "y": 11
       },
+      "hiddenSeries": false,
       "id": 78,
       "legend": {
         "alignAsTable": true,
@@ -573,11 +606,12 @@
     },
     {
       "collapsed": false,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 17
+        "y": 20
       },
       "id": 58,
       "panels": [],
@@ -598,6 +632,12 @@
       "description": "The first visual change is when something for the first time is painted within the current viewport. It is calculated by analyzing a video recording of the screen.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "ms",
       "gauge": {
         "maxValue": 100,
@@ -610,7 +650,7 @@
         "h": 3,
         "w": 4,
         "x": 0,
-        "y": 18
+        "y": 21
       },
       "id": 3,
       "interval": null,
@@ -629,7 +669,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -647,7 +686,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": false
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.summary.en_wikipedia_org.chrome.cable.browsertime.visualMetrics.FirstVisualChange.median",
       "targets": [
         {
           "refId": "A",
@@ -681,6 +720,12 @@
       "description": "The Speed Index is the average time at which visible parts of the page are displayed. It is expressed in milliseconds and dependent on size of the view port. It was created by Pat Meenan and you can checkout the full documentation [here](https://sites.google.com/a/webpagetest.org/docs/using-webpagetest/metrics/speed-index).",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "ms",
       "gauge": {
         "maxValue": 100,
@@ -693,7 +738,7 @@
         "h": 3,
         "w": 4,
         "x": 4,
-        "y": 18
+        "y": 21
       },
       "id": 2,
       "interval": null,
@@ -712,7 +757,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -730,7 +774,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": false
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.summary.en_wikipedia_org.chrome.cable.browsertime.visualMetrics.SpeedIndex.median",
       "targets": [
         {
           "refId": "A",
@@ -764,6 +808,12 @@
       "description": "The Speed Index is the average time at which visible parts of the page are displayed. It is expressed in milliseconds and dependent on size of the view port. It was created by Pat Meenan and you can checkout the full documentation [here](https://sites.google.com/a/webpagetest.org/docs/using-webpagetest/metrics/speed-index).",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "ms",
       "gauge": {
         "maxValue": 100,
@@ -776,7 +826,7 @@
         "h": 3,
         "w": 4,
         "x": 8,
-        "y": 18
+        "y": 21
       },
       "id": 56,
       "interval": null,
@@ -795,7 +845,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -813,7 +862,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": false
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.summary.en_wikipedia_org.chrome.cable.browsertime.visualMetrics.PerceptualSpeedIndex.median",
       "targets": [
         {
           "refId": "A",
@@ -847,6 +896,12 @@
       "description": "The last visual change is when something for the last time is changing within the current viewport. It is calculated by analyzing a video recording of the screen.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "ms",
       "gauge": {
         "maxValue": 100,
@@ -859,7 +914,7 @@
         "h": 3,
         "w": 6,
         "x": 12,
-        "y": 18
+        "y": 21
       },
       "id": 22,
       "interval": null,
@@ -878,7 +933,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -896,7 +950,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": false
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.summary.en_wikipedia_org.chrome.cable.browsertime.visualMetrics.VisualComplete85.median",
       "targets": [
         {
           "refId": "A",
@@ -930,6 +984,12 @@
       "description": "The last visual change is when something for the last time is changing within the current viewport. It is calculated by analyzing a video recording of the screen.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "ms",
       "gauge": {
         "maxValue": 100,
@@ -942,7 +1002,7 @@
         "h": 3,
         "w": 6,
         "x": 18,
-        "y": 18
+        "y": 21
       },
       "id": 57,
       "interval": null,
@@ -961,7 +1021,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -979,7 +1038,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": false
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.summary.en_wikipedia_org.chrome.cable.browsertime.visualMetrics.LastVisualChange.median",
       "targets": [
         {
           "refId": "A",
@@ -1002,58 +1061,71 @@
     },
     {
       "collapsed": true,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 21
+        "y": 24
       },
       "id": 68,
       "panels": [
         {
           "cacheTimeout": "",
+          "datasource": "${DS_GRAPHITE}",
           "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {},
+              "mappings": [],
+              "max": 4000,
+              "min": 0,
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "index": 0,
+                    "value": null
+                  },
+                  {
+                    "color": "#EAB839",
+                    "index": 1,
+                    "value": 1000
+                  },
+                  {
+                    "color": "red",
+                    "index": 2,
+                    "value": 2000
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
           "gridPos": {
             "h": 13,
             "w": 12,
             "x": 0,
-            "y": 22
+            "y": 25
           },
           "id": 70,
           "links": [],
           "options": {
             "displayMode": "lcd",
-            "fieldOptions": {
+            "orientation": "horizontal",
+            "reduceOptions": {
               "calcs": [
                 "mean"
               ],
-              "defaults": {
-                "max": 4000,
-                "min": 0
-              },
-              "mappings": [],
-              "override": {},
-              "thresholds": [
-                {
-                  "color": "green",
-                  "index": 0,
-                  "value": null
-                },
-                {
-                  "color": "#EAB839",
-                  "index": 1,
-                  "value": 1000
-                },
-                {
-                  "color": "red",
-                  "index": 2,
-                  "value": 2000
-                }
-              ],
               "values": false
             },
-            "orientation": "horizontal"
+            "showUnfilled": true
           },
+          "pluginVersion": "7.0.0",
           "targets": [
             {
               "refId": "A",
@@ -1067,48 +1139,60 @@
         },
         {
           "cacheTimeout": "",
+          "datasource": "${DS_GRAPHITE}",
           "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {},
+              "mappings": [],
+              "max": 4000,
+              "min": 0,
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "index": 0,
+                    "value": null
+                  },
+                  {
+                    "color": "#EAB839",
+                    "index": 1,
+                    "value": 1000
+                  },
+                  {
+                    "color": "red",
+                    "index": 2,
+                    "value": 2000
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
           "gridPos": {
             "h": 13,
             "w": 12,
             "x": 12,
-            "y": 22
+            "y": 25
           },
           "id": 71,
           "links": [],
           "options": {
             "displayMode": "lcd",
-            "fieldOptions": {
+            "orientation": "horizontal",
+            "reduceOptions": {
               "calcs": [
                 "mean"
               ],
-              "defaults": {
-                "max": 4000,
-                "min": 0
-              },
-              "mappings": [],
-              "override": {},
-              "thresholds": [
-                {
-                  "color": "green",
-                  "index": 0,
-                  "value": null
-                },
-                {
-                  "color": "#EAB839",
-                  "index": 1,
-                  "value": 1000
-                },
-                {
-                  "color": "red",
-                  "index": 2,
-                  "value": 2000
-                }
-              ],
               "values": false
             },
-            "orientation": "horizontal"
+            "showUnfilled": true
           },
+          "pluginVersion": "7.0.0",
           "targets": [
             {
               "refId": "A",
@@ -1126,11 +1210,12 @@
     },
     {
       "collapsed": true,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 22
+        "y": 25
       },
       "id": 62,
       "panels": [
@@ -1143,14 +1228,22 @@
           "description": "The history of First Visual Change (when something for the first time is painted within the current viewport) showing the current median value, the average median per day and the average median per week for all tested pages.",
           "editable": true,
           "error": false,
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "fill": 0,
+          "fillGradient": 0,
           "grid": {},
           "gridPos": {
             "h": 11,
             "w": 12,
             "x": 0,
-            "y": 23
+            "y": 26
           },
+          "hiddenSeries": false,
           "id": 45,
           "legend": {
             "alignAsTable": true,
@@ -1166,7 +1259,9 @@
           "linewidth": 2,
           "links": [],
           "nullPointMode": "connected",
-          "options": {},
+          "options": {
+            "dataLinks": []
+          },
           "percentage": false,
           "pointradius": 5,
           "points": false,
@@ -1243,14 +1338,22 @@
           "description": "The history of [Speed Index](https://sites.google.com/a/webpagetest.org/docs/using-webpagetest/metrics/speed-index) showing the current median value, the average median per day and the average median per week for all tested pages.",
           "editable": true,
           "error": false,
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "fill": 0,
+          "fillGradient": 0,
           "grid": {},
           "gridPos": {
             "h": 11,
             "w": 12,
             "x": 12,
-            "y": 23
+            "y": 26
           },
+          "hiddenSeries": false,
           "id": 52,
           "legend": {
             "alignAsTable": true,
@@ -1266,7 +1369,9 @@
           "linewidth": 2,
           "links": [],
           "nullPointMode": "connected",
-          "options": {},
+          "options": {
+            "dataLinks": []
+          },
           "percentage": false,
           "pointradius": 5,
           "points": false,
@@ -1343,14 +1448,22 @@
           "description": "The history of Visual Complete 85%  (when 85% or more is ready within the current viewport) showing the current median value, the average median per day and the average median per week for all tested pages.",
           "editable": true,
           "error": false,
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "fill": 0,
+          "fillGradient": 0,
           "grid": {},
           "gridPos": {
             "h": 11,
             "w": 8,
             "x": 0,
-            "y": 34
+            "y": 37
           },
+          "hiddenSeries": false,
           "id": 53,
           "legend": {
             "alignAsTable": true,
@@ -1366,7 +1479,9 @@
           "linewidth": 2,
           "links": [],
           "nullPointMode": "connected",
-          "options": {},
+          "options": {
+            "dataLinks": []
+          },
           "percentage": false,
           "pointradius": 5,
           "points": false,
@@ -1443,14 +1558,22 @@
           "description": "The history of Last Visual Change (when something for the last time is changing within the current viewport) showing the current median value, the average median per day and the average median per week for all tested pages.",
           "editable": true,
           "error": false,
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "fill": 0,
+          "fillGradient": 0,
           "grid": {},
           "gridPos": {
             "h": 11,
             "w": 8,
             "x": 8,
-            "y": 34
+            "y": 37
           },
+          "hiddenSeries": false,
           "id": 55,
           "legend": {
             "alignAsTable": true,
@@ -1466,7 +1589,9 @@
           "linewidth": 2,
           "links": [],
           "nullPointMode": "connected",
-          "options": {},
+          "options": {
+            "dataLinks": []
+          },
           "percentage": false,
           "pointradius": 5,
           "points": false,
@@ -1543,14 +1668,22 @@
           "description": "The history of Fully Loaded (when the last of all assets is downloaded on the page) showing the current median value, the average median per day and the average median per week for all tested pages.",
           "editable": true,
           "error": false,
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "fill": 0,
+          "fillGradient": 0,
           "grid": {},
           "gridPos": {
             "h": 11,
             "w": 8,
             "x": 16,
-            "y": 34
+            "y": 37
           },
+          "hiddenSeries": false,
           "id": 54,
           "legend": {
             "alignAsTable": true,
@@ -1566,7 +1699,9 @@
           "linewidth": 2,
           "links": [],
           "nullPointMode": "connected",
-          "options": {},
+          "options": {
+            "dataLinks": []
+          },
           "percentage": false,
           "pointradius": 5,
           "points": false,
@@ -1641,11 +1776,12 @@
     },
     {
       "collapsed": false,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 23
+        "y": 26
       },
       "id": 85,
       "panels": [],
@@ -1657,15 +1793,23 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
+      "datasource": "${DS_GRAPHITE}",
       "description": "The average number of CPU Long Tasks per page. A CPU long Task is by default a CPU task that takes longer than 50 ms to run. This metrics is Chrome only at the moment.",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
-        "h": 8,
+        "h": 9,
         "w": 12,
         "x": 0,
-        "y": 24
+        "y": 27
       },
+      "hiddenSeries": false,
       "id": 87,
       "legend": {
         "alignAsTable": true,
@@ -1770,15 +1914,23 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
+      "datasource": "${DS_GRAPHITE}",
       "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
-        "h": 8,
+        "h": 9,
         "w": 12,
         "x": 12,
-        "y": 24
+        "y": 27
       },
+      "hiddenSeries": false,
       "id": 88,
       "legend": {
         "alignAsTable": true,
@@ -1880,11 +2032,12 @@
     },
     {
       "collapsed": false,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 32
+        "y": 36
       },
       "id": 90,
       "panels": [],
@@ -1896,14 +2049,23 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
+      "datasource": "${DS_GRAPHITE}",
       "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
+      "fillGradient": 0,
       "gridPos": {
-        "h": 8,
+        "h": 10,
         "w": 12,
         "x": 0,
-        "y": 33
+        "y": 37
       },
+      "hiddenSeries": false,
       "id": 91,
       "legend": {
         "alignAsTable": true,
@@ -1919,7 +2081,9 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "connected",
-      "options": {},
+      "options": {
+        "dataLinks": []
+      },
       "percentage": false,
       "pointradius": 2,
       "points": false,
@@ -2006,14 +2170,23 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
+      "datasource": "${DS_GRAPHITE}",
       "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
+      "fillGradient": 0,
       "gridPos": {
-        "h": 8,
+        "h": 10,
         "w": 12,
         "x": 12,
-        "y": 33
+        "y": 37
       },
+      "hiddenSeries": false,
       "id": 93,
       "legend": {
         "alignAsTable": true,
@@ -2029,7 +2202,9 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "connected",
-      "options": {},
+      "options": {
+        "dataLinks": []
+      },
       "percentage": false,
       "pointradius": 2,
       "points": false,
@@ -2116,14 +2291,23 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
+      "datasource": "${DS_GRAPHITE}",
       "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
+      "fillGradient": 0,
       "gridPos": {
-        "h": 8,
+        "h": 10,
         "w": 12,
         "x": 0,
-        "y": 41
+        "y": 47
       },
+      "hiddenSeries": false,
       "id": 94,
       "legend": {
         "alignAsTable": true,
@@ -2139,7 +2323,9 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "connected",
-      "options": {},
+      "options": {
+        "dataLinks": []
+      },
       "percentage": false,
       "pointradius": 2,
       "points": false,
@@ -2226,14 +2412,23 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
+      "datasource": "${DS_GRAPHITE}",
       "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
+      "fillGradient": 0,
       "gridPos": {
-        "h": 8,
+        "h": 10,
         "w": 12,
         "x": 12,
-        "y": 41
+        "y": 47
       },
+      "hiddenSeries": false,
       "id": 92,
       "legend": {
         "alignAsTable": true,
@@ -2249,7 +2444,9 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "connected",
-      "options": {},
+      "options": {
+        "dataLinks": []
+      },
       "percentage": false,
       "pointradius": 2,
       "points": false,
@@ -2333,11 +2530,12 @@
     },
     {
       "collapsed": false,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 49
+        "y": 57
       },
       "id": 80,
       "panels": [],
@@ -2349,14 +2547,23 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
+      "datasource": "${DS_GRAPHITE}",
       "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
+      "fillGradient": 0,
       "gridPos": {
-        "h": 8,
+        "h": 10,
         "w": 12,
         "x": 0,
-        "y": 50
+        "y": 58
       },
+      "hiddenSeries": false,
       "id": 82,
       "legend": {
         "alignAsTable": true,
@@ -2372,7 +2579,9 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "connected",
-      "options": {},
+      "options": {
+        "dataLinks": []
+      },
       "percentage": false,
       "pointradius": 2,
       "points": false,
@@ -2458,14 +2667,23 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
+      "datasource": "${DS_GRAPHITE}",
       "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
+      "fillGradient": 0,
       "gridPos": {
-        "h": 8,
+        "h": 10,
         "w": 12,
         "x": 12,
-        "y": 50
+        "y": 58
       },
+      "hiddenSeries": false,
       "id": 83,
       "legend": {
         "alignAsTable": true,
@@ -2481,7 +2699,9 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "connected",
-      "options": {},
+      "options": {
+        "dataLinks": []
+      },
       "percentage": false,
       "pointradius": 2,
       "points": false,
@@ -2564,11 +2784,12 @@
     },
     {
       "collapsed": false,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 58
+        "y": 68
       },
       "id": 59,
       "panels": [],
@@ -2590,6 +2811,12 @@
       "description": "The $function number of requests for all the analyzed pages.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -2602,7 +2829,7 @@
         "h": 3,
         "w": 4,
         "x": 0,
-        "y": 59
+        "y": 69
       },
       "id": 11,
       "interval": null,
@@ -2621,7 +2848,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -2639,7 +2865,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": false
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.summary.en_wikipedia_org.chrome.cable.pagexray.requests.median",
       "targets": [
         {
           "refId": "A",
@@ -2674,6 +2900,12 @@
       "description": "The $function total transfer size over the wire (compressed size if your asset is compressed) of all assets on a page.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "bytes",
       "gauge": {
         "maxValue": 100,
@@ -2686,7 +2918,7 @@
         "h": 3,
         "w": 4,
         "x": 4,
-        "y": 59
+        "y": 69
       },
       "id": 9,
       "interval": null,
@@ -2705,7 +2937,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -2723,7 +2954,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": false
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.summary.en_wikipedia_org.chrome.cable.pagexray.transferSize.median",
       "targets": [
         {
           "refId": "A",
@@ -2757,6 +2988,12 @@
       "description": "The $function total score from the [Coach](https://www.sitespeed.io/documentation/coach/) for all tested pages.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -2769,7 +3006,7 @@
         "h": 3,
         "w": 4,
         "x": 8,
-        "y": 59
+        "y": 69
       },
       "id": 6,
       "interval": null,
@@ -2788,7 +3025,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -2806,7 +3042,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": false
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.summary.en_wikipedia_org.chrome.cable.coach.score.median",
       "targets": [
         {
           "refId": "A",
@@ -2840,6 +3076,12 @@
       "description": "The $function performance score from the [Coach](https://www.sitespeed.io/documentation/coach/) for all tested pages.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -2852,7 +3094,7 @@
         "h": 3,
         "w": 4,
         "x": 12,
-        "y": 59
+        "y": 69
       },
       "id": 43,
       "interval": null,
@@ -2871,7 +3113,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -2889,7 +3130,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": false
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.summary.en_wikipedia_org.chrome.cable.coach.performance.score.median",
       "targets": [
         {
           "refId": "A",
@@ -2924,6 +3165,12 @@
       "description": "The $function value for the response expire time of all assets. Compare this with the $function last modified $function value to understand how good you configured the cache settings on your site.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "ms",
       "gauge": {
         "maxValue": 100,
@@ -2936,7 +3183,7 @@
         "h": 3,
         "w": 4,
         "x": 16,
-        "y": 59
+        "y": 69
       },
       "id": 18,
       "interval": null,
@@ -2955,7 +3202,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -2973,7 +3219,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": false
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.summary.en_wikipedia_org.chrome.cable.pagexray.expireStats.median",
       "targets": [
         {
           "refId": "A",
@@ -3008,6 +3254,12 @@
       "description": "The $function value for the last modified time of all assets. Compare this with the $function cache time to know how smart you have configured the cache settings.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "s",
       "gauge": {
         "maxValue": 100,
@@ -3020,7 +3272,7 @@
         "h": 3,
         "w": 4,
         "x": 20,
-        "y": 59
+        "y": 69
       },
       "id": 19,
       "interval": null,
@@ -3039,7 +3291,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -3057,7 +3308,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": false
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.summary.en_wikipedia_org.chrome.cable.pagexray.lastModifiedStats.median",
       "targets": [
         {
           "refId": "A",
@@ -3080,11 +3331,12 @@
     },
     {
       "collapsed": false,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 62
+        "y": 72
       },
       "id": 60,
       "panels": [],
@@ -3106,6 +3358,12 @@
       "description": "The $function number of image requests for all the analyzed pages.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -3118,7 +3376,7 @@
         "h": 3,
         "w": 4,
         "x": 0,
-        "y": 63
+        "y": 73
       },
       "id": 16,
       "interval": null,
@@ -3137,7 +3395,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -3155,7 +3412,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": false
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.summary.en_wikipedia_org.chrome.cable.pagexray.contentTypes.image.requests.median",
       "targets": [
         {
           "refId": "A",
@@ -3190,6 +3447,12 @@
       "description": "The $function transfer size over the wire of all images on all analyzed page.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "bytes",
       "gauge": {
         "maxValue": 100,
@@ -3202,7 +3465,7 @@
         "h": 3,
         "w": 8,
         "x": 4,
-        "y": 63
+        "y": 73
       },
       "id": 13,
       "interval": null,
@@ -3221,7 +3484,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -3239,7 +3501,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": false
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.summary.en_wikipedia_org.chrome.cable.pagexray.contentTypes.image.contentSize.median",
       "targets": [
         {
           "refId": "A",
@@ -3273,6 +3535,12 @@
       "description": "The size of the largest image on all the analyzed pages.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "bytes",
       "gauge": {
         "maxValue": 100,
@@ -3285,7 +3553,7 @@
         "h": 3,
         "w": 6,
         "x": 12,
-        "y": 63
+        "y": 73
       },
       "id": 42,
       "interval": null,
@@ -3304,7 +3572,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -3322,7 +3589,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": false
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.summary.en_wikipedia_org.chrome.cable.largestassets.image.0.transferSize",
       "targets": [
         {
           "refId": "A",
@@ -3357,6 +3624,12 @@
       "description": "The $function number of domains used for all the analyzed pages.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -3369,7 +3642,7 @@
         "h": 3,
         "w": 6,
         "x": 18,
-        "y": 63
+        "y": 73
       },
       "id": 17,
       "interval": null,
@@ -3388,7 +3661,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -3406,7 +3678,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": false
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.summary.en_wikipedia_org.chrome.cable.pagexray.domains.median",
       "targets": [
         {
           "refId": "A",
@@ -3429,11 +3701,12 @@
     },
     {
       "collapsed": false,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 66
+        "y": 76
       },
       "id": 61,
       "panels": [],
@@ -3454,6 +3727,12 @@
       "description": "The  $function backend time is the  $function time it takes for the network and the server to generate and start sending the HTML for all the analyzed pages. It is collected using the Navigation Timing API taking the responseStart minus navigationStart.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "ms",
       "gauge": {
         "maxValue": 100,
@@ -3466,7 +3745,7 @@
         "h": 3,
         "w": 6,
         "x": 0,
-        "y": 67
+        "y": 77
       },
       "id": 21,
       "interval": null,
@@ -3485,7 +3764,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -3503,7 +3781,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": false
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.summary.en_wikipedia_org.chrome.cable.browsertime.pageTimings.backEndTime.median",
       "targets": [
         {
           "refId": "A",
@@ -3537,6 +3815,12 @@
       "description": "The frontend $function time is the time it takes for the browser to parse and create the page.  It is collected using the Navigation Timing API by taking the loadEventStart minus responseEnd.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "ms",
       "gauge": {
         "maxValue": 100,
@@ -3549,7 +3833,7 @@
         "h": 3,
         "w": 4,
         "x": 6,
-        "y": 67
+        "y": 77
       },
       "id": 23,
       "interval": null,
@@ -3568,7 +3852,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -3586,7 +3869,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": false
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.summary.en_wikipedia_org.chrome.cable.browsertime.pageTimings.frontEndTime.median",
       "targets": [
         {
           "refId": "A",
@@ -3621,6 +3904,12 @@
       "description": "The $function number of JavaScript requests for all the analyzed pages.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -3633,7 +3922,7 @@
         "h": 3,
         "w": 5,
         "x": 10,
-        "y": 67
+        "y": 77
       },
       "id": 15,
       "interval": null,
@@ -3652,7 +3941,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -3670,7 +3958,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": false
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.summary.en_wikipedia_org.chrome.cable.pagexray.contentTypes.javascript.requests.median",
       "targets": [
         {
           "refId": "A",
@@ -3705,6 +3993,12 @@
       "description": "The $function number of CSS requests for all the analyzed pages.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -3717,7 +4011,7 @@
         "h": 3,
         "w": 4,
         "x": 15,
-        "y": 67
+        "y": 77
       },
       "id": 14,
       "interval": null,
@@ -3736,7 +4030,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -3754,7 +4047,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": false
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.summary.en_wikipedia_org.chrome.cable.pagexray.contentTypes.css.requests.median",
       "targets": [
         {
           "refId": "A",
@@ -3777,11 +4070,12 @@
     },
     {
       "collapsed": false,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 70
+        "y": 80
       },
       "id": 63,
       "panels": [],
@@ -3798,14 +4092,22 @@
       "description": "[Navigation Timing API](https://www.w3.org/TR/navigation-timing/) metrics.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
+      "fillGradient": 0,
       "grid": {},
       "gridPos": {
         "h": 11,
         "w": 24,
         "x": 0,
-        "y": 71
+        "y": 81
       },
+      "hiddenSeries": false,
       "id": 1,
       "legend": {
         "alignAsTable": true,
@@ -3824,7 +4126,9 @@
       "linewidth": 2,
       "links": [],
       "nullPointMode": "connected",
-      "options": {},
+      "options": {
+        "dataLinks": []
+      },
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -3884,11 +4188,12 @@
     },
     {
       "collapsed": false,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 82
+        "y": 92
       },
       "id": 64,
       "panels": [],
@@ -3905,14 +4210,22 @@
       "description": "The max time spent in frontend vs backend time. \n\nThe backend time is the time it takes for the network and the server to generate and start sending the HTML. It is collected using the Navigation Timing API taking the responseStart minus navigationStart.\n\nThe frontend time is the time it takes for the browser to parse and create the page.  It is collected using the Navigation Timing API by taking the loadEventStart minus responseEnd.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 6,
+      "fillGradient": 0,
       "grid": {},
       "gridPos": {
         "h": 12,
         "w": 12,
         "x": 0,
-        "y": 83
+        "y": 93
       },
+      "hiddenSeries": false,
       "id": 27,
       "legend": {
         "alignAsTable": true,
@@ -3928,7 +4241,9 @@
       "linewidth": 0,
       "links": [],
       "nullPointMode": "connected",
-      "options": {},
+      "options": {
+        "dataLinks": []
+      },
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -4005,14 +4320,22 @@
       "datasource": "${DS_GRAPHITE}",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 5,
+      "fillGradient": 0,
       "grid": {},
       "gridPos": {
         "h": 12,
         "w": 12,
         "x": 12,
-        "y": 83
+        "y": 93
       },
+      "hiddenSeries": false,
       "id": 35,
       "legend": {
         "alignAsTable": true,
@@ -4029,7 +4352,9 @@
       "linewidth": 0,
       "links": [],
       "nullPointMode": "connected",
-      "options": {},
+      "options": {
+        "dataLinks": []
+      },
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -4088,11 +4413,12 @@
     },
     {
       "collapsed": false,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 95
+        "y": 105
       },
       "id": 65,
       "panels": [],
@@ -4113,6 +4439,12 @@
       "description": "The $function transfer size of all your first party responses.  \n\nThe first party content (content you serve your self ) are defined by the requests that  match the regexp you supply with the parameter *--firstParty*",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "bytes",
       "gauge": {
         "maxValue": 100,
@@ -4125,7 +4457,7 @@
         "h": 3,
         "w": 6,
         "x": 0,
-        "y": 96
+        "y": 106
       },
       "id": 37,
       "interval": null,
@@ -4144,7 +4476,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -4162,7 +4493,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": false
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.summary.en_wikipedia_org.chrome.cable.pagexray.firstParty.contentSize.median",
       "targets": [
         {
           "refId": "A",
@@ -4195,6 +4526,12 @@
       "description": "The $function transfer size of all your third party responses.  \n\nThe third party content (content other companies/organizations serve like advertisement, social media buttons etc) are defined by the requests that doesn't match the regexp you supply with the parameter *--firstParty*",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "bytes",
       "gauge": {
         "maxValue": 100,
@@ -4207,7 +4544,7 @@
         "h": 3,
         "w": 6,
         "x": 6,
-        "y": 96
+        "y": 106
       },
       "id": 38,
       "interval": null,
@@ -4226,7 +4563,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -4277,6 +4613,12 @@
       "description": "The $function number of requests for all your first party responses.  \n\nThe first party content (content you serve your self ) are defined by the requests that match the regexp you supply with the parameter *--firstParty*",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -4289,7 +4631,7 @@
         "h": 3,
         "w": 6,
         "x": 12,
-        "y": 96
+        "y": 106
       },
       "id": 40,
       "interval": null,
@@ -4308,7 +4650,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -4326,7 +4667,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": false
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.summary.en_wikipedia_org.chrome.cable.pagexray.firstParty.requests.median",
       "targets": [
         {
           "refId": "A",
@@ -4359,6 +4700,12 @@
       "description": "The $function number of requests for all your third party responses.  \n\nThe third party content (content other companies/organizations serve like advertisement, social media buttons etc) are defined by the requests that doesn't match the regexp you supply with the parameter *--firstParty*",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -4371,7 +4718,7 @@
         "h": 3,
         "w": 6,
         "x": 18,
-        "y": 96
+        "y": 106
       },
       "id": 41,
       "interval": null,
@@ -4390,7 +4737,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -4430,11 +4776,12 @@
     },
     {
       "collapsed": false,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 99
+        "y": 109
       },
       "id": 66,
       "panels": [],
@@ -4455,6 +4802,12 @@
       "description": "The $function total size over the wire for all assets served for this page.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "bytes",
       "gauge": {
         "maxValue": 100,
@@ -4467,7 +4820,7 @@
         "h": 3,
         "w": 4,
         "x": 0,
-        "y": 100
+        "y": 110
       },
       "id": 29,
       "interval": null,
@@ -4486,7 +4839,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -4504,7 +4856,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": false
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.summary.en_wikipedia_org.chrome.cable.pagexray.transferSize.median",
       "targets": [
         {
           "refId": "A",
@@ -4537,6 +4889,12 @@
       "description": "The $function total size for all assets served for this page. This includes the uncompressed size for compressed text/css/html/js/font content.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "bytes",
       "gauge": {
         "maxValue": 100,
@@ -4549,7 +4907,7 @@
         "h": 3,
         "w": 4,
         "x": 4,
-        "y": 100
+        "y": 110
       },
       "id": 30,
       "interval": null,
@@ -4568,7 +4926,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -4586,7 +4943,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": false
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.summary.en_wikipedia_org.chrome.cable.pagexray.contentSize.median",
       "targets": [
         {
           "refId": "A",
@@ -4619,6 +4976,12 @@
       "description": "The $function total size over the wire for all stylesheet assets served for this page.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "bytes",
       "gauge": {
         "maxValue": 100,
@@ -4631,7 +4994,7 @@
         "h": 3,
         "w": 4,
         "x": 8,
-        "y": 100
+        "y": 110
       },
       "id": 31,
       "interval": null,
@@ -4650,7 +5013,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -4668,7 +5030,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": false
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.summary.en_wikipedia_org.chrome.cable.pagexray.contentTypes.css.transferSize.median",
       "targets": [
         {
           "refId": "A",
@@ -4701,6 +5063,12 @@
       "description": "The $function total size for stylesheets assets served for this page. This includes the uncompressed size of CSS responses.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "bytes",
       "gauge": {
         "maxValue": 100,
@@ -4713,7 +5081,7 @@
         "h": 3,
         "w": 4,
         "x": 12,
-        "y": 100
+        "y": 110
       },
       "id": 32,
       "interval": null,
@@ -4732,7 +5100,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -4750,7 +5117,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": false
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.summary.en_wikipedia_org.chrome.cable.pagexray.contentTypes.css.contentSize.median",
       "targets": [
         {
           "refId": "A",
@@ -4783,6 +5150,12 @@
       "description": "The $function total size over the wire for all Javascript assets served for this page.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "bytes",
       "gauge": {
         "maxValue": 100,
@@ -4795,7 +5168,7 @@
         "h": 3,
         "w": 4,
         "x": 16,
-        "y": 100
+        "y": 110
       },
       "id": 33,
       "interval": null,
@@ -4814,7 +5187,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -4832,7 +5204,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": false
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.summary.en_wikipedia_org.chrome.cable.pagexray.contentTypes.javascript.transferSize.median",
       "targets": [
         {
           "refId": "A",
@@ -4865,6 +5237,12 @@
       "description": "The $function total size for Javascripts assets served for this page. This includes the uncompressed size of JS responses.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "bytes",
       "gauge": {
         "maxValue": 100,
@@ -4877,7 +5255,7 @@
         "h": 3,
         "w": 4,
         "x": 20,
-        "y": 100
+        "y": 110
       },
       "id": 34,
       "interval": null,
@@ -4896,7 +5274,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -4914,7 +5291,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": false
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.summary.en_wikipedia_org.chrome.cable.pagexray.contentTypes.javascript.contentSize.median",
       "targets": [
         {
           "refId": "A",
@@ -4947,6 +5324,12 @@
       "description": "The $function total size over the wire for all HTML served for this page.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "bytes",
       "gauge": {
         "maxValue": 100,
@@ -4959,7 +5342,7 @@
         "h": 3,
         "w": 4,
         "x": 0,
-        "y": 103
+        "y": 113
       },
       "id": 46,
       "interval": null,
@@ -4978,7 +5361,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -4996,7 +5378,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": false
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.summary.en_wikipedia_org.chrome.cable.pagexray.contentTypes.html.transferSize.median",
       "targets": [
         {
           "refId": "A",
@@ -5029,6 +5411,12 @@
       "description": "The $function total size for HTML served for this page. This includes the uncompressed size of HTML responses.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "bytes",
       "gauge": {
         "maxValue": 100,
@@ -5041,7 +5429,7 @@
         "h": 3,
         "w": 4,
         "x": 4,
-        "y": 103
+        "y": 113
       },
       "id": 47,
       "interval": null,
@@ -5060,7 +5448,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -5078,7 +5465,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": false
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.summary.en_wikipedia_org.chrome.cable.pagexray.contentTypes.html.contentSize.median",
       "targets": [
         {
           "refId": "A",
@@ -5111,6 +5498,12 @@
       "description": "The $function total size over the wire for all font responses served for this page.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "bytes",
       "gauge": {
         "maxValue": 100,
@@ -5123,7 +5516,7 @@
         "h": 3,
         "w": 4,
         "x": 8,
-        "y": 103
+        "y": 113
       },
       "id": 48,
       "interval": null,
@@ -5142,7 +5535,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -5160,7 +5552,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": false
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.summary.en_wikipedia_org.chrome.cable.pagexray.contentTypes.font.transferSize.median",
       "targets": [
         {
           "refId": "A",
@@ -5193,6 +5585,12 @@
       "description": "The $function total size for font responses served for this page. This includes the uncompressed size of font responses.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "bytes",
       "gauge": {
         "maxValue": 100,
@@ -5205,7 +5603,7 @@
         "h": 3,
         "w": 4,
         "x": 12,
-        "y": 103
+        "y": 113
       },
       "id": 49,
       "interval": null,
@@ -5224,7 +5622,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -5242,7 +5639,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": false
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.summary.en_wikipedia_org.chrome.cable.pagexray.contentTypes.font.contentSize.median",
       "targets": [
         {
           "refId": "A",
@@ -5275,6 +5672,12 @@
       "description": "The $function total size over the wire for all image responses served for this page.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "bytes",
       "gauge": {
         "maxValue": 100,
@@ -5287,7 +5690,7 @@
         "h": 3,
         "w": 4,
         "x": 16,
-        "y": 103
+        "y": 113
       },
       "id": 50,
       "interval": null,
@@ -5306,7 +5709,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -5324,7 +5726,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": false
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.summary.en_wikipedia_org.chrome.cable.pagexray.contentTypes.image.transferSize.median",
       "targets": [
         {
           "refId": "A",
@@ -5357,6 +5759,12 @@
       "description": "The $function total size over the wire for all SVG responses served for this page.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "bytes",
       "gauge": {
         "maxValue": 100,
@@ -5369,7 +5777,7 @@
         "h": 3,
         "w": 4,
         "x": 20,
-        "y": 103
+        "y": 113
       },
       "id": 51,
       "interval": null,
@@ -5388,7 +5796,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -5406,7 +5813,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": false
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.alexaDesktop.summary.en_wikipedia_org.chrome.cable.pagexray.contentTypes.svg.transferSize.median",
       "targets": [
         {
           "refId": "A",
@@ -5427,7 +5834,7 @@
       "valueName": "avg"
     }
   ],
-  "schemaVersion": 19,
+  "schemaVersion": 25,
   "style": "dark",
   "tags": [
     "site summary"
@@ -5545,6 +5952,7 @@
         "auto_count": 30,
         "auto_min": "10s",
         "current": {
+          "selected": false,
           "text": "median",
           "value": "median"
         },
@@ -5617,5 +6025,5 @@
   "timezone": "browser",
   "title": "Site summary",
   "uid": "000000045",
-  "version": 39
+  "version": 14
 }

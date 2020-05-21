@@ -20,14 +20,14 @@
     {
       "type": "panel",
       "id": "bargauge",
-      "name": "Bar Gauge",
+      "name": "Bar gauge",
       "version": ""
     },
     {
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "6.2.0"
+      "version": "7.0.0"
     },
     {
       "type": "panel",
@@ -59,10 +59,11 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1558939134938,
+  "iteration": 1589962070832,
   "links": [],
   "panels": [
     {
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -75,7 +76,41 @@
     },
     {
       "cacheTimeout": "",
+      "datasource": "${DS_GRAPHITE}",
       "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {},
+          "mappings": [],
+          "max": 5000,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "index": 0,
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "index": 1,
+                "value": 1000
+              },
+              {
+                "color": "red",
+                "index": 2,
+                "value": 2000
+              }
+            ]
+          },
+          "unit": "ms"
+        },
+        "overrides": []
+      },
       "gridPos": {
         "h": 13,
         "w": 12,
@@ -86,38 +121,16 @@
       "links": [],
       "options": {
         "displayMode": "lcd",
-        "fieldOptions": {
+        "orientation": "horizontal",
+        "reduceOptions": {
           "calcs": [
             "mean"
           ],
-          "defaults": {
-            "max": 5000,
-            "min": 0,
-            "unit": "ms"
-          },
-          "mappings": [],
-          "override": {},
-          "thresholds": [
-            {
-              "color": "green",
-              "index": 0,
-              "value": null
-            },
-            {
-              "color": "#EAB839",
-              "index": 1,
-              "value": 1000
-            },
-            {
-              "color": "red",
-              "index": 2,
-              "value": 2000
-            }
-          ],
           "values": false
         },
-        "orientation": "horizontal"
+        "showUnfilled": true
       },
+      "pluginVersion": "7.0.0",
       "targets": [
         {
           "refId": "A",
@@ -132,7 +145,41 @@
     },
     {
       "cacheTimeout": "",
+      "datasource": "${DS_GRAPHITE}",
       "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {},
+          "mappings": [],
+          "max": 8000,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "index": 0,
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "index": 1,
+                "value": 1000
+              },
+              {
+                "color": "red",
+                "index": 2,
+                "value": 2000
+              }
+            ]
+          },
+          "unit": "ms"
+        },
+        "overrides": []
+      },
       "gridPos": {
         "h": 13,
         "w": 12,
@@ -143,38 +190,16 @@
       "links": [],
       "options": {
         "displayMode": "lcd",
-        "fieldOptions": {
+        "orientation": "horizontal",
+        "reduceOptions": {
           "calcs": [
             "mean"
           ],
-          "defaults": {
-            "max": 8000,
-            "min": 0,
-            "unit": "ms"
-          },
-          "mappings": [],
-          "override": {},
-          "thresholds": [
-            {
-              "color": "green",
-              "index": 0,
-              "value": null
-            },
-            {
-              "color": "#EAB839",
-              "index": 1,
-              "value": 1000
-            },
-            {
-              "color": "red",
-              "index": 2,
-              "value": 2000
-            }
-          ],
           "values": false
         },
-        "orientation": "horizontal"
+        "showUnfilled": true
       },
+      "pluginVersion": "7.0.0",
       "targets": [
         {
           "refId": "A",
@@ -189,6 +214,7 @@
     },
     {
       "collapsed": true,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -547,6 +573,7 @@
     },
     {
       "collapsed": false,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -560,7 +587,41 @@
     },
     {
       "cacheTimeout": "",
+      "datasource": "${DS_GRAPHITE}",
       "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {},
+          "mappings": [],
+          "max": 10000,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "index": 0,
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "index": 1,
+                "value": 1000
+              },
+              {
+                "color": "red",
+                "index": 2,
+                "value": 2000
+              }
+            ]
+          },
+          "unit": "ms"
+        },
+        "overrides": []
+      },
       "gridPos": {
         "h": 13,
         "w": 12,
@@ -571,38 +632,16 @@
       "links": [],
       "options": {
         "displayMode": "lcd",
-        "fieldOptions": {
+        "orientation": "horizontal",
+        "reduceOptions": {
           "calcs": [
             "mean"
           ],
-          "defaults": {
-            "max": 10000,
-            "min": 0,
-            "unit": "ms"
-          },
-          "mappings": [],
-          "override": {},
-          "thresholds": [
-            {
-              "color": "green",
-              "index": 0,
-              "value": null
-            },
-            {
-              "color": "#EAB839",
-              "index": 1,
-              "value": 1000
-            },
-            {
-              "color": "red",
-              "index": 2,
-              "value": 2000
-            }
-          ],
           "values": false
         },
-        "orientation": "horizontal"
+        "showUnfilled": true
       },
+      "pluginVersion": "7.0.0",
       "targets": [
         {
           "refId": "A",
@@ -617,7 +656,41 @@
     },
     {
       "cacheTimeout": "",
+      "datasource": "${DS_GRAPHITE}",
       "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {},
+          "mappings": [],
+          "max": 15000,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "index": 0,
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "index": 1,
+                "value": 1000
+              },
+              {
+                "color": "red",
+                "index": 2,
+                "value": 2000
+              }
+            ]
+          },
+          "unit": "ms"
+        },
+        "overrides": []
+      },
       "gridPos": {
         "h": 13,
         "w": 12,
@@ -628,38 +701,16 @@
       "links": [],
       "options": {
         "displayMode": "lcd",
-        "fieldOptions": {
+        "orientation": "horizontal",
+        "reduceOptions": {
           "calcs": [
             "mean"
           ],
-          "defaults": {
-            "max": 15000,
-            "min": 0,
-            "unit": "ms"
-          },
-          "mappings": [],
-          "override": {},
-          "thresholds": [
-            {
-              "color": "green",
-              "index": 0,
-              "value": null
-            },
-            {
-              "color": "#EAB839",
-              "index": 1,
-              "value": 1000
-            },
-            {
-              "color": "red",
-              "index": 2,
-              "value": 2000
-            }
-          ],
           "values": false
         },
-        "orientation": "horizontal"
+        "showUnfilled": true
       },
+      "pluginVersion": "7.0.0",
       "targets": [
         {
           "refId": "A",
@@ -674,6 +725,7 @@
     },
     {
       "collapsed": false,
+      "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -687,7 +739,41 @@
     },
     {
       "cacheTimeout": "",
+      "datasource": "${DS_GRAPHITE}",
       "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {},
+          "mappings": [],
+          "max": 5000000,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "index": 0,
+                "value": null
+              },
+              {
+                "color": "yellow",
+                "index": 1,
+                "value": 20000
+              },
+              {
+                "color": "red",
+                "index": 2,
+                "value": 2000000
+              }
+            ]
+          },
+          "unit": "decbytes"
+        },
+        "overrides": []
+      },
       "gridPos": {
         "h": 13,
         "w": 12,
@@ -698,38 +784,16 @@
       "links": [],
       "options": {
         "displayMode": "lcd",
-        "fieldOptions": {
+        "orientation": "horizontal",
+        "reduceOptions": {
           "calcs": [
             "mean"
           ],
-          "defaults": {
-            "max": 5000000,
-            "min": 0,
-            "unit": "decbytes"
-          },
-          "mappings": [],
-          "override": {},
-          "thresholds": [
-            {
-              "color": "green",
-              "index": 0,
-              "value": null
-            },
-            {
-              "color": "yellow",
-              "index": 1,
-              "value": 20000
-            },
-            {
-              "color": "red",
-              "index": 2,
-              "value": 2000000
-            }
-          ],
           "values": false
         },
-        "orientation": "horizontal"
+        "showUnfilled": true
       },
+      "pluginVersion": "7.0.0",
       "targets": [
         {
           "refId": "A",
@@ -744,7 +808,41 @@
     },
     {
       "cacheTimeout": "",
+      "datasource": "${DS_GRAPHITE}",
       "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {},
+          "mappings": [],
+          "max": 200,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "index": 0,
+                "value": null
+              },
+              {
+                "color": "yellow",
+                "index": 1,
+                "value": 10
+              },
+              {
+                "color": "red",
+                "index": 2,
+                "value": 20
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
       "gridPos": {
         "h": 13,
         "w": 12,
@@ -755,38 +853,16 @@
       "links": [],
       "options": {
         "displayMode": "lcd",
-        "fieldOptions": {
+        "orientation": "horizontal",
+        "reduceOptions": {
           "calcs": [
             "mean"
           ],
-          "defaults": {
-            "max": 200,
-            "min": 0,
-            "unit": "none"
-          },
-          "mappings": [],
-          "override": {},
-          "thresholds": [
-            {
-              "color": "green",
-              "index": 0,
-              "value": null
-            },
-            {
-              "color": "yellow",
-              "index": 1,
-              "value": 10
-            },
-            {
-              "color": "red",
-              "index": 2,
-              "value": 20
-            }
-          ],
           "values": false
         },
-        "orientation": "horizontal"
+        "showUnfilled": true
       },
+      "pluginVersion": "7.0.0",
       "targets": [
         {
           "refId": "A",
@@ -800,7 +876,7 @@
       "type": "bargauge"
     }
   ],
-  "schemaVersion": 18,
+  "schemaVersion": 25,
   "style": "dark",
   "tags": [],
   "templating": {
@@ -963,7 +1039,6 @@
   },
   "timepicker": {
     "refresh_intervals": [
-      "5s",
       "10s",
       "30s",
       "1m",
@@ -989,5 +1064,5 @@
   "timezone": "",
   "title": "WebPageTest leaderboard",
   "uid": "SclfSyWWk",
-  "version": 7
+  "version": 14
 }

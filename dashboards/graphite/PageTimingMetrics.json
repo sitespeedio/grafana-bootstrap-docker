@@ -21,7 +21,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "6.4.1"
+      "version": "7.0.0"
     },
     {
       "type": "panel",
@@ -81,9 +81,11 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1570128024049,
+  "iteration": 1589955780107,
   "links": [
     {
+      "$$hashKey": "object:560",
+      "asDropdown": false,
       "icon": "external link",
       "includeVars": true,
       "keepTime": true,
@@ -93,6 +95,7 @@
       "type": "dashboards"
     },
     {
+      "$$hashKey": "object:561",
       "icon": "external link",
       "includeVars": true,
       "keepTime": true,
@@ -102,6 +105,7 @@
       "type": "dashboards"
     },
     {
+      "$$hashKey": "object:562",
       "icon": "external link",
       "includeVars": true,
       "keepTime": true,
@@ -135,14 +139,21 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": "${DS_GRAPHITE}",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
-        "h": 19,
+        "h": 21,
         "w": 12,
         "x": 0,
         "y": 1
       },
+      "hiddenSeries": false,
       "id": 80,
       "legend": {
         "alignAsTable": true,
@@ -279,14 +290,21 @@
       "datasource": "${DS_GRAPHITE}",
       "decimals": 0,
       "description": "The total number of requests.",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
-        "h": 6,
+        "h": 7,
         "w": 6,
         "x": 12,
         "y": 1
       },
+      "hiddenSeries": false,
       "id": 159,
       "legend": {
         "alignAsTable": true,
@@ -372,14 +390,21 @@
       "dashes": false,
       "datasource": "${DS_GRAPHITE}",
       "description": "The total transfer size over the wire (compressed size if your asset is compressed) of all assets on the page. The content size is the uncompressed size for compressed text/css/html/js/font content.",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
-        "h": 6,
+        "h": 7,
         "w": 6,
         "x": 18,
         "y": 1
       },
+      "hiddenSeries": false,
       "id": 182,
       "legend": {
         "alignAsTable": true,
@@ -472,14 +497,21 @@
       "datasource": "${DS_GRAPHITE}",
       "decimals": 0,
       "description": "The number of DOM elements on the page.",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
         "h": 5,
         "w": 6,
         "x": 12,
-        "y": 7
+        "y": 8
       },
+      "hiddenSeries": false,
       "id": 160,
       "legend": {
         "alignAsTable": true,
@@ -563,14 +595,21 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": "${DS_GRAPHITE}",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
         "h": 5,
         "w": 6,
         "x": 18,
-        "y": 7
+        "y": 8
       },
+      "hiddenSeries": false,
       "id": 101,
       "legend": {
         "alignAsTable": true,
@@ -657,14 +696,21 @@
       "datasource": "${DS_GRAPHITE}",
       "decimals": 0,
       "description": "Metrics from the Long Task API. CPU tasks that takes more than 50 ms to run. Enable collecting long tasks with --cpu [Chrome only].",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
-        "h": 8,
+        "h": 9,
         "w": 6,
         "x": 12,
-        "y": 12
+        "y": 13
       },
+      "hiddenSeries": false,
       "id": 99,
       "legend": {
         "alignAsTable": true,
@@ -768,14 +814,21 @@
       "datasource": "${DS_GRAPHITE}",
       "decimals": 0,
       "description": "The longest CPU task. Enable collecting long tasks with --cpu [Chrome only].",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
-        "h": 8,
+        "h": 9,
         "w": 6,
         "x": 18,
-        "y": 12
+        "y": 13
       },
+      "hiddenSeries": false,
       "id": 100,
       "legend": {
         "alignAsTable": true,
@@ -860,14 +913,21 @@
       "datasource": "${DS_GRAPHITE}",
       "decimals": 2,
       "description": "Metrics from the Long Task API. CPU tasks that takes more than 50 ms to run. Enable collecting long tasks with --cpu [Chrome only].",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
         "h": 5,
         "w": 24,
         "x": 0,
-        "y": 20
+        "y": 22
       },
+      "hiddenSeries": false,
       "id": 132,
       "legend": {
         "alignAsTable": true,
@@ -972,7 +1032,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 25
+        "y": 27
       },
       "id": 122,
       "panels": [
@@ -983,14 +1043,21 @@
           "dashes": false,
           "datasource": "${DS_GRAPHITE}",
           "description": "The Visual Metrics are collected by recording and analysing a video of the screen.",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 26
+            "y": 28
           },
+          "hiddenSeries": false,
           "id": 124,
           "legend": {
             "alignAsTable": true,
@@ -1097,14 +1164,21 @@
           "dashes": false,
           "datasource": "${DS_GRAPHITE}",
           "description": "The Visual Metrics are collected by recording and analysing a video of the screen.",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 26
+            "y": 28
           },
+          "hiddenSeries": false,
           "id": 126,
           "legend": {
             "alignAsTable": true,
@@ -1212,14 +1286,21 @@
           "dashes": false,
           "datasource": "${DS_GRAPHITE}",
           "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 34
+            "y": 36
           },
+          "hiddenSeries": false,
           "id": 128,
           "legend": {
             "alignAsTable": true,
@@ -1326,14 +1407,21 @@
           "dashes": false,
           "datasource": "${DS_GRAPHITE}",
           "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 34
+            "y": 36
           },
+          "hiddenSeries": false,
           "id": 130,
           "legend": {
             "alignAsTable": true,
@@ -1440,14 +1528,21 @@
           "dashes": false,
           "datasource": "${DS_GRAPHITE}",
           "description": "The Visual Metrics are collected by recording and analysing a video of the screen.",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
             "h": 5,
             "w": 24,
             "x": 0,
-            "y": 42
+            "y": 44
           },
+          "hiddenSeries": false,
           "id": 179,
           "legend": {
             "alignAsTable": true,
@@ -1544,7 +1639,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 26
+        "y": 28
       },
       "id": 146,
       "panels": [],
@@ -1564,6 +1659,12 @@
       "description": "The document height in pixels.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -1576,7 +1677,7 @@
         "h": 2,
         "w": 3,
         "x": 0,
-        "y": 27
+        "y": 29
       },
       "id": 149,
       "interval": null,
@@ -1595,7 +1696,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -1613,7 +1713,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": false
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.desktop.pageSummary.en_wikipedia_org._wiki_Facebook.chrome.cable.coach.advice.info.documentHeight",
       "targets": [
         {
           "refId": "A",
@@ -1647,6 +1747,12 @@
       "description": "",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -1659,7 +1765,7 @@
         "h": 2,
         "w": 2,
         "x": 3,
-        "y": 27
+        "y": 29
       },
       "id": 151,
       "interval": null,
@@ -1678,7 +1784,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -1696,7 +1801,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": false
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.desktop.pageSummary.en_wikipedia_org._wiki_Facebook.chrome.cable.pagexray.totalDomains",
       "targets": [
         {
           "refId": "A",
@@ -1730,6 +1835,12 @@
       "description": "",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -1742,7 +1853,7 @@
         "h": 2,
         "w": 2,
         "x": 5,
-        "y": 27
+        "y": 29
       },
       "id": 152,
       "interval": null,
@@ -1761,7 +1872,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -1779,7 +1889,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": false
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.desktop.pageSummary.en_wikipedia_org._wiki_Facebook.chrome.cable.pagexray.cookieStats.total",
       "targets": [
         {
           "refId": "A",
@@ -1813,6 +1923,12 @@
       "description": "The average DOM depth of the page.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -1825,7 +1941,7 @@
         "h": 2,
         "w": 3,
         "x": 7,
-        "y": 27
+        "y": 29
       },
       "id": 155,
       "interval": null,
@@ -1844,7 +1960,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -1862,7 +1977,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": false
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.desktop.pageSummary.en_wikipedia_org._wiki_Facebook.chrome.cable.coach.advice.info.domDepth.avg",
       "targets": [
         {
           "refId": "A",
@@ -1895,6 +2010,12 @@
       "description": "The max depth of DOM elements on the page.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -1907,7 +2028,7 @@
         "h": 2,
         "w": 3,
         "x": 10,
-        "y": 27
+        "y": 29
       },
       "id": 156,
       "interval": null,
@@ -1926,7 +2047,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -1944,7 +2064,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": false
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.desktop.pageSummary.en_wikipedia_org._wiki_Facebook.chrome.cable.coach.advice.info.domDepth.max",
       "targets": [
         {
           "refId": "A",
@@ -1977,6 +2097,12 @@
       "description": "",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "decbytes",
       "gauge": {
         "maxValue": 100,
@@ -1989,7 +2115,7 @@
         "h": 2,
         "w": 3,
         "x": 13,
-        "y": 27
+        "y": 29
       },
       "id": 150,
       "interval": null,
@@ -2008,7 +2134,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -2026,7 +2151,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": false
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.desktop.pageSummary.en_wikipedia_org._wiki_Facebook.chrome.cable.coach.advice.info.localStorageSize",
       "targets": [
         {
           "refId": "A",
@@ -2060,6 +2185,12 @@
       "description": "The $function cache expire time of all responses for the page.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "ms",
       "gauge": {
         "maxValue": 100,
@@ -2072,7 +2203,7 @@
         "h": 2,
         "w": 3,
         "x": 16,
-        "y": 27
+        "y": 29
       },
       "id": 153,
       "interval": null,
@@ -2091,7 +2222,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -2109,7 +2239,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": false
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.desktop.pageSummary.en_wikipedia_org._wiki_Facebook.chrome.cable.pagexray.expireStats.median",
       "targets": [
         {
           "refId": "A",
@@ -2143,6 +2273,12 @@
       "description": "The $function last modified time of all responses for the page.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "ms",
       "gauge": {
         "maxValue": 100,
@@ -2155,7 +2291,7 @@
         "h": 2,
         "w": 3,
         "x": 19,
-        "y": 27
+        "y": 29
       },
       "id": 154,
       "interval": null,
@@ -2174,7 +2310,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -2192,7 +2327,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": false
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.desktop.pageSummary.en_wikipedia_org._wiki_Facebook.chrome.cable.pagexray.lastModifiedStats.median",
       "targets": [
         {
           "refId": "A",
@@ -2226,6 +2361,12 @@
       "description": "The total number of iframes used on the page.",
       "editable": true,
       "error": false,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -2238,7 +2379,7 @@
         "h": 2,
         "w": 2,
         "x": 22,
-        "y": 27
+        "y": 29
       },
       "id": 148,
       "interval": null,
@@ -2257,7 +2398,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -2275,7 +2415,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": false
       },
-      "tableColumn": "",
+      "tableColumn": "sitespeed_io.desktop.pageSummary.en_wikipedia_org._wiki_Facebook.chrome.cable.coach.advice.info.iframes",
       "targets": [
         {
           "refId": "A",
@@ -2303,7 +2443,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 29
+        "y": 31
       },
       "id": 158,
       "panels": [
@@ -2320,6 +2460,12 @@
           "description": "The coach score (0-100) calculated by the [Coach](https://www.sitespeed.io/documentation/coach/) using best practices.",
           "editable": true,
           "error": false,
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "format": "none",
           "gauge": {
             "maxValue": 100,
@@ -2329,10 +2475,10 @@
             "thresholdMarkers": false
           },
           "gridPos": {
-            "h": 2,
-            "w": 3,
+            "h": 3,
+            "w": 4,
             "x": 0,
-            "y": 30
+            "y": 32
           },
           "id": 162,
           "interval": null,
@@ -2351,7 +2497,6 @@
           "maxDataPoints": 100,
           "nullPointMode": "connected",
           "nullText": null,
-          "options": {},
           "postfix": "",
           "postfixFontSize": "50%",
           "prefix": "",
@@ -2369,7 +2514,7 @@
             "lineColor": "rgb(31, 120, 193)",
             "show": false
           },
-          "tableColumn": "",
+          "tableColumn": "sitespeed_io.desktop.pageSummary.en_wikipedia_org._wiki_Barack_Obama.chrome.cable.coach.advice.score",
           "targets": [
             {
               "refId": "A",
@@ -2402,6 +2547,12 @@
           "description": "The performance score (0-100) calculated by the [Coach](https://www.sitespeed.io/documentation/coach/) using performance best practices.",
           "editable": true,
           "error": false,
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "format": "none",
           "gauge": {
             "maxValue": 100,
@@ -2411,10 +2562,10 @@
             "thresholdMarkers": true
           },
           "gridPos": {
-            "h": 2,
-            "w": 3,
-            "x": 3,
-            "y": 30
+            "h": 3,
+            "w": 4,
+            "x": 4,
+            "y": 32
           },
           "id": 163,
           "interval": null,
@@ -2433,7 +2584,6 @@
           "maxDataPoints": 100,
           "nullPointMode": "connected",
           "nullText": null,
-          "options": {},
           "postfix": "",
           "postfixFontSize": "50%",
           "prefix": "",
@@ -2451,7 +2601,7 @@
             "lineColor": "rgb(31, 120, 193)",
             "show": false
           },
-          "tableColumn": "",
+          "tableColumn": "sitespeed_io.desktop.pageSummary.en_wikipedia_org._wiki_Barack_Obama.chrome.cable.coach.advice.performance.score",
           "targets": [
             {
               "refId": "A",
@@ -2484,6 +2634,12 @@
           "description": "The accessibility score (0-100) calculated by the [Coach](https://www.sitespeed.io/documentation/coach/) using accessibility best practices.",
           "editable": true,
           "error": false,
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "format": "none",
           "gauge": {
             "maxValue": 100,
@@ -2493,10 +2649,10 @@
             "thresholdMarkers": true
           },
           "gridPos": {
-            "h": 2,
-            "w": 3,
-            "x": 6,
-            "y": 30
+            "h": 3,
+            "w": 4,
+            "x": 8,
+            "y": 32
           },
           "id": 164,
           "interval": null,
@@ -2515,7 +2671,6 @@
           "maxDataPoints": 100,
           "nullPointMode": "connected",
           "nullText": null,
-          "options": {},
           "postfix": "",
           "postfixFontSize": "50%",
           "prefix": "",
@@ -2533,7 +2688,7 @@
             "lineColor": "rgb(31, 120, 193)",
             "show": false
           },
-          "tableColumn": "",
+          "tableColumn": "sitespeed_io.desktop.pageSummary.en_wikipedia_org._wiki_Barack_Obama.chrome.cable.coach.advice.accessibility.score",
           "targets": [
             {
               "refId": "A",
@@ -2566,6 +2721,12 @@
           "description": "The best practice score (0-100) calculated by the [Coach](https://www.sitespeed.io/documentation/coach/) using web best practices.",
           "editable": true,
           "error": false,
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "format": "none",
           "gauge": {
             "maxValue": 100,
@@ -2575,10 +2736,10 @@
             "thresholdMarkers": true
           },
           "gridPos": {
-            "h": 2,
-            "w": 3,
-            "x": 9,
-            "y": 30
+            "h": 3,
+            "w": 4,
+            "x": 12,
+            "y": 32
           },
           "id": 165,
           "interval": null,
@@ -2597,7 +2758,6 @@
           "maxDataPoints": 100,
           "nullPointMode": "connected",
           "nullText": null,
-          "options": {},
           "postfix": "",
           "postfixFontSize": "50%",
           "prefix": "",
@@ -2615,7 +2775,7 @@
             "lineColor": "rgb(31, 120, 193)",
             "show": false
           },
-          "tableColumn": "",
+          "tableColumn": "sitespeed_io.desktop.pageSummary.en_wikipedia_org._wiki_Barack_Obama.chrome.cable.coach.advice.bestpractice.score",
           "targets": [
             {
               "refId": "A",
@@ -2648,6 +2808,12 @@
           "description": "The privacy score (0-100) calculated by the [Coach](https://www.sitespeed.io/documentation/coach/) using user privacy best practices.",
           "editable": true,
           "error": false,
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "format": "none",
           "gauge": {
             "maxValue": 100,
@@ -2657,10 +2823,10 @@
             "thresholdMarkers": true
           },
           "gridPos": {
-            "h": 2,
-            "w": 3,
-            "x": 12,
-            "y": 30
+            "h": 3,
+            "w": 4,
+            "x": 16,
+            "y": 32
           },
           "id": 166,
           "interval": null,
@@ -2679,7 +2845,6 @@
           "maxDataPoints": 100,
           "nullPointMode": "connected",
           "nullText": null,
-          "options": {},
           "postfix": "",
           "postfixFontSize": "50%",
           "prefix": "",
@@ -2697,7 +2862,7 @@
             "lineColor": "rgb(31, 120, 193)",
             "show": false
           },
-          "tableColumn": "",
+          "tableColumn": "sitespeed_io.desktop.pageSummary.en_wikipedia_org._wiki_Barack_Obama.chrome.cable.coach.advice.privacy.score",
           "targets": [
             {
               "refId": "A",
@@ -2728,7 +2893,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 30
+        "y": 32
       },
       "id": 115,
       "panels": [],
@@ -2743,14 +2908,21 @@
       "dashes": false,
       "datasource": "${DS_GRAPHITE}",
       "description": "Timing metrics collected using browser APIs like the Navigation Timing API.",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
-        "h": 12,
+        "h": 16,
         "w": 12,
         "x": 0,
-        "y": 31
+        "y": 33
       },
+      "hiddenSeries": false,
       "id": 118,
       "legend": {
         "alignAsTable": true,
@@ -2878,14 +3050,21 @@
       "dashes": false,
       "datasource": "${DS_GRAPHITE}",
       "description": "Timings collected using the [Element Timing API](https://wicg.github.io/element-timing/).",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
-        "h": 12,
+        "h": 16,
         "w": 12,
         "x": 12,
-        "y": 31
+        "y": 33
       },
+      "hiddenSeries": false,
       "id": 119,
       "legend": {
         "alignAsTable": true,
@@ -2972,14 +3151,21 @@
       "dashes": false,
       "datasource": "${DS_GRAPHITE}",
       "description": "All User Timing marks created on the page using the [User Timing API](https://www.w3.org/TR/user-timing/).",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
         "h": 7,
         "w": 24,
         "x": 0,
-        "y": 43
+        "y": 49
       },
+      "hiddenSeries": false,
       "id": 120,
       "legend": {
         "alignAsTable": true,
@@ -3065,7 +3251,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 50
+        "y": 56
       },
       "id": 113,
       "panels": [],
@@ -3078,14 +3264,21 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": "${DS_GRAPHITE}",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
         "h": 8,
         "w": 6,
         "x": 0,
-        "y": 51
+        "y": 57
       },
+      "hiddenSeries": false,
       "id": 106,
       "legend": {
         "alignAsTable": true,
@@ -3175,14 +3368,21 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": "${DS_GRAPHITE}",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
         "h": 8,
         "w": 6,
         "x": 6,
-        "y": 51
+        "y": 57
       },
+      "hiddenSeries": false,
       "id": 107,
       "legend": {
         "alignAsTable": true,
@@ -3272,14 +3472,21 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": "${DS_GRAPHITE}",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
         "h": 8,
         "w": 6,
         "x": 12,
-        "y": 51
+        "y": 57
       },
+      "hiddenSeries": false,
       "id": 108,
       "legend": {
         "alignAsTable": true,
@@ -3369,14 +3576,21 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": "${DS_GRAPHITE}",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
         "h": 8,
         "w": 6,
         "x": 18,
-        "y": 51
+        "y": 57
       },
+      "hiddenSeries": false,
       "id": 109,
       "legend": {
         "alignAsTable": true,
@@ -3461,7 +3675,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 59
+        "y": 65
       },
       "id": 96,
       "panels": [],
@@ -3474,14 +3688,21 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": "${DS_GRAPHITE}",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
-        "h": 12,
+        "h": 15,
         "w": 12,
         "x": 0,
-        "y": 60
+        "y": 66
       },
+      "hiddenSeries": false,
       "id": 81,
       "legend": {
         "alignAsTable": true,
@@ -3565,14 +3786,21 @@
       "dashes": false,
       "datasource": "${DS_GRAPHITE}",
       "description": "The CPU metrics are collected from Chrome when you add --chrome.timeline to your run. The trace log is analyzed and sorted by type.",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
-        "h": 12,
+        "h": 15,
         "w": 12,
         "x": 12,
-        "y": 60
+        "y": 66
       },
+      "hiddenSeries": false,
       "id": 138,
       "legend": {
         "alignAsTable": true,
@@ -3659,7 +3887,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 72
+        "y": 81
       },
       "id": 136,
       "panels": [
@@ -3670,14 +3898,21 @@
           "dashes": false,
           "datasource": "${DS_GRAPHITE}",
           "decimals": 0,
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "fill": 0,
           "fillGradient": 0,
           "gridPos": {
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 65
+            "y": 82
           },
+          "hiddenSeries": false,
           "id": 142,
           "legend": {
             "alignAsTable": true,
@@ -3784,14 +4019,21 @@
           "dashes": false,
           "datasource": "${DS_GRAPHITE}",
           "decimals": 0,
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "fill": 0,
           "fillGradient": 0,
           "gridPos": {
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 65
+            "y": 82
           },
+          "hiddenSeries": false,
           "id": 144,
           "legend": {
             "alignAsTable": true,
@@ -3898,14 +4140,21 @@
           "dashes": false,
           "datasource": "${DS_GRAPHITE}",
           "description": "Activate by adding --thirdParty.cpu  to to your run.",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "fill": 0,
           "fillGradient": 0,
           "gridPos": {
             "h": 14,
             "w": 24,
             "x": 0,
-            "y": 75
+            "y": 92
           },
+          "hiddenSeries": false,
           "id": 134,
           "legend": {
             "alignAsTable": true,
@@ -3994,7 +4243,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 73
+        "y": 82
       },
       "id": 168,
       "panels": [
@@ -4008,6 +4257,12 @@
           "description": "",
           "editable": true,
           "error": false,
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "fill": 0,
           "fillGradient": 0,
           "grid": {},
@@ -4015,8 +4270,9 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 64
+            "y": 83
           },
+          "hiddenSeries": false,
           "id": 170,
           "legend": {
             "alignAsTable": true,
@@ -4105,7 +4361,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 74
+        "y": 83
       },
       "id": 140,
       "panels": [
@@ -4217,7 +4473,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 75
+        "y": 84
       },
       "id": 184,
       "panels": [
@@ -4229,15 +4485,22 @@
           "dashes": false,
           "datasource": "${DS_GRAPHITE}",
           "decimals": 0,
-          "description": "Layout shift measured using the [Layout Instability API](https://web.dev/layout-instability-api).",
+          "description": "Cumulative Layout Shift measured using the [Cumulative Layout Shift API](https://web.dev/cls/).",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "fill": 0,
           "fillGradient": 0,
           "gridPos": {
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 1
+            "y": 85
           },
+          "hiddenSeries": false,
           "id": 185,
           "legend": {
             "alignAsTable": true,
@@ -4276,7 +4539,7 @@
           "timeFrom": null,
           "timeRegions": [],
           "timeShift": null,
-          "title": "Layout Shift  [$function]",
+          "title": "Cumulative Layout Shift  [$function]",
           "tooltip": {
             "shared": true,
             "sort": 0,
@@ -4292,8 +4555,9 @@
           },
           "yaxes": [
             {
+              "$$hashKey": "object:453",
               "decimals": 0,
-              "format": "percent",
+              "format": "none",
               "label": "",
               "logBase": 1,
               "max": null,
@@ -4301,6 +4565,7 @@
               "show": true
             },
             {
+              "$$hashKey": "object:454",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -4315,7 +4580,7 @@
           }
         }
       ],
-      "title": "Layout shift [Chrome only]",
+      "title": "Cumulative Layout Shift [Chrome only]",
       "type": "row"
     },
     {
@@ -4325,7 +4590,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 76
+        "y": 85
       },
       "id": 176,
       "panels": [
@@ -4339,6 +4604,12 @@
           "description": "All requests and their HTTP Status Code.",
           "editable": true,
           "error": false,
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "fill": 5,
           "fillGradient": 0,
           "grid": {},
@@ -4346,8 +4617,9 @@
             "h": 9,
             "w": 24,
             "x": 0,
-            "y": 66
+            "y": 86
           },
+          "hiddenSeries": false,
           "id": 178,
           "legend": {
             "alignAsTable": true,
@@ -4436,7 +4708,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 77
+        "y": 86
       },
       "id": 172,
       "panels": [
@@ -4448,14 +4720,21 @@
           "datasource": "${DS_GRAPHITE}",
           "decimals": 0,
           "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "fill": 0,
           "fillGradient": 0,
           "gridPos": {
             "h": 7,
             "w": 12,
             "x": 0,
-            "y": 67
+            "y": 87
           },
+          "hiddenSeries": false,
           "id": 111,
           "legend": {
             "alignAsTable": true,
@@ -4543,14 +4822,21 @@
           "dashes": false,
           "datasource": "${DS_GRAPHITE}",
           "description": "Show number of errors from Browsertime and other tools.",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "fill": 0,
           "fillGradient": 0,
           "gridPos": {
             "h": 7,
             "w": 12,
             "x": 12,
-            "y": 67
+            "y": 87
           },
+          "hiddenSeries": false,
           "id": 174,
           "legend": {
             "alignAsTable": true,
@@ -4636,7 +4922,7 @@
     }
   ],
   "refresh": false,
-  "schemaVersion": 20,
+  "schemaVersion": 25,
   "style": "dark",
   "tags": [
     "pages",
@@ -4777,6 +5063,7 @@
         "auto_count": 30,
         "auto_min": "10s",
         "current": {
+          "selected": false,
           "text": "median",
           "value": "median"
         },
@@ -4828,7 +5115,6 @@
   },
   "timepicker": {
     "refresh_intervals": [
-      "5s",
       "10s",
       "30s",
       "1m",
@@ -4854,5 +5140,5 @@
   "timezone": "browser",
   "title": "Page timing metrics",
   "uid": "000000059",
-  "version": 17
+  "version": 14
 }

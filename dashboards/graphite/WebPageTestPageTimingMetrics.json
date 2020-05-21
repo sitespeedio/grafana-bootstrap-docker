@@ -21,7 +21,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "6.4.1"
+      "version": "7.0.0"
     },
     {
       "type": "panel",
@@ -53,7 +53,8 @@
         "iconColor": "rgb(96, 255, 103)",
         "limit": 100,
         "name": "runs",
-        "tags": "$base $path $domain $page $browser $connectivity",
+        "showIn": 0,
+        "tags": "$base $path $domain $page $browser $connectivity $location",
         "type": "alert"
       }
     ]
@@ -62,7 +63,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1570114644040,
+  "iteration": 1589956669341,
   "links": [],
   "panels": [
     {
@@ -86,6 +87,12 @@
       "dashes": false,
       "datasource": "${DS_GRAPHITE}",
       "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
@@ -94,6 +101,7 @@
         "x": 0,
         "y": 1
       },
+      "hiddenSeries": false,
       "id": 1,
       "legend": {
         "alignAsTable": true,
@@ -132,8 +140,7 @@
           "lines": false
         },
         {
-          "alias": "render",
-          "lines": false
+          "alias": "render"
         }
       ],
       "spaceLength": 10,
@@ -177,8 +184,8 @@
       "timeShift": null,
       "title": "Metrics",
       "tooltip": {
-        "shared": true,
-        "sort": 2,
+        "shared": false,
+        "sort": 0,
         "value_type": "individual"
       },
       "type": "graph",
@@ -220,6 +227,12 @@
       "datasource": "${DS_GRAPHITE}",
       "decimals": 0,
       "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
@@ -228,6 +241,7 @@
         "x": 12,
         "y": 1
       },
+      "hiddenSeries": false,
       "id": 15,
       "legend": {
         "alignAsTable": true,
@@ -318,6 +332,12 @@
       "dashes": false,
       "datasource": "${DS_GRAPHITE}",
       "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
@@ -326,6 +346,7 @@
         "x": 18,
         "y": 1
       },
+      "hiddenSeries": false,
       "id": 13,
       "legend": {
         "alignAsTable": true,
@@ -416,6 +437,12 @@
       "datasource": "${DS_GRAPHITE}",
       "decimals": 0,
       "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
@@ -424,6 +451,7 @@
         "x": 12,
         "y": 6
       },
+      "hiddenSeries": false,
       "id": 16,
       "legend": {
         "alignAsTable": true,
@@ -516,6 +544,12 @@
       "dashes": false,
       "datasource": "${DS_GRAPHITE}",
       "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
@@ -524,6 +558,7 @@
         "x": 18,
         "y": 6
       },
+      "hiddenSeries": false,
       "id": 17,
       "legend": {
         "alignAsTable": true,
@@ -611,6 +646,12 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": "${DS_GRAPHITE}",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
@@ -619,6 +660,7 @@
         "x": 12,
         "y": 11
       },
+      "hiddenSeries": false,
       "id": 3,
       "legend": {
         "alignAsTable": true,
@@ -675,8 +717,8 @@
       "timeShift": null,
       "title": "Interactive",
       "tooltip": {
-        "shared": true,
-        "sort": 2,
+        "shared": false,
+        "sort": 0,
         "value_type": "individual"
       },
       "type": "graph",
@@ -728,14 +770,21 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": "${DS_GRAPHITE}",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "fill": 0,
           "fillGradient": 0,
           "gridPos": {
             "h": 7,
             "w": 12,
             "x": 0,
-            "y": 1
+            "y": 21
           },
+          "hiddenSeries": false,
           "id": 26,
           "legend": {
             "alignAsTable": true,
@@ -829,14 +878,21 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": "${DS_GRAPHITE}",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "fill": 0,
           "fillGradient": 0,
           "gridPos": {
             "h": 7,
             "w": 12,
             "x": 12,
-            "y": 1
+            "y": 21
           },
+          "hiddenSeries": false,
           "id": 27,
           "legend": {
             "alignAsTable": true,
@@ -930,14 +986,21 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": "${DS_GRAPHITE}",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "fill": 0,
           "fillGradient": 0,
           "gridPos": {
             "h": 7,
             "w": 12,
             "x": 0,
-            "y": 8
+            "y": 28
           },
+          "hiddenSeries": false,
           "id": 28,
           "legend": {
             "alignAsTable": true,
@@ -1031,14 +1094,21 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": "${DS_GRAPHITE}",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "fill": 0,
           "fillGradient": 0,
           "gridPos": {
             "h": 7,
             "w": 12,
             "x": 12,
-            "y": 8
+            "y": 28
           },
+          "hiddenSeries": false,
           "id": 29,
           "legend": {
             "alignAsTable": true,
@@ -1124,105 +1194,112 @@
             "align": false,
             "alignLevel": null
           }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_GRAPHITE}",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
+          "fill": 0,
+          "fillGradient": 0,
+          "gridPos": {
+            "h": 6,
+            "w": 24,
+            "x": 0,
+            "y": 35
+          },
+          "hiddenSeries": false,
+          "id": 4,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": true,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [
+            {
+              "targetBlank": true,
+              "title": "Page summary $page",
+              "url": "/dashboard/db/page-summary?$__url_time_range&$__all_variables"
+            }
+          ],
+          "maxPerRow": 2,
+          "nullPointMode": "connected",
+          "options": {
+            "dataLinks": []
+          },
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refCount": 0,
+              "refId": "A",
+              "target": "aliasByNode($base.$path.pageSummary.$group.$page.webpagetest.$location.$connectivity.data.median.$view.SpeedIndex, 11)"
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "Speed Index",
+          "tooltip": {
+            "shared": false,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "ms",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
         }
       ],
       "title": "Trends",
       "type": "row"
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "${DS_GRAPHITE}",
-      "fill": 0,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 6,
-        "w": 24,
-        "x": 0,
-        "y": 21
-      },
-      "id": 4,
-      "legend": {
-        "alignAsTable": true,
-        "avg": true,
-        "current": true,
-        "max": true,
-        "min": true,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [
-        {
-          "targetBlank": true,
-          "title": "Page summary $page",
-          "url": "/dashboard/db/page-summary?$__url_time_range&$__all_variables"
-        }
-      ],
-      "maxPerRow": 2,
-      "nullPointMode": "connected",
-      "options": {
-        "dataLinks": []
-      },
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "refCount": 0,
-          "refId": "A",
-          "target": "aliasByNode($base.$path.pageSummary.$group.$page.webpagetest.$location.$connectivity.data.median.$view.SpeedIndex, 11)"
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "Speed Index",
-      "tooltip": {
-        "shared": false,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "ms",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
     },
     {
       "collapsed": true,
@@ -1231,7 +1308,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 27
+        "y": 21
       },
       "id": 19,
       "panels": [
@@ -1634,19 +1711,40 @@
       "type": "row"
     },
     {
+      "collapsed": false,
+      "datasource": "${DS_GRAPHITE}",
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 22
+      },
+      "id": 31,
+      "panels": [],
+      "title": "User Timings",
+      "type": "row"
+    },
+    {
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
       "dashes": false,
       "datasource": "${DS_GRAPHITE}",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
         "h": 7,
         "w": 24,
         "x": 0,
-        "y": 28
+        "y": 23
       },
+      "hiddenSeries": false,
       "id": 11,
       "legend": {
         "alignAsTable": true,
@@ -1695,8 +1793,8 @@
       "timeShift": null,
       "title": "User Timing API",
       "tooltip": {
-        "shared": true,
-        "sort": 2,
+        "shared": false,
+        "sort": 0,
         "value_type": "individual"
       },
       "type": "graph",
@@ -1737,7 +1835,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 35
+        "y": 30
       },
       "id": 8,
       "panels": [],
@@ -1750,14 +1848,21 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": "${DS_GRAPHITE}",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 2,
       "fillGradient": 0,
       "gridPos": {
-        "h": 16,
+        "h": 21,
         "w": 24,
         "x": 0,
-        "y": 36
+        "y": 31
       },
+      "hiddenSeries": false,
       "id": 2,
       "legend": {
         "alignAsTable": true,
@@ -1810,8 +1915,8 @@
       "timeShift": null,
       "title": "CPU [Chrome only]",
       "tooltip": {
-        "shared": true,
-        "sort": 2,
+        "shared": false,
+        "sort": 0,
         "value_type": "individual"
       },
       "type": "graph",
@@ -1852,14 +1957,21 @@
       "dashes": false,
       "datasource": "${DS_GRAPHITE}",
       "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
-        "h": 9,
+        "h": 19,
         "w": 24,
         "x": 0,
         "y": 52
       },
+      "hiddenSeries": false,
       "id": 6,
       "legend": {
         "alignAsTable": true,
@@ -1867,7 +1979,6 @@
         "current": true,
         "max": true,
         "min": true,
-        "rightSide": true,
         "show": true,
         "total": false,
         "values": true
@@ -1942,8 +2053,8 @@
       "timeShift": null,
       "title": "Chrome timings [Chrome only]",
       "tooltip": {
-        "shared": true,
-        "sort": 2,
+        "shared": false,
+        "sort": 0,
         "value_type": "individual"
       },
       "type": "graph",
@@ -1979,7 +2090,7 @@
     }
   ],
   "refresh": false,
-  "schemaVersion": 20,
+  "schemaVersion": 25,
   "style": "dark",
   "tags": [
     "page"
@@ -2192,5 +2303,5 @@
   "timezone": "browser",
   "title": "Webpagetest Page timing metrics",
   "uid": "000000057",
-  "version": 4
+  "version": 14
 }
