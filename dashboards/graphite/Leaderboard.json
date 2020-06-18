@@ -20,20 +20,14 @@
     {
       "type": "panel",
       "id": "bargauge",
-      "name": "Bar Gauge",
-      "version": ""
-    },
-    {
-      "type": "panel",
-      "id": "gauge",
-      "name": "Gauge",
+      "name": "Bar gauge",
       "version": ""
     },
     {
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "6.6.0"
+      "version": "7.0.3"
     },
     {
       "type": "panel",
@@ -46,6 +40,12 @@
       "id": "graphite",
       "name": "Graphite",
       "version": "1.0.0"
+    },
+    {
+      "type": "panel",
+      "id": "stat",
+      "name": "Stat",
+      "version": ""
     }
   ],
   "annotations": {
@@ -65,7 +65,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1582922918180,
+  "iteration": 1592480364315,
   "links": [
     {
       "icon": "external link",
@@ -114,6 +114,37 @@
       "cacheTimeout": "",
       "datasource": "${DS_GRAPHITE}",
       "description": "The first visual change is when something for the first time is painted within the current viewport. It is calculated by analyzing a video recording of the screen.",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {},
+          "displayName": "",
+          "mappings": [],
+          "max": 3000,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 1000
+              },
+              {
+                "color": "red",
+                "value": 2000
+              }
+            ]
+          },
+          "unit": "ms"
+        },
+        "overrides": []
+      },
       "gridPos": {
         "h": 14,
         "w": 12,
@@ -124,44 +155,17 @@
       "links": [],
       "options": {
         "displayMode": "lcd",
-        "fieldOptions": {
+        "orientation": "horizontal",
+        "reduceOptions": {
           "calcs": [
             "mean"
           ],
-          "defaults": {
-            "color": {
-              "mode": "thresholds"
-            },
-            "mappings": [],
-            "max": 3000,
-            "min": 0,
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "#EAB839",
-                  "value": 1000
-                },
-                {
-                  "color": "red",
-                  "value": 2000
-                }
-              ]
-            },
-            "title": "",
-            "unit": "ms"
-          },
-          "overrides": [],
+          "fields": "",
           "values": false
         },
-        "orientation": "horizontal",
         "showUnfilled": true
       },
-      "pluginVersion": "6.6.0",
+      "pluginVersion": "7.0.3",
       "targets": [
         {
           "refId": "A",
@@ -178,6 +182,37 @@
       "cacheTimeout": "",
       "datasource": "${DS_GRAPHITE}",
       "description": "The largest image is the time when the largest image within the viewport is painted and on its final position. It is calculated by analyzing a video recording of the screen.",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {},
+          "displayName": "",
+          "mappings": [],
+          "max": 10000,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 1000
+              },
+              {
+                "color": "red",
+                "value": 2000
+              }
+            ]
+          },
+          "unit": "ms"
+        },
+        "overrides": []
+      },
       "gridPos": {
         "h": 14,
         "w": 12,
@@ -188,44 +223,17 @@
       "links": [],
       "options": {
         "displayMode": "lcd",
-        "fieldOptions": {
+        "orientation": "horizontal",
+        "reduceOptions": {
           "calcs": [
             "mean"
           ],
-          "defaults": {
-            "color": {
-              "mode": "thresholds"
-            },
-            "mappings": [],
-            "max": 10000,
-            "min": 0,
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "#EAB839",
-                  "value": 1000
-                },
-                {
-                  "color": "red",
-                  "value": 2000
-                }
-              ]
-            },
-            "title": "",
-            "unit": "ms"
-          },
-          "overrides": [],
+          "fields": "",
           "values": false
         },
-        "orientation": "horizontal",
         "showUnfilled": true
       },
-      "pluginVersion": "6.6.0",
+      "pluginVersion": "7.0.3",
       "targets": [
         {
           "refId": "A",
@@ -242,6 +250,37 @@
       "cacheTimeout": "",
       "datasource": "${DS_GRAPHITE}",
       "description": "The Speed Index is the average time at which visible parts of the page are displayed. It is expressed in milliseconds and dependent on size of the view port. It was created by Pat Meenan and you can checkout the full documentation [here](https://sites.google.com/a/webpagetest.org/docs/using-webpagetest/metrics/speed-index).",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {},
+          "displayName": "",
+          "mappings": [],
+          "max": 8000,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 1000
+              },
+              {
+                "color": "red",
+                "value": 2000
+              }
+            ]
+          },
+          "unit": "ms"
+        },
+        "overrides": []
+      },
       "gridPos": {
         "h": 14,
         "w": 12,
@@ -252,44 +291,17 @@
       "links": [],
       "options": {
         "displayMode": "lcd",
-        "fieldOptions": {
+        "orientation": "horizontal",
+        "reduceOptions": {
           "calcs": [
             "mean"
           ],
-          "defaults": {
-            "color": {
-              "mode": "thresholds"
-            },
-            "mappings": [],
-            "max": 8000,
-            "min": 0,
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "#EAB839",
-                  "value": 1000
-                },
-                {
-                  "color": "red",
-                  "value": 2000
-                }
-              ]
-            },
-            "title": "",
-            "unit": "ms"
-          },
-          "overrides": [],
+          "fields": "",
           "values": false
         },
-        "orientation": "horizontal",
         "showUnfilled": true
       },
-      "pluginVersion": "6.6.0",
+      "pluginVersion": "7.0.3",
       "targets": [
         {
           "refId": "A",
@@ -306,6 +318,37 @@
       "cacheTimeout": "",
       "datasource": "${DS_GRAPHITE}",
       "description": "Visual readiness is the time between the first visual change and the last visual change within the viewport. It is calculated by analyzing a video recording of the screen.",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {},
+          "displayName": "",
+          "mappings": [],
+          "max": 10000,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 1000
+              },
+              {
+                "color": "red",
+                "value": 2000
+              }
+            ]
+          },
+          "unit": "ms"
+        },
+        "overrides": []
+      },
       "gridPos": {
         "h": 14,
         "w": 12,
@@ -316,44 +359,17 @@
       "links": [],
       "options": {
         "displayMode": "lcd",
-        "fieldOptions": {
+        "orientation": "horizontal",
+        "reduceOptions": {
           "calcs": [
             "mean"
           ],
-          "defaults": {
-            "color": {
-              "mode": "thresholds"
-            },
-            "mappings": [],
-            "max": 10000,
-            "min": 0,
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "#EAB839",
-                  "value": 1000
-                },
-                {
-                  "color": "red",
-                  "value": 2000
-                }
-              ]
-            },
-            "title": "",
-            "unit": "ms"
-          },
-          "overrides": [],
+          "fields": "",
           "values": false
         },
-        "orientation": "horizontal",
         "showUnfilled": true
       },
-      "pluginVersion": "6.6.0",
+      "pluginVersion": "7.0.3",
       "targets": [
         {
           "refId": "A",
@@ -747,6 +763,37 @@
       "cacheTimeout": "",
       "datasource": "${DS_GRAPHITE}",
       "description": "CPU time spent evaluating JavaScript. Calculated using [Tracium](https://github.com/aslushnikov/tracium). This is a Chrome only metric at the moment.",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {},
+          "displayName": "",
+          "mappings": [],
+          "max": 2500,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 200
+              },
+              {
+                "color": "red",
+                "value": 1000
+              }
+            ]
+          },
+          "unit": "ms"
+        },
+        "overrides": []
+      },
       "gridPos": {
         "h": 14,
         "w": 12,
@@ -757,44 +804,17 @@
       "links": [],
       "options": {
         "displayMode": "lcd",
-        "fieldOptions": {
+        "orientation": "horizontal",
+        "reduceOptions": {
           "calcs": [
             "mean"
           ],
-          "defaults": {
-            "color": {
-              "mode": "thresholds"
-            },
-            "mappings": [],
-            "max": 2500,
-            "min": 0,
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "#EAB839",
-                  "value": 200
-                },
-                {
-                  "color": "red",
-                  "value": 1000
-                }
-              ]
-            },
-            "title": "",
-            "unit": "ms"
-          },
-          "overrides": [],
+          "fields": "",
           "values": false
         },
-        "orientation": "horizontal",
         "showUnfilled": true
       },
-      "pluginVersion": "6.6.0",
+      "pluginVersion": "7.0.3",
       "targets": [
         {
           "refId": "A",
@@ -811,6 +831,37 @@
       "cacheTimeout": "",
       "datasource": "${DS_GRAPHITE}",
       "description": "CPU time spent rendering the page. Calculated using [Tracium](https://github.com/aslushnikov/tracium). This is a Chrome only metric at the moment.",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {},
+          "displayName": "",
+          "mappings": [],
+          "max": 800,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 50
+              },
+              {
+                "color": "red",
+                "value": 400
+              }
+            ]
+          },
+          "unit": "ms"
+        },
+        "overrides": []
+      },
       "gridPos": {
         "h": 14,
         "w": 12,
@@ -821,44 +872,17 @@
       "links": [],
       "options": {
         "displayMode": "lcd",
-        "fieldOptions": {
+        "orientation": "horizontal",
+        "reduceOptions": {
           "calcs": [
             "mean"
           ],
-          "defaults": {
-            "color": {
-              "mode": "thresholds"
-            },
-            "mappings": [],
-            "max": 800,
-            "min": 0,
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "#EAB839",
-                  "value": 50
-                },
-                {
-                  "color": "red",
-                  "value": 400
-                }
-              ]
-            },
-            "title": "",
-            "unit": "ms"
-          },
-          "overrides": [],
+          "fields": "",
           "values": false
         },
-        "orientation": "horizontal",
         "showUnfilled": true
       },
-      "pluginVersion": "6.6.0",
+      "pluginVersion": "7.0.3",
       "targets": [
         {
           "refId": "A",
@@ -968,6 +992,37 @@
       "cacheTimeout": "",
       "datasource": "${DS_GRAPHITE}",
       "description": "Load Event End is when the load event end event fires in the Navigation Timing API",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {},
+          "displayName": "",
+          "mappings": [],
+          "max": 15000,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 2000
+              },
+              {
+                "color": "red",
+                "value": 4000
+              }
+            ]
+          },
+          "unit": "ms"
+        },
+        "overrides": []
+      },
       "gridPos": {
         "h": 14,
         "w": 12,
@@ -978,44 +1033,17 @@
       "links": [],
       "options": {
         "displayMode": "lcd",
-        "fieldOptions": {
+        "orientation": "horizontal",
+        "reduceOptions": {
           "calcs": [
             "mean"
           ],
-          "defaults": {
-            "color": {
-              "mode": "thresholds"
-            },
-            "mappings": [],
-            "max": 15000,
-            "min": 0,
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "#EAB839",
-                  "value": 2000
-                },
-                {
-                  "color": "red",
-                  "value": 4000
-                }
-              ]
-            },
-            "title": "",
-            "unit": "ms"
-          },
-          "overrides": [],
+          "fields": "",
           "values": false
         },
-        "orientation": "horizontal",
         "showUnfilled": true
       },
-      "pluginVersion": "6.6.0",
+      "pluginVersion": "7.0.3",
       "targets": [
         {
           "refId": "A",
@@ -1032,6 +1060,37 @@
       "cacheTimeout": "",
       "datasource": "${DS_GRAPHITE}",
       "description": "Fully loaded time when the last of all assets is downloaded on the page.",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {},
+          "displayName": "",
+          "mappings": [],
+          "max": 20000,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 2000
+              },
+              {
+                "color": "red",
+                "value": 5000
+              }
+            ]
+          },
+          "unit": "ms"
+        },
+        "overrides": []
+      },
       "gridPos": {
         "h": 14,
         "w": 12,
@@ -1042,44 +1101,17 @@
       "links": [],
       "options": {
         "displayMode": "lcd",
-        "fieldOptions": {
+        "orientation": "horizontal",
+        "reduceOptions": {
           "calcs": [
             "mean"
           ],
-          "defaults": {
-            "color": {
-              "mode": "thresholds"
-            },
-            "mappings": [],
-            "max": 20000,
-            "min": 0,
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "#EAB839",
-                  "value": 2000
-                },
-                {
-                  "color": "red",
-                  "value": 5000
-                }
-              ]
-            },
-            "title": "",
-            "unit": "ms"
-          },
-          "overrides": [],
+          "fields": "",
           "values": false
         },
-        "orientation": "horizontal",
         "showUnfilled": true
       },
-      "pluginVersion": "6.6.0",
+      "pluginVersion": "7.0.3",
       "targets": [
         {
           "refId": "A",
@@ -1299,6 +1331,37 @@
       "cacheTimeout": "",
       "datasource": "${DS_GRAPHITE}",
       "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {},
+          "displayName": "",
+          "mappings": [],
+          "max": 2000000,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 100000
+              },
+              {
+                "color": "red",
+                "value": 200000
+              }
+            ]
+          },
+          "unit": "decbytes"
+        },
+        "overrides": []
+      },
       "gridPos": {
         "h": 14,
         "w": 12,
@@ -1309,44 +1372,17 @@
       "links": [],
       "options": {
         "displayMode": "lcd",
-        "fieldOptions": {
+        "orientation": "horizontal",
+        "reduceOptions": {
           "calcs": [
             "mean"
           ],
-          "defaults": {
-            "color": {
-              "mode": "thresholds"
-            },
-            "mappings": [],
-            "max": 2000000,
-            "min": 0,
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "#EAB839",
-                  "value": 100000
-                },
-                {
-                  "color": "red",
-                  "value": 200000
-                }
-              ]
-            },
-            "title": "",
-            "unit": "decbytes"
-          },
-          "overrides": [],
+          "fields": "",
           "values": false
         },
-        "orientation": "horizontal",
         "showUnfilled": true
       },
-      "pluginVersion": "6.6.0",
+      "pluginVersion": "7.0.3",
       "targets": [
         {
           "refId": "A",
@@ -1363,6 +1399,37 @@
       "cacheTimeout": "",
       "datasource": "${DS_GRAPHITE}",
       "description": "The JavaScript size unpacked.",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {},
+          "displayName": "",
+          "mappings": [],
+          "max": 6000000,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 250000
+              },
+              {
+                "color": "red",
+                "value": 500000
+              }
+            ]
+          },
+          "unit": "decbytes"
+        },
+        "overrides": []
+      },
       "gridPos": {
         "h": 14,
         "w": 12,
@@ -1373,44 +1440,17 @@
       "links": [],
       "options": {
         "displayMode": "lcd",
-        "fieldOptions": {
+        "orientation": "horizontal",
+        "reduceOptions": {
           "calcs": [
             "mean"
           ],
-          "defaults": {
-            "color": {
-              "mode": "thresholds"
-            },
-            "mappings": [],
-            "max": 6000000,
-            "min": 0,
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "#EAB839",
-                  "value": 250000
-                },
-                {
-                  "color": "red",
-                  "value": 500000
-                }
-              ]
-            },
-            "title": "",
-            "unit": "decbytes"
-          },
-          "overrides": [],
+          "fields": "",
           "values": false
         },
-        "orientation": "horizontal",
         "showUnfilled": true
       },
-      "pluginVersion": "6.6.0",
+      "pluginVersion": "7.0.3",
       "targets": [
         {
           "refId": "A",
@@ -1441,8 +1481,34 @@
       "cacheTimeout": "",
       "datasource": "${DS_GRAPHITE}",
       "description": "Total number of requests for the full page.",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {},
+          "displayName": "",
+          "mappings": [],
+          "max": 500,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
       "gridPos": {
-        "h": 4,
+        "h": 10,
         "w": 24,
         "x": 0,
         "y": 78
@@ -1450,40 +1516,19 @@
       "id": 37,
       "links": [],
       "options": {
-        "fieldOptions": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
           "calcs": [
             "mean"
           ],
-          "defaults": {
-            "color": {
-              "mode": "thresholds"
-            },
-            "mappings": [],
-            "max": 500,
-            "min": 0,
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            },
-            "title": ""
-          },
-          "overrides": [],
+          "fields": "",
           "values": false
-        },
-        "orientation": "auto",
-        "showThresholdLabels": true,
-        "showThresholdMarkers": false
+        }
       },
-      "pluginVersion": "6.6.0",
+      "pluginVersion": "7.0.3",
       "targets": [
         {
           "refId": "A",
@@ -1493,60 +1538,65 @@
       "timeFrom": null,
       "timeShift": null,
       "title": "Total number or requests",
-      "type": "gauge"
+      "type": "stat"
     },
     {
       "cacheTimeout": "",
       "datasource": "${DS_GRAPHITE}",
       "description": "Total page weight (compressed over the wire).",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {},
+          "displayName": "",
+          "mappings": [],
+          "max": 5000000,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "yellow",
+                "value": 500000
+              },
+              {
+                "color": "red",
+                "value": 2000000
+              }
+            ]
+          },
+          "unit": "decbytes"
+        },
+        "overrides": []
+      },
       "gridPos": {
-        "h": 5,
+        "h": 10,
         "w": 24,
         "x": 0,
-        "y": 82
+        "y": 88
       },
       "id": 38,
       "links": [],
       "options": {
-        "fieldOptions": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
           "calcs": [
             "mean"
           ],
-          "defaults": {
-            "color": {
-              "mode": "thresholds"
-            },
-            "mappings": [],
-            "max": 5000000,
-            "min": 0,
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "yellow",
-                  "value": 500000
-                },
-                {
-                  "color": "red",
-                  "value": 2000000
-                }
-              ]
-            },
-            "title": "",
-            "unit": "decbytes"
-          },
-          "overrides": [],
+          "fields": "",
           "values": false
-        },
-        "orientation": "auto",
-        "showThresholdLabels": true,
-        "showThresholdMarkers": false
+        }
       },
-      "pluginVersion": "6.6.0",
+      "pluginVersion": "7.0.3",
       "targets": [
         {
           "refId": "A",
@@ -1556,7 +1606,7 @@
       "timeFrom": null,
       "timeShift": null,
       "title": "Total page transfer size (over the wire)",
-      "type": "gauge"
+      "type": "stat"
     },
     {
       "collapsed": true,
@@ -1565,56 +1615,68 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 87
+        "y": 98
       },
       "id": 70,
       "panels": [
         {
           "cacheTimeout": "",
+          "datasource": "${DS_GRAPHITE}",
           "description": "Total number of requests for the full page.",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {},
+              "displayName": "",
+              "mappings": [],
+              "max": 500,
+              "min": 0,
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "index": 0,
+                    "value": null
+                  },
+                  {
+                    "color": "yellow",
+                    "index": 1,
+                    "value": 50
+                  },
+                  {
+                    "color": "red",
+                    "index": 2,
+                    "value": 100
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
           "gridPos": {
             "h": 14,
             "w": 12,
             "x": 0,
-            "y": 87
+            "y": 99
           },
           "id": 71,
           "links": [],
           "options": {
             "displayMode": "lcd",
-            "fieldOptions": {
+            "orientation": "horizontal",
+            "reduceOptions": {
               "calcs": [
                 "mean"
               ],
-              "defaults": {
-                "max": 500,
-                "min": 0,
-                "title": ""
-              },
-              "mappings": [],
-              "override": {},
-              "thresholds": [
-                {
-                  "color": "green",
-                  "index": 0,
-                  "value": null
-                },
-                {
-                  "color": "yellow",
-                  "index": 1,
-                  "value": 50
-                },
-                {
-                  "color": "red",
-                  "index": 2,
-                  "value": 100
-                }
-              ],
+              "fields": "",
               "values": false
             },
-            "orientation": "horizontal"
+            "showUnfilled": true
           },
-          "pluginVersion": "6.2.0",
+          "pluginVersion": "7.0.3",
           "targets": [
             {
               "refId": "A",
@@ -1629,51 +1691,63 @@
         },
         {
           "cacheTimeout": "",
+          "datasource": "${DS_GRAPHITE}",
           "description": "Total page weight (compressed over the wire).",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {},
+              "displayName": "",
+              "mappings": [],
+              "max": 5000000,
+              "min": 0,
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "index": 0,
+                    "value": null
+                  },
+                  {
+                    "color": "yellow",
+                    "index": 1,
+                    "value": 500000
+                  },
+                  {
+                    "color": "red",
+                    "index": 2,
+                    "value": 2000000
+                  }
+                ]
+              },
+              "unit": "decbytes"
+            },
+            "overrides": []
+          },
           "gridPos": {
             "h": 14,
             "w": 12,
             "x": 12,
-            "y": 87
+            "y": 99
           },
           "id": 72,
           "links": [],
           "options": {
             "displayMode": "lcd",
-            "fieldOptions": {
+            "orientation": "horizontal",
+            "reduceOptions": {
               "calcs": [
                 "mean"
               ],
-              "defaults": {
-                "max": 5000000,
-                "min": 0,
-                "title": "",
-                "unit": "decbytes"
-              },
-              "mappings": [],
-              "override": {},
-              "thresholds": [
-                {
-                  "color": "green",
-                  "index": 0,
-                  "value": null
-                },
-                {
-                  "color": "yellow",
-                  "index": 1,
-                  "value": 500000
-                },
-                {
-                  "color": "red",
-                  "index": 2,
-                  "value": 2000000
-                }
-              ],
+              "fields": "",
               "values": false
             },
-            "orientation": "horizontal"
+            "showUnfilled": true
           },
-          "pluginVersion": "6.2.0",
+          "pluginVersion": "7.0.3",
           "targets": [
             {
               "refId": "A",
@@ -1697,7 +1771,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 88
+        "y": 99
       },
       "id": 7,
       "panels": [
@@ -1884,32 +1958,27 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 89
+        "y": 100
       },
       "id": 74,
       "panels": [
         {
           "cacheTimeout": "",
+          "datasource": "${DS_GRAPHITE}",
           "description": "",
-          "gridPos": {
-            "h": 14,
-            "w": 12,
-            "x": 0,
-            "y": 89
-          },
-          "id": 75,
-          "links": [],
-          "options": {
-            "displayMode": "lcd",
-            "fieldOptions": {
-              "calcs": [
-                "mean"
-              ],
-              "defaults": {
-                "mappings": [],
-                "max": 20,
-                "min": 0,
-                "thresholds": [
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {},
+              "displayName": "",
+              "mappings": [],
+              "max": 20,
+              "min": 0,
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
                   {
                     "color": "green",
                     "value": null
@@ -1918,16 +1987,33 @@
                     "color": "red",
                     "value": 1
                   }
-                ],
-                "title": "",
-                "unit": "none"
+                ]
               },
-              "override": {},
+              "unit": "none"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 14,
+            "w": 12,
+            "x": 0,
+            "y": 101
+          },
+          "id": 75,
+          "links": [],
+          "options": {
+            "displayMode": "lcd",
+            "orientation": "horizontal",
+            "reduceOptions": {
+              "calcs": [
+                "mean"
+              ],
+              "fields": "",
               "values": false
             },
-            "orientation": "horizontal"
+            "showUnfilled": true
           },
-          "pluginVersion": "6.3.3",
+          "pluginVersion": "7.0.3",
           "targets": [
             {
               "refId": "A",
@@ -1942,26 +2028,21 @@
         },
         {
           "cacheTimeout": "",
+          "datasource": "${DS_GRAPHITE}",
           "description": "",
-          "gridPos": {
-            "h": 14,
-            "w": 12,
-            "x": 12,
-            "y": 89
-          },
-          "id": 76,
-          "links": [],
-          "options": {
-            "displayMode": "lcd",
-            "fieldOptions": {
-              "calcs": [
-                "mean"
-              ],
-              "defaults": {
-                "mappings": [],
-                "max": 20,
-                "min": 0,
-                "thresholds": [
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {},
+              "displayName": "",
+              "mappings": [],
+              "max": 20,
+              "min": 0,
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
                   {
                     "color": "green",
                     "value": null
@@ -1974,16 +2055,33 @@
                     "color": "red",
                     "value": 2
                   }
-                ],
-                "title": "",
-                "unit": "none"
+                ]
               },
-              "override": {},
+              "unit": "none"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 14,
+            "w": 12,
+            "x": 12,
+            "y": 101
+          },
+          "id": 76,
+          "links": [],
+          "options": {
+            "displayMode": "lcd",
+            "orientation": "horizontal",
+            "reduceOptions": {
+              "calcs": [
+                "mean"
+              ],
+              "fields": "",
               "values": false
             },
-            "orientation": "horizontal"
+            "showUnfilled": true
           },
-          "pluginVersion": "6.3.3",
+          "pluginVersion": "7.0.3",
           "targets": [
             {
               "refId": "A",
@@ -2007,7 +2105,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 90
+        "y": 101
       },
       "id": 48,
       "panels": [],
@@ -2018,64 +2116,68 @@
       "cacheTimeout": "",
       "datasource": "${DS_GRAPHITE}",
       "description": "The average number of CPU Long Tasks per page. A CPU long Task is by default a CPU task that takes longer than 50 ms to run. This metrics is Chrome only at the moment.",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {},
+          "displayName": "",
+          "mappings": [
+            {
+              "from": "",
+              "id": 1,
+              "operator": "",
+              "text": "No long task",
+              "to": "",
+              "type": 1,
+              "value": "0"
+            }
+          ],
+          "max": 8,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 1
+              },
+              {
+                "color": "red",
+                "value": 5
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
       "gridPos": {
         "h": 14,
         "w": 12,
         "x": 0,
-        "y": 91
+        "y": 102
       },
       "id": 49,
       "links": [],
       "options": {
         "displayMode": "lcd",
-        "fieldOptions": {
+        "orientation": "horizontal",
+        "reduceOptions": {
           "calcs": [
             "mean"
           ],
-          "defaults": {
-            "color": {
-              "mode": "thresholds"
-            },
-            "mappings": [
-              {
-                "from": "",
-                "id": 1,
-                "operator": "",
-                "text": "No long task",
-                "to": "",
-                "type": 1,
-                "value": "0"
-              }
-            ],
-            "max": 8,
-            "min": 0,
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "#EAB839",
-                  "value": 1
-                },
-                {
-                  "color": "red",
-                  "value": 5
-                }
-              ]
-            },
-            "title": "",
-            "unit": "none"
-          },
-          "overrides": [],
+          "fields": "",
           "values": false
         },
-        "orientation": "horizontal",
         "showUnfilled": true
       },
-      "pluginVersion": "6.6.0",
+      "pluginVersion": "7.0.3",
       "targets": [
         {
           "refId": "A",
@@ -2092,54 +2194,58 @@
       "cacheTimeout": "",
       "datasource": "${DS_GRAPHITE}",
       "description": "This is the longest CPU task for each page (if they are over 50 ms long). This metrics is Chrome only at the moment.",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {},
+          "displayName": "",
+          "mappings": [],
+          "max": 1000,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 60
+              },
+              {
+                "color": "red",
+                "value": 200
+              }
+            ]
+          },
+          "unit": "ms"
+        },
+        "overrides": []
+      },
       "gridPos": {
         "h": 14,
         "w": 12,
         "x": 12,
-        "y": 91
+        "y": 102
       },
       "id": 50,
       "links": [],
       "options": {
         "displayMode": "lcd",
-        "fieldOptions": {
+        "orientation": "horizontal",
+        "reduceOptions": {
           "calcs": [
             "mean"
           ],
-          "defaults": {
-            "color": {
-              "mode": "thresholds"
-            },
-            "mappings": [],
-            "max": 1000,
-            "min": 0,
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "#EAB839",
-                  "value": 60
-                },
-                {
-                  "color": "red",
-                  "value": 200
-                }
-              ]
-            },
-            "title": "",
-            "unit": "ms"
-          },
-          "overrides": [],
+          "fields": "",
           "values": false
         },
-        "orientation": "horizontal",
         "showUnfilled": true
       },
-      "pluginVersion": "6.6.0",
+      "pluginVersion": "7.0.3",
       "targets": [
         {
           "refId": "A",
@@ -2159,7 +2265,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 105
+        "y": 116
       },
       "id": 18,
       "panels": [
@@ -2432,7 +2538,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 106
+        "y": 117
       },
       "id": 52,
       "panels": [],
@@ -2443,64 +2549,68 @@
       "cacheTimeout": "",
       "datasource": "${DS_GRAPHITE}",
       "description": "Third party requests are calculated using the [Third party web](https://github.com/patrickhulce/third-party-web) library.",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {},
+          "displayName": "",
+          "mappings": [
+            {
+              "from": "",
+              "id": 1,
+              "operator": "",
+              "text": "No 3rd parties",
+              "to": "",
+              "type": 1,
+              "value": "0"
+            }
+          ],
+          "max": 200,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 1
+              },
+              {
+                "color": "red",
+                "value": 10
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
       "gridPos": {
         "h": 14,
         "w": 12,
         "x": 0,
-        "y": 107
+        "y": 118
       },
       "id": 53,
       "links": [],
       "options": {
         "displayMode": "lcd",
-        "fieldOptions": {
+        "orientation": "horizontal",
+        "reduceOptions": {
           "calcs": [
             "mean"
           ],
-          "defaults": {
-            "color": {
-              "mode": "thresholds"
-            },
-            "mappings": [
-              {
-                "from": "",
-                "id": 1,
-                "operator": "",
-                "text": "No 3rd parties",
-                "to": "",
-                "type": 1,
-                "value": "0"
-              }
-            ],
-            "max": 200,
-            "min": 0,
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "#EAB839",
-                  "value": 1
-                },
-                {
-                  "color": "red",
-                  "value": 10
-                }
-              ]
-            },
-            "title": "",
-            "unit": "none"
-          },
-          "overrides": [],
+          "fields": "",
           "values": false
         },
-        "orientation": "horizontal",
         "showUnfilled": true
       },
-      "pluginVersion": "6.6.0",
+      "pluginVersion": "7.0.3",
       "targets": [
         {
           "refId": "A",
@@ -2517,54 +2627,58 @@
       "cacheTimeout": "",
       "datasource": "${DS_GRAPHITE}",
       "description": "Third party % are calculated using the [Third party web](https://github.com/patrickhulce/third-party-web) library.",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {},
+          "displayName": "",
+          "mappings": [],
+          "max": 100,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 5
+              },
+              {
+                "color": "red",
+                "value": 10
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
       "gridPos": {
         "h": 14,
         "w": 12,
         "x": 12,
-        "y": 107
+        "y": 118
       },
       "id": 54,
       "links": [],
       "options": {
         "displayMode": "lcd",
-        "fieldOptions": {
+        "orientation": "horizontal",
+        "reduceOptions": {
           "calcs": [
             "mean"
           ],
-          "defaults": {
-            "color": {
-              "mode": "thresholds"
-            },
-            "mappings": [],
-            "max": 100,
-            "min": 0,
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "#EAB839",
-                  "value": 5
-                },
-                {
-                  "color": "red",
-                  "value": 10
-                }
-              ]
-            },
-            "title": "",
-            "unit": "percent"
-          },
-          "overrides": [],
+          "fields": "",
           "values": false
         },
-        "orientation": "horizontal",
         "showUnfilled": true
       },
-      "pluginVersion": "6.6.0",
+      "pluginVersion": "7.0.3",
       "targets": [
         {
           "refId": "A",
@@ -2584,7 +2698,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 121
+        "y": 132
       },
       "id": 56,
       "panels": [],
@@ -2595,54 +2709,58 @@
       "cacheTimeout": "",
       "datasource": "${DS_GRAPHITE}",
       "description": "The performance score (0-100) calculated by the [Coach](https://www.sitespeed.io/documentation/coach/) using performance best practices.",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {},
+          "displayName": "",
+          "mappings": [],
+          "max": 100,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "yellow",
+                "value": 80
+              },
+              {
+                "color": "green",
+                "value": 90
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
       "gridPos": {
         "h": 14,
         "w": 12,
         "x": 0,
-        "y": 122
+        "y": 133
       },
       "id": 57,
       "links": [],
       "options": {
         "displayMode": "lcd",
-        "fieldOptions": {
+        "orientation": "horizontal",
+        "reduceOptions": {
           "calcs": [
             "mean"
           ],
-          "defaults": {
-            "color": {
-              "mode": "thresholds"
-            },
-            "mappings": [],
-            "max": 100,
-            "min": 0,
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "red",
-                  "value": null
-                },
-                {
-                  "color": "yellow",
-                  "value": 80
-                },
-                {
-                  "color": "green",
-                  "value": 90
-                }
-              ]
-            },
-            "title": "",
-            "unit": "none"
-          },
-          "overrides": [],
+          "fields": "",
           "values": false
         },
-        "orientation": "horizontal",
         "showUnfilled": true
       },
-      "pluginVersion": "6.6.0",
+      "pluginVersion": "7.0.3",
       "targets": [
         {
           "refId": "A",
@@ -2659,54 +2777,58 @@
       "cacheTimeout": "",
       "datasource": "${DS_GRAPHITE}",
       "description": "The privacy score (0-100) calculated by the [Coach](https://www.sitespeed.io/documentation/coach/) using user privacy best practices.",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {},
+          "displayName": "",
+          "mappings": [],
+          "max": 100,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "yellow",
+                "value": 80
+              },
+              {
+                "color": "green",
+                "value": 90
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
       "gridPos": {
         "h": 14,
         "w": 12,
         "x": 12,
-        "y": 122
+        "y": 133
       },
       "id": 58,
       "links": [],
       "options": {
         "displayMode": "lcd",
-        "fieldOptions": {
+        "orientation": "horizontal",
+        "reduceOptions": {
           "calcs": [
             "mean"
           ],
-          "defaults": {
-            "color": {
-              "mode": "thresholds"
-            },
-            "mappings": [],
-            "max": 100,
-            "min": 0,
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "red",
-                  "value": null
-                },
-                {
-                  "color": "yellow",
-                  "value": 80
-                },
-                {
-                  "color": "green",
-                  "value": 90
-                }
-              ]
-            },
-            "title": "",
-            "unit": "none"
-          },
-          "overrides": [],
+          "fields": "",
           "values": false
         },
-        "orientation": "horizontal",
         "showUnfilled": true
       },
-      "pluginVersion": "6.6.0",
+      "pluginVersion": "7.0.3",
       "targets": [
         {
           "refId": "A",
@@ -2720,7 +2842,7 @@
       "type": "bargauge"
     }
   ],
-  "schemaVersion": 22,
+  "schemaVersion": 25,
   "style": "dark",
   "tags": [
     "leaderboard",
@@ -2861,7 +2983,7 @@
         "auto_count": 30,
         "auto_min": "10s",
         "current": {
-          "selected": false,
+          "selected": true,
           "text": "median",
           "value": "median"
         },
@@ -2934,5 +3056,5 @@
   "timezone": "",
   "title": "Leaderboard",
   "uid": "000000060",
-  "version": 3
+  "version": 18
 }

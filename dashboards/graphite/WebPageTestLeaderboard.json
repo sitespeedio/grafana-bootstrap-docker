@@ -27,7 +27,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "7.0.0"
+      "version": "7.0.3"
     },
     {
       "type": "panel",
@@ -59,7 +59,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1589962070832,
+  "iteration": 1592480461681,
   "links": [],
   "panels": [
     {
@@ -126,11 +126,12 @@
           "calcs": [
             "mean"
           ],
+          "fields": "",
           "values": false
         },
         "showUnfilled": true
       },
-      "pluginVersion": "7.0.0",
+      "pluginVersion": "7.0.3",
       "targets": [
         {
           "refId": "A",
@@ -195,11 +196,12 @@
           "calcs": [
             "mean"
           ],
+          "fields": "",
           "values": false
         },
         "showUnfilled": true
       },
-      "pluginVersion": "7.0.0",
+      "pluginVersion": "7.0.3",
       "targets": [
         {
           "refId": "A",
@@ -229,14 +231,23 @@
           "cacheTimeout": "",
           "dashLength": 10,
           "dashes": false,
+          "datasource": "${DS_GRAPHITE}",
           "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "fill": 0,
+          "fillGradient": 0,
           "gridPos": {
             "h": 13,
             "w": 12,
             "x": 0,
-            "y": 29
+            "y": 15
           },
+          "hiddenSeries": false,
           "id": 8,
           "legend": {
             "alignAsTable": true,
@@ -252,7 +263,9 @@
           "linewidth": 1,
           "links": [],
           "nullPointMode": "connected",
-          "options": {},
+          "options": {
+            "dataLinks": []
+          },
           "percentage": false,
           "pointradius": 2,
           "points": false,
@@ -269,7 +282,7 @@
             }
           ],
           "thresholds": [],
-          "timeFrom": null,
+          "timeFrom": "30d",
           "timeRegions": [],
           "timeShift": null,
           "title": "First Visual Change",
@@ -315,14 +328,23 @@
           "cacheTimeout": "",
           "dashLength": 10,
           "dashes": false,
+          "datasource": "${DS_GRAPHITE}",
           "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "fill": 0,
+          "fillGradient": 0,
           "gridPos": {
             "h": 13,
             "w": 12,
             "x": 12,
-            "y": 29
+            "y": 15
           },
+          "hiddenSeries": false,
           "id": 9,
           "legend": {
             "alignAsTable": true,
@@ -338,7 +360,9 @@
           "linewidth": 1,
           "links": [],
           "nullPointMode": "connected",
-          "options": {},
+          "options": {
+            "dataLinks": []
+          },
           "percentage": false,
           "pointradius": 2,
           "points": false,
@@ -355,7 +379,7 @@
             }
           ],
           "thresholds": [],
-          "timeFrom": null,
+          "timeFrom": "30d",
           "timeRegions": [],
           "timeShift": null,
           "title": "Speed Index",
@@ -401,14 +425,23 @@
           "cacheTimeout": "",
           "dashLength": 10,
           "dashes": false,
+          "datasource": "${DS_GRAPHITE}",
           "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "fill": 0,
+          "fillGradient": 0,
           "gridPos": {
             "h": 13,
             "w": 12,
             "x": 0,
-            "y": 42
+            "y": 28
           },
+          "hiddenSeries": false,
           "id": 14,
           "legend": {
             "alignAsTable": true,
@@ -424,7 +457,9 @@
           "linewidth": 1,
           "links": [],
           "nullPointMode": "connected",
-          "options": {},
+          "options": {
+            "dataLinks": []
+          },
           "percentage": false,
           "pointradius": 2,
           "points": false,
@@ -441,7 +476,7 @@
             }
           ],
           "thresholds": [],
-          "timeFrom": null,
+          "timeFrom": "30d",
           "timeRegions": [],
           "timeShift": null,
           "title": "Visual Complete 85%",
@@ -487,14 +522,23 @@
           "cacheTimeout": "",
           "dashLength": 10,
           "dashes": false,
+          "datasource": "${DS_GRAPHITE}",
           "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "fill": 0,
+          "fillGradient": 0,
           "gridPos": {
             "h": 13,
             "w": 12,
             "x": 12,
-            "y": 42
+            "y": 28
           },
+          "hiddenSeries": false,
           "id": 15,
           "legend": {
             "alignAsTable": true,
@@ -510,7 +554,9 @@
           "linewidth": 1,
           "links": [],
           "nullPointMode": "connected",
-          "options": {},
+          "options": {
+            "dataLinks": []
+          },
           "percentage": false,
           "pointradius": 2,
           "points": false,
@@ -527,7 +573,7 @@
             }
           ],
           "thresholds": [],
-          "timeFrom": null,
+          "timeFrom": "30d",
           "timeRegions": [],
           "timeShift": null,
           "title": "Last Visual Change",
@@ -637,11 +683,12 @@
           "calcs": [
             "mean"
           ],
+          "fields": "",
           "values": false
         },
         "showUnfilled": true
       },
-      "pluginVersion": "7.0.0",
+      "pluginVersion": "7.0.3",
       "targets": [
         {
           "refId": "A",
@@ -706,11 +753,12 @@
           "calcs": [
             "mean"
           ],
+          "fields": "",
           "values": false
         },
         "showUnfilled": true
       },
-      "pluginVersion": "7.0.0",
+      "pluginVersion": "7.0.3",
       "targets": [
         {
           "refId": "A",
@@ -789,11 +837,12 @@
           "calcs": [
             "mean"
           ],
+          "fields": "",
           "values": false
         },
         "showUnfilled": true
       },
-      "pluginVersion": "7.0.0",
+      "pluginVersion": "7.0.3",
       "targets": [
         {
           "refId": "A",
@@ -858,11 +907,12 @@
           "calcs": [
             "mean"
           ],
+          "fields": "",
           "values": false
         },
         "showUnfilled": true
       },
-      "pluginVersion": "7.0.0",
+      "pluginVersion": "7.0.3",
       "targets": [
         {
           "refId": "A",
@@ -1064,5 +1114,5 @@
   "timezone": "",
   "title": "WebPageTest leaderboard",
   "uid": "SclfSyWWk",
-  "version": 14
+  "version": 17
 }
