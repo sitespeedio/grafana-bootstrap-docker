@@ -81,7 +81,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1592480895909,
+  "iteration": 1592528064238,
   "links": [
     {
       "$$hashKey": "object:560",
@@ -331,7 +331,7 @@
       "links": [],
       "options": {
         "colorMode": "background",
-        "graphMode": "area",
+        "graphMode": "none",
         "justifyMode": "center",
         "orientation": "auto",
         "reduceOptions": {
@@ -395,7 +395,7 @@
       "links": [],
       "options": {
         "colorMode": "background",
-        "graphMode": "area",
+        "graphMode": "none",
         "justifyMode": "center",
         "orientation": "auto",
         "reduceOptions": {
@@ -459,7 +459,7 @@
       "links": [],
       "options": {
         "colorMode": "background",
-        "graphMode": "area",
+        "graphMode": "none",
         "justifyMode": "center",
         "orientation": "auto",
         "reduceOptions": {
@@ -523,7 +523,7 @@
       "links": [],
       "options": {
         "colorMode": "background",
-        "graphMode": "area",
+        "graphMode": "none",
         "justifyMode": "center",
         "orientation": "auto",
         "reduceOptions": {
@@ -588,7 +588,7 @@
       "links": [],
       "options": {
         "colorMode": "background",
-        "graphMode": "area",
+        "graphMode": "none",
         "justifyMode": "center",
         "orientation": "auto",
         "reduceOptions": {
@@ -652,7 +652,7 @@
       "links": [],
       "options": {
         "colorMode": "background",
-        "graphMode": "area",
+        "graphMode": "none",
         "justifyMode": "center",
         "orientation": "auto",
         "reduceOptions": {
@@ -716,7 +716,7 @@
       "links": [],
       "options": {
         "colorMode": "background",
-        "graphMode": "area",
+        "graphMode": "none",
         "justifyMode": "center",
         "orientation": "auto",
         "reduceOptions": {
@@ -780,7 +780,7 @@
       "links": [],
       "options": {
         "colorMode": "background",
-        "graphMode": "area",
+        "graphMode": "none",
         "justifyMode": "center",
         "orientation": "auto",
         "reduceOptions": {
@@ -844,7 +844,7 @@
       "links": [],
       "options": {
         "colorMode": "background",
-        "graphMode": "area",
+        "graphMode": "none",
         "justifyMode": "center",
         "orientation": "auto",
         "reduceOptions": {
@@ -3087,7 +3087,7 @@
     ]
   },
   "time": {
-    "from": "now-7d",
+    "from": "now-30d",
     "to": "now"
   },
   "timepicker": {
@@ -3117,5 +3117,5 @@
   "timezone": "browser",
   "title": "Page timing metrics",
   "uid": "000000059",
-  "version": 26
+  "version": 27
 }

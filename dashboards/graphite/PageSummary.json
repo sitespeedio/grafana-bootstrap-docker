@@ -81,7 +81,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1592480866207,
+  "iteration": 1592851689929,
   "links": [
     {
       "icon": "external link",
@@ -671,8 +671,9 @@
       "fieldConfig": {
         "defaults": {
           "custom": {},
-          "displayName": "HTML",
+          "displayName": "JavaScript",
           "mappings": [],
+          "noValue": "No JavaScript",
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -739,6 +740,7 @@
           "custom": {},
           "displayName": "CSS",
           "mappings": [],
+          "noValue": "No CSS",
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -805,6 +807,7 @@
           "custom": {},
           "displayName": "Images",
           "mappings": [],
+          "noValue": "No Images",
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -871,6 +874,7 @@
           "custom": {},
           "displayName": "SVG",
           "mappings": [],
+          "noValue": "No SVG",
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -937,6 +941,7 @@
           "custom": {},
           "displayName": "JSON",
           "mappings": [],
+          "noValue": "No JSON",
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -1001,8 +1006,9 @@
       "fieldConfig": {
         "defaults": {
           "custom": {},
-          "displayName": "SVG",
+          "displayName": "Videos",
           "mappings": [],
+          "noValue": "No Video",
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -1069,6 +1075,7 @@
           "custom": {},
           "displayName": "Fonts",
           "mappings": [],
+          "noValue": "No Fonts",
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -1802,6 +1809,7 @@
               "value": "null"
             }
           ],
+          "noValue": "No Long Task",
           "nullValueMode": "connected",
           "thresholds": {
             "mode": "absolute",
@@ -2717,16 +2725,16 @@
                 "value": null
               },
               {
-                "color": "#EAB839",
-                "value": 86400000
+                "color": "yellow",
+                "value": 60480
               },
               {
                 "color": "green",
-                "value": 604800000
+                "value": 604800
               }
             ]
           },
-          "unit": "ms"
+          "unit": "s"
         },
         "overrides": []
       },
@@ -3070,7 +3078,7 @@
           "custom": {},
           "displayName": "Surveillance tools",
           "mappings": [],
-          "noValue": "0",
+          "noValue": "No Surveillance tools",
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -3130,7 +3138,7 @@
           "custom": {},
           "displayName": "Tag Managers",
           "mappings": [],
-          "noValue": "0",
+          "noValue": "No Tag Managers",
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -3190,7 +3198,7 @@
           "custom": {},
           "displayName": "Analytics Tools",
           "mappings": [],
-          "noValue": "0",
+          "noValue": "No Analytics Tools",
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -5438,7 +5446,7 @@
       "type": "row"
     },
     {
-      "collapsed": true,
+      "collapsed": false,
       "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
@@ -5447,287 +5455,468 @@
         "y": 87
       },
       "id": 77,
-      "panels": [
-        {
-          "cacheTimeout": null,
-          "datasource": "${DS_GRAPHITE}",
-          "description": "The transfer size of all your first party responses.  \n\nThe first party content (content you serve your self ) are defined by the requests that  match the regexp you supply with the parameter *--firstParty*",
-          "fieldConfig": {
-            "defaults": {
-              "custom": {},
-              "displayName": "First party transfer size",
-              "mappings": [
-                {
-                  "id": 0,
-                  "op": "=",
-                  "text": "N/A",
-                  "type": 1,
-                  "value": "null"
-                }
-              ],
-              "nullValueMode": "connected",
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "blue",
-                    "value": null
-                  }
-                ]
-              },
-              "unit": "bytes"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 6,
-            "w": 6,
-            "x": 0,
-            "y": 80
-          },
-          "id": 33,
-          "interval": null,
-          "links": [],
-          "maxDataPoints": 100,
-          "options": {
-            "colorMode": "background",
-            "fieldOptions": {
-              "calcs": [
-                "mean"
-              ]
-            },
-            "graphMode": "none",
-            "justifyMode": "auto",
-            "orientation": "horizontal",
-            "reduceOptions": {
-              "calcs": [
-                "lastNotNull"
-              ],
-              "fields": "",
-              "values": false
-            }
-          },
-          "pluginVersion": "7.0.3",
-          "targets": [
-            {
-              "refId": "A",
-              "target": "alias($base.$path.pageSummary.$group.$page.$browser.$connectivity.pagexray.firstParty.transferSize, 'First party transfer size')"
-            }
-          ],
-          "title": "",
-          "type": "stat"
-        },
-        {
-          "cacheTimeout": null,
-          "datasource": "${DS_GRAPHITE}",
-          "description": "The transfer size of all your third party responses.  \n\nThe third party content (content other companies/organizations serve like advertisement, social media buttons etc) are defined by the requests that doesn't match the regexp you supply with the parameter *--firstParty*",
-          "fieldConfig": {
-            "defaults": {
-              "custom": {},
-              "displayName": "Third party transfer size",
-              "mappings": [
-                {
-                  "id": 0,
-                  "op": "=",
-                  "text": "N/A",
-                  "type": 1,
-                  "value": "null"
-                }
-              ],
-              "nullValueMode": "connected",
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "blue",
-                    "value": null
-                  }
-                ]
-              },
-              "unit": "bytes"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 6,
-            "w": 6,
-            "x": 6,
-            "y": 80
-          },
-          "id": 32,
-          "interval": null,
-          "links": [],
-          "maxDataPoints": 100,
-          "options": {
-            "colorMode": "background",
-            "fieldOptions": {
-              "calcs": [
-                "mean"
-              ]
-            },
-            "graphMode": "none",
-            "justifyMode": "auto",
-            "orientation": "horizontal",
-            "reduceOptions": {
-              "calcs": [
-                "mean"
-              ],
-              "fields": "",
-              "values": false
-            }
-          },
-          "pluginVersion": "7.0.3",
-          "targets": [
-            {
-              "refId": "A",
-              "target": "alias($base.$path.pageSummary.$group.$page.$browser.$connectivity.pagexray.thirdParty.transferSize, 'Third party transfer size')"
-            }
-          ],
-          "title": "",
-          "type": "stat"
-        },
-        {
-          "cacheTimeout": null,
-          "datasource": "${DS_GRAPHITE}",
-          "description": "The number of requests for all your first party responses.  \n\nThe first party content (content you serve your self ) are defined by the requests that match the regexp you supply with the parameter *--firstParty*",
-          "fieldConfig": {
-            "defaults": {
-              "custom": {},
-              "displayName": "First party request",
-              "mappings": [
-                {
-                  "id": 0,
-                  "op": "=",
-                  "text": "N/A",
-                  "type": 1,
-                  "value": "null"
-                }
-              ],
-              "nullValueMode": "connected",
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "blue",
-                    "value": null
-                  }
-                ]
-              },
-              "unit": "none"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 6,
-            "w": 6,
-            "x": 12,
-            "y": 80
-          },
-          "id": 35,
-          "interval": null,
-          "links": [],
-          "maxDataPoints": 100,
-          "options": {
-            "colorMode": "background",
-            "fieldOptions": {
-              "calcs": [
-                "mean"
-              ]
-            },
-            "graphMode": "none",
-            "justifyMode": "auto",
-            "orientation": "horizontal",
-            "reduceOptions": {
-              "calcs": [
-                "mean"
-              ],
-              "fields": "",
-              "values": false
-            }
-          },
-          "pluginVersion": "7.0.3",
-          "targets": [
-            {
-              "refId": "A",
-              "target": "alias($base.$path.pageSummary.$group.$page.$browser.$connectivity.pagexray.firstParty.requests, 'First party request')"
-            }
-          ],
-          "title": "",
-          "type": "stat"
-        },
-        {
-          "cacheTimeout": null,
-          "datasource": "${DS_GRAPHITE}",
-          "description": "The number of requests for all your third party responses.  \n\nThe third party content (content other companies/organizations serve like advertisement, social media buttons etc) are defined by the requests that doesn't match the regexp you supply with the parameter *--firstParty*",
-          "fieldConfig": {
-            "defaults": {
-              "custom": {},
-              "displayName": "Third party request",
-              "mappings": [
-                {
-                  "id": 0,
-                  "op": "=",
-                  "text": "N/A",
-                  "type": 1,
-                  "value": "null"
-                }
-              ],
-              "nullValueMode": "connected",
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "blue",
-                    "value": null
-                  }
-                ]
-              },
-              "unit": "none"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 6,
-            "w": 6,
-            "x": 18,
-            "y": 80
-          },
-          "id": 34,
-          "interval": null,
-          "links": [],
-          "maxDataPoints": 100,
-          "options": {
-            "colorMode": "background",
-            "fieldOptions": {
-              "calcs": [
-                "mean"
-              ]
-            },
-            "graphMode": "none",
-            "justifyMode": "auto",
-            "orientation": "horizontal",
-            "reduceOptions": {
-              "calcs": [
-                "mean"
-              ],
-              "fields": "",
-              "values": false
-            }
-          },
-          "pluginVersion": "7.0.3",
-          "targets": [
-            {
-              "refId": "A",
-              "target": "alias($base.$path.pageSummary.$group.$page.$browser.$connectivity.pagexray.thirdParty.requests, 'Third party request')"
-            }
-          ],
-          "title": "",
-          "type": "stat"
-        }
-      ],
+      "panels": [],
       "repeat": null,
       "title": "1st vs 3rd party (enable by --firstParty REGEX)",
       "type": "row"
+    },
+    {
+      "cacheTimeout": null,
+      "datasource": "${DS_GRAPHITE}",
+      "description": "The transfer size of all your first party responses.  \n\nThe first party content (content you serve your self ) are defined by the requests that  match the regexp you supply with the parameter *--firstParty*",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {},
+          "displayName": "First party transfer size",
+          "mappings": [
+            {
+              "id": 0,
+              "op": "=",
+              "text": "N/A",
+              "type": 1,
+              "value": "null"
+            }
+          ],
+          "nullValueMode": "connected",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "blue",
+                "value": null
+              }
+            ]
+          },
+          "unit": "decbytes"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 6,
+        "x": 0,
+        "y": 88
+      },
+      "id": 33,
+      "interval": null,
+      "links": [],
+      "maxDataPoints": 100,
+      "options": {
+        "colorMode": "background",
+        "fieldOptions": {
+          "calcs": [
+            "mean"
+          ]
+        },
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        }
+      },
+      "pluginVersion": "7.0.3",
+      "targets": [
+        {
+          "refId": "A",
+          "target": "alias($base.$path.pageSummary.$group.$page.$browser.$connectivity.pagexray.firstParty.transferSize, 'First party transfer size')"
+        }
+      ],
+      "title": "",
+      "type": "stat"
+    },
+    {
+      "cacheTimeout": null,
+      "datasource": "${DS_GRAPHITE}",
+      "description": "The transfer size of all your third party responses.  \n\nThe third party content (content other companies/organizations serve like advertisement, social media buttons etc) are defined by the requests that doesn't match the regexp you supply with the parameter *--firstParty*",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {},
+          "displayName": "Third party transfer size",
+          "mappings": [
+            {
+              "id": 0,
+              "op": "=",
+              "text": "N/A",
+              "type": 1,
+              "value": "null"
+            }
+          ],
+          "nullValueMode": "connected",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "blue",
+                "value": null
+              }
+            ]
+          },
+          "unit": "decbytes"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 6,
+        "x": 6,
+        "y": 88
+      },
+      "id": 32,
+      "interval": null,
+      "links": [],
+      "maxDataPoints": 100,
+      "options": {
+        "colorMode": "background",
+        "fieldOptions": {
+          "calcs": [
+            "mean"
+          ]
+        },
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        }
+      },
+      "pluginVersion": "7.0.3",
+      "targets": [
+        {
+          "refId": "A",
+          "target": "alias($base.$path.pageSummary.$group.$page.$browser.$connectivity.pagexray.thirdParty.transferSize, 'Third party transfer size')"
+        }
+      ],
+      "title": "",
+      "type": "stat"
+    },
+    {
+      "cacheTimeout": null,
+      "datasource": "${DS_GRAPHITE}",
+      "description": "The number of requests for all your first party responses.  \n\nThe first party content (content you serve your self ) are defined by the requests that match the regexp you supply with the parameter *--firstParty*",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {},
+          "displayName": "First party request",
+          "mappings": [
+            {
+              "id": 0,
+              "op": "=",
+              "text": "N/A",
+              "type": 1,
+              "value": "null"
+            }
+          ],
+          "nullValueMode": "connected",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "blue",
+                "value": null
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 6,
+        "x": 12,
+        "y": 88
+      },
+      "id": 35,
+      "interval": null,
+      "links": [],
+      "maxDataPoints": 100,
+      "options": {
+        "colorMode": "background",
+        "fieldOptions": {
+          "calcs": [
+            "mean"
+          ]
+        },
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        }
+      },
+      "pluginVersion": "7.0.3",
+      "targets": [
+        {
+          "refId": "A",
+          "target": "alias($base.$path.pageSummary.$group.$page.$browser.$connectivity.pagexray.firstParty.requests, 'First party request')"
+        }
+      ],
+      "title": "",
+      "type": "stat"
+    },
+    {
+      "cacheTimeout": null,
+      "datasource": "${DS_GRAPHITE}",
+      "description": "The number of requests for all your third party responses.  \n\nThe third party content (content other companies/organizations serve like advertisement, social media buttons etc) are defined by the requests that doesn't match the regexp you supply with the parameter *--firstParty*",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {},
+          "displayName": "Third party request",
+          "mappings": [
+            {
+              "id": 0,
+              "op": "=",
+              "text": "N/A",
+              "type": 1,
+              "value": "null"
+            }
+          ],
+          "nullValueMode": "connected",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "blue",
+                "value": null
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 6,
+        "x": 18,
+        "y": 88
+      },
+      "id": 34,
+      "interval": null,
+      "links": [],
+      "maxDataPoints": 100,
+      "options": {
+        "colorMode": "background",
+        "fieldOptions": {
+          "calcs": [
+            "mean"
+          ]
+        },
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        }
+      },
+      "pluginVersion": "7.0.3",
+      "targets": [
+        {
+          "refId": "A",
+          "target": "alias($base.$path.pageSummary.$group.$page.$browser.$connectivity.pagexray.thirdParty.requests, 'Third party request')"
+        }
+      ],
+      "title": "",
+      "type": "stat"
+    },
+    {
+      "cacheTimeout": null,
+      "datasource": "${DS_GRAPHITE}",
+      "description": "The transfer size of all your first party responses.  \n\nThe first party content (content you serve your self ) are defined by the requests that  match the regexp you supply with the parameter *--firstParty*",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {},
+          "displayName": "First party transfer size",
+          "mappings": [
+            {
+              "id": 0,
+              "op": "=",
+              "text": "N/A",
+              "type": 1,
+              "value": ""
+            }
+          ],
+          "nullValueMode": "connected",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 1
+              },
+              {
+                "color": "red",
+                "value": 5
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 6,
+        "x": 0,
+        "y": 94
+      },
+      "id": 178,
+      "interval": null,
+      "links": [],
+      "maxDataPoints": 100,
+      "options": {
+        "colorMode": "background",
+        "fieldOptions": {
+          "calcs": [
+            "mean"
+          ]
+        },
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        }
+      },
+      "pluginVersion": "7.0.3",
+      "targets": [
+        {
+          "hide": true,
+          "refCount": 1,
+          "refId": "B",
+          "target": "$base.$path.pageSummary.$group.$page.$browser.$connectivity.pagexray.thirdParty.transferSize"
+        },
+        {
+          "hide": true,
+          "refCount": 1,
+          "refId": "A",
+          "target": "$base.$path.pageSummary.$group.$page.$browser.$connectivity.pagexray.transferSize"
+        },
+        {
+          "refCount": 0,
+          "refId": "C",
+          "target": "alias(scale(divideSeries(#B, #A), 100), 'Third Party transfer size')",
+          "targetFull": "alias(scale(divideSeries($base.$path.pageSummary.$group.$page.$browser.$connectivity.pagexray.thirdParty.transferSize, $base.$path.pageSummary.$group.$page.$browser.$connectivity.pagexray.transferSize), 100), 'Third Party transfer size')"
+        }
+      ],
+      "title": "",
+      "type": "stat"
+    },
+    {
+      "cacheTimeout": null,
+      "datasource": "${DS_GRAPHITE}",
+      "description": "The transfer size of all your first party responses.  \n\nThe first party content (content you serve your self ) are defined by the requests that  match the regexp you supply with the parameter *--firstParty*",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {},
+          "displayName": "First party transfer size",
+          "mappings": [
+            {
+              "id": 0,
+              "op": "=",
+              "text": "N/A",
+              "type": 1,
+              "value": ""
+            }
+          ],
+          "nullValueMode": "connected",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 1
+              },
+              {
+                "color": "red",
+                "value": 5
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 6,
+        "x": 6,
+        "y": 94
+      },
+      "id": 179,
+      "interval": null,
+      "links": [],
+      "maxDataPoints": 100,
+      "options": {
+        "colorMode": "background",
+        "fieldOptions": {
+          "calcs": [
+            "mean"
+          ]
+        },
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        }
+      },
+      "pluginVersion": "7.0.3",
+      "targets": [
+        {
+          "hide": true,
+          "refCount": 1,
+          "refId": "B",
+          "target": "$base.$path.pageSummary.$group.$page.$browser.$connectivity.pagexray.thirdParty.requests"
+        },
+        {
+          "hide": true,
+          "refCount": 1,
+          "refId": "A",
+          "target": "$base.$path.pageSummary.$group.$page.$browser.$connectivity.pagexray.requests"
+        },
+        {
+          "refCount": 0,
+          "refId": "C",
+          "target": "alias(scale(divideSeries(#B, #A), 100), 'Third Party request')",
+          "targetFull": "alias(scale(divideSeries($base.$path.pageSummary.$group.$page.$browser.$connectivity.pagexray.thirdParty.requests, $base.$path.pageSummary.$group.$page.$browser.$connectivity.pagexray.requests), 100), 'Third Party request')"
+        }
+      ],
+      "title": "",
+      "type": "stat"
     }
   ],
   "refresh": false,
@@ -5944,5 +6133,5 @@
   "timezone": "browser",
   "title": "Page summary",
   "uid": "000000043",
-  "version": 52
+  "version": 57
 }
