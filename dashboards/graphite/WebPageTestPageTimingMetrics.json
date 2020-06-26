@@ -21,7 +21,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "7.0.0"
+      "version": "7.0.3"
     },
     {
       "type": "panel",
@@ -34,6 +34,12 @@
       "id": "graphite",
       "name": "Graphite",
       "version": "1.0.0"
+    },
+    {
+      "type": "panel",
+      "id": "stat",
+      "name": "Stat",
+      "version": ""
     }
   ],
   "annotations": {
@@ -63,9 +69,94 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1589956669341,
+  "iteration": 1592479938133,
   "links": [],
   "panels": [
+    {
+      "datasource": "${DS_GRAPHITE}",
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {},
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "blue",
+                "value": null
+              }
+            ]
+          },
+          "unit": "ms"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 32,
+      "links": [
+        {
+          "targetBlank": true,
+          "title": "Page summary $page",
+          "url": "/dashboard/db/page-summary?$__url_time_range&$__all_variables"
+        }
+      ],
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        }
+      },
+      "pluginVersion": "7.0.3",
+      "targets": [
+        {
+          "refCount": 0,
+          "refId": "A",
+          "target": "aliasByNode($base.$path.pageSummary.$group.$page.webpagetest.$location.$connectivity.data.median.$view.render, 11)"
+        },
+        {
+          "refCount": 0,
+          "refId": "B",
+          "target": "aliasByNode($base.$path.pageSummary.$group.$page.webpagetest.$location.$connectivity.data.median.$view.heroElementTimes.*, 12)"
+        },
+        {
+          "refCount": 0,
+          "refId": "F",
+          "target": "aliasByNode($base.$path.pageSummary.$group.$page.webpagetest.$location.$connectivity.data.median.$view.visualComplete95, 11)"
+        },
+        {
+          "refCount": 0,
+          "refId": "H",
+          "target": "aliasByNode($base.$path.pageSummary.$group.$page.webpagetest.$location.$connectivity.data.median.$view.lastVisualChange, 11)"
+        },
+        {
+          "refCount": 0,
+          "refId": "C",
+          "target": "aliasByNode($base.$path.pageSummary.$group.$page.webpagetest.$location.$connectivity.data.median.$view.TTFB, 11)"
+        },
+        {
+          "refCount": 0,
+          "refId": "D",
+          "target": "aliasByNode($base.$path.pageSummary.$group.$page.webpagetest.$location.$connectivity.data.median.$view.fullyLoaded, 11)"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Metrics",
+      "type": "stat"
+    },
     {
       "collapsed": false,
       "datasource": "${DS_GRAPHITE}",
@@ -73,7 +164,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 0
+        "y": 4
       },
       "id": 10,
       "panels": [],
@@ -99,7 +190,7 @@
         "h": 19,
         "w": 12,
         "x": 0,
-        "y": 1
+        "y": 5
       },
       "hiddenSeries": false,
       "id": 1,
@@ -239,7 +330,7 @@
         "h": 5,
         "w": 6,
         "x": 12,
-        "y": 1
+        "y": 5
       },
       "hiddenSeries": false,
       "id": 15,
@@ -344,7 +435,7 @@
         "h": 5,
         "w": 6,
         "x": 18,
-        "y": 1
+        "y": 5
       },
       "hiddenSeries": false,
       "id": 13,
@@ -449,7 +540,7 @@
         "h": 5,
         "w": 6,
         "x": 12,
-        "y": 6
+        "y": 10
       },
       "hiddenSeries": false,
       "id": 16,
@@ -556,7 +647,7 @@
         "h": 5,
         "w": 6,
         "x": 18,
-        "y": 6
+        "y": 10
       },
       "hiddenSeries": false,
       "id": 17,
@@ -658,7 +749,7 @@
         "h": 9,
         "w": 12,
         "x": 12,
-        "y": 11
+        "y": 15
       },
       "hiddenSeries": false,
       "id": 3,
@@ -759,7 +850,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 20
+        "y": 24
       },
       "id": 25,
       "panels": [
@@ -1308,7 +1399,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 21
+        "y": 25
       },
       "id": 19,
       "panels": [
@@ -1717,7 +1808,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 22
+        "y": 26
       },
       "id": 31,
       "panels": [],
@@ -1742,7 +1833,7 @@
         "h": 7,
         "w": 24,
         "x": 0,
-        "y": 23
+        "y": 27
       },
       "hiddenSeries": false,
       "id": 11,
@@ -1835,7 +1926,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 30
+        "y": 34
       },
       "id": 8,
       "panels": [],
@@ -1860,7 +1951,7 @@
         "h": 21,
         "w": 24,
         "x": 0,
-        "y": 31
+        "y": 35
       },
       "hiddenSeries": false,
       "id": 2,
@@ -1969,7 +2060,7 @@
         "h": 19,
         "w": 24,
         "x": 0,
-        "y": 52
+        "y": 56
       },
       "hiddenSeries": false,
       "id": 6,
@@ -2303,5 +2394,5 @@
   "timezone": "browser",
   "title": "Webpagetest Page timing metrics",
   "uid": "000000057",
-  "version": 14
+  "version": 17
 }
