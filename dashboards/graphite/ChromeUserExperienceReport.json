@@ -65,7 +65,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1593635101091,
+  "iteration": 1593850696871,
   "links": [],
   "panels": [
     {
@@ -1082,7 +1082,7 @@
       "lines": true,
       "linewidth": 1,
       "maxDataPoints": "",
-      "nullPointMode": "null",
+      "nullPointMode": "connected",
       "options": {
         "dataLinks": []
       },
@@ -1199,7 +1199,7 @@
       "lines": true,
       "linewidth": 1,
       "maxDataPoints": "",
-      "nullPointMode": "null",
+      "nullPointMode": "connected",
       "options": {
         "dataLinks": []
       },
@@ -1316,7 +1316,7 @@
       "lines": true,
       "linewidth": 1,
       "maxDataPoints": "",
-      "nullPointMode": "null",
+      "nullPointMode": "connected",
       "options": {
         "dataLinks": []
       },
@@ -1433,7 +1433,7 @@
       "lines": true,
       "linewidth": 1,
       "maxDataPoints": "",
-      "nullPointMode": "null",
+      "nullPointMode": "connected",
       "options": {
         "dataLinks": []
       },
@@ -1816,7 +1816,9 @@
       "valueName": "current"
     },
     {
-      "aliasColors": {},
+      "aliasColors": {
+        "slow": "#E02F44"
+      },
       "breakPoint": "50%",
       "cacheTimeout": null,
       "combine": {
@@ -1827,7 +1829,21 @@
       "description": "",
       "fieldConfig": {
         "defaults": {
-          "custom": {}
+          "custom": {},
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
         },
         "overrides": []
       },
@@ -1839,7 +1855,7 @@
         "x": 6,
         "y": 37
       },
-      "id": 28,
+      "id": 43,
       "interval": null,
       "legend": {
         "show": true,
@@ -1850,6 +1866,7 @@
       "maxDataPoints": 1,
       "nullPointMode": "connected",
       "pieType": "pie",
+      "pluginVersion": "7.0.3",
       "strokeWidth": 1,
       "targets": [
         {
@@ -1865,7 +1882,7 @@
         {
           "refCount": 0,
           "refId": "C",
-          "target": "aliasByNode(scale($base.$path.summary.$group.crux.originLoadingExperience.$formFactor.LARGEST_CONTENTFUL_PAINT_MS, 100), 8)"
+          "target": "aliasByNode(scale($base.$path.summary.$group.crux.originLoadingExperience.$formFactor.LARGEST_CONTENTFUL_PAINT_MS.slow, 100), 8)"
         }
       ],
       "timeFrom": null,
@@ -2171,7 +2188,7 @@
         {
           "refCount": 0,
           "refId": "C",
-          "target": "aliasByNode(scale($base.$path.summary.$group.crux.originLoadingExperience.$formFactor.LARGEST_CONTENTFUL_PAINT_MS, 100), 8)"
+          "target": "aliasByNode(scale($base.$path.summary.$group.crux.originLoadingExperience.$formFactor.LARGEST_CONTENTFUL_PAINT_MS.slow, 100), 8)"
         }
       ],
       "thresholds": [],
@@ -2507,7 +2524,7 @@
       },
       "lines": true,
       "linewidth": 1,
-      "nullPointMode": "null",
+      "nullPointMode": "connected",
       "options": {
         "dataLinks": []
       },
@@ -2623,7 +2640,7 @@
       },
       "lines": true,
       "linewidth": 1,
-      "nullPointMode": "null",
+      "nullPointMode": "connected",
       "options": {
         "dataLinks": []
       },
@@ -2739,7 +2756,7 @@
       },
       "lines": true,
       "linewidth": 1,
-      "nullPointMode": "null",
+      "nullPointMode": "connected",
       "options": {
         "dataLinks": []
       },
@@ -2855,7 +2872,7 @@
       },
       "lines": true,
       "linewidth": 1,
-      "nullPointMode": "null",
+      "nullPointMode": "connected",
       "options": {
         "dataLinks": []
       },
@@ -3052,5 +3069,5 @@
   "timezone": "",
   "title": "Chrome User Experience Report",
   "uid": "t_bhsNGMk",
-  "version": 16
+  "version": 20
 }
