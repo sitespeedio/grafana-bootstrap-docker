@@ -11,7 +11,7 @@
     {
       "name": "VAR_NAMESPACE",
       "type": "constant",
-      "label": "namespace",
+      "label": "sitespeed_io",
       "value": "sitespeed_io",
       "description": ""
     }
@@ -27,7 +27,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "7.0.3"
+      "version": "7.0.5"
     },
     {
       "type": "panel",
@@ -59,7 +59,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1592480461681,
+  "iteration": 1594210807386,
   "links": [],
   "panels": [
     {
@@ -131,7 +131,7 @@
         },
         "showUnfilled": true
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.0.5",
       "targets": [
         {
           "refId": "A",
@@ -201,7 +201,7 @@
         },
         "showUnfilled": true
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.0.5",
       "targets": [
         {
           "refId": "A",
@@ -688,7 +688,7 @@
         },
         "showUnfilled": true
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.0.5",
       "targets": [
         {
           "refId": "A",
@@ -758,7 +758,7 @@
         },
         "showUnfilled": true
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.0.5",
       "targets": [
         {
           "refId": "A",
@@ -842,7 +842,7 @@
         },
         "showUnfilled": true
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.0.5",
       "targets": [
         {
           "refId": "A",
@@ -912,7 +912,7 @@
         },
         "showUnfilled": true
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.0.5",
       "targets": [
         {
           "refId": "A",
@@ -937,7 +937,7 @@
           "text": "${VAR_NAMESPACE}"
         },
         "hide": 2,
-        "label": "namespace",
+        "label": "sitespeed_io",
         "name": "namespace",
         "options": [
           {
@@ -1114,5 +1114,5 @@
   "timezone": "",
   "title": "WebPageTest leaderboard",
   "uid": "SclfSyWWk",
-  "version": 17
+  "version": 20
 }
