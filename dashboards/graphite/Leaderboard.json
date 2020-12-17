@@ -27,7 +27,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "7.0.3"
+      "version": "7.3.6"
     },
     {
       "type": "panel",
@@ -65,7 +65,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1592480364315,
+  "iteration": 1608243940878,
   "links": [
     {
       "icon": "external link",
@@ -120,7 +120,6 @@
             "mode": "thresholds"
           },
           "custom": {},
-          "displayName": "",
           "mappings": [],
           "max": 3000,
           "min": 0,
@@ -165,7 +164,7 @@
         },
         "showUnfilled": true
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.3.6",
       "targets": [
         {
           "refId": "A",
@@ -188,7 +187,6 @@
             "mode": "thresholds"
           },
           "custom": {},
-          "displayName": "",
           "mappings": [],
           "max": 10000,
           "min": 0,
@@ -233,7 +231,7 @@
         },
         "showUnfilled": true
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.3.6",
       "targets": [
         {
           "refId": "A",
@@ -256,7 +254,6 @@
             "mode": "thresholds"
           },
           "custom": {},
-          "displayName": "",
           "mappings": [],
           "max": 8000,
           "min": 0,
@@ -301,7 +298,7 @@
         },
         "showUnfilled": true
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.3.6",
       "targets": [
         {
           "refId": "A",
@@ -324,7 +321,6 @@
             "mode": "thresholds"
           },
           "custom": {},
-          "displayName": "",
           "mappings": [],
           "max": 10000,
           "min": 0,
@@ -369,7 +365,7 @@
         },
         "showUnfilled": true
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.3.6",
       "targets": [
         {
           "refId": "A",
@@ -400,13 +396,21 @@
           "dashes": false,
           "datasource": "${DS_GRAPHITE}",
           "description": "The first visual change is when something for the first time is painted within the current viewport. It is calculated by analyzing a video recording of the screen.",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "fill": 0,
+          "fillGradient": 0,
           "gridPos": {
             "h": 15,
             "w": 12,
             "x": 0,
             "y": 30
           },
+          "hiddenSeries": false,
           "id": 12,
           "legend": {
             "alignAsTable": true,
@@ -424,8 +428,11 @@
           "linewidth": 1,
           "links": [],
           "nullPointMode": "connected",
-          "options": {},
+          "options": {
+            "alertThreshold": true
+          },
           "percentage": false,
+          "pluginVersion": "7.3.6",
           "pointradius": 5,
           "points": false,
           "renderer": "flot",
@@ -487,13 +494,21 @@
           "dashes": false,
           "datasource": "${DS_GRAPHITE}",
           "description": "The largest image is the time when the largest image within the viewport is painted and on its final position. It is calculated by analyzing a video recording of the screen.",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "fill": 0,
+          "fillGradient": 0,
           "gridPos": {
             "h": 15,
             "w": 12,
             "x": 12,
             "y": 30
           },
+          "hiddenSeries": false,
           "id": 14,
           "legend": {
             "alignAsTable": true,
@@ -511,8 +526,11 @@
           "linewidth": 1,
           "links": [],
           "nullPointMode": "connected",
-          "options": {},
+          "options": {
+            "alertThreshold": true
+          },
           "percentage": false,
+          "pluginVersion": "7.3.6",
           "pointradius": 5,
           "points": false,
           "renderer": "flot",
@@ -574,13 +592,21 @@
           "dashes": false,
           "datasource": "${DS_GRAPHITE}",
           "description": "The Speed Index is the average time at which visible parts of the page are displayed. It is expressed in milliseconds and dependent on size of the view port. It was created by Pat Meenan and you can checkout the full documentation [here](https://sites.google.com/a/webpagetest.org/docs/using-webpagetest/metrics/speed-index).",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "fill": 0,
+          "fillGradient": 0,
           "gridPos": {
             "h": 15,
             "w": 12,
             "x": 0,
             "y": 45
           },
+          "hiddenSeries": false,
           "id": 1,
           "legend": {
             "alignAsTable": true,
@@ -598,8 +624,11 @@
           "linewidth": 1,
           "links": [],
           "nullPointMode": "connected",
-          "options": {},
+          "options": {
+            "alertThreshold": true
+          },
           "percentage": false,
+          "pluginVersion": "7.3.6",
           "pointradius": 5,
           "points": false,
           "renderer": "flot",
@@ -661,13 +690,21 @@
           "dashes": false,
           "datasource": "${DS_GRAPHITE}",
           "description": "Visual readiness is the time between the first visual change and the last visual change within the viewport. It is calculated by analyzing a video recording of the screen.",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "fill": 0,
+          "fillGradient": 0,
           "gridPos": {
             "h": 15,
             "w": 12,
             "x": 12,
             "y": 45
           },
+          "hiddenSeries": false,
           "id": 13,
           "legend": {
             "alignAsTable": true,
@@ -685,8 +722,11 @@
           "linewidth": 1,
           "links": [],
           "nullPointMode": "connected",
-          "options": {},
+          "options": {
+            "alertThreshold": true
+          },
           "percentage": false,
+          "pluginVersion": "7.3.6",
           "pointradius": 5,
           "points": false,
           "renderer": "flot",
@@ -769,7 +809,6 @@
             "mode": "thresholds"
           },
           "custom": {},
-          "displayName": "",
           "mappings": [],
           "max": 2500,
           "min": 0,
@@ -814,7 +853,7 @@
         },
         "showUnfilled": true
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.3.6",
       "targets": [
         {
           "refId": "A",
@@ -837,7 +876,6 @@
             "mode": "thresholds"
           },
           "custom": {},
-          "displayName": "",
           "mappings": [],
           "max": 800,
           "min": 0,
@@ -882,7 +920,7 @@
         },
         "showUnfilled": true
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.3.6",
       "targets": [
         {
           "refId": "A",
@@ -910,6 +948,36 @@
           "cacheTimeout": "",
           "datasource": "${DS_GRAPHITE}",
           "description": "The estimated carbon emission is calculated using the sustainable web plugin, developed together with the Green Web Foundation.",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {},
+              "mappings": [],
+              "max": 15,
+              "min": 0,
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "#EAB839",
+                    "value": 1
+                  },
+                  {
+                    "color": "red",
+                    "value": 4
+                  }
+                ]
+              },
+              "unit": "massg"
+            },
+            "overrides": []
+          },
           "gridPos": {
             "h": 14,
             "w": 12,
@@ -920,44 +988,17 @@
           "links": [],
           "options": {
             "displayMode": "lcd",
-            "fieldOptions": {
+            "orientation": "horizontal",
+            "reduceOptions": {
               "calcs": [
                 "mean"
               ],
-              "defaults": {
-                "color": {
-                  "mode": "thresholds"
-                },
-                "mappings": [],
-                "max": 15,
-                "min": 0,
-                "thresholds": {
-                  "mode": "absolute",
-                  "steps": [
-                    {
-                      "color": "green",
-                      "value": null
-                    },
-                    {
-                      "color": "#EAB839",
-                      "value": 1
-                    },
-                    {
-                      "color": "red",
-                      "value": 4
-                    }
-                  ]
-                },
-                "title": "",
-                "unit": "massg"
-              },
-              "overrides": [],
+              "fields": "",
               "values": false
             },
-            "orientation": "horizontal",
             "showUnfilled": true
           },
-          "pluginVersion": "6.6.0",
+          "pluginVersion": "7.3.6",
           "targets": [
             {
               "refId": "A",
@@ -998,7 +1039,6 @@
             "mode": "thresholds"
           },
           "custom": {},
-          "displayName": "",
           "mappings": [],
           "max": 15000,
           "min": 0,
@@ -1043,7 +1083,7 @@
         },
         "showUnfilled": true
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.3.6",
       "targets": [
         {
           "refId": "A",
@@ -1066,7 +1106,6 @@
             "mode": "thresholds"
           },
           "custom": {},
-          "displayName": "",
           "mappings": [],
           "max": 20000,
           "min": 0,
@@ -1111,7 +1150,7 @@
         },
         "showUnfilled": true
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.3.6",
       "targets": [
         {
           "refId": "A",
@@ -1337,7 +1376,6 @@
             "mode": "thresholds"
           },
           "custom": {},
-          "displayName": "",
           "mappings": [],
           "max": 2000000,
           "min": 0,
@@ -1382,7 +1420,7 @@
         },
         "showUnfilled": true
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.3.6",
       "targets": [
         {
           "refId": "A",
@@ -1405,7 +1443,6 @@
             "mode": "thresholds"
           },
           "custom": {},
-          "displayName": "",
           "mappings": [],
           "max": 6000000,
           "min": 0,
@@ -1450,7 +1487,7 @@
         },
         "showUnfilled": true
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.3.6",
       "targets": [
         {
           "refId": "A",
@@ -1487,7 +1524,6 @@
             "mode": "thresholds"
           },
           "custom": {},
-          "displayName": "",
           "mappings": [],
           "max": 500,
           "min": 0,
@@ -1526,9 +1562,10 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.3.6",
       "targets": [
         {
           "refId": "A",
@@ -1550,7 +1587,6 @@
             "mode": "thresholds"
           },
           "custom": {},
-          "displayName": "",
           "mappings": [],
           "max": 5000000,
           "min": 0,
@@ -1594,9 +1630,10 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.3.6",
       "targets": [
         {
           "refId": "A",
@@ -1629,7 +1666,6 @@
                 "mode": "thresholds"
               },
               "custom": {},
-              "displayName": "",
               "mappings": [],
               "max": 500,
               "min": 0,
@@ -1660,7 +1696,7 @@
             "h": 14,
             "w": 12,
             "x": 0,
-            "y": 99
+            "y": 113
           },
           "id": 71,
           "links": [],
@@ -1676,7 +1712,7 @@
             },
             "showUnfilled": true
           },
-          "pluginVersion": "7.0.3",
+          "pluginVersion": "7.3.6",
           "targets": [
             {
               "refId": "A",
@@ -1699,7 +1735,6 @@
                 "mode": "thresholds"
               },
               "custom": {},
-              "displayName": "",
               "mappings": [],
               "max": 5000000,
               "min": 0,
@@ -1731,7 +1766,7 @@
             "h": 14,
             "w": 12,
             "x": 12,
-            "y": 99
+            "y": 113
           },
           "id": 72,
           "links": [],
@@ -1747,7 +1782,7 @@
             },
             "showUnfilled": true
           },
-          "pluginVersion": "7.0.3",
+          "pluginVersion": "7.3.6",
           "targets": [
             {
               "refId": "A",
@@ -1781,13 +1816,21 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": "${DS_GRAPHITE}",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "fill": 0,
+          "fillGradient": 0,
           "gridPos": {
             "h": 16,
             "w": 12,
             "x": 0,
-            "y": 71
+            "y": 114
           },
+          "hiddenSeries": false,
           "id": 3,
           "legend": {
             "alignAsTable": true,
@@ -1805,8 +1848,11 @@
           "linewidth": 1,
           "links": [],
           "nullPointMode": "connected",
-          "options": {},
+          "options": {
+            "alertThreshold": true
+          },
           "percentage": false,
+          "pluginVersion": "7.3.6",
           "pointradius": 5,
           "points": false,
           "renderer": "flot",
@@ -1867,13 +1913,21 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": "${DS_GRAPHITE}",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "fill": 0,
+          "fillGradient": 0,
           "gridPos": {
             "h": 16,
             "w": 12,
             "x": 12,
-            "y": 71
+            "y": 114
           },
+          "hiddenSeries": false,
           "id": 4,
           "legend": {
             "alignAsTable": true,
@@ -1891,8 +1945,11 @@
           "linewidth": 1,
           "links": [],
           "nullPointMode": "connected",
-          "options": {},
+          "options": {
+            "alertThreshold": true
+          },
           "percentage": false,
+          "pluginVersion": "7.3.6",
           "pointradius": 5,
           "points": false,
           "renderer": "flot",
@@ -1972,7 +2029,6 @@
                 "mode": "thresholds"
               },
               "custom": {},
-              "displayName": "",
               "mappings": [],
               "max": 20,
               "min": 0,
@@ -1997,7 +2053,7 @@
             "h": 14,
             "w": 12,
             "x": 0,
-            "y": 101
+            "y": 115
           },
           "id": 75,
           "links": [],
@@ -2013,7 +2069,7 @@
             },
             "showUnfilled": true
           },
-          "pluginVersion": "7.0.3",
+          "pluginVersion": "7.3.6",
           "targets": [
             {
               "refId": "A",
@@ -2036,7 +2092,6 @@
                 "mode": "thresholds"
               },
               "custom": {},
-              "displayName": "",
               "mappings": [],
               "max": 20,
               "min": 0,
@@ -2065,7 +2120,7 @@
             "h": 14,
             "w": 12,
             "x": 12,
-            "y": 101
+            "y": 115
           },
           "id": 76,
           "links": [],
@@ -2081,7 +2136,7 @@
             },
             "showUnfilled": true
           },
-          "pluginVersion": "7.0.3",
+          "pluginVersion": "7.3.6",
           "targets": [
             {
               "refId": "A",
@@ -2122,7 +2177,6 @@
             "mode": "thresholds"
           },
           "custom": {},
-          "displayName": "",
           "mappings": [
             {
               "from": "",
@@ -2177,7 +2231,7 @@
         },
         "showUnfilled": true
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.3.6",
       "targets": [
         {
           "refId": "A",
@@ -2200,7 +2254,6 @@
             "mode": "thresholds"
           },
           "custom": {},
-          "displayName": "",
           "mappings": [],
           "max": 1000,
           "min": 0,
@@ -2245,7 +2298,7 @@
         },
         "showUnfilled": true
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.3.6",
       "targets": [
         {
           "refId": "A",
@@ -2555,7 +2608,6 @@
             "mode": "thresholds"
           },
           "custom": {},
-          "displayName": "",
           "mappings": [
             {
               "from": "",
@@ -2610,7 +2662,7 @@
         },
         "showUnfilled": true
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.3.6",
       "targets": [
         {
           "refId": "A",
@@ -2633,7 +2685,6 @@
             "mode": "thresholds"
           },
           "custom": {},
-          "displayName": "",
           "mappings": [],
           "max": 100,
           "min": 0,
@@ -2678,7 +2729,7 @@
         },
         "showUnfilled": true
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.3.6",
       "targets": [
         {
           "refId": "A",
@@ -2715,7 +2766,6 @@
             "mode": "thresholds"
           },
           "custom": {},
-          "displayName": "",
           "mappings": [],
           "max": 100,
           "min": 0,
@@ -2760,7 +2810,7 @@
         },
         "showUnfilled": true
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.3.6",
       "targets": [
         {
           "refId": "A",
@@ -2783,7 +2833,6 @@
             "mode": "thresholds"
           },
           "custom": {},
-          "displayName": "",
           "mappings": [],
           "max": 100,
           "min": 0,
@@ -2828,7 +2877,7 @@
         },
         "showUnfilled": true
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.3.6",
       "targets": [
         {
           "refId": "A",
@@ -2842,7 +2891,7 @@
       "type": "bargauge"
     }
   ],
-  "schemaVersion": 25,
+  "schemaVersion": 26,
   "style": "dark",
   "tags": [
     "leaderboard",
@@ -2853,15 +2902,18 @@
       {
         "current": {
           "value": "${VAR_NAMESPACE}",
-          "text": "${VAR_NAMESPACE}"
+          "text": "${VAR_NAMESPACE}",
+          "selected": false
         },
+        "error": null,
         "hide": 2,
         "label": "sitespeed_io",
         "name": "namespace",
         "options": [
           {
             "value": "${VAR_NAMESPACE}",
-            "text": "${VAR_NAMESPACE}"
+            "text": "${VAR_NAMESPACE}",
+            "selected": false
           }
         ],
         "query": "${VAR_NAMESPACE}",
@@ -2873,6 +2925,7 @@
         "current": {},
         "datasource": "${DS_GRAPHITE}",
         "definition": "$namespace.*",
+        "error": null,
         "hide": 0,
         "includeAll": false,
         "label": "path",
@@ -2895,6 +2948,7 @@
         "current": {},
         "datasource": "${DS_GRAPHITE}",
         "definition": "$namespace.$path.pageSummary.*",
+        "error": null,
         "hide": 0,
         "includeAll": true,
         "label": "domains",
@@ -2917,6 +2971,7 @@
         "current": {},
         "datasource": "${DS_GRAPHITE}",
         "definition": "$namespace.$path.pageSummary.$domains.*",
+        "error": null,
         "hide": 0,
         "includeAll": true,
         "label": "pages",
@@ -2939,6 +2994,7 @@
         "current": {},
         "datasource": "${DS_GRAPHITE}",
         "definition": "$namespace.$path.pageSummary.$domains.$pages.*",
+        "error": null,
         "hide": 0,
         "includeAll": false,
         "label": "browser",
@@ -2961,6 +3017,7 @@
         "current": {},
         "datasource": "${DS_GRAPHITE}",
         "definition": "$namespace.$path.pageSummary.$domains.$pages.$browser.*",
+        "error": null,
         "hide": 0,
         "includeAll": false,
         "label": "",
@@ -2983,10 +3040,11 @@
         "auto_count": 30,
         "auto_min": "10s",
         "current": {
-          "selected": true,
+          "selected": false,
           "text": "median",
           "value": "median"
         },
+        "error": null,
         "hide": 0,
         "label": "",
         "name": "function",
@@ -3056,5 +3114,5 @@
   "timezone": "",
   "title": "Leaderboard",
   "uid": "000000060",
-  "version": 18
+  "version": 33
 }
