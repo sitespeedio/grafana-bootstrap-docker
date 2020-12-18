@@ -21,7 +21,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "7.0.3"
+      "version": "7.3.6"
     },
     {
       "type": "panel",
@@ -81,7 +81,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1592851689929,
+  "iteration": 1608260791248,
   "links": [
     {
       "icon": "external link",
@@ -135,7 +135,8 @@
       "datasource": "${DS_GRAPHITE}",
       "fieldConfig": {
         "defaults": {
-          "custom": {}
+          "custom": {},
+          "links": []
         },
         "overrides": []
       },
@@ -166,9 +167,10 @@
       "links": [],
       "nullPointMode": "connected",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": false,
+      "pluginVersion": "7.3.6",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -351,9 +353,10 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.3.6",
       "targets": [
         {
           "refId": "A",
@@ -428,9 +431,10 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.3.6",
       "targets": [
         {
           "refId": "A",
@@ -497,9 +501,10 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.3.6",
       "targets": [
         {
           "refId": "A",
@@ -573,19 +578,31 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.3.6",
       "targets": [
         {
           "refCount": 0,
           "refId": "A",
-          "target": "aliasByNode($base.$path.pageSummary.$group.$page.$browser.$connectivity.coach.advice.*.score, 9)"
+          "target": "aliasByNode($base.$path.pageSummary.$group.$page.$browser.$connectivity.coach.advice.bestpractice.score, 9)"
         },
         {
           "refCount": 0,
           "refId": "B",
-          "target": "alias($base.$path.pageSummary.$group.$page.$browser.$connectivity.coach.advice.score, 'total')"
+          "target": "aliasByNode($base.$path.pageSummary.$group.$page.$browser.$connectivity.coach.advice.performance.score, 9)"
+        },
+        {
+          "refCount": 0,
+          "refId": "C",
+          "target": "aliasByNode($base.$path.pageSummary.$group.$page.$browser.$connectivity.coach.advice.privacy.score, 9)"
+        },
+        {
+          "refCount": 0,
+          "refId": "D",
+          "target": "alias($base.$path.pageSummary.$group.$page.$browser.$connectivity.coach.advice.score, 'Total')",
+          "textEditor": false
         }
       ],
       "title": "Coach Score",
@@ -649,9 +666,10 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.3.6",
       "targets": [
         {
           "refId": "A",
@@ -716,9 +734,10 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.3.6",
       "targets": [
         {
           "refId": "A",
@@ -783,9 +802,10 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.3.6",
       "targets": [
         {
           "refId": "A",
@@ -850,9 +870,10 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.3.6",
       "targets": [
         {
           "refId": "A",
@@ -917,9 +938,10 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.3.6",
       "targets": [
         {
           "refId": "A",
@@ -984,9 +1006,10 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.3.6",
       "targets": [
         {
           "refId": "A",
@@ -1051,9 +1074,10 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.3.6",
       "targets": [
         {
           "refId": "A",
@@ -1118,9 +1142,10 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.3.6",
       "targets": [
         {
           "refId": "A",
@@ -1630,9 +1655,10 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.3.6",
       "targets": [
         {
           "refId": "A",
@@ -1703,9 +1729,10 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.3.6",
       "targets": [
         {
           "refId": "A",
@@ -1780,9 +1807,10 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.3.6",
       "targets": [
         {
           "refId": "A",
@@ -1858,9 +1886,10 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.3.6",
       "targets": [
         {
           "refId": "A",
@@ -2274,9 +2303,10 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.3.6",
       "targets": [
         {
           "refId": "A",
@@ -2343,9 +2373,10 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.3.6",
       "targets": [
         {
           "refId": "A",
@@ -2412,9 +2443,10 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.3.6",
       "targets": [
         {
           "refId": "A",
@@ -2481,9 +2513,10 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.3.6",
       "targets": [
         {
           "refId": "A",
@@ -2550,9 +2583,10 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.3.6",
       "targets": [
         {
           "refId": "A",
@@ -2618,9 +2652,10 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.3.6",
       "targets": [
         {
           "refId": "A",
@@ -2687,9 +2722,10 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.3.6",
       "targets": [
         {
           "refId": "A",
@@ -2764,9 +2800,10 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.3.6",
       "targets": [
         {
           "refId": "A",
@@ -2834,9 +2871,10 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.3.6",
       "targets": [
         {
           "refId": "A",
@@ -2904,9 +2942,10 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.3.6",
       "targets": [
         {
           "refId": "A",
@@ -2974,13 +3013,14 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.3.6",
       "targets": [
         {
           "refId": "A",
-          "target": "alias($base.$path.pageSummary.$group.$page.$browser.$connectivity.pagexray.cookieStats.$function, 'Cookies')"
+          "target": "alias($base.$path.pageSummary.$group.$page.$browser.$connectivity.pagexray.cookies, 'Cookies')"
         }
       ],
       "title": "",
@@ -3043,9 +3083,10 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.3.6",
       "targets": [
         {
           "refId": "A",
@@ -3114,9 +3155,10 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.3.6",
       "targets": [
         {
           "refCount": 0,
@@ -3174,9 +3216,10 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.3.6",
       "targets": [
         {
           "refCount": 0,
@@ -3234,9 +3277,10 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.3.6",
       "targets": [
         {
           "refCount": 0,
@@ -3288,9 +3332,10 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.3.6",
       "targets": [
         {
           "refCount": 0,
@@ -3342,9 +3387,10 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.3.6",
       "targets": [
         {
           "refCount": 0,
@@ -3683,9 +3729,10 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.3.6",
       "targets": [
         {
           "refId": "A",
@@ -3740,9 +3787,10 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.3.6",
       "targets": [
         {
           "refId": "A",
@@ -3801,9 +3849,10 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.3.6",
       "targets": [
         {
           "refId": "A",
@@ -3862,9 +3911,10 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.3.6",
       "targets": [
         {
           "refId": "A",
@@ -4075,9 +4125,10 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.3.6",
       "targets": [
         {
           "refId": "A",
@@ -4152,9 +4203,10 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.3.6",
       "targets": [
         {
           "refId": "A",
@@ -4229,9 +4281,10 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.3.6",
       "targets": [
         {
           "refId": "A",
@@ -4306,9 +4359,10 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.3.6",
       "targets": [
         {
           "refId": "A",
@@ -4374,9 +4428,10 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.3.6",
       "targets": [
         {
           "refCount": 0,
@@ -4400,7 +4455,8 @@
       "description": "",
       "fieldConfig": {
         "defaults": {
-          "custom": {}
+          "custom": {},
+          "links": []
         },
         "overrides": []
       },
@@ -4432,9 +4488,10 @@
       "links": [],
       "nullPointMode": "connected",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": false,
+      "pluginVersion": "7.3.6",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -4502,7 +4559,8 @@
       "description": "Show number of errors from Browsertime and other tools.",
       "fieldConfig": {
         "defaults": {
-          "custom": {}
+          "custom": {},
+          "links": []
         },
         "overrides": []
       },
@@ -4534,9 +4592,10 @@
       "links": [],
       "nullPointMode": "connected",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": false,
+      "pluginVersion": "7.3.6",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -5189,7 +5248,7 @@
             "h": 4,
             "w": 24,
             "x": 0,
-            "y": 78
+            "y": 86
           },
           "id": 4,
           "links": [],
@@ -5204,9 +5263,10 @@
               ],
               "fields": "",
               "values": false
-            }
+            },
+            "textMode": "auto"
           },
-          "pluginVersion": "7.0.3",
+          "pluginVersion": "7.3.6",
           "targets": [
             {
               "refId": "A",
@@ -5231,7 +5291,8 @@
           "error": false,
           "fieldConfig": {
             "defaults": {
-              "custom": {}
+              "custom": {},
+              "links": []
             },
             "overrides": []
           },
@@ -5242,7 +5303,7 @@
             "h": 9,
             "w": 24,
             "x": 0,
-            "y": 82
+            "y": 90
           },
           "hiddenSeries": false,
           "id": 160,
@@ -5262,9 +5323,10 @@
           "links": [],
           "nullPointMode": "connected",
           "options": {
-            "dataLinks": []
+            "alertThreshold": true
           },
           "percentage": false,
+          "pluginVersion": "7.3.6",
           "pointradius": 5,
           "points": false,
           "renderer": "flot",
@@ -5517,9 +5579,10 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.3.6",
       "targets": [
         {
           "refId": "A",
@@ -5586,9 +5649,10 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.3.6",
       "targets": [
         {
           "refId": "A",
@@ -5655,9 +5719,10 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.3.6",
       "targets": [
         {
           "refId": "A",
@@ -5724,9 +5789,10 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.3.6",
       "targets": [
         {
           "refId": "A",
@@ -5801,9 +5867,10 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.3.6",
       "targets": [
         {
           "hide": true,
@@ -5892,9 +5959,10 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.3.6",
       "targets": [
         {
           "hide": true,
@@ -5920,7 +5988,7 @@
     }
   ],
   "refresh": false,
-  "schemaVersion": 25,
+  "schemaVersion": 26,
   "style": "dark",
   "tags": [
     "page summary"
@@ -5930,15 +5998,18 @@
       {
         "current": {
           "value": "${VAR_BASE}",
-          "text": "${VAR_BASE}"
+          "text": "${VAR_BASE}",
+          "selected": false
         },
+        "error": null,
         "hide": 2,
         "label": "sitespeed_io",
         "name": "base",
         "options": [
           {
             "value": "${VAR_BASE}",
-            "text": "${VAR_BASE}"
+            "text": "${VAR_BASE}",
+            "selected": false
           }
         ],
         "query": "${VAR_BASE}",
@@ -5950,6 +6021,7 @@
         "current": {},
         "datasource": "${DS_GRAPHITE}",
         "definition": "",
+        "error": null,
         "hide": 0,
         "includeAll": false,
         "label": null,
@@ -5972,6 +6044,7 @@
         "current": {},
         "datasource": "${DS_GRAPHITE}",
         "definition": "",
+        "error": null,
         "hide": 0,
         "includeAll": false,
         "label": "domain",
@@ -5994,6 +6067,7 @@
         "current": {},
         "datasource": "${DS_GRAPHITE}",
         "definition": "",
+        "error": null,
         "hide": 0,
         "includeAll": false,
         "label": null,
@@ -6016,6 +6090,7 @@
         "current": {},
         "datasource": "${DS_GRAPHITE}",
         "definition": "",
+        "error": null,
         "hide": 0,
         "includeAll": false,
         "label": null,
@@ -6038,6 +6113,7 @@
         "current": {},
         "datasource": "${DS_GRAPHITE}",
         "definition": "",
+        "error": null,
         "hide": 0,
         "includeAll": false,
         "label": null,
@@ -6060,10 +6136,11 @@
         "auto_count": 30,
         "auto_min": "10s",
         "current": {
-          "selected": false,
+          "selected": true,
           "text": "median",
           "value": "median"
         },
+        "error": null,
         "hide": 0,
         "label": null,
         "name": "function",
@@ -6133,5 +6210,5 @@
   "timezone": "browser",
   "title": "Page summary",
   "uid": "000000043",
-  "version": 57
+  "version": 73
 }
