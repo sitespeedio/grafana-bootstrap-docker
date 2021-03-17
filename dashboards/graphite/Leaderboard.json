@@ -27,7 +27,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "7.3.6"
+      "version": "7.4.0-beta1"
     },
     {
       "type": "panel",
@@ -65,7 +65,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1608243940878,
+  "iteration": 1612787019283,
   "links": [
     {
       "icon": "external link",
@@ -162,13 +162,14 @@
           "fields": "",
           "values": false
         },
-        "showUnfilled": true
+        "showUnfilled": true,
+        "text": {}
       },
-      "pluginVersion": "7.3.6",
+      "pluginVersion": "7.4.0-beta1",
       "targets": [
         {
           "refId": "A",
-          "target": "aliasByNode(sortBy($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.$function, 'average'),3, 4)",
+          "target": "aliasByNode(sortBy($namespace.$path.$testname.pageSummary.$domains.$pages.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.$function, 'average'),4, 5)",
           "textEditor": true
         }
       ],
@@ -229,13 +230,14 @@
           "fields": "",
           "values": false
         },
-        "showUnfilled": true
+        "showUnfilled": true,
+        "text": {}
       },
-      "pluginVersion": "7.3.6",
+      "pluginVersion": "7.4.0-beta1",
       "targets": [
         {
           "refId": "A",
-          "target": "aliasByNode(sortBy($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.browsertime.statistics.visualMetrics.LargestImage.$function,'average'), 3, 4)",
+          "target": "aliasByNode(sortBy($namespace.$path.$testname.pageSummary.$domains.$pages.$browser.$connectivity.browsertime.statistics.visualMetrics.LargestImage.$function,'average'), 4, 5)",
           "textEditor": true
         }
       ],
@@ -296,13 +298,14 @@
           "fields": "",
           "values": false
         },
-        "showUnfilled": true
+        "showUnfilled": true,
+        "text": {}
       },
-      "pluginVersion": "7.3.6",
+      "pluginVersion": "7.4.0-beta1",
       "targets": [
         {
           "refId": "A",
-          "target": "aliasByNode(sortBy($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.$function,'average'), 3, 4)",
+          "target": "aliasByNode(sortBy($namespace.$path.$testname.pageSummary.$domains.$pages.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.$function,'average'), 4, 5)",
           "textEditor": true
         }
       ],
@@ -363,13 +366,14 @@
           "fields": "",
           "values": false
         },
-        "showUnfilled": true
+        "showUnfilled": true,
+        "text": {}
       },
-      "pluginVersion": "7.3.6",
+      "pluginVersion": "7.4.0-beta1",
       "targets": [
         {
           "refId": "A",
-          "target": "aliasByNode(sortBy($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.browsertime.statistics.visualMetrics.VisualReadiness.$function,'average'), 3, 4)",
+          "target": "aliasByNode(sortBy($namespace.$path.$testname.pageSummary.$domains.$pages.$browser.$connectivity.browsertime.statistics.visualMetrics.VisualReadiness.$function,'average'), 4, 5)",
           "textEditor": true
         }
       ],
@@ -443,7 +447,8 @@
           "targets": [
             {
               "refId": "A",
-              "target": "aliasByNode($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.$function, 3, 4)"
+              "target": "aliasByNode($namespace.$path.$testname.pageSummary.$domains.$pages.$browser.$connectivity.browsertime.statistics.visualMetrics.FirstVisualChange.$function, 4, 5)",
+              "textEditor": true
             }
           ],
           "thresholds": [],
@@ -466,6 +471,7 @@
           },
           "yaxes": [
             {
+              "$$hashKey": "object:239",
               "format": "ms",
               "label": null,
               "logBase": 1,
@@ -474,6 +480,7 @@
               "show": true
             },
             {
+              "$$hashKey": "object:240",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -541,7 +548,8 @@
           "targets": [
             {
               "refId": "A",
-              "target": "aliasByNode($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.browsertime.statistics.visualMetrics.LargestImage.$function, 3, 4)"
+              "target": "aliasByNode($namespace.$path.$testname.pageSummary.$domains.$pages.$browser.$connectivity.browsertime.statistics.visualMetrics.LargestImage.$function, 4, 5)",
+              "textEditor": true
             }
           ],
           "thresholds": [],
@@ -564,6 +572,7 @@
           },
           "yaxes": [
             {
+              "$$hashKey": "object:505",
               "format": "ms",
               "label": null,
               "logBase": 1,
@@ -572,6 +581,7 @@
               "show": true
             },
             {
+              "$$hashKey": "object:506",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -639,7 +649,8 @@
           "targets": [
             {
               "refId": "A",
-              "target": "aliasByNode($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.$function, 3, 4)"
+              "target": "aliasByNode($namespace.$path.$testname.pageSummary.$domains.$pages.$browser.$connectivity.browsertime.statistics.visualMetrics.SpeedIndex.$function, 4, 5)",
+              "textEditor": true
             }
           ],
           "thresholds": [],
@@ -662,6 +673,7 @@
           },
           "yaxes": [
             {
+              "$$hashKey": "object:717",
               "format": "ms",
               "label": null,
               "logBase": 1,
@@ -670,6 +682,7 @@
               "show": true
             },
             {
+              "$$hashKey": "object:718",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -737,7 +750,8 @@
           "targets": [
             {
               "refId": "A",
-              "target": "aliasByNode($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.browsertime.statistics.visualMetrics.VisualReadiness.$function, 3, 4)"
+              "target": "aliasByNode($namespace.$path.$testname.pageSummary.$domains.$pages.$browser.$connectivity.browsertime.statistics.visualMetrics.VisualReadiness.$function, 4, 5)",
+              "textEditor": true
             }
           ],
           "thresholds": [],
@@ -760,6 +774,7 @@
           },
           "yaxes": [
             {
+              "$$hashKey": "object:847",
               "format": "ms",
               "label": null,
               "logBase": 1,
@@ -768,6 +783,7 @@
               "show": true
             },
             {
+              "$$hashKey": "object:848",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -851,13 +867,14 @@
           "fields": "",
           "values": false
         },
-        "showUnfilled": true
+        "showUnfilled": true,
+        "text": {}
       },
-      "pluginVersion": "7.3.6",
+      "pluginVersion": "7.4.0-beta1",
       "targets": [
         {
           "refId": "A",
-          "target": "aliasByNode(sortBy($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.browsertime.statistics.cpu.categories.scriptEvaluation.$function,'average'), 3, 4)",
+          "target": "aliasByNode(sortBy($namespace.$path.$testname.pageSummary.$domains.$pages.$browser.$connectivity.browsertime.statistics.cpu.categories.scriptEvaluation.$function,'average'), 4, 5)",
           "textEditor": true
         }
       ],
@@ -918,13 +935,14 @@
           "fields": "",
           "values": false
         },
-        "showUnfilled": true
+        "showUnfilled": true,
+        "text": {}
       },
-      "pluginVersion": "7.3.6",
+      "pluginVersion": "7.4.0-beta1",
       "targets": [
         {
           "refId": "A",
-          "target": "aliasByNode(sortBy($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.browsertime.statistics.cpu.categories.paintCompositeRender.$function,'average'), 3, 4)",
+          "target": "aliasByNode(sortBy($namespace.$path.$testname.pageSummary.$domains.$pages.$browser.$connectivity.browsertime.statistics.cpu.categories.paintCompositeRender.$function,'average'), 4, 5)",
           "textEditor": true
         }
       ],
@@ -1002,7 +1020,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "aliasByNode(sortBy($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.sustainable.co2PerPageView.$function, 'average'),3, 4)",
+              "target": "aliasByNode(sortBy($namespace.$path.$testname.pageSummary.$domains.$pages.$browser.$connectivity.sustainable.co2PerPageView.$function, 'average'),4, 5)",
               "textEditor": true
             }
           ],
@@ -1081,13 +1099,14 @@
           "fields": "",
           "values": false
         },
-        "showUnfilled": true
+        "showUnfilled": true,
+        "text": {}
       },
-      "pluginVersion": "7.3.6",
+      "pluginVersion": "7.4.0-beta1",
       "targets": [
         {
           "refId": "A",
-          "target": "aliasByNode(sortBy($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.browsertime.statistics.timings.loadEventEnd.$function,'average'), 3, 4)",
+          "target": "aliasByNode(sortBy($namespace.$path.$testname.pageSummary.$domains.$pages.$browser.$connectivity.browsertime.statistics.timings.loadEventEnd.$function,'average'), 4, 5)",
           "textEditor": true
         }
       ],
@@ -1148,13 +1167,14 @@
           "fields": "",
           "values": false
         },
-        "showUnfilled": true
+        "showUnfilled": true,
+        "text": {}
       },
-      "pluginVersion": "7.3.6",
+      "pluginVersion": "7.4.0-beta1",
       "targets": [
         {
           "refId": "A",
-          "target": "aliasByNode(sortBy($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.browsertime.statistics.timings.fullyLoaded.$function,'average'), 3, 4)",
+          "target": "aliasByNode(sortBy($namespace.$path.$testname.pageSummary.$domains.$pages.$browser.$connectivity.browsertime.statistics.timings.fullyLoaded.$function,'average'), 4, 5)",
           "textEditor": true
         }
       ],
@@ -1181,13 +1201,21 @@
           "dashes": false,
           "datasource": "${DS_GRAPHITE}",
           "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "fill": 0,
+          "fillGradient": 0,
           "gridPos": {
             "h": 15,
             "w": 12,
             "x": 0,
-            "y": 1
+            "y": 62
           },
+          "hiddenSeries": false,
           "id": 67,
           "legend": {
             "alignAsTable": true,
@@ -1205,8 +1233,11 @@
           "linewidth": 1,
           "links": [],
           "nullPointMode": "connected",
-          "options": {},
+          "options": {
+            "alertThreshold": true
+          },
           "percentage": false,
+          "pluginVersion": "7.3.6",
           "pointradius": 5,
           "points": false,
           "renderer": "flot",
@@ -1217,7 +1248,8 @@
           "targets": [
             {
               "refId": "A",
-              "target": "aliasByNode($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.browsertime.statistics.timings.loadEventEnd.$function, 3, 4)"
+              "target": "aliasByNode($namespace.$path.$testname.pageSummary.$domains.$pages.$browser.$connectivity.browsertime.statistics.timings.loadEventEnd.$function, 4, 5)",
+              "textEditor": true
             }
           ],
           "thresholds": [],
@@ -1240,6 +1272,7 @@
           },
           "yaxes": [
             {
+              "$$hashKey": "object:1046",
               "format": "ms",
               "label": null,
               "logBase": 1,
@@ -1248,6 +1281,7 @@
               "show": true
             },
             {
+              "$$hashKey": "object:1047",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -1268,13 +1302,21 @@
           "dashes": false,
           "datasource": "${DS_GRAPHITE}",
           "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "fill": 0,
+          "fillGradient": 0,
           "gridPos": {
             "h": 15,
             "w": 12,
             "x": 12,
-            "y": 1
+            "y": 62
           },
+          "hiddenSeries": false,
           "id": 68,
           "legend": {
             "alignAsTable": true,
@@ -1292,8 +1334,11 @@
           "linewidth": 1,
           "links": [],
           "nullPointMode": "connected",
-          "options": {},
+          "options": {
+            "alertThreshold": true
+          },
           "percentage": false,
+          "pluginVersion": "7.3.6",
           "pointradius": 5,
           "points": false,
           "renderer": "flot",
@@ -1304,7 +1349,8 @@
           "targets": [
             {
               "refId": "A",
-              "target": "aliasByNode($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.browsertime.statistics.timings.fullyLoaded.$function, 3, 4)"
+              "target": "aliasByNode($namespace.$path.$testname.pageSummary.$domains.$pages.$browser.$connectivity.browsertime.statistics.timings.fullyLoaded.$function, 4, 5)",
+              "textEditor": false
             }
           ],
           "thresholds": [],
@@ -1327,6 +1373,7 @@
           },
           "yaxes": [
             {
+              "$$hashKey": "object:1176",
               "format": "ms",
               "label": null,
               "logBase": 1,
@@ -1335,6 +1382,7 @@
               "show": true
             },
             {
+              "$$hashKey": "object:1177",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -1418,13 +1466,14 @@
           "fields": "",
           "values": false
         },
-        "showUnfilled": true
+        "showUnfilled": true,
+        "text": {}
       },
-      "pluginVersion": "7.3.6",
+      "pluginVersion": "7.4.0-beta1",
       "targets": [
         {
           "refId": "A",
-          "target": "aliasByNode(sortBy($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.pagexray.contentTypes.javascript.transferSize,'average'), 3, 4)",
+          "target": "aliasByNode(sortBy($namespace.$path.$testname.pageSummary.$domains.$pages.$browser.$connectivity.pagexray.contentTypes.javascript.transferSize,'average'), 4, 5)",
           "textEditor": true
         }
       ],
@@ -1485,13 +1534,14 @@
           "fields": "",
           "values": false
         },
-        "showUnfilled": true
+        "showUnfilled": true,
+        "text": {}
       },
-      "pluginVersion": "7.3.6",
+      "pluginVersion": "7.4.0-beta1",
       "targets": [
         {
           "refId": "A",
-          "target": "aliasByNode(sortBy($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.pagexray.contentTypes.javascript.contentSize,'average'), 3, 4)",
+          "target": "aliasByNode(sortBy($namespace.$path.$testname.pageSummary.$domains.$pages.$browser.$connectivity.pagexray.contentTypes.javascript.contentSize,'average'), 4, 5)",
           "textEditor": true
         }
       ],
@@ -1511,7 +1561,7 @@
       },
       "id": 35,
       "panels": [],
-      "title": "Requests and size gauge",
+      "title": "Requests and size ",
       "type": "row"
     },
     {
@@ -1563,13 +1613,15 @@
           "fields": "",
           "values": false
         },
+        "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "7.3.6",
+      "pluginVersion": "7.4.0-beta1",
       "targets": [
         {
           "refId": "A",
-          "target": "aliasByNode(sortByMaxima($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.pagexray.requests), 3, 4)"
+          "target": "aliasByNode(sortByMaxima($namespace.$path.$testname.pageSummary.$domains.$pages.$browser.$connectivity.pagexray.requests), 4, 5)",
+          "textEditor": true
         }
       ],
       "timeFrom": null,
@@ -1631,13 +1683,15 @@
           "fields": "",
           "values": false
         },
+        "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "7.3.6",
+      "pluginVersion": "7.4.0-beta1",
       "targets": [
         {
           "refId": "A",
-          "target": "aliasByNode(sortByMaxima($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.pagexray.transferSize), 3, 4)"
+          "target": "aliasByNode(sortByMaxima($namespace.$path.$testname.pageSummary.$domains.$pages.$browser.$connectivity.pagexray.transferSize), 4, 5)",
+          "textEditor": false
         }
       ],
       "timeFrom": null,
@@ -1646,7 +1700,7 @@
       "type": "stat"
     },
     {
-      "collapsed": true,
+      "collapsed": false,
       "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
@@ -1655,149 +1709,150 @@
         "y": 98
       },
       "id": 70,
-      "panels": [
-        {
-          "cacheTimeout": "",
-          "datasource": "${DS_GRAPHITE}",
-          "description": "Total number of requests for the full page.",
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "thresholds"
-              },
-              "custom": {},
-              "mappings": [],
-              "max": 500,
-              "min": 0,
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green",
-                    "index": 0,
-                    "value": null
-                  },
-                  {
-                    "color": "yellow",
-                    "index": 1,
-                    "value": 50
-                  },
-                  {
-                    "color": "red",
-                    "index": 2,
-                    "value": 100
-                  }
-                ]
-              }
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 14,
-            "w": 12,
-            "x": 0,
-            "y": 113
-          },
-          "id": 71,
-          "links": [],
-          "options": {
-            "displayMode": "lcd",
-            "orientation": "horizontal",
-            "reduceOptions": {
-              "calcs": [
-                "mean"
-              ],
-              "fields": "",
-              "values": false
-            },
-            "showUnfilled": true
-          },
-          "pluginVersion": "7.3.6",
-          "targets": [
-            {
-              "refId": "A",
-              "target": "aliasByNode(sortBy($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.pagexray.requests,'average'), 3, 4)",
-              "textEditor": true
-            }
-          ],
-          "timeFrom": null,
-          "timeShift": null,
-          "title": "Total number or requests",
-          "type": "bargauge"
-        },
-        {
-          "cacheTimeout": "",
-          "datasource": "${DS_GRAPHITE}",
-          "description": "Total page weight (compressed over the wire).",
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "thresholds"
-              },
-              "custom": {},
-              "mappings": [],
-              "max": 5000000,
-              "min": 0,
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green",
-                    "index": 0,
-                    "value": null
-                  },
-                  {
-                    "color": "yellow",
-                    "index": 1,
-                    "value": 500000
-                  },
-                  {
-                    "color": "red",
-                    "index": 2,
-                    "value": 2000000
-                  }
-                ]
-              },
-              "unit": "decbytes"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 14,
-            "w": 12,
-            "x": 12,
-            "y": 113
-          },
-          "id": 72,
-          "links": [],
-          "options": {
-            "displayMode": "lcd",
-            "orientation": "horizontal",
-            "reduceOptions": {
-              "calcs": [
-                "mean"
-              ],
-              "fields": "",
-              "values": false
-            },
-            "showUnfilled": true
-          },
-          "pluginVersion": "7.3.6",
-          "targets": [
-            {
-              "refId": "A",
-              "target": "aliasByNode(sortBy($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.pagexray.transferSize,'average'), 3, 4)",
-              "textEditor": true
-            }
-          ],
-          "timeFrom": null,
-          "timeShift": null,
-          "title": "Total page transfer size (over the wire)",
-          "type": "bargauge"
-        }
-      ],
+      "panels": [],
       "title": "Requests and size bars",
       "type": "row"
+    },
+    {
+      "cacheTimeout": "",
+      "datasource": "${DS_GRAPHITE}",
+      "description": "Total number of requests for the full page.",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {},
+          "mappings": [],
+          "max": 500,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "index": 0,
+                "value": null
+              },
+              {
+                "color": "yellow",
+                "index": 1,
+                "value": 50
+              },
+              {
+                "color": "red",
+                "index": 2,
+                "value": 100
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 14,
+        "w": 12,
+        "x": 0,
+        "y": 99
+      },
+      "id": 71,
+      "links": [],
+      "options": {
+        "displayMode": "lcd",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showUnfilled": true,
+        "text": {}
+      },
+      "pluginVersion": "7.4.0-beta1",
+      "targets": [
+        {
+          "refId": "A",
+          "target": "aliasByNode(sortBy($namespace.$path.$testname.pageSummary.$domains.$pages.$browser.$connectivity.pagexray.requests,'average'), 4, 5)",
+          "textEditor": true
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Total number of requests",
+      "type": "bargauge"
+    },
+    {
+      "cacheTimeout": "",
+      "datasource": "${DS_GRAPHITE}",
+      "description": "Total page weight (compressed over the wire).",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {},
+          "mappings": [],
+          "max": 5000000,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "index": 0,
+                "value": null
+              },
+              {
+                "color": "yellow",
+                "index": 1,
+                "value": 500000
+              },
+              {
+                "color": "red",
+                "index": 2,
+                "value": 2000000
+              }
+            ]
+          },
+          "unit": "decbytes"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 14,
+        "w": 12,
+        "x": 12,
+        "y": 99
+      },
+      "id": 72,
+      "links": [],
+      "options": {
+        "displayMode": "lcd",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showUnfilled": true,
+        "text": {}
+      },
+      "pluginVersion": "7.4.0-beta1",
+      "targets": [
+        {
+          "refId": "A",
+          "target": "aliasByNode(sortBy($namespace.$path.$testname.pageSummary.$domains.$pages.$browser.$connectivity.pagexray.transferSize,'average'), 4, 5)",
+          "textEditor": true
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Total page transfer size (over the wire)",
+      "type": "bargauge"
     },
     {
       "collapsed": true,
@@ -1806,7 +1861,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 99
+        "y": 113
       },
       "id": 7,
       "panels": [
@@ -1828,7 +1883,7 @@
             "h": 16,
             "w": 12,
             "x": 0,
-            "y": 114
+            "y": 100
           },
           "hiddenSeries": false,
           "id": 3,
@@ -1863,7 +1918,8 @@
           "targets": [
             {
               "refId": "A",
-              "target": "aliasByNode($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.pagexray.requests, 3, 4)"
+              "target": "aliasByNode($namespace.$path.$testname.pageSummary.$domains.$pages.$browser.$connectivity.pagexray.requests, 4, 5)",
+              "textEditor": true
             }
           ],
           "thresholds": [],
@@ -1886,6 +1942,7 @@
           },
           "yaxes": [
             {
+              "$$hashKey": "object:1719",
               "format": "none",
               "label": null,
               "logBase": 1,
@@ -1894,6 +1951,7 @@
               "show": true
             },
             {
+              "$$hashKey": "object:1720",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -1925,7 +1983,7 @@
             "h": 16,
             "w": 12,
             "x": 12,
-            "y": 114
+            "y": 100
           },
           "hiddenSeries": false,
           "id": 4,
@@ -1960,7 +2018,8 @@
           "targets": [
             {
               "refId": "A",
-              "target": "aliasByNode($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.pagexray.transferSize, 3, 4)"
+              "target": "aliasByNode($namespace.$path.$testname.pageSummary.$domains.$pages.$browser.$connectivity.pagexray.transferSize, 4, 5)",
+              "textEditor": true
             }
           ],
           "thresholds": [],
@@ -1983,6 +2042,7 @@
           },
           "yaxes": [
             {
+              "$$hashKey": "object:1837",
               "format": "decbytes",
               "label": null,
               "logBase": 1,
@@ -1991,6 +2051,7 @@
               "show": true
             },
             {
+              "$$hashKey": "object:1838",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -2015,7 +2076,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 100
+        "y": 114
       },
       "id": 74,
       "panels": [
@@ -2053,7 +2114,7 @@
             "h": 14,
             "w": 12,
             "x": 0,
-            "y": 115
+            "y": 101
           },
           "id": 75,
           "links": [],
@@ -2073,7 +2134,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "aliasByNode(sortBy($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.axe.violations.critical.$function, 'average'),3, 4)",
+              "target": "aliasByNode(sortBy($namespace.$path.$testname.pageSummary.$domains.$pages.$browser.$connectivity.axe.violations.critical.$function, 'average'),4, 5)",
               "textEditor": true
             }
           ],
@@ -2120,7 +2181,7 @@
             "h": 14,
             "w": 12,
             "x": 12,
-            "y": 115
+            "y": 101
           },
           "id": 76,
           "links": [],
@@ -2140,7 +2201,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "aliasByNode(sortBy($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.axe.violations.serious.$function, 'average'),3, 4)",
+              "target": "aliasByNode(sortBy($namespace.$path.$testname.pageSummary.$domains.$pages.$browser.$connectivity.axe.violations.serious.$function, 'average'),4, 5)",
               "textEditor": true
             }
           ],
@@ -2160,7 +2221,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 101
+        "y": 115
       },
       "id": 48,
       "panels": [],
@@ -2215,7 +2276,7 @@
         "h": 14,
         "w": 12,
         "x": 0,
-        "y": 102
+        "y": 116
       },
       "id": 49,
       "links": [],
@@ -2229,13 +2290,14 @@
           "fields": "",
           "values": false
         },
-        "showUnfilled": true
+        "showUnfilled": true,
+        "text": {}
       },
-      "pluginVersion": "7.3.6",
+      "pluginVersion": "7.4.0-beta1",
       "targets": [
         {
           "refId": "A",
-          "target": "aliasByNode(sortBy($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.browsertime.statistics.cpu.longTasks.tasks.$function,'average'), 3, 4)",
+          "target": "aliasByNode(sortBy($namespace.$path.$testname.pageSummary.$domains.$pages.$browser.$connectivity.browsertime.statistics.cpu.longTasks.tasks.$function,'average'), 4, 5)",
           "textEditor": true
         }
       ],
@@ -2282,7 +2344,7 @@
         "h": 14,
         "w": 12,
         "x": 12,
-        "y": 102
+        "y": 116
       },
       "id": 50,
       "links": [],
@@ -2296,13 +2358,14 @@
           "fields": "",
           "values": false
         },
-        "showUnfilled": true
+        "showUnfilled": true,
+        "text": {}
       },
-      "pluginVersion": "7.3.6",
+      "pluginVersion": "7.4.0-beta1",
       "targets": [
         {
           "refId": "A",
-          "target": "aliasByNode(sortBy($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.browsertime.statistics.cpu.longTasks.durations.max,'average'), 3, 4)",
+          "target": "aliasByNode(sortBy($namespace.$path.$testname.pageSummary.$domains.$pages.$browser.$connectivity.browsertime.statistics.cpu.longTasks.durations.max,'average'), 4, 5)",
           "textEditor": true
         }
       ],
@@ -2318,7 +2381,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 116
+        "y": 130
       },
       "id": 18,
       "panels": [
@@ -2591,7 +2654,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 117
+        "y": 131
       },
       "id": 52,
       "panels": [],
@@ -2646,7 +2709,7 @@
         "h": 14,
         "w": 12,
         "x": 0,
-        "y": 118
+        "y": 132
       },
       "id": 53,
       "links": [],
@@ -2660,13 +2723,14 @@
           "fields": "",
           "values": false
         },
-        "showUnfilled": true
+        "showUnfilled": true,
+        "text": {}
       },
-      "pluginVersion": "7.3.6",
+      "pluginVersion": "7.4.0-beta1",
       "targets": [
         {
           "refId": "A",
-          "target": "aliasByNode(sortBy($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.thirdparty.requests.total.$function, 'average'), 3, 4)",
+          "target": "aliasByNode(sortBy($namespace.$path.$testname.pageSummary.$domains.$pages.$browser.$connectivity.thirdparty.requests.total.$function, 'average'), 4, 5)",
           "textEditor": true
         }
       ],
@@ -2713,7 +2777,7 @@
         "h": 14,
         "w": 12,
         "x": 12,
-        "y": 118
+        "y": 132
       },
       "id": 54,
       "links": [],
@@ -2727,13 +2791,14 @@
           "fields": "",
           "values": false
         },
-        "showUnfilled": true
+        "showUnfilled": true,
+        "text": {}
       },
-      "pluginVersion": "7.3.6",
+      "pluginVersion": "7.4.0-beta1",
       "targets": [
         {
           "refId": "A",
-          "target": "aliasByNode(sortBy($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.thirdparty.requests.percentage.$function, 'average'), 3, 4)",
+          "target": "aliasByNode(sortBy($namespace.$path.$testname.pageSummary.$domains.$pages.$browser.$connectivity.thirdparty.requests.percentage.$function, 'average'), 4, 5)",
           "textEditor": true
         }
       ],
@@ -2749,7 +2814,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 132
+        "y": 146
       },
       "id": 56,
       "panels": [],
@@ -2794,7 +2859,7 @@
         "h": 14,
         "w": 12,
         "x": 0,
-        "y": 133
+        "y": 147
       },
       "id": 57,
       "links": [],
@@ -2808,13 +2873,14 @@
           "fields": "",
           "values": false
         },
-        "showUnfilled": true
+        "showUnfilled": true,
+        "text": {}
       },
-      "pluginVersion": "7.3.6",
+      "pluginVersion": "7.4.0-beta1",
       "targets": [
         {
           "refId": "A",
-          "target": "aliasByNode(sortBy($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.coach.advice.performance.score, 'average', true),3, 4)",
+          "target": "aliasByNode(sortBy($namespace.$path.$testname.pageSummary.$domains.$pages.$browser.$connectivity.coach.advice.performance.score, 'average', true),4, 5)",
           "textEditor": true
         }
       ],
@@ -2861,7 +2927,7 @@
         "h": 14,
         "w": 12,
         "x": 12,
-        "y": 133
+        "y": 147
       },
       "id": 58,
       "links": [],
@@ -2875,13 +2941,14 @@
           "fields": "",
           "values": false
         },
-        "showUnfilled": true
+        "showUnfilled": true,
+        "text": {}
       },
-      "pluginVersion": "7.3.6",
+      "pluginVersion": "7.4.0-beta1",
       "targets": [
         {
           "refId": "A",
-          "target": "aliasByNode(sortBy($namespace.$path.pageSummary.$domains.$pages.$browser.$connectivity.coach.advice.privacy.score, 'average', true),3, 4)",
+          "target": "aliasByNode(sortBy($namespace.$path.$testname.pageSummary.$domains.$pages.$browser.$connectivity.coach.advice.privacy.score, 'average', true),4, 5)",
           "textEditor": true
         }
       ],
@@ -2891,7 +2958,7 @@
       "type": "bargauge"
     }
   ],
-  "schemaVersion": 26,
+  "schemaVersion": 27,
   "style": "dark",
   "tags": [
     "leaderboard",
@@ -2900,31 +2967,33 @@
   "templating": {
     "list": [
       {
+        "description": null,
+        "error": null,
+        "hide": 2,
+        "label": "sitespeed_io",
+        "name": "namespace",
+        "query": "${VAR_NAMESPACE}",
+        "skipUrlSync": false,
+        "type": "constant",
         "current": {
           "value": "${VAR_NAMESPACE}",
           "text": "${VAR_NAMESPACE}",
           "selected": false
         },
-        "error": null,
-        "hide": 2,
-        "label": "sitespeed_io",
-        "name": "namespace",
         "options": [
           {
             "value": "${VAR_NAMESPACE}",
             "text": "${VAR_NAMESPACE}",
             "selected": false
           }
-        ],
-        "query": "${VAR_NAMESPACE}",
-        "skipUrlSync": false,
-        "type": "constant"
+        ]
       },
       {
         "allValue": null,
         "current": {},
         "datasource": "${DS_GRAPHITE}",
         "definition": "$namespace.*",
+        "description": null,
         "error": null,
         "hide": 0,
         "includeAll": false,
@@ -2947,7 +3016,32 @@
         "allValue": null,
         "current": {},
         "datasource": "${DS_GRAPHITE}",
-        "definition": "$namespace.$path.pageSummary.*",
+        "definition": "$namespace.$path.*",
+        "description": null,
+        "error": null,
+        "hide": 0,
+        "includeAll": false,
+        "label": null,
+        "multi": false,
+        "name": "testname",
+        "options": [],
+        "query": "$namespace.$path.*",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "allValue": null,
+        "current": {},
+        "datasource": "${DS_GRAPHITE}",
+        "definition": "$namespace.$path.$testname.pageSummary.*",
+        "description": null,
         "error": null,
         "hide": 0,
         "includeAll": true,
@@ -2955,7 +3049,7 @@
         "multi": true,
         "name": "domains",
         "options": [],
-        "query": "$namespace.$path.pageSummary.*",
+        "query": "$namespace.$path.$testname.pageSummary.*",
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -2970,7 +3064,8 @@
         "allValue": null,
         "current": {},
         "datasource": "${DS_GRAPHITE}",
-        "definition": "$namespace.$path.pageSummary.$domains.*",
+        "definition": "$namespace.$path.$testname.pageSummary.$domains.*",
+        "description": null,
         "error": null,
         "hide": 0,
         "includeAll": true,
@@ -2978,7 +3073,7 @@
         "multi": true,
         "name": "pages",
         "options": [],
-        "query": "$namespace.$path.pageSummary.$domains.*",
+        "query": "$namespace.$path.$testname.pageSummary.$domains.*",
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -2993,7 +3088,8 @@
         "allValue": null,
         "current": {},
         "datasource": "${DS_GRAPHITE}",
-        "definition": "$namespace.$path.pageSummary.$domains.$pages.*",
+        "definition": "$namespace.$path.$testname.pageSummary.$domains.$pages.*",
+        "description": null,
         "error": null,
         "hide": 0,
         "includeAll": false,
@@ -3001,32 +3097,9 @@
         "multi": false,
         "name": "browser",
         "options": [],
-        "query": "$namespace.$path.pageSummary.$domains.$pages.*",
+        "query": "$namespace.$path.$testname.pageSummary.$domains.$pages.*",
         "refresh": 1,
         "regex": "(chrome||firefox)",
-        "skipUrlSync": false,
-        "sort": 0,
-        "tagValuesQuery": "",
-        "tags": [],
-        "tagsQuery": "",
-        "type": "query",
-        "useTags": false
-      },
-      {
-        "allValue": null,
-        "current": {},
-        "datasource": "${DS_GRAPHITE}",
-        "definition": "$namespace.$path.pageSummary.$domains.$pages.$browser.*",
-        "error": null,
-        "hide": 0,
-        "includeAll": false,
-        "label": "",
-        "multi": false,
-        "name": "connectivity",
-        "options": [],
-        "query": "$namespace.$path.pageSummary.$domains.$pages.$browser.*",
-        "refresh": 1,
-        "regex": "",
         "skipUrlSync": false,
         "sort": 0,
         "tagValuesQuery": "",
@@ -3044,6 +3117,7 @@
           "text": "median",
           "value": "median"
         },
+        "description": null,
         "error": null,
         "hide": 0,
         "label": "",
@@ -3076,9 +3150,34 @@
           }
         ],
         "query": "min,mean,median,p90,max",
+        "queryValue": "",
         "refresh": 2,
         "skipUrlSync": false,
         "type": "interval"
+      },
+      {
+        "allValue": null,
+        "current": {},
+        "datasource": "${DS_GRAPHITE}",
+        "definition": "$namespace.$path.$testname.pageSummary.$domains.$pages.$browser.*",
+        "description": null,
+        "error": null,
+        "hide": 0,
+        "includeAll": false,
+        "label": "",
+        "multi": false,
+        "name": "connectivity",
+        "options": [],
+        "query": "$namespace.$path.$testname.pageSummary.$domains.$pages.$browser.*",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
       }
     ]
   },
@@ -3114,5 +3213,5 @@
   "timezone": "",
   "title": "Leaderboard",
   "uid": "000000060",
-  "version": 33
+  "version": 2
 }
