@@ -35,13 +35,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "7.5.0-beta1"
-    },
-    {
-      "type": "panel",
-      "id": "grafana-piechart-panel",
-      "name": "Pie Chart",
-      "version": "1.6.1"
+      "version": "7.5.0"
     },
     {
       "type": "panel",
@@ -54,6 +48,12 @@
       "id": "graphite",
       "name": "Graphite",
       "version": "1.0.0"
+    },
+    {
+      "type": "panel",
+      "id": "piechart",
+      "name": "Pie chart v2",
+      "version": ""
     },
     {
       "type": "panel",
@@ -115,7 +115,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1615860110667,
+  "iteration": 1616790760780,
   "links": [],
   "panels": [
     {
@@ -177,7 +177,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.5.0-beta1",
+      "pluginVersion": "7.5.0",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -306,7 +306,7 @@
         "content": "<a href=\"$resulturl/$testname/$group.$page.$browser.$connectivity.$screenshottype\">\n<img src=\"$resulturl/$testname/$group.$page.$browser.$connectivity.$screenshottype\"></a>",
         "mode": "html"
       },
-      "pluginVersion": "7.5.0-beta1",
+      "pluginVersion": "7.5.0",
       "targets": [
         {
           "refCount": 0,
@@ -340,7 +340,7 @@
         "content": "<video controls width=\"100%\"src=\"$resulturl/$testname/$group.$page.$browser.$connectivity.mp4\"></video>\n",
         "mode": "html"
       },
-      "pluginVersion": "7.5.0-beta1",
+      "pluginVersion": "7.5.0",
       "targets": [
         {
           "refCount": 0,
@@ -371,7 +371,7 @@
         "content": "",
         "mode": "markdown"
       },
-      "pluginVersion": "7.5.0-beta1",
+      "pluginVersion": "7.5.0",
       "targets": [
         {
           "refId": "A",
@@ -448,7 +448,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "7.5.0-beta1",
+      "pluginVersion": "7.5.0",
       "targets": [
         {
           "refCount": 0,
@@ -523,7 +523,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "7.5.0-beta1",
+      "pluginVersion": "7.5.0",
       "targets": [
         {
           "refCount": 0,
@@ -598,7 +598,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "7.5.0-beta1",
+      "pluginVersion": "7.5.0",
       "targets": [
         {
           "refCount": 0,
@@ -626,7 +626,7 @@
         "content": "",
         "mode": "markdown"
       },
-      "pluginVersion": "7.5.0-beta1",
+      "pluginVersion": "7.5.0",
       "targets": [
         {
           "refId": "A",
@@ -702,7 +702,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "7.5.0-beta1",
+      "pluginVersion": "7.5.0",
       "targets": [
         {
           "refCount": 0,
@@ -777,7 +777,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "7.5.0-beta1",
+      "pluginVersion": "7.5.0",
       "targets": [
         {
           "refCount": 0,
@@ -852,7 +852,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "7.5.0-beta1",
+      "pluginVersion": "7.5.0",
       "targets": [
         {
           "refCount": 0,
@@ -927,7 +927,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "7.5.0-beta1",
+      "pluginVersion": "7.5.0",
       "targets": [
         {
           "refCount": 0,
@@ -1002,7 +1002,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "7.5.0-beta1",
+      "pluginVersion": "7.5.0",
       "targets": [
         {
           "refCount": 0,
@@ -1050,7 +1050,7 @@
         "content": "",
         "mode": "markdown"
       },
-      "pluginVersion": "7.5.0-beta1",
+      "pluginVersion": "7.5.0",
       "targets": [
         {
           "refId": "A",
@@ -1122,7 +1122,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "7.5.0-beta1",
+      "pluginVersion": "7.5.0",
       "targets": [
         {
           "refCount": 0,
@@ -1197,7 +1197,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "7.5.0-beta1",
+      "pluginVersion": "7.5.0",
       "targets": [
         {
           "refCount": 0,
@@ -1272,7 +1272,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "7.5.0-beta1",
+      "pluginVersion": "7.5.0",
       "targets": [
         {
           "refCount": 0,
@@ -1347,7 +1347,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "7.5.0-beta1",
+      "pluginVersion": "7.5.0",
       "targets": [
         {
           "refCount": 0,
@@ -1415,7 +1415,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.5.0-beta1",
+      "pluginVersion": "7.5.0",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -1524,7 +1524,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.5.0-beta1",
+      "pluginVersion": "7.5.0",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -1632,7 +1632,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.5.0-beta1",
+      "pluginVersion": "7.5.0",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -1740,7 +1740,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.5.0-beta1",
+      "pluginVersion": "7.5.0",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -1800,20 +1800,32 @@
       }
     },
     {
-      "aliasColors": {},
-      "breakPoint": "50%",
       "cacheTimeout": null,
-      "combine": {
-        "label": "Others",
-        "threshold": 0
-      },
       "datasource": "${DS_GRAPHITE}",
       "fieldConfig": {
-        "defaults": {},
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "decimals": 0,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "decbytes"
+        },
         "overrides": []
       },
-      "fontSize": "80%",
-      "format": "decbytes",
       "gridPos": {
         "h": 8,
         "w": 12,
@@ -1822,16 +1834,28 @@
       },
       "id": 246,
       "interval": null,
-      "legend": {
-        "show": true,
-        "values": true
-      },
-      "legendType": "Right side",
       "links": [],
-      "nullPointMode": "connected",
-      "pieType": "pie",
+      "options": {
+        "displayLabels": [],
+        "legend": {
+          "calcs": [],
+          "displayMode": "table",
+          "placement": "right",
+          "values": [
+            "value"
+          ]
+        },
+        "pieType": "pie",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {}
+      },
       "pluginVersion": "7.5.0-beta1",
-      "strokeWidth": 1,
       "targets": [
         {
           "refCount": 0,
@@ -1843,24 +1867,35 @@
       "timeFrom": null,
       "timeShift": null,
       "title": "Content size per type",
-      "type": "grafana-piechart-panel",
-      "valueName": "current"
+      "type": "piechart"
     },
     {
-      "aliasColors": {},
-      "breakPoint": "50%",
       "cacheTimeout": null,
-      "combine": {
-        "label": "Others",
-        "threshold": 0
-      },
       "datasource": "${DS_GRAPHITE}",
       "fieldConfig": {
-        "defaults": {},
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "decimals": 0,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "decbytes"
+        },
         "overrides": []
       },
-      "fontSize": "80%",
-      "format": "decbytes",
       "gridPos": {
         "h": 8,
         "w": 12,
@@ -1869,16 +1904,28 @@
       },
       "id": 247,
       "interval": null,
-      "legend": {
-        "show": true,
-        "values": true
-      },
-      "legendType": "Right side",
       "links": [],
-      "nullPointMode": "connected",
-      "pieType": "pie",
+      "options": {
+        "displayLabels": [],
+        "legend": {
+          "calcs": [],
+          "displayMode": "table",
+          "placement": "right",
+          "values": [
+            "value"
+          ]
+        },
+        "pieType": "pie",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {}
+      },
       "pluginVersion": "7.5.0-beta1",
-      "strokeWidth": 1,
       "targets": [
         {
           "refCount": 0,
@@ -1890,8 +1937,7 @@
       "timeFrom": null,
       "timeShift": null,
       "title": "Transfer size per type",
-      "type": "grafana-piechart-panel",
-      "valueName": "current"
+      "type": "piechart"
     },
     {
       "collapsed": true,
@@ -1915,11 +1961,6 @@
           "description": "The performance score (0-100) calculated by the [Coach](https://www.sitespeed.io/documentation/coach/) using performance best practices.The performance score (0-100) calculated by the [Coach](https://www.sitespeed.io/documentation/coach/) using performance best practices.",
           "fieldConfig": {
             "defaults": {
-              "custom": {},
-              "thresholds": {
-                "mode": "absolute",
-                "steps": []
-              },
               "unit": "none"
             },
             "overrides": []
@@ -1930,7 +1971,7 @@
             "h": 11,
             "w": 24,
             "x": 0,
-            "y": 27
+            "y": 43
           },
           "hiddenSeries": false,
           "id": 201,
@@ -1954,7 +1995,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "7.4.2",
+          "pluginVersion": "7.5.0",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -2012,8 +2053,8 @@
               "format": "none",
               "label": null,
               "logBase": 1,
-              "max": null,
-              "min": null,
+              "max": "100",
+              "min": "0",
               "show": true
             },
             {
@@ -2179,7 +2220,7 @@
       "type": "row"
     },
     {
-      "collapsed": true,
+      "collapsed": false,
       "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
@@ -2188,438 +2229,417 @@
         "y": 44
       },
       "id": 203,
-      "panels": [
-        {
-          "aliasColors": {},
-          "bars": false,
-          "cacheTimeout": null,
-          "dashLength": 10,
-          "dashes": false,
-          "datasource": "${DS_GRAPHITE}",
-          "description": "",
-          "fieldConfig": {
-            "defaults": {
-              "custom": {},
-              "thresholds": {
-                "mode": "absolute",
-                "steps": []
-              },
-              "unit": "ms"
-            },
-            "overrides": []
-          },
-          "fill": 0,
-          "fillGradient": 0,
-          "gridPos": {
-            "h": 8,
-            "w": 6,
-            "x": 0,
-            "y": 37
-          },
-          "hiddenSeries": false,
-          "id": 204,
-          "interval": null,
-          "legend": {
-            "avg": false,
-            "current": false,
-            "max": false,
-            "min": false,
-            "show": false,
-            "total": false,
-            "values": false
-          },
-          "lines": true,
-          "linewidth": 1,
-          "links": [],
-          "maxDataPoints": 100,
-          "nullPointMode": "connected",
-          "options": {
-            "alertThreshold": true
-          },
-          "percentage": false,
-          "pluginVersion": "7.4.2",
-          "pointradius": 2,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [],
-          "spaceLength": 10,
-          "stack": false,
-          "steppedLine": false,
-          "targets": [
-            {
-              "refCount": 0,
-              "refId": "A",
-              "target": "alias($base.$path.$testname.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.paintTiming.first-contentful-paint.$function, 'FCP')",
-              "textEditor": false
-            }
-          ],
-          "thresholds": [],
-          "timeFrom": null,
-          "timeRegions": [],
-          "timeShift": null,
-          "title": "First Contentful Paint (FCP)",
-          "tooltip": {
-            "shared": true,
-            "sort": 0,
-            "value_type": "individual"
-          },
-          "type": "graph",
-          "xaxis": {
-            "buckets": null,
-            "mode": "time",
-            "name": null,
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "$$hashKey": "object:1886",
-              "format": "ms",
-              "label": null,
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": true
-            },
-            {
-              "$$hashKey": "object:1887",
-              "format": "short",
-              "label": null,
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": true
-            }
-          ],
-          "yaxis": {
-            "align": false,
-            "alignLevel": null
-          }
-        },
-        {
-          "aliasColors": {},
-          "bars": false,
-          "cacheTimeout": null,
-          "dashLength": 10,
-          "dashes": false,
-          "datasource": "${DS_GRAPHITE}",
-          "description": "",
-          "fieldConfig": {
-            "defaults": {
-              "custom": {},
-              "thresholds": {
-                "mode": "absolute",
-                "steps": []
-              },
-              "unit": "none"
-            },
-            "overrides": []
-          },
-          "fill": 0,
-          "fillGradient": 0,
-          "gridPos": {
-            "h": 8,
-            "w": 6,
-            "x": 6,
-            "y": 37
-          },
-          "hiddenSeries": false,
-          "id": 206,
-          "interval": null,
-          "legend": {
-            "avg": false,
-            "current": false,
-            "max": false,
-            "min": false,
-            "show": false,
-            "total": false,
-            "values": false
-          },
-          "lines": true,
-          "linewidth": 1,
-          "links": [],
-          "maxDataPoints": 100,
-          "nullPointMode": "connected",
-          "options": {
-            "alertThreshold": true
-          },
-          "percentage": false,
-          "pluginVersion": "7.4.2",
-          "pointradius": 2,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [],
-          "spaceLength": 10,
-          "stack": false,
-          "steppedLine": false,
-          "targets": [
-            {
-              "refCount": 0,
-              "refId": "A",
-              "target": "alias($base.$path.$testname.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.pageinfo.layoutShift.$function, 'CLS')",
-              "textEditor": false
-            }
-          ],
-          "thresholds": [],
-          "timeFrom": null,
-          "timeRegions": [],
-          "timeShift": null,
-          "title": "Cumulative Layout Shift (CLS)",
-          "tooltip": {
-            "shared": true,
-            "sort": 0,
-            "value_type": "individual"
-          },
-          "type": "graph",
-          "xaxis": {
-            "buckets": null,
-            "mode": "time",
-            "name": null,
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "$$hashKey": "object:2161",
-              "format": "none",
-              "label": null,
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": true
-            },
-            {
-              "$$hashKey": "object:2162",
-              "format": "short",
-              "label": null,
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": true
-            }
-          ],
-          "yaxis": {
-            "align": false,
-            "alignLevel": null
-          }
-        },
-        {
-          "aliasColors": {},
-          "bars": false,
-          "cacheTimeout": null,
-          "dashLength": 10,
-          "dashes": false,
-          "datasource": "${DS_GRAPHITE}",
-          "description": "",
-          "fieldConfig": {
-            "defaults": {
-              "custom": {},
-              "thresholds": {
-                "mode": "absolute",
-                "steps": []
-              },
-              "unit": "ms"
-            },
-            "overrides": []
-          },
-          "fill": 0,
-          "fillGradient": 0,
-          "gridPos": {
-            "h": 8,
-            "w": 6,
-            "x": 12,
-            "y": 37
-          },
-          "hiddenSeries": false,
-          "id": 205,
-          "interval": null,
-          "legend": {
-            "avg": false,
-            "current": false,
-            "max": false,
-            "min": false,
-            "show": false,
-            "total": false,
-            "values": false
-          },
-          "lines": true,
-          "linewidth": 1,
-          "links": [],
-          "maxDataPoints": 100,
-          "nullPointMode": "connected",
-          "options": {
-            "alertThreshold": true
-          },
-          "percentage": false,
-          "pluginVersion": "7.4.2",
-          "pointradius": 2,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [],
-          "spaceLength": 10,
-          "stack": false,
-          "steppedLine": false,
-          "targets": [
-            {
-              "refCount": 0,
-              "refId": "A",
-              "target": "alias($base.$path.$testname.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.largestContentfulPaint.renderTime.$function, 'LCP')",
-              "textEditor": false
-            }
-          ],
-          "thresholds": [],
-          "timeFrom": null,
-          "timeRegions": [],
-          "timeShift": null,
-          "title": "Largest Contentful Paint (LCP)",
-          "tooltip": {
-            "shared": true,
-            "sort": 0,
-            "value_type": "individual"
-          },
-          "type": "graph",
-          "xaxis": {
-            "buckets": null,
-            "mode": "time",
-            "name": null,
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "$$hashKey": "object:2304",
-              "format": "ms",
-              "label": null,
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": true
-            },
-            {
-              "$$hashKey": "object:2305",
-              "format": "short",
-              "label": null,
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": true
-            }
-          ],
-          "yaxis": {
-            "align": false,
-            "alignLevel": null
-          }
-        },
-        {
-          "aliasColors": {},
-          "bars": false,
-          "cacheTimeout": null,
-          "dashLength": 10,
-          "dashes": false,
-          "datasource": "${DS_GRAPHITE}",
-          "description": "",
-          "fieldConfig": {
-            "defaults": {
-              "custom": {},
-              "thresholds": {
-                "mode": "absolute",
-                "steps": []
-              },
-              "unit": "ms"
-            },
-            "overrides": []
-          },
-          "fill": 0,
-          "fillGradient": 0,
-          "gridPos": {
-            "h": 8,
-            "w": 6,
-            "x": 18,
-            "y": 37
-          },
-          "hiddenSeries": false,
-          "id": 207,
-          "interval": null,
-          "legend": {
-            "avg": false,
-            "current": false,
-            "max": false,
-            "min": false,
-            "show": false,
-            "total": false,
-            "values": false
-          },
-          "lines": true,
-          "linewidth": 1,
-          "links": [],
-          "maxDataPoints": 100,
-          "nullPointMode": "connected",
-          "options": {
-            "alertThreshold": true
-          },
-          "percentage": false,
-          "pluginVersion": "7.4.2",
-          "pointradius": 2,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [],
-          "spaceLength": 10,
-          "stack": false,
-          "steppedLine": false,
-          "targets": [
-            {
-              "refCount": 0,
-              "refId": "A",
-              "target": "alias($base.$path.$testname.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.cpu.longTasks.totalBlockingTime.$function, 'TBT')",
-              "textEditor": false
-            }
-          ],
-          "thresholds": [],
-          "timeFrom": null,
-          "timeRegions": [],
-          "timeShift": null,
-          "title": "Total Blocking Time (TBT)",
-          "tooltip": {
-            "shared": true,
-            "sort": 0,
-            "value_type": "individual"
-          },
-          "type": "graph",
-          "xaxis": {
-            "buckets": null,
-            "mode": "time",
-            "name": null,
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "$$hashKey": "object:2447",
-              "format": "ms",
-              "label": null,
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": true
-            },
-            {
-              "$$hashKey": "object:2448",
-              "format": "short",
-              "label": null,
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": true
-            }
-          ],
-          "yaxis": {
-            "align": false,
-            "alignLevel": null
-          }
-        }
-      ],
+      "panels": [],
       "title": "Google Web Vitals history",
       "type": "row"
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "cacheTimeout": null,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "${DS_GRAPHITE}",
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "unit": "ms"
+        },
+        "overrides": []
+      },
+      "fill": 0,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 0,
+        "y": 45
+      },
+      "hiddenSeries": false,
+      "id": 204,
+      "interval": null,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": false,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "7.5.0",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "refCount": 0,
+          "refId": "A",
+          "target": "alias($base.$path.$testname.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.paintTiming.first-contentful-paint.$function, 'FCP')",
+          "textEditor": false
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "First Contentful Paint (FCP)",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:1886",
+          "format": "ms",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:1887",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "cacheTimeout": null,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "${DS_GRAPHITE}",
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "fill": 0,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 6,
+        "y": 45
+      },
+      "hiddenSeries": false,
+      "id": 206,
+      "interval": null,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": false,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "7.5.0",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "refCount": 0,
+          "refId": "A",
+          "target": "alias($base.$path.$testname.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.pageinfo.layoutShift.$function, 'CLS')",
+          "textEditor": false
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Cumulative Layout Shift (CLS)",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:2161",
+          "format": "none",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": "0",
+          "show": true
+        },
+        {
+          "$$hashKey": "object:2162",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "cacheTimeout": null,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "${DS_GRAPHITE}",
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "unit": "ms"
+        },
+        "overrides": []
+      },
+      "fill": 0,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 12,
+        "y": 45
+      },
+      "hiddenSeries": false,
+      "id": 205,
+      "interval": null,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": false,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "7.5.0",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "refCount": 0,
+          "refId": "A",
+          "target": "alias($base.$path.$testname.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.largestContentfulPaint.renderTime.$function, 'LCP')",
+          "textEditor": false
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Largest Contentful Paint (LCP)",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:2304",
+          "format": "ms",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:2305",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "cacheTimeout": null,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "${DS_GRAPHITE}",
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "unit": "ms"
+        },
+        "overrides": []
+      },
+      "fill": 0,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 18,
+        "y": 45
+      },
+      "hiddenSeries": false,
+      "id": 207,
+      "interval": null,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": false,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "7.5.0",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "refCount": 0,
+          "refId": "A",
+          "target": "alias($base.$path.$testname.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.cpu.longTasks.totalBlockingTime.$function, 'TBT')",
+          "textEditor": false
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Total Blocking Time (TBT)",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:2447",
+          "format": "ms",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:2448",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     },
     {
       "collapsed": true,
@@ -2628,7 +2648,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 45
+        "y": 53
       },
       "id": 220,
       "panels": [
@@ -2747,7 +2767,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 46
+        "y": 54
       },
       "id": 223,
       "panels": [
@@ -2757,7 +2777,6 @@
           "description": "",
           "fieldConfig": {
             "defaults": {
-              "custom": {},
               "mappings": [
                 {
                   "id": 0,
@@ -2792,7 +2811,7 @@
             "h": 5,
             "w": 5,
             "x": 0,
-            "y": 39
+            "y": 47
           },
           "id": 229,
           "interval": null,
@@ -2813,7 +2832,7 @@
             "text": {},
             "textMode": "auto"
           },
-          "pluginVersion": "7.4.2",
+          "pluginVersion": "7.5.0",
           "targets": [
             {
               "refCount": 0,
@@ -2822,7 +2841,6 @@
               "textEditor": true
             }
           ],
-          "title": "",
           "type": "stat"
         },
         {
@@ -2831,7 +2849,6 @@
           "description": "",
           "fieldConfig": {
             "defaults": {
-              "custom": {},
               "mappings": [
                 {
                   "id": 0,
@@ -2862,7 +2879,7 @@
             "h": 5,
             "w": 6,
             "x": 5,
-            "y": 39
+            "y": 47
           },
           "id": 230,
           "interval": null,
@@ -2883,7 +2900,7 @@
             "text": {},
             "textMode": "auto"
           },
-          "pluginVersion": "7.4.2",
+          "pluginVersion": "7.5.0",
           "targets": [
             {
               "refCount": 0,
@@ -2892,7 +2909,6 @@
               "textEditor": true
             }
           ],
-          "title": "",
           "type": "stat"
         },
         {
@@ -2901,7 +2917,6 @@
           "description": "",
           "fieldConfig": {
             "defaults": {
-              "custom": {},
               "mappings": [
                 {
                   "id": 0,
@@ -2936,7 +2951,7 @@
             "h": 5,
             "w": 6,
             "x": 11,
-            "y": 39
+            "y": 47
           },
           "id": 231,
           "interval": null,
@@ -2957,7 +2972,7 @@
             "text": {},
             "textMode": "auto"
           },
-          "pluginVersion": "7.4.2",
+          "pluginVersion": "7.5.0",
           "targets": [
             {
               "refCount": 0,
@@ -2966,7 +2981,6 @@
               "textEditor": true
             }
           ],
-          "title": "",
           "type": "stat"
         },
         {
@@ -2975,7 +2989,6 @@
           "description": "",
           "fieldConfig": {
             "defaults": {
-              "custom": {},
               "mappings": [
                 {
                   "id": 0,
@@ -3010,7 +3023,7 @@
             "h": 5,
             "w": 7,
             "x": 17,
-            "y": 39
+            "y": 47
           },
           "id": 232,
           "interval": null,
@@ -3031,7 +3044,7 @@
             "text": {},
             "textMode": "auto"
           },
-          "pluginVersion": "7.4.2",
+          "pluginVersion": "7.5.0",
           "targets": [
             {
               "refCount": 0,
@@ -3040,7 +3053,6 @@
               "textEditor": true
             }
           ],
-          "title": "",
           "type": "stat"
         },
         {
@@ -3053,11 +3065,6 @@
           "description": "",
           "fieldConfig": {
             "defaults": {
-              "custom": {},
-              "thresholds": {
-                "mode": "absolute",
-                "steps": []
-              },
               "unit": "none"
             },
             "overrides": []
@@ -3068,7 +3075,7 @@
             "h": 6,
             "w": 5,
             "x": 0,
-            "y": 44
+            "y": 52
           },
           "hiddenSeries": false,
           "id": 236,
@@ -3091,7 +3098,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "7.4.2",
+          "pluginVersion": "7.5.0",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -3161,11 +3168,6 @@
           "description": "",
           "fieldConfig": {
             "defaults": {
-              "custom": {},
-              "thresholds": {
-                "mode": "absolute",
-                "steps": []
-              },
               "unit": "none"
             },
             "overrides": []
@@ -3176,7 +3178,7 @@
             "h": 6,
             "w": 6,
             "x": 5,
-            "y": 44
+            "y": 52
           },
           "hiddenSeries": false,
           "id": 237,
@@ -3199,7 +3201,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "7.4.2",
+          "pluginVersion": "7.5.0",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -3269,11 +3271,6 @@
           "description": "",
           "fieldConfig": {
             "defaults": {
-              "custom": {},
-              "thresholds": {
-                "mode": "absolute",
-                "steps": []
-              },
               "unit": "ms"
             },
             "overrides": []
@@ -3284,7 +3281,7 @@
             "h": 6,
             "w": 6,
             "x": 11,
-            "y": 44
+            "y": 52
           },
           "hiddenSeries": false,
           "id": 238,
@@ -3307,7 +3304,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "7.4.2",
+          "pluginVersion": "7.5.0",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -3376,11 +3373,6 @@
           "description": "",
           "fieldConfig": {
             "defaults": {
-              "custom": {},
-              "thresholds": {
-                "mode": "absolute",
-                "steps": []
-              },
               "unit": "ms"
             },
             "overrides": []
@@ -3391,7 +3383,7 @@
             "h": 6,
             "w": 7,
             "x": 17,
-            "y": 44
+            "y": 52
           },
           "hiddenSeries": false,
           "id": 239,
@@ -3414,7 +3406,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "7.4.2",
+          "pluginVersion": "7.5.0",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -3484,7 +3476,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 47
+        "y": 55
       },
       "id": 214,
       "panels": [
@@ -3807,7 +3799,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 48
+        "y": 56
       },
       "id": 115,
       "panels": [
@@ -3821,7 +3813,6 @@
           "description": "Timing metrics collected using browser APIs like the Navigation Timing API.",
           "fieldConfig": {
             "defaults": {
-              "custom": {},
               "links": []
             },
             "overrides": []
@@ -3832,7 +3823,7 @@
             "h": 15,
             "w": 12,
             "x": 0,
-            "y": 41
+            "y": 57
           },
           "hiddenSeries": false,
           "id": 118,
@@ -3856,7 +3847,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "7.4.2",
+          "pluginVersion": "7.5.0",
           "pointradius": 5,
           "points": false,
           "renderer": "flot",
@@ -3967,7 +3958,6 @@
           "description": "Timings collected using the [Element Timing API](https://wicg.github.io/element-timing/).",
           "fieldConfig": {
             "defaults": {
-              "custom": {},
               "links": []
             },
             "overrides": []
@@ -3978,7 +3968,7 @@
             "h": 15,
             "w": 12,
             "x": 12,
-            "y": 41
+            "y": 57
           },
           "hiddenSeries": false,
           "id": 119,
@@ -4003,7 +3993,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "7.4.2",
+          "pluginVersion": "7.5.0",
           "pointradius": 5,
           "points": false,
           "renderer": "flot",
@@ -4015,7 +4005,7 @@
             {
               "refCount": 0,
               "refId": "A",
-              "target": "aliasByNode($base.$path.$testname.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.elementTimings.*.renderTime, 12)",
+              "target": "aliasByNode($base.$path.$testname.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.elementTimings.*.renderTime.$function, 12)",
               "textEditor": false
             }
           ],
@@ -4072,7 +4062,6 @@
           "description": "All User Timing marks created on the page using the [User Timing API](https://www.w3.org/TR/user-timing/).",
           "fieldConfig": {
             "defaults": {
-              "custom": {},
               "links": []
             },
             "overrides": []
@@ -4083,7 +4072,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 56
+            "y": 72
           },
           "hiddenSeries": false,
           "id": 120,
@@ -4108,7 +4097,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "7.4.2",
+          "pluginVersion": "7.5.0",
           "pointradius": 5,
           "points": false,
           "renderer": "flot",
@@ -4120,7 +4109,7 @@
             {
               "refCount": 0,
               "refId": "A",
-              "target": "aliasByNode($base.$path.$testname.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.userTimings.marks.*, 13)",
+              "target": "aliasByNode($base.$path.$testname.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.userTimings.marks.*.$function, 13)",
               "textEditor": false
             }
           ],
@@ -4128,7 +4117,111 @@
           "timeFrom": null,
           "timeRegions": [],
           "timeShift": null,
-          "title": "User Timings  [$function]",
+          "title": "User Timings Marks  [$function]",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "$$hashKey": "object:1842",
+              "format": "ms",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "$$hashKey": "object:1843",
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "cacheTimeout": "",
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_GRAPHITE}",
+          "description": "All User Timing marks created on the page using the [User Timing API](https://www.w3.org/TR/user-timing/).",
+          "fieldConfig": {
+            "defaults": {
+              "links": []
+            },
+            "overrides": []
+          },
+          "fill": 0,
+          "fillGradient": 0,
+          "gridPos": {
+            "h": 7,
+            "w": 24,
+            "x": 0,
+            "y": 79
+          },
+          "hiddenSeries": false,
+          "id": 248,
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": true,
+            "hideEmpty": true,
+            "hideZero": true,
+            "max": true,
+            "min": true,
+            "rightSide": true,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "connected",
+          "options": {
+            "alertThreshold": true
+          },
+          "percentage": false,
+          "pluginVersion": "7.5.0",
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refCount": 0,
+              "refId": "A",
+              "target": "aliasByNode($base.$path.$testname.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.userTimings.measures.*.$function, 13)",
+              "textEditor": false
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "User Timings Measures [$function]",
           "tooltip": {
             "shared": true,
             "sort": 0,
@@ -4178,7 +4271,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 49
+        "y": 57
       },
       "id": 122,
       "panels": [
@@ -4805,7 +4898,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 50
+        "y": 58
       },
       "id": 146,
       "panels": [
@@ -5595,7 +5688,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 51
+        "y": 59
       },
       "id": 234,
       "panels": [
@@ -5610,11 +5703,6 @@
           "description": "",
           "fieldConfig": {
             "defaults": {
-              "custom": {},
-              "thresholds": {
-                "mode": "absolute",
-                "steps": []
-              },
               "unit": "none"
             },
             "overrides": []
@@ -5625,7 +5713,7 @@
             "h": 11,
             "w": 24,
             "x": 0,
-            "y": 44
+            "y": 60
           },
           "hiddenSeries": false,
           "id": 235,
@@ -5649,7 +5737,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "7.4.2",
+          "pluginVersion": "7.5.0",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -5726,7 +5814,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 52
+        "y": 60
       },
       "id": 96,
       "panels": [
@@ -5947,7 +6035,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 53
+        "y": 61
       },
       "id": 136,
       "panels": [
@@ -5960,7 +6048,6 @@
           "decimals": 0,
           "fieldConfig": {
             "defaults": {
-              "custom": {},
               "links": []
             },
             "overrides": []
@@ -5971,7 +6058,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 46
+            "y": 62
           },
           "hiddenSeries": false,
           "id": 142,
@@ -5996,7 +6083,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "7.4.2",
+          "pluginVersion": "7.5.0",
           "pointradius": 5,
           "points": false,
           "renderer": "flot",
@@ -6085,7 +6172,6 @@
           "decimals": 0,
           "fieldConfig": {
             "defaults": {
-              "custom": {},
               "links": []
             },
             "overrides": []
@@ -6096,7 +6182,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 46
+            "y": 62
           },
           "hiddenSeries": false,
           "id": 144,
@@ -6121,7 +6207,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "7.4.2",
+          "pluginVersion": "7.5.0",
           "pointradius": 5,
           "points": false,
           "renderer": "flot",
@@ -6210,7 +6296,6 @@
           "description": "Activate by adding --thirdParty.cpu  to to your run.",
           "fieldConfig": {
             "defaults": {
-              "custom": {},
               "links": []
             },
             "overrides": []
@@ -6221,7 +6306,7 @@
             "h": 14,
             "w": 24,
             "x": 0,
-            "y": 56
+            "y": 72
           },
           "hiddenSeries": false,
           "id": 134,
@@ -6246,7 +6331,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "7.4.2",
+          "pluginVersion": "7.5.0",
           "pointradius": 5,
           "points": false,
           "renderer": "flot",
@@ -6315,7 +6400,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 54
+        "y": 62
       },
       "id": 140,
       "panels": [
@@ -6438,7 +6523,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 55
+        "y": 63
       },
       "id": 176,
       "panels": [
@@ -6560,7 +6645,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 56
+        "y": 64
       },
       "id": 172,
       "panels": [
@@ -6787,7 +6872,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 57
+        "y": 65
       },
       "id": 243,
       "panels": [
@@ -6803,7 +6888,6 @@
           "description": "",
           "fieldConfig": {
             "defaults": {
-              "custom": {},
               "links": []
             },
             "overrides": []
@@ -6814,7 +6898,7 @@
             "h": 14,
             "w": 24,
             "x": 0,
-            "y": 50
+            "y": 66
           },
           "hiddenSeries": false,
           "id": 244,
@@ -6838,7 +6922,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "7.4.2",
+          "pluginVersion": "7.5.0",
           "pointradius": 5,
           "points": false,
           "renderer": "flot",
@@ -6932,7 +7016,6 @@
           "description": "",
           "fieldConfig": {
             "defaults": {
-              "custom": {},
               "links": []
             },
             "overrides": []
@@ -6943,7 +7026,7 @@
             "h": 14,
             "w": 24,
             "x": 0,
-            "y": 64
+            "y": 80
           },
           "hiddenSeries": false,
           "id": 245,
@@ -6967,7 +7050,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "7.4.2",
+          "pluginVersion": "7.5.0",
           "pointradius": 5,
           "points": false,
           "renderer": "flot",
@@ -7342,5 +7425,5 @@
   "timezone": "browser",
   "title": "Page metrics desktop",
   "uid": "9NDMzFfMk",
-  "version": 11
+  "version": 15
 }

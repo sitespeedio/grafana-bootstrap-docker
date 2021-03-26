@@ -21,7 +21,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "7.4.0-beta1"
+      "version": "7.5.0"
     },
     {
       "type": "panel",
@@ -65,7 +65,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1612786984058,
+  "iteration": 1616705349993,
   "links": [],
   "panels": [
     {
@@ -89,7 +89,6 @@
           "color": {
             "mode": "thresholds"
           },
-          "custom": {},
           "displayName": "First Contentful Paint",
           "mappings": [],
           "thresholds": {
@@ -135,7 +134,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "7.4.0-beta1",
+      "pluginVersion": "7.5.0",
       "targets": [
         {
           "refId": "A",
@@ -145,7 +144,6 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "",
       "type": "stat"
     },
     {
@@ -155,7 +153,6 @@
           "color": {
             "mode": "thresholds"
           },
-          "custom": {},
           "displayName": "Largest Contentful Paint",
           "mappings": [],
           "thresholds": {
@@ -201,7 +198,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "7.4.0-beta1",
+      "pluginVersion": "7.5.0",
       "targets": [
         {
           "refId": "A",
@@ -211,7 +208,6 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "",
       "type": "stat"
     },
     {
@@ -221,7 +217,6 @@
           "color": {
             "mode": "thresholds"
           },
-          "custom": {},
           "displayName": "First Input Delay",
           "mappings": [],
           "thresholds": {
@@ -267,7 +262,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "7.4.0-beta1",
+      "pluginVersion": "7.5.0",
       "targets": [
         {
           "refId": "A",
@@ -277,7 +272,6 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "",
       "type": "stat"
     },
     {
@@ -287,7 +281,6 @@
           "color": {
             "mode": "thresholds"
           },
-          "custom": {},
           "displayName": "Cumulative Layout Shift",
           "mappings": [],
           "thresholds": {
@@ -333,7 +326,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "7.4.0-beta1",
+      "pluginVersion": "7.5.0",
       "targets": [
         {
           "refId": "A",
@@ -343,7 +336,6 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "",
       "type": "stat"
     },
     {
@@ -359,9 +351,7 @@
       "datasource": "${DS_GRAPHITE}",
       "description": "",
       "fieldConfig": {
-        "defaults": {
-          "custom": {}
-        },
+        "defaults": {},
         "overrides": []
       },
       "fontSize": "80%",
@@ -423,9 +413,7 @@
       "datasource": "${DS_GRAPHITE}",
       "description": "",
       "fieldConfig": {
-        "defaults": {
-          "custom": {}
-        },
+        "defaults": {},
         "overrides": []
       },
       "fontSize": "80%",
@@ -487,9 +475,7 @@
       "datasource": "${DS_GRAPHITE}",
       "description": "",
       "fieldConfig": {
-        "defaults": {
-          "custom": {}
-        },
+        "defaults": {},
         "overrides": []
       },
       "fontSize": "80%",
@@ -551,9 +537,7 @@
       "datasource": "${DS_GRAPHITE}",
       "description": "",
       "fieldConfig": {
-        "defaults": {
-          "custom": {}
-        },
+        "defaults": {},
         "overrides": []
       },
       "fontSize": "80%",
@@ -614,7 +598,6 @@
       "description": "",
       "fieldConfig": {
         "defaults": {
-          "custom": {},
           "links": []
         },
         "overrides": []
@@ -646,7 +629,7 @@
         "alertThreshold": true
       },
       "percentage": true,
-      "pluginVersion": "7.4.0-beta1",
+      "pluginVersion": "7.5.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -730,7 +713,6 @@
       "description": "",
       "fieldConfig": {
         "defaults": {
-          "custom": {},
           "links": []
         },
         "overrides": []
@@ -762,7 +744,7 @@
         "alertThreshold": true
       },
       "percentage": true,
-      "pluginVersion": "7.4.0-beta1",
+      "pluginVersion": "7.5.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -846,7 +828,6 @@
       "description": "",
       "fieldConfig": {
         "defaults": {
-          "custom": {},
           "links": []
         },
         "overrides": []
@@ -878,7 +859,7 @@
         "alertThreshold": true
       },
       "percentage": true,
-      "pluginVersion": "7.4.0-beta1",
+      "pluginVersion": "7.5.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -962,7 +943,6 @@
       "description": "",
       "fieldConfig": {
         "defaults": {
-          "custom": {},
           "links": []
         },
         "overrides": []
@@ -994,7 +974,7 @@
         "alertThreshold": true
       },
       "percentage": true,
-      "pluginVersion": "7.4.0-beta1",
+      "pluginVersion": "7.5.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1088,27 +1068,8 @@
       "datasource": "${DS_GRAPHITE}",
       "fieldConfig": {
         "defaults": {
-          "custom": {},
           "displayName": "First Contentful Paint",
           "links": [],
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "#EAB839",
-                "value": 1000
-              },
-              {
-                "color": "red",
-                "value": 3000
-              }
-            ]
-          },
           "unit": "ms"
         },
         "overrides": []
@@ -1140,7 +1101,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.4.0-beta1",
+      "pluginVersion": "7.5.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1159,7 +1120,6 @@
       "timeFrom": "30d",
       "timeRegions": [],
       "timeShift": null,
-      "title": "",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -1206,27 +1166,8 @@
       "datasource": "${DS_GRAPHITE}",
       "fieldConfig": {
         "defaults": {
-          "custom": {},
           "displayName": "First Contentful Paint",
           "links": [],
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "#EAB839",
-                "value": 1000
-              },
-              {
-                "color": "red",
-                "value": 3000
-              }
-            ]
-          },
           "unit": "ms"
         },
         "overrides": []
@@ -1258,7 +1199,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.4.0-beta1",
+      "pluginVersion": "7.5.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1277,7 +1218,6 @@
       "timeFrom": "30d",
       "timeRegions": [],
       "timeShift": null,
-      "title": "",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -1324,27 +1264,8 @@
       "datasource": "${DS_GRAPHITE}",
       "fieldConfig": {
         "defaults": {
-          "custom": {},
           "displayName": "First Contentful Paint",
           "links": [],
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "#EAB839",
-                "value": 1000
-              },
-              {
-                "color": "red",
-                "value": 3000
-              }
-            ]
-          },
           "unit": "ms"
         },
         "overrides": []
@@ -1376,7 +1297,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.4.0-beta1",
+      "pluginVersion": "7.5.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1395,7 +1316,6 @@
       "timeFrom": "30d",
       "timeRegions": [],
       "timeShift": null,
-      "title": "",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -1442,27 +1362,8 @@
       "datasource": "${DS_GRAPHITE}",
       "fieldConfig": {
         "defaults": {
-          "custom": {},
           "displayName": "First Contentful Paint",
           "links": [],
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "#EAB839",
-                "value": 1000
-              },
-              {
-                "color": "red",
-                "value": 3000
-              }
-            ]
-          },
           "unit": "ms"
         },
         "overrides": []
@@ -1494,7 +1395,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.4.0-beta1",
+      "pluginVersion": "7.5.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1513,7 +1414,6 @@
       "timeFrom": "30d",
       "timeRegions": [],
       "timeShift": null,
-      "title": "",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -1573,7 +1473,6 @@
           "color": {
             "mode": "thresholds"
           },
-          "custom": {},
           "displayName": "First Contentful Paint",
           "mappings": [],
           "thresholds": {
@@ -1619,7 +1518,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "7.4.0-beta1",
+      "pluginVersion": "7.5.0",
       "targets": [
         {
           "refId": "A",
@@ -1629,7 +1528,6 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "",
       "type": "stat"
     },
     {
@@ -1639,7 +1537,6 @@
           "color": {
             "mode": "thresholds"
           },
-          "custom": {},
           "displayName": "Largest Contentful Paint",
           "mappings": [],
           "thresholds": {
@@ -1685,7 +1582,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "7.4.0-beta1",
+      "pluginVersion": "7.5.0",
       "targets": [
         {
           "refId": "A",
@@ -1695,7 +1592,6 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "",
       "type": "stat"
     },
     {
@@ -1705,7 +1601,6 @@
           "color": {
             "mode": "thresholds"
           },
-          "custom": {},
           "displayName": "First Input Delay",
           "mappings": [],
           "thresholds": {
@@ -1751,7 +1646,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "7.4.0-beta1",
+      "pluginVersion": "7.5.0",
       "targets": [
         {
           "refId": "A",
@@ -1761,7 +1656,6 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "",
       "type": "stat"
     },
     {
@@ -1771,7 +1665,6 @@
           "color": {
             "mode": "thresholds"
           },
-          "custom": {},
           "displayName": "Cumulative Layout Shift",
           "mappings": [],
           "thresholds": {
@@ -1817,7 +1710,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "7.4.0-beta1",
+      "pluginVersion": "7.5.0",
       "targets": [
         {
           "refId": "A",
@@ -1827,7 +1720,6 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "",
       "type": "stat"
     },
     {
@@ -1843,9 +1735,7 @@
       "datasource": "${DS_GRAPHITE}",
       "description": "",
       "fieldConfig": {
-        "defaults": {
-          "custom": {}
-        },
+        "defaults": {},
         "overrides": []
       },
       "fontSize": "80%",
@@ -1907,23 +1797,7 @@
       "datasource": "${DS_GRAPHITE}",
       "description": "",
       "fieldConfig": {
-        "defaults": {
-          "custom": {},
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          }
-        },
+        "defaults": {},
         "overrides": []
       },
       "fontSize": "80%",
@@ -1986,9 +1860,7 @@
       "datasource": "${DS_GRAPHITE}",
       "description": "",
       "fieldConfig": {
-        "defaults": {
-          "custom": {}
-        },
+        "defaults": {},
         "overrides": []
       },
       "fontSize": "80%",
@@ -2050,9 +1922,7 @@
       "datasource": "${DS_GRAPHITE}",
       "description": "",
       "fieldConfig": {
-        "defaults": {
-          "custom": {}
-        },
+        "defaults": {},
         "overrides": []
       },
       "fontSize": "80%",
@@ -2113,7 +1983,6 @@
       "description": "",
       "fieldConfig": {
         "defaults": {
-          "custom": {},
           "links": []
         },
         "overrides": []
@@ -2145,7 +2014,7 @@
         "alertThreshold": true
       },
       "percentage": true,
-      "pluginVersion": "7.4.0-beta1",
+      "pluginVersion": "7.5.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -2229,7 +2098,6 @@
       "description": "",
       "fieldConfig": {
         "defaults": {
-          "custom": {},
           "links": []
         },
         "overrides": []
@@ -2261,7 +2129,7 @@
         "alertThreshold": true
       },
       "percentage": true,
-      "pluginVersion": "7.4.0-beta1",
+      "pluginVersion": "7.5.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -2345,7 +2213,6 @@
       "description": "",
       "fieldConfig": {
         "defaults": {
-          "custom": {},
           "links": []
         },
         "overrides": []
@@ -2377,7 +2244,7 @@
         "alertThreshold": true
       },
       "percentage": true,
-      "pluginVersion": "7.4.0-beta1",
+      "pluginVersion": "7.5.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -2461,7 +2328,6 @@
       "description": "",
       "fieldConfig": {
         "defaults": {
-          "custom": {},
           "links": []
         },
         "overrides": []
@@ -2493,7 +2359,7 @@
         "alertThreshold": true
       },
       "percentage": true,
-      "pluginVersion": "7.4.0-beta1",
+      "pluginVersion": "7.5.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -2587,27 +2453,8 @@
       "datasource": "${DS_GRAPHITE}",
       "fieldConfig": {
         "defaults": {
-          "custom": {},
           "displayName": "First Contentful Paint",
           "links": [],
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "#EAB839",
-                "value": 1000
-              },
-              {
-                "color": "red",
-                "value": 3000
-              }
-            ]
-          },
           "unit": "ms"
         },
         "overrides": []
@@ -2638,7 +2485,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.4.0-beta1",
+      "pluginVersion": "7.5.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -2657,7 +2504,6 @@
       "timeFrom": "30d",
       "timeRegions": [],
       "timeShift": null,
-      "title": "",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -2704,27 +2550,8 @@
       "datasource": "${DS_GRAPHITE}",
       "fieldConfig": {
         "defaults": {
-          "custom": {},
           "displayName": "First Contentful Paint",
           "links": [],
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "#EAB839",
-                "value": 1000
-              },
-              {
-                "color": "red",
-                "value": 3000
-              }
-            ]
-          },
           "unit": "ms"
         },
         "overrides": []
@@ -2755,7 +2582,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.4.0-beta1",
+      "pluginVersion": "7.5.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -2774,7 +2601,6 @@
       "timeFrom": "30d",
       "timeRegions": [],
       "timeShift": null,
-      "title": "",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -2821,27 +2647,8 @@
       "datasource": "${DS_GRAPHITE}",
       "fieldConfig": {
         "defaults": {
-          "custom": {},
           "displayName": "First Contentful Paint",
           "links": [],
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "#EAB839",
-                "value": 1000
-              },
-              {
-                "color": "red",
-                "value": 3000
-              }
-            ]
-          },
           "unit": "ms"
         },
         "overrides": []
@@ -2872,7 +2679,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.4.0-beta1",
+      "pluginVersion": "7.5.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -2891,7 +2698,6 @@
       "timeFrom": "30d",
       "timeRegions": [],
       "timeShift": null,
-      "title": "",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -2938,27 +2744,8 @@
       "datasource": "${DS_GRAPHITE}",
       "fieldConfig": {
         "defaults": {
-          "custom": {},
           "displayName": "First Contentful Paint",
           "links": [],
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "#EAB839",
-                "value": 1000
-              },
-              {
-                "color": "red",
-                "value": 3000
-              }
-            ]
-          },
           "unit": "ms"
         },
         "overrides": []
@@ -2989,7 +2776,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.4.0-beta1",
+      "pluginVersion": "7.5.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -3008,7 +2795,6 @@
       "timeFrom": "30d",
       "timeRegions": [],
       "timeShift": null,
-      "title": "",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -3217,5 +3003,5 @@
   "timezone": "",
   "title": "Chrome User Experience Report",
   "uid": "t_bhsNGMk",
-  "version": 4
+  "version": 2
 }
