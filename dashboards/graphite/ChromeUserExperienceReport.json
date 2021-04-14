@@ -21,13 +21,13 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "7.0.3"
+      "version": "7.5.0"
     },
     {
       "type": "panel",
       "id": "grafana-piechart-panel",
       "name": "Pie Chart",
-      "version": "1.5.0"
+      "version": "1.6.1"
     },
     {
       "type": "panel",
@@ -65,7 +65,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1593850696871,
+  "iteration": 1616705349993,
   "links": [],
   "panels": [
     {
@@ -86,7 +86,9 @@
       "datasource": "${DS_GRAPHITE}",
       "fieldConfig": {
         "defaults": {
-          "custom": {},
+          "color": {
+            "mode": "thresholds"
+          },
           "displayName": "First Contentful Paint",
           "mappings": [],
           "thresholds": {
@@ -128,26 +130,29 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "text": {},
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.5.0",
       "targets": [
         {
           "refId": "A",
-          "target": "alias($base.$path.pageSummary.$group.$page.crux.loadingExperience.$formFactor.FIRST_CONTENTFUL_PAINT_MS.p75, 'First Contentful Paint')",
+          "target": "alias($base.$path.$testname.pageSummary.$group.$page.crux.loadingExperience.$formFactor.FIRST_CONTENTFUL_PAINT_MS.p75, 'First Contentful Paint')",
           "textEditor": false
         }
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "",
       "type": "stat"
     },
     {
       "datasource": "${DS_GRAPHITE}",
       "fieldConfig": {
         "defaults": {
-          "custom": {},
+          "color": {
+            "mode": "thresholds"
+          },
           "displayName": "Largest Contentful Paint",
           "mappings": [],
           "thresholds": {
@@ -189,26 +194,29 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "text": {},
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.5.0",
       "targets": [
         {
           "refId": "A",
-          "target": "alias($base.$path.pageSummary.$group.$page.crux.loadingExperience.$formFactor.LARGEST_CONTENTFUL_PAINT_MS.p75, 'Largest Contentful Paint')",
+          "target": "alias($base.$path.$testname.pageSummary.$group.$page.crux.loadingExperience.$formFactor.LARGEST_CONTENTFUL_PAINT_MS.p75, 'Largest Contentful Paint')",
           "textEditor": false
         }
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "",
       "type": "stat"
     },
     {
       "datasource": "${DS_GRAPHITE}",
       "fieldConfig": {
         "defaults": {
-          "custom": {},
+          "color": {
+            "mode": "thresholds"
+          },
           "displayName": "First Input Delay",
           "mappings": [],
           "thresholds": {
@@ -250,26 +258,29 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "text": {},
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.5.0",
       "targets": [
         {
           "refId": "A",
-          "target": "alias($base.$path.pageSummary.$group.$page.crux.loadingExperience.$formFactor.FIRST_INPUT_DELAY_MS.p75, 'First Input Delay')",
+          "target": "alias($base.$path.$testname.pageSummary.$group.$page.crux.loadingExperience.$formFactor.FIRST_INPUT_DELAY_MS.p75, 'First Input Delay')",
           "textEditor": false
         }
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "",
       "type": "stat"
     },
     {
       "datasource": "${DS_GRAPHITE}",
       "fieldConfig": {
         "defaults": {
-          "custom": {},
+          "color": {
+            "mode": "thresholds"
+          },
           "displayName": "Cumulative Layout Shift",
           "mappings": [],
           "thresholds": {
@@ -311,19 +322,20 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "text": {},
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.5.0",
       "targets": [
         {
           "refId": "A",
-          "target": "alias($base.$path.pageSummary.$group.$page.crux.loadingExperience.$formFactor.CUMULATIVE_LAYOUT_SHIFT_SCORE.p75, 'Cumulative Layout Shift')",
+          "target": "alias($base.$path.$testname.pageSummary.$group.$page.crux.loadingExperience.$formFactor.CUMULATIVE_LAYOUT_SHIFT_SCORE.p75, 'Cumulative Layout Shift')",
           "textEditor": false
         }
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "",
       "type": "stat"
     },
     {
@@ -339,9 +351,7 @@
       "datasource": "${DS_GRAPHITE}",
       "description": "",
       "fieldConfig": {
-        "defaults": {
-          "custom": {}
-        },
+        "defaults": {},
         "overrides": []
       },
       "fontSize": "80%",
@@ -368,17 +378,20 @@
         {
           "refCount": 0,
           "refId": "A",
-          "target": "aliasByNode(scale($base.$path.pageSummary.$group.$page.crux.loadingExperience.$formFactor.FIRST_CONTENTFUL_PAINT_MS.fast, 100), 9)"
+          "target": "aliasByNode(scale($base.$path.$testname.pageSummary.$group.$page.crux.loadingExperience.$formFactor.FIRST_CONTENTFUL_PAINT_MS.fast, 100), 10)",
+          "textEditor": false
         },
         {
           "refCount": 0,
           "refId": "B",
-          "target": "aliasByNode(scale($base.$path.pageSummary.$group.$page.crux.loadingExperience.$formFactor.FIRST_CONTENTFUL_PAINT_MS.moderate, 100), 9)"
+          "target": "aliasByNode(scale($base.$path.$testname.pageSummary.$group.$page.crux.loadingExperience.$formFactor.FIRST_CONTENTFUL_PAINT_MS.moderate, 100), 10)",
+          "textEditor": false
         },
         {
           "refCount": 0,
           "refId": "C",
-          "target": "aliasByNode(scale($base.$path.pageSummary.$group.$page.crux.loadingExperience.$formFactor.FIRST_CONTENTFUL_PAINT_MS.slow, 100), 9)"
+          "target": "aliasByNode(scale($base.$path.$testname.pageSummary.$group.$page.crux.loadingExperience.$formFactor.FIRST_CONTENTFUL_PAINT_MS.slow, 100), 10)",
+          "textEditor": false
         }
       ],
       "timeFrom": null,
@@ -400,9 +413,7 @@
       "datasource": "${DS_GRAPHITE}",
       "description": "",
       "fieldConfig": {
-        "defaults": {
-          "custom": {}
-        },
+        "defaults": {},
         "overrides": []
       },
       "fontSize": "80%",
@@ -429,17 +440,20 @@
         {
           "refCount": 0,
           "refId": "A",
-          "target": "aliasByNode(scale($base.$path.pageSummary.$group.$page.crux.loadingExperience.$formFactor.LARGEST_CONTENTFUL_PAINT_MS.fast, 100), 9)"
+          "target": "aliasByNode(scale($base.$path.$testname.pageSummary.$group.$page.crux.loadingExperience.$formFactor.LARGEST_CONTENTFUL_PAINT_MS.fast, 100), 10)",
+          "textEditor": false
         },
         {
           "refCount": 0,
           "refId": "B",
-          "target": "aliasByNode(scale($base.$path.pageSummary.$group.$page.crux.loadingExperience.$formFactor.LARGEST_CONTENTFUL_PAINT_MS.moderate, 100), 9)"
+          "target": "aliasByNode(scale($base.$path.$testname.pageSummary.$group.$page.crux.loadingExperience.$formFactor.LARGEST_CONTENTFUL_PAINT_MS.moderate, 100), 10)",
+          "textEditor": false
         },
         {
           "refCount": 0,
           "refId": "C",
-          "target": "aliasByNode(scale($base.$path.pageSummary.$group.$page.crux.loadingExperience.$formFactor.LARGEST_CONTENTFUL_PAINT_MS.slow, 100), 9)"
+          "target": "aliasByNode(scale($base.$path.$testname.pageSummary.$group.$page.crux.loadingExperience.$formFactor.LARGEST_CONTENTFUL_PAINT_MS.slow, 100), 10)",
+          "textEditor": false
         }
       ],
       "timeFrom": null,
@@ -461,9 +475,7 @@
       "datasource": "${DS_GRAPHITE}",
       "description": "",
       "fieldConfig": {
-        "defaults": {
-          "custom": {}
-        },
+        "defaults": {},
         "overrides": []
       },
       "fontSize": "80%",
@@ -490,17 +502,20 @@
         {
           "refCount": 0,
           "refId": "A",
-          "target": "aliasByNode(scale($base.$path.pageSummary.$group.$page.crux.loadingExperience.$formFactor.FIRST_INPUT_DELAY_MS.fast, 100), 9)"
+          "target": "aliasByNode(scale($base.$path.$testname.pageSummary.$group.$page.crux.loadingExperience.$formFactor.FIRST_INPUT_DELAY_MS.fast, 100), 10)",
+          "textEditor": false
         },
         {
           "refCount": 0,
           "refId": "B",
-          "target": "aliasByNode(scale($base.$path.pageSummary.$group.$page.crux.loadingExperience.$formFactor.FIRST_INPUT_DELAY_MS.moderate, 100), 9)"
+          "target": "aliasByNode(scale($base.$path.$testname.pageSummary.$group.$page.crux.loadingExperience.$formFactor.FIRST_INPUT_DELAY_MS, 100), 10)",
+          "textEditor": false
         },
         {
           "refCount": 0,
           "refId": "C",
-          "target": "aliasByNode(scale($base.$path.pageSummary.$group.$page.crux.loadingExperience.$formFactor.FIRST_INPUT_DELAY_MS.slow, 100), 9)"
+          "target": "aliasByNode(scale($base.$path.$testname.pageSummary.$group.$page.crux.loadingExperience.$formFactor.FIRST_INPUT_DELAY_MS, 100), 10)",
+          "textEditor": false
         }
       ],
       "timeFrom": null,
@@ -522,9 +537,7 @@
       "datasource": "${DS_GRAPHITE}",
       "description": "",
       "fieldConfig": {
-        "defaults": {
-          "custom": {}
-        },
+        "defaults": {},
         "overrides": []
       },
       "fontSize": "80%",
@@ -551,17 +564,20 @@
         {
           "refCount": 0,
           "refId": "A",
-          "target": "aliasByNode(scale($base.$path.pageSummary.$group.$page.crux.loadingExperience.$formFactor.CUMULATIVE_LAYOUT_SHIFT_SCORE.fast, 100), 9)"
+          "target": "aliasByNode(scale($base.$path.$testname.pageSummary.$group.$page.crux.loadingExperience.$formFactor.CUMULATIVE_LAYOUT_SHIFT_SCORE.fast, 100), 10)",
+          "textEditor": false
         },
         {
           "refCount": 0,
           "refId": "B",
-          "target": "aliasByNode(scale($base.$path.pageSummary.$group.$page.crux.loadingExperience.$formFactor.CUMULATIVE_LAYOUT_SHIFT_SCORE.moderate, 100), 9)"
+          "target": "aliasByNode(scale($base.$path.$testname.pageSummary.$group.$page.crux.loadingExperience.$formFactor.CUMULATIVE_LAYOUT_SHIFT_SCORE.moderate, 100), 10)",
+          "textEditor": false
         },
         {
           "refCount": 0,
           "refId": "C",
-          "target": "aliasByNode(scale($base.$path.pageSummary.$group.$page.crux.loadingExperience.$formFactor.CUMULATIVE_LAYOUT_SHIFT_SCORE.slow, 100), 9)"
+          "target": "aliasByNode(scale($base.$path.$testname.pageSummary.$group.$page.crux.loadingExperience.$formFactor.CUMULATIVE_LAYOUT_SHIFT_SCORE.slow, 100), 10)",
+          "textEditor": false
         }
       ],
       "timeFrom": null,
@@ -582,7 +598,7 @@
       "description": "",
       "fieldConfig": {
         "defaults": {
-          "custom": {}
+          "links": []
         },
         "overrides": []
       },
@@ -610,9 +626,10 @@
       "linewidth": 1,
       "nullPointMode": "connected",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": true,
+      "pluginVersion": "7.5.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -624,17 +641,20 @@
         {
           "refCount": 0,
           "refId": "A",
-          "target": "aliasByNode(scale($base.$path.pageSummary.$group.$page.crux.loadingExperience.$formFactor.FIRST_CONTENTFUL_PAINT_MS.fast, 100), 9)"
+          "target": "aliasByNode(scale($base.$path.$testname.pageSummary.$group.$page.crux.loadingExperience.$formFactor.FIRST_CONTENTFUL_PAINT_MS.fast, 100), 10)",
+          "textEditor": false
         },
         {
           "refCount": 0,
           "refId": "B",
-          "target": "aliasByNode(scale($base.$path.pageSummary.$group.$page.crux.loadingExperience.$formFactor.FIRST_CONTENTFUL_PAINT_MS.moderate, 100), 9)"
+          "target": "aliasByNode(scale($base.$path.$testname.pageSummary.$group.$page.crux.loadingExperience.$formFactor.FIRST_CONTENTFUL_PAINT_MS.moderate, 100), 10)",
+          "textEditor": false
         },
         {
           "refCount": 0,
           "refId": "C",
-          "target": "aliasByNode(scale($base.$path.pageSummary.$group.$page.crux.loadingExperience.$formFactor.FIRST_CONTENTFUL_PAINT_MS.slow, 100), 9)"
+          "target": "aliasByNode(scale($base.$path.$testname.pageSummary.$group.$page.crux.loadingExperience.$formFactor.FIRST_CONTENTFUL_PAINT_MS.slow, 100), 10)",
+          "textEditor": false
         }
       ],
       "thresholds": [],
@@ -693,7 +713,7 @@
       "description": "",
       "fieldConfig": {
         "defaults": {
-          "custom": {}
+          "links": []
         },
         "overrides": []
       },
@@ -721,9 +741,10 @@
       "linewidth": 1,
       "nullPointMode": "connected",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": true,
+      "pluginVersion": "7.5.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -735,17 +756,20 @@
         {
           "refCount": 0,
           "refId": "A",
-          "target": "aliasByNode(scale($base.$path.pageSummary.$group.$page.crux.loadingExperience.$formFactor.LARGEST_CONTENTFUL_PAINT_MS.fast, 100), 9)"
+          "target": "aliasByNode(scale($base.$path.$testname.pageSummary.$group.$page.crux.loadingExperience.$formFactor.LARGEST_CONTENTFUL_PAINT_MS.fast, 100), 10)",
+          "textEditor": false
         },
         {
           "refCount": 0,
           "refId": "B",
-          "target": "aliasByNode(scale($base.$path.pageSummary.$group.$page.crux.loadingExperience.$formFactor.LARGEST_CONTENTFUL_PAINT_MS.moderate, 100), 9)"
+          "target": "aliasByNode(scale($base.$path.$testname.pageSummary.$group.$page.crux.loadingExperience.$formFactor.LARGEST_CONTENTFUL_PAINT_MS.moderate, 100), 10)",
+          "textEditor": false
         },
         {
           "refCount": 0,
           "refId": "C",
-          "target": "aliasByNode(scale($base.$path.pageSummary.$group.$page.crux.loadingExperience.$formFactor.LARGEST_CONTENTFUL_PAINT_MS.slow, 100), 9)"
+          "target": "aliasByNode(scale($base.$path.$testname.pageSummary.$group.$page.crux.loadingExperience.$formFactor.LARGEST_CONTENTFUL_PAINT_MS.slow, 100), 10)",
+          "textEditor": false
         }
       ],
       "thresholds": [],
@@ -804,7 +828,7 @@
       "description": "",
       "fieldConfig": {
         "defaults": {
-          "custom": {}
+          "links": []
         },
         "overrides": []
       },
@@ -832,9 +856,10 @@
       "linewidth": 1,
       "nullPointMode": "connected",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": true,
+      "pluginVersion": "7.5.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -846,17 +871,20 @@
         {
           "refCount": 0,
           "refId": "A",
-          "target": "aliasByNode(scale($base.$path.pageSummary.$group.$page.crux.loadingExperience.$formFactor.FIRST_INPUT_DELAY_MS.fast, 100), 9)"
+          "target": "aliasByNode(scale($base.$path.$testname.pageSummary.$group.$page.crux.loadingExperience.$formFactor.FIRST_INPUT_DELAY_MS.fast, 100), 10)",
+          "textEditor": false
         },
         {
           "refCount": 0,
           "refId": "B",
-          "target": "aliasByNode(scale($base.$path.pageSummary.$group.$page.crux.loadingExperience.$formFactor.FIRST_INPUT_DELAY_MS.moderate, 100), 9)"
+          "target": "aliasByNode(scale($base.$path.$testname.pageSummary.$group.$page.crux.loadingExperience.$formFactor.FIRST_INPUT_DELAY_MS, 100), 10)",
+          "textEditor": false
         },
         {
           "refCount": 0,
           "refId": "C",
-          "target": "aliasByNode(scale($base.$path.pageSummary.$group.$page.crux.loadingExperience.$formFactor.FIRST_INPUT_DELAY_MS.slow, 100), 9)"
+          "target": "aliasByNode(scale($base.$path.$testname.pageSummary.$group.$page.crux.loadingExperience.$formFactor.FIRST_INPUT_DELAY_MS, 100), 10)",
+          "textEditor": false
         }
       ],
       "thresholds": [],
@@ -915,7 +943,7 @@
       "description": "",
       "fieldConfig": {
         "defaults": {
-          "custom": {}
+          "links": []
         },
         "overrides": []
       },
@@ -943,9 +971,10 @@
       "linewidth": 1,
       "nullPointMode": "connected",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": true,
+      "pluginVersion": "7.5.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -957,17 +986,20 @@
         {
           "refCount": 0,
           "refId": "A",
-          "target": "aliasByNode(scale($base.$path.pageSummary.$group.$page.crux.loadingExperience.$formFactor.CUMULATIVE_LAYOUT_SHIFT_SCORE.fast, 100), 9)"
+          "target": "aliasByNode(scale($base.$path.$testname.pageSummary.$group.$page.crux.loadingExperience.$formFactor.CUMULATIVE_LAYOUT_SHIFT_SCORE.fast, 100), 10)",
+          "textEditor": false
         },
         {
           "refCount": 0,
           "refId": "B",
-          "target": "aliasByNode(scale($base.$path.pageSummary.$group.$page.crux.loadingExperience.$formFactor.CUMULATIVE_LAYOUT_SHIFT_SCORE.moderate, 100), 9)"
+          "target": "aliasByNode(scale($base.$path.$testname.pageSummary.$group.$page.crux.loadingExperience.$formFactor.CUMULATIVE_LAYOUT_SHIFT_SCORE.moderate, 100), 10)",
+          "textEditor": false
         },
         {
           "refCount": 0,
           "refId": "C",
-          "target": "aliasByNode(scale($base.$path.pageSummary.$group.$page.crux.loadingExperience.$formFactor.CUMULATIVE_LAYOUT_SHIFT_SCORE.slow, 100), 9)"
+          "target": "aliasByNode(scale($base.$path.$testname.pageSummary.$group.$page.crux.loadingExperience.$formFactor.CUMULATIVE_LAYOUT_SHIFT_SCORE.slow, 100), 10)",
+          "textEditor": false
         }
       ],
       "thresholds": [],
@@ -1036,26 +1068,8 @@
       "datasource": "${DS_GRAPHITE}",
       "fieldConfig": {
         "defaults": {
-          "custom": {},
           "displayName": "First Contentful Paint",
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "#EAB839",
-                "value": 1000
-              },
-              {
-                "color": "red",
-                "value": 3000
-              }
-            ]
-          },
+          "links": [],
           "unit": "ms"
         },
         "overrides": []
@@ -1084,10 +1098,10 @@
       "maxDataPoints": "",
       "nullPointMode": "connected",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.5.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1098,7 +1112,7 @@
       "targets": [
         {
           "refId": "A",
-          "target": "alias($base.$path.pageSummary.$group.$page.crux.loadingExperience.$formFactor.FIRST_CONTENTFUL_PAINT_MS.p75, 'First Contentful Paint')",
+          "target": "alias($base.$path.$testname.pageSummary.$group.$page.crux.loadingExperience.$formFactor.FIRST_CONTENTFUL_PAINT_MS.p75, 'First Contentful Paint')",
           "textEditor": false
         }
       ],
@@ -1106,7 +1120,6 @@
       "timeFrom": "30d",
       "timeRegions": [],
       "timeShift": null,
-      "title": "",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -1153,26 +1166,8 @@
       "datasource": "${DS_GRAPHITE}",
       "fieldConfig": {
         "defaults": {
-          "custom": {},
           "displayName": "First Contentful Paint",
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "#EAB839",
-                "value": 1000
-              },
-              {
-                "color": "red",
-                "value": 3000
-              }
-            ]
-          },
+          "links": [],
           "unit": "ms"
         },
         "overrides": []
@@ -1201,10 +1196,10 @@
       "maxDataPoints": "",
       "nullPointMode": "connected",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.5.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1215,7 +1210,7 @@
       "targets": [
         {
           "refId": "A",
-          "target": "alias($base.$path.pageSummary.$group.$page.crux.loadingExperience.$formFactor.LARGEST_CONTENTFUL_PAINT_MS.p75, 'Largest Contentful Paint')",
+          "target": "alias($base.$path.$testname.pageSummary.$group.$page.crux.loadingExperience.$formFactor.LARGEST_CONTENTFUL_PAINT_MS.p75, 'Largest Contentful Paint')",
           "textEditor": false
         }
       ],
@@ -1223,7 +1218,6 @@
       "timeFrom": "30d",
       "timeRegions": [],
       "timeShift": null,
-      "title": "",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -1270,26 +1264,8 @@
       "datasource": "${DS_GRAPHITE}",
       "fieldConfig": {
         "defaults": {
-          "custom": {},
           "displayName": "First Contentful Paint",
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "#EAB839",
-                "value": 1000
-              },
-              {
-                "color": "red",
-                "value": 3000
-              }
-            ]
-          },
+          "links": [],
           "unit": "ms"
         },
         "overrides": []
@@ -1318,10 +1294,10 @@
       "maxDataPoints": "",
       "nullPointMode": "connected",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.5.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1332,7 +1308,7 @@
       "targets": [
         {
           "refId": "A",
-          "target": "alias($base.$path.pageSummary.$group.$page.crux.loadingExperience.$formFactor.FIRST_INPUT_DELAY_MS.p75, 'First Input Delay')",
+          "target": "alias($base.$path.$testname.pageSummary.$group.$page.crux.loadingExperience.$formFactor.FIRST_INPUT_DELAY_MS.p75, 'First Input Delay')",
           "textEditor": false
         }
       ],
@@ -1340,7 +1316,6 @@
       "timeFrom": "30d",
       "timeRegions": [],
       "timeShift": null,
-      "title": "",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -1387,26 +1362,8 @@
       "datasource": "${DS_GRAPHITE}",
       "fieldConfig": {
         "defaults": {
-          "custom": {},
           "displayName": "First Contentful Paint",
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "#EAB839",
-                "value": 1000
-              },
-              {
-                "color": "red",
-                "value": 3000
-              }
-            ]
-          },
+          "links": [],
           "unit": "ms"
         },
         "overrides": []
@@ -1435,10 +1392,10 @@
       "maxDataPoints": "",
       "nullPointMode": "connected",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.5.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1449,7 +1406,7 @@
       "targets": [
         {
           "refId": "A",
-          "target": "alias($base.$path.pageSummary.$group.$page.crux.loadingExperience.$formFactor.CUMULATIVE_LAYOUT_SHIFT_SCORE.p75, 'Cumulative Layout Shift')",
+          "target": "alias($base.$path.$testname.pageSummary.$group.$page.crux.loadingExperience.$formFactor.CUMULATIVE_LAYOUT_SHIFT_SCORE.p75, 'Cumulative Layout Shift')",
           "textEditor": false
         }
       ],
@@ -1457,7 +1414,6 @@
       "timeFrom": "30d",
       "timeRegions": [],
       "timeShift": null,
-      "title": "",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -1474,7 +1430,7 @@
       "yaxes": [
         {
           "$$hashKey": "object:833",
-          "format": "none",
+          "format": "ms",
           "label": null,
           "logBase": 1,
           "max": null,
@@ -1514,7 +1470,9 @@
       "datasource": "${DS_GRAPHITE}",
       "fieldConfig": {
         "defaults": {
-          "custom": {},
+          "color": {
+            "mode": "thresholds"
+          },
           "displayName": "First Contentful Paint",
           "mappings": [],
           "thresholds": {
@@ -1556,26 +1514,29 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "text": {},
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.5.0",
       "targets": [
         {
           "refId": "A",
-          "target": "alias($base.$path.summary.$group.crux.originLoadingExperience.$formFactor.FIRST_CONTENTFUL_PAINT_MS.p75, 'First Contentful Paint')",
+          "target": "alias($base.$path.$testname.summary.$group.crux.originLoadingExperience.$formFactor.FIRST_CONTENTFUL_PAINT_MS.p75, 'First Contentful Paint')",
           "textEditor": false
         }
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "",
       "type": "stat"
     },
     {
       "datasource": "${DS_GRAPHITE}",
       "fieldConfig": {
         "defaults": {
-          "custom": {},
+          "color": {
+            "mode": "thresholds"
+          },
           "displayName": "Largest Contentful Paint",
           "mappings": [],
           "thresholds": {
@@ -1617,26 +1578,29 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "text": {},
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.5.0",
       "targets": [
         {
           "refId": "A",
-          "target": "alias($base.$path.summary.$group.crux.originLoadingExperience.$formFactor.LARGEST_CONTENTFUL_PAINT_MS.p75, 'Largest Contentful Paint')",
+          "target": "alias($base.$path.$testname.summary.$group.crux.originLoadingExperience.$formFactor.LARGEST_CONTENTFUL_PAINT_MS.p75, 'Largest Contentful Paint')",
           "textEditor": false
         }
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "",
       "type": "stat"
     },
     {
       "datasource": "${DS_GRAPHITE}",
       "fieldConfig": {
         "defaults": {
-          "custom": {},
+          "color": {
+            "mode": "thresholds"
+          },
           "displayName": "First Input Delay",
           "mappings": [],
           "thresholds": {
@@ -1678,26 +1642,29 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "text": {},
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.5.0",
       "targets": [
         {
           "refId": "A",
-          "target": "alias($base.$path.summary.$group.crux.originLoadingExperience.$formFactor.FIRST_INPUT_DELAY_MS.p75, 'First Input Delay')",
-          "textEditor": false
+          "target": "alias($base.$path.$testname.summary.$group.crux.originLoadingExperience.$formFactor.FIRST_INPUT_DELAY_MS.p75, 'First Input Delay')",
+          "textEditor": true
         }
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "",
       "type": "stat"
     },
     {
       "datasource": "${DS_GRAPHITE}",
       "fieldConfig": {
         "defaults": {
-          "custom": {},
+          "color": {
+            "mode": "thresholds"
+          },
           "displayName": "Cumulative Layout Shift",
           "mappings": [],
           "thresholds": {
@@ -1739,19 +1706,20 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "text": {},
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.5.0",
       "targets": [
         {
           "refId": "A",
-          "target": "alias($base.$path.summary.$group.crux.originLoadingExperience.$formFactor.CUMULATIVE_LAYOUT_SHIFT_SCORE.p75, 'Cumulative Layout Shift')",
+          "target": "alias($base.$path.$testname.summary.$group.crux.originLoadingExperience.$formFactor.CUMULATIVE_LAYOUT_SHIFT_SCORE.p75, 'Cumulative Layout Shift')",
           "textEditor": false
         }
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "",
       "type": "stat"
     },
     {
@@ -1767,9 +1735,7 @@
       "datasource": "${DS_GRAPHITE}",
       "description": "",
       "fieldConfig": {
-        "defaults": {
-          "custom": {}
-        },
+        "defaults": {},
         "overrides": []
       },
       "fontSize": "80%",
@@ -1796,17 +1762,20 @@
         {
           "refCount": 0,
           "refId": "A",
-          "target": "aliasByNode(scale($base.$path.summary.$group.crux.originLoadingExperience.$formFactor.FIRST_CONTENTFUL_PAINT_MS.fast, 100), 8)"
+          "target": "aliasByNode(scale($base.$path.$testname.summary.$group.crux.originLoadingExperience.$formFactor.FIRST_CONTENTFUL_PAINT_MS.fast, 100), 9)",
+          "textEditor": false
         },
         {
           "refCount": 0,
           "refId": "B",
-          "target": "aliasByNode(scale($base.$path.summary.$group.crux.originLoadingExperience.$formFactor.FIRST_CONTENTFUL_PAINT_MS.moderate, 100), 8)"
+          "target": "aliasByNode(scale($base.$path.$testname.summary.$group.crux.originLoadingExperience.$formFactor.FIRST_CONTENTFUL_PAINT_MS.moderate, 100), 9)",
+          "textEditor": false
         },
         {
           "refCount": 0,
           "refId": "C",
-          "target": "aliasByNode(scale($base.$path.summary.$group.crux.originLoadingExperience.$formFactor.FIRST_CONTENTFUL_PAINT_MS.slow, 100), 8)"
+          "target": "aliasByNode(scale($base.$path.$testname.summary.$group.crux.originLoadingExperience.$formFactor.FIRST_CONTENTFUL_PAINT_MS.slow, 100), 9)",
+          "textEditor": false
         }
       ],
       "timeFrom": null,
@@ -1828,23 +1797,7 @@
       "datasource": "${DS_GRAPHITE}",
       "description": "",
       "fieldConfig": {
-        "defaults": {
-          "custom": {},
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          }
-        },
+        "defaults": {},
         "overrides": []
       },
       "fontSize": "80%",
@@ -1872,17 +1825,20 @@
         {
           "refCount": 0,
           "refId": "A",
-          "target": "aliasByNode(scale($base.$path.summary.$group.crux.originLoadingExperience.$formFactor.LARGEST_CONTENTFUL_PAINT_MS.fast, 100), 8)"
+          "target": "aliasByNode(scale($base.$path.$testname.summary.$group.crux.originLoadingExperience.$formFactor.LARGEST_CONTENTFUL_PAINT_MS.fast, 100), 9)",
+          "textEditor": false
         },
         {
           "refCount": 0,
           "refId": "B",
-          "target": "aliasByNode(scale($base.$path.summary.$group.crux.originLoadingExperience.$formFactor.LARGEST_CONTENTFUL_PAINT_MS.moderate, 100), 8)"
+          "target": "aliasByNode(scale($base.$path.$testname.summary.$group.crux.originLoadingExperience.$formFactor.LARGEST_CONTENTFUL_PAINT_MS.moderate, 100), 9)",
+          "textEditor": false
         },
         {
           "refCount": 0,
           "refId": "C",
-          "target": "aliasByNode(scale($base.$path.summary.$group.crux.originLoadingExperience.$formFactor.LARGEST_CONTENTFUL_PAINT_MS.slow, 100), 8)"
+          "target": "aliasByNode(scale($base.$path.$testname.summary.$group.crux.originLoadingExperience.$formFactor.LARGEST_CONTENTFUL_PAINT_MS.slow, 100), 9)",
+          "textEditor": false
         }
       ],
       "timeFrom": null,
@@ -1904,9 +1860,7 @@
       "datasource": "${DS_GRAPHITE}",
       "description": "",
       "fieldConfig": {
-        "defaults": {
-          "custom": {}
-        },
+        "defaults": {},
         "overrides": []
       },
       "fontSize": "80%",
@@ -1933,17 +1887,20 @@
         {
           "refCount": 0,
           "refId": "A",
-          "target": "aliasByNode(scale($base.$path.summary.$group.crux.originLoadingExperience.$formFactor.FIRST_INPUT_DELAY_MS.fast, 100), 8)"
+          "target": "aliasByNode(scale($base.$path.$testname.summary.$group.crux.originLoadingExperience.$formFactor.FIRST_INPUT_DELAY_MS.fast, 100), 9)",
+          "textEditor": false
         },
         {
           "refCount": 0,
           "refId": "B",
-          "target": "aliasByNode(scale($base.$path.summary.$group.crux.originLoadingExperience.$formFactor.FIRST_INPUT_DELAY_MS.moderate, 100), 8)"
+          "target": "aliasByNode(scale($base.$path.$testname.summary.$group.crux.originLoadingExperience.$formFactor.FIRST_INPUT_DELAY_MS.moderate, 100), 9)",
+          "textEditor": false
         },
         {
           "refCount": 0,
           "refId": "C",
-          "target": "aliasByNode(scale($base.$path.summary.$group.crux.originLoadingExperience.$formFactor.FIRST_INPUT_DELAY_MS.slow, 100), 8)"
+          "target": "aliasByNode(scale($base.$path.$testname.summary.$group.crux.originLoadingExperience.$formFactor.FIRST_INPUT_DELAY_MS, 100), 9)",
+          "textEditor": false
         }
       ],
       "timeFrom": null,
@@ -1965,9 +1922,7 @@
       "datasource": "${DS_GRAPHITE}",
       "description": "",
       "fieldConfig": {
-        "defaults": {
-          "custom": {}
-        },
+        "defaults": {},
         "overrides": []
       },
       "fontSize": "80%",
@@ -1994,17 +1949,20 @@
         {
           "refCount": 0,
           "refId": "A",
-          "target": "aliasByNode(scale($base.$path.summary.$group.crux.originLoadingExperience.$formFactor.CUMULATIVE_LAYOUT_SHIFT_SCORE.fast, 100), 8)"
+          "target": "aliasByNode(scale($base.$path.$testname.summary.$group.crux.originLoadingExperience.$formFactor.CUMULATIVE_LAYOUT_SHIFT_SCORE.fast, 100), 9)",
+          "textEditor": false
         },
         {
           "refCount": 0,
           "refId": "B",
-          "target": "aliasByNode(scale($base.$path.summary.$group.crux.originLoadingExperience.$formFactor.CUMULATIVE_LAYOUT_SHIFT_SCORE.moderate, 100), 8)"
+          "target": "aliasByNode(scale($base.$path.$testname.summary.$group.crux.originLoadingExperience.$formFactor.CUMULATIVE_LAYOUT_SHIFT_SCORE.moderate, 100), 9)",
+          "textEditor": false
         },
         {
           "refCount": 0,
           "refId": "C",
-          "target": "aliasByNode(scale($base.$path.summary.$group.crux.originLoadingExperience.$formFactor.CUMULATIVE_LAYOUT_SHIFT_SCORE.slow, 100), 8)"
+          "target": "aliasByNode(scale($base.$path.$testname.summary.$group.crux.originLoadingExperience.$formFactor.CUMULATIVE_LAYOUT_SHIFT_SCORE.slow, 100), 9)",
+          "textEditor": false
         }
       ],
       "timeFrom": null,
@@ -2025,7 +1983,7 @@
       "description": "",
       "fieldConfig": {
         "defaults": {
-          "custom": {}
+          "links": []
         },
         "overrides": []
       },
@@ -2053,9 +2011,10 @@
       "linewidth": 1,
       "nullPointMode": "connected",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": true,
+      "pluginVersion": "7.5.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -2067,17 +2026,20 @@
         {
           "refCount": 0,
           "refId": "A",
-          "target": "aliasByNode(scale($base.$path.summary.$group.crux.originLoadingExperience.$formFactor.FIRST_CONTENTFUL_PAINT_MS.fast, 100), 8)"
+          "target": "aliasByNode(scale($base.$path.$testname.summary.$group.crux.originLoadingExperience.$formFactor.FIRST_CONTENTFUL_PAINT_MS.fast, 100), 9)",
+          "textEditor": false
         },
         {
           "refCount": 0,
           "refId": "B",
-          "target": "aliasByNode(scale($base.$path.summary.$group.crux.originLoadingExperience.$formFactor.FIRST_CONTENTFUL_PAINT_MS.moderate, 100), 8)"
+          "target": "aliasByNode(scale($base.$path.$testname.summary.$group.crux.originLoadingExperience.$formFactor.FIRST_CONTENTFUL_PAINT_MS.moderate, 100), 9)",
+          "textEditor": false
         },
         {
           "refCount": 0,
           "refId": "C",
-          "target": "aliasByNode(scale($base.$path.summary.$group.crux.originLoadingExperience.$formFactor.FIRST_CONTENTFUL_PAINT_MS.slow, 100), 8)"
+          "target": "aliasByNode(scale($base.$path.$testname.summary.$group.crux.originLoadingExperience.$formFactor.FIRST_CONTENTFUL_PAINT_MS.slow, 100), 9)",
+          "textEditor": false
         }
       ],
       "thresholds": [],
@@ -2136,7 +2098,7 @@
       "description": "",
       "fieldConfig": {
         "defaults": {
-          "custom": {}
+          "links": []
         },
         "overrides": []
       },
@@ -2164,9 +2126,10 @@
       "linewidth": 1,
       "nullPointMode": "connected",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": true,
+      "pluginVersion": "7.5.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -2178,17 +2141,20 @@
         {
           "refCount": 0,
           "refId": "A",
-          "target": "aliasByNode(scale($base.$path.summary.$group.crux.originLoadingExperience.$formFactor.LARGEST_CONTENTFUL_PAINT_MS.fast, 100), 8)"
+          "target": "aliasByNode(scale($base.$path.$testname.summary.$group.crux.originLoadingExperience.$formFactor.LARGEST_CONTENTFUL_PAINT_MS.fast, 100), 9)",
+          "textEditor": false
         },
         {
           "refCount": 0,
           "refId": "B",
-          "target": "aliasByNode(scale($base.$path.summary.$group.crux.originLoadingExperience.$formFactor.LARGEST_CONTENTFUL_PAINT_MS.moderate, 100), 8)"
+          "target": "aliasByNode(scale($base.$path.$testname.summary.$group.crux.originLoadingExperience.$formFactor.LARGEST_CONTENTFUL_PAINT_MS.moderate, 100), 9)",
+          "textEditor": false
         },
         {
           "refCount": 0,
           "refId": "C",
-          "target": "aliasByNode(scale($base.$path.summary.$group.crux.originLoadingExperience.$formFactor.LARGEST_CONTENTFUL_PAINT_MS.slow, 100), 8)"
+          "target": "aliasByNode(scale($base.$path.$testname.summary.$group.crux.originLoadingExperience.$formFactor.LARGEST_CONTENTFUL_PAINT_MS.slow, 100), 9)",
+          "textEditor": false
         }
       ],
       "thresholds": [],
@@ -2247,7 +2213,7 @@
       "description": "",
       "fieldConfig": {
         "defaults": {
-          "custom": {}
+          "links": []
         },
         "overrides": []
       },
@@ -2275,9 +2241,10 @@
       "linewidth": 1,
       "nullPointMode": "connected",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": true,
+      "pluginVersion": "7.5.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -2289,17 +2256,20 @@
         {
           "refCount": 0,
           "refId": "A",
-          "target": "aliasByNode(scale($base.$path.summary.$group.crux.originLoadingExperience.$formFactor.FIRST_INPUT_DELAY_MS.fast, 100), 8)"
+          "target": "aliasByNode(scale($base.$path.$testname.summary.$group.crux.originLoadingExperience.$formFactor.FIRST_INPUT_DELAY_MS.fast, 100), 8)",
+          "textEditor": false
         },
         {
           "refCount": 0,
           "refId": "B",
-          "target": "aliasByNode(scale($base.$path.summary.$group.crux.originLoadingExperience.$formFactor.FIRST_INPUT_DELAY_MS.moderate, 100), 8)"
+          "target": "aliasByNode(scale($base.$path.$testname.summary.$group.crux.originLoadingExperience.$formFactor.FIRST_INPUT_DELAY_MS.moderate, 100), 8)",
+          "textEditor": false
         },
         {
           "refCount": 0,
           "refId": "C",
-          "target": "aliasByNode(scale($base.$path.summary.$group.crux.originLoadingExperience.$formFactor.FIRST_INPUT_DELAY_MS.slow, 100), 8)"
+          "target": "aliasByNode(scale($base.$path.$testname.summary.$group.crux.originLoadingExperience.$formFactor.FIRST_INPUT_DELAY_MS, 100), 8)",
+          "textEditor": false
         }
       ],
       "thresholds": [],
@@ -2358,7 +2328,7 @@
       "description": "",
       "fieldConfig": {
         "defaults": {
-          "custom": {}
+          "links": []
         },
         "overrides": []
       },
@@ -2386,9 +2356,10 @@
       "linewidth": 1,
       "nullPointMode": "connected",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": true,
+      "pluginVersion": "7.5.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -2400,17 +2371,20 @@
         {
           "refCount": 0,
           "refId": "A",
-          "target": "aliasByNode(scale($base.$path.summary.$group.crux.originLoadingExperience.$formFactor.CUMULATIVE_LAYOUT_SHIFT_SCORE.fast, 100), 8)"
+          "target": "aliasByNode(scale($base.$path.$testname.summary.$group.crux.originLoadingExperience.$formFactor.CUMULATIVE_LAYOUT_SHIFT_SCORE.fast, 100), 9)",
+          "textEditor": false
         },
         {
           "refCount": 0,
           "refId": "B",
-          "target": "aliasByNode(scale($base.$path.summary.$group.crux.originLoadingExperience.$formFactor.CUMULATIVE_LAYOUT_SHIFT_SCORE.moderate, 100), 8)"
+          "target": "aliasByNode(scale($base.$path.$testname.summary.$group.crux.originLoadingExperience.$formFactor.CUMULATIVE_LAYOUT_SHIFT_SCORE.moderate, 100), 9)",
+          "textEditor": false
         },
         {
           "refCount": 0,
           "refId": "C",
-          "target": "aliasByNode(scale($base.$path.summary.$group.crux.originLoadingExperience.$formFactor.CUMULATIVE_LAYOUT_SHIFT_SCORE.slow, 100), 8)"
+          "target": "aliasByNode(scale($base.$path.$testname.summary.$group.crux.originLoadingExperience.$formFactor.CUMULATIVE_LAYOUT_SHIFT_SCORE.slow, 100), 9)",
+          "textEditor": false
         }
       ],
       "thresholds": [],
@@ -2479,26 +2453,8 @@
       "datasource": "${DS_GRAPHITE}",
       "fieldConfig": {
         "defaults": {
-          "custom": {},
           "displayName": "First Contentful Paint",
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "#EAB839",
-                "value": 1000
-              },
-              {
-                "color": "red",
-                "value": 3000
-              }
-            ]
-          },
+          "links": [],
           "unit": "ms"
         },
         "overrides": []
@@ -2526,10 +2482,10 @@
       "linewidth": 1,
       "nullPointMode": "connected",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.5.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -2540,7 +2496,7 @@
       "targets": [
         {
           "refId": "A",
-          "target": "alias($base.$path.summary.$group.crux.originLoadingExperience.$formFactor.FIRST_CONTENTFUL_PAINT_MS.p75, 'First Contentful Paint')",
+          "target": "alias($base.$path.$testname.summary.$group.crux.originLoadingExperience.$formFactor.FIRST_CONTENTFUL_PAINT_MS.p75, 'First Contentful Paint')",
           "textEditor": false
         }
       ],
@@ -2548,7 +2504,6 @@
       "timeFrom": "30d",
       "timeRegions": [],
       "timeShift": null,
-      "title": "",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -2595,26 +2550,8 @@
       "datasource": "${DS_GRAPHITE}",
       "fieldConfig": {
         "defaults": {
-          "custom": {},
           "displayName": "First Contentful Paint",
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "#EAB839",
-                "value": 1000
-              },
-              {
-                "color": "red",
-                "value": 3000
-              }
-            ]
-          },
+          "links": [],
           "unit": "ms"
         },
         "overrides": []
@@ -2642,10 +2579,10 @@
       "linewidth": 1,
       "nullPointMode": "connected",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.5.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -2656,7 +2593,7 @@
       "targets": [
         {
           "refId": "A",
-          "target": "alias($base.$path.summary.$group.crux.originLoadingExperience.$formFactor.LARGEST_CONTENTFUL_PAINT_MS.p75, 'Largest Contentful Paint')",
+          "target": "alias($base.$path.$testname.summary.$group.crux.originLoadingExperience.$formFactor.LARGEST_CONTENTFUL_PAINT_MS.p75, 'Largest Contentful Paint')",
           "textEditor": false
         }
       ],
@@ -2664,7 +2601,6 @@
       "timeFrom": "30d",
       "timeRegions": [],
       "timeShift": null,
-      "title": "",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -2711,26 +2647,8 @@
       "datasource": "${DS_GRAPHITE}",
       "fieldConfig": {
         "defaults": {
-          "custom": {},
           "displayName": "First Contentful Paint",
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "#EAB839",
-                "value": 1000
-              },
-              {
-                "color": "red",
-                "value": 3000
-              }
-            ]
-          },
+          "links": [],
           "unit": "ms"
         },
         "overrides": []
@@ -2758,10 +2676,10 @@
       "linewidth": 1,
       "nullPointMode": "connected",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.5.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -2772,7 +2690,7 @@
       "targets": [
         {
           "refId": "A",
-          "target": "alias($base.$path.summary.$group.crux.originLoadingExperience.$formFactor.FIRST_INPUT_DELAY_MS.p75, 'First Input Delay')",
+          "target": "alias($base.$path.$testname.summary.$group.crux.originLoadingExperience.$formFactor.FIRST_INPUT_DELAY_MS.p75, 'First Input Delay')",
           "textEditor": false
         }
       ],
@@ -2780,7 +2698,6 @@
       "timeFrom": "30d",
       "timeRegions": [],
       "timeShift": null,
-      "title": "",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -2827,26 +2744,8 @@
       "datasource": "${DS_GRAPHITE}",
       "fieldConfig": {
         "defaults": {
-          "custom": {},
           "displayName": "First Contentful Paint",
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "#EAB839",
-                "value": 1000
-              },
-              {
-                "color": "red",
-                "value": 3000
-              }
-            ]
-          },
+          "links": [],
           "unit": "ms"
         },
         "overrides": []
@@ -2874,10 +2773,10 @@
       "linewidth": 1,
       "nullPointMode": "connected",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.5.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -2888,7 +2787,7 @@
       "targets": [
         {
           "refId": "A",
-          "target": "alias($base.$path.summary.$group.crux.originLoadingExperience.$formFactor.CUMULATIVE_LAYOUT_SHIFT_SCORE.p75, 'Cumulative Layout Shift')",
+          "target": "alias($base.$path.$testname.summary.$group.crux.originLoadingExperience.$formFactor.CUMULATIVE_LAYOUT_SHIFT_SCORE.p75, 'Cumulative Layout Shift')",
           "textEditor": false
         }
       ],
@@ -2896,7 +2795,6 @@
       "timeFrom": "30d",
       "timeRegions": [],
       "timeShift": null,
-      "title": "",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -2913,7 +2811,7 @@
       "yaxes": [
         {
           "$$hashKey": "object:1941",
-          "format": "none",
+          "format": "ms",
           "label": null,
           "logBase": 1,
           "max": null,
@@ -2936,34 +2834,40 @@
       }
     }
   ],
-  "schemaVersion": 25,
+  "schemaVersion": 27,
   "style": "dark",
   "tags": [],
   "templating": {
     "list": [
       {
-        "current": {
-          "value": "${VAR_BASE}",
-          "text": "${VAR_BASE}"
-        },
+        "description": null,
+        "error": null,
         "hide": 2,
         "label": "sitespeed_io",
         "name": "base",
+        "query": "${VAR_BASE}",
+        "skipUrlSync": false,
+        "type": "constant",
+        "current": {
+          "value": "${VAR_BASE}",
+          "text": "${VAR_BASE}",
+          "selected": false
+        },
         "options": [
           {
             "value": "${VAR_BASE}",
-            "text": "${VAR_BASE}"
+            "text": "${VAR_BASE}",
+            "selected": false
           }
-        ],
-        "query": "${VAR_BASE}",
-        "skipUrlSync": false,
-        "type": "constant"
+        ]
       },
       {
         "allValue": null,
         "current": {},
         "datasource": "${DS_GRAPHITE}",
         "definition": "$base.*",
+        "description": null,
+        "error": null,
         "hide": 0,
         "includeAll": false,
         "label": null,
@@ -2985,14 +2889,40 @@
         "allValue": null,
         "current": {},
         "datasource": "${DS_GRAPHITE}",
-        "definition": "$base.$path.pageSummary.*",
+        "definition": "$base.$path.*",
+        "description": null,
+        "error": null,
+        "hide": 0,
+        "includeAll": false,
+        "label": null,
+        "multi": false,
+        "name": "testname",
+        "options": [],
+        "query": "$base.$path.*",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "allValue": null,
+        "current": {},
+        "datasource": "${DS_GRAPHITE}",
+        "definition": "$base.$path.$testname.pageSummary.*",
+        "description": null,
+        "error": null,
         "hide": 0,
         "includeAll": false,
         "label": "domain",
         "multi": false,
         "name": "group",
         "options": [],
-        "query": "$base.$path.pageSummary.*",
+        "query": "$base.$path.$testname.pageSummary.*",
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -3007,14 +2937,16 @@
         "allValue": null,
         "current": {},
         "datasource": "${DS_GRAPHITE}",
-        "definition": "$base.$path.pageSummary.$group.*",
+        "definition": "$base.$path.$testname.pageSummary.$group.*",
+        "description": null,
+        "error": null,
         "hide": 0,
         "includeAll": false,
         "label": null,
         "multi": false,
         "name": "page",
         "options": [],
-        "query": "$base.$path.pageSummary.$group.*",
+        "query": "$base.$path.$testname.pageSummary.$group.*",
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -3029,14 +2961,16 @@
         "allValue": null,
         "current": {},
         "datasource": "${DS_GRAPHITE}",
-        "definition": "$base.$path.pageSummary.$group.$page.crux.loadingExperience.*",
+        "definition": "$base.$path.$testname.pageSummary.$group.$page.crux.loadingExperience.*",
+        "description": null,
+        "error": null,
         "hide": 0,
         "includeAll": false,
         "label": "Form Factor",
         "multi": false,
         "name": "formFactor",
         "options": [],
-        "query": "$base.$path.pageSummary.$group.$page.crux.loadingExperience.*",
+        "query": "$base.$path.$testname.pageSummary.$group.$page.crux.loadingExperience.*",
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -3050,7 +2984,7 @@
     ]
   },
   "time": {
-    "from": "now-6h",
+    "from": "now-2d",
     "to": "now"
   },
   "timepicker": {
@@ -3069,5 +3003,5 @@
   "timezone": "",
   "title": "Chrome User Experience Report",
   "uid": "t_bhsNGMk",
-  "version": 20
+  "version": 2
 }

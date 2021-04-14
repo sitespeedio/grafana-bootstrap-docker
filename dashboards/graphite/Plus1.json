@@ -21,13 +21,13 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "7.0.3"
+      "version": "7.5.0"
     },
     {
       "type": "panel",
       "id": "grafana-piechart-panel",
       "name": "Pie Chart",
-      "version": "1.5.0"
+      "version": "1.6.1"
     },
     {
       "type": "panel",
@@ -40,6 +40,12 @@
       "id": "graphite",
       "name": "Graphite",
       "version": "1.0.0"
+    },
+    {
+      "type": "panel",
+      "id": "piechart",
+      "name": "Pie chart v2",
+      "version": ""
     },
     {
       "type": "panel",
@@ -71,7 +77,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1593637167576,
+  "iteration": 1616704198863,
   "links": [],
   "panels": [
     {
@@ -87,26 +93,9 @@
       "type": "row"
     },
     {
-      "content": "Use the +1 container to get metrics from Lighthouse and GPSI",
       "datasource": "${DS_GRAPHITE}",
       "fieldConfig": {
-        "defaults": {
-          "custom": {},
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          }
-        },
+        "defaults": {},
         "overrides": []
       },
       "gridPos": {
@@ -116,8 +105,11 @@
         "y": 1
       },
       "id": 9,
-      "mode": "markdown",
-      "pluginVersion": "7.0.0",
+      "options": {
+        "content": "Use the +1 container to get metrics from Lighthouse and GPSI",
+        "mode": "markdown"
+      },
+      "pluginVersion": "7.5.0",
       "targets": [
         {
           "refId": "A",
@@ -126,14 +118,12 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "",
       "type": "text"
     },
     {
       "datasource": "${DS_GRAPHITE}",
       "fieldConfig": {
         "defaults": {
-          "custom": {},
           "mappings": [],
           "thresholds": {
             "mode": "absolute",
@@ -173,13 +163,16 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "text": {},
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.5.0",
       "targets": [
         {
           "refId": "A",
-          "target": "aliasByNode($base.$path.pageSummary.$group.$page.gpsi.$type.score.*, 8)"
+          "target": "aliasByNode($base.$path.$testtype.pageSummary.$group.$page.gpsi.$type.score.*, 9)",
+          "textEditor": false
         }
       ],
       "timeFrom": null,
@@ -196,7 +189,7 @@
       "decimals": 0,
       "fieldConfig": {
         "defaults": {
-          "custom": {}
+          "links": []
         },
         "overrides": []
       },
@@ -225,9 +218,10 @@
       "maxDataPoints": "",
       "nullPointMode": "connected",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": false,
+      "pluginVersion": "7.5.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -238,7 +232,8 @@
       "targets": [
         {
           "refId": "A",
-          "target": "aliasByNode($base.$path.pageSummary.$group.$page.gpsi.$type.score.*, 8)"
+          "target": "aliasByNode($base.$path.$testtype.pageSummary.$group.$page.gpsi.$type.score.*, 9)",
+          "textEditor": false
         }
       ],
       "thresholds": [],
@@ -305,7 +300,6 @@
       "description": "",
       "fieldConfig": {
         "defaults": {
-          "custom": {},
           "displayName": "First Contentful Paint",
           "mappings": [],
           "thresholds": {
@@ -350,19 +344,21 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "text": {},
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.5.0",
       "targets": [
         {
           "refCount": 0,
           "refId": "A",
-          "target": "alias($base.$path.summary.$group.gpsi.$type.originLoadingExperience.FIRST_CONTENTFUL_PAINT_MS.percentile, 'First Contentful Paint')"
+          "target": "alias($base.$path.$testtype.summary.$group.gpsi.$type.originLoadingExperience.FIRST_CONTENTFUL_PAINT_MS.percentile, 'First Contentful Paint')",
+          "textEditor": false
         }
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "",
       "type": "stat"
     },
     {
@@ -371,7 +367,6 @@
       "description": "",
       "fieldConfig": {
         "defaults": {
-          "custom": {},
           "displayName": "Largest Contentful Paint",
           "mappings": [],
           "thresholds": {
@@ -416,19 +411,21 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "text": {},
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.5.0",
       "targets": [
         {
           "refCount": 0,
           "refId": "A",
-          "target": "alias($base.$path.summary.$group.gpsi.$type.originLoadingExperience.LARGEST_CONTENTFUL_PAINT_MS.percentile, 'Largest Contentful Paint')"
+          "target": "alias($base.$path.$testtype.summary.$group.gpsi.$type.originLoadingExperience.LARGEST_CONTENTFUL_PAINT_MS.percentile, 'Largest Contentful Paint')",
+          "textEditor": false
         }
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "",
       "type": "stat"
     },
     {
@@ -437,7 +434,6 @@
       "description": "",
       "fieldConfig": {
         "defaults": {
-          "custom": {},
           "displayName": "First Input Delay",
           "mappings": [],
           "thresholds": {
@@ -482,19 +478,21 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "text": {},
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.5.0",
       "targets": [
         {
           "refCount": 0,
           "refId": "A",
-          "target": "alias($base.$path.summary.$group.gpsi.$type.originLoadingExperience.FIRST_INPUT_DELAY_MS.percentile, 'First Input Delay')"
+          "target": "alias($base.$path.$testtype.summary.$group.gpsi.$type.originLoadingExperience.FIRST_INPUT_DELAY_MS.percentile, 'First Input Delay')",
+          "textEditor": false
         }
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "",
       "type": "stat"
     },
     {
@@ -503,7 +501,6 @@
       "description": "",
       "fieldConfig": {
         "defaults": {
-          "custom": {},
           "displayName": "Cumulative Layout Shift",
           "mappings": [],
           "thresholds": {
@@ -547,19 +544,21 @@
           ],
           "fields": "",
           "values": false
-        }
+        },
+        "text": {},
+        "textMode": "auto"
       },
-      "pluginVersion": "7.0.3",
+      "pluginVersion": "7.5.0",
       "targets": [
         {
           "refCount": 0,
           "refId": "A",
-          "target": "alias($base.$path.summary.$group.gpsi.$type.originLoadingExperience.CUMULATIVE_LAYOUT_SHIFT_SCORE.percentile, 'Cumulative Layout Shift')"
+          "target": "alias($base.$path.$testtype.summary.$group.gpsi.$type.originLoadingExperience.CUMULATIVE_LAYOUT_SHIFT_SCORE.percentile, 'Cumulative Layout Shift')",
+          "textEditor": false
         }
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "",
       "type": "stat"
     },
     {
@@ -575,9 +574,7 @@
       "datasource": "${DS_GRAPHITE}",
       "description": "",
       "fieldConfig": {
-        "defaults": {
-          "custom": {}
-        },
+        "defaults": {},
         "overrides": []
       },
       "fontSize": "80%",
@@ -604,17 +601,20 @@
         {
           "refCount": 0,
           "refId": "A",
-          "target": "aliasByNode(scale($base.$path.summary.$group.gpsi.$type.originLoadingExperience.FIRST_CONTENTFUL_PAINT_MS.fast, 100), 8)"
+          "target": "aliasByNode(scale($base.$path.$testtype.summary.$group.gpsi.$type.originLoadingExperience.FIRST_CONTENTFUL_PAINT_MS.fast, 100), 9)",
+          "textEditor": false
         },
         {
           "refCount": 0,
           "refId": "B",
-          "target": "aliasByNode(scale($base.$path.summary.$group.gpsi.$type.originLoadingExperience.FIRST_CONTENTFUL_PAINT_MS.moderate, 100), 8)"
+          "target": "aliasByNode(scale($base.$path.$testtype.summary.$group.gpsi.$type.originLoadingExperience.FIRST_CONTENTFUL_PAINT_MS.moderate, 100), 9)",
+          "textEditor": false
         },
         {
           "refCount": 0,
           "refId": "C",
-          "target": "aliasByNode(scale($base.$path.summary.$group.gpsi.$type.originLoadingExperience.FIRST_CONTENTFUL_PAINT_MS.slow, 100), 8)"
+          "target": "aliasByNode(scale($base.$path.$testtype.summary.$group.gpsi.$type.originLoadingExperience.FIRST_CONTENTFUL_PAINT_MS.slow, 100), 9)",
+          "textEditor": false
         }
       ],
       "timeFrom": null,
@@ -624,25 +624,79 @@
       "valueName": "current"
     },
     {
-      "aliasColors": {
-        "slow": "#E02F44"
-      },
-      "breakPoint": "50%",
       "cacheTimeout": null,
-      "combine": {
-        "label": "Others",
-        "threshold": 0
-      },
       "datasource": "${DS_GRAPHITE}",
       "description": "",
       "fieldConfig": {
         "defaults": {
-          "custom": {}
+          "color": {
+            "mode": "palette-classic"
+          },
+          "decimals": 0,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percent"
         },
-        "overrides": []
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "slow"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "#E02F44",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "moderate"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "yellow",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "fast"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "green",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          }
+        ]
       },
-      "fontSize": "80%",
-      "format": "percent",
       "gridPos": {
         "h": 7,
         "w": 6,
@@ -651,38 +705,52 @@
       },
       "id": 31,
       "interval": null,
-      "legend": {
-        "show": true,
-        "values": true
-      },
-      "legendType": "Right side",
       "links": [],
       "maxDataPoints": 1,
-      "nullPointMode": "connected",
-      "pieType": "pie",
-      "strokeWidth": 1,
+      "options": {
+        "displayLabels": [],
+        "legend": {
+          "calcs": [],
+          "displayMode": "table",
+          "placement": "right",
+          "values": [
+            "value"
+          ]
+        },
+        "pieType": "pie",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {}
+      },
       "targets": [
         {
           "refCount": 0,
           "refId": "A",
-          "target": "aliasByNode(scale($base.$path.summary.$group.gpsi.$type.originLoadingExperience.LARGEST_CONTENTFUL_PAINT_MS.fast, 100), 8)"
+          "target": "aliasByNode(scale($base.$path.$testtype.summary.$group.gpsi.$type.originLoadingExperience.LARGEST_CONTENTFUL_PAINT_MS.fast, 100), 9)",
+          "textEditor": false
         },
         {
           "refCount": 0,
           "refId": "B",
-          "target": "aliasByNode(scale($base.$path.summary.$group.gpsi.$type.originLoadingExperience.LARGEST_CONTENTFUL_PAINT_MS.moderate, 100), 8)"
+          "target": "aliasByNode(scale($base.$path.$testtype.summary.$group.gpsi.$type.originLoadingExperience.LARGEST_CONTENTFUL_PAINT_MS.moderate, 100), 9)",
+          "textEditor": false
         },
         {
           "refCount": 0,
           "refId": "C",
-          "target": "aliasByNode(scale($base.$path.summary.$group.gpsi.$type.originLoadingExperience.LARGEST_CONTENTFUL_PAINT_MS.slow, 100), 8)"
+          "target": "aliasByNode(scale($base.$path.$testtype.summary.$group.gpsi.$type.originLoadingExperience.LARGEST_CONTENTFUL_PAINT_MS.slow, 100), 9)",
+          "textEditor": false
         }
       ],
       "timeFrom": null,
       "timeShift": null,
       "title": "Largest Contentful Paint",
-      "type": "grafana-piechart-panel",
-      "valueName": "current"
+      "type": "piechart"
     },
     {
       "aliasColors": {
@@ -697,9 +765,7 @@
       "datasource": "${DS_GRAPHITE}",
       "description": "",
       "fieldConfig": {
-        "defaults": {
-          "custom": {}
-        },
+        "defaults": {},
         "overrides": []
       },
       "fontSize": "80%",
@@ -726,17 +792,20 @@
         {
           "refCount": 0,
           "refId": "A",
-          "target": "aliasByNode(scale($base.$path.summary.$group.gpsi.$type.originLoadingExperience.FIRST_INPUT_DELAY_MS.fast, 100), 8)"
+          "target": "aliasByNode(scale($base.$path.$testtype.summary.$group.gpsi.$type.originLoadingExperience.FIRST_INPUT_DELAY_MS.fast, 100), 9)",
+          "textEditor": false
         },
         {
           "refCount": 0,
           "refId": "B",
-          "target": "aliasByNode(scale($base.$path.summary.$group.gpsi.$type.originLoadingExperience.FIRST_INPUT_DELAY_MS.moderate, 100), 8)"
+          "target": "aliasByNode(scale($base.$path.$testtype.summary.$group.gpsi.$type.originLoadingExperience.FIRST_INPUT_DELAY_MS.moderate, 100), 9)",
+          "textEditor": false
         },
         {
           "refCount": 0,
           "refId": "C",
-          "target": "aliasByNode(scale($base.$path.summary.$group.gpsi.$type.originLoadingExperience.FIRST_INPUT_DELAY_MS.slow, 100), 8)"
+          "target": "aliasByNode(scale($base.$path.$testtype.summary.$group.gpsi.$type.originLoadingExperience.FIRST_INPUT_DELAY_MS.slow, 100), 9)",
+          "textEditor": false
         }
       ],
       "timeFrom": null,
@@ -758,9 +827,7 @@
       "datasource": "${DS_GRAPHITE}",
       "description": "",
       "fieldConfig": {
-        "defaults": {
-          "custom": {}
-        },
+        "defaults": {},
         "overrides": []
       },
       "fontSize": "80%",
@@ -787,17 +854,20 @@
         {
           "refCount": 0,
           "refId": "A",
-          "target": "aliasByNode(scale($base.$path.summary.$group.gpsi.$type.originLoadingExperience.CUMULATIVE_LAYOUT_SHIFT_SCORE.fast, 100), 8)"
+          "target": "aliasByNode(scale($base.$path.$testtype.summary.$group.gpsi.$type.originLoadingExperience.CUMULATIVE_LAYOUT_SHIFT_SCORE.fast, 100), 9)",
+          "textEditor": false
         },
         {
           "refCount": 0,
           "refId": "B",
-          "target": "aliasByNode(scale($base.$path.summary.$group.gpsi.$type.originLoadingExperience.CUMULATIVE_LAYOUT_SHIFT_SCORE.moderate, 100), 8)"
+          "target": "aliasByNode(scale($base.$path.$testtype.summary.$group.gpsi.$type.originLoadingExperience.CUMULATIVE_LAYOUT_SHIFT_SCORE.moderate, 100), 9)",
+          "textEditor": false
         },
         {
           "refCount": 0,
           "refId": "C",
-          "target": "aliasByNode(scale($base.$path.summary.$group.gpsi.$type.originLoadingExperience.CUMULATIVE_LAYOUT_SHIFT_SCORE.slow, 100), 8)"
+          "target": "aliasByNode(scale($base.$path.$testtype.summary.$group.gpsi.$type.originLoadingExperience.CUMULATIVE_LAYOUT_SHIFT_SCORE.slow, 100), 9)",
+          "textEditor": false
         }
       ],
       "timeFrom": null,
@@ -818,7 +888,7 @@
       "description": "",
       "fieldConfig": {
         "defaults": {
-          "custom": {}
+          "links": []
         },
         "overrides": []
       },
@@ -846,9 +916,10 @@
       "linewidth": 1,
       "nullPointMode": "connected",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": true,
+      "pluginVersion": "7.5.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -860,17 +931,20 @@
         {
           "refCount": 0,
           "refId": "A",
-          "target": "aliasByNode(scale($base.$path.summary.$group.gpsi.$type.originLoadingExperience.FIRST_CONTENTFUL_PAINT_MS.fast, 100), 8)"
+          "target": "aliasByNode(scale($base.$path.$testtype.summary.$group.gpsi.$type.originLoadingExperience.FIRST_CONTENTFUL_PAINT_MS.fast, 100), 9)",
+          "textEditor": false
         },
         {
           "refCount": 0,
           "refId": "B",
-          "target": "aliasByNode(scale($base.$path.summary.$group.gpsi.$type.originLoadingExperience.FIRST_CONTENTFUL_PAINT_MS.moderate, 100), 8)"
+          "target": "aliasByNode(scale($base.$path.$testtype.summary.$group.gpsi.$type.originLoadingExperience.FIRST_CONTENTFUL_PAINT_MS.moderate, 100), 9)",
+          "textEditor": false
         },
         {
           "refCount": 0,
           "refId": "C",
-          "target": "aliasByNode(scale($base.$path.summary.$group.gpsi.$type.originLoadingExperience.FIRST_CONTENTFUL_PAINT_MS.slow, 100), 8)"
+          "target": "aliasByNode(scale($base.$path.$testtype.summary.$group.gpsi.$type.originLoadingExperience.FIRST_CONTENTFUL_PAINT_MS.slow, 100), 9)",
+          "textEditor": false
         }
       ],
       "thresholds": [],
@@ -929,7 +1003,7 @@
       "description": "",
       "fieldConfig": {
         "defaults": {
-          "custom": {}
+          "links": []
         },
         "overrides": []
       },
@@ -957,9 +1031,10 @@
       "linewidth": 1,
       "nullPointMode": "connected",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": true,
+      "pluginVersion": "7.5.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -971,17 +1046,20 @@
         {
           "refCount": 0,
           "refId": "A",
-          "target": "aliasByNode(scale($base.$path.summary.$group.gpsi.$type.originLoadingExperience.LARGEST_CONTENTFUL_PAINT_MS.fast, 100), 8)"
+          "target": "aliasByNode(scale($base.$path.$testtype.summary.$group.gpsi.$type.originLoadingExperience.LARGEST_CONTENTFUL_PAINT_MS.fast, 100), 9)",
+          "textEditor": false
         },
         {
           "refCount": 0,
           "refId": "B",
-          "target": "aliasByNode(scale($base.$path.summary.$group.gpsi.$type.originLoadingExperience.LARGEST_CONTENTFUL_PAINT_MS.moderate, 100), 8)"
+          "target": "aliasByNode(scale($base.$path.$testtype.summary.$group.gpsi.$type.originLoadingExperience.LARGEST_CONTENTFUL_PAINT_MS.moderate, 100), 9)",
+          "textEditor": false
         },
         {
           "refCount": 0,
           "refId": "C",
-          "target": "aliasByNode(scale($base.$path.summary.$group.gpsi.$type.originLoadingExperience.LARGEST_CONTENTFUL_PAINT_MS.slow, 100), 8)"
+          "target": "aliasByNode(scale($base.$path.$testtype.summary.$group.gpsi.$type.originLoadingExperience.LARGEST_CONTENTFUL_PAINT_MS.slow, 100), 9)",
+          "textEditor": false
         }
       ],
       "thresholds": [],
@@ -1040,7 +1118,7 @@
       "description": "",
       "fieldConfig": {
         "defaults": {
-          "custom": {}
+          "links": []
         },
         "overrides": []
       },
@@ -1068,9 +1146,10 @@
       "linewidth": 1,
       "nullPointMode": "connected",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": true,
+      "pluginVersion": "7.5.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1082,17 +1161,20 @@
         {
           "refCount": 0,
           "refId": "A",
-          "target": "aliasByNode(scale($base.$path.summary.$group.gpsi.$type.originLoadingExperience.FIRST_INPUT_DELAY_MS.fast, 100), 8)"
+          "target": "aliasByNode(scale($base.$path.$testtype.summary.$group.gpsi.$type.originLoadingExperience.FIRST_INPUT_DELAY_MS.fast, 100), 9)",
+          "textEditor": false
         },
         {
           "refCount": 0,
           "refId": "B",
-          "target": "aliasByNode(scale($base.$path.summary.$group.gpsi.$type.originLoadingExperience.FIRST_INPUT_DELAY_MS.moderate, 100), 8)"
+          "target": "aliasByNode(scale($base.$path.$testtype.summary.$group.gpsi.$type.originLoadingExperience.FIRST_INPUT_DELAY_MS.moderate, 100), 9)",
+          "textEditor": false
         },
         {
           "refCount": 0,
           "refId": "C",
-          "target": "aliasByNode(scale($base.$path.summary.$group.gpsi.$type.originLoadingExperience.FIRST_INPUT_DELAY_MS.slow, 100), 8)"
+          "target": "aliasByNode(scale($base.$path.$testtype.summary.$group.gpsi.$type.originLoadingExperience.FIRST_INPUT_DELAY_MS.slow, 100), 9)",
+          "textEditor": false
         }
       ],
       "thresholds": [],
@@ -1151,7 +1233,7 @@
       "description": "",
       "fieldConfig": {
         "defaults": {
-          "custom": {}
+          "links": []
         },
         "overrides": []
       },
@@ -1179,9 +1261,10 @@
       "linewidth": 1,
       "nullPointMode": "connected",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": true,
+      "pluginVersion": "7.5.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1193,17 +1276,20 @@
         {
           "refCount": 0,
           "refId": "A",
-          "target": "aliasByNode(scale($base.$path.summary.$group.gpsi.$type.originLoadingExperience.CUMULATIVE_LAYOUT_SHIFT_SCORE.fast, 100), 8)"
+          "target": "aliasByNode(scale($base.$path.$testtype.summary.$group.gpsi.$type.originLoadingExperience.CUMULATIVE_LAYOUT_SHIFT_SCORE.fast, 100), 9)",
+          "textEditor": false
         },
         {
           "refCount": 0,
           "refId": "B",
-          "target": "aliasByNode(scale($base.$path.summary.$group.gpsi.$type.originLoadingExperience.CUMULATIVE_LAYOUT_SHIFT_SCORE.moderate, 100), 8)"
+          "target": "aliasByNode(scale($base.$path.$testtype.summary.$group.gpsi.$type.originLoadingExperience.CUMULATIVE_LAYOUT_SHIFT_SCORE.moderate, 100), 9)",
+          "textEditor": false
         },
         {
           "refCount": 0,
           "refId": "C",
-          "target": "aliasByNode(scale($base.$path.summary.$group.gpsi.$type.originLoadingExperience.CUMULATIVE_LAYOUT_SHIFT_SCORE.slow, 100), 8)"
+          "target": "aliasByNode(scale($base.$path.$testtype.summary.$group.gpsi.$type.originLoadingExperience.CUMULATIVE_LAYOUT_SHIFT_SCORE.slow, 100), 9)",
+          "textEditor": false
         }
       ],
       "thresholds": [],
@@ -1277,9 +1363,7 @@
       "datasource": "${DS_GRAPHITE}",
       "description": "",
       "fieldConfig": {
-        "defaults": {
-          "custom": {}
-        },
+        "defaults": {},
         "overrides": []
       },
       "fontSize": "80%",
@@ -1306,17 +1390,20 @@
         {
           "refCount": 0,
           "refId": "A",
-          "target": "aliasByNode(scale($base.$path.pageSummary.$group.$page.gpsi.$type.loadingExperience.FIRST_CONTENTFUL_PAINT_MS.fast, 100), 9)"
+          "target": "aliasByNode(scale($base.$path.$testtype.pageSummary.$group.$page.gpsi.$type.loadingExperience.FIRST_CONTENTFUL_PAINT_MS.fast, 100), 10)",
+          "textEditor": false
         },
         {
           "refCount": 0,
           "refId": "B",
-          "target": "aliasByNode(scale($base.$path.pageSummary.$group.$page.gpsi.$type.loadingExperience.FIRST_CONTENTFUL_PAINT_MS.moderate, 100), 9)"
+          "target": "aliasByNode(scale($base.$path.$testtype.pageSummary.$group.$page.gpsi.$type.loadingExperience.FIRST_CONTENTFUL_PAINT_MS.moderate, 100), 10)",
+          "textEditor": false
         },
         {
           "refCount": 0,
           "refId": "C",
-          "target": "aliasByNode(scale($base.$path.pageSummary.$group.$page.gpsi.$type.loadingExperience.FIRST_CONTENTFUL_PAINT_MS.slow, 100), 9)"
+          "target": "aliasByNode(scale($base.$path.$testtype.pageSummary.$group.$page.gpsi.$type.loadingExperience.FIRST_CONTENTFUL_PAINT_MS.slow, 100), 10)",
+          "textEditor": false
         }
       ],
       "timeFrom": null,
@@ -1338,9 +1425,7 @@
       "datasource": "${DS_GRAPHITE}",
       "description": "",
       "fieldConfig": {
-        "defaults": {
-          "custom": {}
-        },
+        "defaults": {},
         "overrides": []
       },
       "fontSize": "80%",
@@ -1367,17 +1452,20 @@
         {
           "refCount": 0,
           "refId": "A",
-          "target": "aliasByNode(scale($base.$path.pageSummary.$group.$page.gpsi.$type.loadingExperience.LARGEST_CONTENTFUL_PAINT_MS.fast, 100), 9)"
+          "target": "aliasByNode(scale($base.$path.$testtype.pageSummary.$group.$page.gpsi.$type.loadingExperience.LARGEST_CONTENTFUL_PAINT_MS.fast, 100), 10)",
+          "textEditor": false
         },
         {
           "refCount": 0,
           "refId": "B",
-          "target": "aliasByNode(scale($base.$path.pageSummary.$group.$page.gpsi.$type.loadingExperience.LARGEST_CONTENTFUL_PAINT_MS.moderate, 100), 9)"
+          "target": "aliasByNode(scale($base.$path.$testtype.pageSummary.$group.$page.gpsi.$type.loadingExperience.LARGEST_CONTENTFUL_PAINT_MS.moderate, 100), 10)",
+          "textEditor": false
         },
         {
           "refCount": 0,
           "refId": "C",
-          "target": "aliasByNode(scale($base.$path.pageSummary.$group.$page.gpsi.$type.loadingExperience.LARGEST_CONTENTFUL_PAINT_MS.slow, 100), 9)"
+          "target": "aliasByNode(scale($base.$path.$testtype.pageSummary.$group.$page.gpsi.$type.loadingExperience.LARGEST_CONTENTFUL_PAINT_MS.slow, 100), 10)",
+          "textEditor": false
         }
       ],
       "timeFrom": null,
@@ -1399,9 +1487,7 @@
       "datasource": "${DS_GRAPHITE}",
       "description": "",
       "fieldConfig": {
-        "defaults": {
-          "custom": {}
-        },
+        "defaults": {},
         "overrides": []
       },
       "fontSize": "80%",
@@ -1428,17 +1514,20 @@
         {
           "refCount": 0,
           "refId": "A",
-          "target": "aliasByNode(scale($base.$path.pageSummary.$group.$page.gpsi.$type.loadingExperience.FIRST_INPUT_DELAY_MS.fast, 100), 9)"
+          "target": "aliasByNode(scale($base.$path.$testtype.pageSummary.$group.$page.gpsi.$type.loadingExperience.FIRST_INPUT_DELAY_MS.fast, 100), 10)",
+          "textEditor": false
         },
         {
           "refCount": 0,
           "refId": "B",
-          "target": "aliasByNode(scale($base.$path.pageSummary.$group.$page.gpsi.$type.loadingExperience.FIRST_INPUT_DELAY_MS.moderate, 100), 9)"
+          "target": "aliasByNode(scale($base.$path.$testtype.pageSummary.$group.$page.gpsi.$type.loadingExperience.FIRST_INPUT_DELAY_MS.moderate, 100), 10)",
+          "textEditor": false
         },
         {
           "refCount": 0,
           "refId": "C",
-          "target": "aliasByNode(scale($base.$path.pageSummary.$group.$page.gpsi.$type.loadingExperience.FIRST_INPUT_DELAY_MS.slow, 100), 9)"
+          "target": "aliasByNode(scale($base.$path.$testtype.pageSummary.$group.$page.gpsi.$type.loadingExperience.FIRST_INPUT_DELAY_MS.slow, 100), 10)",
+          "textEditor": false
         }
       ],
       "timeFrom": null,
@@ -1460,9 +1549,7 @@
       "datasource": "${DS_GRAPHITE}",
       "description": "",
       "fieldConfig": {
-        "defaults": {
-          "custom": {}
-        },
+        "defaults": {},
         "overrides": []
       },
       "fontSize": "80%",
@@ -1489,17 +1576,20 @@
         {
           "refCount": 0,
           "refId": "A",
-          "target": "aliasByNode(scale($base.$path.pageSummary.$group.$page.gpsi.$type.loadingExperience.CUMULATIVE_LAYOUT_SHIFT_SCORE.fast, 100), 9)"
+          "target": "aliasByNode(scale($base.$path.$testtype.pageSummary.$group.$page.gpsi.$type.loadingExperience.CUMULATIVE_LAYOUT_SHIFT_SCORE.fast, 100), 10)",
+          "textEditor": false
         },
         {
           "refCount": 0,
           "refId": "B",
-          "target": "aliasByNode(scale($base.$path.pageSummary.$group.$page.gpsi.$type.loadingExperience.CUMULATIVE_LAYOUT_SHIFT_SCORE.moderate, 100), 9)"
+          "target": "aliasByNode(scale($base.$path.$testtype.pageSummary.$group.$page.gpsi.$type.loadingExperience.CUMULATIVE_LAYOUT_SHIFT_SCORE.moderate, 100), 10)",
+          "textEditor": false
         },
         {
           "refCount": 0,
           "refId": "C",
-          "target": "aliasByNode(scale($base.$path.pageSummary.$group.$page.gpsi.$type.loadingExperience.CUMULATIVE_LAYOUT_SHIFT_SCORE.slow, 100), 9)"
+          "target": "aliasByNode(scale($base.$path$testtype.pageSummary.$group.$page.gpsi.$type.loadingExperience.CUMULATIVE_LAYOUT_SHIFT_SCORE, 100), 10)",
+          "textEditor": false
         }
       ],
       "timeFrom": null,
@@ -1520,7 +1610,7 @@
       "description": "",
       "fieldConfig": {
         "defaults": {
-          "custom": {}
+          "links": []
         },
         "overrides": []
       },
@@ -1548,9 +1638,10 @@
       "linewidth": 1,
       "nullPointMode": "connected",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": true,
+      "pluginVersion": "7.5.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1562,17 +1653,20 @@
         {
           "refCount": 0,
           "refId": "A",
-          "target": "aliasByNode(scale($base.$path.pageSummary.$group.$page.gpsi.$type.loadingExperience.FIRST_CONTENTFUL_PAINT_MS.fast, 100), 9)"
+          "target": "aliasByNode(scale($base.$path.$testtype.pageSummary.$group.$page.gpsi.$type.loadingExperience.FIRST_CONTENTFUL_PAINT_MS.fast, 100), 10)",
+          "textEditor": false
         },
         {
           "refCount": 0,
           "refId": "B",
-          "target": "aliasByNode(scale($base.$path.pageSummary.$group.$page.gpsi.$type.loadingExperience.FIRST_CONTENTFUL_PAINT_MS.moderate, 100), 9)"
+          "target": "aliasByNode(scale($base.$path.$testtype.pageSummary.$group.$page.gpsi.$type.loadingExperience.FIRST_CONTENTFUL_PAINT_MS.moderate, 100), 10)",
+          "textEditor": false
         },
         {
           "refCount": 0,
           "refId": "C",
-          "target": "aliasByNode(scale($base.$path.pageSummary.$group.$page.gpsi.$type.loadingExperience.FIRST_CONTENTFUL_PAINT_MS.slow, 100), 9)"
+          "target": "aliasByNode(scale($base.$path.$testtype.pageSummary.$group.$page.gpsi.$type.loadingExperience.FIRST_CONTENTFUL_PAINT_MS.slow, 100), 10)",
+          "textEditor": false
         }
       ],
       "thresholds": [],
@@ -1631,7 +1725,7 @@
       "description": "",
       "fieldConfig": {
         "defaults": {
-          "custom": {}
+          "links": []
         },
         "overrides": []
       },
@@ -1659,9 +1753,10 @@
       "linewidth": 1,
       "nullPointMode": "connected",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": true,
+      "pluginVersion": "7.5.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1673,17 +1768,20 @@
         {
           "refCount": 0,
           "refId": "A",
-          "target": "aliasByNode(scale($base.$path.pageSummary.$group.$page.gpsi.$type.loadingExperience.LARGEST_CONTENTFUL_PAINT_MS.fast, 100), 9)"
+          "target": "aliasByNode(scale($base.$path.$testtype.pageSummary.$group.$page.gpsi.$type.loadingExperience.LARGEST_CONTENTFUL_PAINT_MS.fast, 100), 10)",
+          "textEditor": false
         },
         {
           "refCount": 0,
           "refId": "B",
-          "target": "aliasByNode(scale($base.$path.pageSummary.$group.$page.gpsi.$type.loadingExperience.LARGEST_CONTENTFUL_PAINT_MS.moderate, 100), 9)"
+          "target": "aliasByNode(scale($base.$path.$testtype.pageSummary.$group.$page.gpsi.$type.loadingExperience.LARGEST_CONTENTFUL_PAINT_MS.moderate, 100), 10)",
+          "textEditor": false
         },
         {
           "refCount": 0,
           "refId": "C",
-          "target": "aliasByNode(scale($base.$path.pageSummary.$group.$page.gpsi.$type.loadingExperience.LARGEST_CONTENTFUL_PAINT_MS.slow, 100), 9)"
+          "target": "aliasByNode(scale($base.$path.$testtype.pageSummary.$group.$page.gpsi.$type.loadingExperience.LARGEST_CONTENTFUL_PAINT_MS.slow, 100), 10)",
+          "textEditor": false
         }
       ],
       "thresholds": [],
@@ -1742,7 +1840,7 @@
       "description": "",
       "fieldConfig": {
         "defaults": {
-          "custom": {}
+          "links": []
         },
         "overrides": []
       },
@@ -1770,9 +1868,10 @@
       "linewidth": 1,
       "nullPointMode": "connected",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": true,
+      "pluginVersion": "7.5.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1784,17 +1883,20 @@
         {
           "refCount": 0,
           "refId": "A",
-          "target": "aliasByNode(scale($base.$path.pageSummary.$group.$page.gpsi.$type.loadingExperience.FIRST_INPUT_DELAY_MS.fast, 100), 9)"
+          "target": "aliasByNode(scale($base.$path.$testtype.pageSummary.$group.$page.gpsi.$type.loadingExperience.FIRST_INPUT_DELAY_MS.fast, 100), 10)",
+          "textEditor": false
         },
         {
           "refCount": 0,
           "refId": "B",
-          "target": "aliasByNode(scale($base.$path.pageSummary.$group.$page.gpsi.$type.loadingExperience.FIRST_INPUT_DELAY_MS.moderate, 100), 9)"
+          "target": "aliasByNode(scale($base.$path.$testtype.pageSummary.$group.$page.gpsi.$type.loadingExperience.FIRST_INPUT_DELAY_MS.moderate, 100), 10)",
+          "textEditor": false
         },
         {
           "refCount": 0,
           "refId": "C",
-          "target": "aliasByNode(scale($base.$path.pageSummary.$group.$page.gpsi.$type.loadingExperience.FIRST_INPUT_DELAY_MS.slow, 100), 9)"
+          "target": "aliasByNode(scale($base.$path.$testtype.pageSummary.$group.$page.gpsi.$type.loadingExperience.FIRST_INPUT_DELAY_MS.slow, 100), 10)",
+          "textEditor": false
         }
       ],
       "thresholds": [],
@@ -1853,7 +1955,7 @@
       "description": "",
       "fieldConfig": {
         "defaults": {
-          "custom": {}
+          "links": []
         },
         "overrides": []
       },
@@ -1881,9 +1983,10 @@
       "linewidth": 1,
       "nullPointMode": "connected",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": true,
+      "pluginVersion": "7.5.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1895,17 +1998,20 @@
         {
           "refCount": 0,
           "refId": "A",
-          "target": "aliasByNode(scale($base.$path.pageSummary.$group.$page.gpsi.$type.loadingExperience.CUMULATIVE_LAYOUT_SHIFT_SCORE.fast, 100), 9)"
+          "target": "aliasByNode(scale($base.$path.$testtype.pageSummary.$group.$page.gpsi.$type.loadingExperience.CUMULATIVE_LAYOUT_SHIFT_SCORE.fast, 100), 10)",
+          "textEditor": false
         },
         {
           "refCount": 0,
           "refId": "B",
-          "target": "aliasByNode(scale($base.$path.pageSummary.$group.$page.gpsi.$type.loadingExperience.CUMULATIVE_LAYOUT_SHIFT_SCORE.moderate, 100), 9)"
+          "target": "aliasByNode(scale($base.$path.$testtype.pageSummary.$group.$page.gpsi.$type.loadingExperience.CUMULATIVE_LAYOUT_SHIFT_SCORE.moderate, 100), 10)",
+          "textEditor": false
         },
         {
           "refCount": 0,
           "refId": "C",
-          "target": "aliasByNode(scale($base.$path.pageSummary.$group.$page.gpsi.$type.loadingExperience.CUMULATIVE_LAYOUT_SHIFT_SCORE.slow, 100), 9)"
+          "target": "aliasByNode(scale($base.$path.$testtype.pageSummary.$group.$page.gpsi.$type.loadingExperience.CUMULATIVE_LAYOUT_SHIFT_SCORE.slow, 100), 10)",
+          "textEditor": false
         }
       ],
       "thresholds": [],
@@ -1975,7 +2081,7 @@
       "decimals": 2,
       "fieldConfig": {
         "defaults": {
-          "custom": {}
+          "links": []
         },
         "overrides": []
       },
@@ -2003,9 +2109,10 @@
       "linewidth": 1,
       "nullPointMode": "connected",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": false,
+      "pluginVersion": "7.5.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -2017,17 +2124,20 @@
         {
           "refCount": 0,
           "refId": "A",
-          "target": "alias($base.$path.pageSummary.$group.$page.gpsi.$type.loadingExperience.FIRST_CONTENTFUL_PAINT_MS.percentile, 'First Contentful Paint')"
+          "target": "alias($base.$path.$testtype.pageSummary.$group.$page.gpsi.$type.loadingExperience.FIRST_CONTENTFUL_PAINT_MS.percentile, 'First Contentful Paint')",
+          "textEditor": false
         },
         {
           "refCount": 0,
           "refId": "B",
-          "target": "alias($base.$path.pageSummary.$group.$page.gpsi.$type.loadingExperience.FIRST_INPUT_DELAY_MS.percentile, 'First Input Delay')"
+          "target": "alias($base.$path.$testtype.pageSummary.$group.$page.gpsi.$type.loadingExperience.FIRST_INPUT_DELAY_MS.percentile, 'First Input Delay')",
+          "textEditor": false
         },
         {
           "refCount": 0,
           "refId": "C",
-          "target": "alias($base.$path.pageSummary.$group.$page.gpsi.$type.loadingExperience.LARGEST_CONTENTFUL_PAINT_MS.percentile, 'Largest Contentful Paint')"
+          "target": "alias($base.$path.$testtype.pageSummary.$group.$page.gpsi.$type.loadingExperience.LARGEST_CONTENTFUL_PAINT_MS.percentile, 'Largest Contentful Paint')",
+          "textEditor": false
         }
       ],
       "thresholds": [],
@@ -2083,7 +2193,7 @@
       "decimals": 0,
       "fieldConfig": {
         "defaults": {
-          "custom": {}
+          "links": []
         },
         "overrides": []
       },
@@ -2111,9 +2221,10 @@
       "linewidth": 1,
       "nullPointMode": "connected",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": false,
+      "pluginVersion": "7.5.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -2125,7 +2236,8 @@
         {
           "refCount": 0,
           "refId": "A",
-          "target": "alias($base.$path.pageSummary.$group.$page.gpsi.$type.loadingExperience.CUMULATIVE_LAYOUT_SHIFT_SCORE.percentile, 'Cumulative Layout Shift')"
+          "target": "alias($base.$path.$testtype.pageSummary.$group.$page.gpsi.$type.loadingExperience.CUMULATIVE_LAYOUT_SHIFT_SCORE.percentile, 'Cumulative Layout Shift')",
+          "textEditor": false
         }
       ],
       "thresholds": [],
@@ -2183,7 +2295,287 @@
       },
       "id": 44,
       "panels": [],
-      "title": "Lighthouse",
+      "title": "Lighthouse Google Web Vitals",
+      "type": "row"
+    },
+    {
+      "cacheTimeout": null,
+      "datasource": "${DS_GRAPHITE}",
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "displayName": "First Contentful Paint",
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 1000
+              },
+              {
+                "color": "red",
+                "value": 3000
+              }
+            ]
+          },
+          "unit": "ms"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 6,
+        "x": 0,
+        "y": 75
+      },
+      "id": 46,
+      "interval": null,
+      "links": [],
+      "maxDataPoints": 1,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "area",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.5.0",
+      "targets": [
+        {
+          "refCount": 0,
+          "refId": "A",
+          "target": "alias($base.$path.$testtype.pageSummary.$group.$page.lighthouse.audits.first-contentful-paint.numericValue, 'First Contentful Paint')",
+          "textEditor": true
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "type": "stat"
+    },
+    {
+      "cacheTimeout": null,
+      "datasource": "${DS_GRAPHITE}",
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "displayName": "Largest Contentful Paint",
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "yellow",
+                "value": 2500
+              },
+              {
+                "color": "red",
+                "value": 4000
+              }
+            ]
+          },
+          "unit": "ms"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 6,
+        "x": 6,
+        "y": 75
+      },
+      "id": 47,
+      "interval": null,
+      "links": [],
+      "maxDataPoints": 1,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "area",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.5.0",
+      "targets": [
+        {
+          "refCount": 0,
+          "refId": "A",
+          "target": "alias($base.$path.$testtype.pageSummary.$group.$page.lighthouse.audits.largest-contentful-paint.numericValue, 'First Contentful Paint')",
+          "textEditor": false
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "type": "stat"
+    },
+    {
+      "cacheTimeout": null,
+      "datasource": "${DS_GRAPHITE}",
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 100
+              },
+              {
+                "color": "red",
+                "value": 300
+              }
+            ]
+          },
+          "unit": "ms"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 6,
+        "x": 12,
+        "y": 75
+      },
+      "id": 50,
+      "interval": null,
+      "links": [],
+      "maxDataPoints": 1,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "area",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.5.0",
+      "targets": [
+        {
+          "refCount": 0,
+          "refId": "A",
+          "target": "alias($base.$path.$testtype.pageSummary.$group.$page.lighthouse.audits.total-blocking-time.numericValue, 'Total Blocking ime')",
+          "textEditor": false
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "type": "stat"
+    },
+    {
+      "cacheTimeout": null,
+      "datasource": "${DS_GRAPHITE}",
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "displayName": "Cumulative Layout Shift",
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 10
+              },
+              {
+                "color": "red",
+                "value": 25
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 6,
+        "x": 18,
+        "y": 75
+      },
+      "id": 49,
+      "interval": null,
+      "links": [],
+      "maxDataPoints": 1,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "area",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.5.0",
+      "targets": [
+        {
+          "refCount": 0,
+          "refId": "A",
+          "target": "alias($base.$path.$testtype.pageSummary.$group.$page.lighthouse.audits.cumulative-layout-shift.numericValue, 'Cumulative Layout Shift')",
+          "textEditor": false
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "type": "stat"
+    },
+    {
+      "collapsed": false,
+      "datasource": "${DS_GRAPHITE}",
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 82
+      },
+      "id": 55,
+      "panels": [],
+      "title": "Lighthouse score",
       "type": "row"
     },
     {
@@ -2195,17 +2587,17 @@
       "description": "",
       "fieldConfig": {
         "defaults": {
-          "custom": {}
+          "links": []
         },
         "overrides": []
       },
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
-        "h": 11,
+        "h": 13,
         "w": 24,
         "x": 0,
-        "y": 75
+        "y": 83
       },
       "hiddenSeries": false,
       "id": 2,
@@ -2223,9 +2615,10 @@
       "linewidth": 1,
       "nullPointMode": "connected",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": false,
+      "pluginVersion": "7.5.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -2237,7 +2630,8 @@
         {
           "refCount": 0,
           "refId": "A",
-          "target": "aliasByNode(scale($base.$path.pageSummary.$group.$page.lighthouse.categories.*.score, 100), 7)"
+          "target": "aliasByNode(scale($base.$path.$testtype.pageSummary.$group.$page.lighthouse.categories.*.score, 100), 8)",
+          "textEditor": false
         }
       ],
       "thresholds": [],
@@ -2282,36 +2676,452 @@
         "align": false,
         "alignLevel": null
       }
+    },
+    {
+      "collapsed": false,
+      "datasource": "${DS_GRAPHITE}",
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 96
+      },
+      "id": 57,
+      "panels": [],
+      "title": "Lighthouse Google Web Vitals history",
+      "type": "row"
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "${DS_GRAPHITE}",
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "links": [],
+          "unit": "ms"
+        },
+        "overrides": []
+      },
+      "fill": 0,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 10,
+        "w": 12,
+        "x": 0,
+        "y": 97
+      },
+      "hiddenSeries": false,
+      "id": 45,
+      "legend": {
+        "alignAsTable": true,
+        "avg": false,
+        "current": true,
+        "max": true,
+        "min": true,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "connected",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "7.5.0",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "refCount": 0,
+          "refId": "A",
+          "target": "alias($base.$path.$testtype.pageSummary.$group.$page.lighthouse.audits.first-contentful-paint.numericValue, 'First Contentful Paint')",
+          "textEditor": false
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": "30d",
+      "timeRegions": [],
+      "timeShift": null,
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:360",
+          "format": "ms",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:361",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "${DS_GRAPHITE}",
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "links": [],
+          "unit": "ms"
+        },
+        "overrides": []
+      },
+      "fill": 0,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 10,
+        "w": 12,
+        "x": 12,
+        "y": 97
+      },
+      "hiddenSeries": false,
+      "id": 51,
+      "legend": {
+        "alignAsTable": true,
+        "avg": false,
+        "current": true,
+        "max": true,
+        "min": true,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "connected",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "7.5.0",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "refCount": 0,
+          "refId": "A",
+          "target": "alias($base.$path.$testtype.pageSummary.$group.$page.lighthouse.audits.largest-contentful-paint.numericValue, 'Largest Contentful Paint')",
+          "textEditor": false
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": "30d",
+      "timeRegions": [],
+      "timeShift": null,
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:360",
+          "format": "ms",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:361",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "${DS_GRAPHITE}",
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "links": [],
+          "unit": "ms"
+        },
+        "overrides": []
+      },
+      "fill": 0,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 10,
+        "w": 12,
+        "x": 0,
+        "y": 107
+      },
+      "hiddenSeries": false,
+      "id": 52,
+      "legend": {
+        "alignAsTable": true,
+        "avg": false,
+        "current": true,
+        "max": true,
+        "min": true,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "connected",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "7.5.0",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "refCount": 0,
+          "refId": "A",
+          "target": "alias($base.$path.$testtype.pageSummary.$group.$page.lighthouse.audits.total-blocking-time.numericValue, 'Total Blocking Time')",
+          "textEditor": false
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": "30d",
+      "timeRegions": [],
+      "timeShift": null,
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:360",
+          "format": "ms",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:361",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "${DS_GRAPHITE}",
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "links": [],
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "fill": 0,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 10,
+        "w": 12,
+        "x": 12,
+        "y": 107
+      },
+      "hiddenSeries": false,
+      "id": 53,
+      "legend": {
+        "alignAsTable": true,
+        "avg": false,
+        "current": true,
+        "max": true,
+        "min": true,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "connected",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "7.5.0",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "refCount": 0,
+          "refId": "A",
+          "target": "alias($base.$path.$testtype.pageSummary.$group.$page.lighthouse.audits.cumulative-layout-shift.numericValue, 'Cumulative Layout Shift')",
+          "textEditor": false
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": "30d",
+      "timeRegions": [],
+      "timeShift": null,
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:360",
+          "format": "none",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:361",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     }
   ],
-  "schemaVersion": 25,
+  "schemaVersion": 27,
   "style": "dark",
   "tags": [],
   "templating": {
     "list": [
       {
-        "current": {
-          "value": "${VAR_BASE}",
-          "text": "${VAR_BASE}"
-        },
+        "description": null,
+        "error": null,
         "hide": 2,
         "label": "sitespeed_io",
         "name": "base",
+        "query": "${VAR_BASE}",
+        "skipUrlSync": false,
+        "type": "constant",
+        "current": {
+          "value": "${VAR_BASE}",
+          "text": "${VAR_BASE}",
+          "selected": false
+        },
         "options": [
           {
             "value": "${VAR_BASE}",
-            "text": "${VAR_BASE}"
+            "text": "${VAR_BASE}",
+            "selected": false
           }
-        ],
-        "query": "${VAR_BASE}",
-        "skipUrlSync": false,
-        "type": "constant"
+        ]
       },
       {
         "allValue": null,
         "current": {},
         "datasource": "${DS_GRAPHITE}",
         "definition": "$base.*",
+        "description": null,
+        "error": null,
         "hide": 0,
         "includeAll": false,
         "label": null,
@@ -2333,14 +3143,16 @@
         "allValue": null,
         "current": {},
         "datasource": "${DS_GRAPHITE}",
-        "definition": "$base.$path.pageSummary.*",
+        "definition": "$base.$path.*",
+        "description": null,
+        "error": null,
         "hide": 0,
         "includeAll": false,
-        "label": "domain",
+        "label": null,
         "multi": false,
-        "name": "group",
+        "name": "testtype",
         "options": [],
-        "query": "$base.$path.pageSummary.*",
+        "query": "$base.$path.*",
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -2355,14 +3167,40 @@
         "allValue": null,
         "current": {},
         "datasource": "${DS_GRAPHITE}",
-        "definition": "$base.$path.pageSummary.$group.*",
+        "definition": "$base.$path.$testtype.pageSummary.*",
+        "description": null,
+        "error": null,
+        "hide": 0,
+        "includeAll": false,
+        "label": "domain",
+        "multi": false,
+        "name": "group",
+        "options": [],
+        "query": "$base.$path.$testtype.pageSummary.*",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "allValue": null,
+        "current": {},
+        "datasource": "${DS_GRAPHITE}",
+        "definition": "$base.$path.$testtype.pageSummary.$group.*",
+        "description": null,
+        "error": null,
         "hide": 0,
         "includeAll": false,
         "label": null,
         "multi": false,
         "name": "page",
         "options": [],
-        "query": "$base.$path.pageSummary.$group.*",
+        "query": "$base.$path.$testtype.pageSummary.$group.*",
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -2376,10 +3214,12 @@
       {
         "allValue": null,
         "current": {
-          "selected": false,
+          "selected": true,
           "text": "desktop",
           "value": "desktop"
         },
+        "description": null,
+        "error": null,
         "hide": 0,
         "includeAll": false,
         "label": "GPSI type",
@@ -2424,5 +3264,5 @@
   "timezone": "",
   "title": "Plus1",
   "uid": "abRtVXRGk",
-  "version": 15
+  "version": 7
 }
