@@ -109,7 +109,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1616848046073,
+  "iteration": 1618394039805,
   "links": [],
   "panels": [
     {
@@ -851,7 +851,7 @@
         {
           "refCount": 0,
           "refId": "A",
-          "target": "alias($base.$path.$testname.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.pageinfo.layoutShift.$function, 'CLS')",
+          "target": "alias($base.$path.$testname.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.pageinfo.cumulativeLayoutShift.$function, 'CLS')",
           "textEditor": false
         }
       ],
@@ -1942,6 +1942,134 @@
         "x": 0,
         "y": 42
       },
+      "id": 252,
+      "panels": [
+        {
+          "aliasColors": {
+            "Heading": "semi-dark-green"
+          },
+          "bars": false,
+          "cacheTimeout": "",
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_GRAPHITE}",
+          "fieldConfig": {
+            "defaults": {
+              "links": []
+            },
+            "overrides": []
+          },
+          "fill": 0,
+          "fillGradient": 0,
+          "gridPos": {
+            "h": 11,
+            "w": 24,
+            "x": 0,
+            "y": 43
+          },
+          "hiddenSeries": false,
+          "id": 253,
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": true,
+            "hideEmpty": true,
+            "hideZero": true,
+            "max": true,
+            "min": true,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "connected",
+          "options": {
+            "alertThreshold": true
+          },
+          "percentage": false,
+          "pluginVersion": "7.5.0",
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [
+            {
+              "alias": "LastVisualChange",
+              "color": "#cca300",
+              "fillBelowTo": "FirstVisualChange"
+            },
+            {
+              "alias": "FirstVisualChange"
+            }
+          ],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refCount": 0,
+              "refId": "G",
+              "target": "aliasByNode($base.$path.$testname.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.deltaToTFFB.*.$function, 11)",
+              "textEditor": false
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "Visual Metrics [$function]",
+          "tooltip": {
+            "shared": true,
+            "sort": 2,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "$$hashKey": "object:1438",
+              "format": "ms",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "$$hashKey": "object:1439",
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        }
+      ],
+      "title": "Delta TTFB",
+      "type": "row"
+    },
+    {
+      "collapsed": true,
+      "datasource": "${DS_GRAPHITE}",
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 43
+      },
       "id": 199,
       "panels": [
         {
@@ -2077,7 +2205,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 43
+        "y": 44
       },
       "id": 196,
       "panels": [
@@ -2215,7 +2343,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 44
+        "y": 45
       },
       "id": 203,
       "panels": [
@@ -2376,7 +2504,7 @@
             {
               "refCount": 0,
               "refId": "A",
-              "target": "alias($base.$path.$testname.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.pageinfo.layoutShift.$function, 'CLS')",
+              "target": "alias($base.$path.$testname.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.pageinfo.cumulativeLayoutShift.$function, 'CLS')",
               "textEditor": false
             }
           ],
@@ -2638,7 +2766,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 45
+        "y": 46
       },
       "id": 146,
       "panels": [
@@ -3371,7 +3499,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 46
+        "y": 47
       },
       "id": 220,
       "panels": [
@@ -3490,7 +3618,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 47
+        "y": 48
       },
       "id": 223,
       "panels": [
@@ -4199,7 +4327,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 48
+        "y": 49
       },
       "id": 214,
       "panels": [
@@ -4514,7 +4642,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 49
+        "y": 50
       },
       "id": 115,
       "panels": [
@@ -4986,7 +5114,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 50
+        "y": 51
       },
       "id": 122,
       "panels": [
@@ -5608,7 +5736,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 51
+        "y": 52
       },
       "id": 234,
       "panels": [
@@ -5734,7 +5862,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 52
+        "y": 53
       },
       "id": 96,
       "panels": [
@@ -5955,7 +6083,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 53
+        "y": 54
       },
       "id": 136,
       "panels": [
@@ -6320,7 +6448,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 54
+        "y": 55
       },
       "id": 140,
       "panels": [
@@ -6442,7 +6570,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 55
+        "y": 56
       },
       "id": 176,
       "panels": [
@@ -6563,7 +6691,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 56
+        "y": 57
       },
       "id": 172,
       "panels": [
@@ -6788,7 +6916,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 57
+        "y": 58
       },
       "id": 243,
       "panels": [
@@ -7341,5 +7469,5 @@
   "timezone": "browser",
   "title": "Page metrics desktop",
   "uid": "9NDMzFfMk",
-  "version": 20
+  "version": 23
 }
