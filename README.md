@@ -1,5 +1,5 @@
 
-# Default sitespeed.io dashboards for Graphite
+# Example sitespeed.io dashboards for Graphite
 
 Run this container to get a default Graphite datasource linked with the default sitespeed.io dashboards.
 
