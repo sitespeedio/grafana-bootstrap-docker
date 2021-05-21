@@ -109,7 +109,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1618395493503,
+  "iteration": 1621431140227,
   "links": [],
   "panels": [
     {
@@ -2552,12 +2552,524 @@
     },
     {
       "collapsed": true,
-      "datasource": "${DS_GRAPHITE}",
+      "datasource": null,
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
         "y": 45
+      },
+      "id": 266,
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_GRAPHITE}",
+          "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "links": []
+            },
+            "overrides": []
+          },
+          "fill": 1,
+          "fillGradient": 0,
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 1
+          },
+          "hiddenSeries": false,
+          "id": 268,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "hideEmpty": true,
+            "hideZero": true,
+            "max": true,
+            "min": true,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 3,
+          "links": [
+            {
+              "targetBlank": true,
+              "title": "Page summary $page",
+              "url": "/dashboard/db/page-summary?$__url_time_range&$__all_variables"
+            }
+          ],
+          "maxPerRow": 2,
+          "nullPointMode": "connected",
+          "options": {
+            "alertThreshold": true
+          },
+          "percentage": false,
+          "pluginVersion": "7.5.3",
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [
+            {
+              "alias": "/earlier/",
+              "fill": 0,
+              "linewidth": 3,
+              "zindex": -1
+            }
+          ],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "hide": false,
+              "refCount": 0,
+              "refId": "B",
+              "target": "alias(movingAverage($base.$path.$testname.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.googleWebVitals.firstContentfulPaint.$function, '24h'), 'Last 24 hours')",
+              "textEditor": false
+            },
+            {
+              "hide": false,
+              "refCount": 0,
+              "refId": "A",
+              "target": "alias(timeShift(movingAverage($base.$path.$testname.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.googleWebVitals.firstContentfulPaint.$function, '24h'), '7d'), 'One week earlier')",
+              "textEditor": false
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "First Contentful Paint",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "$$hashKey": "object:2260",
+              "format": "ms",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "$$hashKey": "object:2261",
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_GRAPHITE}",
+          "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "links": []
+            },
+            "overrides": []
+          },
+          "fill": 1,
+          "fillGradient": 0,
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 1
+          },
+          "hiddenSeries": false,
+          "id": 272,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "hideEmpty": true,
+            "hideZero": true,
+            "max": true,
+            "min": true,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 3,
+          "links": [
+            {
+              "targetBlank": true,
+              "title": "Page summary $page",
+              "url": "/dashboard/db/page-summary?$__url_time_range&$__all_variables"
+            }
+          ],
+          "maxPerRow": 2,
+          "nullPointMode": "connected",
+          "options": {
+            "alertThreshold": true
+          },
+          "percentage": false,
+          "pluginVersion": "7.5.3",
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [
+            {
+              "alias": "/earlier/",
+              "fill": 0,
+              "linewidth": 3,
+              "zindex": -1
+            }
+          ],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "hide": false,
+              "refCount": 0,
+              "refId": "B",
+              "target": "alias(movingAverage($base.$path.$testname.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.googleWebVitals.largestContentfulPaint.$function, '24h'), 'Last 24 hours')",
+              "textEditor": false
+            },
+            {
+              "hide": false,
+              "refCount": 0,
+              "refId": "A",
+              "target": "alias(timeShift(movingAverage($base.$path.$testname.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.googleWebVitals.largestContentfulPaint.$function, '24h'), '7d'), 'One week earlier')",
+              "textEditor": false
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "Largest Contentful Paint",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "$$hashKey": "object:2260",
+              "format": "ms",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "$$hashKey": "object:2261",
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_GRAPHITE}",
+          "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "links": []
+            },
+            "overrides": []
+          },
+          "fill": 1,
+          "fillGradient": 0,
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 9
+          },
+          "hiddenSeries": false,
+          "id": 274,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "hideEmpty": true,
+            "hideZero": true,
+            "max": true,
+            "min": true,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 3,
+          "links": [
+            {
+              "targetBlank": true,
+              "title": "Page summary $page",
+              "url": "/dashboard/db/page-summary?$__url_time_range&$__all_variables"
+            }
+          ],
+          "maxPerRow": 2,
+          "nullPointMode": "connected",
+          "options": {
+            "alertThreshold": true
+          },
+          "percentage": false,
+          "pluginVersion": "7.5.3",
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [
+            {
+              "alias": "/earlier/",
+              "fill": 0,
+              "linewidth": 3,
+              "zindex": -1
+            }
+          ],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "hide": false,
+              "refCount": 0,
+              "refId": "B",
+              "target": "alias(movingAverage($base.$path.$testname.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.googleWebVitals.totalBlockingTime.$function, '24h'), 'Last 24 hours')",
+              "textEditor": false
+            },
+            {
+              "hide": false,
+              "refCount": 0,
+              "refId": "A",
+              "target": "alias(timeShift(movingAverage($base.$path.$testname.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.googleWebVitals.totalBlockingTime.$function, '24h'), '7d'), 'One week earlier')",
+              "textEditor": false
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "Total Blocking Time",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "$$hashKey": "object:2260",
+              "format": "ms",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "$$hashKey": "object:2261",
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_GRAPHITE}",
+          "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "links": [],
+              "unit": "none"
+            },
+            "overrides": []
+          },
+          "fill": 1,
+          "fillGradient": 0,
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 9
+          },
+          "hiddenSeries": false,
+          "id": 276,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "hideEmpty": true,
+            "hideZero": true,
+            "max": true,
+            "min": true,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 3,
+          "links": [
+            {
+              "targetBlank": true,
+              "title": "Page summary $page",
+              "url": "/dashboard/db/page-summary?$__url_time_range&$__all_variables"
+            }
+          ],
+          "maxPerRow": 2,
+          "nullPointMode": "connected",
+          "options": {
+            "alertThreshold": true
+          },
+          "percentage": false,
+          "pluginVersion": "7.5.3",
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [
+            {
+              "alias": "/earlier/",
+              "fill": 0,
+              "linewidth": 3,
+              "zindex": -1
+            }
+          ],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "hide": false,
+              "refCount": 0,
+              "refId": "B",
+              "target": "alias(movingAverage($base.$path.$testname.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.googleWebVitals.cumulativeLayoutShift.$function, '24h'), 'Last 24 hours')",
+              "textEditor": false
+            },
+            {
+              "hide": false,
+              "refCount": 0,
+              "refId": "A",
+              "target": "alias(timeShift(movingAverage($base.$path.$testname.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.googleWebVitals.cumulativeLayoutShift.$function, '24h'), '7d'), 'One week earlier')",
+              "textEditor": false
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "Cumulative Layout Shift",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "$$hashKey": "object:2260",
+              "format": "none",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "$$hashKey": "object:2261",
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        }
+      ],
+      "title": "Google Web Vitals trends",
+      "type": "row"
+    },
+    {
+      "collapsed": true,
+      "datasource": "${DS_GRAPHITE}",
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 46
       },
       "id": 203,
       "panels": [
@@ -2980,7 +3492,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 46
+        "y": 47
       },
       "id": 146,
       "panels": [
@@ -3713,7 +4225,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 47
+        "y": 48
       },
       "id": 220,
       "panels": [
@@ -3832,7 +4344,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 48
+        "y": 49
       },
       "id": 223,
       "panels": [
@@ -4541,7 +5053,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 49
+        "y": 50
       },
       "id": 214,
       "panels": [
@@ -4850,475 +5362,476 @@
       "type": "row"
     },
     {
-      "collapsed": false,
+      "collapsed": true,
       "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 50
+        "y": 51
       },
       "id": 115,
-      "panels": [],
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "cacheTimeout": "",
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_GRAPHITE}",
+          "description": "Timing metrics collected using browser APIs like the Navigation Timing API.",
+          "fieldConfig": {
+            "defaults": {
+              "links": []
+            },
+            "overrides": []
+          },
+          "fill": 0,
+          "fillGradient": 0,
+          "gridPos": {
+            "h": 15,
+            "w": 12,
+            "x": 0,
+            "y": 52
+          },
+          "hiddenSeries": false,
+          "id": 118,
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": true,
+            "hideEmpty": true,
+            "hideZero": true,
+            "max": true,
+            "min": true,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "connected",
+          "options": {
+            "alertThreshold": true
+          },
+          "percentage": false,
+          "pluginVersion": "7.5.3",
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refCount": 0,
+              "refId": "A",
+              "target": "aliasByNode($base.$path.$testname.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.fullyLoaded.$function, 11)",
+              "textEditor": false
+            },
+            {
+              "refCount": 0,
+              "refId": "B",
+              "target": "aliasByNode($base.$path.$testname.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.firstPaint.$function, 11)",
+              "textEditor": false
+            },
+            {
+              "refCount": 0,
+              "refId": "C",
+              "target": "aliasByNode($base.$path.$testname.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.largestContentfulPaint.renderTime.$function, 11)",
+              "textEditor": false
+            },
+            {
+              "refCount": 0,
+              "refId": "D",
+              "target": "aliasByNode($base.$path.$testname.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.loadEventEnd.$function, 11)",
+              "textEditor": false
+            },
+            {
+              "refCount": 0,
+              "refId": "E",
+              "target": "aliasByNode($base.$path.$testname.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.domContentLoadedTime.$function, 12)",
+              "textEditor": false
+            },
+            {
+              "refCount": 0,
+              "refId": "F",
+              "target": "aliasByNode($base.$path.$testname.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.serverResponseTime.$function, 12)",
+              "textEditor": false
+            },
+            {
+              "refCount": 0,
+              "refId": "G",
+              "target": "aliasByNode($base.$path.$testname.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.timeToContentfulPaint, 11)",
+              "textEditor": false
+            },
+            {
+              "refCount": 0,
+              "refId": "H",
+              "target": "aliasByNode($base.$path.$testname.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.timeToFirstInteractive, 11)",
+              "textEditor": false
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "Timings  [$function]",
+          "tooltip": {
+            "shared": true,
+            "sort": 2,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "$$hashKey": "object:988",
+              "format": "ms",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "$$hashKey": "object:989",
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "cacheTimeout": "",
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_GRAPHITE}",
+          "description": "Timings collected using the [Element Timing API](https://wicg.github.io/element-timing/).",
+          "fieldConfig": {
+            "defaults": {
+              "links": []
+            },
+            "overrides": []
+          },
+          "fill": 0,
+          "fillGradient": 0,
+          "gridPos": {
+            "h": 15,
+            "w": 12,
+            "x": 12,
+            "y": 52
+          },
+          "hiddenSeries": false,
+          "id": 119,
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": true,
+            "hideEmpty": true,
+            "hideZero": true,
+            "max": true,
+            "min": true,
+            "rightSide": true,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "connected",
+          "options": {
+            "alertThreshold": true
+          },
+          "percentage": false,
+          "pluginVersion": "7.5.3",
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refCount": 0,
+              "refId": "A",
+              "target": "aliasByNode($base.$path.$testname.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.elementTimings.*.renderTime.$function, 12)",
+              "textEditor": false
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "Element Timings  [$function]",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "$$hashKey": "object:1636",
+              "format": "ms",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "$$hashKey": "object:1637",
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "cacheTimeout": "",
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_GRAPHITE}",
+          "description": "All User Timing marks created on the page using the [User Timing API](https://www.w3.org/TR/user-timing/).",
+          "fieldConfig": {
+            "defaults": {
+              "links": []
+            },
+            "overrides": []
+          },
+          "fill": 0,
+          "fillGradient": 0,
+          "gridPos": {
+            "h": 7,
+            "w": 24,
+            "x": 0,
+            "y": 67
+          },
+          "hiddenSeries": false,
+          "id": 120,
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": true,
+            "hideEmpty": true,
+            "hideZero": true,
+            "max": true,
+            "min": true,
+            "rightSide": true,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "connected",
+          "options": {
+            "alertThreshold": true
+          },
+          "percentage": false,
+          "pluginVersion": "7.5.3",
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refCount": 0,
+              "refId": "A",
+              "target": "aliasByNode($base.$path.$testname.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.userTimings.marks.*.$function, 13)",
+              "textEditor": false
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "User Timings Marks  [$function]",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "$$hashKey": "object:1842",
+              "format": "ms",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "$$hashKey": "object:1843",
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "cacheTimeout": "",
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_GRAPHITE}",
+          "description": "All User Timing marks created on the page using the [User Timing API](https://www.w3.org/TR/user-timing/).",
+          "fieldConfig": {
+            "defaults": {
+              "links": []
+            },
+            "overrides": []
+          },
+          "fill": 0,
+          "fillGradient": 0,
+          "gridPos": {
+            "h": 7,
+            "w": 24,
+            "x": 0,
+            "y": 74
+          },
+          "hiddenSeries": false,
+          "id": 248,
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": true,
+            "hideEmpty": true,
+            "hideZero": true,
+            "max": true,
+            "min": true,
+            "rightSide": true,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "connected",
+          "options": {
+            "alertThreshold": true
+          },
+          "percentage": false,
+          "pluginVersion": "7.5.3",
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refCount": 0,
+              "refId": "A",
+              "target": "aliasByNode($base.$path.$testname.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.userTimings.measures.*.$function, 13)",
+              "textEditor": false
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "User Timings Measures [$function]",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "$$hashKey": "object:1842",
+              "format": "ms",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "$$hashKey": "object:1843",
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        }
+      ],
       "title": "Timings",
       "type": "row"
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "cacheTimeout": "",
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "${DS_GRAPHITE}",
-      "description": "Timing metrics collected using browser APIs like the Navigation Timing API.",
-      "fieldConfig": {
-        "defaults": {
-          "links": []
-        },
-        "overrides": []
-      },
-      "fill": 0,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 15,
-        "w": 12,
-        "x": 0,
-        "y": 51
-      },
-      "hiddenSeries": false,
-      "id": 118,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": true,
-        "hideEmpty": true,
-        "hideZero": true,
-        "max": true,
-        "min": true,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "connected",
-      "options": {
-        "alertThreshold": true
-      },
-      "percentage": false,
-      "pluginVersion": "7.5.3",
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "refCount": 0,
-          "refId": "A",
-          "target": "aliasByNode($base.$path.$testname.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.fullyLoaded.$function, 11)",
-          "textEditor": false
-        },
-        {
-          "refCount": 0,
-          "refId": "B",
-          "target": "aliasByNode($base.$path.$testname.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.firstPaint.$function, 11)",
-          "textEditor": false
-        },
-        {
-          "refCount": 0,
-          "refId": "C",
-          "target": "aliasByNode($base.$path.$testname.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.largestContentfulPaint.renderTime.$function, 11)",
-          "textEditor": false
-        },
-        {
-          "refCount": 0,
-          "refId": "D",
-          "target": "aliasByNode($base.$path.$testname.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.loadEventEnd.$function, 11)",
-          "textEditor": false
-        },
-        {
-          "refCount": 0,
-          "refId": "E",
-          "target": "aliasByNode($base.$path.$testname.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.domContentLoadedTime.$function, 12)",
-          "textEditor": false
-        },
-        {
-          "refCount": 0,
-          "refId": "F",
-          "target": "aliasByNode($base.$path.$testname.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.pageTimings.serverResponseTime.$function, 12)",
-          "textEditor": false
-        },
-        {
-          "refCount": 0,
-          "refId": "G",
-          "target": "aliasByNode($base.$path.$testname.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.timeToContentfulPaint, 11)",
-          "textEditor": false
-        },
-        {
-          "refCount": 0,
-          "refId": "H",
-          "target": "aliasByNode($base.$path.$testname.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.timeToFirstInteractive, 11)",
-          "textEditor": false
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "Timings  [$function]",
-      "tooltip": {
-        "shared": true,
-        "sort": 2,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:988",
-          "format": "ms",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "$$hashKey": "object:989",
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "cacheTimeout": "",
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "${DS_GRAPHITE}",
-      "description": "Timings collected using the [Element Timing API](https://wicg.github.io/element-timing/).",
-      "fieldConfig": {
-        "defaults": {
-          "links": []
-        },
-        "overrides": []
-      },
-      "fill": 0,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 15,
-        "w": 12,
-        "x": 12,
-        "y": 51
-      },
-      "hiddenSeries": false,
-      "id": 119,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": true,
-        "hideEmpty": true,
-        "hideZero": true,
-        "max": true,
-        "min": true,
-        "rightSide": true,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "connected",
-      "options": {
-        "alertThreshold": true
-      },
-      "percentage": false,
-      "pluginVersion": "7.5.3",
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "refCount": 0,
-          "refId": "A",
-          "target": "aliasByNode($base.$path.$testname.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.elementTimings.*.renderTime.$function, 12)",
-          "textEditor": false
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "Element Timings  [$function]",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:1636",
-          "format": "ms",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "$$hashKey": "object:1637",
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "cacheTimeout": "",
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "${DS_GRAPHITE}",
-      "description": "All User Timing marks created on the page using the [User Timing API](https://www.w3.org/TR/user-timing/).",
-      "fieldConfig": {
-        "defaults": {
-          "links": []
-        },
-        "overrides": []
-      },
-      "fill": 0,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 7,
-        "w": 24,
-        "x": 0,
-        "y": 66
-      },
-      "hiddenSeries": false,
-      "id": 120,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": true,
-        "hideEmpty": true,
-        "hideZero": true,
-        "max": true,
-        "min": true,
-        "rightSide": true,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "connected",
-      "options": {
-        "alertThreshold": true
-      },
-      "percentage": false,
-      "pluginVersion": "7.5.3",
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "refCount": 0,
-          "refId": "A",
-          "target": "aliasByNode($base.$path.$testname.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.userTimings.marks.*.$function, 13)",
-          "textEditor": false
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "User Timings Marks  [$function]",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:1842",
-          "format": "ms",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "$$hashKey": "object:1843",
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "cacheTimeout": "",
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "${DS_GRAPHITE}",
-      "description": "All User Timing marks created on the page using the [User Timing API](https://www.w3.org/TR/user-timing/).",
-      "fieldConfig": {
-        "defaults": {
-          "links": []
-        },
-        "overrides": []
-      },
-      "fill": 0,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 7,
-        "w": 24,
-        "x": 0,
-        "y": 73
-      },
-      "hiddenSeries": false,
-      "id": 248,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": true,
-        "hideEmpty": true,
-        "hideZero": true,
-        "max": true,
-        "min": true,
-        "rightSide": true,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "connected",
-      "options": {
-        "alertThreshold": true
-      },
-      "percentage": false,
-      "pluginVersion": "7.5.3",
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "refCount": 0,
-          "refId": "A",
-          "target": "aliasByNode($base.$path.$testname.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.timings.userTimings.measures.*.$function, 13)",
-          "textEditor": false
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "User Timings Measures [$function]",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:1842",
-          "format": "ms",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "$$hashKey": "object:1843",
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
     },
     {
       "collapsed": true,
@@ -5327,7 +5840,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 80
+        "y": 52
       },
       "id": 122,
       "panels": [
@@ -5949,7 +6462,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 81
+        "y": 53
       },
       "id": 234,
       "panels": [
@@ -6075,7 +6588,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 82
+        "y": 54
       },
       "id": 96,
       "panels": [
@@ -6290,368 +6803,369 @@
       "type": "row"
     },
     {
-      "collapsed": false,
+      "collapsed": true,
       "datasource": "${DS_GRAPHITE}",
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 83
+        "y": 55
       },
       "id": 136,
-      "panels": [],
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_GRAPHITE}",
+          "decimals": 0,
+          "fieldConfig": {
+            "defaults": {
+              "links": []
+            },
+            "overrides": []
+          },
+          "fill": 0,
+          "fillGradient": 0,
+          "gridPos": {
+            "h": 10,
+            "w": 12,
+            "x": 0,
+            "y": 56
+          },
+          "hiddenSeries": false,
+          "id": 142,
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": true,
+            "hideEmpty": true,
+            "hideZero": true,
+            "max": true,
+            "min": true,
+            "rightSide": true,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "connected",
+          "options": {
+            "alertThreshold": true
+          },
+          "percentage": false,
+          "pluginVersion": "7.5.3",
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [
+            {
+              "alias": "LastVisualChange",
+              "color": "#cca300",
+              "fillBelowTo": "FirstVisualChange"
+            },
+            {
+              "alias": "FirstVisualChange"
+            },
+            {
+              "alias": "Heading",
+              "dashLength": 2,
+              "dashes": true,
+              "spaceLength": 2
+            },
+            {
+              "alias": "LargestImage",
+              "dashLength": 3,
+              "dashes": true,
+              "spaceLength": 3
+            }
+          ],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refCount": 0,
+              "refId": "A",
+              "target": "aliasByNode($base.$path.$testname.pageSummary.$group.$page.$browser.$connectivity.thirdparty.category.*.requests.$function, 10)",
+              "textEditor": false
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "Third party request by category",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "$$hashKey": "object:6230",
+              "format": "none",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "$$hashKey": "object:6231",
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_GRAPHITE}",
+          "decimals": 0,
+          "fieldConfig": {
+            "defaults": {
+              "links": []
+            },
+            "overrides": []
+          },
+          "fill": 0,
+          "fillGradient": 0,
+          "gridPos": {
+            "h": 10,
+            "w": 12,
+            "x": 12,
+            "y": 56
+          },
+          "hiddenSeries": false,
+          "id": 144,
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": true,
+            "hideEmpty": true,
+            "hideZero": true,
+            "max": true,
+            "min": true,
+            "rightSide": true,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "connected",
+          "options": {
+            "alertThreshold": true
+          },
+          "percentage": false,
+          "pluginVersion": "7.5.3",
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [
+            {
+              "alias": "LastVisualChange",
+              "color": "#cca300",
+              "fillBelowTo": "FirstVisualChange"
+            },
+            {
+              "alias": "FirstVisualChange"
+            },
+            {
+              "alias": "Heading",
+              "dashLength": 2,
+              "dashes": true,
+              "spaceLength": 2
+            },
+            {
+              "alias": "LargestImage",
+              "dashLength": 3,
+              "dashes": true,
+              "spaceLength": 3
+            }
+          ],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refCount": 0,
+              "refId": "A",
+              "target": "aliasByNode($base.$path.$testname.pageSummary.$group.$page.$browser.$connectivity.thirdparty.category.*.tools.$function, 10)",
+              "textEditor": false
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "Third party tools by category",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "$$hashKey": "object:6416",
+              "format": "none",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "$$hashKey": "object:6417",
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_GRAPHITE}",
+          "description": "Activate by adding --thirdParty.cpu  to to your run.",
+          "fieldConfig": {
+            "defaults": {
+              "links": []
+            },
+            "overrides": []
+          },
+          "fill": 0,
+          "fillGradient": 0,
+          "gridPos": {
+            "h": 14,
+            "w": 24,
+            "x": 0,
+            "y": 66
+          },
+          "hiddenSeries": false,
+          "id": 134,
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": true,
+            "hideEmpty": true,
+            "hideZero": true,
+            "max": true,
+            "min": true,
+            "rightSide": true,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "connected",
+          "options": {
+            "alertThreshold": true
+          },
+          "percentage": false,
+          "pluginVersion": "7.5.3",
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "aliasByNode($base.$path.$testname.pageSummary.$group.$page.$browser.$connectivity.thirdparty.tool.*.cpu, 10)",
+              "textEditor": false
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "CPU time spent per tool/domain - enable using --thirdParty.cpu  [Chrome only]",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "$$hashKey": "object:6602",
+              "format": "ms",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "$$hashKey": "object:6603",
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        }
+      ],
       "title": "Third party",
       "type": "row"
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "${DS_GRAPHITE}",
-      "decimals": 0,
-      "fieldConfig": {
-        "defaults": {
-          "links": []
-        },
-        "overrides": []
-      },
-      "fill": 0,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 10,
-        "w": 12,
-        "x": 0,
-        "y": 84
-      },
-      "hiddenSeries": false,
-      "id": 142,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": true,
-        "hideEmpty": true,
-        "hideZero": true,
-        "max": true,
-        "min": true,
-        "rightSide": true,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "connected",
-      "options": {
-        "alertThreshold": true
-      },
-      "percentage": false,
-      "pluginVersion": "7.5.3",
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [
-        {
-          "alias": "LastVisualChange",
-          "color": "#cca300",
-          "fillBelowTo": "FirstVisualChange"
-        },
-        {
-          "alias": "FirstVisualChange"
-        },
-        {
-          "alias": "Heading",
-          "dashLength": 2,
-          "dashes": true,
-          "spaceLength": 2
-        },
-        {
-          "alias": "LargestImage",
-          "dashLength": 3,
-          "dashes": true,
-          "spaceLength": 3
-        }
-      ],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "refCount": 0,
-          "refId": "A",
-          "target": "aliasByNode($base.$path.$testname.pageSummary.$group.$page.$browser.$connectivity.thirdparty.category.*.requests.$function, 10)",
-          "textEditor": false
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "Third party request by category",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:6230",
-          "format": "none",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "$$hashKey": "object:6231",
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "${DS_GRAPHITE}",
-      "decimals": 0,
-      "fieldConfig": {
-        "defaults": {
-          "links": []
-        },
-        "overrides": []
-      },
-      "fill": 0,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 10,
-        "w": 12,
-        "x": 12,
-        "y": 84
-      },
-      "hiddenSeries": false,
-      "id": 144,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": true,
-        "hideEmpty": true,
-        "hideZero": true,
-        "max": true,
-        "min": true,
-        "rightSide": true,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "connected",
-      "options": {
-        "alertThreshold": true
-      },
-      "percentage": false,
-      "pluginVersion": "7.5.3",
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [
-        {
-          "alias": "LastVisualChange",
-          "color": "#cca300",
-          "fillBelowTo": "FirstVisualChange"
-        },
-        {
-          "alias": "FirstVisualChange"
-        },
-        {
-          "alias": "Heading",
-          "dashLength": 2,
-          "dashes": true,
-          "spaceLength": 2
-        },
-        {
-          "alias": "LargestImage",
-          "dashLength": 3,
-          "dashes": true,
-          "spaceLength": 3
-        }
-      ],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "refCount": 0,
-          "refId": "A",
-          "target": "aliasByNode($base.$path.$testname.pageSummary.$group.$page.$browser.$connectivity.thirdparty.category.*.tools.$function, 10)",
-          "textEditor": false
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "Third party tools by category",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:6416",
-          "format": "none",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "$$hashKey": "object:6417",
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "${DS_GRAPHITE}",
-      "description": "Activate by adding --thirdParty.cpu  to to your run.",
-      "fieldConfig": {
-        "defaults": {
-          "links": []
-        },
-        "overrides": []
-      },
-      "fill": 0,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 14,
-        "w": 24,
-        "x": 0,
-        "y": 94
-      },
-      "hiddenSeries": false,
-      "id": 134,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": true,
-        "hideEmpty": true,
-        "hideZero": true,
-        "max": true,
-        "min": true,
-        "rightSide": true,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "connected",
-      "options": {
-        "alertThreshold": true
-      },
-      "percentage": false,
-      "pluginVersion": "7.5.3",
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "refId": "A",
-          "target": "aliasByNode($base.$path.$testname.pageSummary.$group.$page.$browser.$connectivity.thirdparty.tool.*.cpu, 10)",
-          "textEditor": false
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "CPU time spent per tool/domain - enable using --thirdParty.cpu  [Chrome only]",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:6602",
-          "format": "ms",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "$$hashKey": "object:6603",
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
     },
     {
       "collapsed": true,
@@ -6660,7 +7174,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 108
+        "y": 56
       },
       "id": 140,
       "panels": [
@@ -6782,7 +7296,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 109
+        "y": 57
       },
       "id": 176,
       "panels": [
@@ -6903,7 +7417,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 110
+        "y": 58
       },
       "id": 172,
       "panels": [
@@ -7128,7 +7642,264 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 111
+        "y": 59
+      },
+      "id": 264,
+      "panels": [
+        {
+          "aliasColors": {
+            "Heading": "semi-dark-green"
+          },
+          "bars": false,
+          "cacheTimeout": "",
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_GRAPHITE}",
+          "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "links": []
+            },
+            "overrides": []
+          },
+          "fill": 0,
+          "fillGradient": 0,
+          "gridPos": {
+            "h": 14,
+            "w": 24,
+            "x": 0,
+            "y": 2
+          },
+          "hiddenSeries": false,
+          "id": 270,
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": true,
+            "hideEmpty": true,
+            "hideZero": true,
+            "max": true,
+            "min": true,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "connected",
+          "options": {
+            "alertThreshold": true
+          },
+          "percentage": false,
+          "pluginVersion": "7.5.3",
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [
+            {
+              "alias": "LastVisualChange",
+              "color": "#cca300",
+              "fillBelowTo": "FirstVisualChange"
+            },
+            {
+              "alias": "FirstVisualChange"
+            }
+          ],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refCount": 0,
+              "refId": "G",
+              "target": "alias($base.$path.$testname.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.browser.cpuBenchmark.min, 'min')",
+              "textEditor": false
+            },
+            {
+              "hide": false,
+              "refCount": 0,
+              "refId": "A",
+              "target": "alias($base.$path.$testname.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.browser.cpuBenchmark.median, 'median')",
+              "textEditor": false
+            },
+            {
+              "hide": false,
+              "refCount": 0,
+              "refId": "B",
+              "target": "alias($base.$path.$testname.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.browser.cpuBenchmark.max, 'max')",
+              "textEditor": false
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "CPU benchmark",
+          "tooltip": {
+            "shared": true,
+            "sort": 2,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "$$hashKey": "object:109",
+              "format": "ms",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "$$hashKey": "object:110",
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {
+            "Heading": "semi-dark-green"
+          },
+          "bars": false,
+          "cacheTimeout": "",
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_GRAPHITE}",
+          "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "links": []
+            },
+            "overrides": []
+          },
+          "fill": 0,
+          "fillGradient": 0,
+          "gridPos": {
+            "h": 14,
+            "w": 24,
+            "x": 0,
+            "y": 16
+          },
+          "hiddenSeries": false,
+          "id": 262,
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": true,
+            "hideEmpty": true,
+            "hideZero": true,
+            "max": true,
+            "min": true,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "connected",
+          "options": {
+            "alertThreshold": true
+          },
+          "percentage": false,
+          "pluginVersion": "7.5.3",
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [
+            {
+              "alias": "LastVisualChange",
+              "color": "#cca300",
+              "fillBelowTo": "FirstVisualChange"
+            },
+            {
+              "alias": "FirstVisualChange"
+            }
+          ],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refCount": 0,
+              "refId": "G",
+              "target": "alias($base.$path.$testname.pageSummary.$group.$page.$browser.$connectivity.browsertime.statistics.browser.cpuBenchmark.stddev, 'stddev')",
+              "textEditor": false
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "CPU benchmark stddev",
+          "tooltip": {
+            "shared": true,
+            "sort": 2,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "$$hashKey": "object:109",
+              "format": "ms",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "$$hashKey": "object:110",
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        }
+      ],
+      "title": "CPU benchmark variation",
+      "type": "row"
+    },
+    {
+      "collapsed": true,
+      "datasource": null,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 60
       },
       "id": 243,
       "panels": [
@@ -7556,7 +8327,7 @@
         "auto_count": 30,
         "auto_min": "10s",
         "current": {
-          "selected": true,
+          "selected": false,
           "text": "median",
           "value": "median"
         },
@@ -7681,5 +8452,5 @@
   "timezone": "browser",
   "title": "Page metrics mobile",
   "uid": "000000064",
-  "version": 3
+  "version": 14
 }
