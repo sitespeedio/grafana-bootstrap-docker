@@ -35,12 +35,12 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "7.5.3"
+      "version": "8.1.3"
     },
     {
       "type": "panel",
       "id": "graph",
-      "name": "Graph",
+      "name": "Graph (old)",
       "version": ""
     },
     {
@@ -52,7 +52,7 @@
     {
       "type": "panel",
       "id": "piechart",
-      "name": "Pie chart v2",
+      "name": "Pie chart",
       "version": ""
     },
     {
@@ -77,6 +77,12 @@
         "hide": true,
         "iconColor": "rgba(0, 211, 255, 1)",
         "name": "Annotations & Alerts",
+        "target": {
+          "limit": 100,
+          "matchAny": false,
+          "tags": [],
+          "type": "dashboard"
+        },
         "type": "dashboard"
       },
       {
@@ -109,7 +115,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1621431276005,
+  "iteration": 1635081492369,
   "links": [],
   "panels": [
     {
@@ -171,7 +177,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.5.3",
+      "pluginVersion": "8.1.3",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -284,10 +290,6 @@
     {
       "datasource": "${DS_GRAPHITE}",
       "description": "",
-      "fieldConfig": {
-        "defaults": {},
-        "overrides": []
-      },
       "gridPos": {
         "h": 6,
         "w": 6,
@@ -300,7 +302,7 @@
         "content": "<a href=\"$resulturl/$testname/$group.$page.$browser.$connectivity.$screenshottype\">\n<img src=\"$resulturl/$testname/$group.$page.$browser.$connectivity.$screenshottype\"></a>",
         "mode": "html"
       },
-      "pluginVersion": "7.5.3",
+      "pluginVersion": "8.1.3",
       "targets": [
         {
           "refCount": 0,
@@ -318,10 +320,6 @@
       "cacheTimeout": "",
       "datasource": "${DS_GRAPHITE}",
       "description": "",
-      "fieldConfig": {
-        "defaults": {},
-        "overrides": []
-      },
       "gridPos": {
         "h": 6,
         "w": 6,
@@ -334,7 +332,7 @@
         "content": "<video controls width=\"100%\"src=\"$resulturl/$testname/$group.$page.$browser.$connectivity.mp4\"></video>\n",
         "mode": "html"
       },
-      "pluginVersion": "7.5.3",
+      "pluginVersion": "8.1.3",
       "targets": [
         {
           "refCount": 0,
@@ -350,10 +348,6 @@
     },
     {
       "datasource": "${DS_GRAPHITE}",
-      "fieldConfig": {
-        "defaults": {},
-        "overrides": []
-      },
       "gridPos": {
         "h": 1,
         "w": 12,
@@ -365,7 +359,7 @@
         "content": "",
         "mode": "markdown"
       },
-      "pluginVersion": "7.5.3",
+      "pluginVersion": "8.1.3",
       "targets": [
         {
           "refId": "A",
@@ -389,11 +383,13 @@
           "decimals": 2,
           "mappings": [
             {
-              "id": 0,
-              "op": "=",
-              "text": "N/A",
-              "type": 1,
-              "value": "null"
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
             }
           ],
           "thresholds": {
@@ -442,7 +438,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "7.5.3",
+      "pluginVersion": "8.1.3",
       "targets": [
         {
           "refCount": 0,
@@ -464,11 +460,13 @@
           },
           "mappings": [
             {
-              "id": 0,
-              "op": "=",
-              "text": "N/A",
-              "type": 1,
-              "value": "null"
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
             }
           ],
           "thresholds": {
@@ -517,7 +515,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "7.5.3",
+      "pluginVersion": "8.1.3",
       "targets": [
         {
           "refCount": 0,
@@ -539,11 +537,13 @@
           },
           "mappings": [
             {
-              "id": 0,
-              "op": "=",
-              "text": "N/A",
-              "type": 1,
-              "value": "null"
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
             }
           ],
           "thresholds": {
@@ -592,7 +592,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "7.5.3",
+      "pluginVersion": "8.1.3",
       "targets": [
         {
           "refCount": 0,
@@ -605,10 +605,6 @@
     },
     {
       "datasource": "${DS_GRAPHITE}",
-      "fieldConfig": {
-        "defaults": {},
-        "overrides": []
-      },
       "gridPos": {
         "h": 1,
         "w": 12,
@@ -620,7 +616,7 @@
         "content": "",
         "mode": "markdown"
       },
-      "pluginVersion": "7.5.3",
+      "pluginVersion": "8.1.3",
       "targets": [
         {
           "refId": "A",
@@ -643,11 +639,13 @@
           },
           "mappings": [
             {
-              "id": 0,
-              "op": "=",
-              "text": "N/A",
-              "type": 1,
-              "value": "null"
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
             }
           ],
           "thresholds": {
@@ -696,7 +694,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "7.5.3",
+      "pluginVersion": "8.1.3",
       "targets": [
         {
           "refCount": 0,
@@ -718,11 +716,13 @@
           },
           "mappings": [
             {
-              "id": 0,
-              "op": "=",
-              "text": "N/A",
-              "type": 1,
-              "value": "null"
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
             }
           ],
           "thresholds": {
@@ -771,7 +771,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "7.5.3",
+      "pluginVersion": "8.1.3",
       "targets": [
         {
           "refCount": 0,
@@ -793,11 +793,13 @@
           },
           "mappings": [
             {
-              "id": 0,
-              "op": "=",
-              "text": "N/A",
-              "type": 1,
-              "value": "null"
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
             }
           ],
           "thresholds": {
@@ -846,7 +848,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "7.5.3",
+      "pluginVersion": "8.1.3",
       "targets": [
         {
           "refCount": 0,
@@ -868,11 +870,13 @@
           },
           "mappings": [
             {
-              "id": 0,
-              "op": "=",
-              "text": "N/A",
-              "type": 1,
-              "value": "null"
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
             }
           ],
           "thresholds": {
@@ -921,7 +925,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "7.5.3",
+      "pluginVersion": "8.1.3",
       "targets": [
         {
           "refCount": 0,
@@ -943,11 +947,13 @@
           },
           "mappings": [
             {
-              "id": 0,
-              "op": "=",
-              "text": "N/A",
-              "type": 1,
-              "value": "null"
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
             }
           ],
           "thresholds": {
@@ -996,7 +1002,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "7.5.3",
+      "pluginVersion": "8.1.3",
       "targets": [
         {
           "refCount": 0,
@@ -1029,10 +1035,6 @@
     {
       "datasource": "${DS_GRAPHITE}",
       "description": "",
-      "fieldConfig": {
-        "defaults": {},
-        "overrides": []
-      },
       "gridPos": {
         "h": 1,
         "w": 12,
@@ -1044,7 +1046,7 @@
         "content": "",
         "mode": "markdown"
       },
-      "pluginVersion": "7.5.3",
+      "pluginVersion": "8.1.3",
       "targets": [
         {
           "refId": "A",
@@ -1067,11 +1069,13 @@
           },
           "mappings": [
             {
-              "id": 0,
-              "op": "=",
-              "text": "N/A",
-              "type": 1,
-              "value": "null"
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
             }
           ],
           "thresholds": {
@@ -1116,7 +1120,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "7.5.3",
+      "pluginVersion": "8.1.3",
       "targets": [
         {
           "refCount": 0,
@@ -1138,11 +1142,13 @@
           },
           "mappings": [
             {
-              "id": 0,
-              "op": "=",
-              "text": "N/A",
-              "type": 1,
-              "value": "null"
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
             }
           ],
           "thresholds": {
@@ -1191,7 +1197,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "7.5.3",
+      "pluginVersion": "8.1.3",
       "targets": [
         {
           "refCount": 0,
@@ -1213,11 +1219,13 @@
           },
           "mappings": [
             {
-              "id": 0,
-              "op": "=",
-              "text": "N/A",
-              "type": 1,
-              "value": "null"
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
             }
           ],
           "thresholds": {
@@ -1266,7 +1274,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "7.5.3",
+      "pluginVersion": "8.1.3",
       "targets": [
         {
           "refCount": 0,
@@ -1288,11 +1296,13 @@
           },
           "mappings": [
             {
-              "id": 0,
-              "op": "=",
-              "text": "N/A",
-              "type": 1,
-              "value": "null"
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
             }
           ],
           "thresholds": {
@@ -1341,7 +1351,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "7.5.3",
+      "pluginVersion": "8.1.3",
       "targets": [
         {
           "refCount": 0,
@@ -1409,7 +1419,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.5.3",
+      "pluginVersion": "8.1.3",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -1518,7 +1528,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.5.3",
+      "pluginVersion": "8.1.3",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -1626,7 +1636,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.5.3",
+      "pluginVersion": "8.1.3",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -1734,7 +1744,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.5.3",
+      "pluginVersion": "8.1.3",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -1801,21 +1811,15 @@
           "color": {
             "mode": "palette-classic"
           },
+          "custom": {
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            }
+          },
           "decimals": 0,
           "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          },
           "unit": "decbytes"
         },
         "overrides": []
@@ -1847,7 +1851,10 @@
           "fields": "",
           "values": false
         },
-        "text": {}
+        "text": {},
+        "tooltip": {
+          "mode": "single"
+        }
       },
       "pluginVersion": "7.5.0-beta1",
       "targets": [
@@ -1871,21 +1878,15 @@
           "color": {
             "mode": "palette-classic"
           },
+          "custom": {
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            }
+          },
           "decimals": 0,
           "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          },
           "unit": "decbytes"
         },
         "overrides": []
@@ -1917,7 +1918,10 @@
           "fields": "",
           "values": false
         },
-        "text": {}
+        "text": {},
+        "tooltip": {
+          "mode": "single"
+        }
       },
       "pluginVersion": "7.5.0-beta1",
       "targets": [
@@ -3343,11 +3347,13 @@
               },
               "mappings": [
                 {
-                  "id": 0,
-                  "op": "=",
-                  "text": "N/A",
-                  "type": 1,
-                  "value": "null"
+                  "options": {
+                    "match": "null",
+                    "result": {
+                      "text": "N/A"
+                    }
+                  },
+                  "type": "special"
                 }
               ],
               "thresholds": {
@@ -3409,11 +3415,13 @@
               },
               "mappings": [
                 {
-                  "id": 0,
-                  "op": "=",
-                  "text": "N/A",
-                  "type": 1,
-                  "value": "null"
+                  "options": {
+                    "match": "null",
+                    "result": {
+                      "text": "N/A"
+                    }
+                  },
+                  "type": "special"
                 }
               ],
               "thresholds": {
@@ -3475,11 +3483,13 @@
               },
               "mappings": [
                 {
-                  "id": 0,
-                  "op": "=",
-                  "text": "N/A",
-                  "type": 1,
-                  "value": "null"
+                  "options": {
+                    "match": "null",
+                    "result": {
+                      "text": "N/A"
+                    }
+                  },
+                  "type": "special"
                 }
               ],
               "thresholds": {
@@ -3541,11 +3551,13 @@
               },
               "mappings": [
                 {
-                  "id": 0,
-                  "op": "=",
-                  "text": "N/A",
-                  "type": 1,
-                  "value": "null"
+                  "options": {
+                    "match": "null",
+                    "result": {
+                      "text": "N/A"
+                    }
+                  },
+                  "type": "special"
                 }
               ],
               "thresholds": {
@@ -3607,11 +3619,13 @@
               },
               "mappings": [
                 {
-                  "id": 0,
-                  "op": "=",
-                  "text": "N/A",
-                  "type": 1,
-                  "value": "null"
+                  "options": {
+                    "match": "null",
+                    "result": {
+                      "text": "N/A"
+                    }
+                  },
+                  "type": "special"
                 }
               ],
               "thresholds": {
@@ -3674,11 +3688,13 @@
               "decimals": 2,
               "mappings": [
                 {
-                  "id": 0,
-                  "op": "=",
-                  "text": "N/A",
-                  "type": 1,
-                  "value": "null"
+                  "options": {
+                    "match": "null",
+                    "result": {
+                      "text": "N/A"
+                    }
+                  },
+                  "type": "special"
                 }
               ],
               "thresholds": {
@@ -3740,11 +3756,13 @@
               },
               "mappings": [
                 {
-                  "id": 0,
-                  "op": "=",
-                  "text": "N/A",
-                  "type": 1,
-                  "value": "null"
+                  "options": {
+                    "match": "null",
+                    "result": {
+                      "text": "N/A"
+                    }
+                  },
+                  "type": "special"
                 }
               ],
               "thresholds": {
@@ -3806,11 +3824,13 @@
               },
               "mappings": [
                 {
-                  "id": 0,
-                  "op": "=",
-                  "text": "N/A",
-                  "type": 1,
-                  "value": "null"
+                  "options": {
+                    "match": "null",
+                    "result": {
+                      "text": "N/A"
+                    }
+                  },
+                  "type": "special"
                 }
               ],
               "thresholds": {
@@ -3872,11 +3892,13 @@
               },
               "mappings": [
                 {
-                  "id": 0,
-                  "op": "=",
-                  "text": "N/A",
-                  "type": 1,
-                  "value": "null"
+                  "options": {
+                    "match": "null",
+                    "result": {
+                      "text": "N/A"
+                    }
+                  },
+                  "type": "special"
                 }
               ],
               "thresholds": {
@@ -3938,11 +3960,13 @@
               },
               "mappings": [
                 {
-                  "id": 0,
-                  "op": "=",
-                  "text": "N/A",
-                  "type": 1,
-                  "value": "null"
+                  "options": {
+                    "match": "null",
+                    "result": {
+                      "text": "N/A"
+                    }
+                  },
+                  "type": "special"
                 }
               ],
               "thresholds": {
@@ -4135,11 +4159,13 @@
             "defaults": {
               "mappings": [
                 {
-                  "id": 0,
-                  "op": "=",
-                  "text": "N/A",
-                  "type": 1,
-                  "value": "null"
+                  "options": {
+                    "match": "null",
+                    "result": {
+                      "text": "N/A"
+                    }
+                  },
+                  "type": "special"
                 }
               ],
               "thresholds": {
@@ -4207,11 +4233,13 @@
             "defaults": {
               "mappings": [
                 {
-                  "id": 0,
-                  "op": "=",
-                  "text": "N/A",
-                  "type": 1,
-                  "value": "null"
+                  "options": {
+                    "match": "null",
+                    "result": {
+                      "text": "N/A"
+                    }
+                  },
+                  "type": "special"
                 }
               ],
               "thresholds": {
@@ -4275,11 +4303,13 @@
             "defaults": {
               "mappings": [
                 {
-                  "id": 0,
-                  "op": "=",
-                  "text": "N/A",
-                  "type": 1,
-                  "value": "null"
+                  "options": {
+                    "match": "null",
+                    "result": {
+                      "text": "N/A"
+                    }
+                  },
+                  "type": "special"
                 }
               ],
               "thresholds": {
@@ -4347,11 +4377,13 @@
             "defaults": {
               "mappings": [
                 {
-                  "id": 0,
-                  "op": "=",
-                  "text": "N/A",
-                  "type": 1,
-                  "value": "null"
+                  "options": {
+                    "match": "null",
+                    "result": {
+                      "text": "N/A"
+                    }
+                  },
+                  "type": "special"
                 }
               ],
               "thresholds": {
@@ -4975,11 +5007,13 @@
               },
               "mappings": [
                 {
-                  "id": 0,
-                  "op": "=",
-                  "text": "N/A",
-                  "type": 1,
-                  "value": "null"
+                  "options": {
+                    "match": "null",
+                    "result": {
+                      "text": "N/A"
+                    }
+                  },
+                  "type": "special"
                 }
               ],
               "thresholds": {
@@ -5050,11 +5084,13 @@
               },
               "mappings": [
                 {
-                  "id": 0,
-                  "op": "=",
-                  "text": "N/A",
-                  "type": 1,
-                  "value": "null"
+                  "options": {
+                    "match": "null",
+                    "result": {
+                      "text": "N/A"
+                    }
+                  },
+                  "type": "special"
                 }
               ],
               "thresholds": {
@@ -5125,11 +5161,13 @@
               },
               "mappings": [
                 {
-                  "id": 0,
-                  "op": "=",
-                  "text": "N/A",
-                  "type": 1,
-                  "value": "null"
+                  "options": {
+                    "match": "null",
+                    "result": {
+                      "text": "N/A"
+                    }
+                  },
+                  "type": "special"
                 }
               ],
               "thresholds": {
@@ -5200,11 +5238,13 @@
               },
               "mappings": [
                 {
-                  "id": 0,
-                  "op": "=",
-                  "text": "N/A",
-                  "type": 1,
-                  "value": "null"
+                  "options": {
+                    "match": "null",
+                    "result": {
+                      "text": "N/A"
+                    }
+                  },
+                  "type": "special"
                 }
               ],
               "thresholds": {
@@ -6739,7 +6779,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 54
+            "y": 57
           },
           "hiddenSeries": false,
           "id": 142,
@@ -6764,7 +6804,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "7.5.0",
+          "pluginVersion": "8.1.3",
           "pointradius": 5,
           "points": false,
           "renderer": "flot",
@@ -6863,7 +6903,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 54
+            "y": 57
           },
           "hiddenSeries": false,
           "id": 144,
@@ -6888,7 +6928,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "7.5.0",
+          "pluginVersion": "8.1.3",
           "pointradius": 5,
           "points": false,
           "renderer": "flot",
@@ -6987,7 +7027,7 @@
             "h": 14,
             "w": 24,
             "x": 0,
-            "y": 64
+            "y": 67
           },
           "hiddenSeries": false,
           "id": 134,
@@ -7012,7 +7052,7 @@
             "alertThreshold": true
           },
           "percentage": false,
-          "pluginVersion": "7.5.0",
+          "pluginVersion": "8.1.3",
           "pointradius": 5,
           "points": false,
           "renderer": "flot",
@@ -7023,7 +7063,7 @@
           "targets": [
             {
               "refId": "A",
-              "target": "aliasByNode($base.$path.$testname.pageSummary.$group.$page.$browser.$connectivity.thirdparty.tool.*.cpu, 10)",
+              "target": "aliasByNode($base.$path.$testname.pageSummary.$group.$page.$browser.$connectivity.thirdparty.tool.*.cpu.$function, 10)",
               "textEditor": false
             }
           ],
@@ -8058,7 +8098,7 @@
     }
   ],
   "refresh": false,
-  "schemaVersion": 27,
+  "schemaVersion": 30,
   "style": "dark",
   "tags": [],
   "templating": {
@@ -8104,7 +8144,6 @@
         "skipUrlSync": false,
         "sort": 0,
         "tagValuesQuery": null,
-        "tags": [],
         "tagsQuery": null,
         "type": "query",
         "useTags": false
@@ -8128,7 +8167,6 @@
         "skipUrlSync": false,
         "sort": 0,
         "tagValuesQuery": "",
-        "tags": [],
         "tagsQuery": "",
         "type": "query",
         "useTags": false
@@ -8152,7 +8190,6 @@
         "skipUrlSync": false,
         "sort": 0,
         "tagValuesQuery": null,
-        "tags": [],
         "tagsQuery": null,
         "type": "query",
         "useTags": false
@@ -8176,7 +8213,6 @@
         "skipUrlSync": false,
         "sort": 0,
         "tagValuesQuery": null,
-        "tags": [],
         "tagsQuery": null,
         "type": "query",
         "useTags": false
@@ -8200,7 +8236,6 @@
         "skipUrlSync": false,
         "sort": 0,
         "tagValuesQuery": null,
-        "tags": [],
         "tagsQuery": null,
         "type": "query",
         "useTags": false
@@ -8224,7 +8259,6 @@
         "skipUrlSync": false,
         "sort": 0,
         "tagValuesQuery": null,
-        "tags": [],
         "tagsQuery": null,
         "type": "query",
         "useTags": false
@@ -8359,5 +8393,5 @@
   "timezone": "browser",
   "title": "Page metrics desktop",
   "uid": "9NDMzFfMk",
-  "version": 35
+  "version": 48
 }
